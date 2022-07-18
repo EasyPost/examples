@@ -6,15 +6,26 @@ on:
   pull_request: ~
 
 jobs:
-  lint:
+  shell:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run sh-checker
         uses: luizm/action-sh-checker@master
         env:
           SHFMT_OPTS: -i 2 -d
           SHELLCHECK_OPTS: -e SC2148
-      - name: Lint Ruby
+  ruby:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+      - name: Install Ruby dependencies
+        run: make install-ruby
+      - name: Lint project
         run: make lint-ruby
