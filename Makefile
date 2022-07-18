@@ -35,4 +35,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-ruby lint lint-shell format-shell
+.PHONY: help install install-ruby lint lint-ruby lint-shell format format-ruby format-shell
