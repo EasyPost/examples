@@ -6,7 +6,7 @@ on:
   pull_request: ~
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -16,3 +16,5 @@ jobs:
         env:
           SHFMT_OPTS: -i 2 -d
           SHELLCHECK_OPTS: -e SC2148
+      - name: Lint Ruby
+        run: make lint-ruby
