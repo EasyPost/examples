@@ -1,7 +1,0 @@
-require 'easypost'
-
-EasyPost.api_key = ENV['EASYPOST_API_KEY']
-
-deleted_credit_card = EasyPost::CreditCard.delete('card_...')
-
-puts deleted_credit_card
