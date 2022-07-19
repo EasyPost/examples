@@ -2,4 +2,4 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-User childUser = await User.Retrieve("user_...");
+User user = await User.RetrieveMe();
