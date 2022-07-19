@@ -2,4 +2,5 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-User childUser = await User.Retrieve("user_...");
+shipment = EasyPost::Shipment.retrieve("shp_...");
+shipment.refund;

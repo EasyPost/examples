@@ -2,6 +2,10 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
+Address to = await Address.Create(toAddress);
+Address from = await Address.Create(fromAddress);
+Parcel parcel = await Parcel.Create(parcel);
+
 Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
   { "parcel", new Dictionary<string, object>() {
     { "length", 8 }, { "width", 6 }, { "height", 5 }, { "weight", 10 }
@@ -24,5 +28,6 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     { "country", "US" },
     { "zip", "94104" }
   } },
-  { "reference", "ShipmentRef" }
+  { "reference", "ShipmentRef" },
+  { "options", new Dictionary<string, object>() { { "address_validation_level", 0 } } }
 });

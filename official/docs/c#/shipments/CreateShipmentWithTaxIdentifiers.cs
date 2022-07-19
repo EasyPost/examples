@@ -24,5 +24,10 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     { "country", "US" },
     { "zip", "94104" }
   } },
-  { "reference", "ShipmentRef" }
+  { "tax_identifiers", new List<Dictionary<string, object>>() { 
+    { "entity", "SENDER" },
+    { "tax_id", "GB123456789" },
+    { "tax_id_type", "IOSS" },
+    { "issuing_country", "GB" }
+  } }
 });
