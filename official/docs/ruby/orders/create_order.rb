@@ -11,9 +11,17 @@ order = EasyPost::Order.create(
       id: 'adr_...',
     },
     shipments: [
-      { parcel: { predefined_package: 'FedExBox', weight: 10.2 } },
-
-      { parcel: { predefined_package: 'FedExBox', weight: 17.5 } },
+      { 
+        parcel: { 
+          weight: 10.2
+        }
+      },
+      { 
+        parcel: { 
+          predefined_package: 'FedExBox', 
+          weight: 17.5
+        }
+      },
     ],
   },
 )

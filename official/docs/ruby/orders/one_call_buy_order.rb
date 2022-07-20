@@ -3,14 +3,18 @@ require 'easypost'
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
 order = EasyPost::Order.create(
-  carrier_accounts: ['ca_...'],
-  service: 'NextDayAir',
-  to_address: to_address,
-  from_address: from_address,
+  to_address: {
+    id: 'adr_...'
+  },
+  from_address: {
+    id: 'adr_...'
+  },
   shipments: [
-    { parcel: { predefined_package: 'FedExBox', weight: 10.2 } },
+    { parcel: { weight: 10.2 } },
     { parcel: { predefined_package: 'FedExBox', weight: 17.5 } },
-  ],
+  ],  
+  service: 'NextDayAir',
+  carrier_accounts: ['ca_...'],
 )
 
 puts order

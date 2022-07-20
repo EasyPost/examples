@@ -2,8 +2,6 @@ require 'easypost'
 
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
-addresses = EasyPost::Address.all(
-  page_size: 5,
-)
+address = EasyPost::Address.retrieve('adr_...')
 
-puts addresses
+puts address

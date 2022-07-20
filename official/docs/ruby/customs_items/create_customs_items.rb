@@ -6,8 +6,8 @@ customs_item = EasyPost::CustomsItem.create(
   {
     description: 'T-shirt',
     quantity: 1,
-    value: 10,
     weight: 5,
+    value: 10,
     hs_tariff_number: '123456',
     origin_country: 'us',
   },

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'easypost'
 
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
@@ -36,6 +34,6 @@ shipment = EasyPost::Shipment.create(
   },
 )
 
-shipment.buy(rate: shipment.lowest_rate, insurance: 249.99)
+shipment.buy(rate: 'rate...', insurance: 249.99)
 
 puts shipment

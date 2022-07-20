@@ -3,8 +3,6 @@ require 'easypost'
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
 shipment = EasyPost::Shipment.create(
-  carrier_accounts: ['ca_...'],
-  service: 'NextDayAir',
   to_address: {
     name: 'Dr. Steve Brule',
     street1: '179 N Harbor Dr',
@@ -12,7 +10,7 @@ shipment = EasyPost::Shipment.create(
     state: 'CA',
     zip: '90277',
     country: 'US',
-    phone: '4155559999',
+    phone: '8573875756',
     email: 'dr_steve_brule@gmail.com',
   },
   from_address: {
@@ -23,7 +21,7 @@ shipment = EasyPost::Shipment.create(
     state: 'CA',
     zip: '94104',
     country: 'US',
-    phone: '4155559999',
+    phone: '4153334445',
     email: 'support@easypost.com',
   },
   parcel: {
@@ -32,6 +30,8 @@ shipment = EasyPost::Shipment.create(
     height: 5,
     weight: 65.9,
   },
+  service: 'NextDayAir',
+  carrier_accounts: ['ca_...'],
 )
 
 puts shipment

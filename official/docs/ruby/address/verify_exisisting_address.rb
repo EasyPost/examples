@@ -13,6 +13,6 @@ address = EasyPost::Address.create(
   phone: '415-123-4567',
 )
 
-verifiable_address = address.verify
+verified_address = address.verify
 
-puts verifiable_address
+puts verified_address

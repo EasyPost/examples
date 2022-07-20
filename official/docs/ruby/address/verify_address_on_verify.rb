@@ -2,7 +2,7 @@ require 'easypost'
 
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
-verifiable_address = EasyPost::Address.create(
+address = EasyPost::Address.create(
   verify: ['delivery'],
   street1: '417 montgomery streat',
   street2: 'FL 5',
@@ -14,4 +14,4 @@ verifiable_address = EasyPost::Address.create(
   phone: '415-123-4567',
 )
 
-puts verifiable_address.verifications
+puts address

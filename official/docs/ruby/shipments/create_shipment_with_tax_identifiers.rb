@@ -11,7 +11,7 @@ shipment = EasyPost::Shipment.create(
       state: 'CA',
       zip: '90277',
       country: 'US',
-      phone: '4155559999',
+      phone: '8573875756',
       email: 'dr_steve_brule@gmail.com',
     },
     from_address: {
@@ -22,7 +22,7 @@ shipment = EasyPost::Shipment.create(
       state: 'CA',
       zip: '94104',
       country: 'US',
-      phone: '4155559999',
+      phone: '4153334445',
       email: 'support@easypost.com',
     },
     parcel: {
@@ -31,12 +31,14 @@ shipment = EasyPost::Shipment.create(
       height: 5,
       weight: 65.9,
     },
-    customs_info: customs_info,
+    customs_info: {
+      id: 'cstinfo_...',
+    },
     tax_identifiers: [
       {
         entity: 'SENDER',
         tax_id: 'GB123456789',
-        tax_id_type: 'IOSS',
+        tax_id_type: 'EORI',
         issuing_country: 'GB',
       },
     ],

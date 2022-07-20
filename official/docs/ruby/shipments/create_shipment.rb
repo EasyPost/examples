@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'easypost'
 
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
@@ -24,7 +22,7 @@ shipment = EasyPost::Shipment.create(
       state: 'CA',
       zip: '94104',
       country: 'US',
-      phone: '4155559999',
+      phone: '4153334445',
       email: 'support@easypost.com',
     },
     parcel: {
@@ -33,6 +31,9 @@ shipment = EasyPost::Shipment.create(
       height: 5,
       weight: 65.9,
     },
+    customs_info: {
+      id: 'cstinfo_...'
+    }
   },
 )
 

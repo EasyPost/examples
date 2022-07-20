@@ -6,6 +6,4 @@ batches = EasyPost::Batch.all(
   page_size: 5,
 )
 
-batch_array = batches.batches
-
-puts batch_array
+puts batches
