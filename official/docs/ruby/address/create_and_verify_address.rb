@@ -13,4 +13,4 @@ address = EasyPost::Address.create_and_verify(
   phone: '415-123-4567',
 )
 
-puts verified_address
+puts address
