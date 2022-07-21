@@ -3,8 +3,9 @@ require 'easypost'
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
 address = EasyPost::Address.create(
-  street1: '417 montgomery streat',
-  street2: 'FL 5',
+  verify_strict: ['delivery'],
+  street1: '417 MONTGOMERY ST',
+  street2: 'FLOOR 5',
   city: 'SAN FRANCISCO',
   state: 'CA',
   zip: '94104',

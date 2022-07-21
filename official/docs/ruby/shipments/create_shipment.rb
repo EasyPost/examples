@@ -32,8 +32,8 @@ shipment = EasyPost::Shipment.create(
       weight: 65.9,
     },
     customs_info: {
-      id: 'cstinfo_...'
-    }
+      id: 'cstinfo_...',
+    },
   },
 )
 
