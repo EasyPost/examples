@@ -4,7 +4,7 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Address address = await Address.Create(
     new Dictionary<string, object>() {
-        { "street1", "UNDELIEVRABLE ST" },
+        { "street1", "417 MONTGOMERY ST" },
         { "street2", "FLOOR 5" },
         { "city", "SAN FRANCISCO" },
         { "state", "CA" },
@@ -12,7 +12,6 @@ Address address = await Address.Create(
         { "country", "US" },
         { "company", "EasyPost" },
         { "phone", "415-123-4567" },
-        { "verifications", new List<string>() { "delivery" } }
     }
 );
 
