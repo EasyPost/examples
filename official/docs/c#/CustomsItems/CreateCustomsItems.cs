@@ -3,10 +3,10 @@ using EasyPost;
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 CustomsItem item = await CustomsItem.Create(new Dictionary<string, object>() {
-  { "description", "TShirt" },
+  { "description", "T-shirt" },
   { "quantity", 1 },
-  { "weight", 8 },
-  { "value", 10.0 },
-  { "origin_country", "us" },
+  { "weight", 5 },
+  { "value", 10 },
+  { "origin_country", "US" },
   { "hs_tariff_number", "123456" }
 });

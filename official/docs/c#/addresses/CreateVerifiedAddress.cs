@@ -2,7 +2,7 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-Address address = Address.Create(
+Address address = await Address.Create(
     new Dictionary<string, object>() {
         { "street1", "417 MONTGOMERY ST" },
         { "street2", "FLOOR 5" },
@@ -12,6 +12,8 @@ Address address = Address.Create(
         { "country", "US" },
         { "company", "EasyPost" },
         { "phone", "415-123-4567" },
-        { "verify", new List<string>() { "delivery" } }
+        { "verifications", new List<string>() { "delivery" } }
     }
 );
+
+Console.Write(address.verifications.delivery.success);
