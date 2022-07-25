@@ -10,7 +10,7 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     { "weight", 65.9 }
   } },
   { "from_address", new Dictionary<string, object>(){
-    { "company", "EasyPost" },
+    { "name", "EasyPost" },
     { "street1", "417 Montgomery Street" },
     { "street2", "5th Floor" },
     { "city", "San Francisco" },

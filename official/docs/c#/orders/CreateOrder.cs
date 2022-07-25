@@ -20,6 +20,23 @@ Order order = await Order.Create(
                 }
             }
         },
-        { "shipments", new List<Dictionary<string, object>>() { firstShipment, secondShipment } }
+        {
+             "shipments", new List<Dictionary<string, object>>()
+             {
+                {
+                    "parcel", new Dictionary<string, object>()
+                    {
+                         { "weight", 10.2 }
+                    }
+                },
+                {
+                    "parcel", new Dictionary<string, object>()
+                    {
+                        {"weight", 17.5},
+                        {"predefined_package", "FedExBox"}
+                    }
+                }   
+            }
+        }
     }
 );
