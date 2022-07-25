@@ -6,11 +6,11 @@ User user = await User.RetrieveMe();
 
 string color = "#303F9F";
 
-Dictionary<string, object> params = new Dictionary<string, object>()
+Dictionary<string, object> brand = new Dictionary<string, object>()
 {
     {
         "color", color
     }
 };
 
-await user.Update(params);
+await user.Update(brand);

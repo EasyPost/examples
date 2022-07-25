@@ -3,7 +3,8 @@ using EasyPost;
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Insurance insurance = await Insurance.Create(new Dictionary<string, object>() {
-    { "to_address", new Dictionary<string, object>()
+    { 
+        "to_address", new Dictionary<string, object>()
         {
             {
                 "id", "adr_..."
