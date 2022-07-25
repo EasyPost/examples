@@ -1,0 +1,5 @@
+inherit_from: easycop.yml
+
+# We ignore frozen string literal comments to simplify the sample code snippets
+Style/FrozenStringLiteralComment:
+  Enabled: false
