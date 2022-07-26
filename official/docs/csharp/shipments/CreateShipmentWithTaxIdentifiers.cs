@@ -40,3 +40,5 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     { "issuing_country", "GB" }
   } }
 });
+
+Console.Write(shipment);

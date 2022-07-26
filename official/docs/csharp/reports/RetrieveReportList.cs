@@ -2,10 +2,9 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-Dictionary<string, object> reportParameters = new Dictionary<string, object>() {
-  { "page_size", 4 },
-  { "start_date", "2016-01-02" }
-};
+ReportCollection reportCollection = await Report.All("payment_log", new DictionaryM<string, object>(){
+    { "page_size", 4 },
+    { "start_date", "2016-01-02" }
+});
 
-ReportCollection reportCollection = await Report.All("payment_log", reportParameters);
-ReportCollection reportCollection = await reportCollection.Next();
+Console.Write(report);

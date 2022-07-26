@@ -32,3 +32,5 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
   } },
   { "is_return", true}
 });
+
+Console.Write(shipment);

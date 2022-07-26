@@ -7,4 +7,5 @@ Dictionary<string, object> listParams = new Dictionary<string, object>() {
 };
 
 TrackerCollection trackerCollection = await Tracker.All(listParams);
-TrackerCollection nextTrackerCollection = await trackerCollection.Next();
+
+Console.Write(trackerCollection);

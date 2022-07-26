@@ -34,3 +34,5 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     {"id", "cstinfo_..." }
   } }
 });
+
+Console.Write(shipment);
