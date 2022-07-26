@@ -7,4 +7,5 @@ Dictionary<string, object> listParams = new Dictionary<string, object>() {
 };
 
 ShipmentCollection shipmentCollection = await Shipment.All(listParams);
-ShipmentCollection nextShipmentCollection = await shipmentCollection.Next();
+
+Console.Write(shipment);

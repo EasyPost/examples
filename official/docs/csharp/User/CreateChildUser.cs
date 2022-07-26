@@ -5,3 +5,5 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 User user = await User.Create(new Dictionary<string, object>() {
   { "name", "Child Account Name" }
 });
+
+Console.Write(user);

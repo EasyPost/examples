@@ -2,7 +2,7 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-Dictionary<string, object> parameters = new Dictionary<string, object>() {
+Pickup pickup = await Pickup.Create(new Dictionary<string, object>() {
   { "is_account_address", false },
   { "address", new Dictionary<String, object>(){
     {"id,", "adr_..."}
@@ -14,6 +14,6 @@ Dictionary<string, object> parameters = new Dictionary<string, object>() {
   { "max_datetime", "2014-10-21 10:30:00"},
   { "instructions", "Special pickup instructions" },
   { "reference", "my-first-pickup"}
-};
+});
 
-Pickup pickup = await Pickup.Create(parameters);
+Console.Write(pickup);

@@ -35,3 +35,5 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     { "email", "dr_steve_brule@gmail.com" }
   } }
 });
+
+Console.Write(shipment);

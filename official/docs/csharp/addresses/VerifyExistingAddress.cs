@@ -11,7 +11,8 @@ Address address = await Address.Create(
         { "zip", "94104" },
         { "country", "US" },
         { "company", "EasyPost" },
-        { "phone", "415-123-4567" }
+        { "phone", "415-123-4567" },
+        { "verify_strict", new List<booolean>() { true } }
     }
 );
 

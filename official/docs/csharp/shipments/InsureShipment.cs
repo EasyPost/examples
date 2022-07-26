@@ -2,5 +2,7 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-purchased_shipment = EasyPost::Shipment.retrieve("shp_...");
-purchased_shipment.insure(amount:100);
+Shipment purchasedShipment = await Shipment.Retrieve("shp_...");
+await purchasedShipment.Insure(888.50);
+
+Console.Write(purchasedShipment);

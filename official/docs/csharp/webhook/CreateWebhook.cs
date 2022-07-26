@@ -7,3 +7,5 @@ Webhook webhook = await Webhook.Create(
         { "url", "example.com" }
     }
 );
+
+Console.Write(webhook);
