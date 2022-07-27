@@ -18,7 +18,7 @@ lint: | lint-csharp lint-ruby lint-shell
 
 ## lint-csharp - lint C# files
 lint-csharp:
-	# clean up whitespace formatting
+    # clean up whitespace formatting
     # folder options skip looking for a project/solution, just analyze any *.cs file
 	dotnet format whitespace --include official/docs/csharp/ --folder --verify-no-changes
 	dotnet format whitespace --include official/guides/csharp/ --folder --verify-no-changes
@@ -39,7 +39,7 @@ format: | format-csharp format-ruby format-shell
 
 ## format-csharp - formats C# files
 format-csharp:
-	# clean up whitespace formatting
+    # clean up whitespace formatting
     # folder options skip looking for a project/solution, just analyze any *.cs file
 	dotnet format whitespace --include official/docs/csharp/ --folder
 	dotnet format whitespace --include official/guides/csharp/ --folder
