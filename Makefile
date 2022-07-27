@@ -18,7 +18,8 @@ lint: | lint-csharp lint-ruby lint-shell
 
 ## lint-csharp - lint C# files
 lint-csharp:
-	dotnet-format --check --exclude /
+	dotnet-format --check --include official/docs/csharp/ --exclude /
+	dotnet-format --check --include official/guides/csharp/ --exclude /
 
 ## lint-ruby - lints Ruby files
 lint-ruby:
@@ -36,7 +37,8 @@ format: | format-csharp format-ruby format-shell
 
 ## format-csharp - formats C# files
 format-csharp:
-	dotnet format
+	dotnet format --include official/docs/csharp/ --exclude /
+	dotnet format --include official/guides/csharp/ --exclude /
 
 ## format-ruby - formats Ruby files
 format-ruby:
