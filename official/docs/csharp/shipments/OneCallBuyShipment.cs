@@ -3,8 +3,8 @@ using EasyPost;
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
-  { "carrier_accounts", new List<string>() { 
-      "ca_..." 
+  { "carrier_accounts", new List<string>() {
+      "ca_..."
   } },
   { "service", "NextDayAir"},
   { "parcel", new Dictionary<string, object>() {

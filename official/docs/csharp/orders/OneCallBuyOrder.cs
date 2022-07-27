@@ -3,8 +3,8 @@ using EasyPost;
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Order order = await Order.Create(new Dictionary<string, object>() {
-  { "carrier_accounts", 
-    new List<String>(){ 
+  { "carrier_accounts",
+    new List<String>(){
         "ca_..."
   } },
   { "service", "NextDayAir" },
@@ -22,11 +22,11 @@ Order order = await Order.Create(new Dictionary<string, object>() {
         }
      },
      {
-        "parcel", new Dictionary<string, object>() 
+        "parcel", new Dictionary<string, object>()
         {
             { "predefined_package", "FedExBox" },
             { "weight", 17.5 }
-        } 
+        }
     }
     } }
 });
