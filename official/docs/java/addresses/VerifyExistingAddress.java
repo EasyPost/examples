@@ -7,7 +7,7 @@ public class VerifyExistingAddress {
 
         Map<String, Object> addressHash = new HashMap<String, Object>();
 
-        addressHash.put("street1", "UNDELIEVRABLE ST");
+        addressHash.put("street1", "417 Montgomery Street");
         addressHash.put("city", "SF");
         addressHash.put("state", "CA");
         addressHash.put("zip", "94104");
