@@ -6,5 +6,7 @@ public class RetrieveShipment {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Shipment shipment = Shipment.retrieve("shp_...");
+
+        System.out.println(shipment);
     }
 }

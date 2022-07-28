@@ -1,5 +1,5 @@
 import com.easypost.EasyPost;
-import com.easypost.exception.EasyPostException;
+import java.util.HashMap;
 
 public class CreateAddress{
     public static void main(String [] args){
@@ -7,9 +7,9 @@ public class CreateAddress{
 
         Map<String, Object> addressHash = new HashMap<String, Object>();
 
-        addressHash.put("street1", "417 Montgomery Street");
-        addressHash.put("street2", "5th Floor");
-        addressHash.put("city", "SF");
+        addressHash.put("street1", "417 MONTGOMERY ST");
+        addressHash.put("street2", "FLOOR 5");
+        addressHash.put("city", "SAN FRANCISCO");
         addressHash.put("state", "CA");
         addressHash.put("zip", "94104");
         addressHash.put("country", "US");
@@ -18,6 +18,6 @@ public class CreateAddress{
 
         Address address = Address.create(addressHash);
 
-        System.out.println(address.getId());
+        System.out.println(address);
     }
 }

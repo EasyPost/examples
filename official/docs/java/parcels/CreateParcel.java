@@ -12,5 +12,7 @@ public class CreateParcel {
         parcelMap.put("weight", 65.9);
 
         Parcel parcel = Parcel.create(parcelMap);
+
+        System.out.println(parcel);
     }
 }

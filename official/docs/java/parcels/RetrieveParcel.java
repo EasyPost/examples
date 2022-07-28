@@ -6,5 +6,7 @@ public class RetrieveParcel {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Parcel parcel = Parcel.retrieve("prcl_...");
+        
+        System.out.println(parcel);
     }
 }

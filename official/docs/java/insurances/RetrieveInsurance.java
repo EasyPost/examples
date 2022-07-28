@@ -6,5 +6,7 @@ public class RetrieveInsurance {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Insurance insurance = Insurance.retrieve("ins_...");
+
+        System.out.println(insurance);
     }
 }

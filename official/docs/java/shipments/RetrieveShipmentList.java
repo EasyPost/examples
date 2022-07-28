@@ -6,9 +6,10 @@ public class RetrieveShipmentList{
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Map<String, Object> list_params = new HashMap<>();
-        list_params.put("page_size", 2);
-        list_params.put("start_datetime", "2016-01-02T08:50:00Z");
+        list_params.put("page_size", 5);
 
         ShipmentCollection shipments = Shipment.all(list_params);
+        
+        System.out.println(shipment);
     }
 }

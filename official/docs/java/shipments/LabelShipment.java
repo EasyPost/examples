@@ -11,5 +11,7 @@ public class LabelShipment {
         params.put("file_format", "ZPL");
 
         shipment.label(params);
+
+        System.out.println(shipment);
     }
 }

@@ -11,5 +11,7 @@ public class CreateTracker {
         trackerMap.put("carrier", "USPS");
 
         Tracker tracker = Tracker.create(trackerMap);
+
+        System.out.println(tracker);
     }
 }
