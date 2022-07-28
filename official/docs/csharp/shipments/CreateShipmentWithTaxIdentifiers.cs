@@ -4,9 +4,9 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
   { "parcel", new Dictionary<string, object>() {
-    { "length", 20.2 }, 
-    { "width", 10.9 }, 
-    { "height", 5 }, 
+    { "length", 20.2 },
+    { "width", 10.9 },
+    { "height", 5 },
     { "weight", 65.9 }
   } },
   { "from_address", new Dictionary<string, object>(){
@@ -33,7 +33,7 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
   { "customs_info", new Dictionary<string, object>(){
     {"id", "cstinfo_..." }
   } },
-  { "tax_identifiers", new List<Dictionary<string, object>>() { 
+  { "tax_identifiers", new List<Dictionary<string, object>>() {
     { "entity", "SENDER" },
     { "tax_id", "GB123456789" },
     { "tax_id_type", "EORI" },
