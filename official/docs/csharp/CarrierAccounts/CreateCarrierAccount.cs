@@ -2,7 +2,7 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-CarrierAccount carrier_account = await CarrierAccount.Create(new Dictionary<string, object>() {
+CarrierAccount carrierAccount = await CarrierAccount.Create(new Dictionary<string, object>() {
   { "type", "DhlEcsAccount" },
   { "description", "CA Location DHL eCommerce Solutions Account" },
   { "credentials", new Dictionary<string, object>{
@@ -19,4 +19,4 @@ CarrierAccount carrier_account = await CarrierAccount.Create(new Dictionary<stri
   } },
 });
 
-Console.Write(Carrier_account);
+Console.Write(carrierAccount);

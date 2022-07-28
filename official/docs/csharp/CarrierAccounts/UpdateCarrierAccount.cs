@@ -2,7 +2,7 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-CarrierAccount carrier_account = await CarrierAccount.Retrieve("ca_...");
+CarrierAccount carrierAccount = await CarrierAccount.Retrieve("ca_...");
 
 await ca.Update(new Dictionary<string, object>() {
   { "credentials", new Dictionary<string, object>(){
@@ -10,4 +10,4 @@ await ca.Update(new Dictionary<string, object>() {
   } },
 });
 
-Console.Write(carrier_account);
+Console.Write(carrierAccount);
