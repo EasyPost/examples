@@ -6,5 +6,7 @@ public class RetrieveAddress{
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Address address = Address.retrieve("adr_...");
+     
+        System.out.println(address);
     }
 }

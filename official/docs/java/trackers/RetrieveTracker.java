@@ -6,5 +6,7 @@ public class RetrieveTracker {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Tracker tracker = Tracker.retrieve("trk_...");
+
+        System.out.println(tracker);
     }
 }

@@ -10,5 +10,7 @@ public class RetrieveAddressList{
         list_params.put("page_size", 5);
 
         AddressCollection addresses = Address.all(list_params);
+
+        System.out.println(addresses);
     }
 }

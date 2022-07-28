@@ -6,10 +6,13 @@ public class BuyShipment {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Shipment shipment = Shipment.retrieve("shp_...");
+
         Map<String, Object> buyMap = new HashMap<String, Object>();
-        buyMap.put("rate", shipment.lowestRate());
+        buyMap.put("rate", Rate.retrieve("rate_..."));
         buyMap.put("insurance", 249.99);
 
         shipment.buy(buyMap);
+
+        System.out.println(shipment);
     }
 }
