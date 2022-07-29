@@ -2,6 +2,7 @@ import easypost
 easypost.api_key = "EASYPOST_API_KEY"
 
 address = easypost.Address.create(
+        verify_strict=True,
         street1="417 MONTGOMERY ST",
         street2="FLOOR 5",
         city="San Francisco",
