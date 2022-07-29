@@ -12,4 +12,6 @@ Dictionary<string, object> form = new Dictionary<string, object>() {
   {"units", 8}
 };
 
+await Shipment.GenerateForm("return_packing_slip", form);
+
 Console.Write(form);
