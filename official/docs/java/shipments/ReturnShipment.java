@@ -2,7 +2,7 @@ import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
 public class ReturnShipment {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Map<String, Object> toAddressMap = new HashMap<String, Object>();
@@ -37,7 +37,7 @@ public class ReturnShipment {
         shipmentMap.put("from_address", fromAddressMap);
         shipmentMap.put("parcel", parcelMap);
         shipmentMap.put("is_return", "true");
-        
+
         Shipment shipment = Shipment.create(shipmentMap);
 
         System.out.println(shipment);

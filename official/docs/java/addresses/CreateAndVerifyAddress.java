@@ -2,9 +2,9 @@ import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
 public class CreateAndVerifyAddress {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
-        
+
         Map<String, Object> addressHash = new HashMap<String, Object>();
 
         addressHash.put("street1", "417 Montgomery Street");
@@ -17,7 +17,7 @@ public class CreateAndVerifyAddress {
         addressHash.put("phone", "415-123-4567");
 
         Address address = Address.createAndVerify(addressHash);
-        
+
         System.out.println(address);
     }
 }

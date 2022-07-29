@@ -3,7 +3,7 @@ import com.easypost.exception.EasyPostException;
 import com.easypost.model.Shipment;
 
 public class RefundShipment {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Shipment shipment = Shipment.retrieve("shp_...");
