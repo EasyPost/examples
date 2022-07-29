@@ -1,8 +1,8 @@
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
-public class OneCallBuyShipment{
-    public static void main(String [] args){
+public class OneCallBuyShipment {
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Map<String, Object> toAddressMap = new HashMap<String, Object>();
@@ -41,7 +41,7 @@ public class OneCallBuyShipment{
         shipmentMap.put("parcel", parcelMap);
         shipmentMap.put("customs_info", customsInfoMap);
         shipmentMap.put("carrier_accounts", "ca_...");
-        shipmentMap.put("service","NextDayAir");
+        shipmentMap.put("service", "NextDayAir");
 
         Shipment shipment = Shipment.create(shipmentMap);
 

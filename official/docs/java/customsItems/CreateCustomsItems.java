@@ -2,7 +2,7 @@ import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
 public class CreateCustomsItems {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Map<String, Object> customsItemMap = new HashMap<String, Object>();
@@ -12,7 +12,7 @@ public class CreateCustomsItems {
         customsItemMap.put("weight", 5);
         customsItemMap.put("origin_country", "US");
         customsItemMap.put("hs_tariff_number", "123456");
-        
+
         CustomsItem customsItem = CustomsItem.create(customsItemMap);
 
         System.out.println(customsItem);

@@ -1,8 +1,8 @@
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
-public class CreateInsurance{
-    public static void main(String [] args){
+public class CreateInsurance {
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Map<String, Object> toAddressMap = new HashMap<String, Object>();
@@ -15,7 +15,7 @@ public class CreateInsurance{
         Map<String, Object> insuranceMap = new HashMap<String, Object>();
         insuranceMap.put("to_address", toAddressMap);
         insuranceMap.put("from_address", fromAddressMap);
-        insuranceMap.put("tracking_code","9400110898825022579493");
+        insuranceMap.put("tracking_code", "9400110898825022579493");
         insuranceMap.put("carrier", "USPS");
         insuranceMap.put("amount", "100.00");
         insuranceMap.put("reference", "InsuranceRef1");

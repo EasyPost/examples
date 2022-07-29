@@ -2,7 +2,7 @@ import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
 public class OneCallBuyOrder {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Map<String, Object> orderHash = new HashMap<String, Object>();
@@ -13,7 +13,7 @@ public class OneCallBuyOrder {
 
         Map<String, Object> fromAddress = new HashMap<String, Object>();
         fromAddress.put("id", "adr_...");
-        
+
         Map<String, Object> firstParcel = new HashMap<String, Object>();
         firstParcel.put("weight", 10.2);
 
@@ -29,9 +29,9 @@ public class OneCallBuyOrder {
         orderHash.put("to_address", toAddress);
         orderHash.put("from_address", fromAddress);
         orderHash.put("shipments", shipments);
-        
+
         Order order = Order.create(orderHash);
-        
+
         System.out.println(order);
     }
 }

@@ -4,9 +4,9 @@ import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
 public class CreateBatch {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
-        
+
         Map<String, Object> shipmentMap = new HashMap<String, Object>();
         shipmentMap.put("id", "shp_...");
 

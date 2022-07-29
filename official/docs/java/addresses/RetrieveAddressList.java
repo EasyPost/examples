@@ -1,8 +1,8 @@
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
-public class RetrieveAddressList{
-    public static void main(String [] args){
+public class RetrieveAddressList {
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Map<String, Object> params = new HashMap<>();

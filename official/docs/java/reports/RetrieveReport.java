@@ -2,7 +2,7 @@ import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
 public class RetrieveReport {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Map<String, Object> reportMap = new HashMap<String, Object>();
@@ -11,7 +11,7 @@ public class RetrieveReport {
         reportMap.put("start_date", "2016-01-02");
 
         ReportCollection reports = Report.all(reportMap);
-        
+
         System.out.println(reports);
     }
 }
