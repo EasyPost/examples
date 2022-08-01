@@ -18,8 +18,8 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     { "state", "CA" },
     { "zip", "94104" },
     { "country", "US" },
-    {"phone", "4153334445"},
-    {"email", "support@easypost.com"}
+    { "phone", "4153334445" },
+    { "email", "support@easypost.com" }
   } },
   { "to_address", new Dictionary<string, object>(){
     { "name", "Dr. Steve Brule" },
@@ -35,4 +35,4 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
 
 await shipment.Buy(shipment.RetrieveRate("rate_..."), 249.99);
 
-Console.Write(shipment);
+Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

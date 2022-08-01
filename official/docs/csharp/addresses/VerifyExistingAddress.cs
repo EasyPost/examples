@@ -18,4 +18,4 @@ Address address = await Address.Create(
 
 address.Verify();
 
-Console.Write(address);
+Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));

@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Webhook webhook = await Webhook.Retrieve("hook_...");
 
-Console.Write(webhook);
+Console.WriteLine(JsonConvert.SerializeObject(webhook, Formatting.Indented));

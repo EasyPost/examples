@@ -6,8 +6,8 @@ Batch batch = await Batch.Create(new Dictionary<string, object>() {
   { "shipments", new List<Dictionary<string, object>>() {
     new Dictionary<string, object>()
       { "id", "shp_..." },
-      {"id", "shp_..."}
+      { "id", "shp_..." }
   } }
 });
 
-Console.Write(batch);
+Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));

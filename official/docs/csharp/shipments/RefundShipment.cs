@@ -6,4 +6,4 @@ Shipment shipment = await Shipment.Retrieve("shp_...");
 
 await shipment.Refund();
 
-Console.Write(shipment);
+Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

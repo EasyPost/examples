@@ -11,4 +11,4 @@ BatchCollection batchCollection = await Batch.All(new Dictionary<string, object>
 
 List<Batch> batches = batchCollection.batches;
 
-Console.Write(batches);
+Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));

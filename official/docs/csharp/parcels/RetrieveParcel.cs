@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Parcel parcel = await Parcel.Retrieve("prcl_...");
 
-Console.Write(parcel);
+Console.WriteLine(JsonConvert.SerializeObject(parcel, Formatting.Indented));

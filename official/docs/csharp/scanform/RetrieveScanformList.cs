@@ -6,4 +6,4 @@ ScanFormCollection scanFormCollection = await ScanForm.All(new Dictionary<string
   { "page_size", 5 }
 });
 
-Console.Write(scanForm);
+Console.WriteLine(JsonConvert.SerializeObject(scanFormCollection, Formatting.Indented));

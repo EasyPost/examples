@@ -23,12 +23,12 @@ Order order = await Order.Create(
             },
             {
                 "parcel", new Dictionary<string, object>() {
-                    {"weight", 17.5},
-                    {"predefined_package", "FedExBox"}
+                    { "weight", 17.5 },
+                    { "predefined_package", "FedExBox" }
                 }
             }
         }
     }
 });
 
-Console.Write(order);
+Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));

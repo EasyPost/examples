@@ -8,4 +8,4 @@ Dictionary<string, object> listParams = new Dictionary<string, object>() {
 
 ShipmentCollection shipmentCollection = await Shipment.All(listParams);
 
-Console.Write(shipment);
+Console.WriteLine(JsonConvert.SerializeObject(shipmentCollection, Formatting.Indented));

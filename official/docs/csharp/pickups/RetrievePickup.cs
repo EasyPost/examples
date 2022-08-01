@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Pickup pickup = await Pickup.Retrieve("pickup_...");
 
-Console.Write(pickup);
+Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));

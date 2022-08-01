@@ -6,9 +6,9 @@ Batch batch = await Batch.Retrieve("batch_...");
 
 batch.RemoveShipments("shipments", new List<Dictionary<string, object>>(){
     new Dictionary<string, object>(){
-        { "id", "shp_..."}
+        { "id", "shp_..." }
      }
     }
  );
 
-Console.Write(batch);
+Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));

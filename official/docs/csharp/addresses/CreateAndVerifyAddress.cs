@@ -15,4 +15,4 @@ Address address = Address.CreateAndVerify(
     }
 );
 
-Console.Write(address);
+Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));

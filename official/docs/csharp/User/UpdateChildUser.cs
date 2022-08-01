@@ -8,4 +8,4 @@ await childUser.Update(new Dictionary() {
     { "name", "Test Child" }
 });
 
-Console.Write(childUser);
+Console.WriteLine(JsonConvert.SerializeObject(childUser, Formatting.Indented));

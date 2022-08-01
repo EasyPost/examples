@@ -6,4 +6,4 @@ CarrierAccount carrierAccount = await CarrierAccount.Retrieve("ca_...");
 
 await ca.Delete();
 
-Console.Write(carrierAccount);
+Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));

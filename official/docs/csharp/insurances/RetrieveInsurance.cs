@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Insurance insurance = await Insurance.Retrieve("ins_...");
 
-Console.Write(insurance);
+Console.WriteLine(JsonConvert.SerializeObject(insurance, Formatting.Indented));

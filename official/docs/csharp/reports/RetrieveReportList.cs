@@ -7,4 +7,4 @@ ReportCollection reportCollection = await Report.All("payment_log", new Dictiona
     { "start_date", "2016-01-02" }
 });
 
-Console.Write(report);
+Console.WriteLine(JsonConvert.SerializeObject(report, Formatting.Indented));

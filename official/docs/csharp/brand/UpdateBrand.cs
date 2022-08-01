@@ -8,4 +8,4 @@ await user.Update(new Dictionary<string, object>(){
     { "color", "#303F9F" }
 });
 
-Console.Write(brand);
+Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

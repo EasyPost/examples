@@ -31,7 +31,7 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     { "zip", "90277" }
   } },
   { "customs_info", new Dictionary<string, object>(){
-    {"id", "cstinfo_..." }
+    { "id", "cstinfo_..." }
   } },
   { "tax_identifiers", new List<Dictionary<string, object>>() {
     { "entity", "SENDER" },
@@ -41,4 +41,4 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
   } }
 });
 
-Console.Write(shipment);
+Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

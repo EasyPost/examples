@@ -6,4 +6,4 @@ Pickup pickup = await Pickup.Retrieve("pickup_...");
 
 await pickup.Cancel();
 
-Console.Write(pickup);
+Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));

@@ -35,4 +35,42 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
   } }
 });
 
-Console.Write(shipment);
+//Create a shipment using ids
+
+Shipment shipment = await Shipment.Create(new Dictionary<string, object>()
+{
+    {
+    "to_address", new Dictionary<string, object>()
+        {
+            {
+                "id", "adr_..."
+            }
+        }
+    },
+    {
+    "from_address", new Dictionary<string, object>()
+        {
+            {
+                "id", "adr_..."
+            }
+        }
+    },
+    {
+    "parcel", new Dictionary<string, object>()
+        {
+            {
+                "id", "prcl_..."
+            }
+        }
+    },
+    {
+    "customs_info", new Dictionary<string, object>()
+        {
+            {
+                "id", "cstinfo_..."
+            }
+        }
+    }
+});
+
+Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

@@ -8,4 +8,4 @@ await user.Update(new Dictionary() {
     { "recharge_threshold", 50.00 }
 });
 
-Console.Write(user);
+Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

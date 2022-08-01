@@ -6,4 +6,4 @@ User user = await User.Retrieve("user_...");
 
 await user.delete();
 
-Console.Write(user);
+Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

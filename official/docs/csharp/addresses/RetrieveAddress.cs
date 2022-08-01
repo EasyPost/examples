@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Address address = await Address.Retrieve("adr_...");
 
-Console.Write(address);
+Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));

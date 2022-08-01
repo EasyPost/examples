@@ -19,4 +19,4 @@ Insurance insurance = await Insurance.Create(new Dictionary<string, object>() {
     { "amount", "100.00" }
 });
 
-Console.Write(insurance);
+Console.WriteLine(JsonConvert.SerializeObject(insurance, Formatting.Indented));

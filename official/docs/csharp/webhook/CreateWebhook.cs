@@ -8,4 +8,4 @@ Webhook webhook = await Webhook.Create(
     }
 );
 
-Console.Write(webhook);
+Console.WriteLine(JsonConvert.SerializeObject(webhook, Formatting.Indented));

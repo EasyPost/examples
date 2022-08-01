@@ -6,4 +6,4 @@ Order order = await Order.Retrieve("order_...");
 
 await order.Buy("FedEx", "FEDEX_GROUND");
 
-Console.Write(order);
+Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));

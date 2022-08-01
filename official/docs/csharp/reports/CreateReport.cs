@@ -9,4 +9,4 @@ Report report = await Report.Create("payment_log", new Dictionary<string, object
     { "end_date", "2016-10-31" }
 });
 
-Console.Write(report);
+Console.WriteLine(JsonConvert.SerializeObject(report, Formatting.Indented));

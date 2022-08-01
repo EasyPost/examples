@@ -6,4 +6,4 @@ InsuranceCollection insuranceCollection = await Insurance.All(new Dictionary<str
   { "page_size", 5 }
 });
 
-Console.Write(insuranceCollection);
+Console.WriteLine(JsonConvert.SerializeObject(insuranceCollection, Formatting.Indented));

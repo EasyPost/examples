@@ -6,4 +6,4 @@ Batch batch = await Batch.Retrieve("batch_...");
 
 await batch.GenerateScanForm();
 
-Console.Write(batch);
+Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));

@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 PaymentMethod paymentMethods = await Billing.RetrievePaymentMethods();
 
-Console.Write(paymentMethods);
+Console.WriteLine(JsonConvert.SerializeObject(paymentMethods, Formatting.Indented));

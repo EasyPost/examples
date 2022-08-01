@@ -16,4 +16,4 @@ Address address = await Address.Create(
     }
 );
 
-Console.Write(address);
+Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));

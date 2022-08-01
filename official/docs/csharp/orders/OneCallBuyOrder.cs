@@ -12,7 +12,7 @@ Order order = await Order.Create(new Dictionary<string, object>() {
     { "id", "adr_..."}
   },
   { "from_address", new Dictionary<string, string>()
-    {"id", "adr_..."}
+    { "id", "adr_..." }
   },
   { "shipments", new List<Dictionary<string, object>>(){
     {
@@ -31,4 +31,4 @@ Order order = await Order.Create(new Dictionary<string, object>() {
     } }
 });
 
-Console.Write(order);
+Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));

@@ -19,4 +19,4 @@ CarrierAccount carrierAccount = await CarrierAccount.Create(new Dictionary<strin
   } },
 });
 
-Console.Write(carrierAccount);
+Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));

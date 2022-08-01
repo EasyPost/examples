@@ -2,7 +2,7 @@ using EasyPost;
 
 EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
-CustomsItem custtomsItem = await CustomsItem.Create(new Dictionary<string, object>() {
+CustomsItem customsItem = await CustomsItem.Create(new Dictionary<string, object>() {
   { "description", "T-shirt" },
   { "quantity", 1 },
   { "weight", 5 },
@@ -11,4 +11,4 @@ CustomsItem custtomsItem = await CustomsItem.Create(new Dictionary<string, objec
   { "hs_tariff_number", "123456" }
 });
 
-Console.Write(custtomsItem);
+Console.WriteLine(JsonConvert.SerializeObject(customsItem, Formatting.Indented));

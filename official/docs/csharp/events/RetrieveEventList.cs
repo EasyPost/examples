@@ -6,4 +6,4 @@ listParams = new Dictionary<string, object>() { "page_size", 5 };
 
 EventCollection events = await Event.All(listParams);
 
-Console.Write(events);
+Console.WriteLine(JsonConvert.SerializeObject(events, Formatting.Indented));

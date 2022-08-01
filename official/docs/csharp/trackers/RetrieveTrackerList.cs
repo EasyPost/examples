@@ -8,4 +8,4 @@ Dictionary<string, object> listParams = new Dictionary<string, object>() {
 
 TrackerCollection trackerCollection = await Tracker.All(listParams);
 
-Console.Write(trackerCollection);
+Console.WriteLine(JsonConvert.SerializeObject(trackerCollection, Formatting.Indented));

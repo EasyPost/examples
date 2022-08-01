@@ -10,4 +10,4 @@ await ca.Update(new Dictionary<string, object>() {
   } },
 });
 
-Console.Write(carrierAccount);
+Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));

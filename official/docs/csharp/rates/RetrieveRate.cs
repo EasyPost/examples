@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Rate rate = await Rate.Retrieve("rate...");
 
-Console.Write(rate);
+Console.WriteLine(JsonConvert.SerializeObject(rate, Formatting.Indented));

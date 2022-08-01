@@ -12,4 +12,4 @@ batch.AddShipments("shipments", new List<Dictionary<string, object>>(){
     }
  );
 
-Console.Write(batch);
+Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));

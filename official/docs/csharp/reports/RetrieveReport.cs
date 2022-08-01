@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Report report = await Report.Retrieve("<REPORT_ID>");
 
-Console.Write(report);
+Console.WriteLine(JsonConvert.SerializeObject(report, Formatting.Indented));

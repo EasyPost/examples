@@ -6,4 +6,4 @@ User user = await User.Create(new Dictionary<string, object>() {
   { "name", "Child Account Name" }
 });
 
-Console.Write(user);
+Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

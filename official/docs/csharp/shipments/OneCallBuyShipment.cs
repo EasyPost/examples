@@ -36,4 +36,4 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
   } }
 });
 
-Console.Write(shipment);
+Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

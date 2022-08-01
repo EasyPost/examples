@@ -6,4 +6,4 @@ Shipment shipment = await Shipment.Retrieve("shp_...");
 
 await shipment.GetSmartrates();
 
-Console.Write(shipment);
+Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

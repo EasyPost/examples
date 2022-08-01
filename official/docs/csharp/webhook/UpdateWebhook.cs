@@ -6,4 +6,4 @@ Webhook webhook = await Webhook.Retrieve("hook_...");
 
 await webhook.Update();
 
-Console.Write(webhook);
+Console.WriteLine(JsonConvert.SerializeObject(webhook, Formatting.Indented));

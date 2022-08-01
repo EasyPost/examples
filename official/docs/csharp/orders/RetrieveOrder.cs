@@ -4,4 +4,4 @@ EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
 Order order = await Order.Retrieve("order_...");
 
-Console.Write(order);
+Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
