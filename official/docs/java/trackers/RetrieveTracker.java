@@ -1,5 +1,4 @@
 import com.easypost.EasyPost;
-import com.easypost.exception.EasyPostException;
 
 public class RetrieveTracker {
     public static void main(String[] args) {
