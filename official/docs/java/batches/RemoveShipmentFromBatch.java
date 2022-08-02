@@ -1,5 +1,4 @@
 import com.easypost.EasyPost;
-import com.easypost.exception.EasyPostException;
 
 public class RemoveShipmentFromBatch {
     public static void main(String[] args) {

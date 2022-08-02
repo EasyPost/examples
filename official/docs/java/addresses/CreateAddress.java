@@ -1,7 +1,5 @@
 import com.easypost.EasyPost;
 
-import java.util.HashMap;
-
 public class CreateAddress {
     public static void main(String[] args) {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";

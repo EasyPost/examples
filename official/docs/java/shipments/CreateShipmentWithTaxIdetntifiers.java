@@ -1,7 +1,4 @@
-import java.util.Map;
-
 import com.easypost.EasyPost;
-import com.easypost.exception.EasyPostException;
 
 public class CreateShipmentWithTaxIdetntifiers {
     public static void main(String[] args) {
