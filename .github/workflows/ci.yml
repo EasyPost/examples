@@ -38,3 +38,17 @@ jobs:
         run: make install-ruby
       - name: Lint project
         run: make lint-ruby
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Java dependencies
+        run: make install-java
+      - name: Run CheckStyle checks
+        uses: nikitasavinov/checkstyle-action@0.5.1
+        with:
+          level: error
+          fail_on_error: true
+          checkstyle_config: easypost_java_style.xml
+          tool_name: "style_enforcer"
