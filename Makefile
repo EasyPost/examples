@@ -1,13 +1,23 @@
+PYTHON_BINARY := python3
+PYTHON_VIRTUAL_ENV := venv
+PYTHON_VIRTUAL_BIN := $(PYTHON_VIRTUAL_ENV)/bin
+
+
 ## help - Display help about make targets for this Makefile
 help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
 
 ## install - install all dependencies for each language
-install: | install-csharp install-ruby
+install: | install-csharp install-python install-ruby
 
 ## install-csharp - install C# dependencies
 install-csharp:
 	dotnet tool install -g dotnet-format
+
+## install-python - install Python dependencies
+install-python:
+	$(PYTHON_BINARY) -m venv $(PYTHON_VIRTUAL_ENV)
+	$(PYTHON_VIRTUAL_BIN)/pip install black isort flake8
 
 ## install-ruby - installs Ruby dependencies
 install-ruby:
@@ -22,6 +32,15 @@ lint-csharp:
     # folder options skip looking for a project/solution, just analyze any *.cs file
 	dotnet format whitespace --include official/docs/csharp/ --folder --verify-no-changes
 	dotnet format whitespace --include official/guides/csharp/ --folder --verify-no-changes
+
+## lint-python - lint Python files
+lint-python:
+    # Run the Black Python formatter
+	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
+	$(PYTHON_VIRTUAL_BIN)/black official/guides/python/ --check
+    # Run the isort Python formatter
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
+	$(PYTHON_VIRTUAL_BIN)/isort official/guides/python/ --check-only
 
 ## lint-ruby - lints Ruby files
 lint-ruby:
@@ -43,6 +62,18 @@ format-csharp:
     # folder options skip looking for a project/solution, just analyze any *.cs file
 	dotnet format whitespace --include official/docs/csharp/ --folder
 	dotnet format whitespace --include official/guides/csharp/ --folder
+
+## format-python - formats Python files
+format-python:
+    # Run the Black Python formatter
+	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/black official/guides/python/
+    # Run the isort Python formatter
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/isort official/guides/python/
+    # Run the flake8 Python formatter
+	$(PYTHON_VIRTUAL_BIN)/flake8 official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/flake8 official/guides/python/
 
 ## format-ruby - formats Ruby files
 format-ruby:

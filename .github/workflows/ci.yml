@@ -25,6 +25,15 @@ jobs:
         run: make install-csharp
       - name: Lint project
         run: make lint-csharp
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Python dependencies
+        run: make install-python
+      - name: Lint project
+        run: make lint-python
   ruby:
     runs-on: ubuntu-latest
     steps:
