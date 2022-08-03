@@ -1,9 +1,14 @@
+PYTHON_BINARY := python3
+PYTHON_VIRTUAL_ENV := venv
+PYTHON_VIRTUAL_BIN := $(PYTHON_VIRTUAL_ENV)/bin
+
+
 ## help - Display help about make targets for this Makefile
 help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
 
 ## install - install all dependencies for each language
-install: | install-csharp install-java install-ruby
+install: | install-csharp install-java install-python install-ruby
 
 ## install-csharp - install C# dependencies
 install-csharp:
@@ -15,6 +20,11 @@ install-java:
 	wget -O checkstyle.jar -q https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar
     # download EasyPost stylesheet, use local style suppressions
 	wget -O easypost_java_style.xml -q https://raw.githubusercontent.com/EasyPost/easypost-java/master/easypost_java_style.xml
+
+## install-python - install Python dependencies
+install-python:
+	$(PYTHON_BINARY) -m venv $(PYTHON_VIRTUAL_ENV)
+	$(PYTHON_VIRTUAL_BIN)/pip install black isort flake8
 
 ## install-ruby - installs Ruby dependencies
 install-ruby:
@@ -35,6 +45,15 @@ lint-csharp:
 lint-java:
 	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/docs/java/
 	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/guides/java/
+
+## lint-python - lint Python files
+lint-python:
+    # Run the Black Python formatter
+	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
+	$(PYTHON_VIRTUAL_BIN)/black official/guides/python/ --check
+    # Run the isort Python formatter
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
+	$(PYTHON_VIRTUAL_BIN)/isort official/guides/python/ --check-only
 
 ## lint-ruby - lints Ruby files
 lint-ruby:
@@ -61,6 +80,18 @@ format-csharp:
 ## format-java - formats Java files
 format-java:
 	echo "Not implemented"
+
+## format-python - formats Python files
+format-python:
+    # Run the Black Python formatter
+	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/black official/guides/python/
+    # Run the isort Python formatter
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/isort official/guides/python/
+    # Run the flake8 Python formatter
+	$(PYTHON_VIRTUAL_BIN)/flake8 official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/flake8 official/guides/python/
 
 ## format-ruby - formats Ruby files
 format-ruby:
