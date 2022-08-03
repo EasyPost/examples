@@ -48,7 +48,7 @@ lint-shell:
 	shfmt -i 2 -d official/guides/curl
 
 ## format - formats the entire project
-format: | format-csharp format-java format-shell
+format: | format-csharp format-java format-ruby format-shell
 
 ## format-csharp - formats C# files
 format-csharp:
@@ -71,4 +71,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-java install-ruby lint lint-java lint-ruby lint-shell format format-java format-ruby format-shell
+.PHONY: help install install-csharp install-java install-ruby lint lint-csharp lint-java lint-ruby lint-shell format format-csharp format-java format-ruby format-shell
