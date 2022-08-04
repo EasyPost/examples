@@ -3,7 +3,11 @@ help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
 
 ## install - install all dependencies for each language
-install: | install-java install-ruby
+install: | install-csharp install-java install-ruby
+
+## install-csharp - install C# dependencies
+install-csharp:
+	dotnet tool install -g dotnet-format
 
 ## install-java - installs Java dependencies
 install-java:
@@ -17,7 +21,15 @@ install-ruby:
 	bundle install
 
 ## lint - lints the entire project
-lint: | lint-java lint-ruby lint-shell
+lint: | lint-csharp lint-java lint-ruby lint-shell
+
+## lint-csharp - lint C# files
+lint-csharp:
+    # clean up whitespace formatting
+    # folder options skip looking for a project/solution, just analyze any *.cs file
+	dotnet format whitespace --include official/docs/csharp/ --folder --verify-no-changes
+	dotnet format whitespace --include official/guides/csharp/ --folder --verify-no-changes
+
 
 ## lint-java - lints Java files
 lint-java:
@@ -36,7 +48,15 @@ lint-shell:
 	shfmt -i 2 -d official/guides/curl
 
 ## format - formats the entire project
-format: | format-java format-shell
+format: | format-csharp format-java format-ruby format-shell
+
+## format-csharp - formats C# files
+format-csharp:
+    # clean up whitespace formatting
+    # folder options skip looking for a project/solution, just analyze any *.cs file
+	dotnet format whitespace --include official/docs/csharp/ --folder
+	dotnet format whitespace --include official/guides/csharp/ --folder
+
 
 ## format-java - formats Java files
 format-java:
@@ -51,4 +71,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-java install-ruby lint lint-java lint-ruby lint-shell format format-java format-ruby format-shell
+.PHONY: help install install-csharp install-java install-ruby lint lint-csharp lint-java lint-ruby lint-shell format format-csharp format-java format-ruby format-shell
