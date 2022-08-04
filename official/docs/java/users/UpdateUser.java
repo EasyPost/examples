@@ -7,9 +7,9 @@ public class UpdateUser {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("recharge_threshold", "50.00");
 
-        User me = User.retrieveMe();
+        User user = User.retrieveMe();
 
-        me.update(params);
+        user.update(params);
 
         System.out.println(user);
     }
