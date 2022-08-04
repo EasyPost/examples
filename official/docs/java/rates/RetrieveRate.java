@@ -6,6 +6,6 @@ public class RetrieveRate {
 
         Rate rate = Rate.retrieve("rate_...");
 
-        System.out.prntln(pickup);
+        System.out.prntln(rate);
     }
 }

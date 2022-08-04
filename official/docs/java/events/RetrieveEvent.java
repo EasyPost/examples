@@ -6,6 +6,6 @@ public class RetrieveEvent {
 
         Event event = Event.retrieve("evt_...");
 
-        System.out.println(events);
+        System.out.println(event);
     }
 }

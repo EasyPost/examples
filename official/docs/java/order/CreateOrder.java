@@ -27,8 +27,6 @@ public class CreateOrder {
 
         Order order = Order.create(orderMap);
 
-        List<CarrierAccount> carrierAccounts = CarrierAccount.all(listHash);
-
         System.out.println(order);
     }
 }

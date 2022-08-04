@@ -9,6 +9,6 @@ public class InsureShipment {
         insureMap.put("amount", 100);
         purchasedShipment = purchasedShipment.insure(insureMap);
 
-        System.out.println(shipment);
+        System.out.println(purchasedShipment);
     }
 }

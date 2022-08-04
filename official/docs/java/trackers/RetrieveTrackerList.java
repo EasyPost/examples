@@ -9,6 +9,6 @@ public class RetrieveTrackerList {
 
         TrackerCollection trackers = Tracker.all(list_params);
 
-        System.out.println(tracker);
+        System.out.println(trackers);
     }
 }

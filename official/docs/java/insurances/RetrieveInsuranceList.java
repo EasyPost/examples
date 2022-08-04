@@ -9,6 +9,6 @@ public class RetrieveInsuranceList {
 
         InsuranceCollection insurances = Insurance.all(list_params);
 
-        System.out.println(insurance);
+        System.out.println(insurances);
     }
 }

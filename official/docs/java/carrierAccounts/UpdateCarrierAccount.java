@@ -14,6 +14,6 @@ public class UpdateCarrierAccount {
 
         carrierAccount.update(params);
 
-        System.out.println(carrier_account);
+        System.out.println(carrierAccount);
     }
 }

@@ -5,7 +5,7 @@ public class DeleteCarrrierAccount {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         CarrierAccount carrierAccount = CarrierAccount.retrieve("ca_...");
-        carrier_account.delete();
+        carrierAccount.delete();
 
         system.out.println(carrierAccount);
     }

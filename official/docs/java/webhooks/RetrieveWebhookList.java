@@ -6,6 +6,6 @@ public class RetrieveWebhookList {
 
         WebhookCollection webhooks = Webhook.all();
 
-        System.out.println(webhook);
+        System.out.println(webhooks);
     }
 }

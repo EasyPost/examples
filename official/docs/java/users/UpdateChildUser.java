@@ -8,9 +8,9 @@ public class UpdateChildUser {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("name", "Test Child");
 
-        User me = User.retrieveMe();
+        User user = User.retrieveMe();
 
-        me.update(params);
+        user.update(params);
 
         System.out.println(user);
     }

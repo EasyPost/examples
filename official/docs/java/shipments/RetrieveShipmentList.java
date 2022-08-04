@@ -9,6 +9,6 @@ public class RetrieveShipmentList {
 
         ShipmentCollection shipments = Shipment.all(listParams);
 
-        System.out.println(shipment);
+        System.out.println(shipments);
     }
 }
