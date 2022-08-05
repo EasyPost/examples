@@ -8,5 +8,6 @@ This repository holds hundreds of code examples for using the EasyPost API acros
 
 - `official` holds all the official code snippets that populate on the EasyPost website
   - `docs` holds all the code snippets that populate on our API docs page. Each language will have its own subdirectory
+  - `fixtures` holds all of the test data used as fixtures in our client library test suites
   - `guides` holds all the code snippets that populate on our guides page. Each language will have its own subdirectory
 - `community` holds code snippets contributed from the community. These may include custom workflows, how to integrate EasyPost with other software, etc
