@@ -16,5 +16,7 @@ public class RemoveShipmentFromBatch {
         batchMap.put("shipments", shipments);
 
         batch.removeShipments(batchMap);
+
+        System.out.println(batch);
     }
 }

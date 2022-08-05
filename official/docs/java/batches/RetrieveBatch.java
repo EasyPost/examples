@@ -5,5 +5,7 @@ public class RetrieveBatch {
         EasyPost.apiKey = "<EASYPOST_API_KEY>";
 
         Batch batch = Batch.retrieve("batch_...");
+
+        System.out.println(batch);
     }
 }

@@ -7,7 +7,7 @@ public class RetrieveInsuranceList {
         Map<String, Object> listParams = new HashMap<>();
         listParams.put("page_size", 5);
 
-        InsuranceCollection insurances = Insurance.all(list_params);
+        InsuranceCollection insurances = Insurance.all(listParams);
 
         System.out.println(insurances);
     }
