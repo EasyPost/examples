@@ -2,12 +2,9 @@ import com.easypost.EasyPost;
 
 public class RetrieveCarrierAccountList {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
-        Map<String, Object> listHash = new HashMap<String, Object>();
-        listHash.put("type", "UpsAccount");
-
-        List<CarrierAccount> carrierAccounts = CarrierAccount.all(listHash);
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
+        List<CarrierAccount> carrierAccounts = CarrierAccount.all();
 
         System.out.println(carrierAccounts);
     }

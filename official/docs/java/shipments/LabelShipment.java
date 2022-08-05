@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class LabelShipment {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         Shipment shipment = Shipment.retrieve("shp_...");
 
         Map<String, Object> params = new HashMap<String, Object>();

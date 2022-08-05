@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class CreateOrder {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         HashMap<String, Object> toAddress = new HashMap<String, Object>();
         toAddress.put("id", "adr_...");
 

@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class DeleteChildUser {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         User user = User.retrieve("user_...");
 
         user.delete();

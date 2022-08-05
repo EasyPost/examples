@@ -2,8 +2,7 @@ import com.easypost.EasyPost;
 
 public class StrictVerifyAddress {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         Map<String, Object> addressHash = new HashMap<String, Object>();
 
         addressHash.put("street1", "417 Montgomery Street");

@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class CreatePickup {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         HashMap<String, Object> address = new HashMap<String, Object>();
         fromAddress.put("id", "adr_...");
 

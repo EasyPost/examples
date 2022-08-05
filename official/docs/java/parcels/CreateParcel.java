@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class CreateParcel {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         Map<String, Object> parcelMap = new HashMap<String, Object>();
         parcelMap.put("height", 5);
         parcelMap.put("width", 10.9);

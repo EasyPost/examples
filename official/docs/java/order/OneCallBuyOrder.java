@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class OneCallBuyOrder {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         Map<String, Object> orderHash = new HashMap<String, Object>();
         ArrayList<Shipment> shipments = new ArrayList<Shipment>();
 

@@ -2,11 +2,10 @@ import com.easypost.EasyPost;
 
 public class CreateInsurance {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         Map<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("id", "adr_...");
-
 
         Map<String, Object> fromAddressMap = new HashMap<String, Object>();
         fromAddressMap.put("id", "adr_...");

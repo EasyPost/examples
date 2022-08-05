@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class CreateCarrierAccount {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         Map<String, Object> credentials = new HashMap<String, Object>();
         credentials.put("client_id", "123456");
         credentials.put("client_secret", "123abc");

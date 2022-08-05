@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class CreateShipmentWithTaxIdetntifiers {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         Map<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("name", "Dr. Steve Brule");
         toAddressMap.put("street1", "179 N Harbor Dr");

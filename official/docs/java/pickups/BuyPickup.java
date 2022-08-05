@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class BuyPickup {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         Pickup pickup = Pickup.retrieve("pickup_...");
 
         Map<String, Object> buyMap = new HashMap<String, Object>();

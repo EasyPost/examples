@@ -2,9 +2,8 @@ import com.easypost.EasyPost;
 
 public class UpdateChildUser {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("name", "Test Child");
 

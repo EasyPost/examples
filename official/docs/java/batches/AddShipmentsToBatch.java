@@ -2,8 +2,8 @@ import com.easypost.EasyPost;
 
 public class AddShipmentsToBatch {
     public static void main(String[] args) {
-        EasyPost.apiKey = "<EASYPOST_API_KEY>";
-
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        
         List<Map<String, Object>> shipments = new ArrayList<Map<String, Object>>();
         Map<String, Object> shipment1 = new HashMap<String, Object>();
         shipment1.put("id", "shp_...");
