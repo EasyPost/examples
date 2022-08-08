@@ -1,2 +1,4 @@
 .DS_Store
 .idea
+/easypost_java_style.xml
+/checkstyle.jar
