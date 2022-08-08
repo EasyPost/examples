@@ -15,3 +15,5 @@ address = easypost.Address.create(
 )
 
 address.verify()
+
+print(address)
