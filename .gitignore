@@ -1,2 +1,6 @@
 .DS_Store
+.env
 .idea
+/checkstyle.jar
+/easypost_java_style.xml
+venv

@@ -1,4 +1,6 @@
 import easypost
+
+
 easypost.api_key = "EASYPOST_API_KEY"
 
 address = easypost.Address.create(
@@ -9,7 +11,7 @@ address = easypost.Address.create(
     zip="94104",
     country="US",
     company="EasyPost",
-    phone="415-123-4567"
+    phone="415-123-4567",
 )
 
 print(address)

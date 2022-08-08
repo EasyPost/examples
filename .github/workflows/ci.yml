@@ -6,13 +6,60 @@ on:
   pull_request: ~
 
 jobs:
-  build:
+  shell:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run sh-checker
         uses: luizm/action-sh-checker@master
         env:
           SHFMT_OPTS: -i 2 -d
           SHELLCHECK_OPTS: -e SC2148
+  csharp:
+    runs-on: windows-2022
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install C# dependencies
+        run: make install-csharp
+      - name: Lint project
+        run: make lint-csharp
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Python dependencies
+        run: make install-python
+      - name: Lint project
+        run: make lint-python
+      - name: Check formatting
+        run: make format-python-check
+  ruby:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+      - name: Install Ruby dependencies
+        run: make install-ruby
+      - name: Lint project
+        run: make lint-ruby
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Java dependencies
+        run: make install-java
+      - name: Run CheckStyle checks
+        uses: nikitasavinov/checkstyle-action@0.5.1
+        with:
+          level: error
+          fail_on_error: true
+          checkstyle_config: easypost_java_style.xml
+          tool_name: "style_enforcer"
