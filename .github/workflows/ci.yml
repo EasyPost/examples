@@ -34,6 +34,8 @@ jobs:
         run: make install-python
       - name: Lint project
         run: make lint-python
+      - name: Check formatting
+        run: make format-python-check
   ruby:
     runs-on: ubuntu-latest
     steps:

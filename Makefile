@@ -24,7 +24,7 @@ install-java:
 ## install-python - install Python dependencies
 install-python:
 	$(PYTHON_BINARY) -m venv $(PYTHON_VIRTUAL_ENV)
-	$(PYTHON_VIRTUAL_BIN)/pip install black isort flake8
+	$(PYTHON_VIRTUAL_BIN)/pip install -r requirements.txt
 
 ## install-ruby - installs Ruby dependencies
 install-ruby:
@@ -48,12 +48,7 @@ lint-java:
 
 ## lint-python - lint Python files
 lint-python:
-    # Run the Black Python formatter
-	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
-	$(PYTHON_VIRTUAL_BIN)/black official/guides/python/ --check
-    # Run the isort Python formatter
-	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
-	$(PYTHON_VIRTUAL_BIN)/isort official/guides/python/ --check-only
+	$(PYTHON_VIRTUAL_BIN)/flake8 official/docs/python/
 
 ## lint-ruby - lints Ruby files
 lint-ruby:
@@ -76,22 +71,19 @@ format-csharp:
 	dotnet format whitespace --include official/docs/csharp/ --folder
 	dotnet format whitespace --include official/guides/csharp/ --folder
 
-
 ## format-java - formats Java files
 format-java:
 	echo "Not implemented"
 
 ## format-python - formats Python files
 format-python:
-    # Run the Black Python formatter
+	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
+
+## format-python-check - checks that Python files conform to the correct format
+format-python-check:
 	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
-	$(PYTHON_VIRTUAL_BIN)/black official/guides/python/
-    # Run the isort Python formatter
 	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/
-	$(PYTHON_VIRTUAL_BIN)/isort official/guides/python/
-    # Run the flake8 Python formatter
-	$(PYTHON_VIRTUAL_BIN)/flake8 official/docs/python/
-	$(PYTHON_VIRTUAL_BIN)/flake8 official/guides/python/
 
 ## format-ruby - formats Ruby files
 format-ruby:

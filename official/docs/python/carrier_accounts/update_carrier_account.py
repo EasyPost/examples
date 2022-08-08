@@ -1,4 +1,6 @@
 import easypost
+
+
 easypost.api_key = "EASYPOST_API_KEY"
 
 carrier_account = easypost.CarrierAccount.retrieve("ca_...")
