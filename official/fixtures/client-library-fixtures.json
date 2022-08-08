@@ -1,12 +1,22 @@
 {
   "addresses": {
-    "from_address": {
+    "ca_address_1": {
       "name": "Jack Sparrow",
       "street1": "388 Townsend St",
       "street2": "Apt 20",
       "city": "San Francisco",
       "state": "CA",
       "zip": "94107",
+      "country": "US",
+      "email": "test@example.com",
+      "phone": "5555555555"
+    },
+    "ca_address_2": {
+      "name": "Elizabeth Swan",
+      "street1": "179 N Harbor Dr",
+      "city": "Redondo Beach",
+      "state": "CA",
+      "zip": "90277",
       "country": "US",
       "email": "test@example.com",
       "phone": "5555555555"
@@ -18,16 +28,6 @@
       "city": "San Francisco",
       "state": "CA",
       "zip": "94104",
-      "country": "US",
-      "email": "test@example.com",
-      "phone": "5555555555"
-    },
-    "to_address": {
-      "name": "Elizabeth Swan",
-      "street1": "179 N Harbor Dr",
-      "city": "Redondo Beach",
-      "state": "CA",
-      "zip": "90277",
       "country": "US",
       "email": "test@example.com",
       "phone": "5555555555"
@@ -140,7 +140,7 @@
   "insurances": {
     "basic": {
       "from_address": {
-        "company": "EasyPost",
+        "name": "Jack Sparrow",
         "street1": "388 Townsend St",
         "street2": "Apt 20",
         "city": "San Francisco",
@@ -151,7 +151,7 @@
         "phone": "5555555555"
       },
       "to_address": {
-        "name": "Jack Sparrow",
+        "name": "Elizabeth Swan",
         "street1": "179 N Harbor Dr",
         "city": "Redondo Beach",
         "state": "CA",
@@ -167,7 +167,7 @@
   "orders": {
     "basic": {
       "from_address": {
-        "company": "EasyPost",
+        "name": "Jack Sparrow",
         "street1": "388 Townsend St",
         "street2": "Apt 20",
         "city": "San Francisco",
@@ -178,7 +178,7 @@
         "phone": "5555555555"
       },
       "to_address": {
-        "name": "Jack Sparrow",
+        "name": "Elizabeth Swan",
         "street1": "179 N Harbor Dr",
         "city": "Redondo Beach",
         "state": "CA",
@@ -190,7 +190,7 @@
       "shipments": [
         {
           "from_address": {
-            "company": "EasyPost",
+            "name": "Jack Sparrow",
             "street1": "388 Townsend St",
             "street2": "Apt 20",
             "city": "San Francisco",
@@ -201,7 +201,7 @@
             "phone": "5555555555"
           },
           "to_address": {
-            "name": "Jack Sparrow",
+            "name": "Elizabeth Swan",
             "street1": "179 N Harbor Dr",
             "city": "Redondo Beach",
             "state": "CA",
@@ -240,10 +240,11 @@
     "basic": {
       "address": {
         "name": "Jack Sparrow",
-        "street1": "179 N Harbor Dr",
-        "city": "Redondo Beach",
+        "street1": "388 Townsend St",
+        "street2": "Apt 20",
+        "city": "San Francisco",
         "state": "CA",
-        "zip": "90277",
+        "zip": "94107",
         "country": "US",
         "email": "test@example.com",
         "phone": "5555555555"
@@ -265,7 +266,7 @@
   "shipments": {
     "basic_domestic": {
       "from_address": {
-        "company": "EasyPost",
+        "name": "Jack Sparrow",
         "street1": "388 Townsend St",
         "street2": "Apt 20",
         "city": "San Francisco",
@@ -276,7 +277,7 @@
         "phone": "5555555555"
       },
       "to_address": {
-        "name": "Jack Sparrow",
+        "name": "Elizabeth Swan",
         "street1": "179 N Harbor Dr",
         "city": "Redondo Beach",
         "state": "CA",
@@ -294,7 +295,7 @@
     },
     "full": {
       "from_address": {
-        "company": "EasyPost",
+        "name": "Jack Sparrow",
         "street1": "388 Townsend St",
         "street2": "Apt 20",
         "city": "San Francisco",
@@ -305,7 +306,7 @@
         "phone": "5555555555"
       },
       "to_address": {
-        "name": "Jack Sparrow",
+        "name": "Elizabeth Swan",
         "street1": "179 N Harbor Dr",
         "city": "Redondo Beach",
         "state": "CA",
