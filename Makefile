@@ -77,13 +77,13 @@ format-java:
 
 ## format-python - formats Python files
 format-python:
-	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
-	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
+	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/
 
 ## format-python-check - checks that Python files conform to the correct format
 format-python-check:
-	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
-	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
 
 ## format-ruby - formats Ruby files
 format-ruby:
@@ -94,4 +94,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-csharp install-java install-ruby lint lint-csharp lint-java lint-ruby lint-shell format format-csharp format-java format-ruby format-shell
+.PHONY: help install install-csharp install-java install-python install-ruby lint lint-csharp lint-java lint-python lint-ruby lint-shell format format-csharp format-java format-python format-python-check format-ruby format-shell
