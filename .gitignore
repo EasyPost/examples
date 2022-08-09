@@ -3,4 +3,5 @@
 .idea
 /checkstyle.jar
 /easypost_java_style.xml
+node_modules
 venv

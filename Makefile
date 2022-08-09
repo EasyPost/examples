@@ -8,7 +8,7 @@ help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
 
 ## install - install all dependencies for each language
-install: | install-csharp install-java install-python install-ruby
+install: | install-csharp install-java install-node install-python install-ruby
 
 ## install-csharp - install C# dependencies
 install-csharp:
@@ -20,6 +20,10 @@ install-java:
 	wget -O checkstyle.jar -q https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar
     # download EasyPost stylesheet, use local style suppressions
 	wget -O easypost_java_style.xml -q https://raw.githubusercontent.com/EasyPost/easypost-java/master/easypost_java_style.xml
+
+## install-node - installs Node dependencies
+install-node:
+	npm install
 
 ## install-python - install Python dependencies
 install-python:
@@ -45,6 +49,10 @@ lint-csharp:
 lint-java:
 	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/docs/java/
 	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/guides/java/
+
+## lint-node - lints Node files
+lint-node:
+	npm run lint
 
 ## lint-python - lint Python files
 lint-python:
@@ -75,6 +83,14 @@ format-csharp:
 format-java:
 	echo "Not implemented"
 
+## format-node - formats Node files
+format-node:
+	npm run format
+
+## format-node-check - checks that Node files conform to the correct format
+format-node-check:
+	npm run check
+
 ## format-python - formats Python files
 format-python:
 	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
@@ -94,4 +110,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-csharp install-java install-python install-ruby lint lint-csharp lint-java lint-python lint-ruby lint-shell format format-csharp format-java format-python format-python-check format-ruby format-shell
+.PHONY: help install install-csharp install-java install-node install-python install-ruby lint lint-csharp lint-java lint-node lint-python lint-ruby lint-shell format format-csharp format-java format-node format-python format-python-check format-ruby format-shell
