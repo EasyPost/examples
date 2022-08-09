@@ -29,5 +29,8 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "~2.25.2",
     "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@easypost/api": "^5.5.0"
   }
 }

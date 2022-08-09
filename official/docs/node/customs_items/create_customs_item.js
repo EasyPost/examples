@@ -7,7 +7,7 @@ const customsItem = new api.CustomsItem({
   value: 10,
   weight: 5,
   hs_tariff_number: '123456',
-  origin_country: 'us'
+  origin_country: 'us',
 });
 
 customsItem.save().then(console.log);

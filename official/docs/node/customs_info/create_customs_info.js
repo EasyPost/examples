@@ -16,13 +16,14 @@ item.save().then(() => {
     customs_items: [
       item,
       new api.CustomsItem({
-      'description': 'T-shirts',
-      'quantity': 1,
-      'weight': 5,
-      'value': 10,
-      'hs_tariff_number': '123456',
-      'origin_country': 'US'
-    })],
+        description: 'T-shirts',
+        quantity: 1,
+        weight: 5,
+        value: 10,
+        hs_tariff_number: '123456',
+        origin_country: 'US',
+      }),
+    ],
   });
 
   customsInfo.save().then(console.log);
