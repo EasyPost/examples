@@ -6,3 +6,5 @@ require_once("../lib/easypost.php");
 $addresses = \EasyPost\Address::all(array(
     "page_size" => 5
   ));
+
+echo $addressses;

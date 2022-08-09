@@ -5,9 +5,9 @@ require_once("../lib/easypost.php");
 
 $address_params = array(
     "verify"  => true,
-    "street1" => "417 montgomery streat",
-    "street2" => "FL 5",
-    "city"    => "San Francisco",
+    "street1" => "417 Montgomery Streat",
+    "street2" => "5",
+    "city"    => "SF",
     "state"   => "CA",
     "zip"     => "94104",
     "country" => "US",
@@ -16,4 +16,5 @@ $address_params = array(
 );
 
 $address = \EasyPost\Address::create($address_params);
-echo $address->street1 . "\n";
+
+echo $address;

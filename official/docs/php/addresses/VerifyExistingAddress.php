@@ -15,5 +15,7 @@ $address_params = array(
 );
 
 $address = \EasyPost\Address::create($address_params);
-// Verify an already created address.
+
 $address->verify();
+
+echo $addressses;

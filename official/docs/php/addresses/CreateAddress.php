@@ -5,7 +5,7 @@ require_once("../lib/easypost.php");
 
 $address_params = array(
     "street1" => "417 MONTGOMERY ST",
-    "street2" => "FL 5",
+    "street2" => "FLOOR 5",
     "city"    => "San Francisco",
     "state"   => "CA",
     "zip"     => "94104",
@@ -15,3 +15,5 @@ $address_params = array(
 );
 
 $address = \EasyPost\Address::create($address_params);
+
+echo $addresss;

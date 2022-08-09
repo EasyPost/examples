@@ -14,4 +14,6 @@ $address_params = array(
     "phone"   => "415-123-4567"
 );
 
-$verified_address = \EasyPost\Address::create_and_verify($address_params);
+$address = \EasyPost\Address::create_and_verify($address_params);
+
+echo $addresss;
