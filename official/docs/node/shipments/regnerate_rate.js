@@ -9,4 +9,4 @@ const shipment = api.Shipment.retrieve('shp_...').then((s) => {
   );
 });
 
-console.log(shipment);
+shipment.save().then(console.log);

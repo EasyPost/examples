@@ -5,4 +5,4 @@ const scanform = new api.ScanForm({
   shipments: ['shp_...', 'shp_...'],
 });
 
-console.log(scanform);
+scanform.save().then(console.log);

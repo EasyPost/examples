@@ -14,4 +14,4 @@ const form = api.Shipment.generateForm('return_packing_slip', {
   ],
 });
 
-console.log(form);
+form.save().then(console.log);

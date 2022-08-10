@@ -32,4 +32,4 @@ const shipment = new api.Shipment({
   },
 });
 
-console.log(shipment);
+shipment.save().then(console.log);

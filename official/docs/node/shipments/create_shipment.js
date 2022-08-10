@@ -31,6 +31,8 @@ const shipment = new api.Shipment({
   customs_info: { id: 'cstinfo_...' },
 });
 
+shipment.save().then(console.log);
+
 // or create by using IDs
 
 const shipment2 = new api.Shipment({
@@ -40,4 +42,4 @@ const shipment2 = new api.Shipment({
   customs_info: { id: 'cstinfo_...' },
 });
 
-console.log(shipment);
+shipment2.save().then(console.log);

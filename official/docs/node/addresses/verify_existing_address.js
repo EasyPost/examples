@@ -11,6 +11,6 @@ const address = new api.Address({
   phone: '415-123-4567',
 });
 
-address.save();
-
-console.log(address);
+address.save().then((data) => {
+  data.verifyAddress().then(console.log);
+});

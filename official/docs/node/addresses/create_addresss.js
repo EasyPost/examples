@@ -10,4 +10,6 @@ const address = new api.Address({
   country: 'US',
   company: 'EasyPost',
   phone: '415-123-4567',
-}).then(console.log);
+});
+
+address.save().then(console.log);

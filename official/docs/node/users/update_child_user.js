@@ -5,6 +5,4 @@ const user = api.User.retrieve('rate_...');
 
 user.name = 'Test Child';
 
-user.save();
-
-console.log(user);
+user.save().then(console.log);

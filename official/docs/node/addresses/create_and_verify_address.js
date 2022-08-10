@@ -1,7 +1,7 @@
 const Easypost = require('@easypost/api');
 const api = new Easypost('EASYPOST_API_KEY');
 
-const address = new api.Address.createAndVerify({
+api.Address.createAndVerify({
   street1: '417 montgomery street',
   street2: 'FL 5',
   city: 'San Francisco',
@@ -10,6 +10,6 @@ const address = new api.Address.createAndVerify({
   country: 'US',
   company: 'EasyPost',
   phone: '415-123-4567',
+}).then((verifiedAddress) => {
+  console.log(verifiedAddress);
 });
-
-console.log(address);

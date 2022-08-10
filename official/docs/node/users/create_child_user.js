@@ -5,4 +5,4 @@ const user = new api.User({
   name: 'Child Account Name',
 });
 
-user.save().then((u) => console.log(u.id));
+user.save().then(console.log);

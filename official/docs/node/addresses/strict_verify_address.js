@@ -13,4 +13,4 @@ const address = new api.Address({
   phone: '415-123-4567',
 });
 
-console.log(address);
+address.save().then(console.log);
