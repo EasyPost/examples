@@ -1,16 +1,17 @@
 package example
 
 import (
-    "os"
+	"fmt"
+	"os"
 
-    "github.com/EasyPost/easypost-go/v2"
+	"github.com/EasyPost/easypost-go/v2"
 )
 
 func main() {
-	  apiKey := os.Getenv("EASYPOST_API_KEY")
-    client := easypost.New(apiKey)
+	apiKey := os.Getenv("EASYPOST_API_KEY")
+	client := easypost.New(apiKey)
 
-    scanForm, err := client.CreateScanForm("shp_...", "shp_...")
+	scanForm, err := client.CreateScanForm("shp_...", "shp_...")
 
-    fmt.Println(scanForm)
+	fmt.Println(scanForm)
 }
