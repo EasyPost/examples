@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request: ~
 
 jobs:
@@ -25,6 +25,31 @@ jobs:
         run: make install-csharp
       - name: Lint project
         run: make lint-csharp
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Java dependencies
+        run: make install-java
+      - name: Run CheckStyle checks
+        uses: nikitasavinov/checkstyle-action@0.5.1
+        with:
+          level: error
+          fail_on_error: true
+          checkstyle_config: easypost_java_style.xml
+          tool_name: 'style_enforcer'
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: make install-node
+      - name: Lint project
+        run: make lint-node
+      - name: Check formatting
+        run: make format-node-check
   python:
     runs-on: ubuntu-latest
     steps:
@@ -44,22 +69,8 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1"
+          ruby-version: '3.1'
       - name: Install Ruby dependencies
         run: make install-ruby
       - name: Lint project
         run: make lint-ruby
-  java:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-      - name: Install Java dependencies
-        run: make install-java
-      - name: Run CheckStyle checks
-        uses: nikitasavinov/checkstyle-action@0.5.1
-        with:
-          level: error
-          fail_on_error: true
-          checkstyle_config: easypost_java_style.xml
-          tool_name: "style_enforcer"

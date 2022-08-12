@@ -1,0 +1,36 @@
+{
+  "name": "examples",
+  "version": "0.1.0",
+  "description": "This repository holds hundreds of code examples for using the EasyPost API across 7+ programming languages.",
+  "main": "index.js",
+  "scripts": {
+    "check": "prettier --check .",
+    "fix": "eslint official/docs/node --ext .js,.ts --fix",
+    "format": "prettier --write .",
+    "lint": "eslint official/docs/node --ext .js,.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EasyPost/examples.git"
+  },
+  "keywords": [
+    "easypost",
+    "examples"
+  ],
+  "author": "EasyPost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EasyPost/examples/issues"
+  },
+  "homepage": "https://github.com/EasyPost/examples#readme",
+  "devDependencies": {
+    "@easypost/eslint-config-easypost-base": "~2.2.3",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "~2.25.2",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@easypost/api": "^5.5.0"
+  }
+}
