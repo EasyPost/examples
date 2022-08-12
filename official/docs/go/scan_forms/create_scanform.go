@@ -1,18 +1,16 @@
-require 'easypost'
+package example
 
-EasyPost.api_key = ENV['EASYPOST_API_KEY']
+import (
+    "os"
 
-scan_form = EasyPost::ScanForm.create(
-  {
-    shipments: [
-      {
-        id: 'shp_...',
-      },
-      {
-        id: 'shp_...',
-      },
-    ],
-  },
+    "github.com/EasyPost/easypost-go/v2"
 )
 
-puts scan_form
+func main() {
+	  apiKey := os.Getenv("EASYPOST_API_KEY")
+    client := easypost.New(apiKey)
+
+    scanForm, err := client.CreateScanForm("shp_...", "shp_...")
+
+    fmt.Println(scanForm)
+}
