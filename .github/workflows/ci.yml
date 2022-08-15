@@ -35,10 +35,14 @@ jobs:
           go-version: 1.19
       - name: Install Go dependencies
         run: make install-go
-      - name: Lint project
+      - name: Lint official Go files
         uses: golangci/golangci-lint-action@v3
         with:
-          out-format: line-number
+          working-directory: official
+      - name: Lint community Go files
+        uses: golangci/golangci-lint-action@v3
+        with:
+          working-directory: community
   java:
     runs-on: ubuntu-latest
     steps:
