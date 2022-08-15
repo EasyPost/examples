@@ -1,16 +1,17 @@
 package example
 
 import (
-    "os"
+	"fmt"
+	"os"
 
-    "github.com/EasyPost/easypost-go/v2"
+	"github.com/EasyPost/easypost-go/v2"
 )
 
 func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
-    client := easypost.New(apiKey)
+	client := easypost.New(apiKey)
 
-	paymentMethod err := client.DeletePaymentMethod(easypost.PrimaryPaymentMethodPriority)
+	paymentMethod, err := client.DeletePaymentMethod(easypost.PrimaryPaymentMethodPriority)
 
-	fmt.Println(paymentMethod) 
+	fmt.Println(paymentMethod)
 }

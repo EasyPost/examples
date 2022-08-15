@@ -25,6 +25,15 @@ jobs:
         run: make install-csharp
       - name: Lint project
         run: make lint-csharp
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Go dependencies
+        run: make install-go
+      - name: Lint project
+        run: make lint-go
   java:
     runs-on: ubuntu-latest
     steps:

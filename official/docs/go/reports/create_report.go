@@ -1,23 +1,24 @@
 package example
 
 import (
-    "os"
+	"fmt"
+	"os"
 
-    "github.com/EasyPost/easypost-go/v2"
+	"github.com/EasyPost/easypost-go/v2"
 )
 
 func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
-    client := easypost.New(apiKey)
+	client := easypost.New(apiKey)
 
 	reportOptions := &easypost.Report{
-        StartDate: "2016-01-01",
-        EndDate:   "2016-01-31",
-    }
+		StartDate: "2016-01-01",
+		EndDate:   "2016-01-31",
+	}
 
-    report, err := client.CreateReport(
-        reportOptions,
-    )
+	report, err := client.CreateReport(
+		reportOptions,
+	)
 
 	fmt.Println(report)
 }

@@ -14,6 +14,11 @@ install: | install-csharp install-java install-node install-python install-ruby
 install-csharp:
 	dotnet tool install -g dotnet-format
 
+## install-go - Install and vendor Go dependencies
+install-go:
+	go mod vendor
+	go build -o $(PROJECT_PATH)
+
 ## install-java - installs Java dependencies
 install-java:
     # install CheckStyle jar for running locally
@@ -48,6 +53,9 @@ lint-csharp:
 	dotnet format whitespace --include official/docs/csharp/ --folder --verify-no-changes
 	dotnet format whitespace --include official/guides/csharp/ --folder --verify-no-changes
 
+## lint-go - Lint Go files
+lint-go:
+	golangci-lint run
 
 ## lint-java - lints Java files
 lint-java:
@@ -87,6 +95,10 @@ format-csharp:
 	dotnet format whitespace --include official/docs/csharp/ --folder
 	dotnet format whitespace --include official/guides/csharp/ --folder
 
+## format-go - formats Go files
+format-go:
+	golangci-lint run --fix
+
 ## format-java - formats Java files
 format-java:
 	echo "Not implemented"
@@ -118,4 +130,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-csharp install-java install-node install-php install-python install-ruby lint lint-csharp lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-java format-node format-python format-python-check format-ruby format-shell
+.PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-python format-python-check format-ruby format-shell

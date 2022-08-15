@@ -1,23 +1,24 @@
 package example
 
 import (
-    "os"
+	"fmt"
+	"os"
 
-    "github.com/EasyPost/easypost-go/v2"
+	"github.com/EasyPost/easypost-go/v2"
 )
 
 func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
-    client := easypost.New(apiKey)
+	client := easypost.New(apiKey)
 
 	user, err := client.RetrieveMe()
-    rechargeThreshold := "50.00"
+	rechargeThreshold := "50.00"
 
-    user, err := client.UpdateUser(
-        &easypost.UserOptions{
-            RechargeAmount: &rechargeThreshold,
-        },
-    )
+	user, err = client.UpdateUser(
+		&easypost.UserOptions{
+			RechargeAmount: &rechargeThreshold,
+		},
+	)
 
 	fmt.Println(user)
 }

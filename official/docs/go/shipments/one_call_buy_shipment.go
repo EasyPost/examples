@@ -1,53 +1,54 @@
 package example
 
 import (
-    "os"
+	"fmt"
+	"os"
 
-    "github.com/EasyPost/easypost-go/v2"
+	"github.com/EasyPost/easypost-go/v2"
 )
 
 func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
-    client := easypost.New(apiKey)
+	client := easypost.New(apiKey)
 
 	toAddress, err := client.GetAddress("adr_...")
-    fromAddress, err := client.GetAddress("adr_...")
-    parcel, err := client.GetParcel("prcl_...")
+	fromAddress, err := client.GetAddress("adr_...")
+	parcel, err := client.GetParcel("prcl_...")
 
-    shipment, err := client.CreateShipment(
-        &easypost.Shipment{
-            CarrierAccountIDs: []string{"ca_..."},
-            Service:           "NextDayAir",
-            Parcel: &easypost.Parcel{
+	shipment, err := client.CreateShipment(
+		&easypost.Shipment{
+			CarrierAccountIDs: []string{"ca_..."},
+			Service:           "NextDayAir",
+			Parcel: &easypost.Parcel{
 				Length: 20.2,
 				Width:  10.9,
 				Height: 5,
 				Weight: 65.9,
-	        },
-            ToAddress: &easypost.Address{
-				Name: "Dr. Steve Brule",
+			},
+			ToAddress: &easypost.Address{
+				Name:    "Dr. Steve Brule",
 				Street1: "179 N Harbor Dr",
-				City: "Redondo Beach",
-				State: "CA",
-				Zip: "90277",
+				City:    "Redondo Beach",
+				State:   "CA",
+				Zip:     "90277",
 				Country: "US",
-				Phone: "4155559999",
-				Email: "dr_steve_brule@gmail.com",
-            },
-            FromAddress: &easypost.Address{
-				Name: "EasyPost",
+				Phone:   "4155559999",
+				Email:   "dr_steve_brule@gmail.com",
+			},
+			FromAddress: &easypost.Address{
+				Name:    "EasyPost",
 				Street1: "417 Montgomery Street",
 				Street2: "5th Floor",
-				City: "San Francisco",
-				State: "CA",
-				Zip: "90277",
+				City:    "San Francisco",
+				State:   "CA",
+				Zip:     "90277",
 				Country: "US",
-				Phone: "4155559999",
-				Email: "support@easypost.com",
-            },
-            Reference:         "ShipmentRef",
-        },
-    )
+				Phone:   "4155559999",
+				Email:   "support@easypost.com",
+			},
+			Reference: "ShipmentRef",
+		},
+	)
 
 	fmt.Println(shipment)
 }

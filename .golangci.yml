@@ -1,0 +1,6 @@
+issues:
+  exclude: 
+    - "other declaration of main"
+    - "`main` redeclared in this block"
+    - "github.com/EasyPost/easypost-go"
+    - "undeclared name: `easypost`"
