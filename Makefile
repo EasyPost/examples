@@ -25,6 +25,10 @@ install-java:
 install-node:
 	npm install
 
+## install-php - installs PHP dependencies
+install-php:
+	composer install
+
 ## install-python - install Python dependencies
 install-python:
 	$(PYTHON_BINARY) -m venv $(PYTHON_VIRTUAL_ENV)
@@ -53,6 +57,10 @@ lint-java:
 ## lint-node - lints Node files
 lint-node:
 	npm run lint
+
+## lint-php - lints PHP files
+lint-php:
+	composer lint
 
 ## lint-python - lint Python files
 lint-python:
@@ -110,4 +118,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-csharp install-java install-node install-python install-ruby lint lint-csharp lint-java lint-node lint-python lint-ruby lint-shell format format-csharp format-java format-node format-python format-python-check format-ruby format-shell
+.PHONY: help install install-csharp install-java install-node install-php install-python install-ruby lint lint-csharp lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-java format-node format-python format-python-check format-ruby format-shell

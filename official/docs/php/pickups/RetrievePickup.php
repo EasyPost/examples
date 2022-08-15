@@ -1,0 +1,7 @@
+<?php
+
+\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
+
+$pickup = \EasyPost\Pickup::retrieve('pickup_...');
+
+echo $pickup;

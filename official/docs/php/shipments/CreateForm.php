@@ -1,12 +1,12 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey("EASYPOST_API_KEY");
+\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
 
-$shipment = \EasyPost\Shipment::retrieve("shp_...");
+$shipment = \EasyPost\Shipment::retrieve('shp_...');
 $shipment->buy();
 
-$form_type = "return_packing_slip";
-$form_options = [
+$formType = 'return_packing_slip';
+$formOptions = [
     'barcode' => 'RMA12345678900',
     'line_items' => [
         [
@@ -19,6 +19,6 @@ $form_options = [
     ],
 ];
 
-$shipment->generate_form($form_type, $form_options);
+$shipment->generate_form($formType, $formOptions);
 
 echo $shipment;

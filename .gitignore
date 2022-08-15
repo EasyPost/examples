@@ -1,7 +1,9 @@
 .DS_Store
 .env
 .idea
+bin
 /checkstyle.jar
 /easypost_java_style.xml
+/vendor
 node_modules
 venv
