@@ -20,3 +20,5 @@ $form_options = [
 ];
 
 $shipment->generate_form($form_type, $form_options);
+
+echo $shipment;

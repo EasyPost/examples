@@ -1,6 +1,7 @@
 package example
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/EasyPost/easypost-go/v2"
@@ -27,4 +28,6 @@ func main() {
 	}
 
 	shipmentWithForm, err := client.GenerateShipmentForm(shipment.ID, formType, formOption)
+
+	fmt.Println(shipmentWithForm)
 }
