@@ -17,7 +17,6 @@ install-csharp:
 ## install-go - Install and vendor Go dependencies
 install-go:
 	go mod vendor
-	go build -o $(PROJECT_PATH)
 
 ## install-java - installs Java dependencies
 install-java:
