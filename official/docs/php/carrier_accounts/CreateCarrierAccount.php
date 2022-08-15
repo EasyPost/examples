@@ -1,6 +1,6 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey("EASYPOST_API_KEY");
+\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
 
 $carrierAccount = \EasyPost\CarrierAccount::create([
     'type' => 'DhlEcsAccount',

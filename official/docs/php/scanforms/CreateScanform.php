@@ -1,14 +1,14 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey("EASYPOST_API_KEY");
+\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
 
 $scanForm = \EasyPost\ScanForm::create([
-    "shipments" => [
+    'shipments' => [
         [
-            "id" => "shp_..."
+            'id' => 'shp_...'
         ],
         [
-            "id" => "shp_..."
+            'id' => 'shp_...'
         ]
     ]
 ]);

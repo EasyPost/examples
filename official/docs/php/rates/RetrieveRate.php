@@ -1,7 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey("EASYPOST_API_KEY");
+\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
 
-$rate = \EasyPost\Rate::retrieve("rate...");
+$rate = \EasyPost\Rate::retrieve('rate...');
 
 echo $rate;

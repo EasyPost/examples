@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey("EASYPOST_API_KEY");
+\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
 
-$carrierAccount->credentials["pickup_id"] = "abc123";
+$carrierAccount->credentials['pickup_id'] = 'abc123';
 
 $carrierAccount->save();
 
