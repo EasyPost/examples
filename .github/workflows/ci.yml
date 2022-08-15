@@ -31,7 +31,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
       - name: Install Go dependencies
-        run: make install-go
+        run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
       - name: Lint project
         run: make lint-go
   java:
