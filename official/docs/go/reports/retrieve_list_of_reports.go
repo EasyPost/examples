@@ -16,7 +16,7 @@ func main() {
 		StartDate: "2016-01-02",
 	}
 
-	reports, err := client.ListReports(
+	reports, _ := client.ListReports(
 		"payment_log",
 		reportOptions,
 	)

@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	carrierAccount, err := client.CreateCarrierAccount(
+	carrierAccount, _ := client.CreateCarrierAccount(
 		&easypost.CarrierAccount{
 			Type:        "DhlEcsAccount",
 			Description: "CA Location DHL eCommerce Solutions Account",

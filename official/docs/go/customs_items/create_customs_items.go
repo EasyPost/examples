@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	customsItem, err := client.CreateCustomsItem(
+	customsItem, _ := client.CreateCustomsItem(
 		&easypost.CustomsItem{
 			Description:   "T-shirts",
 			Quantity:      1,

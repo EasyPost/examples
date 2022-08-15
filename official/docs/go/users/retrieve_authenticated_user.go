@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	user, err := client.RetrieveMe()
+	user, _ := client.RetrieveMe()
 
 	fmt.Println(user)
 }

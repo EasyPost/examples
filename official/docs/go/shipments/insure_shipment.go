@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	shipment, err := client.InsureShipment("shp_...", "100.00")
+	shipment, _ := client.InsureShipment("shp_...", "100.00")
 
 	fmt.Println(shipment)
 }

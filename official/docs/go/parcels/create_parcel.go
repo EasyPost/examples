@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	parcel, err := client.CreateParcel(
+	parcel, _ := client.CreateParcel(
 		&easypost.Parcel{
 			Length: 20.2,
 			Width:  10.9,

@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	webhook, err := client.DeleteWebhook("hook_...")
+	err := client.DeleteWebhook("hook_...")
 
-	fmt.Println(webhook)
+	fmt.Println(err)
 }

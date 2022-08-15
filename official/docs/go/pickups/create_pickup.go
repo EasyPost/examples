@@ -12,12 +12,12 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	address, err := client.GetAddress("adr_...")
-	shipment, err := client.GetShipment("shp_...")
+	address, _ := client.GetAddress("adr_...")
+	shipment, _ := client.GetShipment("shp_...")
 	minPickupTime := time.Now()                         // now
 	maxPickupTime := time.Now().Add(time.Hour * 24 * 7) // 7 days from now
 
-	pickup, err := client.CreatePickup(
+	pickup, _ := client.CreatePickup(
 		&easypost.Pickup{
 			IsAccountAddress: false,
 			Address:          address,

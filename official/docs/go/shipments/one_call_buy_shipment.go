@@ -11,11 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	toAddress, err := client.GetAddress("adr_...")
-	fromAddress, err := client.GetAddress("adr_...")
-	parcel, err := client.GetParcel("prcl_...")
-
-	shipment, err := client.CreateShipment(
+	shipment, _ := client.CreateShipment(
 		&easypost.Shipment{
 			CarrierAccountIDs: []string{"ca_..."},
 			Service:           "NextDayAir",

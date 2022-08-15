@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	order, err := client.GetOrder("order_...")
+	order, _ := client.GetOrder("order_...")
 
 	fmt.Println(order)
 }

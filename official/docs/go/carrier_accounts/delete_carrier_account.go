@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	carrierAccount, err := client.DeleteCarrierAccount("ca_...")
+	err := client.DeleteCarrierAccount("ca_...")
 
-	fmt.Println(carrierAccount)
+	fmt.Println(err)
 }

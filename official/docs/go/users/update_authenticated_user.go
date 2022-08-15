@@ -11,10 +11,10 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	user, err := client.RetrieveMe()
+	user, _ := client.RetrieveMe()
 	rechargeThreshold := "50.00"
 
-	user, err = client.UpdateUser(
+	user, _ = client.UpdateUser(
 		&easypost.UserOptions{
 			RechargeAmount: &rechargeThreshold,
 		},

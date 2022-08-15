@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	customsInfo, err := client.CreateCustomsInfo(
+	customsInfo, _ := client.CreateCustomsInfo(
 		&easypost.CustomsInfo{
 			CustomsCertify:      true,
 			CustomsSigner:       "Steve Brule",

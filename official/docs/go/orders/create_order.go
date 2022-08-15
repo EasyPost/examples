@@ -11,20 +11,11 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	toAddress, err := client.GetAddress("adr_...")
-	fromAddress, err := client.GetAddress("adr_...")
-	shipment, err := client.CreateShipment(
-		&easypost.Shipment{
-			Parcel: &easypost.Parcel{
-				Weight: 10.2,
-			},
-			Parcel: &easypost.Parcel{
-				Weight:            17.5,
-				PredefinedPackage: "FedExBox",
-			},
-		},
-	)
-	order, err := client.CreateOrder(
+	toAddress, _ := client.GetAddress("adr_...")
+	fromAddress, _ := client.GetAddress("adr_...")
+	shipment, _ := client.GetShipment("shp_...")
+
+	order, _ := client.CreateOrder(
 		&easypost.Order{
 			ToAddress:   toAddress,
 			FromAddress: fromAddress,

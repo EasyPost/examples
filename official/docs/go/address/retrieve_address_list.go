@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	addresses, err := client.ListAddresses(
+	addresses, _ := client.ListAddresses(
 		&easypost.ListOptions{
 			PageSize: 5,
 		},

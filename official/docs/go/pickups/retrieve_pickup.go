@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	pickup, err := client.GetPickup("pickup_...")
+	pickup, _ := client.GetPickup("pickup_...")
 
 	fmt.Println(pickup)
 }

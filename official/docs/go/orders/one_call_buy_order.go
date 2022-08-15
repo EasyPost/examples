@@ -11,8 +11,8 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	toAddress, err := client.GetAddress("adr_...")
-	fromAddress, err := client.GetAddress("adr_...")
+	toAddress, _ := client.GetAddress("adr_...")
+	fromAddress, _ := client.GetAddress("adr_...")
 
 	firstShipment := &easypost.Shipment{
 		Parcel: &easypost.Parcel{
@@ -28,7 +28,7 @@ func main() {
 		},
 	}
 
-	order, err := client.CreateOrder(
+	order, _ := client.CreateOrder(
 		&easypost.Order{
 			Service:     "NextDayAir",
 			ToAddress:   toAddress,

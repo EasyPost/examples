@@ -11,10 +11,9 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	shipments, err := client.ListShipments(
+	shipments, _ := client.ListShipments(
 		&easypost.ListShipmentsOptions{
-			PageSize:      5,
-			StartDateTime: "2016-01-02T08:50:00Z",
+			PageSize: 5,
 		},
 	)
 

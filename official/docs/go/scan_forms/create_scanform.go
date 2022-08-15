@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	scanForm, err := client.CreateScanForm("shp_...", "shp_...")
+	scanForm, _ := client.CreateScanForm("shp_...", "shp_...")
 
 	fmt.Println(scanForm)
 }

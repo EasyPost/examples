@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	paymentMethods, err := client.RetrievePaymentMethods()
+	paymentMethods, _ := client.RetrievePaymentMethods()
 
 	fmt.Println(paymentMethods)
 }

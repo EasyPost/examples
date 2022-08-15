@@ -16,7 +16,8 @@ func main() {
 		EndDate:   "2016-01-31",
 	}
 
-	report, err := client.CreateReport(
+	report, _ := client.CreateReport(
+		"shipment",
 		reportOptions,
 	)
 

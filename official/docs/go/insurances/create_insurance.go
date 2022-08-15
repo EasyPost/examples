@@ -11,10 +11,10 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	toAddress, err := client.GetAddress("adr_...")
-	fromAddress, err := client.GetAddress("adr_...")
+	toAddress, _ := client.GetAddress("adr_...")
+	fromAddress, _ := client.GetAddress("adr_...")
 
-	insurance, err := client.CreateInsurance(
+	insurance, _ := client.CreateInsurance(
 		&easypost.Insurance{
 			ToAddress:    toAddress,
 			FromAddress:  fromAddress,

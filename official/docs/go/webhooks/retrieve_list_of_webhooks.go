@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	webhooks, err := client.ListWebhooks()
+	webhooks, _ := client.ListWebhooks()
 
 	fmt.Println(webhooks)
 }

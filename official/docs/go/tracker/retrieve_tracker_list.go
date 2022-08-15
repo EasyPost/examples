@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	trackers, err := client.ListTrackers(
+	trackers, _ := client.ListTrackers(
 		&easypost.ListTrackersOptions{
 			PageSize: 5,
 		},

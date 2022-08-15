@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	tracker, err := client.GetTracker("trk_...")
+	tracker, _ := client.GetTracker("trk_...")
 
 	fmt.Println(tracker)
 }

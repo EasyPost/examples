@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	batches, err := client.ListBatches(
+	batches, _ := client.ListBatches(
 		&easypost.ListOptions{
 			PageSize: 5,
 		},

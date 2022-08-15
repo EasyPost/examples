@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	address, err := client.CreateAndVerifyAddress(
+	address, _ := client.CreateAndVerifyAddress(
 		&easypost.Address{
 			Street1: "417 MONTGOMERY ST",
 			Street2: "FLOOR 5",
@@ -25,7 +25,7 @@ func main() {
 		&easypost.CreateAddressOptions{},
 	)
 
-	verifiedAddress, err := client.VerifyAddress(address.ID)
+	verifiedAddress, _ := client.VerifyAddress(address.ID)
 
 	fmt.Println(verifiedAddress)
 }

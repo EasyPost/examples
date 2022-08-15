@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	customsInfo, err := client.GetCustomsInfo("cstinfo_...")
+	customsInfo, _ := client.GetCustomsInfo("cstinfo_...")
 
 	fmt.Println(customsInfo)
 }

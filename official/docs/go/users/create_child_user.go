@@ -12,7 +12,7 @@ func main() {
 	client := easypost.New(apiKey)
 
 	userName := "Child Account Name"
-	user, err := client.CreateUser(
+	user, _ := client.CreateUser(
 		&easypost.UserOptions{
 			Name: &userName,
 		},

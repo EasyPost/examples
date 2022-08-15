@@ -36,9 +36,7 @@ jobs:
       - name: Install Go dependencies
         run: make install-go
       - name: Lint project
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin 
-          make lint-go
+        run: make lint-go
   java:
     runs-on: ubuntu-latest
     steps:

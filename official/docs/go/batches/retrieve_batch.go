@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	batch, err := client.GetBatch("batch_...")
+	batch, _ := client.GetBatch("batch_...")
 
 	fmt.Println(batch)
 }

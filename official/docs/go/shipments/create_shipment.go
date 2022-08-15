@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	shipment, err := client.CreateShipment(
+	shipment, _ := client.CreateShipment(
 		&easypost.Shipment{
 			ToAddress: &easypost.Address{
 				Name:    "Dr. Steve Brule",
@@ -41,7 +41,7 @@ func main() {
 				Weight: 65.9,
 			},
 			CustomsInfo: &easypost.CustomsInfo{
-				Id: "cstinfo_...",
+				ID: "cstinfo_...",
 			},
 		},
 	)

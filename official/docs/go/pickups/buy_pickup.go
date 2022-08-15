@@ -11,7 +11,8 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	pickup, err := client.BuyPickup("pickup...")
+	rate := &easypost.PickupRate{Carrier: "UPS", Service: "Same-day Pickup"}
+	pickup, _ := client.BuyPickup("pickup...", rate)
 
 	fmt.Println(pickup)
 }

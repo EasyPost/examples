@@ -11,10 +11,10 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	shipment, err := client.BuyShipment("shp_...", nil, nil)
+	shipment, _ := client.BuyShipment("shp_...", nil, "100")
 
 	formType := "return_packing_slip"
-	formOption := map[string]interface{}{
+	formOptions := map[string]interface{}{
 		"barcode": "RMA12345678900",
 		"line_items": []map[string]interface{}{
 			{
@@ -27,7 +27,7 @@ func main() {
 		},
 	}
 
-	shipmentWithForm, err := client.GenerateShipmentForm(shipment.ID, formType, formOption)
+	shipmentWithForm, _ := client.GenerateShipmentFormWithOptions(shipment.ID, formType, formOptions)
 
 	fmt.Println(shipmentWithForm)
 }
