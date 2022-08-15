@@ -16,7 +16,7 @@ install-csharp:
 
 ## install-go - Install and vendor Go dependencies
 install-go:
-	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin 
+	wget -O- -nv https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s 
 	go mod vendor
 
 ## install-java - installs Java dependencies
