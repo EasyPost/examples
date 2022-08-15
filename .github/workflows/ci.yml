@@ -33,7 +33,7 @@ jobs:
       - name: Install Go dependencies
         run: make install-go
       - name: Lint project
-        run: make lint-go
+        uses: golangci/golangci-lint-action@v2
   java:
     runs-on: ubuntu-latest
     steps:
