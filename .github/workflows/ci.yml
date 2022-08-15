@@ -50,6 +50,15 @@ jobs:
         run: make lint-node
       - name: Check formatting
         run: make format-node-check
+  php:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: make install-php
+      - name: Lint project
+        run: make lint-php
   python:
     runs-on: ubuntu-latest
     steps:

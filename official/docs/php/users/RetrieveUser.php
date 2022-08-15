@@ -1,8 +1,7 @@
 <?php
 
-require_once("../lib/easypost.php");
 \EasyPost\EasyPost::setApiKey("EASYPOST_API_KEY");
 
-$child_user = \EasyPost\User::retrieve("user_...");
+$childUser = \EasyPost\User::retrieve("user_...");
 
-echo $child_user;
+echo $childUser;

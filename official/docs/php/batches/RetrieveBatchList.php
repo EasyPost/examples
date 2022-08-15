@@ -1,9 +1,8 @@
 <?php
 
-require_once("../lib/easypost.php");
 \EasyPost\EasyPost::setApiKey("EASYPOST_API_KEY");
 
-$batches = Batch::all([
+$batches = \EasyPost\Batch::all([
     'page_size' => 5,
 ]);
 

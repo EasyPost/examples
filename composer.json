@@ -1,0 +1,27 @@
+{
+  "name": "easypost/examples",
+  "description": "This repository holds hundreds of code examples for using the EasyPost API across 7+ programming languages.",
+  "type": "metapackage",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "EasyPost",
+      "email": "oss@easypost.com"
+    }
+  ],
+  "require": {
+    "ext-curl": "*",
+    "ext-json": "*",
+    "php": ">=7.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.7"
+  },
+  "scripts": {
+    "fix": "./bin/phpcbf",
+    "lint": "./bin/phpcs"
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
+}

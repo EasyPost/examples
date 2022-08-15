@@ -1,26 +1,25 @@
 <?php
 
-require_once("../lib/easypost.php");
 \EasyPost\EasyPost::setApiKey("EASYPOST_API_KEY");
 
-$order = \EasyPost\Order::create(array(
-    "carrier_accounts" => 'ca_...', 
+$order = \EasyPost\Order::create([
+    "carrier_accounts" => 'ca_...',
     "service" => 'NextDayAir',
-    "to_address" =>array("id" => "adr_..."),
-    "from_address" => array("id" => "adr_..."),
-    "shipments" => array(
-        array(
-            "parcel" => array(
+    "to_address" => ["id" => "adr_..."],
+    "from_address" => ["id" => "adr_..."],
+    "shipments" => [
+        [
+            "parcel" => [
                 "weight" => 10.2
-            )
-        ),
-        array(
-            "parcel" => array(
+            ]
+        ],
+        [
+            "parcel" => [
                 "predefined_package" => "FedExBox",
                 "weight" => 17.5
-            )
-        ),
-    ),
-));
+            ]
+        ],
+    ],
+]);
 
 echo $order;
