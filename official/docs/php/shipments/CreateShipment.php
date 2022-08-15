@@ -31,3 +31,5 @@ $shipment = \EasyPost\Shipment::create([
         "weight" => 65.9
     ]
 ]);
+
+echo $shipment;

@@ -6,4 +6,4 @@ $addresses = \EasyPost\Address::all([
     "page_size" => 5
 ]);
 
-echo $addressses;
+echo $addresses;

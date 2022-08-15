@@ -17,4 +17,4 @@ $address = \EasyPost\Address::create($addressParams);
 
 $address->verify();
 
-echo $addressses;
+echo $addresses;

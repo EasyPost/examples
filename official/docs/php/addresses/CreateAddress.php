@@ -15,4 +15,4 @@ $addressParams = [
 
 $address = \EasyPost\Address::create($addressParams);
 
-echo $addresss;
+echo $address;
