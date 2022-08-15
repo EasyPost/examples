@@ -30,6 +30,6 @@ func main() {
 			},
 		},
 	)
-	fmt.Println(customsInfo)
 
+	fmt.Println(customsInfo)
 }
