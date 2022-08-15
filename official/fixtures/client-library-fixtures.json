@@ -56,8 +56,8 @@
   "credit_cards": {
     "test": {
       "number": "4536410136126170",
-      "expirationMonth": "05",
-      "expirationYear": "2028",
+      "expiration_month": "05",
+      "expiration_year": "2028",
       "cvc": "778"
     }
   },
