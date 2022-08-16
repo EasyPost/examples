@@ -25,6 +25,21 @@ jobs:
         run: make install-csharp
       - name: Lint project
         run: make lint-csharp
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+      - name: Install Go dependencies
+        run: make install-go
+        # curl install must occur in the same step as the linter to run properly on CI
+      - name: Lint project
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
+          make lint-go
   java:
     runs-on: ubuntu-latest
     steps:
