@@ -355,5 +355,12 @@
       "issuing_country": "GB"
     }
   },
+  "users": {
+    "referral": {
+      "name": "Test Referral",
+      "email": "test@example.com",
+      "phone": "5555555555"
+    }
+  },
   "webhook_url": "http://example.com"
 }
