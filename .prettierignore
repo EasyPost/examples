@@ -2,3 +2,4 @@ composer.lock
 package-lock.json
 vendor
 .golangci.yml
+official/fixtures/event-body.json
