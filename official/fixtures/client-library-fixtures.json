@@ -218,8 +218,8 @@
         "email": "test@example.com",
         "phone": "5555555555"
       },
-      "min_datetime": "2022-08-01",
-      "max_datetime": "2022-08-02",
+      "min_datetime": "2022-08-01T00:00:00.00Z",
+      "max_datetime": "2022-08-02T00:00:00.00Z",
       "instructions": "Pickup at front door"
     }
   },
