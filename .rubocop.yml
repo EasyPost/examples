@@ -3,3 +3,6 @@ inherit_from: easycop.yml
 # We ignore frozen string literal comments to simplify the sample code snippets
 Style/FrozenStringLiteralComment:
   Enabled: false
+Naming/VariableNumber:
+  Exclude:
+    - 'official/docs/ruby/shipments/create_shipment_with_options.rb'

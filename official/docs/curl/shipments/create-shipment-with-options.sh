@@ -13,7 +13,7 @@ curl -X POST https://api.easypost.com/v2/shipments \
         "id": "prcl_..."
       },
       "options": {
-        "address_validation_level": "0"
+        "print_custom_1": "Custom label message"
       }
     }
   }'

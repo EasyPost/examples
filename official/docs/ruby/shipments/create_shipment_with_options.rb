@@ -14,7 +14,7 @@ shipment = EasyPost::Shipment.create(
       id: 'prcl_...',
     },
     options: {
-      address_validation_level: 0,
+      print_custom_1: 'Custom label message',
     },
   },
 )

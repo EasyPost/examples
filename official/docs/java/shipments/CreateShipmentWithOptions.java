@@ -14,7 +14,7 @@ public class CreateShipmentWithOptions {
         parcel.put("id", "prcl_...");
 
         HashMap<String, Object> options = new HashMap<String, Object>();
-        parcel.put("address_validation_level", 0);
+        parcel.put("print_custom_1", "Custom label message");
 
         HashMap<String, Object> shipmentMap = new HashMap<String, Object>();
         shipmentMap.put("to_address", toAddress);

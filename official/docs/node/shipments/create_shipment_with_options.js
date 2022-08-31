@@ -12,7 +12,7 @@ const shipment = new api.Shipment({
     id: 'adr_...',
   },
   options: {
-    address_validation_level: 0,
+    print_custom_1: 'Custom label message',
   },
 });
 

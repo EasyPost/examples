@@ -13,7 +13,7 @@ Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
     { "id", "adr_..." }
   }},
   { "options", new Dictionary<string, object>() {
-     { "address_validation_level", 0 }
+     { "print_custom_1", "Custom label message" }
   } }
 });
 
