@@ -11,7 +11,7 @@ $shipment = \EasyPost\Shipment::create([
         'height' => 5,
         'weight' => 65.9
     ],
-    'options' => ['address_validation_level' => 0]
+    'options' => ['print_custom_1' => 'Custom label message']
 ]);
 
 echo $shipment;

@@ -21,7 +21,7 @@ func main() {
 			FromAddress: fromAddress,
 			Parcel:      parcel,
 			Options: &easypost.ShipmentOptions{
-				AddressValidationLevel: "0",
+				PrintCustom1: "Custom label message",
 			},
 		},
 	)
