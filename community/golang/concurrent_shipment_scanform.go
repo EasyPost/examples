@@ -12,7 +12,7 @@ import (
 /*
 * Concurrently scanform shipments from a batch. Great for bypassing scanform errors when there are only a couple of troubled shipments in a large batch
 *
-* Usage: EASYPOST_TEST_API_KEY=123... BATCH=batch_123... go run concurrent_shipment_scanform.go
+* Usage: EASYPOST_API_KEY=123... BATCH=batch_123... go run concurrent_shipment_scanform.go
 * Inspiration: https://stackoverflow.com/questions/33104192/how-to-run-10000-goroutines-in-parallel-where-each-routine-calls-an-api
  */
 
@@ -27,7 +27,7 @@ func main() {
 	total := int32(0)
 
 	// Setup EasyPost API key
-	apiKey := os.Getenv("EASYPOST_TEST_API_KEY")
+	apiKey := os.Getenv("EASYPOST_API_KEY")
 
 	client := easypost.New(apiKey)
 

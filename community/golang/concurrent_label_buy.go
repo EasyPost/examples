@@ -14,7 +14,7 @@ import (
 /*
 * Concurrently buy EasyPost Shipments via a CSV file
 *
-* Usage: EASYPOST_TEST_API_KEY=123... CSV=report.csv CARRIER_ACCOUNT_ID=ca_123... SERVICE=FEDEX_2_DAY CARRIER=FedEx go run concurrent_label_buy.go
+* Usage: EASYPOST_API_KEY=123... CSV=report.csv CARRIER_ACCOUNT_ID=ca_123... SERVICE=FEDEX_2_DAY CARRIER=FedEx go run concurrent_label_buy.go
 * Inspiration: https://stackoverflow.com/questions/33104192/how-to-run-10000-goroutines-in-parallel-where-each-routine-calls-an-api
 * CSV Format: Do not include a header row. Match up the rows with the current-line indexes below (eg: Name: lines[current][0])
 * Rate Limiting: Do not use more than 50 goroutines, do not try CSV's larger than 2000 records, pass Go, do not collect $200... ;)
@@ -32,7 +32,7 @@ func main() {
 	total := int32(0)
 
 	// Make request here
-	apiKey := os.Getenv("EASYPOST_TEST_API_KEY")
+	apiKey := os.Getenv("EASYPOST_API_KEY")
 
 	client := easypost.New(apiKey)
 

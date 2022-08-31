@@ -4,8 +4,8 @@ curl -X POST https://api.easypost.com/v2/pickups \
   -d '{
     "pickup": {
       "reference": "my-first-pickup",
-      "min_datetime": "2014-10-20 17:10:00",
-      "max_datetime": "2014-10-21 10:30:00",
+      "min_datetime": "2022-10-01 10:30:00",
+      "max_datetime": "2022-10-02 10:30:00",
       "shipment": "shp_...",
       "address": "adr_...",
       "is_account_address": "false",
