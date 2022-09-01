@@ -1,13 +1,16 @@
 # This script will export USPS credentials for all child accounts to a CSV file
 
-from typing import List
+# NOTE: Due to the nature of the easypost API library,
+# this script will run synchronously and therefore may take a while to complete if you have a lot of child accounts
+
+from typing import List, Dict, Union
 
 import easypost
 import argparse
 import csv
 
-parser = argparse.ArgumentParser(description='Export all child account USPS production credentials')
-parser.add_argument('-k', '--key', required=True, help='Parent production API key')
+parser = argparse.ArgumentParser(description="Export all child account USPS production credentials")
+parser.add_argument("-k", "--key", required=True, help="Parent production API key")
 
 
 def authenticate(key: str):
@@ -16,51 +19,55 @@ def authenticate(key: str):
 
     :param key: API key to authenticate with
     :type key: str
+    :raises ValueError: If the key is invalid
     :return: None
     """
+    if not key:
+        raise ValueError("API key not provided")
     easypost.api_key = key
 
 
-def get_production_key(keys: List) -> str:
+def get_production_key(keys: List) -> Union[str, None]:
     """
     Get the production key from a list of keys
 
     :param keys: List of keys
     :type keys: List
-    :return: Production key
-    :rtype: str
+    :return: Production key if found, None otherwise
+    :rtype: str | None
     """
     for key in keys:
-        if key['mode'] == 'production':
-            return key['key']
+        if key["mode"] == "production":
+            return key["key"]
+    return None
 
 
-def process_child(child: easypost.User) -> dict:
+def process_child(child: easypost.User) -> Dict:
     """
     Process a child account
 
     :param child: Child account object
     :type child: easypost.User
     :return: Dictionary of child account information
-    :rtype: dict
+    :rtype: Dict
     """
     child_prod_key = get_production_key(child.keys)
     authenticate(child_prod_key)
     accounts = get_usps_accounts()
     credentials = []
     for account in accounts:
-        if account:
-            account_details = get_usps_account_details(account)
-            if account_details.get('test'):
-                details = {**account_details.get('test'), 'ca_id': account.id, 'credential_type': 'test'}
-                credentials.append(details)
-            if account_details.get('prod'):
-                details = {**account_details.get('prod'), 'ca_id': account.id, 'credential_type': 'prod'}
-                credentials.append(details)
-    return {
-        'id': child.id,
-        'accounts': credentials
-    }
+        account_details = {
+            "test": account.test_credentials,
+            "prod": account.credentials,
+        }
+        if account_details.get("test"):
+            details = {**account_details.get("test"), "ca_id": account.id, "credential_type": "test"}
+            credentials.append(details)
+        if account_details.get("prod"):
+            details = {**account_details.get("prod"), "ca_id": account.id, "credential_type": "prod"}
+            credentials.append(details)
+
+    return {"id": child.id, "accounts": credentials}
 
 
 def get_usps_accounts() -> List[easypost.CarrierAccount]:
@@ -73,69 +80,53 @@ def get_usps_accounts() -> List[easypost.CarrierAccount]:
     accounts = easypost.CarrierAccount.all()
     usps_accounts = []
     for account in accounts:
-        if account.type == 'UspsAccount':
+        if account.type == "UspsAccount":
             usps_accounts.append(account)
     return usps_accounts
 
 
-def get_usps_account_details(account: easypost.CarrierAccount) -> dict:
-    """
-    Get the credentials of a USPS account
-
-    :param account: Carrier account object to get credentials for
-    :type account: easypost.CarrierAccount
-    :return: Dictionary of credentials
-    :rtype: dict
-    """
-    return {
-        'test': account.test_credentials,
-        'prod': account.credentials,
-    }
-
-
-def write_to_csv(data: List[dict]):
+def write_to_csv(data: List[Dict]):
     """
     Write the data to a CSV file
 
     :param data: Child account data
-    :type data: List[dict]
+    :type data: List[Dict]
     :return: None
     """
-    with open('child_accounts.csv', 'w') as csvfile:
-        fieldnames = ['child_id', 'ca_id', 'credential_type', 'city', 'state', 'street', 'zip', 'company', 'email',
-                      'phone', 'shipper_id']
+    with open("child_accounts.csv", "w") as csvfile:
+        fieldnames = [
+            "child_id",
+            "ca_id",
+            "credential_type",
+            "city",
+            "state",
+            "street",
+            "zip",
+            "company",
+            "email",
+            "phone",
+            "shipper_id",
+        ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
+        rows = []
         for child in data:
-            for credential in child['accounts']:
-                write_entry_to_csv(credential, child['id'], writer)
-
-
-def write_entry_to_csv(credential: dict, child_id: str, writer: csv.DictWriter):
-    """
-    Write a single entry to the CSV file
-
-    :param credential: Dictionary of credential information
-    :type credential: dict
-    :param child_id: ID of the child account
-    :type child_id: str
-    :param writer: CSV writer object
-    :type writer: csv.DictWriter
-    :return: None
-    """
-    writer.writerow({
-        'child_id': child_id,
-        'ca_id': credential.get('ca_id'),
-        'credential_type': credential.get('credential_type'),
-        'city': credential.get('address_city'),
-        'state': credential.get('address_state'),
-        'street': credential.get('address_street'),
-        'zip': credential.get('address_zip'),
-        'company': credential.get('company_name'),
-        'email': credential.get('email'),
-        'phone': credential.get('phone'),
-        'shipper_id': credential.get('shipper_id'),
-    })
+            for credential in child["accounts"]:
+                row = {
+                    "child_id": child.get('id', ''),
+                    "ca_id": credential.get("ca_id", ""),
+                    "credential_type": credential.get("credential_type", ""),
+                    "city": credential.get("address_city", ""),
+                    "state": credential.get("address_state", ""),
+                    "street": credential.get("address_street", ""),
+                    "zip": credential.get("address_zip", ""),
+                    "company": credential.get("company_name", ""),
+                    "email": credential.get("email", ""),
+                    "phone": credential.get("phone", ""),
+                    "shipper_id": credential.get("shipper_id", ""),
+                }
+                rows.append(row)
+        writer.writerows(rows)
 
 
 def main():
@@ -145,9 +136,11 @@ def main():
     :return: None
     """
     args = parser.parse_args()
-    easypost.api_key = args.key
+    authenticate(args.key)
+
     user = easypost.User.retrieve_me()
     children = user.all_api_keys().children
+
     data = []
     for child in children:
         child_info = process_child(child)
@@ -155,5 +148,5 @@ def main():
     write_to_csv(data)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
