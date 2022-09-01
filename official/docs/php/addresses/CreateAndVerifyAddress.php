@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
+\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
-$addressParams = [
+$address = \EasyPost\Address::create_and_verify([
     'street1' => '417 Montgomery Street',
     'street2' => 'FL 5',
     'city'    => 'San Francisco',
@@ -11,8 +11,6 @@ $addressParams = [
     'country' => 'US',
     'company' => 'EasyPost',
     'phone'   => '415-123-4567'
-];
-
-$address = \EasyPost\Address::create_and_verify($addressParams);
+]);
 
 echo $address;

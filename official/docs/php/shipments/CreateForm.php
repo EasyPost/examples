@@ -1,9 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
+\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
 $shipment = \EasyPost\Shipment::retrieve('shp_...');
-$shipment->buy();
 
 $formType = 'return_packing_slip';
 $formOptions = [

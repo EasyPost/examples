@@ -1,9 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
+\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
-$createParams = ['url' => 'example.com'];
-
-$webhook = \EasyPost\Webhook::create($createParams);
+$webhook = \EasyPost\Webhook::create(['url' => 'example.com']);
 
 echo $webhook;

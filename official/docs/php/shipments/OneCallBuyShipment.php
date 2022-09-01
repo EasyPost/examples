@@ -1,9 +1,9 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
+\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
 $shipment = \EasyPost\Shipment::create([
-    'carrier_accounts' => 'ca_...',
+    'carrier_accounts' => ['ca_...'],
     'service' => 'NextDayAir',
     'to_address' => [
         'name' => 'Dr. Steve Brule',
