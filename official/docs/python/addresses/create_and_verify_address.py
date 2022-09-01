@@ -1,7 +1,9 @@
+import os
+
 import easypost
 
 
-easypost.api_key = "EASYPOST_API_KEY"
+easypost.api_key = os.getenv("EASYPOST_API_KEY")
 
 address = easypost.Address.create_and_verify(
     street1="417 Montgomery Street",

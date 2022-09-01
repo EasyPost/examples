@@ -1,7 +1,9 @@
+import os
+
 import easypost
 
 
-easypost.api_key = "EASYPOST_API_KEY"
+easypost.api_key = os.getenv("EASYPOST_API_KEY")
 
 customs_info = easypost.CustomsInfo.create(
     eel_pfc="NOEEI 30.37(a)",
@@ -21,3 +23,5 @@ customs_info = easypost.CustomsInfo.create(
         }
     ],
 )
+
+print(customs_info)

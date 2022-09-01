@@ -1,7 +1,9 @@
+import os
+
 import easypost
 
 
-easypost.api_key = "EASYPOST_API_KEY"
+easypost.api_key = os.getenv("EASYPOST_API_KEY")
 
 webhook = easypost.Webhook.retrieve("hook_...")
 

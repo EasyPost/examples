@@ -36,7 +36,7 @@ install-php:
 ## install-python - install Python dependencies
 install-python:
 	$(PYTHON_BINARY) -m venv $(PYTHON_VIRTUAL_ENV)
-	$(PYTHON_VIRTUAL_BIN)/pip install -r requirements.txt
+	$(PYTHON_VIRTUAL_BIN)/pip install -e ."[dev]"
 
 ## install-ruby - installs Ruby dependencies
 install-ruby:

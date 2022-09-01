@@ -1,7 +1,9 @@
+import os
+
 import easypost
 
 
-easypost.api_key = "EASYPOST_API_KEY"
+easypost.api_key = os.getenv("EASYPOST_API_KEY")
 
 shipment = easypost.Shipment.create(
     to_address={
@@ -39,7 +41,7 @@ shipment = easypost.Shipment.create(
 shipment = easypost.Shipment.create(
     to_address={"id": "adr_..."},
     from_address={"id": "adr_..."},
-    parcel={"ID": "prcl_..."},
+    parcel={"id": "prcl_..."},
     customs_info={"id": "cstinfo_..."},
 )
 
