@@ -1,7 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-bool success = await Billing.DeletePaymentMethod(PaymentMethod.Priority.Primary);
+public class Examples
+{
+    [Fact]
+    public async Task DeletePaymentMethod()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(success, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        bool success = await Billing.DeletePaymentMethod(PaymentMethod.Priority.Primary);
+
+        new TestOutputHelper().WriteLine(success.ToString());
+    }
+}

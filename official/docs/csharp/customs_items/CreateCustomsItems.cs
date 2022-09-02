@@ -1,14 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-CustomsItem customsItem = await CustomsItem.Create(new Dictionary<string, object>() {
-  { "description", "T-shirt" },
-  { "quantity", 1 },
-  { "weight", 5 },
-  { "value", 10 },
-  { "origin_country", "US" },
-  { "hs_tariff_number", "123456" }
-});
+public class Examples
+{
+    [Fact]
+    public async Task CreateCustomsItem()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(customsItem, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        CustomsItem customsItem = await CustomsItem.Create(new Dictionary<string, object>() {
+            { "description", "T-shirt" },
+            { "quantity", 1 },
+            { "weight", 5 },
+            { "value", 10 },
+            { "origin_country", "US" },
+            { "hs_tariff_number", "123456" }
+        });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(customsItem, Formatting.Indented));
+    }
+}

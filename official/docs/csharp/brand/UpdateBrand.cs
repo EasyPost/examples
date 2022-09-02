@@ -1,11 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-User user = await User.RetrieveMe();
+public class Examples
+{
+    [Fact]
+    public async Task UpdateBrand()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-await user.Update(new Dictionary<string, object>(){
-    { "color", "#303F9F" }
-});
+        EasyPost.ClientManager.SetCurrent(apiKey);
 
-Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
+        User user = await User.RetrieveMe();
+
+        await user.Update(new Dictionary<string, object>(){
+            { "color", "#303F9F" }
+        });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
+    }
+}

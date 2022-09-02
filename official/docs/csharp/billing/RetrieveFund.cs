@@ -1,7 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-PaymentMethod paymentMethods = await Billing.RetrievePaymentMethods();
+public class Examples
+{
+    [Fact]
+    public async Task RetrievePaymentMethods()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(paymentMethods, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        PaymentMethod paymentMethods = await Billing.RetrievePaymentMethods();
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(paymentMethods, Formatting.Indented));
+    }
+}
