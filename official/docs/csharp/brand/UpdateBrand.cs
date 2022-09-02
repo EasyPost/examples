@@ -19,8 +19,11 @@ public class Examples
 
         User user = await User.RetrieveMe();
 
-        await user.Update(new Dictionary<string, object>(){
-            { "color", "#303F9F" }
+        await user.Update(new Dictionary<string, object>()
+        {
+            {
+                "color", "#303F9F"
+            }
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

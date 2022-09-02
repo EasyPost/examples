@@ -19,8 +19,11 @@ public class Examples
 
         User user = await User.RetrieveMe();
 
-        await user.Update(new Dictionary<string, object>() {
-            { "recharge_threshold", 50.00 }
+        await user.Update(new Dictionary<string, object>()
+        {
+            {
+                "recharge_threshold", 50.00
+            }
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

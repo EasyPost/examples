@@ -17,8 +17,10 @@ public class Examples
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Batch batch = await Batch.Create(new Dictionary<string, object>() {
-            { "shipments", new List<string>()
+        Batch batch = await Batch.Create(new Dictionary<string, object>()
+        {
+            {
+                "shipments", new List<string>()
                 {
                     "shp_...",
                     "shp_...",

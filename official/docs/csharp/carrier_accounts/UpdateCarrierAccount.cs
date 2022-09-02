@@ -19,10 +19,16 @@ public class Examples
 
         CarrierAccount carrierAccount = await CarrierAccount.Retrieve("ca_...");
 
-        await carrierAccount.Update(new Dictionary<string, object>() {
-            { "credentials", new Dictionary<string, object>(){
-                { "pickup_id", "abc123" },
-            } },
+        await carrierAccount.Update(new Dictionary<string, object>()
+        {
+            {
+                "credentials", new Dictionary<string, object>()
+                {
+                    {
+                        "pickup_id", "abc123"
+                    },
+                }
+            },
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));

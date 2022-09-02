@@ -18,8 +18,11 @@ public class Examples
         EasyPost.ClientManager.SetCurrent(apiKey);
 
         Webhook webhook = await Webhook.Create(
-            new Dictionary<string, object>() {
-                { "url", "example.com" }
+            new Dictionary<string, object>()
+            {
+                {
+                    "url", "example.com"
+                }
             }
         );
 

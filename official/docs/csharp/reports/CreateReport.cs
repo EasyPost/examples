@@ -17,9 +17,14 @@ public class Examples
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Report report = await Report.Create("payment_log", new Dictionary<string, object>(){
-            { "start_date", "2016-10-01" },
-            { "end_date", "2016-10-31" }
+        Report report = await Report.Create("payment_log", new Dictionary<string, object>()
+        {
+            {
+                "start_date", "2016-10-01"
+            },
+            {
+                "end_date", "2016-10-31"
+            }
         });
 
 

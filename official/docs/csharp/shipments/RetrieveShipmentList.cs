@@ -17,8 +17,11 @@ public class Examples
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Dictionary<string, object> listParams = new Dictionary<string, object>() {
-            { "page_size", 5 }
+        Dictionary<string, object> listParams = new Dictionary<string, object>()
+        {
+            {
+                "page_size", 5
+            }
         };
 
         ShipmentCollection shipmentCollection = await Shipment.All(listParams);

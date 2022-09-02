@@ -17,8 +17,11 @@ public class Examples
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        ScanFormCollection scanFormCollection = await ScanForm.All(new Dictionary<string, object>(){
-            { "page_size", 5 }
+        ScanFormCollection scanFormCollection = await ScanForm.All(new Dictionary<string, object>()
+        {
+            {
+                "page_size", 5
+            }
         });
 
 

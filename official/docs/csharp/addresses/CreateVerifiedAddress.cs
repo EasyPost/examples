@@ -18,16 +18,35 @@ public class Examples
         EasyPost.ClientManager.SetCurrent(apiKey);
 
         Address address = await Address.Create(
-            new Dictionary<string, object> {
-                { "street1", "417 Montgomery Street" },
-                { "street2", "5" },
-                { "city", "San Francisco" },
-                { "state", "CA" },
-                { "zip", "94104" },
-                { "country", "US" },
-                { "company", "EasyPost" },
-                { "phone", "415-123-4567" },
-                { "verify", true }
+            new Dictionary<string, object>
+            {
+                {
+                    "street1", "417 Montgomery Street"
+                },
+                {
+                    "street2", "5"
+                },
+                {
+                    "city", "San Francisco"
+                },
+                {
+                    "state", "CA"
+                },
+                {
+                    "zip", "94104"
+                },
+                {
+                    "country", "US"
+                },
+                {
+                    "company", "EasyPost"
+                },
+                {
+                    "phone", "415-123-4567"
+                },
+                {
+                    "verify", true
+                }
             }
         );
 

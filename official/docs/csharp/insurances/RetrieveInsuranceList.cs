@@ -17,8 +17,11 @@ public class Examples
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        InsuranceCollection insuranceCollection = await Insurance.All(new Dictionary<string, object>(){
-            { "page_size", 5 }
+        InsuranceCollection insuranceCollection = await Insurance.All(new Dictionary<string, object>()
+        {
+            {
+                "page_size", 5
+            }
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(insuranceCollection, Formatting.Indented));

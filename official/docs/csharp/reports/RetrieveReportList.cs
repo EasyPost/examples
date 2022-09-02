@@ -17,9 +17,14 @@ public class Examples
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        ReportCollection reportCollection = await Report.All("payment_log", new Dictionary<string, object>(){
-            { "page_size", 4 },
-            { "start_date", "2016-01-02" }
+        ReportCollection reportCollection = await Report.All("payment_log", new Dictionary<string, object>()
+        {
+            {
+                "page_size", 4
+            },
+            {
+                "start_date", "2016-01-02"
+            }
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(reportCollection, Formatting.Indented));

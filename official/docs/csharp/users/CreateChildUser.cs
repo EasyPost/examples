@@ -17,8 +17,11 @@ public class Examples
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        User user = await User.Create(new Dictionary<string, object>() {
-            { "name", "Child Account Name" }
+        User user = await User.Create(new Dictionary<string, object>()
+        {
+            {
+                "name", "Child Account Name"
+            }
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

@@ -19,8 +19,11 @@ public class Examples
 
         User childUser = await User.Retrieve("user_..");
 
-        await childUser.Update(new Dictionary<string, object>() {
-            { "name", "Test Child" }
+        await childUser.Update(new Dictionary<string, object>()
+        {
+            {
+                "name", "Test Child"
+            }
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(childUser, Formatting.Indented));
