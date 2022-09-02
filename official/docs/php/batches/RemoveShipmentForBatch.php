@@ -1,15 +1,13 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
-
-$params = [
-    'shipments' => [
-        ['id' => 'shp_...']
-    ]
-];
+\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
 $batch = \EasyPost\Batch::retrieve('batch_...');
 
-$batch->remove_shipments($params);
+$batch->remove_shipments([
+    'shipments' => [
+        ['id' => 'shp_...']
+    ]
+]);
 
 echo $batch;

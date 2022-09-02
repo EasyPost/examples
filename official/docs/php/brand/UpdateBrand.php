@@ -1,13 +1,11 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
+\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
 $user = \EasyPost\User::retrieve_me();
 
-$color = '#303F9F';
-
 $brand = $user->update_brand([
-    'color' => $color,
+    'color' => '#303F9F',
 ]);
 
 echo $brand;

@@ -1,6 +1,6 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
+\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
 $child = \EasyPost\User::create([
     'name' => 'Child Account Name'

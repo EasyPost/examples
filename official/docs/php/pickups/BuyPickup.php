@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
+\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
-$pickup = \EasyPost\Pickup::retrieve('my-id');
+$pickup = \EasyPost\Pickup::retrieve('pickup_...');
 
 $pickup->buy([
     'carrier' => 'UPS',
