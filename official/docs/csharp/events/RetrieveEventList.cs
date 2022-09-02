@@ -1,9 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-Dictionary<string, object> listParams = new Dictionary<string, object>() { "page_size", 5 };
+public class Examples
+{
+    [Fact]
+    public async Task RetrieveAllEvents()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-EventCollection events = await Event.All(listParams);
+        EasyPost.ClientManager.SetCurrent(apiKey);
 
-Console.WriteLine(JsonConvert.SerializeObject(events, Formatting.Indented));
+        EventCollection events = await Event.All(new Dictionary<string, object>
+        {
+            { "page_size", 5 }
+        });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(events, Formatting.Indented));
+    }
+}

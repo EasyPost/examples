@@ -11,7 +11,7 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task RetrieveAddressList()
+    public async Task RetrieveAllAddresses()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
