@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.*;
 
 public class BuyPickup {
     public static void main(String[] args) {
@@ -12,6 +13,6 @@ public class BuyPickup {
 
         pickup = pickup.buy(buyMap);
 
-        System.out.prntln(pickup);
+        System.out.println(pickup);
     }
 }

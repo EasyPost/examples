@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.*;
 
 public class RetrieveAddressList {
     public static void main(String[] args) {
@@ -6,9 +7,9 @@ public class RetrieveAddressList {
         
         Map<String, Object> params = new HashMap<>();
 
-        list_params.put("page_size", 5);
+        listParams.put("page_size", 5);
 
-        AddressCollection addresses = Address.all(list_params);
+        AddressCollection addresses = Address.all(listParams);
 
         System.out.println(addresses);
     }

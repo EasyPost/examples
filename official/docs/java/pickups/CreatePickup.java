@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.*;
 
 public class CreatePickup {
     public static void main(String[] args) {
@@ -14,13 +15,13 @@ public class CreatePickup {
         pickupMap.put("address", address);
         pickupMap.put("shipment", shipment);
         pickupMap.put("reference", "my-first-pickup");
-        pickupMap.put("min_datetime", "2014-10-20 17:10:00");
-        pickupMap.put("max_datetime", "2014-10-21 10:30:00");
+        pickupMap.put("min_datetime", "2022-10-01 10:30:00");
+        pickupMap.put("max_datetime", "2022-10-02 10:30:00");
         pickupMap.put("is_account_address", false);
         pickupMap.put("instructions", "Special pickup instructions");
 
         Pickup pickup = Pickup.create(pickupMap);
 
-        System.out.prntln(pickup);
+        System.out.println(pickup);
     }
 }

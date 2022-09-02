@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.*;
 
 public class RemoveShipmentFromBatch {
     public static void main(String[] args) {
@@ -6,10 +7,10 @@ public class RemoveShipmentFromBatch {
         
         Batch batch = Batch.retrieve("batch_...");
 
-        List<Map<String, Object>> shipments = new ArrayList<Map<String, Object>>();
         Map<String, Object> shipment1 = new HashMap<String, Object>();
         shipment1.put("id", "shp_...");
 
+        List<Map<String, Object>> shipments = new ArrayList<Map<String, Object>>();
         shipments.add(shipment1);
 
         Map<String, Object> batchMap = new HashMap<String, Object>();

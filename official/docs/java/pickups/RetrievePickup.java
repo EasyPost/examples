@@ -6,6 +6,6 @@ public class RetrievePickup {
         
         Pickup pickup = Pickup.retrieve("pickup_...");
 
-        System.out.prntln(pickup);
+        System.out.println(pickup);
     }
 }

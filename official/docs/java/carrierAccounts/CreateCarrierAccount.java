@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.*;
 
 public class CreateCarrierAccount {
     public static void main(String[] args) {
@@ -10,6 +11,7 @@ public class CreateCarrierAccount {
         credentials.put("distribution_center", "USLAX1");
         credentials.put("pickup_id", "123456");
 
+        Map<String, Object> testCredentials = new HashMap<String, Object>();
         testCredentials.put("client_id", "123456");
         testCredentials.put("client_secret", "123abc");
         testCredentials.put("distribution_center", "USLAX1");

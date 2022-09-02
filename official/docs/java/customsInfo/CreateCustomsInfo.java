@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.*;
 
 public class CreateCustomsInfo {
     public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class CreateCustomsInfo {
         customsItemMap.put("weight", 5);
         customsItemMap.put("origin_country", "us");
         customsItemMap.put("hs_tariff_number", "123456");
+        
         CustomsItem customsItem1 = CustomsItem.create(customsItemMap);
 
         List<CustomsItem> customsItemsList = new ArrayList<CustomsItem>();

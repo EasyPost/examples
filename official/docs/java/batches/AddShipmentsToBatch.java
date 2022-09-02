@@ -1,16 +1,17 @@
 import com.easypost.EasyPost;
+import java.util.*;
 
 public class AddShipmentsToBatch {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        List<Map<String, Object>> shipments = new ArrayList<Map<String, Object>>();
         Map<String, Object> shipment1 = new HashMap<String, Object>();
         shipment1.put("id", "shp_...");
 
         Map<String, Object> shipment2 = new HashMap<String, Object>();
-        shipment1.put("id", "shp_...");
+        shipment2.put("id", "shp_...");
 
+        List<Map<String, Object>> shipments = new ArrayList<Map<String, Object>>();
         shipments.add(shipment1);
         shipments.add(shipment2);
 
@@ -20,6 +21,6 @@ public class AddShipmentsToBatch {
         Batch batch = Batch.retrieve("batch_...");
         batch.addShipments(batchMap);
 
-        Systen.out.println(batch);
+        System.out.println(batch);
     }
 }

@@ -8,6 +8,6 @@ public class CancelPickup {
 
         pickup = pickup.cancel();
 
-        System.out.prntln(pickup);
+        System.out.println(pickup);
     }
 }

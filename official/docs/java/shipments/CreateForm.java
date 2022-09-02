@@ -1,12 +1,13 @@
 import com.easypost.EasyPost;
-import com.easypost.model.Shipment;
+import java.util.*;
 
 public class CreateForm {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Shipment shipment = Shipment.retrieve("rate_...");
-
+        Shipment shipment = Shipment.retrieve("shp_...");
+        shipment.buy();
+        
         Map<String, Object> titleMap = new HashMap<String, Object>();
         titleMap.put("title", "Square Reader");
 
