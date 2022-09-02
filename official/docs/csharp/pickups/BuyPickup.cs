@@ -1,9 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-Pickup pickup = await Pickup.Retrieve("pickup_...");
+public class Examples
+{
+    [Fact]
+    public async Task BuyPickup()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-await pickup.Buy("UPS", "Same-Day Pickup");
+        EasyPost.ClientManager.SetCurrent(apiKey);
 
-Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));
+        Pickup pickup = await Pickup.Retrieve("pickup_...");
+
+        await pickup.Buy("UPS", "Same-Day Pickup");
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));
+    }
+}

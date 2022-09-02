@@ -24,8 +24,6 @@ public class Examples
             }
         });
 
-        List<Batch> batches = batchCollection.batches;
-
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(batches, Formatting.Indented));
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(batchCollection, Formatting.Indented));
     }
 }

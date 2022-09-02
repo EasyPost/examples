@@ -1,11 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-User childUser = await User.Retrieve("user_..");
+public class Examples
+{
+    [Fact]
+    public async Task UpdateChildUser()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-await childUser.Update(new Dictionary() {
-    { "name", "Test Child" }
-});
+        EasyPost.ClientManager.SetCurrent(apiKey);
 
-Console.WriteLine(JsonConvert.SerializeObject(childUser, Formatting.Indented));
+        User childUser = await User.Retrieve("user_..");
+
+        await childUser.Update(new Dictionary<string, object>() {
+            { "name", "Test Child" }
+        });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(childUser, Formatting.Indented));
+    }
+}

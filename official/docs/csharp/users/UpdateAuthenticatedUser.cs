@@ -1,11 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-User user = await User.RetrieveMe();
+public class Examples
+{
+    [Fact]
+    public async Task UpdateAuthenticatedUser()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-await user.Update(new Dictionary() {
-    { "recharge_threshold", 50.00 }
-});
+        EasyPost.ClientManager.SetCurrent(apiKey);
 
-Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
+        User user = await User.RetrieveMe();
+
+        await user.Update(new Dictionary<string, object>() {
+            { "recharge_threshold", 50.00 }
+        });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
+    }
+}

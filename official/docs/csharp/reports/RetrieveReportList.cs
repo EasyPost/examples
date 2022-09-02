@@ -1,10 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-ReportCollection reportCollection = await Report.All("payment_log", new DictionaryM<string, object>(){
-    { "page_size", 4 },
-    { "start_date", "2016-01-02" }
-});
+public class Examples
+{
+    [Fact]
+    public async Task RetrieveAllReports()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(reportCollection, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        ReportCollection reportCollection = await Report.All("payment_log", new Dictionary<string, object>(){
+            { "page_size", 4 },
+            { "start_date", "2016-01-02" }
+        });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(reportCollection, Formatting.Indented));
+    }
+}

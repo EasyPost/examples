@@ -1,10 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-ScanForm scanForm = await ScanForm.Create(new List<Dictionary<string, object>>(){
-    { "id", "shp_..." },
-    { "id", "shp_..." }
-});
+public class Examples
+{
+    [Fact]
+    public async Task CreateScanForm()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(scanForm, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        Shipment shipment = await Shipment.Retrieve("shp_...");
+
+        ScanForm scanForm = await ScanForm.Create(new List<Shipment>
+        {
+            shipment
+        });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(scanForm, Formatting.Indented));
+    }
+}

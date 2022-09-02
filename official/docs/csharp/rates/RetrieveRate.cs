@@ -1,7 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-Rate rate = await Rate.Retrieve("rate...");
+public class Examples
+{
+    [Fact]
+    public async Task RetrieveRate()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(rate, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        Rate rate = await Rate.Retrieve("rate...");
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(rate, Formatting.Indented));
+    }
+}

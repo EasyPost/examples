@@ -1,9 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-User user = await User.Retrieve("user_...");
+public class Examples
+{
+    [Fact]
+    public async Task DeleteChildUser()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-await user.delete();
+        EasyPost.ClientManager.SetCurrent(apiKey);
 
-Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
+        User user = await User.Retrieve("user_...");
+
+        bool success = await user.Delete();
+
+        new TestOutputHelper().WriteLine(success.ToString());
+    }
+}

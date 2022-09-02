@@ -1,9 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-Webhook webhook = await Webhook.Retrieve("hook_...");
+public class Examples
+{
+    [Fact]
+    public async Task DeleteWebhook()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-await webhook.Delete();
+        EasyPost.ClientManager.SetCurrent(apiKey);
 
-Console.WriteLine(JsonConvert.SerializeObject(webhook, Formatting.Indented));
+        Webhook webhook = await Webhook.Retrieve("hook_...");
+
+        bool success = await webhook.Delete();
+
+        new TestOutputHelper().WriteLine(success.ToString());
+    }
+}
