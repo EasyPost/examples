@@ -1,18 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-Address address = await Address.Create(
-    new Dictionary<string, object>() {
-        { "street1", "417 MONTGOMERY ST" },
-        { "street2", "FLOOR 5" },
-        { "city", "SAN FRANCISCO" },
-        { "state", "CA" },
-        { "zip", "94104" },
-        { "country", "US" },
-        { "company", "EasyPost" },
-        { "phone", "415-123-4567" },
+public class Examples
+{
+    [Fact]
+    public async Task CreateAddress()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
+
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        Address address = await Address.Create(
+            new Dictionary<string, object> {
+                { "street1", "417 MONTGOMERY ST" },
+                { "street2", "FLOOR 5" },
+                { "city", "SAN FRANCISCO" },
+                { "state", "CA" },
+                { "zip", "94104" },
+                { "country", "US" },
+                { "company", "EasyPost" },
+                { "phone", "415-123-4567" },
+            }
+        );
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));
     }
-);
-
-Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));
+}
