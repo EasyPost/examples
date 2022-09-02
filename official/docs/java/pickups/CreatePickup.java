@@ -1,5 +1,5 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class CreatePickup {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class CreatePickup {
         HashMap<String, Object> shipment = new HashMap<String, Object>();
         fromAddress.put("id", "shp_...");
 
-        Map<String, Object> pickupMap = new HashMap<String, Object>();
+        HashMap<String, Object> pickupMap = new HashMap<String, Object>();
         pickupMap.put("address", address);
         pickupMap.put("shipment", shipment);
         pickupMap.put("reference", "my-first-pickup");

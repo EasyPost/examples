@@ -1,11 +1,11 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class VerifyExistingAddress {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Map<String, Object> addressParams = new HashMap<String, Object>();
+        HashMap<String, Object> addressParams = new HashMap<String, Object>();
 
         addressParams.put("street1", "417 Montgomery Street");
         addressParams.put("city", "SF");

@@ -1,5 +1,4 @@
 import com.easypost.EasyPost;
-import java.util.*;
 
 public class ManifestBatch {
     public static void main(String[] args) {

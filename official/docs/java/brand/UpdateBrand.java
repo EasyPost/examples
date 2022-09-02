@@ -1,5 +1,5 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class UpdateBrand {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class UpdateBrand {
         
         User user = User.retrieveMe();
 
-        Map<String, Object> params = new HashMap<>();
+        HashMap<String, Object> params = new HashMap<>();
         params.put("color", "303F9F");
 
         Brand brand = user.updateBrand(params);

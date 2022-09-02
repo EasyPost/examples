@@ -1,5 +1,5 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class LabelShipment {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class LabelShipment {
         
         Shipment shipment = Shipment.retrieve("shp_...");
 
-        Map<String, Object> params = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("file_format", "ZPL");
 
         shipment.label(params);

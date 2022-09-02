@@ -1,5 +1,5 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class CreateShipmentWithOptions {
     public static void main(String[] args) {

@@ -1,5 +1,5 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class UpdateCarrierAccount {
     public static void main(String[] args) {
@@ -7,10 +7,10 @@ public class UpdateCarrierAccount {
         
         CarrierAccount carrierAccount = CarrierAccount.retrieve("ca_...");
 
-        Map<String, Object> credentials = new HashMap<String, Object>();
+        HashMap<String, Object> credentials = new HashMap<String, Object>();
         credentials.put("pickup_id", "abc123");
 
-        Map<String, Object> params = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("credentials", credentials);
 
         carrierAccount.update(params);

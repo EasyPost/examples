@@ -1,11 +1,11 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class UpdateUser {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Map<String, Object> params = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("recharge_threshold", "50.00");
 
         User user = User.retrieveMe();

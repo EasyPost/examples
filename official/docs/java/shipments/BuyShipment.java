@@ -1,5 +1,5 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class BuyShipment {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class BuyShipment {
         
         Shipment shipment = Shipment.retrieve("shp_...");
 
-        Map<String, Object> buyMap = new HashMap<String, Object>();
+        HashMap<String, Object> buyMap = new HashMap<String, Object>();
         buyMap.put("rate", shipment.lowestRate());
         buyMap.put("insurance", 249.99);
 

@@ -1,4 +1,6 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
+import java.util.List;
 
 public class CreateOrder {
     public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class CreateOrder {
         List<Parcel> parcelList = parcelList.add(parcel1);
         parcelList.add(parcel2);
 
-        Map<String, Object> orderMap = new HashMap<String, Object>();
+        HashMap<String, Object> orderMap = new HashMap<String, Object>();
         orderMap.put("to_address", toAddress);
         orderMap.put("from_address", fromAddress);
         orderMap.put("shipments", parcelList);

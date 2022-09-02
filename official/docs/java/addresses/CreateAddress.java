@@ -1,11 +1,11 @@
 import com.easypost.EasyPost;
-import java.util.*;
+import java.util.HashMap;
 
 public class CreateAddress {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Map<String, Object> addressParams = new HashMap<String, Object>();
+        HashMap<String, Object> addressParams = new HashMap<String, Object>();
 
         addressParams.put("street1", "417 MONTGOMERY ST");
         addressParams.put("street2", "FLOOR 5");
