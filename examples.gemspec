@@ -11,6 +11,8 @@ Gem::Specification.new do |spec|
   spec.homepage               = 'https://github.com/easypost/examples'
   spec.license                = 'MIT'
 
+  spec.add_dependency 'easypost', '~> 4'
+
   spec.add_development_dependency 'rubocop', '= 1.27' # rubocop 1.28 requires Ruby 2.6+
   spec.add_development_dependency 'rubocop-rspec', '~> 2.7'
 end
