@@ -1,22 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-Insurance insurance = await Insurance.Create(new Dictionary<string, object>() {
+public class Examples
+{
+    [Fact]
+    public async Task CreateInsurance()
     {
-        "to_address", new Dictionary<string, object>(){
-            { "id", "adr_..."}
-        }
-    },
-    {
-        "from_address", new Dictionary<string, object>(){
-            { "id", "adr_..."}
-        }
-    },
-    { "reference", "InsuranceRef1" },
-    { "carrier", "USPS" },
-    { "tracking_code", "9400110898825022579493" },
-    { "amount", "100.00" }
-});
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(insurance, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        Insurance insurance = await Insurance.Create(new Dictionary<string, object>() {
+            {
+                "to_address", new Dictionary<string, object>(){
+                    { "id", "adr_..."}
+                }
+            },
+            {
+                "from_address", new Dictionary<string, object>(){
+                    { "id", "adr_..."}
+                }
+            },
+            { "reference", "InsuranceRef1" },
+            { "carrier", "USPS" },
+            { "tracking_code", "9400110898825022579493" },
+            { "amount", "100.00" }
+        });
+
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(insurance, Formatting.Indented));
+    }
+}

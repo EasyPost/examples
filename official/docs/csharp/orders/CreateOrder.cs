@@ -1,34 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-Order order = await Order.Create(
-    new Dictionary<string, object>() {
+public class Examples
+{
+    [Fact]
+    public async Task CreateOrder()
     {
-        "to_address", new Dictionary<string, object>(){
-            { "id", "adr_..." }
-        }
-    },
-    {
-        "from_address", new Dictionary<string, object>(){
-            { "id", "adr_..." }
-        }
-    },
-    {
-         "shipments", new List<Dictionary<string, object>>(){
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
+
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        Order order = await Order.Create(
+            new Dictionary<string, object>()
             {
-                "parcel", new Dictionary<string, object>(){
-                    { "weight", 10.2 }
+                {
+                    "to_address", new Dictionary<string, object>()
+                    {
+                        {
+                            "id", "adr_..."
+                        }
+                    }
+                },
+                {
+                    "from_address", new Dictionary<string, object>()
+                    {
+                        {
+                            "id", "adr_..."
+                        }
+                    }
+                },
+                {
+                    "shipments", new List<Dictionary<string, object>>()
+                    {
+                        {
+                            new Dictionary<string, object>
+                            {
+                                {
+                                    "parcel", new Dictionary<string, object>()
+                                    {
+                                        {
+                                            "weight", 10.2
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            new Dictionary<string, object>
+                            {
+                                {
+                                    "parcel", new Dictionary<string, object>()
+                                    {
+                                        {
+                                            "weight", 17.5
+                                        },
+                                        {
+                                            "predefined_package", "FedExBox"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-            },
-            {
-                "parcel", new Dictionary<string, object>() {
-                    { "weight", 17.5 },
-                    { "predefined_package", "FedExBox" }
-                }
-            }
-        }
+            });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
     }
-});
-
-Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
+}

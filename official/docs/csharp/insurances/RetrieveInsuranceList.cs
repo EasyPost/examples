@@ -1,9 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-InsuranceCollection insuranceCollection = await Insurance.All(new Dictionary<string, object>(){
-  { "page_size", 5 }
-});
+public class Examples
+{
+    [Fact]
+    public async Task RetrieveAllInsurance()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(insuranceCollection, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        InsuranceCollection insuranceCollection = await Insurance.All(new Dictionary<string, object>(){
+            { "page_size", 5 }
+        });
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(insuranceCollection, Formatting.Indented));
+    }
+}

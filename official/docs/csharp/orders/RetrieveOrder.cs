@@ -1,7 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
+using Xunit.Sdk;
+using Newtonsoft.Json;
 using EasyPost;
 
-EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
+namespace EasyPostExamples;
 
-Order order = await Order.Retrieve("order_...");
+public class Examples
+{
+    [Fact]
+    public async Task RetrieveOrder()
+    {
+        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
+        EasyPost.ClientManager.SetCurrent(apiKey);
+
+        Order order = await Order.Retrieve("order_...");
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
+    }
+}
