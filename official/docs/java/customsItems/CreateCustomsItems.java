@@ -1,10 +1,11 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
 
 public class CreateCustomsItems {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Map<String, Object> customsItemMap = new HashMap<String, Object>();
+        HashMap<String, Object> customsItemMap = new HashMap<String, Object>();
         customsItemMap.put("description", "T-shirt");
         customsItemMap.put("quantity", 1);
         customsItemMap.put("value", 10);

@@ -1,16 +1,17 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
 
 public class CreateInsurance {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Map<String, Object> toAddressMap = new HashMap<String, Object>();
+        HashMap<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("id", "adr_...");
 
-        Map<String, Object> fromAddressMap = new HashMap<String, Object>();
+        HashMap<String, Object> fromAddressMap = new HashMap<String, Object>();
         fromAddressMap.put("id", "adr_...");
 
-        Map<String, Object> insuranceMap = new HashMap<String, Object>();
+        HashMap<String, Object> insuranceMap = new HashMap<String, Object>();
         insuranceMap.put("to_address", toAddressMap);
         insuranceMap.put("from_address", fromAddressMap);
         insuranceMap.put("tracking_code", "9400110898825022579493");

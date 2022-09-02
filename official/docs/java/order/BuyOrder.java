@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
 
 public class BuyOrder {
     public static void main(String[] args) {
@@ -6,7 +7,7 @@ public class BuyOrder {
         
         Order order = Order.retrieve("order_...");
 
-        Map<String, Object> buyParams = new HashMap<String, Object>();
+        HashMap<String, Object> buyParams = new HashMap<String, Object>();
         buyParams.put("carrier", "FedEx");
         buyParams.put("service", "FEDEX_GROUND");
 

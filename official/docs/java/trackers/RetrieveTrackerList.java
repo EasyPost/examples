@@ -1,13 +1,14 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
 
 public class RetrieveTrackerList {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Map<String, Object> listParams = new HashMap<>();
-        list_params.put("page_size", 5);
+        HashMap<String, Object> listParams = new HashMap<>();
+        listParams.put("page_size", 5);
 
-        TrackerCollection trackers = Tracker.all(list_params);
+        TrackerCollection trackers = Tracker.all(listParams);
 
         System.out.println(trackers);
     }

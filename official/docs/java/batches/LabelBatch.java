@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
 
 public class LabelBatch {
     public static void main(String[] args) {
@@ -6,7 +7,7 @@ public class LabelBatch {
         
         Batch batch = Batch.retrieve("batch_...");
 
-        Map<String, Object> labelMap = new HashMap<String, Object>();
+        HashMap<String, Object> labelMap = new HashMap<String, Object>();
         labelMap.put("file_format", "PDF");
 
         batch.label(labelMap);

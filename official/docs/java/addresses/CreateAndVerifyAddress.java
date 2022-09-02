@@ -1,21 +1,22 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
 
 public class CreateAndVerifyAddress {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Map<String, Object> addressHash = new HashMap<String, Object>();
+        HashMap<String, Object> addressParams = new HashMap<String, Object>();
 
-        addressHash.put("street1", "417 Montgomery Street");
-        addressHash.put("street2", "FL 5");
-        addressHash.put("city", "San Francisco");
-        addressHash.put("state", "CA");
-        addressHash.put("zip", "94104");
-        addressHash.put("country", "US");
-        addressHash.put("company", "EasyPost");
-        addressHash.put("phone", "415-123-4567");
+        addressParams.put("street1", "417 Montgomery Street");
+        addressParams.put("street2", "FL 5");
+        addressParams.put("city", "San Francisco");
+        addressParams.put("state", "CA");
+        addressParams.put("zip", "94104");
+        addressParams.put("country", "US");
+        addressParams.put("company", "EasyPost");
+        addressParams.put("phone", "415-123-4567");
 
-        Address address = Address.createAndVerify(addressHash);
+        Address address = Address.createAndVerify(addressParams);
 
         System.out.println(address);
     }

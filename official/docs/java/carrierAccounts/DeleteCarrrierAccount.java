@@ -7,6 +7,6 @@ public class DeleteCarrrierAccount {
         CarrierAccount carrierAccount = CarrierAccount.retrieve("ca_...");
         carrierAccount.delete();
 
-        system.out.println(carrierAccount);
+        System.out.println(carrierAccount);
     }
 }

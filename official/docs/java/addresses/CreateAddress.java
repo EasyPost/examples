@@ -1,21 +1,22 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
 
 public class CreateAddress {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
         
-        Map<String, Object> addressHash = new HashMap<String, Object>();
+        HashMap<String, Object> addressParams = new HashMap<String, Object>();
 
-        addressHash.put("street1", "417 MONTGOMERY ST");
-        addressHash.put("street2", "FLOOR 5");
-        addressHash.put("city", "SAN FRANCISCO");
-        addressHash.put("state", "CA");
-        addressHash.put("zip", "94104");
-        addressHash.put("country", "US");
-        addressHash.put("company", "EasyPost");
-        addressHash.put("phone", "415-123-4567");
+        addressParams.put("street1", "417 MONTGOMERY ST");
+        addressParams.put("street2", "FLOOR 5");
+        addressParams.put("city", "SAN FRANCISCO");
+        addressParams.put("state", "CA");
+        addressParams.put("zip", "94104");
+        addressParams.put("country", "US");
+        addressParams.put("company", "EasyPost");
+        addressParams.put("phone", "415-123-4567");
 
-        Address address = Address.create(addressHash);
+        Address address = Address.create(addressParams);
 
         System.out.println(address);
     }

@@ -1,4 +1,5 @@
 import com.easypost.EasyPost;
+import java.util.HashMap;
 
 public class BuyPickup {
     public static void main(String[] args) {
@@ -6,12 +7,12 @@ public class BuyPickup {
         
         Pickup pickup = Pickup.retrieve("pickup_...");
 
-        Map<String, Object> buyMap = new HashMap<String, Object>();
+        HashMap<String, Object> buyMap = new HashMap<String, Object>();
         buyMap.put("carrier", "UPS");
         buyMap.put("service", "Same-day Pickup");
 
         pickup = pickup.buy(buyMap);
 
-        System.out.prntln(pickup);
+        System.out.println(pickup);
     }
 }
