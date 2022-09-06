@@ -9,6 +9,8 @@ import easypost
 import argparse
 import csv
 
+OUTPUT_FILE_NAME = "child_accounts.csv"
+
 parser = argparse.ArgumentParser(description="Export all child account USPS production credentials")
 parser.add_argument("-k", "--key", required=True, help="Parent production API key")
 
@@ -61,10 +63,10 @@ def process_child(child: easypost.User) -> Dict:
             "prod": account.credentials,
         }
         if account_details.get("test"):
-            details = {**account_details.get("test"), "ca_id": account.id, "credential_type": "test"}
+            details = {**account_details.get("test"), "carrier_account_id": account.id, "credential_type": "test"}
             credentials.append(details)
         if account_details.get("prod"):
-            details = {**account_details.get("prod"), "ca_id": account.id, "credential_type": "prod"}
+            details = {**account_details.get("prod"), "carrier_account_id": account.id, "credential_type": "prod"}
             credentials.append(details)
 
     return {"id": child.id, "accounts": credentials}
@@ -93,10 +95,10 @@ def write_to_csv(data: List[Dict]):
     :type data: List[Dict]
     :return: None
     """
-    with open("child_accounts.csv", "w") as csvfile:
+    with open(OUTPUT_FILE_NAME, "w") as csvfile:
         fieldnames = [
             "child_id",
-            "ca_id",
+            "carrier_account_id",
             "credential_type",
             "city",
             "state",
@@ -114,7 +116,7 @@ def write_to_csv(data: List[Dict]):
             for credential in child["accounts"]:
                 row = {
                     "child_id": child.get('id', ''),
-                    "ca_id": credential.get("ca_id", ""),
+                    "carrier_account_id": credential.get("carrier_account_id", ""),
                     "credential_type": credential.get("credential_type", ""),
                     "city": credential.get("address_city", ""),
                     "state": credential.get("address_state", ""),

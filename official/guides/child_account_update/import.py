@@ -9,6 +9,8 @@ import easypost
 import argparse
 import csv
 
+INPUT_FILE_NAME = "child_accounts.csv"
+
 parser = argparse.ArgumentParser(description="Import all child account USPS production credentials")
 parser.add_argument("-k", "--key", required=True, help="Parent production API key")
 
@@ -55,17 +57,19 @@ def process_entry(entry: Dict, child: easypost.User):
     child_prod_key = get_production_key(child.keys)
     authenticate(child_prod_key)
 
-    account: easypost.CarrierAccount = easypost.CarrierAccount.retrieve(easypost_id=entry["ca_id"])
+    account: easypost.CarrierAccount = easypost.CarrierAccount.retrieve(easypost_id=entry["carrier_account_id"])
     if not account:
-        print("Matching account not found for ID {}".format(entry["ca_id"]))
+        print("Matching account not found for ID {}".format(entry["carrier_account_id"]))
         return
 
     if entry["credential_type"] == "test":
         account.test_credentials = entry["credentials"]
     elif entry["credential_type"] == "prod":
         account.prod_credentials = entry["credentials"]
-    print(account)
-    # account.save()  # TODO: Uncomment this line to actually save the changes
+    try:
+        account.save()
+    except easypost.Error as e:
+        print("Error updating account {}: {}".format(entry["carrier_account_id"], e))
 
 
 def read_from_csv() -> List[Dict]:
@@ -75,13 +79,13 @@ def read_from_csv() -> List[Dict]:
     :return: List of valid entries from the CSV file
     :rtype: List[Dict]
     """
-    with open("child_accounts.csv", "r") as csvfile:
+    with open(INPUT_FILE_NAME, "r") as csvfile:
         reader = csv.DictReader(csvfile)
         data = []
         for row in reader:
             entry = {
                 "child_id": row["child_id"],
-                "ca_id": row["ca_id"],
+                "carrier_account_id": row["carrier_account_id"],
                 "credential_type": row["credential_type"],
                 "credentials": {
                     "address_city": row["city"],
@@ -113,7 +117,8 @@ def validate_entry(row: Dict) -> bool:
         if k in ["shipper_id"]:  # These are optional fields that can be empty
             continue
         if not v or v == "":
-            raise Exception(f'Missing required field {k} for carrier account {row["ca_id"]}')
+            # Warning, doesn't halt execution
+            print(f'Missing required field {k} for carrier account {row["carrier_account_id"]}')
     return True
 
 
@@ -137,6 +142,7 @@ def main():
                 matching_child = child
                 break
         if not matching_child:
+            # Warning, doesn't halt execution
             print("Matching child account not found for ID {}".format(entry["child_id"]))
             continue
         process_entry(entry, matching_child)
