@@ -6,14 +6,14 @@ Accurate carrier account credentials will ensure the EndShipper information is p
 
 ### Step 1: Run the `export.py` script
 
-This script will export the UspsAccount credentials for every Child User linked to the parent. If there are multiple UspsAccounts for one Child, multiple rows will be returned. 
+This script will export the UspsAccount credentials for every Child User linked to the parent. If there are multiple UspsAccounts for one Child, multiple rows will be returned.
 
 It accomplishes this by:
 
-- Using the parent accounts production API key, pulling  all children and their API keys
+- Using the parent accounts production API key, pulling all children and their API keys
 - For each child user, it re-authenticates using the child-specific key
-- For each child user, it pulls the  linked carrier account details
-- For each UspsAccount carrier account linked to that child,  it will  pull the account details, and store the UspsAccount credentials information in the CSV file
+- For each child user, it pulls the linked carrier account details
+- For each UspsAccount carrier account linked to that child, it will pull the account details, and store the UspsAccount credentials information in the CSV file
 
 To run the script: `python3 export.py -k <EASYPOST_PROD_API_KEY>`
 
