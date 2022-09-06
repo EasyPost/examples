@@ -23,7 +23,7 @@ It accomplishes this by:
 - For each child user, it pulls the linked carrier account details
 - For each UspsAccount carrier account linked to that child, it will pull the account details, and store the UspsAccount credentials information in the CSV file
 
-To run the script: 
+To run the script:
 
 `python3 export.py -k <EASYPOST_PROD_API_KEY>`
 
@@ -49,9 +49,10 @@ The script does this by:
 - For each Carrier Account associated with that user, fetch the Carrier Account record using the Carrier Account id
 - Update the Carrier Account credentials using the information from the CSV file
 
-To run the script: 
+To run the script:
 
 `python3 import.py -k <EASYPOST_PROD_API_KEY>`
 
 ### Step 4: Use EndShipper addresses
+
 Once all the information for each child user has been updated, you can use the [EndShipper address](https://www.easypost.com/docs/api#endshipper) for each child user when creating and buying shipments.
