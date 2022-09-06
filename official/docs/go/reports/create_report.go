@@ -12,8 +12,8 @@ func main() {
 	client := easypost.New(apiKey)
 
 	reportOptions := &easypost.Report{
-		StartDate: "2016-01-01",
-		EndDate:   "2016-01-31",
+		StartDate: "2022-10-01",
+		EndDate:   "2022-10-31",
 	}
 
 	report, _ := client.CreateReport(
