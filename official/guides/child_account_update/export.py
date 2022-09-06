@@ -3,11 +3,17 @@
 # NOTE: Due to the nature of the easypost API library,
 # this script will run synchronously and therefore may take a while to complete if you have a lot of child accounts
 
-from typing import List, Dict, Union
-
-import easypost
 import argparse
 import csv
+from typing import (
+    Any,
+    Dict,
+    List,
+    Union,
+)
+
+import easypost
+
 
 OUTPUT_FILE_NAME = "child_accounts.csv"
 
@@ -29,7 +35,7 @@ def authenticate(key: str):
     easypost.api_key = key
 
 
-def get_production_key(keys: List) -> Union[str, None]:
+def get_production_key(keys: List[Dict[str, Any]]) -> Union[str, None]:
     """
     Get the production key from a list of keys
 
@@ -44,7 +50,24 @@ def get_production_key(keys: List) -> Union[str, None]:
     return None
 
 
-def process_child(child: easypost.User) -> Dict:
+def remap_credentials(credentials: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Remap a credentials dictionary to only necessary key-value pairs
+
+    :param credentials: Credentials dictionary of a USPS account
+    :type credentials: Dict[str, Any]
+    :return: Remapped credentials dictionary
+    :rtype: Dict[str, Any]
+    """
+    remapped = {}
+    if not credentials:
+        return remapped
+    for key, value in credentials.items():
+        remapped[key] = value["value"]
+    return remapped
+
+
+def process_child(child: easypost.User) -> Dict[str, Any]:
     """
     Process a child account
 
@@ -57,17 +80,13 @@ def process_child(child: easypost.User) -> Dict:
     authenticate(child_prod_key)
     accounts = get_usps_accounts()
     credentials = []
-    for account in accounts:
-        account_details = {
-            "test": account.test_credentials,
-            "prod": account.credentials,
+    for usps_account in accounts:
+        details = {
+            **remap_credentials(usps_account["fields"].get("credentials")),
+            "carrier_account_id": usps_account.id,
+            "credential_type": "prod",
         }
-        if account_details.get("test"):
-            details = {**account_details.get("test"), "carrier_account_id": account.id, "credential_type": "test"}
-            credentials.append(details)
-        if account_details.get("prod"):
-            details = {**account_details.get("prod"), "carrier_account_id": account.id, "credential_type": "prod"}
-            credentials.append(details)
+        credentials.append(details)
 
     return {"id": child.id, "accounts": credentials}
 
@@ -79,15 +98,15 @@ def get_usps_accounts() -> List[easypost.CarrierAccount]:
     :return: List of USPS accounts
     :rtype: List[easypost.CarrierAccount]
     """
-    accounts = easypost.CarrierAccount.all()
+    all_accounts = easypost.CarrierAccount.all()
     usps_accounts = []
-    for account in accounts:
+    for account in all_accounts:
         if account.type == "UspsAccount":
             usps_accounts.append(account)
     return usps_accounts
 
 
-def write_to_csv(data: List[Dict]):
+def write_to_csv(data: List[Dict[str, Any]]):
     """
     Write the data to a CSV file
 
@@ -113,19 +132,19 @@ def write_to_csv(data: List[Dict]):
         writer.writeheader()
         rows = []
         for child in data:
-            for credential in child["accounts"]:
+            for usps_account in child["accounts"]:
                 row = {
-                    "child_id": child.get('id', ''),
-                    "carrier_account_id": credential.get("carrier_account_id", ""),
-                    "credential_type": credential.get("credential_type", ""),
-                    "city": credential.get("address_city", ""),
-                    "state": credential.get("address_state", ""),
-                    "street": credential.get("address_street", ""),
-                    "zip": credential.get("address_zip", ""),
-                    "company": credential.get("company_name", ""),
-                    "email": credential.get("email", ""),
-                    "phone": credential.get("phone", ""),
-                    "shipper_id": credential.get("shipper_id", ""),
+                    "child_id": child.get("id", ""),
+                    "carrier_account_id": usps_account.get("carrier_account_id", ""),
+                    "credential_type": usps_account.get("credential_type", ""),
+                    "city": usps_account.get("address_city", ""),
+                    "state": usps_account.get("address_state", ""),
+                    "street": usps_account.get("address_street", ""),
+                    "zip": usps_account.get("address_zip", ""),
+                    "company": usps_account.get("company_name", ""),
+                    "email": usps_account.get("email", ""),
+                    "phone": usps_account.get("phone", ""),
+                    "shipper_id": usps_account.get("shipper_id", ""),
                 }
                 rows.append(row)
         writer.writerows(rows)

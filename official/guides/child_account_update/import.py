@@ -3,11 +3,16 @@
 # NOTE: Due to the nature of the easypost API library,
 # this script will run synchronously and therefore may take a while to complete if you have a lot of child accounts
 
-from typing import List, Dict, Union
-
-import easypost
 import argparse
 import csv
+from typing import (
+    Dict,
+    List,
+    Union,
+)
+
+import easypost
+
 
 INPUT_FILE_NAME = "child_accounts.csv"
 

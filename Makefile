@@ -72,6 +72,7 @@ lint-php:
 ## lint-python - lint Python files
 lint-python:
 	$(PYTHON_VIRTUAL_BIN)/flake8 official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/flake8 official/guides/
 
 ## lint-ruby - lints Ruby files
 lint-ruby:
@@ -114,6 +115,8 @@ format-node-check:
 format-python:
 	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
 	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/black official/guides/
+	$(PYTHON_VIRTUAL_BIN)/isort official/guides/
 
 ## format-python-check - checks that Python files conform to the correct format
 format-python-check:
