@@ -23,7 +23,7 @@ public class Examples
                 "page_size", 4
             },
             {
-                "start_date", "2016-01-02"
+                "start_date", "2022-10-01"
             }
         });
 

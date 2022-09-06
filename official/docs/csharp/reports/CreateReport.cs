@@ -20,10 +20,10 @@ public class Examples
         Report report = await Report.Create("payment_log", new Dictionary<string, object>()
         {
             {
-                "start_date", "2016-10-01"
+                "start_date", "2022-10-01"
             },
             {
-                "end_date", "2016-10-31"
+                "end_date", "2022-10-01"
             }
         });
 

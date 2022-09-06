@@ -39,10 +39,10 @@ public class Examples
                 }
             },
             {
-                "min_datetime", "2014-10-20 17:10:00"
+                "min_datetime", "2022-10-01 10:30:00"
             },
             {
-                "max_datetime", "2014-10-21 10:30:00"
+                "max_datetime", "2022-10-01 17:30:00"
             },
             {
                 "instructions", "Special pickup instructions"
