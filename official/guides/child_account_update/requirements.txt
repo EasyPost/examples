@@ -1,0 +1,2 @@
+easypost==7.5.0
+colorama==0.4.5

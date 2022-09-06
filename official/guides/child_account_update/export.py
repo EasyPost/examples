@@ -12,13 +12,26 @@ from typing import (
     Union,
 )
 
+import colorama
 import easypost
+from colorama import Fore
 
 
 OUTPUT_FILE_NAME = "child_accounts.csv"
 
+colorama.init()
+"""
+Color code:
+- White: INFO
+- Green: SUCCESS
+- Red: ERROR
+- Yellow: WARNING
+- Cyan: Status/Counter
+"""
+
 parser = argparse.ArgumentParser(description="Export all child account USPS production credentials")
 parser.add_argument("-k", "--key", required=True, help="Parent production API key")
+parser.add_argument("-f", "--file", required=False, help="File to write output to", default=OUTPUT_FILE_NAME)
 
 
 def authenticate(key: str):
@@ -40,7 +53,7 @@ def get_production_key(keys: List[Dict[str, Any]]) -> Union[str, None]:
     Get the production key from a list of keys
 
     :param keys: List of keys
-    :type keys: List
+    :type keys: List[Dict[str, Any]]
     :return: Production key if found, None otherwise
     :rtype: str | None
     """
@@ -48,23 +61,6 @@ def get_production_key(keys: List[Dict[str, Any]]) -> Union[str, None]:
         if key["mode"] == "production":
             return key["key"]
     return None
-
-
-def remap_credentials(credentials: 'EasyPostObject') -> Dict[str, Any]:
-    """
-    Remap a credentials dictionary to only necessary key-value pairs
-
-    :param credentials: Credentials dictionary of a USPS account
-    :type credentials: Dict[str, Any]
-    :return: Remapped credentials dictionary
-    :rtype: Dict[str, Any]
-    """
-    remapped = {}
-    if not credentials:
-        return remapped
-    for key, value in credentials.to_dict().items():
-        remapped[key] = value["value"]
-    return remapped
 
 
 def process_child(child: easypost.User) -> Dict[str, Any]:
@@ -76,19 +72,26 @@ def process_child(child: easypost.User) -> Dict[str, Any]:
     :return: Dictionary of child account information
     :rtype: Dict
     """
-    child_prod_key = get_production_key(child.keys)
-    authenticate(child_prod_key)
-    accounts = get_usps_accounts()
-    credentials = []
-    for usps_account in accounts:
-        details = {
-            **remap_credentials(usps_account["fields"].get("credentials")),
+    child_prod_key: str = get_production_key(keys=child.keys)
+    authenticate(key=child_prod_key)
+
+    usps_accounts: List[easypost.CarrierAccount] = get_usps_accounts()
+
+    print(Fore.WHITE + f"Processing {len(usps_accounts)} USPS accounts for child {child.id}...")
+
+    credentials: List[Dict[str, Any]] = []
+    for usps_account in usps_accounts:
+        details: Dict[str, Any] = {
+            **usps_account.credentials.to_dict(),
             "carrier_account_id": usps_account.id,
             "credential_type": "prod",
         }
         credentials.append(details)
 
-    return {"id": child.id, "accounts": credentials}
+    return {
+        "id": child.id,
+        "usps_accounts": credentials,
+    }
 
 
 def get_usps_accounts() -> List[easypost.CarrierAccount]:
@@ -98,11 +101,15 @@ def get_usps_accounts() -> List[easypost.CarrierAccount]:
     :return: List of USPS accounts
     :rtype: List[easypost.CarrierAccount]
     """
-    all_accounts = easypost.CarrierAccount.all()
-    usps_accounts = []
+    all_accounts: List[easypost.CarrierAccount] = easypost.CarrierAccount.all()
+
+    print(Fore.WHITE + f"Retrieved {len(all_accounts)} carrier accounts from API. Filtering for USPS accounts...")
+
+    usps_accounts: List[easypost.CarrierAccount] = []
     for account in all_accounts:
         if account.type == "UspsAccount":
             usps_accounts.append(account)
+
     return usps_accounts
 
 
@@ -111,10 +118,13 @@ def write_to_csv(data: List[Dict[str, Any]]):
     Write the data to a CSV file
 
     :param data: Child account data
-    :type data: List[Dict]
+    :type data: List[Dict[str, Any]]
     :return: None
     """
-    with open(OUTPUT_FILE_NAME, "w") as csvfile:
+    print(Fore.WHITE + f"Writing records to {OUTPUT_FILE_NAME}...")
+
+    count = 0
+    with open(OUTPUT_FILE_NAME, "w") as csv_file:
         fieldnames = [
             "child_id",
             "carrier_account_id",
@@ -128,12 +138,12 @@ def write_to_csv(data: List[Dict[str, Any]]):
             "phone",
             "shipper_id",
         ]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer = csv.DictWriter(f=csv_file, fieldnames=fieldnames)
         writer.writeheader()
         rows = []
         for child in data:
-            for usps_account in child["accounts"]:
-                row = {
+            for usps_account in child["usps_accounts"]:
+                row: Dict[str, Any] = {
                     "child_id": child.get("id", ""),
                     "carrier_account_id": usps_account.get("carrier_account_id", ""),
                     "credential_type": usps_account.get("credential_type", ""),
@@ -147,7 +157,10 @@ def write_to_csv(data: List[Dict[str, Any]]):
                     "shipper_id": usps_account.get("shipper_id", ""),
                 }
                 rows.append(row)
+                count += 1
         writer.writerows(rows)
+
+    print(Fore.GREEN + f"Successfully wrote {count} records to {OUTPUT_FILE_NAME}...")
 
 
 def main():
@@ -157,16 +170,22 @@ def main():
     :return: None
     """
     args = parser.parse_args()
-    authenticate(args.key)
+    authenticate(key=args.key)
 
-    user = easypost.User.retrieve_me()
-    children = user.all_api_keys().children
+    user: easypost.User = easypost.User.retrieve_me()
+    children: List[easypost.User] = user.all_api_keys().children
 
-    data = []
+    count = 1
+    total = len(children)
+    print(Fore.WHITE + f"Retrieved {total} child accounts from API...")
+
+    data: List[Dict[str, Any]] = []
     for child in children:
-        child_info = process_child(child)
+        print(Fore.CYAN + f"Processing child {count}/{total}...")
+        child_info: Dict[str, Any] = process_child(child=child)
         data.append(child_info)
-    write_to_csv(data)
+
+    write_to_csv(data=data)
 
 
 if __name__ == "__main__":
