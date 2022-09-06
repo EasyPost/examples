@@ -50,7 +50,7 @@ def get_production_key(keys: List[Dict[str, Any]]) -> Union[str, None]:
     return None
 
 
-def remap_credentials(credentials: Dict[str, Any]) -> Dict[str, Any]:
+def remap_credentials(credentials: 'EasyPostObject') -> Dict[str, Any]:
     """
     Remap a credentials dictionary to only necessary key-value pairs
 
@@ -62,7 +62,7 @@ def remap_credentials(credentials: Dict[str, Any]) -> Dict[str, Any]:
     remapped = {}
     if not credentials:
         return remapped
-    for key, value in credentials.items():
+    for key, value in credentials.to_dict().items():
         remapped[key] = value["value"]
     return remapped
 

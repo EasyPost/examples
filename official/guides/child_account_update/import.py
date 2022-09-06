@@ -67,10 +67,8 @@ def process_entry(entry: Dict, child: easypost.User):
         print("Matching account not found for ID {}".format(entry["carrier_account_id"]))
         return
 
-    if entry["credential_type"] == "test":
-        account.test_credentials = entry["credentials"]
-    elif entry["credential_type"] == "prod":
-        account.prod_credentials = entry["credentials"]
+    account.credentials = entry["credentials"]
+
     try:
         account.save()
     except easypost.Error as e:
@@ -118,13 +116,17 @@ def validate_entry(row: Dict) -> bool:
     :return: True if the row is valid, False otherwise
     :rtype: bool
     """
+    valid = True
     for k, v in row["credentials"].items():
         if k in ["shipper_id"]:  # These are optional fields that can be empty
             continue
         if not v or v == "":
             # Warning, doesn't halt execution
             print(f'Missing required field {k} for carrier account {row["carrier_account_id"]}')
-    return True
+            valid = False
+    if not valid:
+        print("Skipping entry for carrier account {}".format(row["carrier_account_id"]))
+    return valid
 
 
 def main():
