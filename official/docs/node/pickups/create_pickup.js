@@ -1,15 +1,13 @@
 const Easypost = require('@easypost/api');
-const api = new Easypost('EASYPOST_API_KEY');
 
-const address = 'adr_...';
-const shipment = 'shp_...';
+const api = new Easypost(process.env.EASYPOST_API_KEY);
 
 const pickup = new api.Pickup({
-  address,
-  shipment,
+  address: { id: 'adr_...' },
+  shipment: { id: 'shp_...' },
   reference: 'my-first-pickup',
-  min_datetime: '2014-10-21 10:30:00',
-  max_datetime: '2014-10-22 10:30:00',
+  min_datetime: '2022-10-01 10:30:00',
+  max_datetime: '2022-10-02 10:30:00',
   is_account_address: false,
   instructions: 'Special pickup instructions',
 });

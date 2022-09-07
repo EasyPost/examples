@@ -13,7 +13,6 @@ func main() {
 
 	reportOptions := &easypost.ListReportsOptions{
 		PageSize:  5,
-		StartDate: "2022-10-01",
 	}
 
 	reports, _ := client.ListReports(

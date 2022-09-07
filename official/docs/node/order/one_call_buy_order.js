@@ -1,5 +1,6 @@
 const Easypost = require('@easypost/api');
-const api = new Easypost('EASYPOST_API_KEY');
+
+const api = new Easypost(process.env.EASYPOST_API_KEY);
 
 const order = new api.Order({
   carrier_accounts: ['ca_...'],
@@ -7,18 +8,18 @@ const order = new api.Order({
   to_address: 'adr_...',
   from_address: 'adr_...',
   shipments: [
-    new api.Shipment({
+    {
       parcel: {
         predefined_package: 'FedExBox',
         weight: 10.2,
       },
-    }),
-    new api.Shipment({
+    },
+    {
       parcel: {
         predefined_package: 'FedExBox',
         weight: 17.5,
       },
-    }),
+    },
   ],
 });
 
