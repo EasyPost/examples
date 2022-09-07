@@ -172,6 +172,7 @@ def main():
         print(f"Processing child {count}/{total}...")
         child_info: Dict[str, Any] = process_child(child=child)
         data.append(child_info)
+        count += 1
 
     write_to_csv(data=data)
     print("Export complete.")

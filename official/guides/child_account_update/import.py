@@ -175,6 +175,7 @@ def main():
             print(f"Matching child account not found for ID {entry['child_id']}. Skipping...")
             continue
         process_entry(entry=entry, child=matching_child)
+        count += 1
 
 
 if __name__ == "__main__":
