@@ -12,22 +12,10 @@ from typing import (
     Union,
 )
 
-import colorama
 import easypost
-from colorama import Fore
 
 
 INPUT_FILE_NAME = "child_accounts.csv"
-
-colorama.init()
-"""
-Color code:
-- White: INFO
-- Green: SUCCESS
-- Red: ERROR
-- Yellow: WARNING
-- Cyan: Status/Counter
-"""
 
 parser = argparse.ArgumentParser(description="Import all child account USPS production credentials")
 parser.add_argument("-k", "--key", required=True, help="Parent production API key")
@@ -76,22 +64,20 @@ def process_entry(entry: Dict[str, Any], child: easypost.User):
     child_prod_key: str = get_production_key(keys=child.keys)
     authenticate(key=child_prod_key)
 
-    print(
-        Fore.WHITE + f"Updating credentials for child user {child.id}, carrier account {entry['carrier_account_id']}..."
-    )
+    print(f"Updating credentials for child user {child.id}, carrier account {entry['carrier_account_id']}...")
 
     account: easypost.CarrierAccount = easypost.CarrierAccount.retrieve(easypost_id=entry["carrier_account_id"])
     if not account:
-        print(Fore.RED + f"Matching account not found for ID {entry['carrier_account_id']}. Skipping...")
+        print(f"Matching account not found for ID {entry['carrier_account_id']}. Skipping...")
         return
 
     account.credentials = entry["credentials"]
 
     try:
         account.save()
-        print(Fore.GREEN + f"Successfully updated credentials for carrier account {entry['carrier_account_id']}\n")
+        print(f"Successfully updated credentials for carrier account {entry['carrier_account_id']}\n")
     except easypost.Error as e:
-        print(Fore.RED + f"Error updating credentials for carrier account {entry['carrier_account_id']}: {e}")
+        print(f"Error updating credentials for carrier account {entry['carrier_account_id']}: {e}")
 
 
 def read_from_csv() -> List[Dict[str, Any]]:
@@ -101,7 +87,7 @@ def read_from_csv() -> List[Dict[str, Any]]:
     :return: List of valid entries from the CSV file
     :rtype: List[Dict[str, Any]]
     """
-    print(Fore.WHITE + f"Reading records from {INPUT_FILE_NAME}...")
+    print(f"Reading records from {INPUT_FILE_NAME}...")
 
     with open(INPUT_FILE_NAME, "r") as csvfile:
         reader = csv.DictReader(csvfile)
@@ -137,7 +123,7 @@ def validate_entry(row: Dict[str, Any]) -> bool:
     :return: True if the row is valid, False otherwise
     :rtype: bool
     """
-    print(Fore.WHITE + f"Validating entry for carrier account ID {row['carrier_account_id']}...")
+    print(f"Validating entry for carrier account ID {row['carrier_account_id']}...")
 
     valid: bool = True
     for k, v in row["credentials"].items():
@@ -147,10 +133,10 @@ def validate_entry(row: Dict[str, Any]) -> bool:
             # Warning, doesn't halt execution
             # Mild confusion, this will print out the expected key,
             # not the key from the CSV file (e.g. 'address_city' instead of 'city')
-            print(Fore.YELLOW + f'Missing required field "{k}" for carrier account {row["carrier_account_id"]}')
+            print(f'Missing required field "{k}" for carrier account {row["carrier_account_id"]}')
             valid = False
     if not valid:
-        print(Fore.RED + f"Skipping entry for carrier account {row['carrier_account_id']}\n")
+        print(f"Skipping entry for carrier account {row['carrier_account_id']}\n")
     return valid
 
 
@@ -166,27 +152,27 @@ def main():
     user: easypost.User = easypost.User.retrieve_me()
     all_children: List[easypost.User] = user.all_api_keys().children
 
-    print(Fore.WHITE + f"Retrieved {len(all_children)} child accounts from API...")
+    print(f"Retrieved {len(all_children)} child accounts from API...")
 
     csv_data: List[Dict[str, Any]] = read_from_csv()
 
     count = 1
     total = len(csv_data)
-    print(Fore.WHITE + f"Retrieved {total} entries from CSV file...")
+    print(f"Retrieved {total} entries from CSV file...")
 
     for entry in csv_data:
-        print(Fore.CYAN + f"Processing entry {count}/{total}...")
+        print(f"Processing entry {count}/{total}...")
 
         # noinspection PyTypeChecker
         matching_child: easypost.User = None
-        print(Fore.WHITE + "Locating matching child account...")
+        print("Locating matching child account...")
         for child in all_children:
             if child.id == entry["child_id"]:
                 matching_child: easypost.User = child
                 break
         if not matching_child:
             # Warning, doesn't halt execution
-            print(Fore.RED + f"Matching child account not found for ID {entry['child_id']}. Skipping...")
+            print(f"Matching child account not found for ID {entry['child_id']}. Skipping...")
             continue
         process_entry(entry=entry, child=matching_child)
 

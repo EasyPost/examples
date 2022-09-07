@@ -12,22 +12,10 @@ from typing import (
     Union,
 )
 
-import colorama
 import easypost
-from colorama import Fore
 
 
 OUTPUT_FILE_NAME = "child_accounts.csv"
-
-colorama.init()
-"""
-Color code:
-- White: INFO
-- Green: SUCCESS
-- Red: ERROR
-- Yellow: WARNING
-- Cyan: Status/Counter
-"""
 
 parser = argparse.ArgumentParser(description="Export all child account USPS production credentials")
 parser.add_argument("-k", "--key", required=True, help="Parent production API key")
@@ -77,7 +65,7 @@ def process_child(child: easypost.User) -> Dict[str, Any]:
 
     usps_accounts: List[easypost.CarrierAccount] = get_usps_accounts()
 
-    print(Fore.WHITE + f"Processing {len(usps_accounts)} USPS accounts for child {child.id}...")
+    print(f"Processing {len(usps_accounts)} USPS accounts for child {child.id}...")
 
     credentials: List[Dict[str, Any]] = []
     for usps_account in usps_accounts:
@@ -103,7 +91,7 @@ def get_usps_accounts() -> List[easypost.CarrierAccount]:
     """
     all_accounts: List[easypost.CarrierAccount] = easypost.CarrierAccount.all()
 
-    print(Fore.WHITE + f"Retrieved {len(all_accounts)} carrier accounts from API. Filtering for USPS accounts...")
+    print(f"Retrieved {len(all_accounts)} carrier accounts from API. Filtering for USPS accounts...")
 
     usps_accounts: List[easypost.CarrierAccount] = []
     for account in all_accounts:
@@ -121,7 +109,7 @@ def write_to_csv(data: List[Dict[str, Any]]):
     :type data: List[Dict[str, Any]]
     :return: None
     """
-    print(Fore.WHITE + f"Writing records to {OUTPUT_FILE_NAME}...")
+    print(f"Writing records to {OUTPUT_FILE_NAME}...")
 
     count = 0
     with open(OUTPUT_FILE_NAME, "w") as csv_file:
@@ -160,7 +148,7 @@ def write_to_csv(data: List[Dict[str, Any]]):
                 count += 1
         writer.writerows(rows)
 
-    print(Fore.GREEN + f"Successfully wrote {count} records to {OUTPUT_FILE_NAME}...")
+    print(f"Successfully wrote {count} records to {OUTPUT_FILE_NAME}...")
 
 
 def main():
@@ -177,15 +165,16 @@ def main():
 
     count = 1
     total = len(children)
-    print(Fore.WHITE + f"Retrieved {total} child accounts from API...")
+    print(f"Retrieved {total} child accounts from API...")
 
     data: List[Dict[str, Any]] = []
     for child in children:
-        print(Fore.CYAN + f"Processing child {count}/{total}...")
+        print(f"Processing child {count}/{total}...")
         child_info: Dict[str, Any] = process_child(child=child)
         data.append(child_info)
 
     write_to_csv(data=data)
+    print("Export complete.")
 
 
 if __name__ == "__main__":
