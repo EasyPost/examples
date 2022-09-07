@@ -10,7 +10,8 @@ namespace EasyPostExamples;
 
 public class Examples
 {
-    [Fact] public async Task GenerateShipmentLabel()
+    [Fact]
+    public async Task GenerateShipmentLabel()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
