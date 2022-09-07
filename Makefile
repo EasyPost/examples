@@ -2,7 +2,6 @@ PYTHON_BINARY := python3
 PYTHON_VIRTUAL_ENV := venv
 PYTHON_VIRTUAL_BIN := $(PYTHON_VIRTUAL_ENV)/bin
 
-
 ## help - Display help about make targets for this Makefile
 help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
@@ -12,7 +11,7 @@ install: | install-csharp install-java install-node install-python install-ruby
 
 ## install-csharp - install C# dependencies
 install-csharp:
-	dotnet tool install -g dotnet-format
+	dotnet tool install -g dotnet-format || exit 0
 
 ## install-go - Install and vendor Go dependencies
 install-go:
@@ -21,9 +20,9 @@ install-go:
 ## install-java - installs Java dependencies
 install-java:
     # install CheckStyle jar for running locally
-	wget -O checkstyle.jar -q https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar
+	curl -LJs https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar -o checkstyle.jar
     # download EasyPost stylesheet, use local style suppressions
-	wget -O easypost_java_style.xml -q https://raw.githubusercontent.com/EasyPost/easypost-java/master/easypost_java_style.xml
+	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-java/master/easypost_java_style.xml -o easypost_java_style.xml
 
 ## install-node - installs Node dependencies
 install-node:
@@ -58,8 +57,7 @@ lint-go:
 
 ## lint-java - lints Java files
 lint-java:
-	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/docs/java/
-	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/guides/java/
+	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/docs/java/*
 
 ## lint-node - lints Node files
 lint-node:
