@@ -20,15 +20,6 @@ public class Examples
         Order order = await Order.Create(new Dictionary<string, object>()
         {
             {
-                "carrier_accounts", new List<string>()
-                {
-                    "ca_..."
-                }
-            },
-            {
-                "service", "NextDayAir"
-            },
-            {
                 "to_address", new Dictionary<string, string>()
                 {
                     {
@@ -76,6 +67,15 @@ public class Examples
                             }
                         }
                     }
+                }
+            },
+            {
+                "service", "NextDayAir"
+            },
+            {
+                "carrier_accounts", new List<string>()
+                {
+                    "ca_..."
                 }
             }
         });

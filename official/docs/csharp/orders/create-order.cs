@@ -59,11 +59,11 @@ public class Examples
                                     "parcel", new Dictionary<string, object>()
                                     {
                                         {
-                                            "weight", 17.5
+                                            "predefined_package", "FedExBox"
                                         },
                                         {
-                                            "predefined_package", "FedExBox"
-                                        }
+                                            "weight", 17.5
+                                        },
                                     }
                                 }
                             }

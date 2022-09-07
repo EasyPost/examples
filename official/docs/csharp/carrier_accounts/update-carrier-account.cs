@@ -22,10 +22,13 @@ public class Examples
         await carrierAccount.Update(new Dictionary<string, object>()
         {
             {
+                "description", "FL Location UPS Account"
+            }
+            {
                 "credentials", new Dictionary<string, object>()
                 {
                     {
-                        "pickup_id", "abc123"
+                        "account_number", "B2B2B2"
                     },
                 }
             },

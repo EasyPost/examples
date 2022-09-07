@@ -11,7 +11,7 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task StrictVerifyAddress()
+    public async Task VerifyAddressDuringCreation()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
@@ -45,7 +45,7 @@ public class Examples
                     "phone", "415-123-4567"
                 },
                 {
-                    "verify_strict", true
+                    "verify", true
                 }
             }
         );

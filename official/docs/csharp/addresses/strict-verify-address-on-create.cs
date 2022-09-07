@@ -11,14 +11,14 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task VerifyExistingAddress()
+    public async Task StrictlyVerifyAddressDuringCreation()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
         Address address = await Address.Create(
-            new Dictionary<string, object>()
+            new Dictionary<string, object>
             {
                 {
                     "street1", "417 MONTGOMERY ST"
@@ -44,10 +44,11 @@ public class Examples
                 {
                     "phone", "415-123-4567"
                 },
+                {
+                    "verify_strict", true
+                }
             }
         );
-
-        await address.Verify();
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));
     }

@@ -11,7 +11,7 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task CreateShipmentWithTaxIdentifiers()
+    public async Task OneCallBuyShipment()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
@@ -20,27 +20,39 @@ public class Examples
         Shipment shipment = await Shipment.Create(new Dictionary<string, object>()
         {
             {
-                "parcel", new Dictionary<string, object>()
+                "to_address", new Dictionary<string, string>()
                 {
                     {
-                        "length", 20.2
+                        "name", "Dr. Steve Brule"
                     },
                     {
-                        "width", 10.9
+                        "street1", "179 N Harbor Dr"
                     },
                     {
-                        "height", 5
+                        "city", "Redondo Beach"
                     },
                     {
-                        "weight", 65.9
+                        "state", "CA"
+                    },
+                    {
+                        "zip", "90277"
+                    },
+                    {
+                        "country", "US"
+                    },
+                    {
+                        "phone", "8573875756"
+                    },
+                    {
+                        "email", "dr_steve_brule@gmail.com"
                     }
                 }
             },
             {
-                "from_address", new Dictionary<string, object>()
+                "from_address", new Dictionary<string, string>()
                 {
                     {
-                        "company", "EasyPost"
+                        "name", "EasyPost"
                     },
                     {
                         "street1", "417 Montgomery Street"
@@ -69,62 +81,31 @@ public class Examples
                 }
             },
             {
-                "to_address", new Dictionary<string, object>()
+                "parcel", new Dictionary<string, object>()
                 {
                     {
-                        "name", "Dr. Steve Brule"
+                        "length", 20.2
                     },
                     {
-                        "street1", "179 N Harbor Dr"
+                        "width", 10.9
                     },
                     {
-                        "city", "Redondo Beach"
+                        "height", 5
                     },
                     {
-                        "state", "CA"
-                    },
-                    {
-                        "country", "US"
-                    },
-                    {
-                        "phone", "8573875756"
-                    },
-                    {
-                        "email", "dr_steve_brule@gmail.com"
-                    },
-                    {
-                        "zip", "90277"
+                        "weight", 65.9
                     }
                 }
             },
             {
-                "customs_info", new Dictionary<string, object>()
-                {
-                    {
-                        "id", "cstinfo_..."
-                    }
-                }
-            },
-            {
-                "tax_identifiers", new List<Dictionary<string, object>>()
-                {
-                    new Dictionary<string, object>()
-                    {
-                        {
-                            "entity", "SENDER"
-                        },
-                        {
-                            "tax_id", "GB123456789"
-                        },
-                        {
-                            "tax_id_type", "EORI"
-                        },
-                        {
-                            "issuing_country", "GB"
-                        }
-                    }
-                }
+                "service", "NextDayAir"
             }
+            {
+                "carrier_accounts", new List<string>()
+                {
+                    "ca_..."
+                }
+            },
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

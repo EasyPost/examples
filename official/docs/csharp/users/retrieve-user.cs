@@ -11,14 +11,14 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task VerifyExistingAddress()
+    public async Task RetrieveUser()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        List<ApiKey> apiKeys = await ApiKey.All();
+        User user = await User.Retrieve("user_...");
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(apiKeys, Formatting.Indented));
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(tracker, Formatting.Indented));
     }
 }

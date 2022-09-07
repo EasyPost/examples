@@ -11,14 +11,16 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task AddFunds()
+    public async Task InsureShipment()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        bool success = await Billing.FundWallet("2000", PaymentMethod.Priority.Primary);
+        Shipment shipment = await Shipment.Retrieve("shp_...");
 
-        new TestOutputHelper().WriteLine(success.ToString());
+        await shipment.Insure(200);
+
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
     }
 }

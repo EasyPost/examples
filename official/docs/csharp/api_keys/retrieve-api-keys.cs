@@ -11,16 +11,14 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task LabelShipment()
+    public async Task RetreiveAllApiKeys()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Shipment shipment = await Shipment.Retrieve("shp_...");
+        List<ApiKey> apiKeys = await ApiKey.All();
 
-        await shipment.GenerateLabel("ZPL");
-
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(apiKeys, Formatting.Indented));
     }
 }

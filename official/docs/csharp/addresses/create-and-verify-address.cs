@@ -11,20 +11,20 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task CreateVerifiedAddress()
+    public async Task CreateAndVerifyAddress()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Address address = await Address.Create(
+        Address address = await Address.CreateAndVerify(
             new Dictionary<string, object>
             {
                 {
                     "street1", "417 Montgomery Street"
                 },
                 {
-                    "street2", "5"
+                    "street2", "FL 5"
                 },
                 {
                     "city", "San Francisco"
@@ -44,9 +44,6 @@ public class Examples
                 {
                     "phone", "415-123-4567"
                 },
-                {
-                    "verify", true
-                }
             }
         );
 

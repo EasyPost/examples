@@ -11,16 +11,16 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task InsureShipment()
+    public async Task VerifyExistingAddress()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Shipment shipment = await Shipment.Retrieve("shp_...");
+        Address address = await Address.Retrieve("adr_...");
 
-        await shipment.Insure(100);
+        await address.Verify();
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));
     }
 }

@@ -11,21 +11,16 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task UpdateBrand()
+    public async Task GenerateBatchLabel()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        User user = await User.RetrieveMe();
+        Batch batch = await Batch.Retrieve("batch_...");
 
-        await user.Update(new Dictionary<string, object>()
-        {
-            {
-                "color", "#303F9F"
-            }
-        });
+        await batch.GenerateLabel("PDF");
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
+        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
     }
 }

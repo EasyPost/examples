@@ -11,16 +11,14 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task LabelBatch()
+    public async Task FundWallet()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Batch batch = await Batch.Retrieve("batch_...");
+        bool success = await Billing.FundWallet("2000", PaymentMethod.Priority.Primary);
 
-        await batch.GenerateLabel("PDF");
-
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
+        new TestOutputHelper().WriteLine(success.ToString());
     }
 }

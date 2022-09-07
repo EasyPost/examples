@@ -32,11 +32,11 @@ public class Examples
                 "value", 10
             },
             {
-                "origin_country", "US"
+                "hs_tariff_number", "123456"
             },
             {
-                "hs_tariff_number", "123456"
-            }
+                "origin_country", "US"
+            },
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(customsItem, Formatting.Indented));

@@ -20,14 +20,6 @@ public class Examples
         Shipment shipment = await Shipment.Create(new Dictionary<string, object>()
         {
             {
-                "parcel", new Dictionary<string, object>()
-                {
-                    {
-                        "id", "prcl_..."
-                    }
-                }
-            },
-            {
                 "to_address", new Dictionary<string, object>()
                 {
                     {
@@ -40,6 +32,14 @@ public class Examples
                 {
                     {
                         "id", "adr_..."
+                    }
+                }
+            },
+            {
+                "parcel", new Dictionary<string, object>()
+                {
+                    {
+                        "id", "prcl_..."
                     }
                 }
             },

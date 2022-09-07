@@ -32,6 +32,9 @@ public class Examples
                 "contents_explanation", ""
             },
             {
+                "restriction_type", "none"
+            }
+            {
                 "eel_pfc", "NOEEI 30.37(a)"
             },
             {
@@ -59,12 +62,6 @@ public class Examples
                         }
                     }
                 }
-            },
-            {
-                "restriction_type", "none"
-            },
-            {
-                "eel_pfc", "NOEEI 30.37(a)"
             }
         });
 

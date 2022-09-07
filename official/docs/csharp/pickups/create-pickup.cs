@@ -20,23 +20,7 @@ public class Examples
         Pickup pickup = await Pickup.Create(new Dictionary<string, object>()
         {
             {
-                "is_account_address", false
-            },
-            {
-                "address", new Dictionary<string, object>()
-                {
-                    {
-                        "id,", "adr_..."
-                    }
-                }
-            },
-            {
-                "shipment", new Dictionary<string, object>()
-                {
-                    {
-                        "id,", "shp_..."
-                    }
-                }
+                "reference", "my-first-pickup"
             },
             {
                 "min_datetime", "2022-10-01 10:30:00"
@@ -45,11 +29,18 @@ public class Examples
                 "max_datetime", "2022-10-01 17:30:00"
             },
             {
-                "instructions", "Special pickup instructions"
+                "shipment", "shp_..."
             },
             {
-                "reference", "my-first-pickup"
-            }
+                "address", "adr_..."
+            },
+            {
+                "is_account_address", false
+            },
+            {
+                "instructions", "Special pickup instructions"
+            },
+
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));

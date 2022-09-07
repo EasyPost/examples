@@ -20,45 +20,31 @@ public class Examples
         CarrierAccount carrierAccount = await CarrierAccount.Create(new Dictionary<string, object>()
         {
             {
-                "type", "DhlEcsAccount"
+                "type", "UpsAccount"
             },
             {
-                "description", "CA Location DHL eCommerce Solutions Account"
+                "description", "NY Location UPS Account"
             },
+            {
+                "reference", "my-reference"
+            }
             {
                 "credentials", new Dictionary<string, object>
                 {
                     {
-                        "client_id", "123456"
+                        "account_number", "A1A1A1"
                     },
                     {
-                        "client_secret", "123abc"
+                        "user_id", "USERID"
                     },
                     {
-                        "distribution_center", "USLAX1"
+                        "password", "PASSWORD"
                     },
                     {
-                        "pickup_id", "123456"
+                        "access_license_number", "ALN"
                     }
                 }
-            },
-            {
-                "test_credentials", new Dictionary<string, object>
-                {
-                    {
-                        "client_id", "123456"
-                    },
-                    {
-                        "client_secret", "123abc"
-                    },
-                    {
-                        "distribution_center", "USLAX1"
-                    },
-                    {
-                        "pickup_id", "123456"
-                    }
-                }
-            },
+            }
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));

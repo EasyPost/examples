@@ -11,22 +11,13 @@ namespace EasyPostExamples;
 public class Examples
 {
     [Fact]
-    public async Task CreateReport()
+    public async Task RetrieveReport()
     {
         string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
         EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Report report = await Report.Create("payment_log", new Dictionary<string, object>()
-        {
-            {
-                "start_date", "2022-10-01"
-            },
-            {
-                "end_date", "2022-10-01"
-            }
-        });
-
+        Report report = await Report.Retrieve("plrep_...");
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(report, Formatting.Indented));
     }

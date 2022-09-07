@@ -36,13 +36,13 @@ public class Examples
                 }
             },
             {
-                "reference", "InsuranceRef1"
+                "tracking_code", "9400110898825022579493"
             },
             {
                 "carrier", "USPS"
             },
             {
-                "tracking_code", "9400110898825022579493"
+                "reference", "InsuranceRef1"
             },
             {
                 "amount", "100.00"
