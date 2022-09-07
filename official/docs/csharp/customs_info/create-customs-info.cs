@@ -1,41 +1,39 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
-using Xunit.Sdk;
 using Newtonsoft.Json;
 using EasyPost;
 
-namespace EasyPostExamples;
-
-public class Examples
+namespace EasyPostExamples
 {
-    [Fact]
-    public async Task CreateCustomsInfo()
+    public class Examples
     {
-        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
-
-        EasyPost.ClientManager.SetCurrent(apiKey);
-
-        CustomsInfo customsInfo = await CustomsInfo.Create(new Dictionary<string, object>()
+        public static async Task Main()
         {
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
+
+            EasyPost.ClientManager.SetCurrent(apiKey);
+
+            CustomsInfo customsInfo = await CustomsInfo.Create(new Dictionary<string, object>()
             {
-                "customs_certify", true
-            },
-            {
-                "customs_signer", "Steve Brule"
-            },
-            {
-                "contents_type", "merchandise"
-            },
-            {
-                "contents_explanation", ""
-            },
-            {
-                "restriction_type", "none"
-            }
-            {
-                "eel_pfc", "NOEEI 30.37(a)"
+                {
+                    "customs_certify", true
+                },
+                {
+                    "customs_signer", "Steve Brule"
+                },
+                {
+                    "contents_type", "merchandise"
+                },
+                {
+                    "contents_explanation", ""
+                },
+                {
+                    "restriction_type", "none"
+                }
+                {
+                "eel_pfc",
+                "NOEEI 30.37(a)"
             },
             {
                 "customs_items", new List<Dictionary<string, object>>()
@@ -63,8 +61,9 @@ public class Examples
                     }
                 }
             }
-        });
+            });
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(customsInfo, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(customsInfo, Formatting.Indented));
+        }
     }
 }

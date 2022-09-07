@@ -1,24 +1,22 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
-using Xunit.Sdk;
 using Newtonsoft.Json;
 using EasyPost;
 
-namespace EasyPostExamples;
-
-public class Examples
+namespace EasyPostExamples
 {
-    [Fact]
-    public async Task RetreiveCustomsItem()
+    public class Examples
     {
-        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
+        public static async Task Main()
+        {
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-        EasyPost.ClientManager.SetCurrent(apiKey);
+            EasyPost.ClientManager.SetCurrent(apiKey);
 
-        CustomsItem customsItem = await CustomsItem.Retrieve("cstitem_...");
+            CustomsItem customsItem = await CustomsItem.Retrieve("cstitem_...");
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(customsItem, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(customsItem, Formatting.Indented));
+        }
     }
 }

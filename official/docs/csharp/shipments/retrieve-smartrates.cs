@@ -1,26 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
-using Xunit.Sdk;
 using Newtonsoft.Json;
 using EasyPost;
 
-namespace EasyPostExamples;
-
-public class Examples
+namespace EasyPostExamples
 {
-    [Fact]
-    public async Task RetrieveSmartrate()
+    public class Examples
     {
-        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
+        public static async Task Main()
+        {
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-        EasyPost.ClientManager.SetCurrent(apiKey);
+            EasyPost.ClientManager.SetCurrent(apiKey);
 
-        Shipment shipment = await Shipment.Retrieve("shp_...");
+            Shipment shipment = await Shipment.Retrieve("shp_...");
 
-        await shipment.GetSmartrates();
+            await shipment.GetSmartrates();
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
+        }
     }
 }

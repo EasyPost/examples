@@ -1,24 +1,22 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
-using Xunit.Sdk;
 using Newtonsoft.Json;
 using EasyPost;
 
-namespace EasyPostExamples;
-
-public class Examples
+namespace EasyPostExamples
 {
-    [Fact]
-    public async Task RetrieveCarrierTypes()
+    public class Examples
     {
-        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
+        public static async Task Main()
+        {
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-        EasyPost.ClientManager.SetCurrent(apiKey);
+            EasyPost.ClientManager.SetCurrent(apiKey);
 
-        List<CarrierType> carrierTypes = await CarrierType.All();
+            List<CarrierType> carrierTypes = await CarrierType.All();
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(carrierTypes, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(carrierTypes, Formatting.Indented));
+        }
     }
 }

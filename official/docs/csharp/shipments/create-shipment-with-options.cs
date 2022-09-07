@@ -1,58 +1,56 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
-using Xunit.Sdk;
 using Newtonsoft.Json;
 using EasyPost;
 
-namespace EasyPostExamples;
-
-public class Examples
+namespace EasyPostExamples
 {
-    [Fact]
-    public async Task CreateShipmentWithOptions()
+    public class Examples
     {
-        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
-
-        EasyPost.ClientManager.SetCurrent(apiKey);
-
-        Shipment shipment = await Shipment.Create(new Dictionary<string, object>()
+        public static async Task Main()
         {
-            {
-                "to_address", new Dictionary<string, object>()
-                {
-                    {
-                        "id", "adr_..."
-                    }
-                }
-            },
-            {
-                "from_address", new Dictionary<string, object>()
-                {
-                    {
-                        "id", "adr_..."
-                    }
-                }
-            },
-            {
-                "parcel", new Dictionary<string, object>()
-                {
-                    {
-                        "id", "prcl_..."
-                    }
-                }
-            },
-            {
-                "options", new Dictionary<string, object>()
-                {
-                    {
-                        "print_custom_1", "Custom label message"
-                    }
-                }
-            }
-        });
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
+            EasyPost.ClientManager.SetCurrent(apiKey);
+
+            Shipment shipment = await Shipment.Create(new Dictionary<string, object>()
+            {
+                {
+                    "to_address", new Dictionary<string, object>()
+                    {
+                        {
+                            "id", "adr_..."
+                        }
+                    }
+                },
+                {
+                    "from_address", new Dictionary<string, object>()
+                    {
+                        {
+                            "id", "adr_..."
+                        }
+                    }
+                },
+                {
+                    "parcel", new Dictionary<string, object>()
+                    {
+                        {
+                            "id", "prcl_..."
+                        }
+                    }
+                },
+                {
+                    "options", new Dictionary<string, object>()
+                    {
+                        {
+                            "print_custom_1", "Custom label message"
+                        }
+                    }
+                }
+            });
+
+            Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
+        }
     }
 }

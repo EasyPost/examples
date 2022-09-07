@@ -1,24 +1,22 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
-using Xunit.Sdk;
 using Newtonsoft.Json;
 using EasyPost;
 
-namespace EasyPostExamples;
-
-public class Examples
+namespace EasyPostExamples
 {
-    [Fact]
-    public async Task RetreiveAllApiKeys()
+    public class Examples
     {
-        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
+        public static async Task Main()
+        {
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-        EasyPost.ClientManager.SetCurrent(apiKey);
+            EasyPost.ClientManager.SetCurrent(apiKey);
 
-        List<ApiKey> apiKeys = await ApiKey.All();
+            List<ApiKey> apiKeys = await ApiKey.All();
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(apiKeys, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(apiKeys, Formatting.Indented));
+        }
     }
 }

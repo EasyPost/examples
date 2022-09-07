@@ -1,30 +1,28 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
-using Xunit.Sdk;
 using Newtonsoft.Json;
 using EasyPost;
 
-namespace EasyPostExamples;
-
-public class Examples
+namespace EasyPostExamples
 {
-    [Fact]
-    public async Task RetrieveAllAddresses()
+    public class Examples
     {
-        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
+        public static async Task Main()
+        {
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-        EasyPost.ClientManager.SetCurrent(apiKey);
+            EasyPost.ClientManager.SetCurrent(apiKey);
 
-        AddressCollection addressCollection = await Address.All(new Dictionary<string, object>
-            {
+            AddressCollection addressCollection = await Address.All(new Dictionary<string, object>
                 {
-                    "page_size", 5
+                    {
+                        "page_size", 5
+                    }
                 }
-            }
-        );
+            );
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(addressCollection, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(addressCollection, Formatting.Indented));
+        }
     }
 }

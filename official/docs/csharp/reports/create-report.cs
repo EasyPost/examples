@@ -1,32 +1,30 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xunit;
-using Xunit.Sdk;
 using Newtonsoft.Json;
 using EasyPost;
 
-namespace EasyPostExamples;
-
-public class Examples
+namespace EasyPostExamples
 {
-    [Fact]
-    public async Task CreateReport()
+    public class Examples
     {
-        string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
-
-        EasyPost.ClientManager.SetCurrent(apiKey);
-
-        Report report = await Report.Create("payment_log", new Dictionary<string, object>()
+        public static async Task Main()
         {
-            {
-                "start_date", "2022-10-01"
-            },
-            {
-                "end_date", "2022-10-31"
-            }
-        });
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-        new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(report, Formatting.Indented));
+            EasyPost.ClientManager.SetCurrent(apiKey);
+
+            Report report = await Report.Create("payment_log", new Dictionary<string, object>()
+            {
+                {
+                    "start_date", "2022-10-01"
+                },
+                {
+                    "end_date", "2022-10-31"
+                }
+            });
+
+            Console.WriteLine(JsonConvert.SerializeObject(report, Formatting.Indented));
+        }
     }
 }
