@@ -49,7 +49,6 @@ public class Examples
             }
         });
 
-
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(insurance, Formatting.Indented));
     }
 }

@@ -24,7 +24,6 @@ public class Examples
             }
         });
 
-
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(scanFormCollection, Formatting.Indented));
     }
 }

@@ -27,7 +27,7 @@ public class Examples
             },
             {
                 "reference", "my-reference"
-            }
+            },
             {
                 "credentials", new Dictionary<string, object>
                 {
@@ -44,7 +44,24 @@ public class Examples
                         "access_license_number", "ALN"
                     }
                 }
-            }
+            },
+            {
+                "test_credentials", new Dictionary<string, object>
+                {
+                    {
+                        "account_number", "A1A1A1"
+                    },
+                    {
+                        "user_id", "USERID"
+                    },
+                    {
+                        "password", "PASSWORD"
+                    },
+                    {
+                        "access_license_number", "ALN"
+                    }
+                }
+            },
         });
 
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));

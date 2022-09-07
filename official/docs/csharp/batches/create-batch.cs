@@ -20,10 +20,14 @@ public class Examples
         Batch batch = await Batch.Create(new Dictionary<string, object>()
         {
             {
-                "shipments", new List<string>()
+                "shipments", new Dictionary<string, object>()
                 {
-                    "shp_...",
-                    "shp_...",
+                    {
+                        "id", "shp_..."
+                    },
+                    {
+                        "id", "shp_..."
+                    }
                 }
             }
         });

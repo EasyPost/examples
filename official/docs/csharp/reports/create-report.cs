@@ -27,7 +27,6 @@ public class Examples
             }
         });
 
-
         new TestOutputHelper().WriteLine(JsonConvert.SerializeObject(report, Formatting.Indented));
     }
 }
