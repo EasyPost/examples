@@ -1,5 +1,6 @@
 const Easypost = require('@easypost/api');
-const api = new Easypost('EASYPOST_API_KEY');
+
+const api = new Easypost(process.env.EASYPOST_API_KEY);
 
 const address = new api.Address({
   street1: '417 montgomery streat',
@@ -11,6 +12,6 @@ const address = new api.Address({
   phone: '415-123-4567',
 });
 
-address.save().then((data) => {
-  data.verifyAddress().then(console.log);
+address.save().then((createdAddress) => {
+  createdAddress.verifyAddress().then(console.log);
 });

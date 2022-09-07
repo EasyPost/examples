@@ -1,6 +1,7 @@
 const Easypost = require('@easypost/api');
-const api = new Easypost('EASYPOST_API_KEY');
 
-api.Rate.retrieve('rate...').then((retrieveRate) => {
-  retrieveRate.cancel().then(console.log);
+const api = new Easypost(process.env.EASYPOST_API_KEY);
+
+api.Rate.retrieve('rate...').then((retrievedRate) => {
+  retrievedRate.cancel().then(console.log);
 });
