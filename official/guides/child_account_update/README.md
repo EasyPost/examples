@@ -52,7 +52,3 @@ The script does this by:
 To run the script:
 
 `python3 import.py -k <EASYPOST_PROD_API_KEY>`
-
-### Step 4: Use EndShipper addresses
-
-Once all the information for each child user has been updated, you can use the [EndShipper address](https://www.easypost.com/docs/api#endshipper) for each child user when creating and buying shipments.
