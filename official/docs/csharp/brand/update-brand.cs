@@ -18,27 +18,13 @@ namespace EasyPostExamples
 
             await user.Update(new Dictionary<string, object>()
             {
-                {
-                    "background_color", "#FFFFFF"
-                },
-                {
-                    "color", "#303F9F"
-                },
-                {
-                    "logo", "data:image/png;base64,iVBORw0K..."
-                },
-                {
-                    "logo_href", "https://easypost.com"
-                },
-                {
-                    "ad", null
-                },
-                {
-                    "ad_href", null
-                },
-                {
-                    "theme", "theme1"
-                }
+                { "background_color", "#FFFFFF" },
+                { "color", "#303F9F" },
+                { "logo", "data:image/png;base64,iVBORw0K..." },
+                { "logo_href", "https://easypost.com" },
+                { "ad", null },
+                { "ad_href", null },
+                { "theme", "theme1" }
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

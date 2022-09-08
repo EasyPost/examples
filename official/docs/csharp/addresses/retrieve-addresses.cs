@@ -16,9 +16,7 @@ namespace EasyPostExamples
 
             AddressCollection addressCollection = await Address.All(new Dictionary<string, object>
                 {
-                    {
-                        "page_size", 5
-                    }
+                    { "page_size", 5 }
                 }
             );
 

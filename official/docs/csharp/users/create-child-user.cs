@@ -16,9 +16,7 @@ namespace EasyPostExamples
 
             User user = await User.Create(new Dictionary<string, object>()
             {
-                {
-                    "name", "Child Account Name"
-                }
+                { "name", "Child Account Name" }
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

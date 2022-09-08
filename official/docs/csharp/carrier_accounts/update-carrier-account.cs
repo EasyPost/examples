@@ -18,18 +18,14 @@ namespace EasyPostExamples
 
             await carrierAccount.Update(new Dictionary<string, object>()
             {
-                {
-                    "description", "FL Location UPS Account"
-                }
+                { "description", "FL Location UPS Account" }
                 {
                 "credentials",
                 new Dictionary<string, object>()
                 {
-                    {
-                        "account_number", "B2B2B2"
-                    },
+                    { "account_number", "B2B2B2" },
                 }
-            },
+            }, 
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));

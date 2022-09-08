@@ -18,9 +18,7 @@ namespace EasyPostExamples
 
             await user.Update(new Dictionary<string, object>()
             {
-                {
-                    "recharge_threshold", 50.00
-                }
+                { "recharge_threshold", 50.00 }
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));

@@ -16,9 +16,7 @@ namespace EasyPostExamples
 
             EventCollection events = await Event.All(new Dictionary<string, object>
             {
-                {
-                    "page_size", 5
-                }
+                { "page_size", 5 }
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(events, Formatting.Indented));

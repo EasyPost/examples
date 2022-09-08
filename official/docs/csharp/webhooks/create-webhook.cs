@@ -17,9 +17,7 @@ namespace EasyPostExamples
             Webhook webhook = await Webhook.Create(
                 new Dictionary<string, object>()
                 {
-                    {
-                        "url", "example.com"
-                    }
+                    { "url", "example.com" }
                 }
             );
 

@@ -19,12 +19,8 @@ namespace EasyPostExamples
                 {
                     "shipments", new Dictionary<string, object>()
                     {
-                        {
-                            "id", "shp_..."
-                        },
-                        {
-                            "id", "shp_..."
-                        }
+                        { "id", "shp_..." },
+                        { "id", "shp_..." }
                     }
                 }
             });

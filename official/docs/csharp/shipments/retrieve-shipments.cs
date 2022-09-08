@@ -16,9 +16,7 @@ namespace EasyPostExamples
 
             Dictionary<string, object> listParams = new Dictionary<string, object>()
             {
-                {
-                    "page_size", 5
-                }
+                { "page_size", 5 }
             };
 
             ShipmentCollection shipmentCollection = await Shipment.All(listParams);

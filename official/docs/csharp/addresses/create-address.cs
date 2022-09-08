@@ -17,30 +17,14 @@ namespace EasyPostExamples
             Address address = await Address.Create(
                 new Dictionary<string, object>
                 {
-                    {
-                        "street1", "417 MONTGOMERY ST"
-                    },
-                    {
-                        "street2", "FLOOR 5"
-                    },
-                    {
-                        "city", "SAN FRANCISCO"
-                    },
-                    {
-                        "state", "CA"
-                    },
-                    {
-                        "zip", "94104"
-                    },
-                    {
-                        "country", "US"
-                    },
-                    {
-                        "company", "EasyPost"
-                    },
-                    {
-                        "phone", "415-123-4567"
-                    },
+                    { "street1", "417 MONTGOMERY ST" },
+                    { "street2", "FLOOR 5" },
+                    { "city", "SAN FRANCISCO" },
+                    { "state", "CA" },
+                    { "zip", "94104" },
+                    { "country", "US" },
+                    { "company", "EasyPost" },
+                    { "phone", "415-123-4567" },
                 }
             );
 

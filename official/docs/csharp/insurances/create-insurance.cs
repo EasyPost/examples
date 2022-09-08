@@ -19,31 +19,19 @@ namespace EasyPostExamples
                 {
                     "to_address", new Dictionary<string, object>()
                     {
-                        {
-                            "id", "adr_..."
-                        }
+                        { "id", "adr_..." }
                     }
                 },
                 {
                     "from_address", new Dictionary<string, object>()
                     {
-                        {
-                            "id", "adr_..."
-                        }
+                        { "id", "adr_..." }
                     }
                 },
-                {
-                    "tracking_code", "9400110898825022579493"
-                },
-                {
-                    "carrier", "USPS"
-                },
-                {
-                    "reference", "InsuranceRef1"
-                },
-                {
-                    "amount", "100.00"
-                }
+                { "tracking_code", "9400110898825022579493" },
+                { "carrier", "USPS" },
+                { "reference", "InsuranceRef1" },
+                { "amount", "100.00" }
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(insurance, Formatting.Indented));

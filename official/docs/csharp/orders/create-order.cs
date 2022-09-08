@@ -20,17 +20,13 @@ namespace EasyPostExamples
                     {
                         "to_address", new Dictionary<string, object>()
                         {
-                            {
-                                "id", "adr_..."
-                            }
+                            { "id", "adr_..." }
                         }
                     },
                     {
                         "from_address", new Dictionary<string, object>()
                         {
-                            {
-                                "id", "adr_..."
-                            }
+                            { "id", "adr_..." }
                         }
                     },
                     {
@@ -42,9 +38,7 @@ namespace EasyPostExamples
                                     {
                                         "parcel", new Dictionary<string, object>()
                                         {
-                                            {
-                                                "weight", 10.2
-                                            }
+                                            { "weight", 10.2 }
                                         }
                                     }
                                 }
@@ -55,12 +49,8 @@ namespace EasyPostExamples
                                     {
                                         "parcel", new Dictionary<string, object>()
                                         {
-                                            {
-                                                "predefined_package", "FedExBox"
-                                            },
-                                            {
-                                                "weight", 17.5
-                                            },
+                                            { "predefined_package", "FedExBox" },
+                                            { "weight", 17.5 },
                                         }
                                     }
                                 }

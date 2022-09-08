@@ -18,9 +18,7 @@ namespace EasyPostExamples
 
             await childUser.Update(new Dictionary<string, object>()
             {
-                {
-                    "name", "Test Child"
-                }
+                { "name", "Test Child" }
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(childUser, Formatting.Indented));

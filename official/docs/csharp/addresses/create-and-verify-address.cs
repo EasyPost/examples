@@ -17,30 +17,14 @@ namespace EasyPostExamples
             Address address = await Address.CreateAndVerify(
                 new Dictionary<string, object>
                 {
-                    {
-                        "street1", "417 Montgomery Street"
-                    },
-                    {
-                        "street2", "FL 5"
-                    },
-                    {
-                        "city", "San Francisco"
-                    },
-                    {
-                        "state", "CA"
-                    },
-                    {
-                        "zip", "94104"
-                    },
-                    {
-                        "country", "US"
-                    },
-                    {
-                        "company", "EasyPost"
-                    },
-                    {
-                        "phone", "415-123-4567"
-                    },
+                    { "street1", "417 Montgomery Street" },
+                    { "street2", "FL 5" },
+                    { "city", "San Francisco" },
+                    { "state", "CA" },
+                    { "zip", "94104" },
+                    { "country", "US" },
+                    { "company", "EasyPost" },
+                    { "phone", "415-123-4567" },
                 }
             );
 

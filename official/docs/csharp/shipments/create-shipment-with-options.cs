@@ -19,33 +19,25 @@ namespace EasyPostExamples
                 {
                     "to_address", new Dictionary<string, object>()
                     {
-                        {
-                            "id", "adr_..."
-                        }
+                        { "id", "adr_..." }
                     }
                 },
                 {
                     "from_address", new Dictionary<string, object>()
                     {
-                        {
-                            "id", "adr_..."
-                        }
+                        { "id", "adr_..." }
                     }
                 },
                 {
                     "parcel", new Dictionary<string, object>()
                     {
-                        {
-                            "id", "prcl_..."
-                        }
+                        { "id", "prcl_..." }
                     }
                 },
                 {
                     "options", new Dictionary<string, object>()
                     {
-                        {
-                            "print_custom_1", "Custom label message"
-                        }
+                        { "print_custom_1", "Custom label message" }
                     }
                 }
             });
