@@ -12,5 +12,5 @@ curl -X POST https://api.easypost.com/v2/addresses \
       "company": "EasyPost",
       "phone": "415-123-4567"
     },
-    "verify_strict": ["delivery"]
+    "verify_strict": true
   }'
