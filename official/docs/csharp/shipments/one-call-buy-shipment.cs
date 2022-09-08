@@ -59,7 +59,7 @@ namespace EasyPostExamples
                 {
                     "ca_..."
                 }
-            }, 
+            },
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

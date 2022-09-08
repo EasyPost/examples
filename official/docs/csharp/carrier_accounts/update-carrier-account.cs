@@ -25,7 +25,7 @@ namespace EasyPostExamples
                 {
                     { "account_number", "B2B2B2" },
                 }
-            }, 
+            },
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));
