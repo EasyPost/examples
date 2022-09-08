@@ -41,6 +41,10 @@ install-python:
 install-ruby:
 	bundle install
 
+## lang-install-win - install/upgrade all supported programming language SDKs (Windows)
+lang-install-win:
+	setup\win\install_all.bat
+
 ## lint - lints the entire project
 lint: | lint-csharp lint-java lint-ruby lint-shell
 
@@ -127,4 +131,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-python format-python-check format-ruby format-shell
+.PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby lang-install-win lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-python format-python-check format-ruby format-shell
