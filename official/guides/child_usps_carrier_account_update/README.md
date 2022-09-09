@@ -1,4 +1,4 @@
-## Mass Update USPS Credentials for Child Users
+# Mass Update USPS Credentials for Child Users
 
 These scripts are intended to provide easy-to-use functionality for retrieving and updating the UspsAccount carrier credentials for each Child User linked to a Parent account.
 
@@ -6,11 +6,13 @@ Accurate carrier account credentials will ensure the EndShipper information is p
 
 **Please note**, due to the EasyPost client library being non-thread-safe, these scripts may take a while to run if you have a large number of Child Users, due to API key switching.
 
-### Setup
+## Setup
 
 Before running the scripts, you will need to install the EasyPost Python client library and other dependencies. You can do this by running the following command:
 
 `python3 -m pip install -r requirements.txt`
+
+It is **highly recommended** for users with many child accounts to pipe the output of this script to a file for easier viewing upon completion.
 
 ### Step 1: Run the `export.py` script
 

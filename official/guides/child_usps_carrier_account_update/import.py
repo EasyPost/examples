@@ -21,8 +21,7 @@ parser = argparse.ArgumentParser(description="Import all child account USPS prod
 parser.add_argument("-k", "--key", required=True, help="Parent production API key")
 parser.add_argument("-f", "--file", required=False, help="File to read input from", default=INPUT_FILE_NAME)
 
-OPTIONAL_FIELDS = ["shipper_id", "street2"]
-ONE_OR_OTHER_FIELDS_1 = ["name", "company"]
+OPTIONAL_FIELDS = ["shipper_id"]
 
 
 def authenticate(key: str):
@@ -67,8 +66,6 @@ def process_entry(entry: Dict[str, Any], child: easypost.User):
     child_prod_key: str = get_production_key(keys=child.keys)
     authenticate(key=child_prod_key)
 
-    print(f"Updating credentials for child user {child.id}, carrier account {entry['carrier_account_id']}...")
-
     account: easypost.CarrierAccount = easypost.CarrierAccount.retrieve(easypost_id=entry["carrier_account_id"])
     if not account:
         print(f"Matching account not found for ID {entry['carrier_account_id']}. Skipping...")
@@ -105,7 +102,7 @@ def read_from_csv() -> List[Dict[str, Any]]:
                     "address_state": row["state"],
                     "address_street": row["street"],
                     "address_zip": row["zip"],
-                    "company_name": row["company"],
+                    "company_name": row["company_or_name"],
                     "email": row["email"],
                     "phone": row["phone"],
                     "shipper_id": row["shipper_id"],
@@ -114,20 +111,6 @@ def read_from_csv() -> List[Dict[str, Any]]:
             if validate_entry(row=entry):
                 data.append(entry)
         return data
-
-
-def any_field_exists(data: Dict[str, Any], fields: List[str]) -> bool:
-    """
-    Check if at least one of the indicated fields has a value
-
-    :param data: Data to parse
-    :type data: Dict[str, Any]
-    :param fields: List of fields to search for
-    :type fields: List[str]
-    :return: True if at least one field has a value, False otherwise
-    :rtype: bool
-    """
-    return any([data.get(key, None) for key in fields])
 
 
 def validate_entry(row: Dict[str, Any]) -> bool:
@@ -146,11 +129,7 @@ def validate_entry(row: Dict[str, Any]) -> bool:
     for k, v in row["credentials"].items():
         if k in OPTIONAL_FIELDS:  # These are optional fields that can be empty
             continue
-        if not any_field_exists(data=row["credentials"], fields=ONE_OR_OTHER_FIELDS_1):
-            # name or company must be present
-            print(f'Missing required name or company for carrier account {row["carrier_account_id"]}')
-            valid = False
-        if k not in ONE_OR_OTHER_FIELDS_1 and (not v or v == ""):
+        if not v or v == "":
             # Warning, doesn't halt execution
             # Mild confusion, this will print out the expected key,
             # not the key from the CSV file (e.g. 'address_city' instead of 'city')
@@ -186,7 +165,6 @@ def main():
 
         # noinspection PyTypeChecker
         matching_child: easypost.User = None
-        print("Locating matching child account...")
         for child in all_children:
             if child.id == entry["child_id"]:
                 matching_child: easypost.User = child
@@ -197,6 +175,8 @@ def main():
             continue
         process_entry(entry=entry, child=matching_child)
         count += 1
+
+    print("Import complete.")
 
 
 if __name__ == "__main__":

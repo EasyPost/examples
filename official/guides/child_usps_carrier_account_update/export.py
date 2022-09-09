@@ -91,8 +91,6 @@ def get_usps_accounts() -> List[easypost.CarrierAccount]:
     """
     all_accounts: List[easypost.CarrierAccount] = easypost.CarrierAccount.all()
 
-    print(f"Retrieved {len(all_accounts)} carrier accounts from API. Filtering for USPS accounts...")
-
     usps_accounts: List[easypost.CarrierAccount] = []
     for account in all_accounts:
         if account.type == "UspsAccount":
@@ -121,7 +119,7 @@ def write_to_csv(data: List[Dict[str, Any]]):
             "state",
             "street",
             "zip",
-            "company",
+            "company_or_name",
             "email",
             "phone",
             "shipper_id",
@@ -139,7 +137,7 @@ def write_to_csv(data: List[Dict[str, Any]]):
                     "state": usps_account.get("address_state", ""),
                     "street": usps_account.get("address_street", ""),
                     "zip": usps_account.get("address_zip", ""),
-                    "company": usps_account.get("company_name", ""),
+                    "company_or_name": usps_account.get("company_name", ""),
                     "email": usps_account.get("email", ""),
                     "phone": usps_account.get("phone", ""),
                     "shipper_id": usps_account.get("shipper_id", ""),
@@ -165,7 +163,6 @@ def main():
 
     count = 1
     total = len(children)
-    print(f"Retrieved {total} child accounts from API...")
 
     data: List[Dict[str, Any]] = []
     for child in children:
