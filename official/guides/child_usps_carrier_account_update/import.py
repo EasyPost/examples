@@ -115,6 +115,7 @@ def read_from_csv() -> List[Dict[str, Any]]:
                 data.append(entry)
         return data
 
+
 def any_field_exists(data: Dict[str, Any], fields: List[str]) -> bool:
     """
     Check if at least one of the indicated fields has a value
