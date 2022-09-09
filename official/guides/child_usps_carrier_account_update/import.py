@@ -21,6 +21,8 @@ parser = argparse.ArgumentParser(description="Import all child account USPS prod
 parser.add_argument("-k", "--key", required=True, help="Parent production API key")
 parser.add_argument("-f", "--file", required=False, help="File to read input from", default=INPUT_FILE_NAME)
 
+OPTIONAL_FIELDS = ["shipper_id"]
+
 
 def authenticate(key: str):
     """
@@ -64,8 +66,6 @@ def process_entry(entry: Dict[str, Any], child: easypost.User):
     child_prod_key: str = get_production_key(keys=child.keys)
     authenticate(key=child_prod_key)
 
-    print(f"Updating credentials for child user {child.id}, carrier account {entry['carrier_account_id']}...")
-
     account: easypost.CarrierAccount = easypost.CarrierAccount.retrieve(easypost_id=entry["carrier_account_id"])
     if not account:
         print(f"Matching account not found for ID {entry['carrier_account_id']}. Skipping...")
@@ -102,7 +102,7 @@ def read_from_csv() -> List[Dict[str, Any]]:
                     "address_state": row["state"],
                     "address_street": row["street"],
                     "address_zip": row["zip"],
-                    "company_name": row["company"],
+                    "company_name": row["company_or_name"],
                     "email": row["email"],
                     "phone": row["phone"],
                     "shipper_id": row["shipper_id"],
@@ -127,7 +127,7 @@ def validate_entry(row: Dict[str, Any]) -> bool:
 
     valid: bool = True
     for k, v in row["credentials"].items():
-        if k in ["shipper_id"]:  # These are optional fields that can be empty
+        if k in OPTIONAL_FIELDS:  # These are optional fields that can be empty
             continue
         if not v or v == "":
             # Warning, doesn't halt execution
@@ -165,7 +165,6 @@ def main():
 
         # noinspection PyTypeChecker
         matching_child: easypost.User = None
-        print("Locating matching child account...")
         for child in all_children:
             if child.id == entry["child_id"]:
                 matching_child: easypost.User = child
@@ -176,6 +175,8 @@ def main():
             continue
         process_entry(entry=entry, child=matching_child)
         count += 1
+
+    print("Import complete.")
 
 
 if __name__ == "__main__":
