@@ -112,6 +112,19 @@ def read_from_csv() -> List[Dict[str, Any]]:
                 data.append(entry)
         return data
 
+def any_field_exists(data: Dict[str, Any], fields: List[str]) -> bool:
+    """
+    Check if at least one of the indicated fields has a value
+
+    :param data: Data to parse
+    :type data: Dict[str, Any]
+    :param fields: List of fields to search for
+    :type fields: List[str]
+    :return: True if at least one field has a value, False otherwise
+    :rtype: bool
+    """
+    return any([data.get(key, None) for key in fields])
+
 
 def validate_entry(row: Dict[str, Any]) -> bool:
     """
@@ -127,9 +140,16 @@ def validate_entry(row: Dict[str, Any]) -> bool:
 
     valid: bool = True
     for k, v in row["credentials"].items():
-        if k in ["shipper_id"]:  # These are optional fields that can be empty
+        if k in [
+            "shipper_id",
+            "street2"
+        ]:  # These are optional fields that can be empty
             continue
-        if not v or v == "":
+        if not any_field_exists(data=row["credentials"], fields=["name", "company"]):
+            # name or company must be present
+            print(f'Missing required name or company for carrier account {row["carrier_account_id"]}')
+            valid = False
+        if k not in ["name", "company"] and (not v or v == ""):
             # Warning, doesn't halt execution
             # Mild confusion, this will print out the expected key,
             # not the key from the CSV file (e.g. 'address_city' instead of 'city')
