@@ -21,6 +21,9 @@ parser = argparse.ArgumentParser(description="Import all child account USPS prod
 parser.add_argument("-k", "--key", required=True, help="Parent production API key")
 parser.add_argument("-f", "--file", required=False, help="File to read input from", default=INPUT_FILE_NAME)
 
+OPTIONAL_FIELDS = ["shipper_id", "street2"]
+ONE_OR_OTHER_FIELDS_1 = ["name", "company"]
+
 
 def authenticate(key: str):
     """
@@ -140,16 +143,13 @@ def validate_entry(row: Dict[str, Any]) -> bool:
 
     valid: bool = True
     for k, v in row["credentials"].items():
-        if k in [
-            "shipper_id",
-            "street2"
-        ]:  # These are optional fields that can be empty
+        if k in OPTIONAL_FIELDS:  # These are optional fields that can be empty
             continue
-        if not any_field_exists(data=row["credentials"], fields=["name", "company"]):
+        if not any_field_exists(data=row["credentials"], fields=ONE_OR_OTHER_FIELDS_1):
             # name or company must be present
             print(f'Missing required name or company for carrier account {row["carrier_account_id"]}')
             valid = False
-        if k not in ["name", "company"] and (not v or v == ""):
+        if k not in ONE_OR_OTHER_FIELDS_1 and (not v or v == ""):
             # Warning, doesn't halt execution
             # Mild confusion, this will print out the expected key,
             # not the key from the CSV file (e.g. 'address_city' instead of 'city')
