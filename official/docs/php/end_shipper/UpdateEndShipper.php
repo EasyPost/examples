@@ -2,7 +2,7 @@
 
 \EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
 
-$endshipper = \EasyPost\EndShipper::retrieve("es_...");
+$endshipper = \EasyPost\EndShipper::retrieve('es_...');
 
 $endshipper->name = 'NEW NAME';
 $endshipper->company = 'BAZ';

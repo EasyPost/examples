@@ -102,6 +102,10 @@ format-node:
 format-node-check:
 	npm run check
 
+## format-php - formats PHP files
+format-php:
+	composer fix
+
 ## format-python - formats Python files
 format-python:
 	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
@@ -123,4 +127,4 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl
 	shfmt -i 2 -w official/guides/curl
 
-.PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-python format-python-check format-ruby format-shell
+.PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-php format-python format-python-check format-ruby format-shell
