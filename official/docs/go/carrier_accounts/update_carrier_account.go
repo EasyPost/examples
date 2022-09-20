@@ -13,11 +13,13 @@ func main() {
 
 	carrierAccount, _ := client.GetCarrierAccount("ca_...")
 
-	carrierAccount.Credentials = map[string]string{
-		"pickup_id": "abc123",
-	}
 	carrierAccount, _ = client.UpdateCarrierAccount(
-		carrierAccount,
+		&easypost.CarrierAccount{
+			ID: carrierAccount.ID,
+			Credentials: map[string]string{
+				"pickup_id": "abc123",
+			},
+		},
 	)
 
 	fmt.Println(carrierAccount)
