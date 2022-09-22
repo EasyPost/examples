@@ -12,8 +12,6 @@ Before running the scripts, you will need to install the EasyPost Python client 
 
 `python3 -m pip install -r requirements.txt`
 
-It is **highly recommended** for users with many child accounts to pipe the output of this script to a file for easier viewing upon completion.
-
 ### Step 1: Run the `export.py` script
 
 This script will export the UspsAccount credentials for every Child User linked to the parent. If there are multiple UspsAccounts for one Child, multiple rows will be returned.
@@ -30,6 +28,8 @@ To run the script:
 `python3 export.py -k <EASYPOST_PROD_API_KEY>`
 
 The final output will be saved to a `child_account.csv` file with columns for child user public id, carrier account id, and the child-account credentials.
+
+It is **highly recommended** for users with many child accounts to pipe the log output of this script to a file for easier viewing upon completion.
 
 ### Step 2: Update the `child_accounts.csv` file with accurate information
 
@@ -54,3 +54,5 @@ The script does this by:
 To run the script:
 
 `python3 import.py -k <EASYPOST_PROD_API_KEY>`
+
+It is **highly recommended** for users with many child accounts to pipe the log output of this script to a file for easier viewing upon completion.
