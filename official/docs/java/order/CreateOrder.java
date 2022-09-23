@@ -1,11 +1,15 @@
+package order;
+
 import com.easypost.EasyPost;
+import com.easypost.exception.EasyPostException;
+import com.easypost.model.Order;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class CreateOrder {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-        
+
         HashMap<String, Object> toAddress = new HashMap<String, Object>();
         toAddress.put("id", "adr_...");
 
@@ -19,13 +23,14 @@ public class CreateOrder {
         parcel2.put("weight", 17.5);
         parcel2.put("predefined_package", "FedExBox");
 
-        List<Parcel> parcelList = parcelList.add(parcel1);
-        parcelList.add(parcel2);
+        ArrayList<HashMap<String, Object>> parcels = new ArrayList<HashMap<String, Object>>();
+        parcels.add(parcel1);
+        parcels.add(parcel2);
 
         HashMap<String, Object> orderMap = new HashMap<String, Object>();
         orderMap.put("to_address", toAddress);
         orderMap.put("from_address", fromAddress);
-        orderMap.put("shipments", parcelList);
+        orderMap.put("shipments", parcels);
 
         Order order = Order.create(orderMap);
 

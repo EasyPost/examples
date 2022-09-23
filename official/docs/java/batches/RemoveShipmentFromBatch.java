@@ -1,12 +1,17 @@
+package batches;
+
 import com.easypost.EasyPost;
+import com.easypost.exception.EasyPostException;
+import com.easypost.model.Batch;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class RemoveShipmentFromBatch {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-        
+
         Batch batch = Batch.retrieve("batch_...");
 
         HashMap<String, Object> shipment1 = new HashMap<String, Object>();

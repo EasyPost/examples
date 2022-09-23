@@ -1,10 +1,15 @@
+package carrierAccounts;
+
 import com.easypost.EasyPost;
+import com.easypost.exception.EasyPostException;
+import com.easypost.model.CarrierAccount;
+
 import java.util.HashMap;
 
 public class CreateCarrierAccount {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-        
+
         HashMap<String, Object> credentials = new HashMap<String, Object>();
         credentials.put("client_id", "123456");
         credentials.put("client_secret", "123abc");

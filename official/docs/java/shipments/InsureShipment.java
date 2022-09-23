@@ -1,10 +1,15 @@
+package shipments;
+
 import com.easypost.EasyPost;
+import com.easypost.exception.EasyPostException;
+import com.easypost.model.Shipment;
+
 import java.util.HashMap;
 
 public class InsureShipment {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-        
+
         Shipment purchasedShipment = Shipment.retrieve("shp_...");
 
         HashMap<String, Object> insureMap = new HashMap<String, Object>();

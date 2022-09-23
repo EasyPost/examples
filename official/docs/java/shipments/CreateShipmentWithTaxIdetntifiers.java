@@ -1,10 +1,15 @@
+package shipments;
+
 import com.easypost.EasyPost;
+import com.easypost.exception.EasyPostException;
+import com.easypost.model.Shipment;
+
 import java.util.HashMap;
 
 public class CreateShipmentWithTaxIdetntifiers {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-        
+
         HashMap<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("name", "Dr. Steve Brule");
         toAddressMap.put("street1", "179 N Harbor Dr");
@@ -40,7 +45,6 @@ public class CreateShipmentWithTaxIdetntifiers {
         taxIdentifiersMap.put("tax_id", "GB123456789");
         taxIdentifiersMap.put("tax_id_type", "EORI");
         taxIdentifiersMap.put("issuing_country", "GB");
-
 
         HashMap<String, Object> shipmentMap = new HashMap<String, Object>();
         shipmentMap.put("to_address", toAddressMap);

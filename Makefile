@@ -1,6 +1,7 @@
 PYTHON_BINARY := python3
 PYTHON_VIRTUAL_ENV := venv
 PYTHON_VIRTUAL_BIN := $(PYTHON_VIRTUAL_ENV)/bin
+colon := :
 
 ## help - Display help about make targets for this Makefile
 help:
@@ -19,6 +20,7 @@ install-go:
 
 ## install-java - installs Java dependencies
 install-java:
+    mvn dependency$(colon)resolve
     # install CheckStyle jar for running locally
 	curl -LJs https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar -o checkstyle.jar
     # download EasyPost stylesheet, use local style suppressions
