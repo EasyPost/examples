@@ -1,4 +1,4 @@
-package customsInfo;
+package customs_info;
 
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;

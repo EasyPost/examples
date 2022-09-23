@@ -1,4 +1,4 @@
-package customsItems;
+package customs_items;
 
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;

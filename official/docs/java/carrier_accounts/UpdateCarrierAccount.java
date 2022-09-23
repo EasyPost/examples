@@ -1,4 +1,4 @@
-package carrierAccounts;
+package carrier_accounts;
 
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;

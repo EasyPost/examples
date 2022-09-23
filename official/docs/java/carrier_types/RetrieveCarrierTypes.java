@@ -1,4 +1,4 @@
-package carrierTypes;
+package carrier_types;
 
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
