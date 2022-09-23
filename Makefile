@@ -19,9 +19,8 @@ install-go:
 
 ## install-java - installs Java dependencies
 install-java:
-    # install CheckStyle jar for running locally
+	mvn dependency:resolve
 	curl -LJs https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar -o checkstyle.jar
-    # download EasyPost stylesheet, use local style suppressions
 	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-java/master/easypost_java_style.xml -o easypost_java_style.xml
 
 ## install-node - installs Node dependencies
@@ -46,8 +45,6 @@ lint: | lint-csharp lint-java lint-ruby lint-shell
 
 ## lint-csharp - lint C# files
 lint-csharp:
-    # clean up whitespace formatting
-    # folder options skip looking for a project/solution, just analyze any *.cs file
 	dotnet format whitespace --include official/docs/csharp/ --folder --verify-no-changes
 	dotnet format whitespace --include official/guides/csharp/ --folder --verify-no-changes
 
@@ -88,8 +85,6 @@ format: | format-csharp format-java format-ruby format-shell
 
 ## format-csharp - formats C# files
 format-csharp:
-    # clean up whitespace formatting
-    # folder options skip looking for a project/solution, just analyze any *.cs file
 	dotnet format whitespace --include official/docs/csharp/ --folder
 	dotnet format whitespace --include official/guides/csharp/ --folder
 

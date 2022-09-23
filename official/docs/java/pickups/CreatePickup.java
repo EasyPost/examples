@@ -1,15 +1,20 @@
+package pickups;
+
 import com.easypost.EasyPost;
+import com.easypost.exception.EasyPostException;
+import com.easypost.model.Pickup;
+
 import java.util.HashMap;
 
 public class CreatePickup {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-        
+
         HashMap<String, Object> address = new HashMap<String, Object>();
-        fromAddress.put("id", "adr_...");
+        address.put("id", "adr_...");
 
         HashMap<String, Object> shipment = new HashMap<String, Object>();
-        fromAddress.put("id", "shp_...");
+        shipment.put("id", "shp_...");
 
         HashMap<String, Object> pickupMap = new HashMap<String, Object>();
         pickupMap.put("address", address);

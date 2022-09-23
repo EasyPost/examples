@@ -1,5 +1,5 @@
 issues:
-  exclude: 
+  exclude:
     - "other declaration of main"
     - "`main` redeclared in this block"
     - "`main` is unused"

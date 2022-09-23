@@ -1,12 +1,18 @@
+package customs_info;
+
 import com.easypost.EasyPost;
+import com.easypost.exception.EasyPostException;
+import com.easypost.model.CustomsInfo;
+import com.easypost.model.CustomsItem;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class CreateCustomsInfo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-        
+
         HashMap<String, Object> customsItemMap = new HashMap<String, Object>();
         customsItemMap.put("description", "T-shirt");
         customsItemMap.put("quantity", 1);
