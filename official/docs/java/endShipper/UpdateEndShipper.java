@@ -7,7 +7,7 @@ public class UpdateEndShipper {
 
         EndShipper endShipper = EndShipper.retrieve("es_...");
 
-        Map<String, Object> updateParams = new HashMap<String, Object>();
+        HashMap<String, Object> updateParams = new HashMap<String, Object>();
 
         updateParams.put("name", "NEW NAME");
         updateParams.put("company", "BAZ");

@@ -5,7 +5,7 @@ public class CreateEndShipper {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 
-        Map<String, Object> endShipperData = new HashMap<String, Object>();
+        HashMap<String, Object> endShipperData = new HashMap<String, Object>();
 
         endShipperData.put("name", "FOO BAR");
         endShipperData.put("company", "BAZ");
