@@ -4,6 +4,9 @@ root = true
 indent_style = space
 trim_trailing_whitespace = true
 
+[{Makefile,**.mk}]
+indent_style = tab
+
 [*.sh]
 indent_size = 2
 
