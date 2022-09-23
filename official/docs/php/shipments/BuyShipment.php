@@ -5,7 +5,7 @@
 $shipment = \EasyPost\Shipment::retrieve('shp_...');
 
 $shipment->buy([
-    'rate'      => 'rate_...',
+    'rate'      => $shipment->lowest_rate(),
     'insurance' => 249.99
 ]);
 

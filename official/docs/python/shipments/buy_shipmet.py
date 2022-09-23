@@ -8,7 +8,7 @@ easypost.api_key = os.getenv("EASYPOST_API_KEY")
 shipment = easypost.Shipment.retrieve("shp_...")
 
 shipment.buy(
-    rate="rate_...",
+    rate=shipment.lowest_rate(),
     insurance=249.99,
 )
 
