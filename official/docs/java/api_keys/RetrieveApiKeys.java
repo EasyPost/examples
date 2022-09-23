@@ -1,4 +1,4 @@
-package apiKeys;
+package api_keys;
 
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
