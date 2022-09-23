@@ -9,7 +9,7 @@ shipment = easypost.Shipment.retrieve("shp_...")
 
 shipment.buy(
     rate=shipment.lowest_rate(),
-    insurance=249.99,
+    end_shipper_id="es_...",
 )
 
 print(shipment)

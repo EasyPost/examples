@@ -6,7 +6,9 @@ $shipment = \EasyPost\Shipment::retrieve('shp_...');
 
 $shipment->buy([
     'rate'      => $shipment->lowest_rate(),
-    'insurance' => 249.99
+    'insurance' => null,
+    'with_carbon_offset' => false,
+    'end_shipper_id' => 'es_...'
 ]);
 
 echo $shipment;
