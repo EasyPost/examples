@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            CarrierAccount carrierAccount = await CarrierAccount.Create(new Dictionary<string, object>()
+            CarrierAccount carrierAccount = await client.CarrierAccount.Create(new Dictionary<string, object>()
             {
                 { "type", "UpsAccount" },
                 { "description", "NY Location UPS Account" },

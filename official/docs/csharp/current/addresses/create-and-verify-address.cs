@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            Address address = await Address.CreateAndVerify(
+            Address address = await client.Address.CreateAndVerify(
                 new Dictionary<string, object>
                 {
                     { "street1", "417 Montgomery Street" },

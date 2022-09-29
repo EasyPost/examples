@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            Webhook webhook = await Webhook.Create(
+            Webhook webhook = await client.Webhook.Create(
                 new Dictionary<string, object>()
                 {
                     { "url", "example.com" }

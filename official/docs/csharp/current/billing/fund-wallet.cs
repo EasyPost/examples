@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            bool success = await Billing.FundWallet("2000", PaymentMethod.Priority.Primary);
+            bool success = await client.Billing.FundWallet("2000", PaymentMethod.Priority.Primary);
 
             Console.WriteLine(success.ToString());
         }

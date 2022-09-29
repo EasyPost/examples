@@ -12,11 +12,11 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            User user = await User.RetrieveMe();
+            User user = await client.User.RetrieveMe();
 
-            await user.Update(new Dictionary<string, object>()
+            await user.UpdateBrand(new Dictionary<string, object>()
             {
                 { "background_color", "#FFFFFF" },
                 { "color", "#303F9F" },

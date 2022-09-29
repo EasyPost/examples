@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            InsuranceCollection insuranceCollection = await Insurance.All(new Dictionary<string, object>()
+            InsuranceCollection insuranceCollection = await client.Insurance.All(new Dictionary<string, object>()
             {
                 { "page_size", 5 }
             });

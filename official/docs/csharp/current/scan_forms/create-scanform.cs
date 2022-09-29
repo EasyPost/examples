@@ -12,11 +12,11 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            Shipment shipment = await Shipment.Retrieve("shp_...");
+            Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            ScanForm scanForm = await ScanForm.Create(new List<Shipment>
+            ScanForm scanForm = await client.ScanForm.Create(new List<Shipment>
             {
                 shipment
             });

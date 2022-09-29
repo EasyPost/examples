@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            Pickup pickup = await Pickup.Create(new Dictionary<string, object>()
+            Pickup pickup = await client.Pickup.Create(new Dictionary<string, object>()
             {
                 { "reference", "my-first-pickup" },
                 { "min_datetime", "2022-10-01 10:30:00" },

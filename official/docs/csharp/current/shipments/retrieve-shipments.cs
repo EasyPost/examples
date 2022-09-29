@@ -12,14 +12,14 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
             Dictionary<string, object> listParams = new Dictionary<string, object>()
             {
                 { "page_size", 5 }
             };
 
-            ShipmentCollection shipmentCollection = await Shipment.All(listParams);
+            ShipmentCollection shipmentCollection = await client.Shipment.All(listParams);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipmentCollection, Formatting.Indented));
         }

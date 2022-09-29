@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            Tracker tracker = await Tracker.Retrieve("trk_...");
+            Tracker tracker = await client.Tracker.Retrieve("trk_...");
 
             Console.WriteLine(JsonConvert.SerializeObject(tracker, Formatting.Indented));
         }

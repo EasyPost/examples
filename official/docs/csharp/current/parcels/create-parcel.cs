@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            Parcel parcel = await Parcel.Create(new Dictionary<string, object>()
+            Parcel parcel = await client.Parcel.Create(new Dictionary<string, object>()
             {
                 { "length", 20.2 },
                 { "width", 10.9 },

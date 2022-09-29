@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            CustomsItem customsItem = await CustomsItem.Create(new Dictionary<string, object>()
+            CustomsItem customsItem = await client.CustomsItem.Create(new Dictionary<string, object>()
             {
                 { "description", "T-shirt" },
                 { "quantity", 1 },

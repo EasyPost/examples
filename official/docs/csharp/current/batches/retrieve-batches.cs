@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            BatchCollection batchCollection = await Batch.All(new Dictionary<string, object>
+            BatchCollection batchCollection = await client.Batch.All(new Dictionary<string, object>
             {
                 { "page_size", 5 }
             });

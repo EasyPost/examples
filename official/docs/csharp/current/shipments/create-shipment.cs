@@ -12,11 +12,11 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
             // Create a shipment using all data in one API call
 
-            Shipment shipment = await Shipment.Create(new Dictionary<string, object>()
+            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
             {
                 {
                     "to_address", new Dictionary<string, object>()
@@ -66,7 +66,7 @@ namespace EasyPostExamples
 
             // Create a shipment using ids of existing data
 
-            Shipment shipmentWithIds = await Shipment.Create(new Dictionary<string, object>()
+            Shipment shipmentWithIds = await client.Shipment.Create(new Dictionary<string, object>()
             {
                 {
                     "to_address", new Dictionary<string, object>()

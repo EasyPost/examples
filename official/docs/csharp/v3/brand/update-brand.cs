@@ -16,7 +16,7 @@ namespace EasyPostExamples
 
             User user = await User.RetrieveMe();
 
-            await user.Update(new Dictionary<string, object>()
+            await user.UpdateBrand(new Dictionary<string, object>()
             {
                 { "background_color", "#FFFFFF" },
                 { "color", "#303F9F" },

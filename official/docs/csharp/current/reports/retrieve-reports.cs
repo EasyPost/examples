@@ -12,9 +12,9 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            var client = EasyPost.Client(apiKey);
 
-            ReportCollection reportCollection = await Report.All("payment_log", new Dictionary<string, object>()
+            ReportCollection reportCollection = await client.Report.All("payment_log", new Dictionary<string, object>()
             {
                 { "page_size", 5 },
                 { "start_date", "2022-10-01" }
