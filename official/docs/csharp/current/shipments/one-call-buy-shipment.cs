@@ -53,14 +53,12 @@ namespace EasyPostExamples
                         { "weight", 65.9 }
                     }
                 },
-                { "service", "NextDayAir" }
-                {
-                "carrier_accounts",
-                new List<string>()
-                {
+                { "service", "NextDayAir" },
+                { "carrier_accounts", new List<string>()
+                    {
                     "ca_..."
-                }
-            },
+                    }
+                },
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));

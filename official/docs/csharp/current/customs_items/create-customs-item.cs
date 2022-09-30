@@ -22,7 +22,7 @@ namespace EasyPostExamples
                 { "weight", 5 },
                 { "value", 10 },
                 { "hs_tariff_number", "123456" },
-                { "origin_country", "US" },
+                { "origin_country", "US" }
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(customsItem, Formatting.Indented));

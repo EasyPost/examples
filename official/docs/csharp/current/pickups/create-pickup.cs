@@ -23,7 +23,7 @@ namespace EasyPostExamples
                 { "shipment", "shp_..." },
                 { "address", "adr_..." },
                 { "is_account_address", false },
-                { "instructions", "Special pickup instructions" },
+                { "instructions", "Special pickup instructions" }
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));

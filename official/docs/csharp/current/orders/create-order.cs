@@ -51,7 +51,7 @@ namespace EasyPostExamples
                                         "parcel", new Dictionary<string, object>()
                                         {
                                             { "predefined_package", "FedExBox" },
-                                            { "weight", 17.5 },
+                                            { "weight", 17.5 }
                                         }
                                     }
                                 }
