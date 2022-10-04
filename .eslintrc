@@ -12,7 +12,8 @@
   },
   "rules": {
     "no-console": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "no-param-reassign": "off"
   },
   "globals": {
     "window": true,
