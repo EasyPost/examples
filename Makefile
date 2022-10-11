@@ -7,7 +7,7 @@ help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
 
 ## install - install all dependencies for each language
-install: | install-csharp install-java install-node install-python install-ruby
+install: | install-csharp install-java install-node install-python install-ruby install-php install-go
 
 ## install-csharp - install C# dependencies
 install-csharp:
@@ -41,7 +41,7 @@ install-ruby:
 	bundle install
 
 ## lint - lints the entire project
-lint: | lint-csharp lint-java lint-ruby lint-shell
+lint: | lint-csharp lint-java lint-ruby lint-python lint-go lint-php lint-node lint-shell
 
 ## lint-csharp - lint C# files
 lint-csharp:
