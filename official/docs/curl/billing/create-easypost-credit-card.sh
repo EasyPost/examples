@@ -3,7 +3,7 @@ curl -X POST "https://api.easypost.com/v2/credit_cards" \
   -H "Content-Type: application/json" \
   -d '{
     "credit_card": {
-      "stripe_object_id":"tok_...",
-      "priority":"primary"
+      "stripe_object_id": "tok_...",
+      "priority": "primary"
     }
   }'
