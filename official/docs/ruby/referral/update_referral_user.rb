@@ -2,13 +2,9 @@ require 'easypost'
 
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
-referral_users = EasyPost::Referral.all(
-  page_size: 5,
-)
-
 updated_user = EasyPost::Referral.update_email(
-  'email2@example.com',
-  referral_users[0].id,
+  'new_email@example.com',
+  'user_...',
 )
 
 puts updated_user

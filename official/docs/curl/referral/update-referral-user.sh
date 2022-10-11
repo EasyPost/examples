@@ -3,6 +3,6 @@ curl -X PUT "https://api.easypost.com/v2/referral_customers" \
   -H "Content-Type: application/json" \
   -d '{
       "user": {
-        "email": "email@example.com"
+        "email": "new_email@example.com"
       }
   }'
