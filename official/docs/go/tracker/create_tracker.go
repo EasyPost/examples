@@ -13,7 +13,7 @@ func main() {
 
 	tracker, _ := client.CreateTracker(
 		&easypost.CreateTrackerOptions{
-			TrackingCode: "9400110898825022579493",
+			TrackingCode: "EZ1000000001",
 			Carrier:      "USPS",
 		},
 	)

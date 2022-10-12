@@ -1,0 +1,13 @@
+{
+  "id": "shprep_9165b8bb411046ca9a42c7a31263c98b",
+  "object": "ShipmentReport",
+  "created_at": "2022-10-17T17:17:34Z",
+  "updated_at": "2022-10-17T17:17:34Z",
+  "start_date": "2022-10-01",
+  "end_date": "2022-10-01",
+  "mode": "test",
+  "status": "new",
+  "url": null,
+  "url_expires_at": null,
+  "include_children": false
+}

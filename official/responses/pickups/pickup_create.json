@@ -1,0 +1,52 @@
+{
+  "id": "pickup_39f7788840f34f63b8a3b04ca94d05cb",
+  "object": "Pickup",
+  "created_at": "2022-10-17T17:17:11Z",
+  "updated_at": "2022-10-17T17:17:11Z",
+  "mode": "test",
+  "status": "unknown",
+  "reference": "my-first-pickup",
+  "min_datetime": "2022-10-18T00:00:00Z",
+  "max_datetime": "2022-10-18T00:00:00Z",
+  "is_account_address": false,
+  "instructions": "Special pickup instructions",
+  "messages": [],
+  "confirmation": null,
+  "address": {
+    "id": "adr_893c65184e3f11eda1edac1f6bc72124",
+    "object": "Address",
+    "created_at": "2022-10-17T17:17:11+00:00",
+    "updated_at": "2022-10-17T17:17:11+00:00",
+    "name": "Dr. Steve Brule",
+    "company": null,
+    "street1": "179 N Harbor Dr",
+    "street2": null,
+    "city": "Redondo Beach",
+    "state": "CA",
+    "zip": "90277",
+    "country": "US",
+    "phone": "8573875756",
+    "email": "dr_steve_brule@gmail.com",
+    "mode": "test",
+    "carrier_facility": null,
+    "residential": null,
+    "federal_tax_id": null,
+    "state_tax_id": null,
+    "verifications": {}
+  },
+  "carrier_accounts": [],
+  "pickup_rates": [
+    {
+      "mode": "test",
+      "service": "NextDay",
+      "rate": "0.00",
+      "currency": "USD",
+      "created_at": "2022-10-17T17:17:12Z",
+      "updated_at": "2022-10-17T17:17:12Z",
+      "carrier": "USPS",
+      "pickup_id": "pickup_39f7788840f34f63b8a3b04ca94d05cb",
+      "id": "pickuprate_9fd2eb83ce624609888d0a44dad5ad92",
+      "object": "PickupRate"
+    }
+  ]
+}

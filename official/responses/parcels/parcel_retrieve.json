@@ -1,0 +1,12 @@
+{
+  "id": "prcl_76ca5e21f413474bad2ae2086ba902ae",
+  "object": "Parcel",
+  "created_at": "2022-10-17T17:17:08Z",
+  "updated_at": "2022-10-17T17:17:08Z",
+  "length": 20.2,
+  "width": 10.9,
+  "height": 5.0,
+  "predefined_package": null,
+  "weight": 65.9,
+  "mode": "test"
+}

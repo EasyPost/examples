@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "description": "tracker.created",
+      "id": "evt_7d6e3d1e4e3f11edb506634ecda43b4f",
+      "user_id": "user_060ab38db3c04ffaa60f262e5781a9be",
+      "status": "pending",
+      "created_at": "2022-10-17T17:16:51.263Z",
+      "mode": "test",
+      "object": "Event"
+    }
+  ],
+  "has_more": true
+}

@@ -1,0 +1,29 @@
+{
+  "id": "batch_5781439e197447ac850dc0796e9e8e76",
+  "object": "Batch",
+  "mode": "test",
+  "state": "created",
+  "num_shipments": 1,
+  "reference": null,
+  "created_at": "2022-10-17T17:16:27Z",
+  "updated_at": "2022-10-17T17:16:27Z",
+  "scan_form": null,
+  "shipments": [
+    {
+      "batch_status": "postage_purchased",
+      "batch_message": null,
+      "reference": null,
+      "tracking_code": "9405500106068143632665",
+      "id": "shp_d8a3856984f84c78b6b0da741f9fea7d"
+    }
+  ],
+  "status": {
+    "created": 0,
+    "queued_for_purchase": 0,
+    "creation_failed": 0,
+    "postage_purchased": 1,
+    "postage_purchase_failed": 0
+  },
+  "pickup": null,
+  "label_url": null
+}

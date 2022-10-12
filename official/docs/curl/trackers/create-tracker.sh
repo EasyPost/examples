@@ -3,7 +3,7 @@ curl -X POST https://api.easypost.com/v2/trackers \
   -H 'Content-Type: application/json' \
   -d '{
     "tracker": {
-      "tracking_code": "9400110898825022579493",
+      "tracking_code": "EZ1000000001",
       "carrier": "USPS"
     }
   }'

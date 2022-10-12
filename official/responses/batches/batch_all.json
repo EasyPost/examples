@@ -1,0 +1,70 @@
+{
+  "batches": [
+    {
+      "id": "batch_4fb2f60e22434ef8b2ed8cfcc379d73b",
+      "object": "Batch",
+      "mode": "test",
+      "state": "creating",
+      "num_shipments": 1,
+      "reference": null,
+      "created_at": "2022-10-14T17:34:06Z",
+      "updated_at": "2022-10-14T17:34:06Z",
+      "scan_form": {
+        "id": "sf_fc749ecbd16d46b3afce41f9b3602c69",
+        "object": "ScanForm",
+        "created_at": "2022-10-14T17:34:06Z",
+        "updated_at": "2022-10-14T17:34:06Z",
+        "tracking_codes": [
+          "9405500109361143125654"
+        ],
+        "address": {
+          "id": "adr_664e99c54be611edb88dac1f6bc72124",
+          "object": "Address",
+          "created_at": "2022-10-14T17:34:04+00:00",
+          "updated_at": "2022-10-14T17:34:04+00:00",
+          "name": "EasyPost",
+          "company": null,
+          "street1": "417 Montgomery Street",
+          "street2": "5th Floor",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "94104",
+          "country": "US",
+          "phone": "4153334445",
+          "email": "support@easypost.com",
+          "mode": "test",
+          "carrier_facility": null,
+          "residential": null,
+          "federal_tax_id": null,
+          "state_tax_id": null,
+          "verifications": {}
+        },
+        "status": "created",
+        "message": null,
+        "form_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20221014/c438535effd84f4889b74c5f977a2201.pdf",
+        "form_file_type": null,
+        "batch_id": "batch_4fb2f60e22434ef8b2ed8cfcc379d73b",
+        "confirmation": null
+      },
+      "shipments": [
+        {
+          "batch_status": "postage_purchased",
+          "batch_message": null,
+          "reference": null,
+          "tracking_code": "9405500109361143125654",
+          "id": "shp_29fc0f711e4b4bd9ac08073c62235ed5"
+        }
+      ],
+      "status": {
+        "created": 0,
+        "queued_for_purchase": 0,
+        "creation_failed": 0,
+        "postage_purchased": 1,
+        "postage_purchase_failed": 0
+      },
+      "pickup": null,
+      "label_url": null
+    }
+  ],
+  "has_more": true
+}
