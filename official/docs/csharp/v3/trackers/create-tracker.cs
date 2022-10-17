@@ -14,7 +14,7 @@ namespace EasyPostExamples
 
             EasyPost.ClientManager.SetCurrent(apiKey);
 
-            Tracker tracker = await Tracker.Create("USPS", "9400110898825022579493");
+            Tracker tracker = await Tracker.Create("USPS", "EZ1000000001");
 
             Console.WriteLine(JsonConvert.SerializeObject(tracker, Formatting.Indented));
         }

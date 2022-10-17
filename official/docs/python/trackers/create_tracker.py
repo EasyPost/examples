@@ -6,7 +6,7 @@ import easypost
 easypost.api_key = os.getenv("EASYPOST_API_KEY")
 
 tracker = easypost.Tracker.create(
-    tracking_code="9400110898825022579493",
+    tracking_code="EZ1000000001",
     carrier="USPS",
 )
 

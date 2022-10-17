@@ -1,0 +1,16 @@
+{
+  "refunds": [
+    {
+      "id": "rfnd_46ccd1ba6470458595a0beacdf151058",
+      "object": "Refund",
+      "created_at": "2022-10-17T17:17:32Z",
+      "updated_at": "2022-10-17T17:17:32Z",
+      "tracking_code": "9405500106068143632948",
+      "confirmation_number": null,
+      "status": "submitted",
+      "carrier": "USPS",
+      "shipment_id": "shp_fd5987292f40494ca9659410ef1efc01"
+    }
+  ],
+  "has_more": false
+}

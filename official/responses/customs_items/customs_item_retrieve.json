@@ -1,0 +1,18 @@
+{
+  "id": "cstitem_6a92a92758bf448d891daaea0312d2b0",
+  "object": "CustomsItem",
+  "created_at": "2022-10-17T17:16:52Z",
+  "updated_at": "2022-10-17T17:16:52Z",
+  "description": "T-shirt",
+  "hs_tariff_number": "123456",
+  "origin_country": "US",
+  "quantity": 1,
+  "value": "10.0",
+  "weight": 5.0,
+  "code": "123",
+  "mode": "test",
+  "manufacturer": null,
+  "currency": null,
+  "eccn": null,
+  "printed_commodity_identifier": null
+}

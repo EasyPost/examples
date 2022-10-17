@@ -3,7 +3,7 @@ require 'easypost'
 EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
 tracker = EasyPost::Tracker.create(
-  tracking_code: '9400110898825022579493',
+  tracking_code: 'EZ1000000001',
   carrier: 'USPS',
 )
 

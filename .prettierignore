@@ -1,5 +1,8 @@
+.golangci.yml
+.mypy_cache
 composer.lock
+official/fixtures/event-body.json
 package-lock.json
 vendor
-.golangci.yml
-official/fixtures/event-body.json
+venv
+official/responses

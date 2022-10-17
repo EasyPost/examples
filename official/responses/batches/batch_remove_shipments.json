@@ -1,0 +1,21 @@
+{
+  "id": "batch_1e08a75fe682484caf66f8382d5b6a11",
+  "object": "Batch",
+  "mode": "test",
+  "state": "purchased",
+  "num_shipments": 0,
+  "reference": null,
+  "created_at": "2022-10-17T17:16:29Z",
+  "updated_at": "2022-10-17T17:16:30Z",
+  "scan_form": null,
+  "shipments": [],
+  "status": {
+    "created": 0,
+    "queued_for_purchase": 0,
+    "creation_failed": 0,
+    "postage_purchased": 0,
+    "postage_purchase_failed": 0
+  },
+  "pickup": null,
+  "label_url": null
+}

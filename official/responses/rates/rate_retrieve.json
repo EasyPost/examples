@@ -1,0 +1,22 @@
+{
+  "id": "rate_b693efba5c7b4746b8eb4343f9ba9236",
+  "object": "Rate",
+  "created_at": "2022-10-17T17:17:24Z",
+  "updated_at": "2022-10-17T17:17:24Z",
+  "mode": "test",
+  "service": "Express",
+  "carrier": "USPS",
+  "rate": "44.55",
+  "currency": "USD",
+  "retail_rate": "51.30",
+  "retail_currency": "USD",
+  "list_rate": "44.55",
+  "list_currency": "USD",
+  "billing_type": "easypost",
+  "delivery_days": null,
+  "delivery_date": null,
+  "delivery_date_guaranteed": false,
+  "est_delivery_days": null,
+  "shipment_id": "shp_bc2df619ad29491da568e9f19ac16e2e",
+  "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
+}

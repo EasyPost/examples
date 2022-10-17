@@ -1,0 +1,12 @@
+{
+  "webhooks": [
+    {
+      "id": "hook_b46f0ece4e3f11edb2e41de32f04fac6",
+      "object": "Webhook",
+      "mode": "test",
+      "url": "http://example.com",
+      "created_at": "2022-10-17T17:18:24Z",
+      "disabled_at": null
+    }
+  ]
+}

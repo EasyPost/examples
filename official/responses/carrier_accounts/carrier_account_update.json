@@ -1,0 +1,71 @@
+{
+  "id": "ca_beb493ce1a8248c595e10426317cae4e",
+  "object": "CarrierAccount",
+  "type": "DhlEcsAccount",
+  "clone": false,
+  "created_at": "2022-10-17T17:16:46Z",
+  "updated_at": "2022-10-17T17:16:47Z",
+  "description": "My custom description",
+  "reference": null,
+  "billing_type": "carrier",
+  "readable": "DHL eCommerce Solutions",
+  "logo": null,
+  "fields": {
+    "credentials": {
+      "client_id": {
+        "visibility": "visible",
+        "label": "DHL eCommerce Solutions client ID",
+        "value": "123456"
+      },
+      "client_secret": {
+        "visibility": "password",
+        "label": "DHL eCommerce Solutions client secret",
+        "value": "********"
+      },
+      "pickup_id": {
+        "visibility": "visible",
+        "label": "DHL eCommerce Solutions pickup ID",
+        "value": "123456"
+      },
+      "distribution_center": {
+        "visibility": "visible",
+        "label": "DHL eCommerce Solutions distribution center",
+        "value": "USLAX1"
+      }
+    },
+    "test_credentials": {
+      "client_id": {
+        "visibility": "visible",
+        "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"
+      },
+      "client_secret": {
+        "visibility": "password",
+        "label": "Test DHL eCommerce Solutions client secret",
+        "value": "********"
+      },
+      "pickup_id": {
+        "visibility": "visible",
+        "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"
+      },
+      "distribution_center": {
+        "visibility": "visible",
+        "label": "Test DHL eCommerce Solutions distribution center",
+        "value": "USLAX1"
+      }
+    }
+  },
+  "credentials": {
+    "client_id": "123456",
+    "client_secret": "********",
+    "pickup_id": "123456",
+    "distribution_center": "USLAX1"
+  },
+  "test_credentials": {
+    "client_id": "123456",
+    "client_secret": "********",
+    "pickup_id": "123456",
+    "distribution_center": "USLAX1"
+  }
+}

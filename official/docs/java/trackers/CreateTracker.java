@@ -11,7 +11,7 @@ public class CreateTracker {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 
         HashMap<String, Object> trackerMap = new HashMap<String, Object>();
-        trackerMap.put("tracking_code", "9400110898825022579493");
+        trackerMap.put("tracking_code", "EZ1000000001");
         trackerMap.put("carrier", "USPS");
 
         Tracker tracker = Tracker.create(trackerMap);

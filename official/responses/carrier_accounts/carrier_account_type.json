@@ -1,0 +1,104 @@
+[
+  {
+    "object": "CarrierType",
+    "type": "AmazonMwsAccount",
+    "readable": "Amazon MWS",
+    "logo": null,
+    "fields": {
+      "credentials": {
+        "access_key_id": {
+          "visibility": "visible",
+          "label": "AWS Access Key ID"
+        },
+        "secret_key": {
+          "visibility": "password",
+          "label": "Secret Key"
+        },
+        "merchant_id": {
+          "visibility": "visible",
+          "label": "Seller ID"
+        }
+      }
+    }
+  },
+  {
+    "object": "CarrierType",
+    "type": "ApcAccount",
+    "readable": "APC",
+    "logo": null,
+    "fields": {
+      "credentials": {
+        "shipper_id": {
+          "visibility": "visible",
+          "label": "APC Shipper ID"
+        },
+        "password": {
+          "visibility": "password",
+          "label": "APC Password"
+        },
+        "facility": {
+          "visibility": "visible",
+          "label": "APC Facility (e.g., NJ, LA)"
+        }
+      }
+    }
+  },
+  {
+    "object": "CarrierType",
+    "type": "AsendiaAccount",
+    "readable": "Asendia USA (Legacy)",
+    "logo": null,
+    "fields": {
+      "credentials": {
+        "account_number": {
+          "visibility": "visible",
+          "label": "Asendia Account Number"
+        },
+        "company_name": {
+          "visibility": "visible",
+          "label": "Company Name"
+        },
+        "ftp_username": {
+          "visibility": "visible",
+          "label": "FTP Username"
+        },
+        "ftp_password": {
+          "visibility": "password",
+          "label": "FTP Password"
+        },
+        "prioritytracked": {
+          "visibility": "checkbox",
+          "label": "Priority Tracked"
+        },
+        "pmi": {
+          "visibility": "checkbox",
+          "label": "PMI"
+        },
+        "epacket": {
+          "visibility": "checkbox",
+          "label": "ePacket"
+        },
+        "internationalexpress": {
+          "visibility": "checkbox",
+          "label": "International Express"
+        },
+        "ipa": {
+          "visibility": "checkbox",
+          "label": "IPA"
+        },
+        "isal": {
+          "visibility": "checkbox",
+          "label": "ISAL"
+        },
+        "pmei": {
+          "visibility": "checkbox",
+          "label": "PMEI"
+        },
+        "other": {
+          "visibility": "checkbox",
+          "label": "Other"
+        }
+      }
+    }
+  }
+]

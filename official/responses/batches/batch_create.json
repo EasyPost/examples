@@ -1,0 +1,21 @@
+{
+  "id": "batch_35638a505b00489da8feea4209b66c01",
+  "object": "EasyPost::Entity::Batch",
+  "mode": "test",
+  "state": "creating",
+  "num_shipments": 1,
+  "reference": null,
+  "created_at": "2022-10-17T17:16:05Z",
+  "updated_at": "2022-10-17T17:16:05Z",
+  "scan_form": null,
+  "shipments": [],
+  "status": {
+    "created": 0,
+    "queued_for_purchase": 0,
+    "creation_failed": 0,
+    "postage_purchased": 0,
+    "postage_purchase_failed": 0
+  },
+  "pickup": null,
+  "label_url": null
+}

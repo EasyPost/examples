@@ -1,0 +1,24 @@
+{
+  "id": "cust_...",
+  "object": "PaymentMethods",
+  "primary_payment_method": {
+    "id": "card_...",
+    "disabled_at": null,
+    "object": "CreditCard",
+    "name": null,
+    "last4": "4242",
+    "exp_month": 1,
+    "exp_year": 2025,
+    "brand": "Visa"
+  },
+  "secondary_payment_method": {
+    "id": "card_...",
+    "disabled_at": null,
+    "object": "CreditCard",
+    "name": null,
+    "last4": "4444",
+    "exp_month": 1,
+    "exp_year": 2025,
+    "brand": "Mastercard"
+  }
+}
