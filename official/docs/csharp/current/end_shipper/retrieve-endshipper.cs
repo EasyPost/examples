@@ -13,7 +13,7 @@ namespace EasyPostExamples
         {
             string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            var client = EasyPost.Client(apiKey);
+            var client = new EasyPost.Client(apiKey);
 
             EndShipper retrievedEndShipper = await client.EndShipper.Retrieve("es_...");
 
