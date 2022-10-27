@@ -1,0 +1,15 @@
+{
+  "description": "tracker.updated",
+  "mode": "test",
+  "previous_attributes": {
+    "status": "pre_transit"
+  },
+  "created_at": "2022-10-26T20:18:21.000Z",
+  "pending_urls": [],
+  "completed_urls": [],
+  "updated_at": "2022-10-26T20:18:21.000Z",
+  "id": "evt_55a53eb2556b11ed8945059f515d2b6d",
+  "user_id": "user_060ab38db3c04ffaa60f262e5781a9be",
+  "status": "pending",
+  "object": "Event"
+}
