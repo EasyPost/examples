@@ -15,14 +15,13 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            User childUser = await client.User.Retrieve("user_..");
+            // Retrieve the authenticated user
+            User user = await client.User.RetrieveMe();
 
-            await childUser.Update(new Dictionary<string, object>()
-            {
-                { "name", "Test Child" }
-            });
+            // Retrieve a child user
+            User user = await client.User.Retrieve("user_...");
 
-            Console.WriteLine(JsonConvert.SerializeObject(childUser, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(tracker, Formatting.Indented));
         }
     }
 }
