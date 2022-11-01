@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -10,9 +10,11 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            EasyPost.ClientManager.SetCurrent("<YOUR_TEST/PRODUCTION_API_KEY>");
+            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
 
-            await Partner.UpdateReferralEmail("user_...", "new_email@example.com");
+            var client = new EasyPost.Client(apiKey);
+
+            await client.Partner.UpdateReferralEmail("user_...", "new_email@example.com");
         }
     }
 }

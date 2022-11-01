@@ -1,8 +1,3 @@
-package current.addresses;
-
-public class verify-failure {
-    
-}
 package addresses;
 
 import java.util.HashMap;
@@ -11,7 +6,7 @@ import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Address;
 
-public class CreateAddress {
+public class VerifyFailure {
     public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

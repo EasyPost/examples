@@ -1,6 +1,6 @@
 import com.easypost.EasyPost;
 
-public class RetrieveEndShippers {
+public class List {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

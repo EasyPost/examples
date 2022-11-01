@@ -7,7 +7,7 @@ import com.easypost.model.ShipmentCollection;
 
 import java.util.HashMap;
 
-public class RetrieveShipmentList {
+public class List {
     public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

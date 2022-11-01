@@ -1,14 +1,24 @@
+package shipments;
+
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
+import com.easypost.model.Shipment;
+import com.easypost.model.ScanForm;
 
-EasyPost.apiKey="<YOUR_TEST/PRODUCTION_API_KEY>";
+import java.util.HashMap;
 
-List<Shipment>shipments=new ArrayList<Shipment>();shipments.add(shipment);
+public class Create {
+    public static void main(String[] args) throws EasyPostException {
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 
-Map<String,Object>paramMap=new HashMap<String,Object>();paramMap.put("shipments",shipments);
+        List<Shipment> shipments = new ArrayList<Shipment>();
+        shipments.add(shipment);
 
-ScanForm scanForm=ScanForm.create(paramMap);package current.scan-form;
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("shipments", shipments);
 
-public class create {
+        ScanForm scanForm = ScanForm.create(paramMap);
 
+        System.out.println(shipment);
+    }
 }

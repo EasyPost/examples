@@ -6,7 +6,7 @@ import com.easypost.model.CarrierType;
 
 import java.util.List;
 
-public class RetrieveCarrierTypes {
+public class List {
     public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

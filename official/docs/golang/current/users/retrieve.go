@@ -15,7 +15,7 @@ func main() {
 	user, _ := client.RetrieveMe()
 
 	// Retrieve a child user
-	user, _ := client.GetUser("user_...")
+	user, _ = client.GetUser("user_...")
 
 	fmt.Println(user)
 }

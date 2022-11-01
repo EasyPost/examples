@@ -6,7 +6,7 @@ import com.easypost.model.Report;
 
 import java.util.HashMap;
 
-public class CreateReport {
+public class Create {
     public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

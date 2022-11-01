@@ -25,6 +25,6 @@ make install
 make install-python
 ```
 
-Once installed, run an example like you would any other script or tool for that language. 
+Once installed, run an example like you would any other script or tool for that language.
 
 NOTE: filenames may not match language convention - this is intentional. Our website also uses these example snippets and expects folder/filenames to follow a certain templated naming convention.

@@ -1,7 +1,7 @@
 import com.easypost.EasyPost;
 import java.util.HashMap;
 
-public class UpdateEndShipper {
+public class Update {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

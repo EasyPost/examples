@@ -6,7 +6,7 @@ import com.easypost.model.Shipment;
 
 import java.util.HashMap;
 
-public class InsureShipment {
+public class Insure {
     public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

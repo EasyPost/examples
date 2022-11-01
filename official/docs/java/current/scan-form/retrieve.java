@@ -1,11 +1,15 @@
+package shipments;
+
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
+import com.easypost.model.ScanForm;
 
-EasyPost.apiKey="<YOUR_TEST/PRODUCTION_API_KEY>";
+public class Retrieve {
+    public static void main(String[] args) throws EasyPostException {
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 
-ScanForm scanForm=ScanForm.retrieve("sf_...");package current.scan-form;
+        ScanForm scanForm = ScanForm.retrieve("sf_...");
 
-public class retrieve {
-    
+        System.out.println(scanForm);
+    }
 }
-

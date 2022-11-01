@@ -6,7 +6,7 @@ import com.easypost.model.Address;
 
 import java.util.HashMap;
 
-public class StrictVerifyAddress {
+public class VerifyStrictParam {
     public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

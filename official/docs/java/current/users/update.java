@@ -6,7 +6,7 @@ import com.easypost.model.User;
 
 import java.util.HashMap;
 
-public class UpdateUser {
+public class Update {
     public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

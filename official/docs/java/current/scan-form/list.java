@@ -1,13 +1,19 @@
-package current.scan-form;
-
-public class list {
-
-}
+package shipments;
 
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
+import com.easypost.model.ScanForm;
 
-EasyPost.apiKey="<YOUR_TEST/PRODUCTION_API_KEY>";
+import java.util.HashMap;
 
-Map<String, Object> indexMap = new HashMap<String, Object>();indexMap.put("page_size",2);
-ScanFormCollection scanForms = ScanForm.all(indexMap);
+public class List {
+    public static void main(String[] args) throws EasyPostException {
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+
+        Map<String, Object> indexMap = new HashMap<String, Object>();
+        indexMap.put("page_size", 2);
+        ScanFormCollection scanForms = ScanForm.all(indexMap);
+
+        System.out.println(scanForms);
+    }
+}
