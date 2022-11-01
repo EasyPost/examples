@@ -1,7 +1,9 @@
+import os
+
 import easypost
 
 
-easypost.api_key = "<YOUR_TEST/PRODUCTION_API_KEY>"
+easypost.api_key = os.getenv("EASYPOST_API_KEY")
 
 to_address = easypost.Address.create(...)
 from_address = easypost.Address.create(...)
@@ -17,3 +19,5 @@ shipment = easypost.Shipment.create(
     from_address=from_address,
     parcel=parcel,
 )
+
+print(shipment)

@@ -1,5 +1,6 @@
 const Easypost = require('@easypost/api');
-const api = new Easypost('<YOUR_TEST/PRODUCTION_API_KEY>');
+
+const api = new Easypost(process.env.EASYPOST_API_KEY);
 
 /* Either objects or ids can be passed in. If the object does
  * not have an id, it will be created. */

@@ -1,5 +1,6 @@
 require 'easypost'
-EasyPost.api_key = "<YOUR_TEST/PRODUCTION_API_KEY>"
+
+EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
 to_address = EasyPost::Address.create(...)
 from_address = EasyPost::Address.create(...)
@@ -15,3 +16,5 @@ EasyPost::Shipment.create(
   nil,
   true
 )
+
+puts shipment
