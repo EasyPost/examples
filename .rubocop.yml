@@ -5,4 +5,9 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Naming/VariableNumber:
   Exclude:
-    - 'official/docs/ruby/shipments/create_shipment_with_options.rb'
+    - 'official/docs/ruby/current/options/create-with-options.rb'
+Lint/UselessAssignment:
+  Exclude:
+    - 'official/docs/ruby/current/users/retrieve.rb'
+Naming/FileName:
+  Enabled: false

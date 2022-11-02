@@ -13,7 +13,8 @@
   "rules": {
     "no-console": "off",
     "import/no-unresolved": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "filenames/match-regex": "off"
   },
   "globals": {
     "window": true,

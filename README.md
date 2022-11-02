@@ -12,3 +12,19 @@ This repository holds hundreds of code examples for using the EasyPost API acros
   - `guides` holds all the code snippets that populate on our guides page. Each language will have its own subdirectory
   - `responses` holds all of the associated responses for our example snippets found in the `docs` directory that will give you a good idea of what to expect back from the EasyPost API
 - `community` holds code snippets contributed from the community. These may include custom workflows, how to integrate EasyPost with other software, etc
+
+## Usage
+
+Most of the examples found here should run out of the box without any alterations required with the exception of substituting your own EasyPost object IDs where applicable.
+
+```bash
+# Install all language environments
+make install
+
+# Install a specific language environment
+make install-python
+```
+
+Once installed, run an example like you would any other script or tool for that language.
+
+NOTE: filenames may not match language convention - this is intentional. Our website also uses these example snippets and expects folder/filenames to follow a certain templated naming convention.
