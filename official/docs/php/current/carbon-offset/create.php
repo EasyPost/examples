@@ -35,3 +35,5 @@ $shipment = \EasyPost\Shipment::create(
     null,
     true
 );
+
+echo $shipment;
