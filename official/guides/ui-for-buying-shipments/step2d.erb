@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <!-- Milligram CSS minified -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <title>UI for Buying Shipments with EasyPost</title>
+  </head>
+  <body>
+    <div class="container">
+      <a href="/"><h5><strong>UI for Buying Shipments with EasyPost</strong></h5></a>
+      <%= yield %>
+    </div>
+    <script type="text/javascript">
+      // Parcels require more parameters. Hide fields if not a Parcel
+      $(document).ready(function() {
+          $('#selector').on("change", function(value) {
+          value = $(this).val();
+          hideShowInput(value);
+        });
+      });
+
+      function hideShowInput(option){
+        if( option === "Parcel") {
+          $('#hide-input').show();
+        }
+        else{
+          $('#hide-input').hide();
+        }
+      }
+    </script>
+  </body>
+</html>

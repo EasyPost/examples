@@ -1,0 +1,5 @@
+<form action='/shipment' method='post' role="form">
+  <%= erb :_address, locals: {name: "To Address"}  %>
+  <%= erb :_parcel_details %>
+  <input type='submit' value='Get Rate'>
+</form>

@@ -1,0 +1,13 @@
+{
+  "id": "cstitem_...",
+  "object": "CustomsItem",
+  "description": "T-shirt",
+  "quantity": 1,
+  "value": 10,
+  "weight": 5,
+  "code": null,
+  "hs_tariff_number": "123456",
+  "origin_country": "US",
+  "created_at": "2013-04-22T06:56:43Z",
+  "updated_at": "2013-04-22T06:56:43Z"
+}
