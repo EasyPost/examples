@@ -1,34 +1,44 @@
+package tracking_guide;
+
+import java.util.HashMap;
+
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
-EasyPost.apiKey = "<YOUR_TEST/PRODUCTION_API_KEY>";
+public class CreateShipment {
+    public static void main(String[] args) throws EasyPostException {
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 
-Map<String, Object> shipmentMap = new HashMap<String, Object>() {
-  put("from_address", new HashMap<String, Object>() {
-    put("company", "EasyPost");
-    put("street1", "417 Montgomery Street");
-    put("street2", "5th Floor");
-    put("city", "San Francisco");
-    put("state", "CA");
-    put("zip", "94104");
-    put("phone", "415-528-7555");
-  });
-  put("to_address", new HashMap<String, Object>() {
-    put("name", "George Costanza");
-    put("company", "Vandelay Industries");
-    put("street1", "1 E 161st St.");
-    put("city", "Bronx");
-    put("state", "NY");
-    put("zip", "10451");
-  });
-  put("parcel", new HashMap<String, Object>() {
-    put("height", 9);
-    put("width", 6);
-    put("length", 2);
-    put("weight", 10);
-  });
-};
+        HashMap<String, Object> fromAddressMap = new HashMap<String, Object>();
+        fromAddressMap.put("company", "EasyPost");
+        fromAddressMap.put("street1", "417 Montgomery Street");
+        fromAddressMap.put("street2", "5th Floor");
+        fromAddressMap.put("city", "San Francisco");
+        fromAddressMap.put("state", "CA");
+        fromAddressMap.put("zip", "94104");
+        fromAddressMap.put("phone", "415-528-7555");
 
-Shipment shipment = Shipment.create(shipmentMap);
+        HashMap<String, Object> toAddressMap = new HashMap<String, Object>();
+        toAddressMap.put("name", "George Costanza");
+        toAddressMap.put("company", "Vandelay Industries");
+        toAddressMap.put("street1", "1 E 161st St.");
+        toAddressMap.put("city", "Bronx");
+        toAddressMap.put("state", "NY");
+        toAddressMap.put("zip", "10451");
 
-shipment.buy(shipment.lowestRate());
+        HashMap<String, Object> parcelMap = new HashMap<String, Object>();
+        parcelMap.put("height", 9);
+        parcelMap.put("width", 6);
+        parcelMap.put("length", 2);
+        parcelMap.put("weight", 10);
+
+        Map<String, Object> shipmentMap = new HashMap<String, Object>();
+        shipmentMap.put("to_address", toAddressMap);
+        shipmentMap.put("from_address", fromAddressMap);
+        shipmentMap.put("parcel", parcelMap);
+
+        Shipment shipment = Shipment.create(shipmentMap);
+
+        shipment.buy(shipment.lowestRate());
+    }
+}

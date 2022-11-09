@@ -2,16 +2,16 @@
   "error": {
     "code": "ADDRESS.VERIFY.FAILURE",
     "message": "Address not found",
-    "errors":[
+    "errors": [
       {
-        "field":"address",
-        "message":"Address not found",
-        "suggestion":null
+        "field": "address",
+        "message": "Address not found",
+        "suggestion": null
       },
       {
-        "field":"street1",
-        "message":"House number is missing",
-        "suggestion":null
+        "field": "street1",
+        "message": "House number is missing",
+        "suggestion": null
       }
     ]
   }

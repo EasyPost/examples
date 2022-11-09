@@ -1,7 +1,7 @@
 curl -X POST https://api.easypost.com/v2/customs_infos \
--u $EASYPOST_API_KEY: \
--H 'Content-Type: application/json' \
--d '{
+  -u "$EASYPOST_API_KEY": \
+  -H 'Content-Type: application/json' \
+  -d '{
   "customs_info": {
     "customs_certify": "true",
     "customs_signer": "Steve Brule",

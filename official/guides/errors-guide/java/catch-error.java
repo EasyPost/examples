@@ -1,12 +1,22 @@
-import com.easypost.model.Shipment;
+package errors;
 
-try {
-  Map<String, Object> address = new HashMap<String, Object>();
-  ...
+import java.util.HashMap;
 
-  address.put("verify_strict", true);
+import com.easypost.EasyPost;
+import com.easypost.exception.EasyPostException;
 
-  Address.create(address);
-} catch (EasyPostException e) {
-  System.err.println(e.getMessage());
+public class CatchError {
+    public static void main(String[] args) throws EasyPostException {
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+
+        try {
+            Map<String, Object> address = new HashMap<String, Object>();
+
+            address.put("verify_strict", true);
+
+            Address.create(address);
+        } catch (EasyPostException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 }

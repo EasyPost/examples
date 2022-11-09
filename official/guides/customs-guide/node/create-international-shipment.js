@@ -23,6 +23,6 @@ const shipment = new api.Shipment({
     weight: 20,
   },
   customs_info: customsInfo,
-})
+});
 
 shipment.save().then(console.log);

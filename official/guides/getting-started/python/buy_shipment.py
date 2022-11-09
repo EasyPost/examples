@@ -1,5 +1,5 @@
-shipment.buy(rate=shipment.lowest_rate(carriers=['USPS'], services=['First']))
+shipment.buy(rate=shipment.lowest_rate(carriers=["USPS"], services=["First"]))
 
-##OR
+# OR
 
-shipment.buy(rate={'id': '{RATE_ID}'})
+shipment.buy(rate={"id": "{RATE_ID}"})

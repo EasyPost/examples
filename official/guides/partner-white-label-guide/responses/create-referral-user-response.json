@@ -24,7 +24,8 @@
       "key": "...",
       "mode": "test",
       "created_at": "2022-02-03T00:38:06Z"
-    }, {
+    },
+    {
       "object": "ApiKey",
       "key": "...",
       "mode": "production",

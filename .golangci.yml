@@ -5,3 +5,4 @@ issues:
     - "`main` is unused"
     - "github.com/EasyPost/easypost-go"
     - "undeclared name: `easypost`"
+    - "expected 'package'"

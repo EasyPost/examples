@@ -1,5 +1,5 @@
-## Creating a Tracker
+# Creating a Tracker
 tracker = easypost.Tracker.create(
-  tracking_code="EZ4000000004",
-  carrier="UPS"
+    tracking_code="EZ4000000004",
+    carrier="UPS",
 )

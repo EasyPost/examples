@@ -1,6 +1,12 @@
+package referral;
+
 import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 
-EasyPost.apiKey = "<YOUR_PRODUCTION_API_KEY>";
+public class RetrieveReferralUsers {
+    public static void main(String[] args) throws EasyPostException {
+        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 
-boolean success = Billing.fundWallet("2000", PaymentMethod.Priority.PRIMARY);
+        Billing.fundWallet("2000", PaymentMethod.Priority.PRIMARY);
+    }
+}

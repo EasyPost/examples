@@ -1,10 +1,10 @@
-shipment.buy(rate=shipment.lowest_rate(carriers=['USPS'], services=['First']))
+shipment.buy(rate=shipment.lowest_rate(carriers=["USPS"], services=["First"]))
 
-##OR
+# OR
 
-shipment.buy(rate={'id': 'INSERT RATE ID HERE'})
+shipment.buy(rate={"id": "INSERT RATE ID HERE"})
 
-## Print PNG link
+# Print PNG link
 print(shipment.postage_label.label_url)
-## Print Tracking Code
+# Print Tracking Code
 print(shipment.postage_label.tracking_code)

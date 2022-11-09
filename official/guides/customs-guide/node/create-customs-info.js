@@ -3,7 +3,7 @@ const customsInfo = new api.CustomsInfo({
   customs_certify: true,
   customs_signer: 'Jarrett Streebin',
   contents_type: 'gift',
-  customs_items: [customsItem1, customsItem2]
+  customs_items: [customsItem1, customsItem2],
 });
 
 customsInfo.save().then(console.log);

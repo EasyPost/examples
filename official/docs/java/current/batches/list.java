@@ -7,7 +7,7 @@ import com.easypost.model.BatchCollection;
 
 import java.util.HashMap;
 
-public class List {
+public class All {
     public static void main(String[] args) throws EasyPostException {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

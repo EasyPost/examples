@@ -57,34 +57,35 @@
     "restriction_comments": null,
     "restriction_type": null,
     "created_at": "2014-07-22T01:56:54Z",
-    "updated_at": "2014-07-22T01:56:54Z"
-    "customs_items": [{
-      "id": "cstitem_...",
-      "object": "CustomsItem",
-      "description": "T-shirt",
-      "quantity": 1,
-      "value": 11,
-      "weight": 6,
-      "hs_tariff_number": "610910",
-      "origin_country": "US",
-      "created_at": "2014-07-22T01:53:42Z",
-      "updated_at": "2014-07-22T01:53:42Z"
-    }, {
-      "id": "cstitem_...",
-      "object": "CustomsItem",
-      "description": "Hat",
-      "hs_tariff_number": "650400",
-      "origin_country": "US",
-      "quantity": 1,
-      "value": 20,
-      "weight": 14,
-      "created_at": "2014-07-22T01:53:51Z",
-      "updated_at": "2014-07-22T01:53:51Z"
-    }]
+    "updated_at": "2014-07-22T01:56:54Z",
+    "customs_items": [
+      {
+        "id": "cstitem_...",
+        "object": "CustomsItem",
+        "description": "T-shirt",
+        "quantity": 1,
+        "value": 11,
+        "weight": 6,
+        "hs_tariff_number": "610910",
+        "origin_country": "US",
+        "created_at": "2014-07-22T01:53:42Z",
+        "updated_at": "2014-07-22T01:53:42Z"
+      },
+      {
+        "id": "cstitem_...",
+        "object": "CustomsItem",
+        "description": "Hat",
+        "hs_tariff_number": "650400",
+        "origin_country": "US",
+        "quantity": 1,
+        "value": 20,
+        "weight": 14,
+        "created_at": "2014-07-22T01:53:51Z",
+        "updated_at": "2014-07-22T01:53:51Z"
+      }
+    ]
   },
-  "rates": [
-    ...
-  ],
+  "rates": [],
   "scan_form": null,
   "selected_rate": null,
   "postage_label": null,

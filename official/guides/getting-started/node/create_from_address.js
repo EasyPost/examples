@@ -8,7 +8,7 @@ const fromAddress = new api.Address({
   city: 'San Francisco',
   state: 'CA',
   zip: '94104',
-  phone: '415-528-7555'
+  phone: '415-528-7555',
 });
 
 fromAddress.save().then(console.log);
