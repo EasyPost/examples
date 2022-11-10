@@ -1,0 +1,24 @@
+<label>USPS Options</label>
+<select id="selector" name="parcel[predefined_package]">
+  <option value="Card">Flat Rate Card</option>
+  <option value="FlatRateEnvelope">Flat Rate Letter Envelope</option>
+  <option value="FlatRateGiftCardEnvelope">Flat Rate Gift Card Envelopes</option>
+  <option value="FlatRateWindowEnvelope">Flat Rate Window Envelopes</option>
+  <option value="SmallFlatRateEnvelope">Flat Rate Small Envelopes</option>
+  <option value="FlatRatePaddedEnvelope">Flat Rate Padded Envelopes</option>
+  <option value="FlatRateLegalEnvelope">Flat Rate Legal Envelopes</option>
+  <option value="SmallFlatRateBox">Flat Rate Small Box</option>
+  <option value="MediumFlatRateBox">Flat Rate Medium Boxes</option>
+  <option value="LargeFlatRateBox">Flat Rate Large Box</option>
+  <option value="LargeFlatRateBoardGameBox">Flat Rate Large Board Game Box</option>
+  <option value="Parcel" Selected>Parcel</option>
+</select>
+
+<div id="hide-input">
+  <label>Custom Parcel Details</label>
+  <input type="number" name="parcel[width]" placeholder="Width (in)">
+  <input type="number" name="parcel[length]" placeholder="Length (in)">
+  <input type="number" name="parcel[height]" placeholder="Height (in)">
+</div>
+<p>Note: If you have chosen a Flat Rate package option, only weight is required</p>
+<input type="number" step="any" name="parcel[weight]" placeholder="Weight (oz)" required>

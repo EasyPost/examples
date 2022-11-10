@@ -75,8 +75,10 @@ lint-ruby:
 
 ## lint-shell - lints shell files
 lint-shell:
-	shellcheck official/docs/curl/current/**/*.sh -e SC2148
+	shellcheck official/docs/curl/current/**/*.sh -e SC2148,SC2034
 	shfmt -i 2 -d official/docs/curl
+	shellcheck official/guides/**/curl/*.sh -e SC2148,SC2034
+	shfmt -i 2 -d official/guides/**/curl
 
 ## format - formats the entire project
 format: | format-csharp format-java format-ruby format-shell
@@ -125,5 +127,6 @@ format-ruby:
 ## format-shell - formats shell files
 format-shell:
 	shfmt -i 2 -w official/docs/curl/*
+	shfmt -i 2 -w official/guides/**/curl/*
 
 .PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-php format-python format-python-check format-ruby format-shell

@@ -1,6 +1,6 @@
 import com.easypost.EasyPost;
 
-public class List {
+public class All {
     public static void main(String[] args) {
         EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
 

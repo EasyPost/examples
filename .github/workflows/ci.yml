@@ -16,7 +16,7 @@ jobs:
         uses: luizm/action-sh-checker@master
         env:
           SHFMT_OPTS: -i 2 -d
-          SHELLCHECK_OPTS: -e SC2148
+          SHELLCHECK_OPTS: -e SC2148,SC2034
   csharp:
     runs-on: windows-2022
     steps:

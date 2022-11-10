@@ -1,0 +1,36 @@
+{
+  "completed_urls": [],
+  "created_at": "2014-07-22T07:46:44Z",
+  "description": "batch.updated",
+  "id": "evt_...",
+  "mode": "test",
+  "object": "Event",
+  "pending_urls": ["https://webhooks.example.com"],
+  "previous_attributes": { "state": "label_generating" },
+  "result": {
+    "created_at": "2014-07-22T07:46:44Z",
+    "id": "batch_...",
+    "label_url": "https://amazonaws.com/.../a1b2c3.pdf",
+    "mode": "test",
+    "num_shipments": 1,
+    "object": "Batch",
+    "reference": null,
+    "scan_form": null,
+    "shipments": [
+      { "batch_message": null, "batch_status": "created", "id": "shp_..." },
+      { "batch_message": null, "batch_status": "created", "id": "shp_..." },
+      { "batch_message": null, "batch_status": "created", "id": "shp_..." },
+      { "batch_message": null, "batch_status": "created", "id": "shp_..." }
+    ],
+    "state": "label_generated",
+    "status": {
+      "created": 0,
+      "creation_failed": 0,
+      "postage_purchase_failed": 0,
+      "postage_purchased": 1,
+      "queued_for_purchase": 0
+    },
+    "updated_at": "2014-08-04T22:37:52Z"
+  },
+  "updated_at": "2014-08-04T22:37:51Z"
+}

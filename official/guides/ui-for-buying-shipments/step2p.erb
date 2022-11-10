@@ -1,0 +1,23 @@
+<h3>CONGRATS!</h3>
+<p><em>You have purchased a Shipment with EasyPost.</em></p>
+
+<label>From Address</label>
+<p>
+    <%=shipment.from_address.name%><br>
+    <%=shipment.from_address.street1%><br>
+    <%=shipment.from_address.street2%><br>
+    <%=shipment.from_address.city%>, <%=shipment.from_address.state%><br>
+    <%=shipment.from_address.zip%> <%=shipment.from_address.country%>
+</p>
+
+<label>To Address</label>
+<p>
+    <%=shipment.to_address.name%><br>
+    <%=shipment.to_address.street1%><br>
+    <%=shipment.to_address.street2%><br>
+    <%=shipment.to_address.city%>, <%=shipment.to_address.state%><br>
+    <%=shipment.to_address.zip%> <%=shipment.to_address.country%><br>
+</p>
+
+<p><a href="<%=shipment.postage_label.label_url %>">Label Link</a></p>
+<p>Tracking code: <%=shipment.tracking_code%></p>
