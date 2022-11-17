@@ -33,6 +33,8 @@ It is **highly recommended** for users with many child accounts to pipe the log 
 
 ### Step 2: Update the `child_accounts.csv` file with accurate information
 
+**Template:** If you cannot reliably export your data or you already have it stored elsewhere and only want to update it, you can fill in the template of the `child_accounts.csv` file found in this directory.
+
 The credentials for each UspsAccount must reflect accurate and complete EndShipper information for each of your users.
 
 Please note that the address and contact details are of the person or business entity responsible for the shipment and not necessarily the shipping location. Additionally, the address must be fully qualified and P.O. boxes are not allowed. The `company_name` can be a contact name, if appropriate.

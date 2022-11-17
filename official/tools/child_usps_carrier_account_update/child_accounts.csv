@@ -1,0 +1,2 @@
+child_id,carrier_account_id,credential_type,city,state,street,zip,company_or_name,email,phone,shipper_id
+user_abc123abc123abc123abc123abc123ab,ca_abc123abc123abc123abc123abc123ab,prod,Lehi,UT,2889 N Ashton Blvd,84043,EasyPost,example@easypost.com,5555555555,
