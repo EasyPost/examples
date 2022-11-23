@@ -2,5 +2,5 @@
 max-line-length = 120
 extend-ignore =
     E203,
-    F821,  # don't worry about undefined var names since guides won't always have them
+    F821,
 per-file-ignores = __init__.py:F401
