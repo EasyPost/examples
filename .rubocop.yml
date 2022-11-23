@@ -9,5 +9,6 @@ Naming/VariableNumber:
 Lint/UselessAssignment:
   Exclude:
     - 'official/docs/ruby/current/users/retrieve.rb'
+    - 'official/docs/ruby/current/api-keys/retrieve.rb'
 Naming/FileName:
   Enabled: false
