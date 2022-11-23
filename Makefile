@@ -6,8 +6,33 @@ PYTHON_VIRTUAL_BIN := $(PYTHON_VIRTUAL_ENV)/bin
 help:
 	@cat Makefile | grep '^## ' --color=never | cut -c4- | sed -e "`printf 's/ - /\t- /;'`" | column -s "`printf '\t'`" -t
 
+## clean - Remove the virtual environment and clear out .pyc files along with node_modules and vendor folders
+clean: | clean-go clean-java clean-node clean-php clean-python
+
+## clean-go - Cleans the Go environment
+clean-go:
+	rm -rf vendor
+
+## clean-java - Cleans the Java environment
+clean-java:
+	rm -rf target
+	find . -name '*.jar' -delete
+
+## clean-python - Cleans the Python environment
+clean-python:
+	rm -rf $(PYTHON_VIRTUAL_ENV) dist *.egg-info .coverage
+	find . -name '*.pyc' -delete
+
+## clean-node - Cleans the Node environment
+clean-node:
+	rm -rf node_modules
+
+## clean-php - Cleans the PHP environment
+clean-php:
+	rm -rf vendor bin
+
 ## install - install all dependencies for each language
-install: | install-csharp install-java install-node install-python install-ruby install-php install-go
+install: | install-csharp install-go install-java install-node install-php install-python install-ruby
 
 ## install-csharp - install C# dependencies
 install-csharp:
@@ -41,12 +66,12 @@ install-ruby:
 	bundle install
 
 ## lint - lints the entire project
-lint: | lint-csharp lint-java lint-ruby lint-python lint-go lint-php lint-node lint-shell
+lint: | lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell
 
 ## lint-csharp - lint C# files
 lint-csharp:
 	dotnet format whitespace --include official/docs/csharp/ --folder --verify-no-changes
-	dotnet format whitespace --include official/guides/csharp/ --folder --verify-no-changes
+	dotnet format whitespace --include official/guides/ --folder --verify-no-changes
 
 ## lint-go - Lint Go files
 lint-go:
@@ -55,6 +80,7 @@ lint-go:
 ## lint-java - lints Java files
 lint-java:
 	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/docs/java/*
+	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/guides/*
 
 ## lint-node - lints Node files
 lint-node:
@@ -81,12 +107,12 @@ lint-shell:
 	shfmt -i 2 -d official/guides/**/curl
 
 ## format - formats the entire project
-format: | format-csharp format-java format-ruby format-shell
+format: | format-csharp format-go format-java format-node format-php format-python format-ruby format-shell
 
 ## format-csharp - formats C# files
 format-csharp:
 	dotnet format whitespace --include official/docs/csharp/ --folder
-	dotnet format whitespace --include official/guides/csharp/ --folder
+	dotnet format whitespace --include official/guides/ --folder
 
 ## format-go - formats Go files
 format-go:
@@ -100,10 +126,6 @@ format-java:
 format-node:
 	npm run format
 
-## format-node-check - checks that Node files conform to the correct format
-format-node-check:
-	npm run check
-
 ## format-php - formats PHP files
 format-php:
 	composer fix
@@ -115,11 +137,6 @@ format-python:
 	$(PYTHON_VIRTUAL_BIN)/black official/guides/
 	$(PYTHON_VIRTUAL_BIN)/isort official/guides/
 
-## format-python-check - checks that Python files conform to the correct format
-format-python-check:
-	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
-	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
-
 ## format-ruby - formats Ruby files
 format-ruby:
 	rubocop -A
@@ -129,4 +146,13 @@ format-shell:
 	shfmt -i 2 -w official/docs/curl/*
 	shfmt -i 2 -w official/guides/**/curl/*
 
-.PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-php format-python format-python-check format-ruby format-shell
+## format-node-check - checks that Node files conform to the correct format
+format-node-check:
+	npm run check
+
+## format-python-check - checks that Python files conform to the correct format
+format-python-check:
+	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
+
+.PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby install-shell lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-php format-python format-ruby format-shell format-node-check format-python-check
