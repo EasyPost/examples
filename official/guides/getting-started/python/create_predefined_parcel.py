@@ -1,4 +1,4 @@
 parcel = easypost.Parcel.create(
-  predefined_package='FlatRateEnvelope',
-  weight=10
+    predefined_package="FlatRateEnvelope",
+    weight=10,
 )
