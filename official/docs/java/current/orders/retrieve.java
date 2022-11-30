@@ -1,14 +1,14 @@
 package order;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Order;
+import com.easypost.service.EasyPostClient;
 
 public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Order order = Order.retrieve("order_...");
+        Order order = client.order.retrieve("order_...");
 
         System.out.println(order);
     }

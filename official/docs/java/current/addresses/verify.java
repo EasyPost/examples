@@ -1,14 +1,14 @@
 package addresses;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Address;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Verify {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> addressParams = new HashMap<String, Object>();
 
@@ -21,9 +21,9 @@ public class Verify {
         addressParams.put("phone", "415-123-4567");
         addressParams.put("verify_strict", true);
 
-        Address address = Address.create(addressParams);
+        Address address = client.address.create(addressParams);
 
-        Address verifiedAddress = address.verify();
+        Address verifiedAddress = client.address.verify(address.getId());
 
         System.out.println(verifiedAddress);
     }

@@ -1,14 +1,14 @@
 package insurances;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Insurance;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("id", "adr_...");
@@ -24,7 +24,7 @@ public class Create {
         insuranceMap.put("amount", "100.00");
         insuranceMap.put("reference", "InsuranceRef1");
 
-        Insurance insurance = Insurance.create(insuranceMap);
+        Insurance insurance = client.insurance.create(insuranceMap);
 
         System.out.println(insurance);
     }

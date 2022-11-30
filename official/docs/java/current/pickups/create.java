@@ -1,14 +1,14 @@
 package pickups;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Pickup;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> address = new HashMap<String, Object>();
         address.put("id", "adr_...");
@@ -25,7 +25,7 @@ public class Create {
         pickupMap.put("is_account_address", false);
         pickupMap.put("instructions", "Special pickup instructions");
 
-        Pickup pickup = Pickup.create(pickupMap);
+        Pickup pickup = client.pickup.create(pickupMap);
 
         System.out.println(pickup);
     }

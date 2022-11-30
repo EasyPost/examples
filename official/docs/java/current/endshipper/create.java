@@ -1,9 +1,13 @@
-import com.easypost.EasyPost;
+package endshipper;
+
+import com.easypost.model.EndShipper;
+import com.easypost.service.EasyPostClient;
+
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> endShipperData = new HashMap<String, Object>();
 
@@ -18,7 +22,7 @@ public class Create {
         endShipperData.put("phone", "555-555-5555");
         endShipperData.put("email", "FOO@EXAMPLE.COM");
 
-        EndShipper endShipper = EndShipper.create(endShipperData);
+        EndShipper endShipper = client.endShipper.create(endShipperData);
 
         System.out.println(endShipper);
     }

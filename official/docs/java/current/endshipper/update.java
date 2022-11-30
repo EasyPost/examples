@@ -1,11 +1,13 @@
-import com.easypost.EasyPost;
+package endshipper;
+
+import com.easypost.model.EndShipper;
+import com.easypost.service.EasyPostClient;
+
 import java.util.HashMap;
 
 public class Update {
     public static void main(String[] args) {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-
-        EndShipper endShipper = EndShipper.retrieve("es_...");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> updateParams = new HashMap<String, Object>();
 
@@ -20,7 +22,7 @@ public class Update {
         updateParams.put("phone", "555-555-5555");
         updateParams.put("email", "FOO@EXAMPLE.COM");
 
-        EndShipper updatedEndShipper = endShipper.update(updateParams);
+        EndShipper updatedEndShipper = client.endShipper.update(updateParams, "es_...");
 
         System.out.println(updatedEndShipper);
     }

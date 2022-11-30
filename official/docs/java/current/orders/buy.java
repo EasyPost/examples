@@ -1,22 +1,20 @@
 package order;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Order;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Buy {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-
-        Order order = Order.retrieve("order_...");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> buyParams = new HashMap<String, Object>();
         buyParams.put("carrier", "FedEx");
         buyParams.put("service", "FEDEX_GROUND");
 
-        order.buy(buyParams);
+        Order order = client.order.buy("order_...", buyParams);
 
         System.out.println(order);
     }

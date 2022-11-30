@@ -1,14 +1,14 @@
 package referral;
 
-import java.util.HashMap;
-
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.ReferralCustomer;
+import com.easypost.service.EasyPostClient;
+
+import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> params = new HashMap<>();
 
@@ -16,7 +16,7 @@ public class Create {
         params.put("email", "test@test.com");
         params.put("phone", "8888888888");
 
-        ReferralCustomer referralUser = ReferralCustomer.create(params);
+        ReferralCustomer referralUser = client.referralCustomer.create(params);
 
         System.out.println(referralUser);
     }

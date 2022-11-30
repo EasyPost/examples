@@ -1,9 +1,9 @@
 package customs_info;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.CustomsInfo;
 import com.easypost.model.CustomsItem;
+import com.easypost.service.EasyPostClient;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> customsItemMap = new HashMap<String, Object>();
         customsItemMap.put("description", "T-shirt");
@@ -21,7 +21,7 @@ public class Create {
         customsItemMap.put("origin_country", "us");
         customsItemMap.put("hs_tariff_number", "123456");
 
-        CustomsItem customsItem1 = CustomsItem.create(customsItemMap);
+        CustomsItem customsItem1 = client.customsItem.create(customsItemMap);
 
         List<CustomsItem> customsItemsList = new ArrayList<CustomsItem>();
         customsItemsList.add(customsItem1);
@@ -35,7 +35,7 @@ public class Create {
         customsInfoMap.put("restriction_type", "none");
         customsInfoMap.put("customs_items", customsItemsList);
 
-        CustomsInfo customsInfo = CustomsInfo.create(customsInfoMap);
+        CustomsInfo customsInfo = client.customsInfo.create(customsInfoMap);
 
         System.out.println(customsInfo);
     }

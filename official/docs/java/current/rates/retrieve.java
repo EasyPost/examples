@@ -1,14 +1,14 @@
 package rates;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Rate;
+import com.easypost.service.EasyPostClient;
 
 public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Rate rate = Rate.retrieve("rate_...");
+        Rate rate = client.rate.retrieve("rate_...");
 
         System.out.println(rate);
     }

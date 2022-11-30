@@ -1,13 +1,18 @@
-import com.easypost.EasyPost;
+package endshipper;
+
+import com.easypost.model.EndShipperCollection;
+import com.easypost.service.EasyPostClient;
+
+import java.util.HashMap;
 
 public class All {
     public static void main(String[] args) {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Map<String, Object> params = new HashMap<>();
+        HashMap<String, Object> params = new HashMap<>();
         params.put("page_size", 5);
 
-        EndShipperCollection endShipperCollection = EndShipper.all(params);
+        EndShipperCollection endShipperCollection = client.endShipper.all(params);
 
         System.out.println(endShipperCollection);
     }

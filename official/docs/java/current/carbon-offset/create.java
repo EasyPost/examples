@@ -1,14 +1,14 @@
 package carbon_offset;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Shipment;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("name", "Dr. Steve Brule");
@@ -42,7 +42,7 @@ public class Create {
         shipmentMap.put("from_address", fromAddressMap);
         shipmentMap.put("parcel", parcelMap);
 
-        Shipment shipment = Shipment.create(shipmentMap, true);
+        Shipment shipment = client.shipment.create(shipmentMap, true);
 
         System.out.println(shipment);
     }

@@ -1,14 +1,14 @@
 package insurances;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Insurance;
+import com.easypost.service.EasyPostClient;
 
 public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Insurance insurance = Insurance.retrieve("ins_...");
+        Insurance insurance = client.insurance.retrieve("ins_...");
 
         System.out.println(insurance);
     }

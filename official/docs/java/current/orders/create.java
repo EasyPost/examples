@@ -1,14 +1,15 @@
 package order;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Order;
+import com.easypost.service.EasyPostClient;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> toAddress = new HashMap<String, Object>();
         toAddress.put("id", "adr_...");
@@ -32,7 +33,7 @@ public class Create {
         orderMap.put("from_address", fromAddress);
         orderMap.put("shipments", parcels);
 
-        Order order = Order.create(orderMap);
+        Order order = client.order.create(orderMap);
 
         System.out.println(order);
     }

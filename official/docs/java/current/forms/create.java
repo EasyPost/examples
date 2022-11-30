@@ -1,18 +1,18 @@
 package shipments;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Shipment;
+import com.easypost.service.EasyPostClient;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Shipment shipment = Shipment.retrieve("shp_...");
-        shipment.buy(shipment.lowestRate());
+        Shipment shipment = client.shipment.retrieve("shp_...");
+        Shipment boughtShipment = client.shipment.buy(shipment.getId(), shipment.lowestRate());
 
         HashMap<String, Object> titleMap = new HashMap<String, Object>();
         titleMap.put("title", "Square Reader");
@@ -29,7 +29,8 @@ public class Create {
         formMap.put("units", 8);
         formMap.put("line_items", lineItemsMap);
 
-        shipment.generateForm("return_packing_slip", formMap);
+        Shipment shipmentWithForm = client.shipment.generateForm("return_packing_slip", formMap,
+                boughtShipment.getId());
 
         System.out.println(shipment);
     }
