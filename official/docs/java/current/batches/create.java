@@ -19,11 +19,11 @@ public class Create {
 
         shipmentsList.add(shipmentMap);
 
-        HashMap<String, Object> batchMap = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
 
-        batchMap.put("shipment", shipmentsList);
+        params.put("shipment", shipmentsList);
 
-        Batch batch = client.batch.create(batchMap);
+        Batch batch = client.batch.create(params);
 
         System.out.println(batch);
     }

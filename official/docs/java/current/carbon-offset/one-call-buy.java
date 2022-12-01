@@ -37,14 +37,14 @@ public class OneCallBuy {
         parcelMap.put("height", 5);
         parcelMap.put("weight", 65.9);
 
-        HashMap<String, Object> shipmentMap = new HashMap<String, Object>();
-        shipmentMap.put("to_address", toAddressMap);
-        shipmentMap.put("from_address", fromAddressMap);
-        shipmentMap.put("parcel", parcelMap);
-        shipmentMap.put("carrier_accounts", "ca_...");
-        shipmentMap.put("service", "NextDayAir");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("to_address", toAddressMap);
+        params.put("from_address", fromAddressMap);
+        params.put("parcel", parcelMap);
+        params.put("carrier_accounts", "ca_...");
+        params.put("service", "NextDayAir");
 
-        Shipment shipment = client.shipment.create(shipmentMap, true);
+        Shipment shipment = client.shipment.create(params, true);
 
         System.out.println(shipment);
     }

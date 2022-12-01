@@ -16,15 +16,15 @@ public class Create {
         HashMap<String, Object> fromAddressMap = new HashMap<String, Object>();
         fromAddressMap.put("id", "adr_...");
 
-        HashMap<String, Object> insuranceMap = new HashMap<String, Object>();
-        insuranceMap.put("to_address", toAddressMap);
-        insuranceMap.put("from_address", fromAddressMap);
-        insuranceMap.put("tracking_code", "9400110898825022579493");
-        insuranceMap.put("carrier", "USPS");
-        insuranceMap.put("amount", "100.00");
-        insuranceMap.put("reference", "InsuranceRef1");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("to_address", toAddressMap);
+        params.put("from_address", fromAddressMap);
+        params.put("tracking_code", "9400110898825022579493");
+        params.put("carrier", "USPS");
+        params.put("amount", "100.00");
+        params.put("reference", "InsuranceRef1");
 
-        Insurance insurance = client.insurance.create(insuranceMap);
+        Insurance insurance = client.insurance.create(params);
 
         System.out.println(insurance);
     }

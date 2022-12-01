@@ -10,18 +10,18 @@ public class CreateAndVerify {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> addressParams = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
 
-        addressParams.put("street1", "417 Montgomery Street");
-        addressParams.put("street2", "FL 5");
-        addressParams.put("city", "San Francisco");
-        addressParams.put("state", "CA");
-        addressParams.put("zip", "94104");
-        addressParams.put("country", "US");
-        addressParams.put("company", "EasyPost");
-        addressParams.put("phone", "415-123-4567");
+        params.put("street1", "417 Montgomery Street");
+        params.put("street2", "FL 5");
+        params.put("city", "San Francisco");
+        params.put("state", "CA");
+        params.put("zip", "94104");
+        params.put("country", "US");
+        params.put("company", "EasyPost");
+        params.put("phone", "415-123-4567");
 
-        Address address = client.address.createAndVerify(addressParams);
+        Address address = client.address.createAndVerify(params);
 
         System.out.println(address);
     }

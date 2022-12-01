@@ -46,14 +46,14 @@ public class Create {
         taxIdentifiersMap.put("tax_id_type", "EORI");
         taxIdentifiersMap.put("issuing_country", "GB");
 
-        HashMap<String, Object> shipmentMap = new HashMap<String, Object>();
-        shipmentMap.put("to_address", toAddressMap);
-        shipmentMap.put("from_address", fromAddressMap);
-        shipmentMap.put("parcel", parcelMap);
-        shipmentMap.put("customs_info", customsInfoMap);
-        shipmentMap.put("tax_identifiers", taxIdentifiersMap);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("to_address", toAddressMap);
+        params.put("from_address", fromAddressMap);
+        params.put("parcel", parcelMap);
+        params.put("customs_info", customsInfoMap);
+        params.put("tax_identifiers", taxIdentifiersMap);
 
-        Shipment shipment = client.shipment.create(shipmentMap);
+        Shipment shipment = client.shipment.create(params);
 
         System.out.println(shipment);
     }

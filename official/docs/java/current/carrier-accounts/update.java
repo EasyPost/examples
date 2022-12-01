@@ -16,7 +16,7 @@ public class Update {
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("credentials", credentials);
 
-        CarrierAccount carrierAccount = client.carrierAccount.update(params, "ca_...");
+        CarrierAccount carrierAccount = client.carrierAccount.update("ca_...", params);
 
         System.out.println(carrierAccount);
     }

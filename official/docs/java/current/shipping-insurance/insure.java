@@ -10,10 +10,10 @@ public class Insure {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> insureMap = new HashMap<String, Object>();
-        insureMap.put("amount", 100);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("amount", 100);
 
-        Shipment shipment = client.shipment.insure("shp_...", insureMap);
+        Shipment shipment = client.shipment.insure("shp_...", params);
 
         System.out.println(shipment);
     }

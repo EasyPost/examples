@@ -12,8 +12,8 @@ public class All {
         HashMap<String, Object> params = new HashMap<>();
         params.put("page_size", 5);
 
-        EndShipperCollection endShipperCollection = client.endShipper.all(params);
+        EndShipperCollection endShippers = client.endShipper.all(params);
 
-        System.out.println(endShipperCollection);
+        System.out.println(endShippers);
     }
 }

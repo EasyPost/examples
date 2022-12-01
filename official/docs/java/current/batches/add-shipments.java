@@ -22,11 +22,11 @@ public class AddShipments {
         shipments.add(shipment1);
         shipments.add(shipment2);
 
-        HashMap<String, Object> batchMap = new HashMap<String, Object>();
-        batchMap.put("shipments", shipments);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("shipments", shipments);
 
-        Batch batchWithShipment = client.batch.addShipments("batch_...", batchMap);
+        Batch batch = client.batch.addShipments("batch_...", params);
 
-        System.out.println(batchWithShipment);
+        System.out.println(batch);
     }
 }

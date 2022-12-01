@@ -40,15 +40,15 @@ public class OneCallBuy {
         HashMap<String, Object> customsInfoMap = new HashMap<String, Object>();
         customsInfoMap.put("id", "cstinfo_...");
 
-        HashMap<String, Object> shipmentMap = new HashMap<String, Object>();
-        shipmentMap.put("to_address", toAddressMap);
-        shipmentMap.put("from_address", fromAddressMap);
-        shipmentMap.put("parcel", parcelMap);
-        shipmentMap.put("customs_info", customsInfoMap);
-        shipmentMap.put("carrier_accounts", "ca_...");
-        shipmentMap.put("service", "NextDayAir");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("to_address", toAddressMap);
+        params.put("from_address", fromAddressMap);
+        params.put("parcel", parcelMap);
+        params.put("customs_info", customsInfoMap);
+        params.put("carrier_accounts", "ca_...");
+        params.put("service", "NextDayAir");
 
-        Shipment shipment = client.shipment.create(shipmentMap);
+        Shipment shipment = client.shipment.create(params);
 
         System.out.println(shipment);
     }

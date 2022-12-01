@@ -8,6 +8,11 @@ public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
+        // Retrieve the authenticated user
+        User parentUser = client.user.retrieveMe();
+
+        System.out.println(parentUser);
+
         // Retrieve a child user
         User user = client.user.retrieve("user_...");
 

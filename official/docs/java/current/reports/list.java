@@ -10,11 +10,11 @@ public class All {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> reportMap = new HashMap<String, Object>();
-        reportMap.put("type", "payment_log");
-        reportMap.put("page_size", "5");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("type", "payment_log");
+        params.put("page_size", "5");
 
-        ReportCollection reports = client.report.all(reportMap);
+        ReportCollection reports = client.report.all(params);
 
         System.out.println(reports);
     }

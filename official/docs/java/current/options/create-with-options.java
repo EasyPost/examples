@@ -22,13 +22,13 @@ public class CreateWithOptions {
         HashMap<String, Object> options = new HashMap<String, Object>();
         parcel.put("print_custom_1", "Custom label message");
 
-        HashMap<String, Object> shipmentMap = new HashMap<String, Object>();
-        shipmentMap.put("to_address", toAddress);
-        shipmentMap.put("from_address", fromAddress);
-        shipmentMap.put("parcel", parcel);
-        shipmentMap.put("options", options);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("to_address", toAddress);
+        params.put("from_address", fromAddress);
+        params.put("parcel", parcel);
+        params.put("options", options);
 
-        Shipment shipment = client.shipment.create(shipmentMap);
+        Shipment shipment = client.shipment.create(params);
 
         System.out.println(shipment);
     }

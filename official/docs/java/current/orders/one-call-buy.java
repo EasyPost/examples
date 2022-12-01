@@ -28,14 +28,14 @@ public class OneCallBuy {
         shipments.add(firstParcel);
         shipments.add(secondParcel);
 
-        HashMap<String, Object> orderHash = new HashMap<String, Object>();
-        orderHash.put("carrier_accounts", "ca_...");
-        orderHash.put("service", "NextDayAir");
-        orderHash.put("to_address", toAddress);
-        orderHash.put("from_address", fromAddress);
-        orderHash.put("shipments", shipments);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("carrier_accounts", "ca_...");
+        params.put("service", "NextDayAir");
+        params.put("to_address", toAddress);
+        params.put("from_address", fromAddress);
+        params.put("shipments", shipments);
 
-        Order order = client.order.create(orderHash);
+        Order order = client.order.create(params);
 
         System.out.println(order);
     }

@@ -10,11 +10,11 @@ public class Buy {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> buyParams = new HashMap<String, Object>();
-        buyParams.put("carrier", "FedEx");
-        buyParams.put("service", "FEDEX_GROUND");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("carrier", "FedEx");
+        params.put("service", "FEDEX_GROUND");
 
-        Order order = client.order.buy("order_...", buyParams);
+        Order order = client.order.buy("order_...", params);
 
         System.out.println(order);
     }

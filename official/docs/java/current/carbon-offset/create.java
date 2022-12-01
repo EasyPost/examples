@@ -37,12 +37,12 @@ public class Create {
         parcelMap.put("height", 5);
         parcelMap.put("weight", 65.9);
 
-        HashMap<String, Object> shipmentMap = new HashMap<String, Object>();
-        shipmentMap.put("to_address", toAddressMap);
-        shipmentMap.put("from_address", fromAddressMap);
-        shipmentMap.put("parcel", parcelMap);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("to_address", toAddressMap);
+        params.put("from_address", fromAddressMap);
+        params.put("parcel", parcelMap);
 
-        Shipment shipment = client.shipment.create(shipmentMap, true);
+        Shipment shipment = client.shipment.create(params, true);
 
         System.out.println(shipment);
     }

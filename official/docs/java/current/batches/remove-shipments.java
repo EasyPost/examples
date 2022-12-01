@@ -18,10 +18,10 @@ public class RemoveShipments {
         List<HashMap<String, Object>> shipments = new ArrayList<HashMap<String, Object>>();
         shipments.add(shipment1);
 
-        HashMap<String, Object> batchMap = new HashMap<String, Object>();
-        batchMap.put("shipments", shipments);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("shipments", shipments);
 
-        Batch batch = client.batch.removeShipments("batch_...", batchMap);
+        Batch batch = client.batch.removeShipments("batch_...", params);
 
         System.out.println(batch);
     }

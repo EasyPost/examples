@@ -10,10 +10,10 @@ public class Create {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> userMap = new HashMap<String, Object>();
-        userMap.put("name", "Child Account Name");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("name", "Child Account Name");
 
-        User user = client.user.create(userMap);
+        User user = client.user.create(params);
 
         System.out.println(user);
     }

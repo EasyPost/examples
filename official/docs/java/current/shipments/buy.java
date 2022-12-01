@@ -12,11 +12,11 @@ public class Buy {
 
         Shipment shipment = client.shipment.retrieve("shp_...");
 
-        HashMap<String, Object> buyMap = new HashMap<String, Object>();
-        buyMap.put("rate", shipment.lowestRate());
-        buyMap.put("insurance", 249.99);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("rate", shipment.lowestRate());
+        params.put("insurance", 249.99);
 
-        Shipment boughtShipment = client.shipment.buy(shipment.getId(), buyMap);
+        Shipment boughtShipment = client.shipment.buy(shipment.getId(), params);
 
         System.out.println(boughtShipment);
     }

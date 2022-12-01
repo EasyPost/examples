@@ -24,13 +24,13 @@ public class Create {
         lineItemsMap.add(titleMap);
         lineItemsMap.add(barcodeMap);
 
-        HashMap<String, Object> formMap = new HashMap<String, Object>();
-        formMap.put("barcode", "RMA12345678900");
-        formMap.put("units", 8);
-        formMap.put("line_items", lineItemsMap);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("barcode", "RMA12345678900");
+        params.put("units", 8);
+        params.put("line_items", lineItemsMap);
 
-        Shipment shipmentWithForm = client.shipment.generateForm("return_packing_slip", formMap,
-                boughtShipment.getId());
+        Shipment shipmentWithForm = client.shipment.generateForm(boughtShipment.getId(), "return_packing_slip",
+                params);
 
         System.out.println(shipment);
     }

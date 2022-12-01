@@ -8,7 +8,5 @@ public class Delete {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         client.webhook.delete("hook_...");
-
-        System.out.println(webhook);
     }
 }

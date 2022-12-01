@@ -28,12 +28,12 @@ public class Create {
         parcels.add(parcel1);
         parcels.add(parcel2);
 
-        HashMap<String, Object> orderMap = new HashMap<String, Object>();
-        orderMap.put("to_address", toAddress);
-        orderMap.put("from_address", fromAddress);
-        orderMap.put("shipments", parcels);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("to_address", toAddress);
+        params.put("from_address", fromAddress);
+        params.put("shipments", parcels);
 
-        Order order = client.order.create(orderMap);
+        Order order = client.order.create(params);
 
         System.out.println(order);
     }
