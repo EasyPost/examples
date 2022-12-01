@@ -11,8 +11,8 @@ public class All {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> params = new HashMap<String, Object>();
-        params.put("page_size", 2);
-        
+        params.put("page_size", 5);
+
         ScanFormCollection scanForms = client.scanform.all(params);
 
         System.out.println(scanForms);

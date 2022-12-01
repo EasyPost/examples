@@ -14,8 +14,8 @@ public class Retrieve {
         System.out.println(parentUser);
 
         // Retrieve a child user
-        User user = client.user.retrieve("user_...");
+        User childUser = client.user.retrieve("user_...");
 
-        System.out.println(user);
+        System.out.println(childUser);
     }
 }
