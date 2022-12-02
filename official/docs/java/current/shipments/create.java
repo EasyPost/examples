@@ -1,14 +1,14 @@
 package shipments;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Shipment;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("name", "Dr. Steve Brule");
@@ -40,13 +40,13 @@ public class Create {
         HashMap<String, Object> customsInfoMap = new HashMap<String, Object>();
         customsInfoMap.put("id", "cstinfo_...");
 
-        HashMap<String, Object> shipmentMap = new HashMap<String, Object>();
-        shipmentMap.put("to_address", toAddressMap);
-        shipmentMap.put("from_address", fromAddressMap);
-        shipmentMap.put("parcel", parcelMap);
-        shipmentMap.put("customs_info", customsInfoMap);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("to_address", toAddressMap);
+        params.put("from_address", fromAddressMap);
+        params.put("parcel", parcelMap);
+        params.put("customs_info", customsInfoMap);
 
-        Shipment shipment = Shipment.create(shipmentMap);
+        Shipment shipment = client.shipment.create(params);
 
         System.out.println(shipment);
     }

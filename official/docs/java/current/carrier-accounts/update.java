@@ -1,16 +1,14 @@
 package carrier_accounts;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.CarrierAccount;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Update {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
-
-        CarrierAccount carrierAccount = CarrierAccount.retrieve("ca_...");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> credentials = new HashMap<String, Object>();
         credentials.put("pickup_id", "abc123");
@@ -18,7 +16,7 @@ public class Update {
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("credentials", credentials);
 
-        carrierAccount.update(params);
+        CarrierAccount carrierAccount = client.carrierAccount.update("ca_...", params);
 
         System.out.println(carrierAccount);
     }

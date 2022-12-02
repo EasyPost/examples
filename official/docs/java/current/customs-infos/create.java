@@ -1,9 +1,9 @@
 package customs_info;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.CustomsInfo;
 import com.easypost.model.CustomsItem;
+import com.easypost.service.EasyPostClient;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> customsItemMap = new HashMap<String, Object>();
         customsItemMap.put("description", "T-shirt");
@@ -21,21 +21,21 @@ public class Create {
         customsItemMap.put("origin_country", "us");
         customsItemMap.put("hs_tariff_number", "123456");
 
-        CustomsItem customsItem1 = CustomsItem.create(customsItemMap);
+        CustomsItem customsItem = client.customsItem.create(customsItemMap);
 
         List<CustomsItem> customsItemsList = new ArrayList<CustomsItem>();
-        customsItemsList.add(customsItem1);
+        customsItemsList.add(customsItem);
 
-        HashMap<String, Object> customsInfoMap = new HashMap<String, Object>();
-        customsInfoMap.put("customs_certify", true);
-        customsInfoMap.put("customs_signer", "Steve Brule");
-        customsInfoMap.put("contents_type", "merchandise");
-        customsInfoMap.put("contents_explanation", "");
-        customsInfoMap.put("eel_pfc", "NOEEI 30.37(a)");
-        customsInfoMap.put("restriction_type", "none");
-        customsInfoMap.put("customs_items", customsItemsList);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("customs_certify", true);
+        params.put("customs_signer", "Steve Brule");
+        params.put("contents_type", "merchandise");
+        params.put("contents_explanation", "");
+        params.put("eel_pfc", "NOEEI 30.37(a)");
+        params.put("restriction_type", "none");
+        params.put("customs_items", customsItemsList);
 
-        CustomsInfo customsInfo = CustomsInfo.create(customsInfoMap);
+        CustomsInfo customsInfo = client.customsInfo.create(params);
 
         System.out.println(customsInfo);
     }

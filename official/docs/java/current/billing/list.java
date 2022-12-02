@@ -1,15 +1,14 @@
 package billing;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.Billing;
 import com.easypost.model.PaymentMethod;
+import com.easypost.service.EasyPostClient;
 
 public class All {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        PaymentMethod paymentMethods = Billing.retrievePaymentMethods();
+        PaymentMethod paymentMethods = client.billing.retrievePaymentMethods();
 
         System.out.println(paymentMethods);
     }

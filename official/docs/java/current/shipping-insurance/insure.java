@@ -1,22 +1,20 @@
 package shipments;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Shipment;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Insure {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Shipment purchasedShipment = Shipment.retrieve("shp_...");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("amount", 100);
 
-        HashMap<String, Object> insureMap = new HashMap<String, Object>();
-        insureMap.put("amount", 100);
+        Shipment shipment = client.shipment.insure("shp_...", params);
 
-        purchasedShipment = purchasedShipment.insure(insureMap);
-
-        System.out.println(purchasedShipment);
+        System.out.println(shipment);
     }
 }

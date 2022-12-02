@@ -1,16 +1,14 @@
 package batches;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Batch;
+import com.easypost.service.EasyPostClient;
 
 public class Buy {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Batch batch = Batch.retrieve("batch_...");
-
-        batch.buy();
+        Batch batch = client.batch.buy("batch_...");
 
         System.out.println(batch);
     }

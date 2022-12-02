@@ -1,14 +1,14 @@
 package carrier_accounts;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.CarrierAccount;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> credentials = new HashMap<String, Object>();
         credentials.put("client_id", "123456");
@@ -28,7 +28,7 @@ public class Create {
         params.put("credentials", credentials);
         params.put("test_credentials", testCredentials);
 
-        CarrierAccount carrierAccount = CarrierAccount.create(params);
+        CarrierAccount carrierAccount = client.carrierAccount.create(params);
 
         System.out.println(carrierAccount);
     }

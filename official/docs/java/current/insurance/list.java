@@ -1,20 +1,19 @@
 package insurances;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.Insurance;
 import com.easypost.model.InsuranceCollection;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class All {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> listParams = new HashMap<>();
-        listParams.put("page_size", 5);
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("page_size", 5);
 
-        InsuranceCollection insurances = Insurance.all(listParams);
+        InsuranceCollection insurances = client.insurance.all(params);
 
         System.out.println(insurances);
     }

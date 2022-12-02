@@ -1,27 +1,29 @@
-import com.easypost.EasyPost;
+package endshipper;
+
+import com.easypost.model.EndShipper;
+import com.easypost.service.EasyPostClient;
+
 import java.util.HashMap;
 
 public class Update {
     public static void main(String[] args) {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        EndShipper endShipper = EndShipper.retrieve("es_...");
+        HashMap<String, Object> params = new HashMap<String, Object>();
 
-        HashMap<String, Object> updateParams = new HashMap<String, Object>();
+        params.put("name", "NEW NAME");
+        params.put("company", "BAZ");
+        params.put("street1", "164 TOWNSEND STREET UNIT 1");
+        params.put("street2", "UNIT 1");
+        params.put("city", "SAN FRANCISCO");
+        params.put("state", "CA");
+        params.put("zip", "94107");
+        params.put("country", "US");
+        params.put("phone", "555-555-5555");
+        params.put("email", "FOO@EXAMPLE.COM");
 
-        updateParams.put("name", "NEW NAME");
-        updateParams.put("company", "BAZ");
-        updateParams.put("street1", "164 TOWNSEND STREET UNIT 1");
-        updateParams.put("street2", "UNIT 1");
-        updateParams.put("city", "SAN FRANCISCO");
-        updateParams.put("state", "CA");
-        updateParams.put("zip", "94107");
-        updateParams.put("country", "US");
-        updateParams.put("phone", "555-555-5555");
-        updateParams.put("email", "FOO@EXAMPLE.COM");
+        EndShipper endShipper = client.endShipper.update("es_...", params);
 
-        EndShipper updatedEndShipper = endShipper.update(updateParams);
-
-        System.out.println(updatedEndShipper);
+        System.out.println(endShipper);
     }
 }

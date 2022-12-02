@@ -1,14 +1,14 @@
 package pickups;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Pickup;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         HashMap<String, Object> address = new HashMap<String, Object>();
         address.put("id", "adr_...");
@@ -16,16 +16,16 @@ public class Create {
         HashMap<String, Object> shipment = new HashMap<String, Object>();
         shipment.put("id", "shp_...");
 
-        HashMap<String, Object> pickupMap = new HashMap<String, Object>();
-        pickupMap.put("address", address);
-        pickupMap.put("shipment", shipment);
-        pickupMap.put("reference", "my-first-pickup");
-        pickupMap.put("min_datetime", "2022-10-01 10:30:00");
-        pickupMap.put("max_datetime", "2022-10-02 10:30:00");
-        pickupMap.put("is_account_address", false);
-        pickupMap.put("instructions", "Special pickup instructions");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("address", address);
+        params.put("shipment", shipment);
+        params.put("reference", "my-first-pickup");
+        params.put("min_datetime", "2022-10-01 10:30:00");
+        params.put("max_datetime", "2022-10-02 10:30:00");
+        params.put("is_account_address", false);
+        params.put("instructions", "Special pickup instructions");
 
-        Pickup pickup = Pickup.create(pickupMap);
+        Pickup pickup = client.pickup.create(params);
 
         System.out.println(pickup);
     }

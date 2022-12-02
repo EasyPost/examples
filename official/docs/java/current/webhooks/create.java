@@ -1,19 +1,19 @@
 package webhooks;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Webhook;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("url", "example.com");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("url", "example.com");
 
-        Webhook webhook = Webhook.create(paramMap);
+        Webhook webhook = client.webhook.create(params);
 
         System.out.println(webhook);
     }

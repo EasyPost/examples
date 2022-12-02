@@ -1,21 +1,19 @@
 package batches;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Batch;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Label {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Batch batch = Batch.retrieve("batch_...");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("file_format", "PDF");
 
-        HashMap<String, Object> labelMap = new HashMap<String, Object>();
-        labelMap.put("file_format", "PDF");
-
-        batch.label(labelMap);
+        Batch batch = client.batch.label("batch_...", params);
 
         System.out.println(batch);
     }

@@ -1,9 +1,9 @@
 package shipments;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.Shipment;
 import com.easypost.model.ScanForm;
+import com.easypost.model.Shipment;
+import com.easypost.service.EasyPostClient;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,15 +11,17 @@ import java.util.List;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+
+        Shipment shipment = client.shipment.retrieve("shp_...");
 
         List<Shipment> shipments = new ArrayList<Shipment>();
-        shipments.add(shipments);
+        shipments.add(shipment);
 
-        HashMap<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("shipments", shipments);
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("shipments", shipments);
 
-        ScanForm scanForm = ScanForm.create(paramMap);
+        ScanForm scanForm = client.scanform.create(params);
 
         System.out.println(scanForm);
     }

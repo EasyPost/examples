@@ -1,24 +1,24 @@
 package customs_items;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.CustomsItem;
+import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> customsItemMap = new HashMap<String, Object>();
-        customsItemMap.put("description", "T-shirt");
-        customsItemMap.put("quantity", 1);
-        customsItemMap.put("value", 10);
-        customsItemMap.put("weight", 5);
-        customsItemMap.put("origin_country", "US");
-        customsItemMap.put("hs_tariff_number", "123456");
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("description", "T-shirt");
+        params.put("quantity", 1);
+        params.put("value", 10);
+        params.put("weight", 5);
+        params.put("origin_country", "US");
+        params.put("hs_tariff_number", "123456");
 
-        CustomsItem customsItem = CustomsItem.create(customsItemMap);
+        CustomsItem customsItem = client.customsItem.create(params);
 
         System.out.println(customsItem);
     }

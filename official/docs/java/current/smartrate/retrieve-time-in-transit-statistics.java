@@ -1,17 +1,17 @@
 package shipments;
 
-import com.easypost.EasyPost;
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.Shipment;
+import com.easypost.model.Smartrate;
+import com.easypost.service.EasyPostClient;
+
+import java.util.List;
 
 public class RetrieveTimeInTransitStatistics {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        Shipment shipment = Shipment.retrieve("shp_...");
+        List<Smartrate> smartrates = client.shipment.smartrates("shp_...");
 
-        shipment.smartrates();
-
-        System.out.println(shipment);
+        System.out.println(smartrates);
     }
 }
