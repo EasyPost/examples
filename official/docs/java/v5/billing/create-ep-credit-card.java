@@ -1,7 +1,6 @@
 package referral;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.service.EasyPostClient;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
