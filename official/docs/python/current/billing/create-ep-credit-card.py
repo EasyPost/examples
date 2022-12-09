@@ -11,7 +11,7 @@ credit_card = easypost.Referral.add_credit_card(
     referral_api_key=referral_user_api_key,
     number="0123456789101234",
     expiration_month="01",
-    expiration_year="2028",
+    expiration_year="2025",
     cvc="111",
 )
 

@@ -16,7 +16,7 @@ func main() {
 	creditCard, _ := client.AddReferralCustomerCreditCard(referralUserApiKey, &easypost.CreditCardOptions{
         Number:  "0123456789101234",
         ExpMonth:  "01",
-        ExpYear: "2028",
+        ExpYear: "2025",
         Cvc: "111",
     }, easypost.PrimaryPaymentMethodPriority)
 

@@ -8,7 +8,7 @@ credit_card = EasyPost::Referral.add_credit_card(
   referral_user_api_key,
   '0123456789101234',
   '01',
-  '2028',
+  '2025',
   '111',
 )
 

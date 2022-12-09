@@ -10,7 +10,7 @@ public class Create {
         String referralUserApiKey = System.getenv("REFERRAL_USER_API_KEY");
 
         PaymentMethodObject creditCard = client.referralCustomer.addCreditCardToUser(referralUserApiKey,
-                "0123456789101234", 01, 2028, "111", PaymentMethod.Priority.PRIMARY);
+                "0123456789101234", 01, 2025, "111", PaymentMethod.Priority.PRIMARY);
 
         System.out.println(referralUser);
     }
