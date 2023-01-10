@@ -1,12 +1,15 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$shipment = \EasyPost\Shipment::retrieve('shp_...');
+$shipment = $client->shipment->retrieve('shp_...');
 
-$shipment->buy([
-    'rate'      => $shipment->lowest_rate(),
-    'insurance' => 249.99
-]);
+$boughtShipment = $client->$shipment->buy(
+    $shipment->id,
+    [
+        'rate'      => $shipment->lowestRate(),
+        'insurance' => 249.99
+    ]
+);
 
-echo $shipment;
+echo $boughtShipment;

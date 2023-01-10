@@ -1,14 +1,17 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$batch = \EasyPost\Batch::retrieve('batch_...');
+$batch = $client->batch->retrieve('batch_...');
 
-$batch->add_shipments([
-    'shipments' => [
-        ['id' => 'shp_...'],
-        ['id' => 'shp_...'],
+$batchWithShipments = $client->$batch->addShipments(
+    $batch->id,
+    [
+        'shipments' => [
+            ['id' => 'shp_...'],
+            ['id' => 'shp_...'],
+        ]
     ]
-]);
+);
 
-echo $batch;
+echo $batchWithShipments;

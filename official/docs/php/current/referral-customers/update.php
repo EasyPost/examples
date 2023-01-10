@@ -1,5 +1,5 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-Referral::update_email('new_email@example.com', 'user_...');
+$client->referralCustomer->updateEmail('new_email@example.com', 'user_...');

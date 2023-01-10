@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$batches = \EasyPost\Batch::all([
+$batches = $client->batch->all([
     'page_size' => 5,
 ]);
 

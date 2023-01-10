@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$report = \EasyPost\Report::create([
+$report = $client->report->create([
     'start_date' => '2022-10-01',
     'end_date' => '2022-10-31',
 ]);

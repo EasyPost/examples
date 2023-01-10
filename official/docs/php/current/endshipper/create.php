@@ -1,6 +1,6 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
 $params = [
     'name' => 'FOO BAR',
@@ -15,6 +15,6 @@ $params = [
     'email' => 'FOO@EXAMPLE.COM'
 ];
 
-$endshipper = \EasyPost\EndShipper::create($params);
+$endshipper = $client->endShipper->create($params);
 
 echo $endshipper;

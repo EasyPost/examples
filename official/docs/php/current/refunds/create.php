@@ -1,9 +1,9 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$shipment = \EasyPost\Shipment::retrieve('shp_...');
+$shipment = $client->shipment->retrieve('shp_...');
 
-$shipment->refund();
+$refundedShipment = $client->$shipment->refund($shipment->id);
 
-echo $shipment;
+echo $refundedShipment;

@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$reports = \EasyPost\Report::all([
+$reports = $client->report->all([
     // Replace `payment_log` with any of the report types listed above
     'type' => 'payment_log',
     'page_size' => 5,

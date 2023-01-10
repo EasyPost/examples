@@ -1,9 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$webhook = \EasyPost\Webhook::retrieve('hook_...');
+$webhook = $client->webhook->retrieve('hook_...');
 
-$webhook->delete();
-
-echo $webhook;
+$client->$webhook->delete($webhook->id);

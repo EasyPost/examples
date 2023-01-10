@@ -1,11 +1,11 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
 // Retrieve the authenticated user
-$user = \EasyPost\User::retrieve_me();
+$user = $client->user->retrieveMe();
 
 // Retrieve a child user
-$user = \EasyPost\User::retrieve('user_...');
+$user = $client->user->retrieve('user_...');
 
 echo $user;

@@ -1,10 +1,10 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
 $referralUserApiKey = $_ENV['REFERRAL_USER_PROD_API_KEY'];
 
-$creditCard = Referral::addCreditCard(
+$creditCard = $client->referralCustomer->addCreditCard(
     $referralUserApiKey,
     '0123456789101234',
     '01',

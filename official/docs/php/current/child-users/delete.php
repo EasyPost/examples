@@ -1,9 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$user = \EasyPost\User::retrieve('user_...');
+$user = $client->user->retrieve('user_...');
 
-$user->delete();
-
-echo $user;
+$client->$user->delete($user->id);

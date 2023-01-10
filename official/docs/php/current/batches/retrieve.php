@@ -1,7 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$batch = \EasyPost\Batch::retrieve('batch_...');
+$batch = $client->batch->retrieve('batch_...');
 
 echo $batch;

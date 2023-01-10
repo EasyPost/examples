@@ -1,9 +1,12 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$batch = \EasyPost\Batch::retrieve('batch_...');
+$batch = $client->batch->retrieve('batch_...');
 
-$batch->label(['file_format' => 'PDF']);
+$batchWithLabel = $client->$batch->label(
+    $batch->id,
+    ['file_format' => 'PDF']
+);
 
-echo $batch;
+echo $batchWithLabel;

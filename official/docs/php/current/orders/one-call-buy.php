@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$order = \EasyPost\Order::create([
+$order = $client->order->create([
     'carrier_accounts' => 'ca_...',
     'service' => 'NextDayAir',
     'to_address' => ['id' => 'adr_...'],

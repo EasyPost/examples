@@ -1,9 +1,9 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$referralUsers = Referral::all([
-  'page_size' => 5,
+$referralUsers = $client->referralCustomer->all([
+    'page_size' => 5,
 ]);
 
 echo $referralUsers;

@@ -1,7 +1,5 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$success = \EasyPost\Billing::fund_wallet(2000, 'primary');
-
-echo $success;
+$client->billing->fundWallet(2000, 'primary');

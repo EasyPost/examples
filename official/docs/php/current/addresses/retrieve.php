@@ -1,7 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$address = \EasyPost\Address::retrieve('adr_...');
+$address = $client->address->retrieve('adr_...');
 
 echo $address;

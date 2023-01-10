@@ -1,10 +1,12 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$shipment = \EasyPost\Shipment::retrieve('shp_...');
-$shipment->label([
-    'file_format' => 'ZPL'
-]);
+$shipment = $client->shipment->retrieve('shp_...');
+
+$shipmentWithLabel = $client->$shipment->label(
+    $shipment->id,
+    ['file_format' => 'ZPL']
+);
 
 echo $shipment;

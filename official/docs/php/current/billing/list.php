@@ -1,7 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$paymentMethods = \EasyPost\Billing::retrieve_payment_methods();
+$paymentMethods = $client->billing->retrievePaymentMethods();
 
 echo $paymentMethods;

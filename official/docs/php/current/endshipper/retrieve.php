@@ -1,7 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$endshipper = \EasyPost\EndShipper::retrieve('es_...');
+$endshipper = $client->endShipper->retrieve('es_...');
 
 echo $endshipper;

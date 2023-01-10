@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$parcel = \EasyPost\Parcel::create([
+$parcel = $client->parcel->create([
     'length' => 20.2,
     'width' => 10.9,
     'height' => 5,

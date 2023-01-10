@@ -1,7 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$insurance = \EasyPost\Insurance::retrieve('ins_...');
+$insurance = $client->insurance->retrieve('ins_...');
 
 echo $insurance;

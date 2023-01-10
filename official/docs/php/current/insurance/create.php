@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$insurance = \EasyPost\Insurance::create([
+$insurance = $client->insurance->create([
     'to_address' => ['id' => 'adr_...'],
     'from_address' => ['id' => 'adr_...'],
     'tracking_code' => '9400110898825022579493',

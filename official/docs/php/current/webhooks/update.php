@@ -1,9 +1,9 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$webhook = \EasyPost\Webhook::retrieve('hook_...');
+$webhook = $client->webhook->retrieve('hook_...');
 
-$webhook->update();
+$updatedWebhook = $client->$webhook->update();
 
-echo $webhook;
+echo $updatedWebhook;
