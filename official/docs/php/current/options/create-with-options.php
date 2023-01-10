@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$shipment = \EasyPost\Shipment::create([
+$shipment = $client->shipment->create([
     'to_address' => ['id' => 'adr_...'],
     'from_address' => ['id' => 'adr_...'],
     'parcel' => [

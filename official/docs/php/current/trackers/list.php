@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$trackers = \EasyPost\Tracker::all([
+$trackers = $client->tracker->all([
     'page_size' => 5,
 ]);
 

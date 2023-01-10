@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$carrierAccount = \EasyPost\CarrierAccount::create([
+$carrierAccount = $client->carrierAccount->create([
     'type' => 'DhlEcsAccount',
     'description' => 'CA Location DHL eCommerce Solutions Account',
     'credentials' => [

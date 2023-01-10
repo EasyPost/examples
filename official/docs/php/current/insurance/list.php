@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$insurances = \EasyPost\Insurance::all([
+$insurances = $client->insurance->all([
     'page_size' => 5,
 ]);
 

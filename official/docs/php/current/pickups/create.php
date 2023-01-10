@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$pickup = \EasyPost\Pickup::create([
+$pickup = $client->pickup->create([
     'address' => ['id' => 'adr_...'],
     'shipment' => ['id' => 'shp_...'],
     'reference' => 'my-first-pickup',

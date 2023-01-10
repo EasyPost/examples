@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$customsInfo = \EasyPost\CustomsInfo::create([
+$customsInfo = $client->customsInfo->create([
     'eel_pfc' => 'NOEEI 30.37(a)',
     'customs_certify' => true,
     'customs_signer' => 'Steve Brule',

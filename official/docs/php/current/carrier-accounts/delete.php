@@ -1,9 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$carrierAccount = \EasyPost\CarrierAccount::retrieve('ca_...');
+$carrierAccount = $client->carrierAccount->retrieve('ca_...');
 
-$carrierAccount->delete();
-
-echo $carrierAccount;
+$client->$carrierAccount->delete($carrierAccount->id);

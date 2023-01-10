@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$customsItem = \EasyPost\CustomsItem::create([
+$customsItem = $client->customsItem->create([
     'description' => 'T-shirt',
     'quantity' => 1,
     'weight' => 5,

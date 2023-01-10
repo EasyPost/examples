@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$tracker = \EasyPost\Tracker::create([
+$tracker = $client->tracker->create([
     'tracking_code' => 'EZ1000000001',
     'carrier' => 'USPS'
 ]);

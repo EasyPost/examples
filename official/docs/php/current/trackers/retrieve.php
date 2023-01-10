@@ -1,7 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$tracker = \EasyPost\Tracker::retrieve('trk_...');
+$tracker = $client->tracker->retrieve('trk_...');
 
 echo $tracker;

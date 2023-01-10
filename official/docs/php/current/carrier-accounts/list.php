@@ -1,7 +1,7 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$carrierAccounts = \EasyPost\CarrierAccount::all();
+$carrierAccounts = $client->carrierAccount->all();
 
 echo $carrierAccounts;

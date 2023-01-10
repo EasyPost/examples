@@ -1,8 +1,8 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$shipment = \EasyPost\Shipment::retrieve('shp_...');
+$shipment = $client->shipment->retrieve('shp_...');
 
 $formType = 'return_packing_slip';
 $formOptions = [
@@ -18,6 +18,6 @@ $formOptions = [
     ],
 ];
 
-$shipment->generate_form($formType, $formOptions);
+$shipmentWithForm = $client->$shipment->generateForm($shipment->id, $formType, $formOptions);
 
-echo $shipment;
+echo $shipmentWithForm;
