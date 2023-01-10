@@ -1,10 +1,10 @@
 {
-    "id": "card_…",
-    "disabled_at": null,
-    "object": "CreditCard",
-    "name": null,
-    "last4": "1234",
-    "exp_month": 7,
-    "exp_year": 2024,
-    "brand": "MasterCard"
- }
+  "id": "card_…",
+  "disabled_at": null,
+  "object": "CreditCard",
+  "name": null,
+  "last4": "1234",
+  "exp_month": 7,
+  "exp_year": 2024,
+  "brand": "MasterCard"
+}

@@ -1,9 +1,6 @@
 {
-    "refunded_amount": 2000,
-    "payment_log_id": "paylog_...",
-    "refunded_payment_logs": [
-       "paylog...",
-       "paylog..."
-    ],
-    "errors": []
- }
+  "refunded_amount": 2000,
+  "payment_log_id": "paylog_...",
+  "refunded_payment_logs": ["paylog...", "paylog..."],
+  "errors": []
+}
