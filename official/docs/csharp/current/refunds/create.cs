@@ -18,7 +18,7 @@ namespace EasyPostExamples
             List<Refund> refunds = await Client.Refund.Create(new Dictionary<string, object>
                 {
                     { "carrier", Fixtures.Usps },
-                    { "tracking_codes", new List<string> { "XXXXX" } }
+                    { "tracking_codes", new List<string> { "EZ1000000001" } }
                 }
             );
 
