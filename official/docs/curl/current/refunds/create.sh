@@ -4,6 +4,6 @@ curl -X POST https://api.easypost.com/v2/refunds \
   -d '{
     "carrier": "USPS",
     "tracking_codes": [
-      "XXXXX"
+      "EZ1000000001"
     ]
   }'

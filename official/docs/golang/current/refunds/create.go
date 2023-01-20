@@ -14,7 +14,7 @@ func main() {
 	refunds, _ := client.CreateRefund(
 		map[string]interface{}{
 			"carrier":        "USPS",
-			"tracking_codes": []string{"XXXXXX"},
+			"tracking_codes": []string{"EZ1000000001"},
 		},
 	)
 
