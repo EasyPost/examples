@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.easypost</groupId>
             <artifactId>easypost-api-client</artifactId>
-            <version>5.10.0</version>
+            <version>6.2.0</version>
         </dependency>
     </dependencies>
 </project>
