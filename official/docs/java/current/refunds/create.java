@@ -12,7 +12,7 @@ public class Create {
 
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("carrier", toAddressMap);
-        params.put("tracking_codes", Arrays.asList(new String[] { "XXXX" }));
+        params.put("tracking_codes", Arrays.asList(new String[] { "EZ1000000001" }));
 
         List<Refund> refunds = client.refund.create(params);
 
