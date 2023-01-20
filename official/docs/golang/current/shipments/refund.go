@@ -1,7 +1,7 @@
 package example
 
 import (
-	"fmt"
+    "fmt"
 	"os"
 
 	"github.com/EasyPost/easypost-go/v2"
