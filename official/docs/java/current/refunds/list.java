@@ -1,20 +1,19 @@
 package refunds;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.Refund;
+import com.easypost.model.RefundCollection;
 import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
 
-public class Create {
+public class All {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
-        HashMap<String, Object> params = new HashMap<String, Object>();
-        params.put("carrier", toAddressMap);
-        params.put("tracking_codes", Arrays.asList(new String[] { "EZ1000000001" }));
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("page_size", 5);
 
-        List<Refund> refunds = client.refund.create(params);
+        RefundCollection refunds = client.refund.all(params);
 
         System.out.println(refunds);
     }

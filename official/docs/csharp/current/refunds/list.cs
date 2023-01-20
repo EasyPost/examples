@@ -15,14 +15,14 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            List<Refund> refunds = await Client.Refund.Create(new Dictionary<string, object>
-                {
-                    { "carrier", Fixtures.Usps },
-                    { "tracking_codes", new List<string> { "EZ1000000001" } }
-                }
-            );
+            Dictionary<string, object> listParams = new Dictionary<string, object>()
+            {
+                { "page_size", 5 }
+            };
 
-            Console.WriteLine(JsonConvert.SerializeObject(refunds, Formatting.Indented));
+            RefundCollection refundCollection = await client.Refund.All(listParams);
+
+            Console.WriteLine(JsonConvert.SerializeObject(refundCollection, Formatting.Indented));
         }
     }
 }

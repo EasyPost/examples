@@ -2,8 +2,9 @@
 
 $client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$shipment = $client->shipment->retrieve('shp_...');
+$refunds = $client->refund->create([
+    'carrier' => 'USPS',
+    'tracking_codes' => ['EZ1000000001'],
+]);
 
-$refundedShipment = $client->$shipment->refund($shipment->id);
-
-echo $refundedShipment;
+echo $refunds;

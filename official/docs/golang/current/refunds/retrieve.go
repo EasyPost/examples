@@ -11,12 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	refunds, _ := client.CreateRefund(
-		map[string]interface{}{
-			"carrier":        "USPS",
-			"tracking_codes": []string{"EZ1000000001"},
-		},
-	)
+	refund, _ := client.GetRefund("shp_...")
 
-	fmt.Println(refunds)
+	fmt.Println(refund)
 }
