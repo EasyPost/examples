@@ -12,7 +12,7 @@ func main() {
 
 	pickups, _ := client.ListPickups(
 		&easypost.ListOptions{
-			PageSize: c.fixture.pageSize(),
+			PageSize: 5,
 		},
 	)
 
