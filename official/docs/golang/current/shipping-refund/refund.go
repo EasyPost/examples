@@ -1,7 +1,7 @@
-package example
+package shipping_refund
 
 import (
-    "fmt"
+	"fmt"
 	"os"
 
 	"github.com/EasyPost/easypost-go/v2"
