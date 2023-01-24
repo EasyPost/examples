@@ -14,7 +14,7 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            PaymentMethod paymentMethod = await Client.Beta.Referral.AddPaymentMethod("cus_123", "ba_123", PaymentMethod.Priority.Primary);
+            PaymentMethod paymentMethod = await Client.Beta.Referral.AddPaymentMethod("cus_...", "card_...", PaymentMethod.Priority.Primary);
 
             Console.WriteLine(JsonConvert.SerializeObject(paymentMethod, Formatting.Indented));
         }

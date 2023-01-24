@@ -3,8 +3,8 @@ curl -X POST "https://api.easypost.com/beta/referral_customers/payment_method" \
   -H "Content-Type: application/json" \
   -d '{
       "payment_method": {
-        "stripe_customer_id": "cus_Ab123XX",
-        "payment_method_reference": "card_Ab123XX",
+        "stripe_customer_id": "cus_...",
+        "payment_method_reference": "ba_...",
         "priority": "primary"
       }
   }'
