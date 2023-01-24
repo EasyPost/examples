@@ -11,7 +11,7 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	paymentMethod, _ := client.BetaAddPaymentMethod("cus_123", "ba_123", easypost.PrimaryPaymentMethodPriority)
+	paymentMethod, _ := client.BetaAddPaymentMethod("cus_...", "ba_...", easypost.PrimaryPaymentMethodPriority)
 
 	fmt.Println(paymentMethod)
 }
