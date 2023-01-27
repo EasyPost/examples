@@ -15,7 +15,7 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Payload payload = await Client.Event.RetrievePayload("evt_...", "payload_...");
+            Payload payload = await client.Event.RetrievePayload("evt_...", "payload_...");
 
             Console.WriteLine(JsonConvert.SerializeObject(payload, Formatting.Indented));
         }
