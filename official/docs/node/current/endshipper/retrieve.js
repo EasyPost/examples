@@ -1,4 +1,8 @@
-const Easypost = require('@easypost/api');
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const EasyPostClient = require('@easypost/api');
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.EndShipper.retrieve('es_...').then(console.log);
+(async () => {
+  const endShipper = await client.EndShipper.retrieve('es_...');
+
+  console.log(endShipper);
+})();

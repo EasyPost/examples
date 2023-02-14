@@ -1,7 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Batch.retrieve('batch_...').then((batch) => {
-  batch.createScanForm().then(console.log);
-});
+(async () => {
+  const batch = await client.Batch.retrieve('batch_...');
+
+  const batchWithScanForm = await client.Batch.createScanForm(batch.id);
+
+  console.log(batchWithScanForm);
+})();

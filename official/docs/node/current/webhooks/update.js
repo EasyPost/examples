@@ -1,9 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-const webhookId = api.Webhook.retrieve('hook_...').then(console.log);
+(async () => {
+  const webhook = await client.Webhook.retrieve('hook_...');
 
-api.Webhook.retrieve(webhookId).then((webhook) => {
-  webhook.save().then(console.log);
-});
+  const updatedWebhook = await client.Webhook.update(webhook.id);
+
+  console.log(updatedWebhook);
+})();

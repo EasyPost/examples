@@ -1,5 +1,9 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.CustomsInfo.retrieve('cstinfo_...').then(console.log);
+(async () => {
+  const customsInfo = await client.CustomsInfo.retrieve('cstinfo_...');
+
+  console.log(customsInfo);
+})();

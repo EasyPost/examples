@@ -1,7 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Insurance.all({
-  page_size: 5,
-}).then(console.log);
+(async () => {
+  const insurances = await client.Insurance.all({
+    page_size: 5,
+  });
+
+  console.log(insurances);
+})();

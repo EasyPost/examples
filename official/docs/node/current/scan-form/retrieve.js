@@ -1,5 +1,9 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.ScanForm.retrieve('sf_...').then(console.log);
+(async () => {
+  const scanForm = await client.ScanForm.retrieve('sf_...');
+
+  console.log(scanForm);
+})();

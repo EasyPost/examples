@@ -1,9 +1,15 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-// Retrieve all API keys including children
-api.ApiKey.all().then(console.log).catch(console.log);
+(async () => {
+  let apiKeys;
 
-// Retrieve API keys for a specific child user
-api.User.retrieve('user_...').then((child) => console.log(child.api_keys));
+  // Retrieve all API keys including children
+  apiKeys = await client.ApiKey.all();
+
+  // Retrieve API keys for a specific child user
+  apiKeys = await client.User.retrieve('user_...');
+
+  console.log(apiKeys);
+})();

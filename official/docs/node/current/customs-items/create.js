@@ -1,14 +1,16 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-const customsItem = new api.CustomsItem({
-  description: 'T-shirt',
-  quantity: 1,
-  value: 10,
-  weight: 5,
-  hs_tariff_number: '123456',
-  origin_country: 'us',
-});
+(async () => {
+  const customsItem = await client.CustomsItem.create({
+    description: 'T-shirt',
+    quantity: 1,
+    value: 10,
+    weight: 5,
+    hs_tariff_number: '123456',
+    origin_country: 'us',
+  });
 
-customsItem.save().then(console.log);
+  console.log(customsItem);
+})();

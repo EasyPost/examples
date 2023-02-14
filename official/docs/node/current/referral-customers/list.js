@@ -1,7 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Referral.all({
-  page_size: 5,
-}).then(console.log);
+(async () => {
+  const referralCustomers = await client.ReferralCustomer.all({
+    page_size: 5,
+  });
+
+  console.log(referralCustomers);
+})();
