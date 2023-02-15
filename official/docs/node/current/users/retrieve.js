@@ -6,10 +6,10 @@ const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
   let user;
 
   // Retrieve the authenticated user
-  user = await client.User.retrieveMe().then(console.log);
+  user = await client.User.retrieveMe();
 
   // Retrieve a child user
-  user = await client.User.retrieve('user_...').then(console.log);
+  user = await client.User.retrieve('user_...');
 
   console.log(user);
 })();
