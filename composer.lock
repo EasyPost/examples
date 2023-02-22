@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6665bb9aae3ef726fd8b894aec9a6dcb",
+    "content-hash": "0fbf16920673ed1a8ab2af4d1a52e59b",
     "packages": [
         {
             "name": "easypost/easypost-php",
-            "version": "6.2.0",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyPost/easypost-php.git",
-                "reference": "75e5daf136ed1633dbd42684f3feceb0266c308d"
+                "reference": "b7eb327ff9e0518592b05dc451319cd42f89aeb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyPost/easypost-php/zipball/75e5daf136ed1633dbd42684f3feceb0266c308d",
-                "reference": "75e5daf136ed1633dbd42684f3feceb0266c308d",
+                "url": "https://api.github.com/repos/EasyPost/easypost-php/zipball/b7eb327ff9e0518592b05dc451319cd42f89aeb0",
+                "reference": "b7eb327ff9e0518592b05dc451319cd42f89aeb0",
                 "shasum": ""
             },
             "require": {
@@ -28,7 +28,7 @@
             "require-dev": {
                 "allejo/php-vcr-sanitizer": "^1.0.9",
                 "php-coveralls/php-coveralls": "^2.5",
-                "php-vcr/php-vcr": "1.5.2",
+                "php-vcr/php-vcr": "1.5.5",
                 "phpunit/phpunit": "^9",
                 "roave/security-advisories": "dev-latest",
                 "rregeer/phpunit-coverage-check": "^0.3.1",
@@ -60,9 +60,9 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyPost/easypost-php/issues",
-                "source": "https://github.com/EasyPost/easypost-php/tree/v6.2.0"
+                "source": "https://github.com/EasyPost/easypost-php/tree/v6.3.0"
             },
-            "time": "2023-01-18T17:45:33+00:00"
+            "time": "2023-02-21T17:35:23+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -736,5 +736,5 @@
         "php": ">=7.3"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
