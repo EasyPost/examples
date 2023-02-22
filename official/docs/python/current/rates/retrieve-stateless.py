@@ -33,7 +33,6 @@ shipment = easypost.Shipment.create(
         "height": 5,
         "weight": 65.9,
     },
-    customs_info={"id": "cstinfo_..."},
 )
 
 rates = easypost.beta.Rate.retrieve_stateless_rates(shipment)

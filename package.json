@@ -31,6 +31,6 @@
     "prettier": "^2.5.1"
   },
   "dependencies": {
-    "@easypost/api": "^5.10.0"
+    "@easypost/api": "^5.10.1"
   }
 }

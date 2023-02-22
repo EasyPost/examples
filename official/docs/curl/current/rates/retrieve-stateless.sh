@@ -29,14 +29,6 @@ $ curl -X POST "https://api.easypost.com/beta/rates" \
       "width": "10.9",
       "height": "5",
       "weight": "65.0"
-    },
-    "tax_identifiers": [
-      {
-        "entity": "SENDER",
-        "tax_id": "GB123456789",
-        "tax_id_type": "EORI",
-        "issuing_country": "GB"
-      }
-    ]
+    }
   }
 }'

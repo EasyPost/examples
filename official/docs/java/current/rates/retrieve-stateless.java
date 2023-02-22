@@ -39,14 +39,10 @@ public class Retrieve {
         parcelMap.put("height", 5);
         parcelMap.put("weight", 65.9);
 
-        HashMap<String, Object> customsInfoMap = new HashMap<String, Object>();
-        customsInfoMap.put("id", "cstinfo_...");
-
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("to_address", toAddressMap);
         params.put("from_address", fromAddressMap);
         params.put("parcel", parcelMap);
-        params.put("customs_info", customsInfoMap);
 
         Shipment shipment = client.shipment.create(params);
 

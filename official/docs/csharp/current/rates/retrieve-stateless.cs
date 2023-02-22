@@ -52,12 +52,6 @@ namespace EasyPostExamples
                             { "height", 5 },
                             { "weight", 65.9 }
                         }
-                    },
-                    {
-                        "customs_info", new Dictionary<string, object>()
-                        {
-                            { "id", "cstinfo_..." }
-                        }
                     }
                 });
 

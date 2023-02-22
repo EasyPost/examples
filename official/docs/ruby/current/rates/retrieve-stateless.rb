@@ -30,9 +30,6 @@ shipment = EasyPost::Shipment.create(
     height: 5,
     weight: 65.9,
   },
-  customs_info: {
-    id: 'cstinfo_...',
-  },
 )
 
 rates = EasyPost::Beta::Rate.retrieve_stateless_rates(shipment)

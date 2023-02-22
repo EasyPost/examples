@@ -40,9 +40,6 @@ func main() {
 				Height: 5,
 				Weight: 65.9,
 			},
-			CustomsInfo: &easypost.CustomsInfo{
-				ID: "cstinfo_...",
-			},
 		},
 	)
 
