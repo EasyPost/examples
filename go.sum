@@ -1,5 +1,5 @@
-github.com/EasyPost/easypost-go/v2 v2.12.0 h1:nRAXl69BJ0WpoJancziae9vInVZhEMUIrIfyWMXRCSI=
-github.com/EasyPost/easypost-go/v2 v2.12.0/go.mod h1:0eGjQjV2fnkTxK/Yv/PDKGe1WJsD6TUkOwYtb8AlYEw=
+github.com/EasyPost/easypost-go/v2 v2.13.0 h1:Kltw/JFi6C05SiWxIfXJDbJVXjl0BLRp9kD9UivgRIY=
+github.com/EasyPost/easypost-go/v2 v2.13.0/go.mod h1:0eGjQjV2fnkTxK/Yv/PDKGe1WJsD6TUkOwYtb8AlYEw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dnaeon/go-vcr v1.2.0/go.mod h1:R4UdLID7HZT3taECzJs4YgbbH6PIGXB6W/sc5OLb6RQ=
 github.com/google/go-cmp v0.5.2 h1:X2ev0eStA3AbceY54o37/0PQ/UWqKEiiO2dKL5OPaFM=
