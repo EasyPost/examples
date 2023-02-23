@@ -5,7 +5,7 @@
 $carrierAccount = \EasyPost\CarrierAccount::retrieve('ca_...');
 
 $carrierAccount->description = 'FL Location DHL eCommerce Solutions Account';
-$carrierAccount->credentials['pickup_id'] = 'abc123';
+$carrierAccount->credentials = ['pickup_id' => 'abc123'];
 
 $carrierAccount->save();
 
