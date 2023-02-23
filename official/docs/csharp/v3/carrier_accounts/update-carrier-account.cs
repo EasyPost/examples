@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -18,14 +18,13 @@ namespace EasyPostExamples
 
             await carrierAccount.Update(new Dictionary<string, object>()
             {
-                { "description", "FL Location UPS Account" }
+                { "description", "FL Location DHL eCommerce Solutions Account" },
                 {
-                "credentials",
-                new Dictionary<string, object>()
-                {
-                    { "account_number", "B2B2B2" },
-                }
-            },
+                    "credentials", new Dictionary<string, object>()
+                    {
+                        { "pickup_id", "abc123" },
+                    }
+                },
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));

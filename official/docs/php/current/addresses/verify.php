@@ -13,6 +13,6 @@ $address = $client->address->create([
     'phone'   => '415-123-4567'
 ]);
 
-$verifiedAddress = $client->$address->verify($address->id);
+$verifiedAddress = $client->address->verify($address->id);
 
 echo $verifiedAddress;

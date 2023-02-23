@@ -3,9 +3,9 @@ curl -X PATCH https://api.easypost.com/v2/carrier_accounts/ca_... \
   -H 'Content-Type: application/json' \
   -d '{
     "carrier_account": {
-      "description": "FL Location UPS Account",
+      "description": "FL Location DHL eCommerce Solutions Account",
       "credentials": {
-        "account_number": "B2B2B2",
+        "pickup_id": "abc123",
       }
     }
   }'

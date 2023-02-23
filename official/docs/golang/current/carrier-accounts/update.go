@@ -15,7 +15,8 @@ func main() {
 
 	carrierAccount, _ = client.UpdateCarrierAccount(
 		&easypost.CarrierAccount{
-			ID: carrierAccount.ID,
+			ID:          carrierAccount.ID,
+			Description: "FL Location DHL eCommerce Solutions Account",
 			Credentials: map[string]string{
 				"pickup_id": "abc123",
 			},

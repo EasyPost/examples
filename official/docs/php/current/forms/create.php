@@ -18,6 +18,6 @@ $formOptions = [
     ],
 ];
 
-$shipmentWithForm = $client->$shipment->generateForm($shipment->id, $formType, $formOptions);
+$shipmentWithForm = $client->shipment->generateForm($shipment->id, $formType, $formOptions);
 
 echo $shipmentWithForm;
