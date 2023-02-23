@@ -7,6 +7,6 @@ $apiKeys = $client->user->allApiKeys();
 
 // Retrieve API keys for a child user
 $childUser = $client->user->retrieve('user_...');
-$apiKeys = $client->$user->apiKeys($childUser->id);
+$apiKeys = $client->user->apiKeys($childUser->id);
 
 echo $apiKeys;

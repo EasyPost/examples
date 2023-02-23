@@ -3,20 +3,20 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   -H 'Content-Type: application/json' \
   -d '{
     "carrier_account": {
-      "type": "UpsAccount",
-      "description": "NY Location UPS Account",
+      "type": "DhlEcsAccount",
+      "description": "CA Location DHL eCommerce Solutions Account",
       "reference": "my-reference",
       "credentials": {
-        "account_number": "A1A1A1",
-        "user_id": "USERID",
-        "password": "PASSWORD",
-        "access_license_number": "ALN"
+        "client_id": "123456",
+        "client_secret": "123abc",
+        "distribution_center": "USLAX1",
+        "pickup_id": "123456"
       },
       "test_credentials": {
-        "account_number": "A1A1A1",
-        "user_id": "USERID",
-        "password": "PASSWORD",
-        "access_license_number": "ALN"
+        "client_id": "123456",
+        "client_secret": "123abc",
+        "distribution_center": "USLAX1",
+        "pickup_id": "123456"
       }
     }
   }'

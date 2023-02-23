@@ -16,6 +16,7 @@ public class Update {
         credentials.put("pickup_id", "abc123");
 
         HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("description", "FL Location DHL eCommerce Solutions Account");
         params.put("credentials", credentials);
 
         carrierAccount.update(params);
