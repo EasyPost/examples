@@ -6,6 +6,7 @@ const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
   const carrierAccount = await client.CarrierAccount.retrieve('ca_...');
 
   const updatedCarrierAccount = await client.CarrierAccount.update(carrierAccount.id, {
+    description: 'FL Location DHL eCommerce Solutions Account',
     credentials: { pickup_id: 'abc123' },
   });
 
