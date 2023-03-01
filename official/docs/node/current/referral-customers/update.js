@@ -1,5 +1,7 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Referral.updateEmail('user_...', 'new_email@example.com');
+(async () => {
+  await client.Referral.updateEmail('user_...', 'new_email@example.com');
+})();

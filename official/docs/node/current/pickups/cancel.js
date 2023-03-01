@@ -1,7 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Pickup.retrieve('pickup_...').then((pickup) => {
-  pickup.cancel().then(console.log);
-});
+(async () => {
+  const pickup = await client.Pickup.retrieve('pickup_...');
+
+  const cancelledPickup = pickup.cancel(pickup.id);
+
+  console.log(cancelledPickup);
+})();

@@ -1,8 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.User.retrieveMe().then((user) => {
-  user.recharge_threshold = '50.00';
-  user.save().then(console.log);
-});
+(async () => {
+  const user = await client.User.retrieveMe();
+
+  const updatedUser = await client.User.update(user.id, { recharge_threshold: '50.00' });
+
+  console.log(updatedUser);
+})();

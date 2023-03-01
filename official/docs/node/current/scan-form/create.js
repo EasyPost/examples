@@ -1,9 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-const scanform = new api.ScanForm({
-  shipments: [{ id: 'shp_...' }, { id: 'shp_...' }],
-});
+(async () => {
+  const scanForm = await client.ScanForm.create({
+    shipments: [{ id: 'shp_...' }, { id: 'shp_...' }],
+  });
 
-scanform.save().then(console.log);
+  console.log(scanForm);
+})();

@@ -1,7 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Refund.all({
-  page_size: 5,
-}).then(console.log);
+(async () => {
+  const refunds = await client.Refund.all({
+    page_size: 5,
+  });
+
+  console.log(refunds);
+})();

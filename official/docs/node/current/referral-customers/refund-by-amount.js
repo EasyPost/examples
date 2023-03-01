@@ -1,5 +1,9 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Beta.Referral.refundByAmount(2000).then(console.log);
+(async () => {
+  const refund = await client.Beta.ReferralCustomer.refundByAmount(2000);
+
+  console.log(refund);
+})();

@@ -1,7 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Shipment.retrieve('shp_...').then((shipment) => {
-  shipment.regenerateRates().then(console.log);
-});
+(async () => {
+  const shipment = await client.Shipment.retrieve('shp_...');
+
+  const rates = await client.Shipment.regenerateRates(shipment.id);
+
+  console.log(rates);
+})();

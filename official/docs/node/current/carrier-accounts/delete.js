@@ -1,7 +1,9 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.CarrierAccount.retrieve('ca_...').then((carrierAccount) =>
-  carrierAccount.delete().then(console.log),
-);
+(async () => {
+  const carrierAccount = await client.CarrierAccount.retrieve('ca_...');
+
+  await client.CarrierAccount.delete(carrierAccount.id);
+})();

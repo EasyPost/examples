@@ -1,6 +1,10 @@
-const Easypost = require('@easypost/api');
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const EasyPostClient = require('@easypost/api');
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.EndShipper.all({
-  page_size: 5,
-}).then(console.log);
+(async () => {
+  const endShippers = await client.EndShipper.all({
+    page_size: 5,
+  });
+
+  console.log(endShippers);
+})();

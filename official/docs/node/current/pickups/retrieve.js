@@ -1,5 +1,9 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Pickup.retrieve('pickup_...').then(console.log);
+(async () => {
+  const pickup = await client.Pickup.retrieve('pickup_...');
+
+  console.log(pickup);
+})();

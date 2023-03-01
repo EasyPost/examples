@@ -17,7 +17,7 @@ func main() {
 	}
 
 	report, _ := client.CreateReport(
-		"shipment",
+		"payment_log",
 		reportOptions,
 	)
 

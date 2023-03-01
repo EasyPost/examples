@@ -1,5 +1,7 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Billing.fund('2000', 'primary').then(console.log);
+(async () => {
+  await client.Billing.fund('2000', 'primary');
+})();

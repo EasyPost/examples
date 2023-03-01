@@ -1,7 +1,11 @@
-const Easypost = require('@easypost/api');
+const EasyPostClient = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
-api.Order.retrieve('order_...').then((order) => {
-  order.buy('FedEx', 'FEDEX_GROUND').then(console.log);
-});
+(async () => {
+  const order = await client.Order.retrieve('order_...');
+
+  const boughtOrder = await client.Order.buy(order.id, 'FedEx', 'FEDEX_GROUND');
+
+  console.log(boughtOrder);
+})();

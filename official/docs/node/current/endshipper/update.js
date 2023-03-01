@@ -1,16 +1,21 @@
-const Easypost = require('@easypost/api');
-const api = new Easypost('<YOUR_TEST/PRODUCTION_API_KEY>');
+const EasyPostClient = require('@easypost/api');
+const client = new EasyPostClient('<YOUR_TEST/PRODUCTION_API_KEY>');
 
-api.EndShipper.retrieve('es_...').then((endShipper) => {
-  endShipper.name = 'NEW NAME';
-  endShipper.company = 'BAZ';
-  endShipper.street1 = '164 TOWNSEND STREET UNIT 1';
-  endShipper.street2 = 'UNIT 1';
-  endShipper.city = 'SAN FRANCISCO';
-  endShipper.state = 'CA';
-  endShipper.zip = '94107';
-  endShipper.country = 'US';
-  endShipper.phone = '555-555-5555';
-  endShipper.email = 'FOO@EXAMPLE.COM';
-  endShipper.save().then(console.log);
-});
+(async () => {
+  const endShipper = await client.EndShipper.retrieve('es_...');
+
+  const updatedEndShipper = await client.EndShipper.update(endShipper.id, {
+    name: 'NEW NAME',
+    company: 'BAZ',
+    street1: '164 TOWNSEND STREET UNIT 1',
+    street2: 'UNIT 1',
+    city: 'SAN FRANCISCO',
+    state: 'CA',
+    zip: '94107',
+    country: 'US',
+    phone: '555-555-5555',
+    email: 'FOO@EXAMPLE.COM',
+  });
+
+  console.log(updatedEndShipper);
+})();
