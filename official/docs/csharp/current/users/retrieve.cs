@@ -21,7 +21,7 @@ namespace EasyPostExamples
             // Retrieve a child user
             User user = await client.User.Retrieve("user_...");
 
-            Console.WriteLine(JsonConvert.SerializeObject(tracker, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
         }
     }
 }
