@@ -15,8 +15,8 @@
     "country": "GB",
     "phone": null,
     "email": null,
-    "created_at": "2014-07-22T01:54:53Z",
-    "updated_at": "2014-07-22T01:54:53Z"
+    "created_at": "2022-07-22T01:54:53Z",
+    "updated_at": "2022-07-22T01:54:53Z"
   },
   "from_address": {
     "id": "adr_...",
@@ -31,19 +31,19 @@
     "country": "US",
     "phone": "4155287555",
     "email": null,
-    "created_at": "2014-07-22T01:54:53Z",
-    "updated_at": "2014-07-22T01:54:53Z"
+    "created_at": "2022-07-22T01:54:53Z",
+    "updated_at": "2022-07-22T01:54:53Z"
   },
   "parcel": {
     "id": "prcl_...",
     "object": "Parcel",
-    "length": 20.2,
-    "width": 10.9,
-    "height": 5.0,
+    "length": 9,
+    "width": 6,
+    "height": 3,
     "predefined_package": null,
-    "weight": 140.8,
-    "created_at": "2014-07-22T01:54:53Z",
-    "updated_at": "2014-07-22T01:54:53Z"
+    "weight": 20,
+    "created_at": "2022-07-22T01:54:53Z",
+    "updated_at": "2022-07-22T01:54:53Z"
   },
   "customs_info": {
     "id": "cstinfo_...",
@@ -51,7 +51,7 @@
     "contents_explanation": null,
     "contents_type": "gift",
     "customs_certify": true,
-    "customs_signer": "Jarrett Streebin",
+    "customs_signer": "Tim Canterbury",
     "eel_pfc": "NOEEI 30.37(a)",
     "non_delivery_option": null,
     "restriction_comments": null,
@@ -68,8 +68,8 @@
         "weight": 6,
         "hs_tariff_number": "610910",
         "origin_country": "US",
-        "created_at": "2014-07-22T01:53:42Z",
-        "updated_at": "2014-07-22T01:53:42Z"
+        "created_at": "2022-07-22T01:53:42Z",
+        "updated_at": "2022-07-22T01:53:42Z"
       },
       {
         "id": "cstitem_...",
@@ -80,8 +80,8 @@
         "quantity": 1,
         "value": 20,
         "weight": 14,
-        "created_at": "2014-07-22T01:53:51Z",
-        "updated_at": "2014-07-22T01:53:51Z"
+        "created_at": "2022-07-22T01:53:51Z",
+        "updated_at": "2022-07-22T01:53:51Z"
       }
     ]
   },
@@ -92,6 +92,6 @@
   "tracking_code": null,
   "refund_status": null,
   "insurance": null,
-  "created_at": "2014-07-22T01:54:53Z",
-  "updated_at": "2014-07-22T01:54:53Z"
+  "created_at": "2022-07-22T01:54:53Z",
+  "updated_at": "2022-07-22T01:54:53Z"
 }
