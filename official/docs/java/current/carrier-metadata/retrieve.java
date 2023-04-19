@@ -5,7 +5,6 @@ import com.easypost.model.CarrierAccount;
 import com.easypost.service.EasyPostClient;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Retrieve {
