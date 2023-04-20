@@ -1,0 +1,504 @@
+{
+  "carriers": [
+    {
+      "human_readable": "Royal Mail",
+      "name": "royalmail",
+      "predefined_packages": [
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "LARGELETTER"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "SMALLPARCEL"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "MEDIUMPARCEL"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "LETTER"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "PRINTEDPAPER"
+        }
+      ],
+      "service_levels": [
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "InternationalPriority"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "InternationalEconomy"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "InternationalStandard"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "InternationalTrackedAndSigned"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "InternationalTracked"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "InternationalSigned"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "AccountMail"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "RoyalMailUnsigned"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "RoyalMail"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "SpecialDeliveryGuaranteed"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "SpecialDeliveryGuaranteed1pm"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "SpecialDeliveryGuaranteed9am"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "StandardLetter"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked24"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked24HighVolume"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked24HighVolumeSignature"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked24LBT"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked24SignatureLBT"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked48LBT"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked48SignatureLBT"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked24Signature"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked48"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked48HighVolume"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked48HighVolumeSignature"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "Tracked48Signature"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "TrackedReturns24"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "TrackedReturns48"
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "dimensions": [],
+          "human_readable": null,
+          "max_weight": null,
+          "name": "CrossBorderImportTracked48HighVolume"
+        }
+      ],
+      "shipment_options": [
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Carrier Insurance Amount",
+          "name": "carrier_insurance_amount",
+          "type": "float"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Carrier Notification Email",
+          "name": "carrier_notification_email",
+          "type": "boolean"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Carrier Notification Sms",
+          "name": "carrier_notification_sms",
+          "type": "boolean"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": true,
+          "description": null,
+          "human_readable": "Date Advance",
+          "name": "date_advance",
+          "type": "integer"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": true,
+          "description": null,
+          "human_readable": "Delivered Duty Paid",
+          "name": "delivered_duty_paid",
+          "type": "boolean"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Delivery Confirmation",
+          "name": "delivery_confirmation",
+          "type": "string"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Handling Instructions",
+          "name": "handling_instructions",
+          "type": "string"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Import Federal Tax Id",
+          "name": "import_federal_tax_id",
+          "type": "string"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Incoterm",
+          "name": "incoterm",
+          "type": "enum"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Invoice Number",
+          "name": "invoice_number",
+          "type": "string"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Label Date",
+          "name": "label_date",
+          "type": "datetime"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Label Format",
+          "name": "label_format",
+          "type": "string"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "License Number",
+          "name": "license_number",
+          "type": "string"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": true,
+          "description": null,
+          "human_readable": "Print Custom 1",
+          "name": "print_custom_1",
+          "type": "string"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": true,
+          "description": null,
+          "human_readable": "Print Custom 2",
+          "name": "print_custom_2",
+          "type": "string"
+        },
+        {
+          "carrier": "royalmail",
+          "deprecated": false,
+          "description": null,
+          "human_readable": "Saturday Delivery",
+          "name": "saturday_delivery",
+          "type": "boolean"
+        }
+      ],
+      "supported_features": [
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "labels",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "orders",
+          "supported": false
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "pickups",
+          "supported": false
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "refunds",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "returns",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "scanforms",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "rating",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "tracking",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "bill_on_label_purchase",
+          "supported": false
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "bill_on_delivery",
+          "supported": false
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "bill_on_scan",
+          "supported": false
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "bill_on_manifest",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "commercial_invoices",
+          "supported": false
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "delivers_to_po_box",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "sort_codes",
+          "supported": true
+        },
+        {
+          "carrier": "royalmail",
+          "description": null,
+          "name": "test_environment",
+          "supported": true
+        }
+      ]
+    }
+  ]
+}
