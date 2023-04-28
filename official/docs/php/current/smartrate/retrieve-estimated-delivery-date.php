@@ -1,3 +1,9 @@
 <?php
 
-// This feature is coming soon to this library; until then, you can use the cURL example or our Postman Collection
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
+
+$shipment = $client->shipment->retrieve('shp_...');
+
+$estimatedDeliveryDates = $client->shipment->retrieveEstimatedDeliveryDate($shipment->id, "YYYY-MM-DD");
+
+echo $estimatedDeliveryDates;
