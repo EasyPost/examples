@@ -1,1 +1,1 @@
-# This feature is coming soon to this library; until then, you can use the cURL example or our Postman Collection
+# The `retrieve_estimated_date` function will be included in the next major release of the Ruby client library.

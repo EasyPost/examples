@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c82ce7497e0e6a6863708bdfee2cfae9",
+    "content-hash": "5113230b01723b20020108ec9555ea6b",
     "packages": [
         {
             "name": "easypost/easypost-php",
-            "version": "6.5.0",
+            "version": "6.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyPost/easypost-php.git",
-                "reference": "ae070fc4d578113b89c28b589b38bf07351be54c"
+                "reference": "d0f71567b13f711a28d6a46036fb362752eb7f01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyPost/easypost-php/zipball/ae070fc4d578113b89c28b589b38bf07351be54c",
-                "reference": "ae070fc4d578113b89c28b589b38bf07351be54c",
+                "url": "https://api.github.com/repos/EasyPost/easypost-php/zipball/d0f71567b13f711a28d6a46036fb362752eb7f01",
+                "reference": "d0f71567b13f711a28d6a46036fb362752eb7f01",
                 "shasum": ""
             },
             "require": {
@@ -60,9 +60,9 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyPost/easypost-php/issues",
-                "source": "https://github.com/EasyPost/easypost-php/tree/v6.5.0"
+                "source": "https://github.com/EasyPost/easypost-php/tree/v6.6.0"
             },
-            "time": "2023-04-18T21:23:20+00:00"
+            "time": "2023-05-01T21:38:54+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

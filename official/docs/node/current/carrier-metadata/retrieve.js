@@ -1,4 +1,4 @@
-const EasyPostBetaClient = require('@easypost/api/src/beta/easypost');
+const EasyPostBetaClient = require('@easypost/api');
 
 const client = new EasyPostBetaClient(process.env.EASYPOST_API_KEY);
 
