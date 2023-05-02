@@ -13,7 +13,7 @@
     "ext-curl": "*",
     "ext-json": "*",
     "php": ">=7.3",
-    "easypost/easypost-php": "^6.5"
+    "easypost/easypost-php": "^6.6"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7"
