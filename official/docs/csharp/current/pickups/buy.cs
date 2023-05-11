@@ -18,7 +18,9 @@ namespace EasyPostExamples
 
             Pickup pickup = await client.Pickup.Retrieve("pickup_...");
 
-            await pickup.Buy("UPS", "Same-Day Pickup");
+            Parameters.Pickup.Buy parameters = new("UPS", "Same-Day Pickup");
+
+            pickup = await client.Pickup.Buy(pickup.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));
         }

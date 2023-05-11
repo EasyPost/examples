@@ -18,7 +18,7 @@ namespace EasyPostExamples
 
             Pickup pickup = await client.Pickup.Retrieve("pickup_...");
 
-            await pickup.Cancel();
+            pickup = await client.Pickup.Cancel(pickup.Id);
 
             Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));
         }
