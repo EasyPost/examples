@@ -16,25 +16,19 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Insurance insurance = await client.Insurance.Create(new Dictionary<string, object>()
+            Address toAddress = await client.Address.Retrieve("adr_...");
+            Address fromAddress = await client.Address.Retrieve("adr_...");
+
+            Parameters.Insurance.Create parameters = new()
             {
-                {
-                    "to_address", new Dictionary<string, object>()
-                    {
-                        { "id", "adr_..." }
-                    }
-                },
-                {
-                    "from_address", new Dictionary<string, object>()
-                    {
-                        { "id", "adr_..." }
-                    }
-                },
-                { "tracking_code", "9400110898825022579493" },
-                { "carrier", "USPS" },
-                { "reference", "InsuranceRef1" },
-                { "amount", "100.00" }
-            });
+                Amount = 100.00,
+                Carrier = "USPS",
+                TrackingCode = "9400110898825022579493",
+                ToAddress = toAddress,
+                FromAddress = fromAddress,
+            };
+
+            Insurance insurance = await client.Insurance.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(insurance, Formatting.Indented));
         }
