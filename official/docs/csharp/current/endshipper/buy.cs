@@ -20,7 +20,12 @@ namespace EasyPostExamples
 
             Rate rate = shipment.LowestRate();
 
-            await shipment.Buy(rate, null, null, "es_...");
+            Parameters.Shipment.Buy parameters = new(rate)
+            {
+                EndShipperId = "es_...",
+            };
+
+            shipment = await Client.Shipment.Buy(shipment.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

@@ -16,9 +16,9 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            EndShipper retrievedEndShipper = await client.EndShipper.Retrieve("es_...");
+            EndShipper endShipper = await client.EndShipper.Retrieve("es_...");
 
-            Console.WriteLine(JsonConvert.SerializeObject(retrievedEndShipper, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(endShipper, Formatting.Indented));
         }
     }
 }

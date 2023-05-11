@@ -18,20 +18,22 @@ namespace EasyPostExamples
 
             EndShipper endShipper = await client.EndShipper.Retrieve("es_...");
 
-            Dictionary<string, object> endShipperData = new Dictionary<string, object>() {
-                { "name", "NEW NAME" },
-                { "company", "BAZ" },
-                { "street1", "164 TOWNSEND STREET UNIT 1" },
-                { "street2", "UNIT 1" },
-                { "city", "SAN FRANCISCO" },
-                { "state", "CA" },
-                { "zip", "94107" },
-                { "country", "US" },
-                { "phone", "555-555-5555" },
-                { "email", "FOO@EXAMPLE.COM" }
+            // Updating an EndShipper requires all the original data to be sent back + the updated data
+            Parameters.EndShipper.Update parameters = new()
+            {
+                Name = "NEW NAME",
+                Company = "BAZ",
+                Street1 = "164 TOWNSEND STREET UNIT 1",
+                Street2 = "UNIT 1",
+                City = "SAN FRANCISCO",
+                State = "CA",
+                Zip = "94107",
+                Country = "US",
+                Phone = "555-555-5555",
+                Email = "FOO@EXAMPLE.COM",
             };
 
-            await endShipper.Update(endShipperData);
+            endShipper = await client.EndShipper.Update(endShipper.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(endShipper, Formatting.Indented));
         }
