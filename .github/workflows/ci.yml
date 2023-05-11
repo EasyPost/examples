@@ -94,7 +94,9 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.2'
+          rubygems: '3.0.0'
+          bundler-cache: true
       - name: Install Ruby dependencies
         run: make install-ruby
       - name: Lint project
