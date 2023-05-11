@@ -16,7 +16,13 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Tracker tracker = await client.Tracker.Create("USPS", "EZ1000000001");
+            Parameters.Tracker.Create parameters = new()
+            {
+                TrackingCode = "EZ1000000001",
+                Carrier = "USPS"
+            };
+
+            Tracker tracker = await client.Tracker.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(tracker, Formatting.Indented));
         }
