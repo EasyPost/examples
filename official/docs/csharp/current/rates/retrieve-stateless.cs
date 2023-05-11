@@ -16,47 +16,41 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
+            Parameters.Beta.Rate.Retrieve parameters = new()
+            {
+                ToAddress = new Parameters.Address.Create
                 {
-                    {
-                        "to_address", new Dictionary<string, object>()
-                        {
-                            { "name", "Dr. Steve Brule" },
-                            { "street1", "179 N Harbor Dr" },
-                            { "city", "Redondo Beach" },
-                            { "state", "CA" },
-                            { "zip", "90277" },
-                            { "country", "US" },
-                            { "phone", "8573875756" },
-                            { "email", "dr_steve_brule@gmail.com" }
-                        }
-                    },
-                    {
-                        "from_address", new Dictionary<string, object>()
-                        {
-                            { "name", "EasyPost" },
-                            { "street1", "417 Montgomery Street" },
-                            { "street2", "5th Floor" },
-                            { "city", "San Francisco" },
-                            { "state", "CA" },
-                            { "zip", "94104" },
-                            { "country", "US" },
-                            { "phone", "4153334445" },
-                            { "email", "support@easypost.com" }
-                        }
-                    },
-                    {
-                        "parcel", new Dictionary<string, object>()
-                        {
-                            { "length", 20.2 },
-                            { "width", 10.9 },
-                            { "height", 5 },
-                            { "weight", 65.9 }
-                        }
-                    }
-                });
+                    Name = "Dr. Steve Brule",
+                    Street1 = "179 N Harbor Dr",
+                    City = "Redondo Beach",
+                    State = "CA",
+                    Zip = "90277",
+                    Country = "US",
+                    Phone = "8573875756",
+                    Email = "dr_steve_brule@gmail.com"
+                },
+                FromAddress = new Parameters.Address.Create
+                {
+                    Name = "EasyPost",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "5th Floor",
+                    City = "San Francisco",
+                    State = "CA",
+                    Zip = "94104",
+                    Country = "US",
+                    Phone = "4153334445",
+                    Email = "support@easypost.com",
+                },
+                Parcel = new Parameters.Parcel.Create
+                {
+                    Length = 20.2,
+                    Width = 10.9,
+                    Height = 5,
+                    Weight = 65.9
+                }
+            };
 
-            List<StatelessRate> rates = await client.Beta.Rate.RetrieveStatelessRates(shipment);
+            List<StatelessRate> rates = await client.Beta.Rate.RetrieveStatelessRates(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(rates, Formatting.Indented));
         }
