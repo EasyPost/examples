@@ -16,29 +16,27 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            CarrierAccount carrierAccount = await client.CarrierAccount.Create(new Dictionary<string, object>()
+            Parameters.CarrierAccount.Create parameters = new()
             {
-                { "type", "DhlEcsAccount" },
-                { "description", "CA Location DHL eCommerce Solutions Account" },
+                Type = "DhlEcsAccount",
+                Description = "CA Location DHL eCommerce Solutions Account",
+                Credentials = new()
                 {
-                    "credentials", new Dictionary<string, object>
-                    {
-                        { "client_id", "123456" },
-                        { "client_secret", "123abc" },
-                        { "distribution_center", "USLAX1" },
-                        { "pickup_id", "123456" }
-                    }
+                    { "client_id", "123456" },
+                    { "client_secret", "123abc" },
+                    { "distribution_center", "USLAX1" },
+                    { "pickup_id", "123456" }
                 },
+                TestCredentials = new()
                 {
-                    "test_credentials", new Dictionary<string, object>
-                    {
-                        { "client_id", "123456" },
-                        { "client_secret", "123abc" },
-                        { "distribution_center", "USLAX1" },
-                        { "pickup_id", "123456" }
-                    }
-                },
-            });
+                    { "client_id", "123456" },
+                    { "client_secret", "123abc" },
+                    { "distribution_center", "USLAX1" },
+                    { "pickup_id", "123456" }
+                }
+            };
+
+            CarrierAccount carrierAccount = await client.CarrierAccount.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));
         }

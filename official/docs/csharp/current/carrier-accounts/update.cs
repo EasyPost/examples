@@ -18,16 +18,16 @@ namespace EasyPostExamples
 
             CarrierAccount carrierAccount = await client.CarrierAccount.Retrieve("ca_...");
 
-            await carrierAccount.Update(new Dictionary<string, object>()
+            Parameters.CarrierAccount.Update parameters = new()
             {
-                { "description", "FL Location DHL eCommerce Solutions Account" },
+                Description = "FL Location DHL eCommerce Solutions Account",
+                Credentials = new()
                 {
-                    "credentials", new Dictionary<string, object>()
-                    {
-                        { "pickup_id", "abc123" },
-                    }
+                    { "pickup_id", "abc123" }
                 },
-            });
+            };
+
+            carrierAccount = await client.CarrierAccount.Update(carrierAccount.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));
         }
