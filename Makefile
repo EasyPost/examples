@@ -36,6 +36,7 @@ install: | install-csharp install-go install-java install-node install-php insta
 
 ## install-csharp - install C# dependencies
 install-csharp:
+	# Install linting tool
 	dotnet tool install -g dotnet-format || exit 0
 
 ## install-go - Install and vendor Go dependencies
@@ -44,9 +45,9 @@ install-go:
 
 ## install-java - installs Java dependencies
 install-java:
-	mvn dependency:resolve
+	# Download linting tool
 	curl -LJs https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar -o checkstyle.jar
-	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-java/master/easypost_java_style.xml -o easypost_java_style.xml
+	mvn dependency:resolve
 
 ## install-node - installs Node dependencies
 install-node:
@@ -70,33 +71,40 @@ lint: | lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby l
 
 ## lint-csharp - lint C# files
 lint-csharp:
+	cp -r style_guides/csharp/. ./
 	dotnet format whitespace --include official/docs/csharp/ --folder --verify-no-changes
 	dotnet format whitespace --include official/guides/ --folder --verify-no-changes
 
 ## lint-go - Lint Go files
 lint-go:
+	cp -r style_guides/golang/. ./
 	golangci-lint run
 
 ## lint-java - lints Java files
 lint-java:
+	cp -r style_guides/java/. ./
 	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/docs/java/*
 	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/guides/*
 
 ## lint-node - lints Node files
 lint-node:
+	cp -r style_guides/node/. ./
 	npm run lint
 
 ## lint-php - lints PHP files
 lint-php:
+	cp -r style_guides/php/. ./
 	composer lint
 
 ## lint-python - lint Python files
 lint-python:
+	cp -r style_guides/python/. ./
 	$(PYTHON_VIRTUAL_BIN)/flake8 official/docs/python/
 	$(PYTHON_VIRTUAL_BIN)/flake8 official/guides/
 
 ## lint-ruby - lints Ruby files
 lint-ruby:
+	cp -r style_guides/ruby/. ./
 	bundle exec rubocop
 
 ## lint-shell - lints shell files

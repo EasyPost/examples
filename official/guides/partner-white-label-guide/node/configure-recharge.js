@@ -3,6 +3,6 @@ const api = new Easypost('<YOUR_PRODUCTION_API_KEY>');
 
 // If no user id is passed in, the user returned is the owner of the api key.
 api.User.retrieve('user_...').then((u) => {
-  u.recharge_threshold = '50.00';
-  u.save().catch(console.error);
+    u.recharge_threshold = '50.00';
+    u.save().catch(console.error);
 });

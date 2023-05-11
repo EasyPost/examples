@@ -1,3 +1,9 @@
+.nyc_output
+cassettes
+coverage
+dist
+docs
+examples
 .golangci.yml
 .mypy_cache
 composer.lock

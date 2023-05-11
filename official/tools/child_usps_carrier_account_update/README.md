@@ -18,10 +18,10 @@ This script will export the UspsAccount credentials for every Child User linked 
 
 It accomplishes this by:
 
-- Using the parent accounts production API key, pulling all children and their API keys
-- For each child user, it re-authenticates using the child-specific key
-- For each child user, it pulls the linked carrier account details
-- For each UspsAccount carrier account linked to that child, it will pull the account details, and store the UspsAccount credentials information in the CSV file
+-   Using the parent accounts production API key, pulling all children and their API keys
+-   For each child user, it re-authenticates using the child-specific key
+-   For each child user, it pulls the linked carrier account details
+-   For each UspsAccount carrier account linked to that child, it will pull the account details, and store the UspsAccount credentials information in the CSV file
 
 To run the script:
 
@@ -47,11 +47,11 @@ This script imports the modified records obtained in [Step 1](#step-1-run-the-ex
 
 The script does this by:
 
-- Uses the parent accounts production API key, pull all children and their API keys
-- Reads in the CSV data
-- For each child user in the CSV file, re-authenticate using the matching API key
-- For each Carrier Account associated with that user, fetch the Carrier Account record using the Carrier Account id
-- Update the Carrier Account credentials using the information from the CSV file
+-   Uses the parent accounts production API key, pull all children and their API keys
+-   Reads in the CSV data
+-   For each child user in the CSV file, re-authenticate using the matching API key
+-   For each Carrier Account associated with that user, fetch the Carrier Account record using the Carrier Account id
+-   Update the Carrier Account credentials using the information from the CSV file
 
 To run the script:
 
