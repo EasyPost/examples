@@ -16,15 +16,17 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            CustomsItem customsItem = await client.CustomsItem.Create(new Dictionary<string, object>()
+            Parameters.CustomsItems.Create parameters = new()
             {
-                { "description", "T-shirt" },
-                { "quantity", 1 },
-                { "weight", 5 },
-                { "value", 10 },
-                { "hs_tariff_number", "123456" },
-                { "origin_country", "US" }
-            });
+                Description = "T-shirt",
+                Quantity = 1,
+                Weight = 5,
+                Value = 10,
+                HsTariffNumber = "123456",
+                OriginCountry = "US"
+            };
+
+            CustomsItem customsItem = await client.CustomsItem.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(customsItem, Formatting.Indented));
         }
