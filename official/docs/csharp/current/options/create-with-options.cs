@@ -16,33 +16,22 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
+            Address toAddress = await client.Address.Retrieve("adr_...");
+            Address fromAddress = await client.Address.Retrieve("adr_...");
+            Parcel parcel = await client.Parcel.Retrieve("prcl_...");
+
+            Parameters.Shipment.Create parameters = new()
             {
+                ToAddress = toAddress,
+                FromAddress = fromAddress,
+                Parcel = parcel,
+                Options = new Options
                 {
-                    "to_address", new Dictionary<string, object>()
-                    {
-                        { "id", "adr_..." }
-                    }
-                },
-                {
-                    "from_address", new Dictionary<string, object>()
-                    {
-                        { "id", "adr_..." }
-                    }
-                },
-                {
-                    "parcel", new Dictionary<string, object>()
-                    {
-                        { "id", "prcl_..." }
-                    }
-                },
-                {
-                    "options", new Dictionary<string, object>()
-                    {
-                        { "print_custom_1", "Custom label message" }
-                    }
+                    PrintCustom1 = "Custom label message"
                 }
-            });
+            };
+
+            Shipment shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }
