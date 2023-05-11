@@ -24,5 +24,4 @@ venv
 /pyproject.toml
 /style_suppressions.xml
 /.dummy
-/.babelrc
 /.eslintignore
