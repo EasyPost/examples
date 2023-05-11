@@ -18,8 +18,6 @@ namespace EasyPostExamples
 
             User user = await client.User.Retrieve("user_...");
 
-            bool success = await user.Delete();
-
-            Console.WriteLine(success.ToString());
+            await client.User.Delete(user.Id);
         }
     }
