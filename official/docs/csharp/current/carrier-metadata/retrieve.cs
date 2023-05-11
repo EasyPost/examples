@@ -18,13 +18,18 @@ namespace EasyPostExamples
 
             // Request all metadata for all carriers
             List<Carrier> carrierMetadata = await client.Beta.CarrierMetadata.RetrieveCarrierMetadata();
+
             Console.WriteLine(JsonConvert.SerializeObject(carrierMetadata, Formatting.Indented));
 
             // Request specific metadata for specific carriers
-            List<Carrier> carrierMetadata = await client.Beta.CarrierMetadata.RetrieveCarrierMetadata(
-                new List<string> { carrierName },
-                new List<CarrierMetadataType> { CarrierMetadataType.ServiceLevels, CarrierMetadataType.PredefinedPackages },
-            );
+            Parameters.Beta.CarrierMetadata.Retrieve parameters = new()
+            {
+                Carriers = new List<string> { "UPS", "USPS" },
+                Types = new List<CarrierMetadataType> { CarrierMetadataType.ServiceLevels, CarrierMetadataType.PredefinedPackages },
+            };
+
+            List<Carrier> carrierMetadata = await client.Beta.CarrierMetadata.RetrieveCarrierMetadata(parameters);
+
             Console.WriteLine(JsonConvert.SerializeObject(carrierMetadata, Formatting.Indented));
         }
     }
