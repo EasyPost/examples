@@ -16,10 +16,12 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            EventCollection events = await client.EventAll(new Dictionary<string, object>
+            Parameters.Event.All parameters = new()
             {
-                { "page_size", 5 }
-            });
+                PageSize = 5,
+            };
+
+            EventCollection events = await client.Event.All(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(events, Formatting.Indented));
         }
