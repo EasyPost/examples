@@ -16,63 +16,52 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
+            Parameters.Shipment.Create parameters = new()
             {
+                ToAddress = new Parameters.Address.Create
                 {
-                    "to_address", new Dictionary<string, object>()
-                    {
-                        { "name", "Dr. Steve Brule" },
-                        { "street1", "179 N Harbor Dr" },
-                        { "city", "Redondo Beach" },
-                        { "state", "CA" },
-                        { "zip", "90277" },
-                        { "country", "US" },
-                        { "phone", "8573875756" },
-                        { "email", "dr_steve_brule@gmail.com" }
-                    }
+                    Name = "Dr. Steve Brule",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "5th Floor",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
                 },
+                FromAddress = new Parameters.Address.Create
                 {
-                    "from_address", new Dictionary<string, object>()
-                    {
-                        { "company", "EasyPost" },
-                        { "street1", "417 Montgomery Street" },
-                        { "street2", "5th Floor" },
-                        { "city", "San Francisco" },
-                        { "state", "CA" },
-                        { "zip", "94104" },
-                        { "country", "US" },
-                        { "phone", "4153334445" },
-                        { "email", "support@easypost.com" }
-                    }
+                    Company = "EasyPost",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "Floor 5",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
                 },
+                Parcel = new Parameters.Parcel.Create
                 {
-                    "parcel", new Dictionary<string, object>()
-                    {
-                        { "length", 20.2 },
-                        { "width", 10.9 },
-                        { "height", 5 },
-                        { "weight", 65.9 }
-                    }
+                    Length = 8,
+                    Width = 6,
+                    Height = 5,
+                    Weight = 10
                 },
+                CustomsInfo = new Parameters.CustomsInfo.Create
                 {
-                    "customs_info", new Dictionary<string, object>()
-                    {
-                        { "id", "cstinfo_..." }
-                    }
+                    ...
                 },
+                TaxIdentifiers = new List<Parameters.TaxIdentifiers.Create>
                 {
-                    "tax_identifiers", new List<Dictionary<string, object>>()
+                    new()
                     {
-                        new Dictionary<string, object>()
-                        {
-                            { "entity", "SENDER" },
-                            { "tax_id", "GB123456789" },
-                            { "tax_id_type", "EORI" },
-                            { "issuing_country", "GB" }
-                        }
+                        Entity = "SENDER",
+                        TaxId = "GB123456789",
+                        TaxIdType = "EORI",
+                        IssuingCountry = "GB"
                     }
                 }
-            });
+            };
+
+            Shipment shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }
