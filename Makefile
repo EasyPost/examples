@@ -36,6 +36,8 @@ install: | install-csharp install-go install-java install-node install-php insta
 
 ## install-csharp - install C# dependencies
 install-csharp:
+	# Download style guide from easypost-csharp
+	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-csharp/master/.editorconfig -o .editorconfig
 	dotnet tool install -g dotnet-format || exit 0
 
 ## install-go - Install and vendor Go dependencies
@@ -44,25 +46,38 @@ install-go:
 
 ## install-java - installs Java dependencies
 install-java:
-	mvn dependency:resolve
+    # Download linting tool and style guide from easypost-java
 	curl -LJs https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar -o checkstyle.jar
 	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-java/master/easypost_java_style.xml -o easypost_java_style.xml
+	mvn dependency:resolve
 
 ## install-node - installs Node dependencies
 install-node:
+	# Download style guide from easypost-node
+	# curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-node/master/.eslintrc -o .eslintrc # Differing dependencies
+	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-node/master/.prettierrc.yml -o .prettierrc.yml
 	npm install
 
 ## install-php - installs PHP dependencies
 install-php:
+	# Download style guide from easypost-php
+	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-php/master/phpcs.xml -o phpcs.xml
+	sh scripts/style_guides/adjust_php_style_guide.sh
 	composer install
 
 ## install-python - install Python dependencies
 install-python:
+	# Download style guide from easypost-python
+	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-python/master/pyproject.toml -o pyproject.toml
+	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-python/master/.flake8 -o .flake8
+	sh scripts/style_guides/adjust_python_style_guide.sh
 	$(PYTHON_BINARY) -m venv $(PYTHON_VIRTUAL_ENV)
 	$(PYTHON_VIRTUAL_BIN)/pip install -e ."[dev]"
 
 ## install-ruby - installs Ruby dependencies
 install-ruby:
+	# Download style guide from easypost-ruby
+	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-ruby/master/easycop.yml -o easycop.yml
 	bundle install
 
 ## lint - lints the entire project
