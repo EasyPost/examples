@@ -18,7 +18,12 @@ namespace EasyPostExamples
 
             Batch batch = await client.Batch.Retrieve("batch_...");
 
-            await batch.GenerateLabel("PDF");
+            Parameters.Batch.GenerateLabel parameters = new()
+            {
+                FileFormat = "PDF",
+            }
+
+            batch = await client.Batch.GenerateLabel(batch.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }

@@ -16,14 +16,16 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
+            Shipment shipment = await client.Shipment.Retrieve("shp_...");
+
             Batch batch = await client.Batch.Retrieve("batch_...");
 
-            await batch.RemoveShipments(
-                new List<string>()
-                {
-                    "shp_..."
-                }
-            );
+            Parameters.Batch.RemoveShipments parameters = new()
+            {
+                Shipments = new List<Shipment> { shipment },
+            };
+
+            batch = await client.Batch.RemoveShipments(batch.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }

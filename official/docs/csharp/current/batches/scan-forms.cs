@@ -18,7 +18,12 @@ namespace EasyPostExamples
 
             Batch batch = await client.Batch.Retrieve("batch_...");
 
-            await batch.GenerateScanForm();
+            Parameters.Batch.GenerateScanForm parameters = new()
+            {
+                FileFormat = "ZPL",
+            }
+
+            batch = await client.Batch.GenerateScanForm(batch.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }
