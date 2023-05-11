@@ -16,34 +16,20 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Dictionary<string, object> fromAddress = new Dictionary<string, object>() {
-                { "name", "Dr. Steve Brule" },
-                { "street1", "417 Montgomery Street" },
-                { "street2", "5th Floor" },
-                { "city", "San Francisco" },
-                { "state", "CA" },
-                { "country", "US" },
-                { "zip", "94104" }
+            Address toAddress = await client.Address.Retrieve("adr_...");
+            Address fromAddress = await client.Address.Retrieve("adr_...");
+            Parcel parcel = await client.Parcel.Retrieve("prcl_...");
+
+            Parameters.Shipment.Create parameters = new()
+            {
+                Parcel = parcel,
+                ToAddress = toAddress,
+                FromAddress = fromAddress,
+                Reference = "ShipmentRef",
+                CarbonOffset = true
             };
 
-            Dictionary<string, object> toAddress = new Dictionary<string, object>() {
-                { "company", "EasyPost" },
-                { "street1", "417 Montgomery Street" },
-                { "street2", "Floor 5" },
-                { "city", "San Francisco" },
-                { "state", "CA" },
-                { "country", "US" },
-                { "zip", "94104" }
-            };
-
-            Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
-                { "parcel", new Dictionary<string, object>() {
-                    { "length", 8 }, { "width", 6 }, { "height", 5 }, { "weight", 10 }
-                } },
-                { "to_address", toAddress },
-                { "from_address", fromAddress },
-                { "reference", "ShipmentRef" }
-            }, withCarbonOffset: true);
+            Shipment shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }
