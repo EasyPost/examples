@@ -16,12 +16,12 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Webhook webhook = await client.Webhook.Create(
-                new Dictionary<string, object>()
-                {
-                    { "url", "example.com" }
-                }
-            );
+            Parameters.Webhook.Create parameters = new()
+            {
+                Url = "example.com"
+            };
+
+            Webhook webhook = await client.Webhook.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(webhook, Formatting.Indented));
         }

@@ -16,7 +16,12 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            List<Webhook> webhooks = await client.Webhook.All();
+            Parameters.Webhook.All parameters = new()
+            {
+                PageSize = 5,
+            };
+
+            List<Webhook> webhooks = await client.Webhook.All(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(webhooks, Formatting.Indented));
         }
