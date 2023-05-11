@@ -16,9 +16,9 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            PaymentMethod paymentMethods = await client.Billing.RetrievePaymentMethods();
+            PaymentMethodsSummary paymentMethodsSummary = await client.Billing.RetrievePaymentMethodsSummary();
 
-            Console.WriteLine(JsonConvert.SerializeObject(paymentMethods, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(paymentMethodsSummary, Formatting.Indented));
         }
     }
 }
