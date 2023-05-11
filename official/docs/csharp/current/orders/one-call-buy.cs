@@ -16,56 +16,54 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Order order = await client.Order.Create(new Dictionary<string, object>()
+            Parameters.Order.Create parameters = new()
             {
+                ToAddress = new Parameters.Address.Create
                 {
-                    "to_address", new Dictionary<string, string>()
-                    {
-                        { "id", "adr_..." }
-                    }
+                    Name = "Dr. Steve Brule",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "5th Floor",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
                 },
+                FromAddress = new Parameters.Address.Create
                 {
-                    "from_address", new Dictionary<string, string>()
-                    {
-                        { "id", "adr_..." }
-                    }
+                    Company = "EasyPost",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "Floor 5",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
                 },
+                Shipments = new List<Parameters.Shipment.Create>
                 {
-                    "shipments", new List<Dictionary<string, object>>()
+                    new()
                     {
+                        Parcel = new Parameters.Parcel.Create
                         {
-                            new Dictionary<string, object>
-                            {
-                                {
-                                    "parcel", new Dictionary<string, object>()
-                                    {
-                                        { "weight", 10.2 }
-                                    }
-                                }
-                            }
-                        },
+                            Weight = 10.2
+                        }
+                    },
+                    new()
+                    {
+                        Parcel = new Parameters.Parcel.Create
                         {
-                            new Dictionary<string, object>
-                            {
-                                {
-                                    "parcel", new Dictionary<string, object>()
-                                    {
-                                        { "predefined_package", "FedExBox" },
-                                        { "weight", 17.5 }
-                                    }
-                                }
-                            }
+                            PredefinedPackage = "FedExBox",
+                            Weight = 17.5
                         }
                     }
                 },
-                { "service", "NextDayAir" },
+                Service = "NextDayAir",
+                CarrierAccountIds = new List<string>
                 {
-                    "carrier_accounts", new List<string>()
-                    {
-                        "ca_..."
-                    }
+                    "ca_..."
                 }
-            });
+            };
+
+            Order order = await client.Order.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
         }
