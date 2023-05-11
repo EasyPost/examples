@@ -16,7 +16,12 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            PaymentRefund refund = await Client.Beta.Referral.RefundByAmount(2000);
+            Parameters.ReferralCustomer.RefundByAmount parameters = new()
+            {
+                Amount = 2000,
+            };
+
+            PaymentRefund refund = await client.Beta.ReferralCustomer.RefundByAmount(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(refund, Formatting.Indented));
         }
