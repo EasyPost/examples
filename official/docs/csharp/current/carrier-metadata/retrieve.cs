@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 using Newtonsoft.Json;
 
 namespace EasyPostExamples

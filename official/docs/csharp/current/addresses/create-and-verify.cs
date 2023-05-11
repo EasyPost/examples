@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,19 +16,19 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Address address = await client.Address.CreateAndVerify(
-                new Dictionary<string, object>
-                {
-                    { "street1", "417 Montgomery Street" },
-                    { "street2", "FL 5" },
-                    { "city", "San Francisco" },
-                    { "state", "CA" },
-                    { "zip", "94104" },
-                    { "country", "US" },
-                    { "company", "EasyPost" },
-                    { "phone", "415-123-4567" },
-                }
-            );
+            Parameters.Address.Create parameters = new()
+            {
+                Street1 = "417 Montgomery Street",
+                Street2 = "FL 5",
+                City = "San Francisco",
+                State = "CA",
+                Zip = "94104",
+                Country = "US",
+                Company = "EasyPost",
+                Phone = "415-123-4567",
+            };
+
+            Address address = await client.Address.CreateAndVerify(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));
         }

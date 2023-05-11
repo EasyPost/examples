@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,10 +16,12 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            ScanFormCollection scanFormCollection = await client.ScanForm.All(new Dictionary<string, object>()
+            Parameters.ScanForm.All parameters = new()
             {
-                { "page_size", 5 }
-            });
+                PageSize = 5
+            };
+
+            ScanFormCollection scanFormCollection = await client.ScanForm.All(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(scanFormCollection, Formatting.Indented));
         }

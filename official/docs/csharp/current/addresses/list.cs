@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,11 +16,12 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            AddressCollection addressCollection = await client.Address.All(new Dictionary<string, object>
-                {
-                    { "page_size", 5 }
-                }
-            );
+            Parameters.Address.All parameters = new()
+            {
+                PageSize = 5
+            };
+
+            AddressCollection addressCollection = await client.Address.All(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(addressCollection, Formatting.Indented));
         }
