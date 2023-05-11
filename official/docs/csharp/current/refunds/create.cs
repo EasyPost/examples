@@ -16,12 +16,13 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            List<Refund> refunds = await Client.Refund.Create(new Dictionary<string, object>
-                {
-                    { "carrier", Fixtures.Usps },
-                    { "tracking_codes", new List<string> { "EZ1000000001" } }
-                }
-            );
+            Parameters.Refund.Create parameters = new()
+            {
+                Carrier = "USPS",
+                TrackingCodes = new List<string> { "EZ1000000001" }
+            };
+
+            List<Refund> refunds = await client.Refund.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(refunds, Formatting.Indented));
         }
