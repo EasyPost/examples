@@ -18,10 +18,15 @@ namespace EasyPostExamples
 
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            ScanForm scanForm = await client.ScanForm.Create(new List<Shipment>
+            Parameters.ScanForm.Create parameters = new()
             {
-                shipment
-            });
+                Shipments = new List<Shipment>
+                {
+                    shipment
+                }
+            };
+
+            ScanForm scanForm = await client.ScanForm.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(scanForm, Formatting.Indented));
         }
