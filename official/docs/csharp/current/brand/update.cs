@@ -18,16 +18,18 @@ namespace EasyPostExamples
 
             User user = await client.User.RetrieveMe();
 
-            await user.UpdateBrand(new Dictionary<string, object>()
+            Parameters.User.UpdateBrand parameters = new()
             {
-                { "background_color", "#FFFFFF" },
-                { "color", "#303F9F" },
-                { "logo", "data:image/png;base64,iVBORw0K..." },
-                { "logo_href", "https://easypost.com" },
-                { "ad", null },
-                { "ad_href", null },
-                { "theme", "theme1" }
-            });
+                BackgroundColorHexCode = "#FFFFFF",
+                ColorHexCode = "#303F9F",
+                LogoBase64 = "data:image/png;base64,iVBORw0K...",
+                LogoUrl = "https://easypost.com",
+                AdBase64 = null,
+                AdUrl = null,
+                Theme = "theme1"
+            };
+
+            Brand brand = await client.User.UpdateBrand(user.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
         }
