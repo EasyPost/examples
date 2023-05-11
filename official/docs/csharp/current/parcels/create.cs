@@ -16,13 +16,15 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Parcel parcel = await client.Parcel.Create(new Dictionary<string, object>()
+            Parameters.Parcel.Create parameters = new()
             {
-                { "length", 20.2 },
-                { "width", 10.9 },
-                { "height", 5 },
-                { "weight", 65.9 }
-            });
+                Length = 20.2,
+                Width = 10.9,
+                Height = 5,
+                Weight = 65.9
+            };
+
+            Parcel parcel = await client.Parcel.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(parcel, Formatting.Indented));
         }
