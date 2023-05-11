@@ -18,7 +18,12 @@ namespace EasyPostExamples
 
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            await shipment.GenerateLabel("ZPL");
+            Parameters.Shipment.GenerateLabel parameters = new()
+            {
+                FileFormat = "ZPL",
+            };
+
+            shipment = await client.Shipment.GenerateLabel(shipment.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }
