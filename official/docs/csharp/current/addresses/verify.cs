@@ -30,7 +30,7 @@ namespace EasyPostExamples
 
             Address address = await client.Address.Create(parameters);
 
-            address = await client.Address.Verify(address.id)
+            address = await client.Address.Verify(address.Id)
 
             Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));
         }
