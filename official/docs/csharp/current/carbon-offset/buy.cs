@@ -25,7 +25,7 @@ namespace EasyPostExamples
                 CarbonOffset = true,
             };
 
-            shipment = await Client.Shipment.Buy(shipment.Id, parameters);
+            shipment = await client.Shipment.Buy(shipment.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }
