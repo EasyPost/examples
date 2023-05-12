@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using EasyPost;
 using Newtonsoft.Json;
+using EasyPost;
+using EasyPost.Models.API;
 
 namespace EasyPostExamples
 {
@@ -14,7 +15,7 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            await client.Partner.UpdateReferralEmail("user_...", "new_email@example.com");
+            await client.ReferralCustomer.UpdateReferralEmail("user_...", "new_email@example.com");
         }
     }
 }

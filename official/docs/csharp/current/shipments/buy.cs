@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -19,7 +20,9 @@ namespace EasyPostExamples
 
             Rate rate = shipment.LowestRate();
 
-            await shipment.Buy(rate, "249.99");
+            Parameters.Shipment.Buy parameters = new(rate);
+
+            shipment = await client.Shipment.Buy(shipment.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

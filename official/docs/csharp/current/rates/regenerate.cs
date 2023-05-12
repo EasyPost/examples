@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -17,7 +18,7 @@ namespace EasyPostExamples
 
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            await shipment.RegenerateRates();
+            shipment = await client.Shipment.RegenerateRates(shipment.Id);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

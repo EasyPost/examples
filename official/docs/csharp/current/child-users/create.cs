@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,10 +16,12 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            User user = await client.User.Create(new Dictionary<string, object>()
+            Parameters.User.CreateChild parameters = new()
             {
-                { "name", "Child Account Name" }
-            });
+                Name = "Child Account Name",
+            };
+
+            User user = await client.User.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
         }

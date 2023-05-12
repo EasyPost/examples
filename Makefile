@@ -97,7 +97,7 @@ lint-python:
 
 ## lint-ruby - lints Ruby files
 lint-ruby:
-	rubocop
+	bundle exec rubocop
 
 ## lint-shell - lints shell files
 lint-shell:

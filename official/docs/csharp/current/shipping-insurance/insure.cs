@@ -17,7 +17,7 @@ namespace EasyPostExamples
 
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            await shipment.Insure(200);
+            shipment = await client.Shipment.Insure(shipment.Id, 200);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

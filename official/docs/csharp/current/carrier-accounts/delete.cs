@@ -17,8 +17,6 @@ namespace EasyPostExamples
 
             CarrierAccount carrierAccount = await client.CarrierAccount.Retrieve("ca_...");
 
-            bool success = await carrierAccount.Delete();
-
-            Console.WriteLine(success.ToString());
+            await client.CarrierAccount.Delete(carrierAccount.Id);
         }
     }

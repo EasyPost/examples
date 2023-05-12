@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,28 +16,32 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
+            // Shipment has to be purchased before forms can be generated
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            Dictionary<string, object> form = new Dictionary<string, object>()
+            Parameters.Shipment.GenerateForm parameters = new()
             {
-                { "type", "return_packing_slip" },
-                { "barcode", "RMA12345678900" },
+                Type = "return_packing_slip",
+                Data = new()
                 {
-                    "line_items", new List<Dictionary<string, object>>()
+                    { "barcode", "RMA12345678900" },
                     {
+                        "line_items", new List<Dictionary<string, object>>()
                         {
-                            new Dictionary<string, object>
                             {
-                                { "title", "Square Reader" },
-                                { "barcode", "855658003251" }
+                                new Dictionary<string, object>
+                                {
+                                    { "title", "Square Reader" },
+                                    { "barcode", "855658003251" }
+                                }
                             }
                         }
-                    }
-                },
-                { "units", 8 }
+                    },
+                    { "units", 8 }
+                }
             };
 
-            await shipment.GenerateForm("return_packing_slip", form);
+            shipment = await client.Shipment.GenerateForm(shipment.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

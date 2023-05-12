@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,16 +16,17 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Batch batch = await client.Batch.Create(new Dictionary<string, object>()
+            Shipment shipment = await client.Shipment.Retrieve("shp_...");
+
+            Parameters.Batch.Create parameters = new()
             {
+                Shipments = new List<Shipment>()
                 {
-                    "shipments", new Dictionary<string, object>()
-                    {
-                        { "id", "shp_..." },
-                        { "id", "shp_..." }
-                    }
+                    shipment
                 }
-            });
+            };
+
+            Batch batch = await client.Batch.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }

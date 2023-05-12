@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -17,7 +18,9 @@ namespace EasyPostExamples
 
             Pickup pickup = await client.Pickup.Retrieve("pickup_...");
 
-            await pickup.Buy("UPS", "Same-Day Pickup");
+            Parameters.Pickup.Buy parameters = new("UPS", "Same-Day Pickup");
+
+            pickup = await client.Pickup.Buy(pickup.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));
         }

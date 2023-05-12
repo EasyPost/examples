@@ -17,7 +17,7 @@ namespace EasyPostExamples
 
             Batch batch = await client.Batch.Retrieve("batch_...");
 
-            await batch.Buy();
+            batch = await client.Batch.Buy(batch.Id);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }

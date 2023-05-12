@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -17,10 +18,12 @@ namespace EasyPostExamples
 
             User user = await client.User.RetrieveMe();
 
-            await user.Update(new Dictionary<string, object>()
+            Parameters.User.Update parameters = new()
             {
-                { "recharge_threshold", 50.00 }
-            });
+                RechargeThreshold = "50.00"
+            };
+
+            user = await client.User.Update(user.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
         }

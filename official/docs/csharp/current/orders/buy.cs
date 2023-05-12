@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -17,7 +18,9 @@ namespace EasyPostExamples
 
             Order order = await client.Order.Retrieve("order_...");
 
-            await order.Buy("FedEx", "FEDEX_GROUND");
+            Parameters.Order.Buy parameters = new("FedEx", "FEDEX_GROUND");
+
+            order = await client.Order.Buy(order.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
         }

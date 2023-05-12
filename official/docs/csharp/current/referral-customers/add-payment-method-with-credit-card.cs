@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using EasyPost;
 using Newtonsoft.Json;
+using EasyPost;
+using EasyPost.Models.API;
 
 namespace EasyPostExamples
 {
@@ -14,7 +15,7 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            PaymentMethod paymentMethod = await Client.Beta.Referral.AddPaymentMethod("cus_...", "card_...", PaymentMethod.Priority.Primary);
+            PaymentMethod paymentMethod = await client.Beta.ReferralCustomer.AddPaymentMethod("cus_...", "card_...", PaymentMethod.Priority.Primary);
 
             Console.WriteLine(JsonConvert.SerializeObject(paymentMethod, Formatting.Indented));
         }

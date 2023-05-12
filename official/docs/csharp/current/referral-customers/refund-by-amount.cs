@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using EasyPost;
 using Newtonsoft.Json;
+using EasyPost;
+using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -14,7 +16,12 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            PaymentRefund refund = await Client.Beta.Referral.RefundByAmount(2000);
+            Parameters.ReferralCustomer.RefundByAmount parameters = new()
+            {
+                Amount = 2000,
+            };
+
+            PaymentRefund refund = await client.Beta.ReferralCustomer.RefundByAmount(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(refund, Formatting.Indented));
         }

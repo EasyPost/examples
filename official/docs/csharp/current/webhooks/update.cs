@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -17,7 +18,18 @@ namespace EasyPostExamples
 
             Webhook webhook = await client.Webhook.Retrieve("hook_...");
 
-            await webhook.Update();
+            // Update the webhook's settings
+            Parameters.Webhook.Update parameters = new()
+            {
+                Url = "https://example.com/webhook",
+            };
+
+            webhook = await client.Webhook.Update(webhook.Id, parameters);
+
+            // Sending an empty parameter set will simply enable a disabled webhook
+            parameters = new();
+
+            webhook = await client.Webhook.Update(webhook.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(webhook, Formatting.Indented));
         }

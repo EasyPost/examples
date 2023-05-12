@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,33 +16,42 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
+            Parameters.Shipment.Create parameters = new()
             {
+                ToAddress = new Parameters.Address.Create
                 {
-                    "to_address", new Dictionary<string, object>()
-                    {
-                        { "id", "adr_..." }
-                    }
+                    Name = "Dr. Steve Brule",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "5th Floor",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
                 },
+                FromAddress = new Parameters.Address.Create
                 {
-                    "from_address", new Dictionary<string, object>()
-                    {
-                        { "id", "adr_..." }
-                    }
+                    Company = "EasyPost",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "Floor 5",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
                 },
+                Parcel = new Parameters.Parcel.Create
                 {
-                    "parcel", new Dictionary<string, object>()
-                    {
-                        { "id", "prcl_..." }
-                    }
+                    Length = 20.2,
+                    Width = 10.9,
+                    Height = 5,
+                    Weight = 65.9
                 },
+                Options = new Options
                 {
-                    "options", new Dictionary<string, object>()
-                    {
-                        { "print_custom_1", "Custom label message" }
-                    }
+                    PrintCustom1 = "Custom label message"
                 }
-            });
+            };
+
+            Shipment shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

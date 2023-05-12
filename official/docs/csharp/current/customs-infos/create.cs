@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,29 +16,29 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            CustomsInfo customsInfo = await client.CustomsInfo.Create(new Dictionary<string, object>()
+            Parameters.CustomsInfo.Create parameters = new()
             {
-                { "customs_certify", true },
-                { "customs_signer", "Steve Brule" },
-                { "contents_type", "merchandise" },
-                { "contents_explanation", "" },
-                { "restriction_type", "none" },
-                { "eel_pfc", "NOEEI 30.37(a)" },
+                CustomsCertify = true,
+                CustomsSigner = "Steve Brule",
+                ContentsType = "merchandise",
+                ContentsExplanation = "",
+                RestrictionType = "none",
+                EelPfc = "NOEEI 30.37(a)",
+                CustomsItems = new List<Parameters.CustomsItem.Create>()
                 {
-                    "customs_items", new List<Dictionary<string, object>>()
+                    new()
                     {
-                        new Dictionary<string, object>()
-                        {
-                            { "description", "T-shirt" },
-                            { "quantity", 1 },
-                            { "weight", 5 },
-                            { "value", 10 },
-                            { "hs_tariff_number", "123456" },
-                            { "origin_country", "US" }
-                        }
+                        Description = "T-shirt",
+                        Quantity = 1,
+                        Weight = 5,
+                        Value = 10,
+                        HsTariffNumber = "123456",
+                        OriginCountry = "US"
                     }
                 }
-            });
+            };
+
+            CustomsInfo customsInfo = await client.CustomsInfo.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(customsInfo, Formatting.Indented));
         }

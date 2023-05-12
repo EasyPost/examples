@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -17,7 +18,12 @@ namespace EasyPostExamples
 
             Batch batch = await client.Batch.Retrieve("batch_...");
 
-            await batch.GenerateLabel("PDF");
+            Parameters.Batch.GenerateLabel parameters = new()
+            {
+                FileFormat = "PDF",
+            }
+
+            batch = await client.Batch.GenerateLabel(batch.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }

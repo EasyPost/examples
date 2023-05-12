@@ -17,9 +17,9 @@ namespace EasyPostExamples
 
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            await shipment.GetSmartrates();
+            List<SmartRate> smartRates = await client.Shipment.GetSmartRates(shipment.Id);
 
-            Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(smartRates, Formatting.Indented));
         }
     }
 }

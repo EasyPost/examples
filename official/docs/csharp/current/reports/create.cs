@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,11 +16,14 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Report report = await client.Report.Create("payment_log", new Dictionary<string, object>()
+            Parameters.Report.Create parameters = new()
             {
-                { "start_date", "2022-10-01" },
-                { "end_date", "2022-10-31" }
-            });
+                Type = "payment_log",
+                StartDate = "2022-10-01",
+                EndDate = "2022-10-31"
+            };
+
+            Report report = await client.Report.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(report, Formatting.Indented));
         }

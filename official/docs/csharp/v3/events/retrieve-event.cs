@@ -14,7 +14,7 @@ namespace EasyPostExamples
 
             EasyPost.ClientManager.SetCurrent(apiKey);
 
-            Event @event = await Event.Retrieve("event_...");
+            Event @event = await Event.Retrieve("evt_...");
 
             Console.WriteLine(JsonConvert.SerializeObject(@event, Formatting.Indented));
         }

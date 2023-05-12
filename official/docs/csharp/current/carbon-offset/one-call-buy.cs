@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
-using Newtonsoft.Json;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,36 +16,42 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Dictionary<string, object> fromAddress = new Dictionary<string, object>() {
-                { "name", "Dr. Steve Brule" },
-                { "street1", "417 Montgomery Street" },
-                { "street2", "5th Floor" },
-                { "city", "San Francisco" },
-                { "state", "CA" },
-                { "country", "US" },
-                { "zip", "94104" }
+            Parameters.Shipment.Create parameters = new()
+            {
+                ToAddress = new Parameters.Address.Create
+                {
+                    Name = "Dr. Steve Brule",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "5th Floor",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
+                },
+                FromAddress = new Parameters.Address.Create
+                {
+                    Company = "EasyPost",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "Floor 5",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
+                },
+                Parcel = new Parameters.Parcel.Create
+                {
+                    Length = 8,
+                    Width = 6,
+                    Height = 5,
+                    Weight = 10
+                },
+                CarrierAccountIds = new List<string> { "ca_..." },
+                Service = "NextDayAir",
+                Reference = "ShipmentRef",
+                CarbonOffset = true,
             };
 
-            Dictionary<string, object> toAddress = new Dictionary<string, object>() {
-                { "company", "EasyPost" },
-                { "street1", "417 Montgomery Street" },
-                { "street2", "Floor 5" },
-                { "city", "San Francisco" },
-                { "state", "CA" },
-                { "country", "US" },
-                { "zip", "94104" }
-            };
-
-            Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
-                { "carrier_accounts", new Dictionary<string, string>() { { "id", "ca_..." } } },
-                { "service", "NextDayAir" },
-                { "parcel", new Dictionary<string, object>() {
-                    { "length", 8 }, { "width", 6 }, { "height", 5 }, { "weight", 10 }
-                } },
-                { "to_address", toAddress },
-                { "from_address", fromAddress },
-                { "reference", "ShipmentRef" }
-            }, withCarbonOffset: true);
+            Shipment shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

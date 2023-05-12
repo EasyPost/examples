@@ -17,8 +17,6 @@ namespace EasyPostExamples
 
             Webhook webhook = await client.Webhook.Retrieve("hook_...");
 
-            bool success = await webhook.Delete();
-
-            Console.WriteLine(success.ToString());
+            await client.Webhook.Delete(webhook.Id);
         }
     }

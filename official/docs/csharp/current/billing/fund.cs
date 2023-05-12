@@ -15,8 +15,6 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            bool success = await client.Billing.FundWallet("2000", PaymentMethod.Priority.Primary);
-
-            Console.WriteLine(success.ToString());
+            await client.Billing.FundWallet("2000", PaymentMethod.Priority.Primary);
         }
     }

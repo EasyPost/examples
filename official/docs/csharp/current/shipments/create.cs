@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -17,83 +18,61 @@ namespace EasyPostExamples
 
             // Create a shipment using all data in one API call
 
-            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
+            Parameters.Shipment.Create parameters = new()
             {
+                ToAddress = new Parameters.Address.Create
                 {
-                    "to_address", new Dictionary<string, object>()
-                    {
-                        { "name", "Dr. Steve Brule" },
-                        { "street1", "179 N Harbor Dr" },
-                        { "city", "Redondo Beach" },
-                        { "state", "CA" },
-                        { "zip", "90277" },
-                        { "country", "US" },
-                        { "phone", "8573875756" },
-                        { "email", "dr_steve_brule@gmail.com" }
-                    }
+                    Name = "Dr. Steve Brule",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "5th Floor",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
                 },
+                FromAddress = new Parameters.Address.Create
                 {
-                    "from_address", new Dictionary<string, object>()
-                    {
-                        { "name", "EasyPost" },
-                        { "street1", "417 Montgomery Street" },
-                        { "street2", "5th Floor" },
-                        { "city", "San Francisco" },
-                        { "state", "CA" },
-                        { "zip", "94104" },
-                        { "country", "US" },
-                        { "phone", "4153334445" },
-                        { "email", "support@easypost.com" }
-                    }
+                    Company = "EasyPost",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "Floor 5",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
                 },
+                Parcel = new Parameters.Parcel.Create
                 {
-                    "parcel", new Dictionary<string, object>()
-                    {
-                        { "length", 20.2 },
-                        { "width", 10.9 },
-                        { "height", 5 },
-                        { "weight", 65.9 }
-                    }
+                    Length = 8,
+                    Width = 6,
+                    Height = 5,
+                    Weight = 10
                 },
+                CustomsInfo = new Parameters.CustomsInfo.Create
                 {
-                    "customs_info", new Dictionary<string, object>()
-                    {
-                        { "id", "cstinfo_..." }
-                    }
+                    ...
                 }
-            });
+            };
+
+            Shipment shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
 
-            // Create a shipment using ids of existing data
+            // Create a shipment using existing addresses, parcel, and customs info
 
-            Shipment shipmentWithIds = await client.Shipment.Create(new Dictionary<string, object>()
+            Address toAddress = await client.Address.Retrieve("adr_...");
+            Address fromAddress = await client.Address.Retrieve("adr_...");
+            Parcel parcel = await client.Parcel.Retrieve("prcl_...");
+            CustomsInfo customsInfo = await client.CustomsInfo.Retrieve("cstinfo_...");
+
+            parameters = new()
             {
-                {
-                    "to_address", new Dictionary<string, object>()
-                    {
-                        { "id", "adr_..." }
-                    }
-                },
-                {
-                    "from_address", new Dictionary<string, object>()
-                    {
-                        { "id", "adr_..." }
-                    }
-                },
-                {
-                    "parcel", new Dictionary<string, object>()
-                    {
-                        { "id", "prcl_..." }
-                    }
-                },
-                {
-                    "customs_info", new Dictionary<string, object>()
-                    {
-                        { "id", "cstinfo_..." }
-                    }
-                }
-            });
+                ToAddress = toAddress,
+                FromAddress = fromAddress,
+                Parcel = parcel,
+                CustomsInfo = customsInfo
+            };
+
+            shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipmentWithIds, Formatting.Indented));
         }

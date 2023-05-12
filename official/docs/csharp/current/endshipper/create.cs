@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
-using Newtonsoft.Json;
+using EasyPost.Parameters;
 
 namespace EasyPostExamples
 {
@@ -15,20 +16,21 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            EndShipper endShipper = await client.EndShipper.Create(
-                new Dictionary<string, object>() {
-                    { "name", "FOO BAR" },
-                    { "company", "BAZ" },
-                    { "street1", "164 TOWNSEND STREET UNIT 1" },
-                    { "street2", "UNIT 1" },
-                    { "city", "SAN FRANCISCO" },
-                    { "state", "CA" },
-                    { "zip", "94107" },
-                    { "country", "US" },
-                    { "phone", "555-555-5555" },
-                    { "email", "FOO@EXAMPLE.COM" }
-                }
-            );
+            Parameters.EndShipper.Create parameters = new()
+            {
+                Name = "FOO BAR",
+                Company = "BAZ",
+                Street1 = "164 TOWNSEND STREET UNIT 1",
+                Street2 = "UNIT 1",
+                City = "SAN FRANCISCO",
+                State = "CA",
+                Zip = "94107",
+                Country = "US",
+                Phone = "555-555-5555",
+                Email = "FOO@EXAMPLE.COM",
+            };
+
+            EndShipper endShipper = await client.EndShipper.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(endShipper, Formatting.Indented));
         }
