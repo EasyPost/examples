@@ -16,12 +16,20 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Address address = await client.Address.Retrieve("adr_...");
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
             Parameters.Pickup.Create parameters = new()
             {
-                Address = address,
+                Address = new Parameters.Address.Create
+                {
+                    Name = "Dr. Steve Brule",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "5th Floor",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
+                },
                 Shipment = shipment,
                 Reference = "my-first-pickup",
                 MinDatetime = "2022-10-01 10:30:00",

@@ -16,14 +16,30 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Address toAddress = await client.Address.Retrieve("adr_...");
-            Address fromAddress = await client.Address.Retrieve("adr_...");
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
             Parameters.Order.Create parameters = new()
             {
-                ToAddress = toAddress,
-                FromAddress = fromAddress,
+                ToAddress = new Parameters.Address.Create
+                {
+                    Name = "Dr. Steve Brule",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "5th Floor",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
+                },
+                FromAddress = new Parameters.Address.Create
+                {
+                    Company = "EasyPost",
+                    Street1 = "417 Montgomery Street",
+                    Street2 = "Floor 5",
+                    City = "San Francisco",
+                    State = "CA",
+                    Country = "US",
+                    Zip = "94104"
+                },
                 Shipments = new List<Shipment>() { shipment }
             };
 
