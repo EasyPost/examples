@@ -46,7 +46,7 @@ install-go:
 
 ## install-java - installs Java dependencies
 install-java:
-    # Download linting tool and style guide from easypost-java
+	# Download linting tool and style guide from easypost-java
 	curl -LJs https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar -o checkstyle.jar
 	curl -LJs https://raw.githubusercontent.com/EasyPost/easypost-java/master/easypost_java_style.xml -o easypost_java_style.xml
 	mvn dependency:resolve
