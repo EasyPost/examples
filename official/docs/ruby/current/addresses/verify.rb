@@ -13,6 +13,6 @@ address = client.address.create(
   phone: '415-123-4567',
 )
 
-address.verify
+verified_address = client.address.verify(address.id)
 
-puts address
+puts verified_address
