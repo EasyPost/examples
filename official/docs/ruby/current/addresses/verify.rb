@@ -1,8 +1,8 @@
 require 'easypost'
 
-EasyPost.api_key = ENV['EASYPOST_API_KEY']
+client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
 
-address = EasyPost::Address.create(
+address = client.address.create(
   street1: '417 MONTGOMERY ST',
   street2: 'FLOOR 5',
   city: 'SAN FRANCISCO',
@@ -13,6 +13,6 @@ address = EasyPost::Address.create(
   phone: '415-123-4567',
 )
 
-address.verify
+verified_address = client.address.verify(address.id)
 
-puts address
+puts verified_address

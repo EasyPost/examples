@@ -1,7 +1,7 @@
 require 'easypost'
 
-EasyPost.api_key = ENV['EASYPOST_API_KEY']
+client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
 
-address = EasyPost::Address.retrieve('adr_...')
+address = client.address.retrieve('adr_...')
 
 puts address

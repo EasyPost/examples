@@ -1,8 +1,8 @@
 require 'easypost'
 
-EasyPost.api_key = ENV['EASYPOST_API_KEY']
+client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
 
-addresses = EasyPost::Address.all(
+addresses = client.address.all(
   page_size: 5,
 )
 
