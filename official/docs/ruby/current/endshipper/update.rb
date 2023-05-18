@@ -16,6 +16,6 @@ update_data = {
   'phone' => '5555555555',
 }
 
-endshipper = client.end_shipper.update(retrieved_endshipper.id, update_data)
+end_shipper = client.end_shipper.update(retrieved_endshipper.id, update_data)
 
-puts endshipper
+puts end_shipper

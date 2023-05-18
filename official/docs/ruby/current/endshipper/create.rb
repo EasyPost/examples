@@ -2,7 +2,7 @@ require 'easypost'
 
 client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
 
-endshipper = client.end_shipper.create(
+end_shipper = client.end_shipper.create(
   name: 'FOO BAR',
   company: 'BAZ',
   street1: '164 TOWNSEND STREET UNIT 1',
@@ -15,4 +15,4 @@ endshipper = client.end_shipper.create(
   email: 'FOO@EXAMPLE.COM',
 )
 
-puts endshipper
+puts end_shipper
