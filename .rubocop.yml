@@ -5,10 +5,10 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Naming/VariableNumber:
   Exclude:
-    - 'official/docs/ruby/v4/options/create-with-options.rb'
+    - 'official/docs/ruby/**/options/create-with-options.rb'
 Lint/UselessAssignment:
   Exclude:
-    - 'official/docs/ruby/v4/users/retrieve.rb'
-    - 'official/docs/ruby/v4/api-keys/retrieve.rb'
+    - 'official/docs/ruby/**/users/retrieve.rb'
+    - 'official/docs/ruby/**/api-keys/retrieve.rb'
 Naming/FileName:
   Enabled: false
