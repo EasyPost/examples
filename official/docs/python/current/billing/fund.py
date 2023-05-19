@@ -3,11 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-billing = easypost.Billing.fund_wallet(
+client.billing.fund_wallet(
     amount="2000",
     primary_or_secondary="primary",
 )
-
-print(billing)

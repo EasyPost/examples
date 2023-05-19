@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-address = easypost.Address.retrieve("adr_...")
+address = client.address.retrieve("adr_...")
 
 print(address)

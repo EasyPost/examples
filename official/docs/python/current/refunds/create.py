@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-refunds = easypost.Refund.create(
+refunds = client.refund.create(
     carrier="USPS",
     tracking_codes=["EZ1000000001"],
 )

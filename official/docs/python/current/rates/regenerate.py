@@ -3,9 +3,10 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-shipment = easypost.Shipment.retrieve("shp_...")
-shipment.regenerate_rates()
+shipment = client.shipment.retrieve("shp_...")
 
-print(shipment)
+shipment_with_regenerated_rates = client.shipment.regenerate_rates(shipment.id)
+
+print(shipment_with_regenerated_rates)

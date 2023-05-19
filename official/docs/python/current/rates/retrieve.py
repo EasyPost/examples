@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-rate = easypost.Rate.retrieve("rate...")
+rate = client.rate.retrieve("rate...")
 
 print(rate)

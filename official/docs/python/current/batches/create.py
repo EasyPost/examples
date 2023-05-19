@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-batch = easypost.Batch.create(
+batch = client.batch.create(
     shipments=[
         {"id": "shp_..."},
         {"id": "shp_..."},

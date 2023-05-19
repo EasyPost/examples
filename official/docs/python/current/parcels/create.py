@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-parcel = easypost.Parcel.create(
+parcel = client.parcel.create(
     length=20.2,
     width=10.9,
     height=5,

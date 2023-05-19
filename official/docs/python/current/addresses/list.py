@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-addresses = easypost.Address.all(page_size=5)
+addresses = client.address.all(page_size=5)
 
 print(addresses)

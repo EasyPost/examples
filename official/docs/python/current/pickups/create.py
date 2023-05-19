@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-pickup = easypost.Pickup.create(
+pickup = client.pickup.create(
     address={"id": "adr_..."},
     shipment={"id": "shp_..."},
     reference="my-first-pickup",

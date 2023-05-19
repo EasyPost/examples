@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-carrier_account = easypost.CarrierAccount.create(
+carrier_account = client.carrier_account.create(
     type="DhlEcsAccount",
     description="CA Location DHL eCommerce Solutions Account",
     credentials={

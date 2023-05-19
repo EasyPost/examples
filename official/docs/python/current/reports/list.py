@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-reports = easypost.Report.all(
+reports = client.report.all(
     # Replace `payment_log` with any of the report types listed above
     type="payment_log",
     page_size=5,

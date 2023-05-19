@@ -3,9 +3,14 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-shipment = easypost.Shipment.retrieve("shp_...")
-shipment.buy(rate=shipment.lowest_rate(), insurance=249.99, with_carbon_offset=True)
+shipment = client.shipment.retrieve("shp_...")
+bought_shipment = client.shipment.buy(
+    shipment.id,
+    rate=shipment.lowest_rate(),
+    insurance=249.99,
+    with_carbon_offset=True,
+)
 
-print(shipment)
+print(bought_shipment)

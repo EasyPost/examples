@@ -3,10 +3,10 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-batch = easypost.Batch.retrieve("batch_...")
+batch = client.batch.retrieve("batch_...")
 
-batch.buy()
+bought_batch = client.batch.buy(batch.id)
 
-print(batch)
+print(bought_batch)

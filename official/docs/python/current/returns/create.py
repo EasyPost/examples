@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-shipment = easypost.Shipment.create(
+shipment = client.shipment.create(
     to_address={"id": "adr_..."},
     from_address={"id": "adr_..."},
     parcel={"id": "prcl_..."},

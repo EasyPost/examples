@@ -3,16 +3,17 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-batch = easypost.Batch.retrieve("batch_...")
+batch = client.batch.retrieve("batch_...")
 
-batch.remove_shipments(
+batch_without_shipments = batch.remove_shipments(
+    batch.id,
     shipments=[
         {
             "id": "shp_...",
         }
-    ]
+    ],
 )
 
-print(batch)
+print(batch_without_shipments)

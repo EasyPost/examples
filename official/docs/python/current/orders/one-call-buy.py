@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-order = easypost.Order.create(
+order = client.order.create(
     carrier_accounts=["ca_..."],
     service="NextDayAir",
     to_address={"id": "adr_..."},

@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-shipment = easypost.Shipment.create(
+shipment = client.shipment.create(
     to_address={
         "name": "Dr. Steve Brule",
         "street1": "179 N Harbor Dr",
@@ -35,6 +35,6 @@ shipment = easypost.Shipment.create(
     },
 )
 
-rates = easypost.beta.Rate.retrieve_stateless_rates(shipment)
+rates = client.beta_rate.retrieve_stateless_rates(shipment.id)
 
 print(rates)

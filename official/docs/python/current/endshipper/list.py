@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-endshippers = easypost.EndShipper.all(page_size=5)
+end_shippers = client.end_shipper.all(page_size=5)
 
-print(endshippers)
+print(end_shippers)

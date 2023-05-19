@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-carrier_types = easypost.CarrierAccount.types()
+carrier_types = client.carrier_account.types()
 
 print(carrier_types)

@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-endshipper = easypost.EndShipper.create(
+end_shipper = client.end_shipper.create(
     name="FOO BAR",
     company="BAZ",
     street1="164 TOWNSEND STREET UNIT 1",
@@ -18,4 +18,4 @@ endshipper = easypost.EndShipper.create(
     email="FOO@EXAMPLE.COM",
 )
 
-print(endshipper)
+print(end_shipper)

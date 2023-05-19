@@ -3,12 +3,10 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-user = easypost.User.retrieve_me()
+user = client.user.retrieve_me()
 
-user.recharge_threshold = "50.00"
+updated_user = client.user.update(recharge_threshold="50.00")
 
-user.save()
-
-print(user)
+print(updated_user)
