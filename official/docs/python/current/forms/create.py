@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-shipment = easypost.Shipment.retrieve("shp_...")
+shipment = client.shipment.retrieve("shp_...")
 
 form_type = "return_packing_slip"
 form_options = {
@@ -21,6 +21,6 @@ form_options = {
     ],
 }
 
-shipment.generate_form(form_type, form_options)
+shipment_with_form = client.shipment.generate_form(shipment.id, form_type, form_options)
 
-print(shipment)
+print(shipment_with_form)

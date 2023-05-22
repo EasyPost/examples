@@ -3,15 +3,16 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-batch = easypost.Batch.retrieve("batch_...")
+batch = client.batch.retrieve("batch_...")
 
-batch.add_shipments(
+batch_with_shipments = client.batch.add_shipments(
+    batch.id,
     shipments=[
         {"id": "shp_..."},
         {"id": "shp_..."},
-    ]
+    ],
 )
 
-print(batch)
+print(batch_with_shipments)

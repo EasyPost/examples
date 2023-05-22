@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-referral_user = easypost.Referral.create(
+referral_user = client.referral_customer.create(
     name="test test",
     email="test@test.com",
     phone="8888888888",

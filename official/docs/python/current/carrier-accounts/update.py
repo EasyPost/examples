@@ -3,12 +3,14 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-carrier_account = easypost.CarrierAccount.retrieve("ca_...")
+carrier_account = client.carrier_account.retrieve("ca_...")
 
-carrier_account.description = "FL Location DHL eCommerce Solutions Account"
-carrier_account.credentials["pickup_id"] = "abc123"
-carrier_account.save()
+updated_carrier_account = client.carrier_account.update(
+    carrier_account.id,
+    description="FL Location DHL eCommerce Solutions Account",
+    credentials={"pickup_id": "abc123"},
+)
 
-print(carrier_account)
+print(updated_carrier_account)

@@ -3,9 +3,10 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-shipment = easypost.Shipment.retrieve("shp_...")
-shipment.refund()
+shipment = client.shipment.retrieve("shp_...")
 
-print(shipment)
+refunded_shipment = client.shipment.refund(shipment.id)
+
+print(refunded_shipment)

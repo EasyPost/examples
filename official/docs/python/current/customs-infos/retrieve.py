@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-customs_info = easypost.CustomsInfo.retrieve("cstinfo_...")
+customs_info = client.customs_info.retrieve("cstinfo_...")
 
 print(customs_info)

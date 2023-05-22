@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-customs_info = easypost.CustomsInfo.create(
+customs_info = client.customs_info.create(
     eel_pfc="NOEEI 30.37(a)",
     customs_certify=True,
     customs_signer="Steve Brule",

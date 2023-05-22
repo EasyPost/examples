@@ -3,10 +3,10 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-user = easypost.User.retrieve_me()
+user = client.user.retrieve_me()
 
-user = user.update_brand(color="#303F9F")
+updated_brand = client.user.update_brand(user.id, color="#303F9F")
 
-print(user)
+print(updated_brand)

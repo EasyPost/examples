@@ -3,10 +3,10 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-batch = easypost.Batch.retrieve("batch_...")
+batch = client.batch.retrieve("batch_...")
 
-batch.label(file_format="PDF")
+batch_with_label = client.batch.label(batch.id, file_format="PDF")
 
-print(batch)
+print(batch_with_label)

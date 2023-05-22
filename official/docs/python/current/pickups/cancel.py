@@ -3,9 +3,10 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-pickup = easypost.Pickup.retrieve("pickup_...")
-pickup.cancel()
+pickup = client.pickup.retrieve("pickup_...")
 
-print(pickup)
+cancelled_pickup = client.pickup.cancel(pickup.id)
+
+print(cancelled_pickup)

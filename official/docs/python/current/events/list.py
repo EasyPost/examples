@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-events = easypost.Events.all(page_size=5)
+events = client.event.all(page_size=5)
 
 print(events)

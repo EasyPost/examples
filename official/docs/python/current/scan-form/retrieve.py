@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-scan_form = easypost.ScanForm.retrieve("sf_...")
+scan_form = client.scan_form.retrieve("sf_...")
 
 print(scan_form)

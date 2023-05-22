@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-scan_form = easypost.ScanForm.create(
+scan_form = client.scan_form.create(
     shipments=[
         {"id": "shp_..."},
         {"id": "shp_..."},

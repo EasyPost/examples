@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-customs_item = easypost.CustomsItem.create(
+customs_item = client.customs_item.create(
     description="T-shirt",
     quantity=1,
     value=10,

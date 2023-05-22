@@ -3,9 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-carrier_account = easypost.CarrierAccount.retrieve("ca_...")
-carrier_account.delete()
+carrier_account = client.carrier_account.retrieve("ca_...")
 
-print(carrier_account)
+client.carrier_account.delete(carrier_account.id)

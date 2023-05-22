@@ -3,8 +3,8 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-batches = easypost.Batch.all(page_size=5)
+batches = client.batch.all(page_size=5)
 
 print(batches)

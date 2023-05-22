@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-address = easypost.Address.create_and_verify(
+address = client.address.create_and_verify(
     street1="417 Montgomery Street",
     street2="FL 5",
     city="San Francisco",

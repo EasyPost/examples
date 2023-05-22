@@ -3,10 +3,10 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-batch = easypost.Batch.retrieve("batch_...")
+batch = client.batch.retrieve("batch_...")
 
-batch.create_scan_form()
+batch_with_scan_form = client.batch.create_scan_form(batch.id)
 
-print(batch)
+print(batch_with_scan_form)

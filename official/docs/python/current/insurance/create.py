@@ -3,9 +3,9 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-insurance = easypost.Insurance.create(
+insurance = client.insurance.create(
     to_address={"id": "adr_..."},
     from_address={"id": "adr_..."},
     tracking_code="9400110898825022579493",

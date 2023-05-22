@@ -3,10 +3,11 @@ import os
 import easypost
 
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-order = easypost.Order.retrieve("order_...")
-order.buy(
+order = client.order.retrieve("order_...")
+bought_order = client.order.buy(
+    order.id,
     carrier="FedEx",
     service="FEDEX_GROUND",
 )
