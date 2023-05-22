@@ -8,6 +8,7 @@ client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 end_shipper = client.end_shipper.retrieve("es_...")
 
 updated_end_shipper = client.end_shipper.update(
+    end_shipper.id,
     name="NEW NAME",
     company="BAZ",
     street1="164 TOWNSEND STREET UNIT 1",
