@@ -12,10 +12,10 @@ func main() {
 	client := easypost.New(apiKey)
 
 	// Request all metadata for all carriers
-	carrierMetadata, _ := client.BetaGetCarrierMetadata()
+	carrierMetadata, _ := client.GetCarrierMetadata()
 	fmt.Println(carrierMetadata)
 
 	// Request specific metadata for specific carriers
-	carrierMetadataWithFilters, _ := client.BetaGetCarrierMetadataWithCarriersAndTypes([]string{"usps"}, []string{"service_levels", "predefined_packages"})
+	carrierMetadataWithFilters, _ := client.GetCarrierMetadataWithCarriersAndTypes([]string{"usps"}, []string{"service_levels", "predefined_packages"})
 	fmt.Println(carrierMetadataWithFilters)
 }

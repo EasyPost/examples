@@ -2,6 +2,10 @@ require 'easypost'
 
 client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
 
-metadata = client.beta_carrier_metadata.retrieve_carrier_metadata
+# Request all metadata for all carriers
+carrier_metadata = client.carrier_metadata.retrieve
 
-puts metadata
+# Request specific metadata for specific carriers
+carrier_metadata = client.carrier_metadata.retrieve('usps', ['service_levels', 'predefined_packages'])
+
+puts carrier_metadata

@@ -12,7 +12,7 @@ public class Retrieve {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
 
         // Request all metadata for all carriers
-        CarrierAccount carrierMetadata = client.betaCarrierMetadata.retrieveCarrierMetadata();
+        CarrierAccount carrierMetadata = client.carrierMetadata.retrieve();
         System.out.println(carrierMetadata);
 
         // Request specific metadata for specific carriers
@@ -23,7 +23,7 @@ public class Retrieve {
         types.add("service_levels");
         types.add("predefined_packages");
 
-        CarrierAccount carrierMetadata = client.betaCarrierMetadata.retrieveCarrierMetadata(carriers, types);
+        CarrierAccount carrierMetadata = client.carrierMetadata.retrieve(carriers, types);
         System.out.println(carrierMetadata);
     }
 }
