@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.homepage               = 'https://github.com/easypost/examples'
   spec.license                = 'MIT'
 
-  spec.add_dependency 'easypost', '~> 4'
+  spec.add_dependency 'easypost', '~> 5'
 
   spec.add_development_dependency 'rubocop', '= 1.49'
   spec.add_development_dependency 'rubocop-rspec', '~> 2.19'
