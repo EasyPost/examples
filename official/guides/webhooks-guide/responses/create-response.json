@@ -1,7 +1,7 @@
 {
-    "id": "hook_...",
-    "object": "Webhook",
-    "mode": "production",
-    "url": "http://example.com",
-    "disabled_at": null
+  "id": "hook_...",
+  "object": "Webhook",
+  "mode": "production",
+  "url": "http://example.com",
+  "disabled_at": null
 }

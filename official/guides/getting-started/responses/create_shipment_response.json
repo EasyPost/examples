@@ -1,28 +1,28 @@
 {
-    "rates": [
-        {
-            "id": "rate_...",
-            "object": "Rate",
-            "created_at": "2014-07-10T01:06:46Z",
-            "updated_at": "2014-07-10T01:06:46Z",
-            "service": "First",
-            "rate": "2.93",
-            "currency": "USD",
-            "est_delivery_days": 0,
-            "carrier": "USPS",
-            "shipment_id": "shp_..."
-        },
-        {
-            "id": "rate_...",
-            "object": "Rate",
-            "created_at": "2014-07-10T01:06:46Z",
-            "updated_at": "2014-07-10T01:06:46Z",
-            "service": "Priority",
-            "rate": "6.51",
-            "currency": "USD",
-            "est_delivery_days": null,
-            "carrier": "USPS",
-            "shipment_id": "shp_..."
-        }
-    ]
+  "rates": [
+    {
+      "id": "rate_...",
+      "object": "Rate",
+      "created_at": "2014-07-10T01:06:46Z",
+      "updated_at": "2014-07-10T01:06:46Z",
+      "service": "First",
+      "rate": "2.93",
+      "currency": "USD",
+      "est_delivery_days": 0,
+      "carrier": "USPS",
+      "shipment_id": "shp_..."
+    },
+    {
+      "id": "rate_...",
+      "object": "Rate",
+      "created_at": "2014-07-10T01:06:46Z",
+      "updated_at": "2014-07-10T01:06:46Z",
+      "service": "Priority",
+      "rate": "6.51",
+      "currency": "USD",
+      "est_delivery_days": null,
+      "carrier": "USPS",
+      "shipment_id": "shp_..."
+    }
+  ]
 }

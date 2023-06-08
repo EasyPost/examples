@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>EasyPost PrintLabels</title>
-    </head>
-    <body>
-        <h3>Labels</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Created at</th>
-                    <th>To Address</th>
-                    <th>Mode</th>
-                    <th>ZPL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% shipments.shipments.each do |shipment| %>
-                <tr>
-                    <td><%= DateTime.parse(shipment.postage_label.created_at) %></td>
-                    <td>
-                        <% addr = shipment.to_address %>
-                        <b><%= addr.name %></b><br />
-                        <%= addr.street1 %><br />
-                        <%= addr.street2 %><br />
-                        <%= addr.city %>, <%= addr.state %> <%= addr.zip %><br />
-                    </td>
-                    <td><%= shipment.mode %></td>
-                    <td>
-                        <% if shipment.postage_label.label_zpl_url %>
-                        <a href="/shipments/<%= shipment.id %>/zpl/print">print</a>
-                        <a href="<%= shipment.postage_label.label_zpl_url %>">download</a>
-                        <% else %>
-                        <a href="/shipments/<%= shipment.id %>/zpl/generate">generate</a>
-                        <% end %>
-                    </td>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </body>
+  <head>
+    <title>EasyPost PrintLabels</title>
+  </head>
+  <body>
+    <h3>Labels</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Created at</th>
+          <th>To Address</th>
+          <th>Mode</th>
+          <th>ZPL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% shipments.shipments.each do |shipment| %>
+        <tr>
+          <td><%= DateTime.parse(shipment.postage_label.created_at) %></td>
+          <td>
+            <% addr = shipment.to_address %>
+            <b><%= addr.name %></b><br />
+            <%= addr.street1 %><br />
+            <%= addr.street2 %><br />
+            <%= addr.city %>, <%= addr.state %> <%= addr.zip %><br />
+          </td>
+          <td><%= shipment.mode %></td>
+          <td>
+            <% if shipment.postage_label.label_zpl_url %>
+            <a href="/shipments/<%= shipment.id %>/zpl/print">print</a>
+            <a href="<%= shipment.postage_label.label_zpl_url %>">download</a>
+            <% else %>
+            <a href="/shipments/<%= shipment.id %>/zpl/generate">generate</a>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </body>
 </html>
