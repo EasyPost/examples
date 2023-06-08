@@ -37,7 +37,6 @@ install: | install-csharp install-go install-java install-node install-php insta
 ## install-csharp - install C# dependencies
 install-csharp:
 	cp -r style_guides/csharp/. ./
-	# Install linting tool
 	dotnet tool install -g dotnet-format || exit 0
 
 ## install-go - Install and vendor Go dependencies
@@ -48,7 +47,6 @@ install-go:
 ## install-java - installs Java dependencies
 install-java:
 	cp -r style_guides/java/. ./
-	# Download linting tool
 	curl -LJs https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3.1/checkstyle-10.3.1-all.jar -o checkstyle.jar
 	mvn dependency:resolve
 
