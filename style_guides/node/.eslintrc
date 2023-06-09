@@ -23,7 +23,8 @@
         "$": true
     },
     "parserOptions": {
-        "ecmaVersion": 13
+        "ecmaVersion": 13,
+        "requireConfigFile": false
     },
     "env": {
         "node": true,
