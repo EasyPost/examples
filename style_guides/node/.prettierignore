@@ -9,10 +9,9 @@ composer.json
 composer.lock
 coverage
 dist/
-docs/
+/docs
 examples
 official/fixtures/
-official/responses
 package-lock.json
 package.json
 style_guides/
