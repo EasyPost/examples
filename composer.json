@@ -19,8 +19,8 @@
     "squizlabs/php_codesniffer": "^3.7"
   },
   "scripts": {
-    "fix": "./bin/phpcbf",
-    "lint": "./bin/phpcs"
+    "fix": "./bin/phpcbf official/docs/php",
+    "lint": "./bin/phpcs official/docs/php"
   },
   "config": {
     "bin-dir": "bin"

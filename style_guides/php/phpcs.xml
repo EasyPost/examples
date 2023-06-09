@@ -3,9 +3,6 @@
 <ruleset name="PHP_CodeSniffer">
     <description>PHPCS configuration file.</description>
 
-    <!-- Where to lint -->
-    <file>official/docs/php</file>
-
     <!-- What to exclude -->
     <exclude-pattern>*/bin/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
