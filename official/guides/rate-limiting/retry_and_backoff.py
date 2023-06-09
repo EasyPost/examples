@@ -1,7 +1,5 @@
 import requests
-from urllib3.util.retry import (
-    Retry,
-)
+from urllib3.util.retry import Retry
 
 
 retry_strategy = Retry(
