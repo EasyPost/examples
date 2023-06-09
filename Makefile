@@ -145,7 +145,7 @@ format-python:
 
 ## format-ruby - formats Ruby files
 format-ruby:
-	rubocop -A
+	bundle exec rubocop -a
 
 ## format-shell - formats shell files
 format-shell:
