@@ -27,7 +27,7 @@ for FILE in "$SOURCE_DIR"/*; do
   FILENAME=$(basename "$FILE")
 
   # Skip the "*" since it's not actually a file
-  if [ "$FILENAME" == "*" ]; then
+  if [ "$FILENAME" = "*" ]; then
     continue
   fi
 
@@ -41,7 +41,7 @@ for FILE in "$SOURCE_DIR"/.*; do
   FILENAME=$(basename "$FILE")
 
   # Skip the current and parent directory
-  if [ "$FILENAME" == "." ] || [ "$FILENAME" == ".." ]; then
+  if [ "$FILENAME" = "." ] || [ "$FILENAME" = ".." ]; then
     continue
   fi
 
