@@ -18,7 +18,7 @@ jobs:
           SHFMT_OPTS: -i 2 -d
           SHELLCHECK_OPTS: -e SC2148,SC2034
   csharp:
-    runs-on: windows-2022
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
