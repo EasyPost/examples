@@ -24,11 +24,13 @@
   },
   "homepage": "https://github.com/EasyPost/examples#readme",
   "devDependencies": {
-    "@easypost/eslint-config-easypost-base": "~2.2.3",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "~2.25.2",
-    "prettier": "^2.5.1"
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "^2.27.5",
+    "prettier": "^2.8.8"
   },
   "dependencies": {
     "@easypost/api": "^6.6.0"

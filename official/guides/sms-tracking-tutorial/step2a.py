@@ -1,10 +1,6 @@
 import easypost
-from flask import (
-    Flask,
-)
-from twilio.rest import (
-    TwilioRestClient,
-)
+from flask import Flask
+from twilio.rest import TwilioRestClient
 
 
 app = Flask(__name__)

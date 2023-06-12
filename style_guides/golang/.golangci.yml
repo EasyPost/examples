@@ -6,3 +6,10 @@ issues:
     - "github.com/EasyPost/easypost-go"
     - "undeclared name: `easypost`"
     - "expected 'package'"
+
+
+linters-settings:
+  staticcheck:
+    checks:
+      - all
+      - '-SA1019'
