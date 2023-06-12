@@ -50,13 +50,6 @@ jobs:
         run: make install-java
       - name: Lint project
         run: make lint-java
-      - name: Run CheckStyle checks
-        uses: nikitasavinov/checkstyle-action@0.5.1
-        with:
-          level: error
-          fail_on_error: true
-          checkstyle_config: easypost_java_style.xml
-          tool_name: 'style_enforcer'
   node:
     runs-on: ubuntu-latest
     steps:
