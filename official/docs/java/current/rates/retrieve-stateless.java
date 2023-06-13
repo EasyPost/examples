@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.StatelessRate;
-import com.easypost.model.Shipment;
 import com.easypost.service.EasyPostClient;
 
 public class Retrieve {
