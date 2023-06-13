@@ -27,5 +27,3 @@ RSpec/FilePath:
 Style/OptionalBooleanParameter:
   Exclude:
     - 'lib/easypost/services/*.rb'
-
-
