@@ -16,7 +16,7 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Parameters.Beta.Rate.Retrieve parameters = new()
+            Parameters.Beta.Rate.Retrieve shipmentDetails = new()
             {
                 ToAddress = new Parameters.Address.Create
                 {
@@ -50,7 +50,7 @@ namespace EasyPostExamples
                 }
             };
 
-            List<StatelessRate> rates = await client.Beta.Rate.RetrieveStatelessRates(parameters);
+            List<StatelessRate> rates = await client.Beta.Rate.RetrieveStatelessRates(shipmentDetails);
 
             Console.WriteLine(JsonConvert.SerializeObject(rates, Formatting.Indented));
         }

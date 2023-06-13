@@ -4,14 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.Rate;
-import com.easypost.model.Shipment;
+import com.easypost.model.StatelessRate;
 import com.easypost.service.EasyPostClient;
 
 public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
-        
+
         HashMap<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("name", "Dr. Steve Brule");
         toAddressMap.put("street1", "179 N Harbor Dr");
@@ -39,14 +38,12 @@ public class Retrieve {
         parcelMap.put("height", 5);
         parcelMap.put("weight", 65.9);
 
-        HashMap<String, Object> params = new HashMap<String, Object>();
-        params.put("to_address", toAddressMap);
-        params.put("from_address", fromAddressMap);
-        params.put("parcel", parcelMap);
+        HashMap<String, Object> shipmentDetails = new HashMap<String, Object>();
+        shipmentDetails.put("to_address", toAddressMap);
+        shipmentDetails.put("from_address", fromAddressMap);
+        shipmentDetails.put("parcel", parcelMap);
 
-        Shipment shipment = client.shipment.create(params);
-
-        List<Rate> rates = client.betaRate.retrieveStatelessRates(shipment);
+        List<StatelessRate> rates = client.betaRate.retrieveStatelessRates(shipmentDetails);
 
         System.out.println(rates);
     }
