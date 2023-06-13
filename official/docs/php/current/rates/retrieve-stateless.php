@@ -2,7 +2,7 @@
 
 $client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$shipment = $client->shipment->create([
+$shipmentDetails = [
     'to_address' => [
         'name' => 'Dr. Steve Brule',
         'street1' => '179 N Harbor Dr',
@@ -30,8 +30,8 @@ $shipment = $client->shipment->create([
         'height' => 5,
         'weight' => 65.9
     ]
-]);
+];
 
-$rates = $client->betaRate->retrieveStatelessRates($shipment);
+$rates = $client->betaRate->retrieveStatelessRates($shipmentDetails);
 
 echo $rates;

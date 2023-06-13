@@ -3,7 +3,7 @@ const EasyPostClient = require('@easypost/api');
 const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
 (async () => {
-  const rates = await client.BetaRate.retrieveStatelessRates({
+  const shipmentDetails = {
     to_address: {
       name: 'Dr. Steve Brule',
       street1: '179 N Harbor Dr',
@@ -30,7 +30,9 @@ const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
       height: 5,
       weight: 65.9,
     },
-  });
+  };
+
+  const rates = await client.BetaRate.retrieveStatelessRates(shipmentDetails);
 
   console.log(rates);
 })();

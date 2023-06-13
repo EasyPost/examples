@@ -2,7 +2,7 @@ require 'easypost'
 
 client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
 
-shipment = client.shipment.create(
+shipment_details = {
   to_address: {
     name: 'Dr. Steve Brule',
     street1: '179 N Harbor Dr',
@@ -30,8 +30,8 @@ shipment = client.shipment.create(
     height: 5,
     weight: 65.9,
   },
-)
+}
 
-rates = client.beta_rate.retrieve_stateless_rates(shipment)
+rates = client.beta_rate.retrieve_stateless_rates(shipment_details)
 
 puts rates
