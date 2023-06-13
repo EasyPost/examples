@@ -7,6 +7,12 @@ require:
 AllCops:
   TargetRubyVersion: 2.6
   NewCops: disable
+  SuggestExtensions: false
+  Exclude:
+    - bin/**/*
+    - docs/**/*
+    - examples/**/*
+    - vendor/bundle/**/*
 Layout/BlockAlignment:
   Enabled: true
   EnforcedStyleAlignWith: start_of_block
@@ -178,3 +184,24 @@ Style/SwapValues: # new in 1.1
   Enabled: true
 RSpec/Rails/AvoidSetupHook: # new in 2.4
   Enabled: true
+
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Naming/VariableNumber:
+  Exclude:
+    - 'official/docs/ruby/**/options/create-with-options.rb'
+Lint/UselessAssignment:
+  Exclude:
+    - 'official/docs/ruby/**/users/retrieve.rb'
+    - 'official/docs/ruby/**/api-keys/retrieve.rb'
+Naming/FileName:
+  Enabled: false
+
+# We are ignoring RSpec/FilePath because Simplecov doesn't play nice with nested spec files
+RSpec/FilePath:
+  Enabled: false
+# TODO: Remove this once we start using keyword arguments
+Style/OptionalBooleanParameter:
+  Exclude:
+    - 'lib/easypost/services/*.rb'
