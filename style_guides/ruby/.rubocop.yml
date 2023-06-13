@@ -12,3 +12,18 @@ Lint/UselessAssignment:
     - 'official/docs/ruby/**/api-keys/retrieve.rb'
 Naming/FileName:
   Enabled: false
+
+AllCops:
+  SuggestExtensions: false
+  Exclude:
+    - bin/**/*
+    - docs/**/*
+    - examples/**/*
+    - vendor/bundle/**/*
+# We are ignoring RSpec/FilePath because Simplecov doesn't play nice with nested spec files
+RSpec/FilePath:
+  Enabled: false
+# TODO: Remove this once we start using keyword arguments
+Style/OptionalBooleanParameter:
+  Exclude:
+    - 'lib/easypost/services/*.rb'
