@@ -11,7 +11,7 @@ $ curl -X POST "https://api.easypost.com/beta/rates" \
       "zip": "90277",
       "country": "US",
       "phone": "8573875756",
-      "email": "dr_steve_brule@gmail.com",
+      "email": "dr_steve_brule@gmail.com"
     },
     "from_address": {
       "name": "EasyPost",
