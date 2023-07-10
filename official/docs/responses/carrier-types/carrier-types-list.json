@@ -45,58 +45,60 @@
   },
   {
     "object": "CarrierType",
-    "type": "AsendiaAccount",
-    "readable": "Asendia USA (Legacy)",
+    "type": "AsendiaUsaAccount",
+    "readable": "Asendia USA",
     "logo": null,
     "fields": {
       "credentials": {
         "account_number": {
           "visibility": "visible",
-          "label": "Asendia Account Number"
+          "label": "AsendiaUsa Account Number"
         },
-        "company_name": {
+        "sub_account_number": {
           "visibility": "visible",
-          "label": "Company Name"
+          "label": "AsendiaUsa Sub Account Number"
         },
-        "ftp_username": {
+        "username": {
           "visibility": "visible",
-          "label": "FTP Username"
+          "label": "AsendiaUsa Username"
         },
-        "ftp_password": {
+        "password": {
           "visibility": "password",
-          "label": "FTP Password"
+          "label": "AsendiaUsa Password"
         },
-        "prioritytracked": {
-          "visibility": "checkbox",
-          "label": "Priority Tracked"
+        "api_key": {
+          "visibility": "masked",
+          "label": "AsendiaUsa API key"
         },
-        "pmi": {
-          "visibility": "checkbox",
-          "label": "PMI"
+        "carrier_facility": {
+          "visibility": "select",
+          "label": "AsendiaUsa Carrier Facility / Processing Location (Optional)"
+        }
+      },
+      "test_credentials": {
+        "account_number": {
+          "visibility": "visible",
+          "label": "Test AsendiaUsa Account Number"
         },
-        "epacket": {
-          "visibility": "checkbox",
-          "label": "ePacket"
+        "sub_account_number": {
+          "visibility": "visible",
+          "label": "Test AsendiaUsa Sub Account Number"
         },
-        "internationalexpress": {
-          "visibility": "checkbox",
-          "label": "International Express"
+        "username": {
+          "visibility": "visible",
+          "label": "Test AsendiaUsa Username"
         },
-        "ipa": {
-          "visibility": "checkbox",
-          "label": "IPA"
+        "password": {
+          "visibility": "password",
+          "label": "Test AsendiaUsa Password"
         },
-        "isal": {
-          "visibility": "checkbox",
-          "label": "ISAL"
+        "api_key": {
+          "visibility": "masked",
+          "label": "Test AsendiaUsa API key"
         },
-        "pmei": {
-          "visibility": "checkbox",
-          "label": "PMEI"
-        },
-        "other": {
-          "visibility": "checkbox",
-          "label": "Other"
+        "carrier_facility": {
+          "visibility": "select",
+          "label": "Test AsendiaUsa Carrier Facility / Processing Location (Optional)"
         }
       }
     }

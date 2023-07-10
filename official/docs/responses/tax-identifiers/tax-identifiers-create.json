@@ -134,28 +134,6 @@
       "est_delivery_days": 2,
       "shipment_id": "shp_add821aaa60f4ab98626ea97b483d77e",
       "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
-    },
-    {
-      "id": "rate_727d6cad35a44f03a2ee17d93ed995e8",
-      "object": "Rate",
-      "created_at": "2022-10-17T17:17:57Z",
-      "updated_at": "2022-10-17T17:17:57Z",
-      "mode": "test",
-      "service": "ParcelSelect",
-      "carrier": "USPS",
-      "rate": "9.16",
-      "currency": "USD",
-      "retail_rate": "9.16",
-      "retail_currency": "USD",
-      "list_rate": "9.16",
-      "list_currency": "USD",
-      "billing_type": "easypost",
-      "delivery_days": 5,
-      "delivery_date": null,
-      "delivery_date_guaranteed": false,
-      "est_delivery_days": 5,
-      "shipment_id": "shp_add821aaa60f4ab98626ea97b483d77e",
-      "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
     }
   ],
   "refund_status": null,

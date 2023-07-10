@@ -98,28 +98,6 @@
   "postage_label": null,
   "rates": [
     {
-      "id": "rate_d56ea9cc34e44f86aed4d5b06f743d42",
-      "object": "Rate",
-      "created_at": "2022-10-17T17:18:10Z",
-      "updated_at": "2022-10-17T17:18:10Z",
-      "mode": "test",
-      "service": "ParcelSelect",
-      "carrier": "USPS",
-      "rate": "9.16",
-      "currency": "USD",
-      "retail_rate": "9.16",
-      "retail_currency": "USD",
-      "list_rate": "9.16",
-      "list_currency": "USD",
-      "billing_type": "easypost",
-      "delivery_days": 5,
-      "delivery_date": null,
-      "delivery_date_guaranteed": false,
-      "est_delivery_days": 5,
-      "shipment_id": "shp_c40aadc091ac456a8d611bb978aaa323",
-      "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
-    },
-    {
       "id": "rate_75183f00ed5048379b293997cab050e4",
       "object": "Rate",
       "created_at": "2022-10-17T17:18:10Z",
