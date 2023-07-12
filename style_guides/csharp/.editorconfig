@@ -670,3 +670,5 @@ dotnet_diagnostic.CA5386.severity = none
 dotnet_diagnostic.CA1014.severity = none
 ### Make instance methods static
 dotnet_diagnostic.CA1822.severity = none
+### Properties should not return arrays
+dotnet_diagnostic.CA1819.severity = none
