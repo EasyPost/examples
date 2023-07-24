@@ -1,13 +1,14 @@
-# Import the EasyPost client.
+import os
+
 import easypost
 
 
-# Setup the client with your API key.
-easypost.api_key = "259DA788-39A3-439E-BA1E-BC541B8BA520"
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-# Purchase and insure a shipment.
-shipment = easypost.Shipment.retrieve("shp_339f74ca0aa840d399bbb728a3ac3863")
-shipment.buy(
+# Purchase and insure a shipment
+shipment = easypost.shipment.retrieve("shp_123")
+client.shipment.buy(
+    shipment.id,
     rate=shipment.lowest_rate(),
     insurance=99.99,
 )

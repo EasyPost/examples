@@ -1,11 +1,11 @@
-# Import the EasyPost client.
+import os
+
 import easypost
 
 
-# Setup the client with your API key.
-easypost.api_key = "259DA788-39A3-439E-BA1E-BC541B8BA520"
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
-# Calculate the carbon emissions and cost to offset carbon emissions.
+# Calculate the carbon emissions and cost to offset carbon emissions
 shipment = easypost.Shipment.create(
     with_carbon_offset=True,
     to_address=to_address,
