@@ -16,16 +16,22 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-            Parcel parcel = await client.Parcel.Create(new Dictionary<string, object>() {
-                { "predefined_package", "Parcel" },
-                { "weight", 28 }
-            });
+            Parcel parcel = await client.Parcel.Create(
+              new Parameters.Parcel.Create
+              {
+                  PredefinedPackage = "Parcel",
+                  Weight = 28
+              }
+            );
 
-            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>() {
-                { "to_address", toAddress },
-                { "from_address", fromAddress },
-                { "parcel", parcel }
-            });
+            Shipment shipment = await client.Shipment.Create(
+                new Parameters.Shipment.Create
+                {
+                    ToAddress = toAddress,
+                    FromAddress = fromAddress,
+                    Parcel = parcel
+                }
+            );
 
             await client.shipment.Buy(shipment.Id, shipment.LowestRate());
         }
