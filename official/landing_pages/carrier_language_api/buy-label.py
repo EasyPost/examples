@@ -1,14 +1,20 @@
-to_address = easypost.Address.create(...)
-from_address = easypost.Address.create(...)
-parcel = easypost.Parcel.create(
-    predefined_package="Parcel",
-    weight=28,
-)
+import os
 
-shipment = easypost.Shipment.create(
+import easypost
+
+
+client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
+
+shipment = client.shipment.create(
     to_address=to_address,
     from_address=from_address,
-    parcel=parcel,
+    parcel={
+        "predefined_package": "Parcel",
+        "weight": 28,
+    },
 )
 
-shipment.buy(rate=shipment.lowest_rate())
+client.shipment.buy(
+    shipment.id,
+    rate=shipment.lowest_rate(),
+)

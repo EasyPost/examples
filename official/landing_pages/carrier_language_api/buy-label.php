@@ -1,16 +1,17 @@
 <?php
 
-$to_address = \\EasyPost\\Address::create(...)
-$from_address = \\EasyPost\\Address::create(...)
-$parcel = \\EasyPost\\Parcel::create(array(
-  'predefined_package' => 'Parcel'
-  'weight' => 28
-));
+$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-$shipment = \\EasyPost\\Shipment::create(array(
-  'to_address' => $to_address
-  'from_address' => $from_address,
-  'parcel' => $parcel
-));
+$shipment = $client->shipment->create([
+    'to_address' => $to_address,
+    'from_address' => $from_address,
+    'parcel' => [
+        'predefined_package' => 'Parcel',
+        'weight' => 28
+    ]
+]);
 
-$shipment->buy(array('rate' => $shipment->lowest_rate()));
+$client->shipment->buy(
+    $shipment->id,
+    ['rate' => $shipment->lowest_rate()]
+);

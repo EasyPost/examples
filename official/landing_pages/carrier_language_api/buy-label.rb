@@ -1,14 +1,14 @@
-to_address = EasyPost::Address.create(...)
-from_address = EasyPost::Address.create(...)
-parcel = EasyPost::Parcel.create(
-  predefined_package: "Parcel",
-  weight: 28
-)
+require 'easypost'
 
-shipment = EasyPost::Shipment.create(
+client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
+
+shipment = client.shipment.create(
   to_address: to_address,
   from_address: from_address,
-  parcel: parcel
+  parcel: {
+    predefined_package: "Parcel",
+    weight: 28
+  }
 )
 
-shipment.buy(shipment.lowest_rate)
+client.shipment.buy(shipment.id, shipment.lowest_rate)
