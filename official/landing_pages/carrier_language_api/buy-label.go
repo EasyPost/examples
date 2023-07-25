@@ -27,5 +27,5 @@ func main() {
 		},
 	)
 
-	client.BuyShipment(shipment.ID, shipment.Rates[0], "")
+	_, _ = client.BuyShipment(shipment.ID, shipment.Rates[0], "")
 }
