@@ -1,7 +1,6 @@
 package example
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/EasyPost/easypost-go/v2"
@@ -11,20 +10,22 @@ func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-    parcel, err := client.CreateParcel(
-        &easypost.Parcel(
-          PredefinedPackage: "Parcel",
-          Weight: 28,
-        ),
-      )
+	address, _ := client.CreateAddress(&easypost.Address{}, &easypost.CreateAddressOptions{})
 
-      shipment, err := client.CreateShipment(
-        &easypost.Shipment(
-          ToAddress: toAddress,
-          FromAddress: fromAddress,
-          Parcel: parcel,
-        ),
-      )
+	parcel, _ := client.CreateParcel(
+		&easypost.Parcel{
+			PredefinedPackage: "Parcel",
+			Weight:            28,
+		},
+	)
 
-      shipment, err = client.BuyShipment(shipment.ID, shipment.Rates[0])
+	shipment, _ := client.CreateShipment(
+		&easypost.Shipment{
+			ToAddress:   address,
+			FromAddress: address,
+			Parcel:      parcel,
+		},
+	)
+
+	client.BuyShipment(shipment.ID, shipment.Rates[0], "")
 }
