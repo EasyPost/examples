@@ -1,0 +1,38 @@
+{
+  "mode": "production",
+  "description": "batch.created",
+  "previous_attributes": { "state": "purchasing" },
+  "pending_urls": ["example.com/easypost-webhook"],
+  "completed_urls": [],
+  "created_at": "2015-12-03T19:09:19Z",
+  "updated_at": "2015-12-03T19:09:19Z",
+  "result": {
+    "id": "batch_...",
+    "object": "Batch",
+    "mode": "production",
+    "state": "purchased",
+    "num_shipments": 1,
+    "reference": null,
+    "created_at": "2015-12-03T19:09:19Z",
+    "updated_at": "2015-12-03T19:09:19Z",
+    "scan_form": null,
+    "shipments": [
+      {
+        "batch_status": "postage_purchased",
+        "batch_message": null,
+        "id": "shp_a5b1348307694736aaqqqq8fqda53f93"
+      }
+    ],
+    "status": {
+      "created": 0,
+      "queued_for_purchase": 0,
+      "creation_failed": 0,
+      "postage_purchased": 1,
+      "postage_purchase_failed": 0
+    },
+    "pickup": null,
+    "label_url": null
+  },
+  "id": "evt_...",
+  "object": "Event"
+}

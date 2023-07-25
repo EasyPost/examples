@@ -1,0 +1,52 @@
+{
+  "result": {
+    "id": "sf_...",
+    "object": "ScanForm",
+    "created_at": "2015-09-30T21:00:55Z",
+    "updated_at": "2015-09-30T21:00:57Z",
+    "tracking_codes": [
+      "9405536897846194850412",
+      "9400136897846194907281",
+      "9400136897846194977529"
+    ],
+    "address": {
+      "id": "adr_tyRwEd23",
+      "object": "Address",
+      "created_at": "2015-09-30T21:00:55Z",
+      "updated_at": "2015-09-30T21:00:55Z",
+      "name": "George Costanza",
+      "company": "Vandelay Industries",
+      "street1": "1 E 161st St.",
+      "street2": null,
+      "city": "Bronx",
+      "state": "NY",
+      "zip": "10451",
+      "country": "US",
+      "phone": null,
+      "email": null,
+      "mode": "test",
+      "carrier_facility": null,
+      "residential": null,
+      "federal_tax_id": null,
+      "state_tax_id": null,
+      "verifications": {}
+    },
+    "status": "created",
+    "message": null,
+    "form_url": "https://easypost-files.s3-us-west-2.amazonaws.com/...2c0cb9.pdf",
+    "form_file_type": null,
+    "batch_id": "batch_...",
+    "confirmation": null
+  },
+  "description": "scan_form.created",
+  "mode": "test",
+  "previous_attributes": {},
+  "created_at": "2015-09-30T21:00:57Z",
+  "pending_urls": [],
+  "completed_urls": ["https://www.example.com/easypost-webhook"],
+  "updated_at": "2015-09-30T21:00:57Z",
+  "id": "evt_...",
+  "user_id": "user_...",
+  "status": "in_queue",
+  "object": "Event"
+}

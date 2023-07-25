@@ -1,0 +1,15 @@
+{
+  "form": {
+    "type": "return_packing_slip",
+    "barcode": "RMA12345678900",
+    "line_items": [
+      {
+        "product": {
+          "title": "Square Reader",
+          "barcode": "123456789"
+        },
+        "units": 8
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "form": {
+    "type": "rma_qr_code",
+    "rma": {
+      "pack_and_return": true,
+      "label_image_data": "{{label_image_data}}",
+      "include_packing_slip": true,
+      "email_notification": true,
+      "affiliated_merchant": "example",
+      "order": {
+        "order_date": "2020-09-22",
+        "order_number": "123456",
+        "line_items": [
+          {
+            "quantity": 2,
+            "return_reason": "Custom String reason",
+            "sku": "1234SKU"
+          },
+          {
+            "quantity": 1,
+            "return_reason": "Return requested",
+            "sku": "1235SKU"
+          }
+        ]
+      }
+    }
+  }
+}
