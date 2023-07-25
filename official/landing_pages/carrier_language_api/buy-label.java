@@ -1,6 +1,8 @@
 package shipments;
 
 import com.easypost.exception.EasyPostException;
+import com.easypost.model.Shipment;
+import com.easypost.model.Parcel;
 import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;

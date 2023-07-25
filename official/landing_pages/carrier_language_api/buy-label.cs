@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
 using EasyPost.Models.API;
 using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -27,7 +27,7 @@ namespace EasyPostExamples
                 { "parcel", parcel }
             });
 
-            await client.shipment.Buy(shipment.LowestRate());
+            await client.shipment.Buy(shipment.Id, shipment.LowestRate());
         }
     }
 }
