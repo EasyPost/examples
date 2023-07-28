@@ -139,9 +139,9 @@ format-php:
 ## format-python - formats Python files
 format-python:
 	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/
-	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --lines-after-imports -1 --no-sections
 	$(PYTHON_VIRTUAL_BIN)/black official/guides/
-	$(PYTHON_VIRTUAL_BIN)/isort official/guides/
+	$(PYTHON_VIRTUAL_BIN)/isort official/guides/ --lines-after-imports -1 --no-sections
 
 ## format-ruby - formats Ruby files
 format-ruby:
@@ -159,6 +159,6 @@ format-node-check:
 ## format-python-check - checks that Python files conform to the correct format
 format-python-check:
 	$(PYTHON_VIRTUAL_BIN)/black official/docs/python/ --check
-	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --check-only
+	$(PYTHON_VIRTUAL_BIN)/isort official/docs/python/ --lines-after-imports -1 --no-sections --check-only
 
 .PHONY: help install install-csharp install-go install-java install-node install-php install-python install-ruby install-shell lint lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lint-shell format format-csharp format-go format-java format-node format-php format-python format-ruby format-shell format-node-check format-python-check
