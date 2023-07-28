@@ -100,6 +100,7 @@ lint-php:
 lint-python:
 	$(PYTHON_VIRTUAL_BIN)/flake8 official/docs/python/
 	$(PYTHON_VIRTUAL_BIN)/flake8 official/guides/
+	$(PYTHON_VIRTUAL_BIN)/flake8 official/landing_pages/
 
 ## lint-ruby - lints Ruby files
 lint-ruby:
