@@ -1,6 +1,5 @@
 import easypost
 
-
 customs_info = easypost.CustomsInfo.create(
     eel_pfc="NOEEI 30.37(a)",
     customs_certify=True,

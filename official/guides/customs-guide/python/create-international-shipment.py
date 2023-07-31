@@ -1,6 +1,5 @@
 import easypost
 
-
 easypost.Shipment.create(
     to_address={
         "name": "Tim Canterbury",

@@ -1,6 +1,5 @@
 import easypost
 
-
 easypost.api_key = "<YOUR_PRODUCTION_API_KEY>"
 
 me = easypost.User.retrieve()

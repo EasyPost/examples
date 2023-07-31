@@ -1,6 +1,5 @@
 import easypost
 
-
 customs_item1 = easypost.CustomsItem.create(
     description="T-shirt",
     quantity=1,
