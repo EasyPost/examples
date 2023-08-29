@@ -4,14 +4,18 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/EasyPost/easypost-go/v2"
+	"github.com/EasyPost/easypost-go/v3"
 )
 
 func main() {
 	apiKey := os.Getenv("EASYPOST_API_KEY")
 	client := easypost.New(apiKey)
 
-	webhook, _ := client.CreateWebhook("example.com")
+	webhook, _ := client.CreateWebhookWithDetails(
+        &easypost.CreateUpdateWebhookOptions{
+            URL: "example.com",
+        },
+    )
 
 	fmt.Println(webhook)
 }
