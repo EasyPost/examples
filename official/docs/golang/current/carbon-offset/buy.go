@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/EasyPost/easypost-go/v2"
+	"github.com/EasyPost/easypost-go/v3"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 	client := easypost.New(apiKey)
 
 	shipment, _ := client.GetShipment("shp_...")
-	rate, _ := client.LowestRate(shipment)
+	rate, _ := client.LowestShipmentRate(shipment)
 
 	shipment, _ = client.BuyShipmentWithCarbonOffset("shp_...", &rate, "100.00")
 
