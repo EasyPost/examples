@@ -11,12 +11,11 @@ retry_strategy = Retry(
         503,
         504,
     ],
-    method_whitelist=[
+    allowed_methods=[
         "DELETE",
         "GET",
     ],
 )
-adapter = requests.adapters.HTTPAdapter(max_retries=retry_strategy)
 requests_session = requests.Session()
 requests_http_adapter = requests.adapters.HTTPAdapter(max_retries=retry_strategy)
-requests_session.mount(prefix="https://api.easypost.com", adapter=requests_http_adapter)
+requests_session.mount(prefix="https://", adapter=requests_http_adapter)
