@@ -1,6 +1,6 @@
 {
   "id": "batch_35638a505b00489da8feea4209b66c01",
-  "object": "EasyPost::Entity::Batch",
+  "object": "Batch",
   "mode": "test",
   "state": "creating",
   "num_shipments": 1,
