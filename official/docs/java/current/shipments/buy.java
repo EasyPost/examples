@@ -14,7 +14,7 @@ public class Buy {
 
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("rate", shipment.lowestRate());
-        params.put("insurance", 249.99);
+        params.put("insurance", "249.99");
 
         Shipment boughtShipment = client.shipment.buy(shipment.getId(), params);
 
