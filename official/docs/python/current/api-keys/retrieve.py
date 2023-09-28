@@ -4,10 +4,12 @@ import os
 client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
 # Retrieve all API keys (authenticated user and child user keys)
-api_keys = client.user.all_api_keys()
+api_keys = client.api_key.all()
+
+print(api_keys)
 
 # Retrieve API keys for a child user
 child_user = client.user.retrieve("user_...")
-api_keys = client.user.api_keys(child_user.id)
+child_api_keys = client.api_key.retrieve_api_keys_for_user(child_user.id)
 
-print(api_keys)
+print(child_api_keys)
