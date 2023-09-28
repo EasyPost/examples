@@ -18,6 +18,11 @@ namespace EasyPostExamples
             List<ApiKey> apiKeys = await client.ApiKey.All();
 
             Console.WriteLine(JsonConvert.SerializeObject(apiKeys, Formatting.Indented));
+
+            // Retrieve API keys for a specific child user
+            List<ApiKey> childApiKeys = await client.ApiKey.RetrieveApiKeysForUser("user_...");
+
+            Console.WriteLine(JsonConvert.SerializeObject(childApiKeys, Formatting.Indented));
         }
     }
 }

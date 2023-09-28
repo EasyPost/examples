@@ -11,5 +11,10 @@ public class Retrieve {
         ApiKeys parentKeys = client.apikeys.all();
 
         System.out.println(parentKeys);
+
+        // Retrieve API keys for a specific child user
+        ApiKeys childKeys = client.user.apiKeys("user_...");
+
+        System.out.println(childKeys);
     }
 }
