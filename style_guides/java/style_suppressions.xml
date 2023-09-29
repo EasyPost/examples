@@ -34,4 +34,13 @@
     <!-- General -->
     <!-- Don't do any CheckStyle checks on any non-Java files. -->
     <suppress files=".+\.(?:txt|xml|csv|sh|thrift|html|sql|eot|ttf|woff|css|png)$" checks=".*" />
+
+    <!-- Security -->
+    <!-- Ignore known vulnerability in JGit, used only by the DependencyCheck Maven plugin (not passed to end-users) -->
+    <!-- ref: https://github.com/jeremylong/DependencyCheck/issues/5943 -->
+    <suppress base="true">
+      <notes><![CDATA[FP per issue #5943]]></notes>
+      <packageUrl regex="true">^pkg:maven/org\.eclipse\.jgit/org\.eclipse\.jgit@.*$</packageUrl>
+      <cpe>cpe:/a:eclipse:jgit</cpe>
+    </suppress>
 </suppressions>
