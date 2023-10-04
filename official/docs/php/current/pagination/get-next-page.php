@@ -2,7 +2,7 @@
 
 $client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
 
-// Get first page of results 
+// Get first page of results
 $shipments = $client->shipment->all([
     'page_size' => 5,
 ]);

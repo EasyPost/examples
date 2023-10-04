@@ -16,7 +16,7 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
-	    // Get first page of results
+            // Get first page of results
             Parameters.Shipment.All parameters = new()
             {
                 PageSize = 5
@@ -24,8 +24,8 @@ namespace EasyPostExamples
 
             ShipmentCollection shipmentCollection = await client.Shipment.All(parameters);
 
-	    // Provide the previous results page to move onto the next page
-	    ShipmentCollection nextPage = await client.Shipment.GetNextPage(shipmentCollection)
+            // Provide the previous results page to move onto the next page
+            ShipmentCollection nextPage = await client.Shipment.GetNextPage(shipmentCollection)
 
             Console.WriteLine(JsonConvert.SerializeObject(nextPage, Formatting.Indented));
         }
