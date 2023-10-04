@@ -15,6 +15,7 @@ namespace EasyPostExamples
 
             var client = new EasyPost.Client(apiKey);
 
+            // Retrieve all API keys including children
             List<ApiKey> apiKeys = await client.ApiKey.All();
 
             Console.WriteLine(JsonConvert.SerializeObject(apiKeys, Formatting.Indented));
