@@ -25,3 +25,4 @@ venv
 /style_suppressions.xml
 /.dummy
 /.eslintignore
+*.sw*
