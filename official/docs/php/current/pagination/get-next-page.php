@@ -8,6 +8,6 @@ $shipments = $client->shipment->all([
 ]);
 
 // Provide the previous results page to move onto the next page
-$nextPage = $client->shipmenbts->getNextPage($shipments);
+$nextPage = $client->shipments->getNextPage($shipments);
 
 echo $nextPage;
