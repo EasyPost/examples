@@ -8,7 +8,6 @@ api_keys = client.api_key.all
 puts api_keys
 
 # Retrieve API keys for a specific child user
-child_user = client.user.retrieve('user_...')
-child_api_keys = client.api_key.retrieve_api_keys_for_user(child_user.id)
+child_api_keys = client.api_key.retrieve_api_keys_for_user('user_...')
 
 puts child_api_keys
