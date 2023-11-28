@@ -20,5 +20,7 @@ func main() {
         },
     )
 
-    fmt.Println(err.Code)
+    if err, ok := err.(*easypost.APIError); ok {
+        fmt.Println(err.Code)
+    }
 }
