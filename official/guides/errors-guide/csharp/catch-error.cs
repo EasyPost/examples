@@ -8,7 +8,7 @@ try
 }
   await Address.Create(parameters);
 }
-catch (EasyPost.HttpException e)
+catch (EasyPost.Exceptions.API.ApiError error)
 {
-    Console.Write(e.Code); // ADDRESS.VERIFY.FAILURE
+    Console.Write(error.Code); // ADDRESS.VERIFY.FAILURE
 }
