@@ -3,7 +3,7 @@ package errors;
 import java.util.HashMap;
 
 import com.easypost.EasyPost;
-import com.easypost.exception.EasyPostException;
+import com.easypost.exception.APIException;
 
 public class CatchError {
     public static void main(String[] args) throws EasyPostException {
@@ -15,8 +15,8 @@ public class CatchError {
             address.put("verify_strict", true);
 
             Address.create(address);
-        } catch (EasyPostException e) {
-            System.err.println(e.getMessage());
+        } catch (APIException error) {
+            System.err.println(error.getCode());
         }
     }
 }

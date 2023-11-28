@@ -2,5 +2,5 @@ import easypost
 
 try:
     easypost.Address.create({"strict_verify": True})
-except easypost.Error as e:
-    print(e.json_body["code"])
+except easypost.errors.api.ApiError as error:
+    print(error.code)
