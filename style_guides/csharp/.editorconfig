@@ -672,3 +672,5 @@ dotnet_diagnostic.CA1014.severity = none
 dotnet_diagnostic.CA1822.severity = none
 ### Properties should not return arrays
 dotnet_diagnostic.CA1819.severity = none
+### Use pre-formatted strings in .NET 8.0
+dotnet_diagnostic.CA1863.severity = none
