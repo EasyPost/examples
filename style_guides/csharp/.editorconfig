@@ -674,3 +674,8 @@ dotnet_diagnostic.CA1822.severity = none
 dotnet_diagnostic.CA1819.severity = none
 ### Use pre-formatted strings in .NET 8.0
 dotnet_diagnostic.CA1863.severity = none
+### Use primary constructors in .NET 8.0
+dotnet_diagnostic.IDE0290.severity = none
+### Use collection initializers in .NET 8.0
+dotnet_diagnostic.IDE0028.severity = none
+dotnet_diagnostic.IDE0305.severity = none
