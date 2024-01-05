@@ -23,11 +23,10 @@
     },
     "incorrect": {
       "company": "EasyPost",
-      "street1": "417 montgomery street",
-      "street2": "FL 5",
-      "city": "San Francisco",
-      "state": "CA",
-      "zip": "94104",
+      "street1": "000 unknown street",
+      "city": "Not A City",
+      "state": "ZZ",
+      "zip": "00001",
       "country": "US",
       "email": "test@example.com",
       "phone": "5555555555"
