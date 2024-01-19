@@ -1,14 +1,16 @@
 {
-  "id": "sf_cc2ae5bd5aa54c77b95da41d09ce66b7",
+  "id": "sf_528ce3f9e7514f3e913981b96b31f43f",
   "object": "ScanForm",
-  "created_at": "2022-10-17T17:17:37Z",
-  "updated_at": "2022-10-17T17:17:37Z",
-  "tracking_codes": ["9405500106068143632979"],
+  "created_at": "2024-01-19T21:41:59Z",
+  "updated_at": "2024-01-19T21:42:00Z",
+  "tracking_codes": [
+    "9405500207552010707764"
+  ],
   "address": {
-    "id": "adr_98589d044e3f11edbf5dac1f6bc7bdc6",
+    "id": "adr_9284d509b71311eea334ac1f6bc53342",
     "object": "Address",
-    "created_at": "2022-10-17T17:17:36+00:00",
-    "updated_at": "2022-10-17T17:17:36+00:00",
+    "created_at": "2024-01-19T21:41:58+00:00",
+    "updated_at": "2024-01-19T21:41:58+00:00",
     "name": "EasyPost",
     "company": null,
     "street1": "417 Montgomery Street",
@@ -28,8 +30,8 @@
   },
   "status": "created",
   "message": null,
-  "form_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20221017/b1d3be3965e846dd866854e0ac6f6ef6.pdf",
+  "form_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20240119/e854ab77cf96b1465ebf32276ca4fc78d1.pdf",
   "form_file_type": null,
-  "batch_id": "batch_5dd34c4b69764f8c8e6d77d72d28e8d7",
+  "batch_id": "batch_ebb3185b929f4500afa690677d49ff33",
   "confirmation": null
 }

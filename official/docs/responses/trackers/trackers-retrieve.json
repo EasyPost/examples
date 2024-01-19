@@ -1,27 +1,27 @@
 {
-  "id": "trk_f7ed99b497a944fb84f99bf6a9a5f8ea",
+  "id": "trk_783fdb3f049b43c9a1092ed41513055e",
   "object": "Tracker",
   "mode": "test",
-  "tracking_code": "9461200106068143633117",
+  "tracking_code": "9405500207552010707832",
   "status": "pre_transit",
   "status_detail": "status_update",
-  "created_at": "2022-10-17T17:18:08Z",
-  "updated_at": "2022-10-17T17:18:08Z",
+  "created_at": "2024-01-19T21:42:16Z",
+  "updated_at": "2024-01-19T21:42:16Z",
   "signed_by": null,
   "weight": null,
-  "est_delivery_date": "2022-10-17T17:18:08Z",
-  "shipment_id": "shp_b3b2b84b0ad14a2ca926ab8fddd02ef2",
+  "est_delivery_date": "2024-01-19T21:42:16Z",
+  "shipment_id": "shp_1b88cbe26946440d8d1afca25750e9ac",
   "carrier": "USPS",
   "tracking_details": [
     {
       "object": "TrackingDetail",
       "message": "Pre-Shipment Info Sent to USPS",
-      "description": null,
+      "description": "",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "datetime": "2022-09-17T17:18:08Z",
+      "datetime": "2023-12-19T21:42:16Z",
       "source": "USPS",
-      "carrier_code": null,
+      "carrier_code": "",
       "tracking_location": {
         "object": "TrackingLocation",
         "city": null,
@@ -33,12 +33,12 @@
     {
       "object": "TrackingDetail",
       "message": "Shipping Label Created",
-      "description": null,
+      "description": "",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "datetime": "2022-09-18T05:55:08Z",
+      "datetime": "2023-12-20T10:19:16Z",
       "source": "USPS",
-      "carrier_code": null,
+      "carrier_code": "",
       "tracking_location": {
         "object": "TrackingLocation",
         "city": "HOUSTON",
@@ -69,5 +69,5 @@
     "alternate_identifier": null,
     "initial_delivery_attempt": null
   },
-  "public_url": "https://track.easypost.com/djE6dHJrX2Y3ZWQ5OWI0OTdhOTQ0ZmI4NGY5OWJmNmE5YTVmOGVh"
+  "public_url": "https://track.easypost.com/djE6dHJrXzc4M2ZkYjNmMDQ5YjQzYzlhMTA5MmVkNDE1MTMwNTVl"
 }

@@ -1,10 +1,10 @@
 {
-  "id": "ca_beb493ce1a8248c595e10426317cae4e",
+  "id": "ca_49661b5fd3e441b48514efaeb722c886",
   "object": "CarrierAccount",
   "type": "DhlEcsAccount",
   "clone": false,
-  "created_at": "2022-10-17T17:16:46Z",
-  "updated_at": "2022-10-17T17:16:47Z",
+  "created_at": "2024-01-19T21:40:40Z",
+  "updated_at": "2024-01-19T21:40:41Z",
   "description": "My custom description",
   "reference": null,
   "billing_type": "carrier",

@@ -1,10 +1,10 @@
 {
-  "id": "ca_d154739695ea4d7794f31be91aef2515",
+  "id": "ca_4bced7adc4364f35b177e9de0b953c6f",
   "object": "CarrierAccount",
   "type": "DhlEcsAccount",
   "clone": false,
-  "created_at": "2022-10-17T17:16:44Z",
-  "updated_at": "2022-10-17T17:16:44Z",
+  "created_at": "2024-01-19T21:40:39Z",
+  "updated_at": "2024-01-19T21:40:39Z",
   "description": "CA Location DHL eCommerce Solutions Account",
   "reference": null,
   "billing_type": "carrier",
