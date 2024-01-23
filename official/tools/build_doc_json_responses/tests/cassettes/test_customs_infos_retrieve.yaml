@@ -1,0 +1,1222 @@
+interactions:
+- request:
+    body: '{"customs_info": {"customs_certify": "true", "customs_signer": "Steve Brule",
+      "contents_type": "merchandise", "contents_explanation": "", "restriction_type":
+      "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items": [{"description": "T-shirt",
+      "quantity": "1", "weight": "5", "value": "10", "code": "123", "hs_tariff_number":
+      "123456", "origin_country": "US"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/customs_infos
+  response:
+    body:
+      string: '{"id": "cstinfo_5407d9771090494a8ef46d89d5994230", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:40:43Z", "updated_at": "2024-01-19T21:40:43Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_a75fa158444145deaf5287b2ab3bf6d7",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:40:43Z", "updated_at":
+        "2024-01-19T21:40:43Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/customs_infos/cstinfo_5407d9771090494a8ef46d89d5994230
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaec5be78b9b66000cd092
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.046837'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/customs_infos/cstinfo_5407d9771090494a8ef46d89d5994230
+  response:
+    body:
+      string: '{"id": "cstinfo_5407d9771090494a8ef46d89d5994230", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:40:43Z", "updated_at": "2024-01-19T21:40:43Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_a75fa158444145deaf5287b2ab3bf6d7",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:40:43Z", "updated_at":
+        "2024-01-19T21:40:43Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaec5be78b9b67000cd0b8
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb41nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.031429'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"customs_info": {"customs_certify": "true", "customs_signer": "Steve Brule",
+      "contents_type": "merchandise", "contents_explanation": "", "restriction_type":
+      "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items": [{"description": "T-shirt",
+      "quantity": "1", "weight": "5", "value": "10", "code": "123", "hs_tariff_number":
+      "123456", "origin_country": "US"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/customs_infos
+  response:
+    body:
+      string: '{"id": "cstinfo_3b8b4025ac1c4266b538cd81c5f5cc96", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:43:12Z", "updated_at": "2024-01-19T21:43:12Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_9c38e7d398c0482292e350e6b3354ac8",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:43:12Z", "updated_at":
+        "2024-01-19T21:43:12Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/customs_infos/cstinfo_3b8b4025ac1c4266b538cd81c5f5cc96
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaecf0e78ba38a000d2e45
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb33nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.070604'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/customs_infos/cstinfo_3b8b4025ac1c4266b538cd81c5f5cc96
+  response:
+    body:
+      string: '{"id": "cstinfo_3b8b4025ac1c4266b538cd81c5f5cc96", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:43:12Z", "updated_at": "2024-01-19T21:43:12Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_9c38e7d398c0482292e350e6b3354ac8",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:43:12Z", "updated_at":
+        "2024-01-19T21:43:12Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f765aaecf0e78ba38b000d2e7e
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.023632'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"customs_info": {"customs_certify": "true", "customs_signer": "Steve Brule",
+      "contents_type": "merchandise", "contents_explanation": "", "restriction_type":
+      "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items": [{"description": "T-shirt",
+      "quantity": "1", "weight": "5", "value": "10", "code": "123", "hs_tariff_number":
+      "123456", "origin_country": "US"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/customs_infos
+  response:
+    body:
+      string: '{"id": "cstinfo_3f69fd490aa84979a87f4aaefe1494e4", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:47:02Z", "updated_at": "2024-01-19T21:47:02Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_5d0b1f0f117b400cb155086193d98dc3",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:47:02Z", "updated_at":
+        "2024-01-19T21:47:02Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/customs_infos/cstinfo_3f69fd490aa84979a87f4aaefe1494e4
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fda765aaedd6e78bac2a001122a4
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.039137'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/customs_infos/cstinfo_3f69fd490aa84979a87f4aaefe1494e4
+  response:
+    body:
+      string: '{"id": "cstinfo_3f69fd490aa84979a87f4aaefe1494e4", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:47:02Z", "updated_at": "2024-01-19T21:47:02Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_5d0b1f0f117b400cb155086193d98dc3",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:47:02Z", "updated_at":
+        "2024-01-19T21:47:02Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fda865aaedd6e78bac2b001122ca
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb36nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.032768'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"customs_info": {"customs_certify": "true", "customs_signer": "Steve Brule",
+      "contents_type": "merchandise", "contents_explanation": "", "restriction_type":
+      "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items": [{"description": "T-shirt",
+      "quantity": "1", "weight": "5", "value": "10", "code": "123", "hs_tariff_number":
+      "123456", "origin_country": "US"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/customs_infos
+  response:
+    body:
+      string: '{"id": "cstinfo_71804763a88948f68ab726c82e15f34a", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:48:54Z", "updated_at": "2024-01-19T21:48:54Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_ba5f0c862bb84b0dbf13b8121f5c2eb2",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:48:54Z", "updated_at":
+        "2024-01-19T21:48:54Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/customs_infos/cstinfo_71804763a88948f68ab726c82e15f34a
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fda765aaee46e78bb44b00116674
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb40nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.040777'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/customs_infos/cstinfo_71804763a88948f68ab726c82e15f34a
+  response:
+    body:
+      string: '{"id": "cstinfo_71804763a88948f68ab726c82e15f34a", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:48:54Z", "updated_at": "2024-01-19T21:48:54Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_ba5f0c862bb84b0dbf13b8121f5c2eb2",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:48:54Z", "updated_at":
+        "2024-01-19T21:48:54Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fda765aaee46e78bb44c00116699
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb43nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.030007'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"customs_info": {"customs_certify": "true", "customs_signer": "Steve Brule",
+      "contents_type": "merchandise", "contents_explanation": "", "restriction_type":
+      "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items": [{"description": "T-shirt",
+      "quantity": "1", "weight": "5", "value": "10", "code": "123", "hs_tariff_number":
+      "123456", "origin_country": "US"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/customs_infos
+  response:
+    body:
+      string: '{"id": "cstinfo_360d29c60e9b4a39b47b15400dee5545", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:58:15Z", "updated_at": "2024-01-19T21:58:15Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_7ddda783f7b642f6a32599680aab8671",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:58:15Z", "updated_at":
+        "2024-01-19T21:58:15Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/customs_infos/cstinfo_360d29c60e9b4a39b47b15400dee5545
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaf077e798bbde000f6bd6
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.037777'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/customs_infos/cstinfo_360d29c60e9b4a39b47b15400dee5545
+  response:
+    body:
+      string: '{"id": "cstinfo_360d29c60e9b4a39b47b15400dee5545", "object": "CustomsInfo",
+        "created_at": "2024-01-19T21:58:15Z", "updated_at": "2024-01-19T21:58:15Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_7ddda783f7b642f6a32599680aab8671",
+        "object": "CustomsItem", "created_at": "2024-01-19T21:58:15Z", "updated_at":
+        "2024-01-19T21:58:15Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f765aaf077e798bbe2000f6bfe
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.026162'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"customs_info": {"customs_certify": "true", "customs_signer": "Steve Brule",
+      "contents_type": "merchandise", "contents_explanation": "", "restriction_type":
+      "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items": [{"description": "T-shirt",
+      "quantity": "1", "weight": "5", "value": "10", "code": "123", "hs_tariff_number":
+      "123456", "origin_country": "US"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/customs_infos
+  response:
+    body:
+      string: '{"id": "cstinfo_d02d5f9b8efe483c868c917e448352c0", "object": "CustomsInfo",
+        "created_at": "2024-01-19T22:01:09Z", "updated_at": "2024-01-19T22:01:09Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_f0323e65fbc84dda866ef27f429f442c",
+        "object": "CustomsItem", "created_at": "2024-01-19T22:01:09Z", "updated_at":
+        "2024-01-19T22:01:09Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/customs_infos/cstinfo_d02d5f9b8efe483c868c917e448352c0
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaf125e798c43e000ff237
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb41nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.047734'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/customs_infos/cstinfo_d02d5f9b8efe483c868c917e448352c0
+  response:
+    body:
+      string: '{"id": "cstinfo_d02d5f9b8efe483c868c917e448352c0", "object": "CustomsInfo",
+        "created_at": "2024-01-19T22:01:09Z", "updated_at": "2024-01-19T22:01:09Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_f0323e65fbc84dda866ef27f429f442c",
+        "object": "CustomsItem", "created_at": "2024-01-19T22:01:09Z", "updated_at":
+        "2024-01-19T22:01:09Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f765aaf125e798c43f000ff292
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.029700'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"customs_info": {"customs_certify": "true", "customs_signer": "Steve Brule",
+      "contents_type": "merchandise", "contents_explanation": "", "restriction_type":
+      "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items": [{"description": "T-shirt",
+      "quantity": "1", "weight": "5", "value": "10", "code": "123", "hs_tariff_number":
+      "123456", "origin_country": "US"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/customs_infos
+  response:
+    body:
+      string: '{"id": "cstinfo_a313193ed10649ff9c687678d39f9812", "object": "CustomsInfo",
+        "created_at": "2024-01-19T22:04:56Z", "updated_at": "2024-01-19T22:04:56Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_d5537be33f144af48d480f81977ada48",
+        "object": "CustomsItem", "created_at": "2024-01-19T22:04:56Z", "updated_at":
+        "2024-01-19T22:04:56Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/customs_infos/cstinfo_a313193ed10649ff9c687678d39f9812
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaf207e798cd220010a526
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb33nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.051726'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/customs_infos/cstinfo_a313193ed10649ff9c687678d39f9812
+  response:
+    body:
+      string: '{"id": "cstinfo_a313193ed10649ff9c687678d39f9812", "object": "CustomsInfo",
+        "created_at": "2024-01-19T22:04:56Z", "updated_at": "2024-01-19T22:04:56Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_d5537be33f144af48d480f81977ada48",
+        "object": "CustomsItem", "created_at": "2024-01-19T22:04:56Z", "updated_at":
+        "2024-01-19T22:04:56Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f465aaf208e798cd230010a54d
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb36nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.027638'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"customs_info": {"customs_certify": "true", "customs_signer": "Steve Brule",
+      "contents_type": "merchandise", "contents_explanation": "", "restriction_type":
+      "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items": [{"description": "T-shirt",
+      "quantity": "1", "weight": "5", "value": "10", "code": "123", "hs_tariff_number":
+      "123456", "origin_country": "US"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '358'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/customs_infos
+  response:
+    body:
+      string: '{"id": "cstinfo_0ccb7aa52d9442c281a58e559ecc674f", "object": "CustomsInfo",
+        "created_at": "2024-01-19T22:06:28Z", "updated_at": "2024-01-19T22:06:28Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_412a7169dde04386aecc4623bdd29d9d",
+        "object": "CustomsItem", "created_at": "2024-01-19T22:06:28Z", "updated_at":
+        "2024-01-19T22:06:28Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/customs_infos/cstinfo_0ccb7aa52d9442c281a58e559ecc674f
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaf264e798d4db0010e421
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb35nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.043791'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/customs_infos/cstinfo_0ccb7aa52d9442c281a58e559ecc674f
+  response:
+    body:
+      string: '{"id": "cstinfo_0ccb7aa52d9442c281a58e559ecc674f", "object": "CustomsInfo",
+        "created_at": "2024-01-19T22:06:28Z", "updated_at": "2024-01-19T22:06:28Z",
+        "contents_explanation": "", "contents_type": "merchandise", "customs_certify":
+        true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI 30.37(a)", "non_delivery_option":
+        "return", "restriction_comments": null, "restriction_type": "none", "mode":
+        "test", "declaration": null, "customs_items": [{"id": "cstitem_412a7169dde04386aecc4623bdd29d9d",
+        "object": "CustomsItem", "created_at": "2024-01-19T22:06:28Z", "updated_at":
+        "2024-01-19T22:06:28Z", "description": "T-shirt", "hs_tariff_number": "123456",
+        "origin_country": "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code":
+        "123", "mode": "test", "manufacturer": null, "currency": null, "eccn": null,
+        "printed_commodity_identifier": null}]}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '788'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaf264e798d4dc0010e46d
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.028625'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,503 @@
+interactions:
+- request:
+    body: '{"parcel": {"length": "20.2", "width": "10.9", "height": "5", "weight":
+      "65.9"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/parcels
+  response:
+    body:
+      string: '{"id": "prcl_58f88a512a02497e8137327927906c04", "object": "Parcel",
+        "created_at": "2024-01-19T21:41:01Z", "updated_at": "2024-01-19T21:41:01Z",
+        "length": 20.2, "width": 10.9, "height": 5.0, "predefined_package": null,
+        "weight": 65.9, "mode": "test"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '230'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/parcels/prcl_58f88a512a02497e8137327927906c04
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaec6de78b9ec2000cdf18
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.036018'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"parcel": {"length": "20.2", "width": "10.9", "height": "5", "weight":
+      "65.9"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/parcels
+  response:
+    body:
+      string: '{"id": "prcl_d4b5719f0f554f6dbd0a4bc9e97b1c5a", "object": "Parcel",
+        "created_at": "2024-01-19T21:43:29Z", "updated_at": "2024-01-19T21:43:29Z",
+        "length": 20.2, "width": 10.9, "height": 5.0, "predefined_package": null,
+        "weight": 65.9, "mode": "test"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '230'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/parcels/prcl_d4b5719f0f554f6dbd0a4bc9e97b1c5a
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaed01e78ba409000d38ed
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb35nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.041518'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"parcel": {"length": "20.2", "width": "10.9", "height": "5", "weight":
+      "65.9"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/parcels
+  response:
+    body:
+      string: '{"id": "prcl_51626667f27042b6a055c5e97c2f2cc8", "object": "Parcel",
+        "created_at": "2024-01-19T21:47:21Z", "updated_at": "2024-01-19T21:47:21Z",
+        "length": 20.2, "width": 10.9, "height": 5.0, "predefined_package": null,
+        "weight": 65.9, "mode": "test"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '230'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/parcels/prcl_51626667f27042b6a055c5e97c2f2cc8
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdad65aaede9e78bac8f00112f0a
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.033816'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"parcel": {"length": "20.2", "width": "10.9", "height": "5", "weight":
+      "65.9"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/parcels
+  response:
+    body:
+      string: '{"id": "prcl_bd57657d36654902854e82241fe1ed44", "object": "Parcel",
+        "created_at": "2024-01-19T21:49:16Z", "updated_at": "2024-01-19T21:49:16Z",
+        "length": 20.2, "width": 10.9, "height": 5.0, "predefined_package": null,
+        "weight": 65.9, "mode": "test"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '230'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/parcels/prcl_bd57657d36654902854e82241fe1ed44
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdaa65aaee5ce78bb4b10011736d
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.137447'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"parcel": {"length": "20.2", "width": "10.9", "height": "5", "weight":
+      "65.9"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/parcels
+  response:
+    body:
+      string: '{"id": "prcl_ba86c73ac0eb48209b21894ef515129a", "object": "Parcel",
+        "created_at": "2024-01-19T21:58:35Z", "updated_at": "2024-01-19T21:58:35Z",
+        "length": 20.2, "width": 10.9, "height": 5.0, "predefined_package": null,
+        "weight": 65.9, "mode": "test"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '230'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/parcels/prcl_ba86c73ac0eb48209b21894ef515129a
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaf08be798bf58000f764f
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.034210'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"parcel": {"length": "20.2", "width": "10.9", "height": "5", "weight":
+      "65.9"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/parcels
+  response:
+    body:
+      string: '{"id": "prcl_61c269cfa0f94ce1ba152e062289f13b", "object": "Parcel",
+        "created_at": "2024-01-19T22:01:29Z", "updated_at": "2024-01-19T22:01:29Z",
+        "length": 20.2, "width": 10.9, "height": 5.0, "predefined_package": null,
+        "weight": 65.9, "mode": "test"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '230'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/parcels/prcl_61c269cfa0f94ce1ba152e062289f13b
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaf139e798c4a3001006f0
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.034616'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"parcel": {"length": "20.2", "width": "10.9", "height": "5", "weight":
+      "65.9"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/parcels
+  response:
+    body:
+      string: '{"id": "prcl_b88721f9a1ba4ac594672afbfb16e848", "object": "Parcel",
+        "created_at": "2024-01-19T22:05:16Z", "updated_at": "2024-01-19T22:05:16Z",
+        "length": 20.2, "width": 10.9, "height": 5.0, "predefined_package": null,
+        "weight": 65.9, "mode": "test"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '230'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      location:
+      - /api/v2/parcels/prcl_b88721f9a1ba4ac594672afbfb16e848
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaf21ce798d0810010b267
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.030804'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+version: 1

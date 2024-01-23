@@ -1,0 +1,459 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/refunds?page_size=1
+  response:
+    body:
+      string: '{"refunds": [{"id": "rfnd_bcb3fa1dfbfe4706bd524ee81fd249ab", "object":
+        "Refund", "created_at": "2024-01-19T21:41:55Z", "updated_at": "2024-01-19T21:41:55Z",
+        "tracking_code": "9405500207552010707757", "confirmation_number": null, "status":
+        "submitted", "carrier": "USPS", "shipment_id": "shp_31826ec4b32847c9943a27371cc43b28"}],
+        "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '325'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaeca3e78b9f26000d031c
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb33nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.065179'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/refunds?page_size=1
+  response:
+    body:
+      string: '{"refunds": [{"id": "rfnd_bbd8f69447104430969831ef7b21d9fa", "object":
+        "Refund", "created_at": "2024-01-19T21:43:51Z", "updated_at": "2024-01-19T21:43:51Z",
+        "tracking_code": "9405500207552010708075", "confirmation_number": null, "status":
+        "submitted", "carrier": "USPS", "shipment_id": "shp_029ee40466a7479fab3f28976fda3322"}],
+        "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '325'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaed17e78ba765000d462e
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb35nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.033071'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/refunds?page_size=1
+  response:
+    body:
+      string: '{"refunds": [{"id": "rfnd_a4a1a49fdcb34445b90ced53c8c38e0f", "object":
+        "Refund", "created_at": "2024-01-19T21:47:44Z", "updated_at": "2024-01-19T21:47:44Z",
+        "tracking_code": "9405500207552010708525", "confirmation_number": null, "status":
+        "submitted", "carrier": "USPS", "shipment_id": "shp_0a54634170f24d1cb2f7fd85b059af17"}],
+        "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '325'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdae65aaee00e78bafe800113e08
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.034338'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/refunds?page_size=1
+  response:
+    body:
+      string: '{"refunds": [{"id": "rfnd_507da5b6804042118ba6bb87e6950faa", "object":
+        "Refund", "created_at": "2024-01-19T21:49:38Z", "updated_at": "2024-01-19T21:49:38Z",
+        "tracking_code": "9405500207552010709065", "confirmation_number": null, "status":
+        "submitted", "carrier": "USPS", "shipment_id": "shp_8cf656042058439585a0c34d6b880666"}],
+        "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '325'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdad65aaee72e78bb51400118014
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb31nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.041866'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/refunds?page_size=1
+  response:
+    body:
+      string: '{"refunds": [{"id": "rfnd_7d14232dc8624da9819583fbe53b74e9", "object":
+        "Refund", "created_at": "2024-01-19T21:58:57Z", "updated_at": "2024-01-19T21:58:57Z",
+        "tracking_code": "9405500207552010711501", "confirmation_number": null, "status":
+        "submitted", "carrier": "USPS", "shipment_id": "shp_a814f3ec6dd749829ce9cf20831dd346"}],
+        "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '325'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaf0a2e798bfb8000f829a
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.038590'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/refunds?page_size=1
+  response:
+    body:
+      string: '{"refunds": [{"id": "rfnd_a48a7bb106d34bdd964e834280edac4a", "object":
+        "Refund", "created_at": "2024-01-19T22:01:52Z", "updated_at": "2024-01-19T22:01:52Z",
+        "tracking_code": "9405500207552010711945", "confirmation_number": null, "status":
+        "submitted", "carrier": "USPS", "shipment_id": "shp_029bd18cc53a43d58ab17051e2eacb68"}],
+        "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '325'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaf150e798c81900101cea
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb40nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.035921'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/refunds?page_size=1
+  response:
+    body:
+      string: '{"refunds": [{"id": "rfnd_c09e4177ad2145af988e4ebb667c3e61", "object":
+        "Refund", "created_at": "2024-01-19T22:05:39Z", "updated_at": "2024-01-19T22:05:39Z",
+        "tracking_code": "9405500207552010712751", "confirmation_number": null, "status":
+        "submitted", "carrier": "USPS", "shipment_id": "shp_82d6d2c4dc54475f909ac8080da5e80a"}],
+        "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '325'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f365aaf234e798d0e10010c3ae
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.053188'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

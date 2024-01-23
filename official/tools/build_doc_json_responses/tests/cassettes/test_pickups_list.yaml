@@ -1,0 +1,79 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/pickups?page_size=1
+  response:
+    body:
+      string: '{"pickups": [{"id": "pickup_283f2915cc7b42c1889195ddb6519ef7", "object":
+        "Pickup", "created_at": "2024-01-19T22:05:27Z", "updated_at": "2024-01-19T22:05:30Z",
+        "mode": "test", "status": "canceled", "reference": "my-first-pickup", "min_datetime":
+        "2024-01-22T00:00:00Z", "max_datetime": "2024-01-22T00:00:00Z", "is_account_address":
+        false, "instructions": "Special pickup instructions", "messages": [], "confirmation":
+        "WTC64043622", "address": {"id": "adr_da725a65b71611ee878dac1f6bc539aa", "object":
+        "Address", "created_at": "2024-01-19T22:05:27+00:00", "updated_at": "2024-01-19T22:05:27+00:00",
+        "name": "Dr. Steve Brule", "company": null, "street1": "179 N Harbor Dr",
+        "street2": null, "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+        "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com", "mode":
+        "test", "carrier_facility": null, "residential": null, "federal_tax_id": null,
+        "state_tax_id": null, "verifications": {}}, "carrier_accounts": [], "pickup_rates":
+        [{"mode": "test", "service": "NextDay", "rate": "0.00", "currency": "USD",
+        "created_at": "2024-01-19T22:05:28Z", "updated_at": "2024-01-19T22:05:28Z",
+        "carrier": "USPS", "pickup_id": "pickup_283f2915cc7b42c1889195ddb6519ef7",
+        "id": "pickuprate_ca16cbcc4c4e4ad3b2be59e9f79505ca", "object": "PickupRate"}]}],
+        "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1224'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f765ab00dfe7996dbd0019bf62
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.155510'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

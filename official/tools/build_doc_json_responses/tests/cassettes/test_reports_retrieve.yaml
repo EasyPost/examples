@@ -1,0 +1,930 @@
+interactions:
+- request:
+    body: '{"start_date": "2022-10-01", "end_date": "2022-10-01"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/reports/shipment
+  response:
+    body:
+      string: '{"id": "shprep_b849ea9c3a0d4f248255f0dca4f28040", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:41:56Z", "updated_at": "2024-01-19T21:41:56Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "new", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '283'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaeca4e78b9f2a000d03ef
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb40nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.056613'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/reports/shprep_b849ea9c3a0d4f248255f0dca4f28040
+  response:
+    body:
+      string: '{"id": "shprep_b849ea9c3a0d4f248255f0dca4f28040", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:41:56Z", "updated_at": "2024-01-19T21:41:56Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "new", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '283'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaeca5e78b9f42000d0416
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.044023'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"start_date": "2022-10-01", "end_date": "2022-10-01"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/reports/shipment
+  response:
+    body:
+      string: '{"id": "shprep_3c985eaefaf84b918e3a7cd13c42b4a3", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:43:52Z", "updated_at": "2024-01-19T21:43:52Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "new", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '283'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f465aaed18e78ba769000d4702
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb40nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.062987'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/reports/shprep_3c985eaefaf84b918e3a7cd13c42b4a3
+  response:
+    body:
+      string: '{"id": "shprep_3c985eaefaf84b918e3a7cd13c42b4a3", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:43:52Z", "updated_at": "2024-01-19T21:43:52Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "empty", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '285'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaed19e78ba76a000d474b
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.045030'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"start_date": "2022-10-01", "end_date": "2022-10-01"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/reports/shipment
+  response:
+    body:
+      string: '{"id": "shprep_089003c0042c4807bef27a56e219f651", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:47:45Z", "updated_at": "2024-01-19T21:47:45Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "new", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '283'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdab65aaee01e78bafec00113ec1
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.059266'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/reports/shprep_089003c0042c4807bef27a56e219f651
+  response:
+    body:
+      string: '{"id": "shprep_089003c0042c4807bef27a56e219f651", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:47:45Z", "updated_at": "2024-01-19T21:47:45Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "empty", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '285'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fda765aaee01e78bb00400113eec
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb43nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.052772'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"start_date": "2022-10-01", "end_date": "2022-10-01"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/reports/shipment
+  response:
+    body:
+      string: '{"id": "shprep_946144479ef8495faa2baf8d741daace", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:49:40Z", "updated_at": "2024-01-19T21:49:40Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "new", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '283'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fda965aaee74e78bb52f001180af
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb43nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.063579'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/reports/shprep_946144479ef8495faa2baf8d741daace
+  response:
+    body:
+      string: '{"id": "shprep_946144479ef8495faa2baf8d741daace", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:49:40Z", "updated_at": "2024-01-19T21:49:40Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "empty", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '285'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdad65aaee74e78bb530001180cf
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb33nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.055906'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"start_date": "2022-10-01", "end_date": "2022-10-01"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/reports/shipment
+  response:
+    body:
+      string: '{"id": "shprep_dd35c5f7464247ecb38ef96430402e28", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:58:59Z", "updated_at": "2024-01-19T21:58:59Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "new", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '283'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaf0a3e798bfbc000f835f
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb41nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.050843'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/reports/shprep_dd35c5f7464247ecb38ef96430402e28
+  response:
+    body:
+      string: '{"id": "shprep_dd35c5f7464247ecb38ef96430402e28", "object": "ShipmentReport",
+        "created_at": "2024-01-19T21:58:59Z", "updated_at": "2024-01-19T21:58:59Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "empty", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '285'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f465aaf0a3e798bfbd000f8392
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb41nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.032794'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"start_date": "2022-10-01", "end_date": "2022-10-01"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/reports/shipment
+  response:
+    body:
+      string: '{"id": "shprep_7fe6a33016a849999785f97043857fb4", "object": "ShipmentReport",
+        "created_at": "2024-01-19T22:01:54Z", "updated_at": "2024-01-19T22:01:54Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "new", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '283'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaf152e798c82100101de7
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb40nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.049776'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/reports/shprep_7fe6a33016a849999785f97043857fb4
+  response:
+    body:
+      string: '{"id": "shprep_7fe6a33016a849999785f97043857fb4", "object": "ShipmentReport",
+        "created_at": "2024-01-19T22:01:54Z", "updated_at": "2024-01-19T22:01:54Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "empty", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '285'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaf152e798c83900101e0e
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.057613'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"start_date": "2022-10-01", "end_date": "2022-10-01"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/reports/shipment
+  response:
+    body:
+      string: '{"id": "shprep_2a996421686a46ad9dce115eed3edc28", "object": "ShipmentReport",
+        "created_at": "2024-01-19T22:05:41Z", "updated_at": "2024-01-19T22:05:41Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "new", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '283'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaf235e798d0e50010c4f5
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb36nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.044807'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/reports/shprep_2a996421686a46ad9dce115eed3edc28
+  response:
+    body:
+      string: '{"id": "shprep_2a996421686a46ad9dce115eed3edc28", "object": "ShipmentReport",
+        "created_at": "2024-01-19T22:05:41Z", "updated_at": "2024-01-19T22:05:41Z",
+        "start_date": "2022-10-01", "end_date": "2022-10-01", "mode": "test", "status":
+        "empty", "url": null, "url_expires_at": null, "include_children": false}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '285'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f765aaf236e798d0fd0010c54d
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.047412'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

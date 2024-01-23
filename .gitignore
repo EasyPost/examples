@@ -26,3 +26,4 @@ venv
 /.dummy
 /.eslintignore
 *.sw*
+/official/tools/build_doc_json_responses/responses/

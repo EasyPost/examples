@@ -1,0 +1,1465 @@
+interactions:
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_65b36650ca424c4192f3042b7c5f5df6", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T21:40:38Z",
+        "updated_at": "2024-01-19T21:40:38Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaec56e78b9b2a000ccd88
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.109454'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_65b36650ca424c4192f3042b7c5f5df6
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f465aaec56e78b9b2b000ccdd2
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb35nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.113342'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_e28dd57017e242f191118f3651292e76", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T21:43:07Z",
+        "updated_at": "2024-01-19T21:43:07Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaecebe78ba362000d2b80
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb36nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.113862'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_e28dd57017e242f191118f3651292e76
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaecece78ba363000d2bba
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.114131'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_b96741971fb54ab6a619a94038db5191", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T21:46:57Z",
+        "updated_at": "2024-01-19T21:46:57Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdaa65aaedd1e78bac0500111f71
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.107736'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_b96741971fb54ab6a619a94038db5191
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdae65aaedd2e78bac0600111fb3
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb31nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.127970'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_458c949b6cc942d88209098f599b216d", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T21:48:49Z",
+        "updated_at": "2024-01-19T21:48:49Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdae65aaee41e78bb424001163d6
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.115747'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_458c949b6cc942d88209098f599b216d
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdaa65aaee41e78bb4250011640b
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb35nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.114290'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_cac9e8228ea84336804a0960504b0d00", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T21:58:09Z",
+        "updated_at": "2024-01-19T21:58:09Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaf071e798bbba000f686b
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb31nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.109726'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_cac9e8228ea84336804a0960504b0d00
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaf072e798bbbb000f6896
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.119476'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_4f0312b790e8416fba62ad775f207d20", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T22:01:03Z",
+        "updated_at": "2024-01-19T22:01:03Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f365aaf11fe798c41a000fecd6
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.112590'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_4f0312b790e8416fba62ad775f207d20
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaf11fe798c41b000fed19
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.114465'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_76fc84e39d4247db89bc77780e784d10", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T22:03:07Z",
+        "updated_at": "2024-01-19T22:03:07Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaf19be798cc5a001058c1
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb33nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.109757'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_8a914f6a3faf4755b3c500e527841574", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T22:04:50Z",
+        "updated_at": "2024-01-19T22:04:50Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f765aaf202e798ccfe0010a1ce
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb41nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.110308'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_8a914f6a3faf4755b3c500e527841574
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaf202e798ccff0010a202
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.117930'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_26a7b8112c0a40ba80b1bf29b4ea3904", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T22:06:22Z",
+        "updated_at": "2024-01-19T22:06:22Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaf25ee798d49f0010e05d
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb31nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.110038'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_26a7b8112c0a40ba80b1bf29b4ea3904
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaf25ee798d4a00010e09a
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb33nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.115217'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"carrier_account": {"type": "DhlEcsAccount", "description": "CA Location
+      DHL eCommerce Solutions Account", "credentials": {"client_id": "123456", "client_secret":
+      "123abc", "distribution_center": "USLAX1", "pickup_id": "123456"}, "test_credentials":
+      {"client_id": "123456", "client_secret": "123abc", "distribution_center": "USLAX1",
+      "pickup_id": "123456"}}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/carrier_accounts
+  response:
+    body:
+      string: '{"id": "ca_50973fe5d6924ee3925c875bbfd86183", "object": "CarrierAccount",
+        "type": "DhlEcsAccount", "clone": false, "created_at": "2024-01-19T23:38:26Z",
+        "updated_at": "2024-01-19T23:38:26Z", "description": "CA Location DHL eCommerce
+        Solutions Account", "reference": null, "billing_type": "carrier", "readable":
+        "DHL eCommerce Solutions", "logo": null, "fields": {"credentials": {"client_id":
+        {"visibility": "visible", "label": "DHL eCommerce Solutions client ID", "value":
+        "123456"}, "client_secret": {"visibility": "password", "label": "DHL eCommerce
+        Solutions client secret", "value": "********"}, "pickup_id": {"visibility":
+        "visible", "label": "DHL eCommerce Solutions pickup ID", "value": "123456"},
+        "distribution_center": {"visibility": "visible", "label": "DHL eCommerce Solutions
+        distribution center", "value": "USLAX1"}}, "test_credentials": {"client_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions client ID",
+        "value": "123456"}, "client_secret": {"visibility": "password", "label": "Test
+        DHL eCommerce Solutions client secret", "value": "********"}, "pickup_id":
+        {"visibility": "visible", "label": "Test DHL eCommerce Solutions pickup ID",
+        "value": "123456"}, "distribution_center": {"visibility": "visible", "label":
+        "Test DHL eCommerce Solutions distribution center", "value": "USLAX1"}}},
+        "credentials": {"client_id": "123456", "client_secret": "********", "pickup_id":
+        "123456", "distribution_center": "USLAX1"}, "test_credentials": {"client_id":
+        "123456", "client_secret": "********", "pickup_id": "123456", "distribution_center":
+        "USLAX1"}}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '1481'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565ab07f2e799e5a0001d7812
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.111220'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: DELETE
+    uri: https://api.easypost.com/v2/carrier_accounts/ca_50973fe5d6924ee3925c875bbfd86183
+  response:
+    body:
+      string: '{}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '2'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f365ab07f2e799e5a1001d7841
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb41nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.121840'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

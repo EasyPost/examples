@@ -1,0 +1,1485 @@
+interactions:
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_4340577b57e24854a21b76acdc69d878", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:39:39Z", "updated_at": "2024-01-19T21:39:39Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaec1be78b9ae4000ca8e6
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.049743'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_4340577b57e24854a21b76acdc69d878
+  response:
+    body:
+      string: '{"id": "batch_4340577b57e24854a21b76acdc69d878", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:39:39Z", "updated_at": "2024-01-19T21:39:39Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_8bee0a902ee34778aa75fb988e46fe1b"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaec1be78b9ae5000ca927
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.024468'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_9747838687e442db9525cf6bdb4cdf7f", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:42:59Z", "updated_at": "2024-01-19T21:42:59Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaece3e78ba320000d2695
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.054503'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_9747838687e442db9525cf6bdb4cdf7f
+  response:
+    body:
+      string: '{"id": "batch_9747838687e442db9525cf6bdb4cdf7f", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:42:59Z", "updated_at": "2024-01-19T21:42:59Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_40bcad49c58d43fa8e873b1383d83a55"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaece3e78ba321000d26c0
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb35nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.026670'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_fadb8835f95647618c8e65c9968adb73", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:46:48Z", "updated_at": "2024-01-19T21:46:48Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdac65aaedc8e78baba900111a24
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.046329'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_fadb8835f95647618c8e65c9968adb73
+  response:
+    body:
+      string: '{"id": "batch_fadb8835f95647618c8e65c9968adb73", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:46:48Z", "updated_at": "2024-01-19T21:46:49Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_3bbd407d01334059b28186fe912f7174"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdab65aaedc9e78babaa00111a62
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.025947'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_b8608032bdf541b8a82ebfb32453d662", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:48:40Z", "updated_at": "2024-01-19T21:48:40Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdad65aaee38e78bb0eb00115ef5
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.045030'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_b8608032bdf541b8a82ebfb32453d662
+  response:
+    body:
+      string: '{"id": "batch_b8608032bdf541b8a82ebfb32453d662", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:48:40Z", "updated_at": "2024-01-19T21:48:41Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_bcdf436206704dc7bf62fb264be55e70"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fda765aaee39e78bb0ec00115f2d
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb33nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.028597'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_ea6566f464f94d888d4b50c520d400f9", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:57:41Z", "updated_at": "2024-01-19T21:57:41Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaf055e798bb78000f5798
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.045007'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_ea6566f464f94d888d4b50c520d400f9
+  response:
+    body:
+      string: '{"id": "batch_ea6566f464f94d888d4b50c520d400f9", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T21:57:41Z", "updated_at": "2024-01-19T21:57:41Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaf055e798bb79000f57bb
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb31nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.025261'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_2a3b1e859d1d4e30be37a7feee215d0a", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T22:00:54Z", "updated_at": "2024-01-19T22:00:54Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaf116e798c3d8000fe4bc
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb41nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.050110'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_2a3b1e859d1d4e30be37a7feee215d0a
+  response:
+    body:
+      string: '{"id": "batch_2a3b1e859d1d4e30be37a7feee215d0a", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T22:00:54Z", "updated_at": "2024-01-19T22:00:55Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_794153de95df4918bdf14d9c4e111c10"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f465aaf117e798c3d9000fe509
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.035669'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_5d70beec0b7b45a59b05b168495b2e96", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T22:02:57Z", "updated_at": "2024-01-19T22:02:57Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f565aaf191e798cc1800105187
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.041161'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_5d70beec0b7b45a59b05b168495b2e96
+  response:
+    body:
+      string: '{"id": "batch_5d70beec0b7b45a59b05b168495b2e96", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T22:02:57Z", "updated_at": "2024-01-19T22:02:58Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_191d97c7e82142bbafd85e849719c73c"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaf192e798cc19001051b5
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.026033'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_43dbc416d4e04962939b1c56f00e66e2", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T22:03:20Z", "updated_at": "2024-01-19T22:03:20Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaf1a8e798cc83001063ce
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.053642'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_43dbc416d4e04962939b1c56f00e66e2
+  response:
+    body:
+      string: '{"id": "batch_43dbc416d4e04962939b1c56f00e66e2", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T22:03:20Z", "updated_at": "2024-01-19T22:03:20Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_82b40d2b75ab4b6fb9eac46d9b4129a9"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f465aaf1a9e798cc9b00106433
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.026593'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_f03d0092670444c38ea38fbb0deda6f9", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T22:06:12Z", "updated_at": "2024-01-19T22:06:12Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f365aaf254e798d1650010da77
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb31nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.107462'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_f03d0092670444c38ea38fbb0deda6f9
+  response:
+    body:
+      string: '{"id": "batch_f03d0092670444c38ea38fbb0deda6f9", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T22:06:12Z", "updated_at": "2024-01-19T22:06:12Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_fe148126a6e64563a4faca3acfbe5dd1"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaf254e798d1660010daa8
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.032018'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"batch": {"shipments": [{"to_address": {"name": "Dr. Steve Brule", "street1":
+      "179 N Harbor Dr", "city": "Redondo Beach", "state": "CA", "zip": "90277", "country":
+      "US", "phone": "8573875756", "email": "dr_steve_brule@gmail.com"}, "from_address":
+      {"name": "EasyPost", "street1": "417 Montgomery Street", "street2": "5th Floor",
+      "city": "San Francisco", "state": "CA", "zip": "94104", "country": "US", "phone":
+      "4153334445", "email": "support@easypost.com"}, "parcel": {"length": "20.2",
+      "width": "10.9", "height": "5", "weight": "65.9"}, "customs_info": {"customs_certify":
+      "true", "customs_signer": "Steve Brule", "contents_type": "merchandise", "contents_explanation":
+      "", "restriction_type": "none", "eel_pfc": "NOEEI 30.37(a)", "customs_items":
+      [{"description": "T-shirt", "quantity": "1", "weight": "5", "value": "10", "code":
+      "123", "hs_tariff_number": "123456", "origin_country": "US"}]}, "service": "Priority",
+      "carrier": "USPS", "carrier_accounts": ["ca_b25657e9896e4d63ac8151ac346ac41e"]}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1002'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/batches
+  response:
+    body:
+      string: '{"id": "batch_42a9ce503f274417a96af4a56863e661", "object": "Batch",
+        "mode": "test", "state": "creating", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T23:38:16Z", "updated_at": "2024-01-19T23:38:16Z",
+        "scan_form": null, "shipments": [], "status": {"created": 0, "queued_for_purchase":
+        0, "creation_failed": 0, "postage_purchased": 0, "postage_purchase_failed":
+        0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '384'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f765ab07e8e799e55e001d738d
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.071913'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/batches/batch_42a9ce503f274417a96af4a56863e661
+  response:
+    body:
+      string: '{"id": "batch_42a9ce503f274417a96af4a56863e661", "object": "Batch",
+        "mode": "test", "state": "created", "num_shipments": 1, "reference": null,
+        "created_at": "2024-01-19T23:38:16Z", "updated_at": "2024-01-19T23:38:17Z",
+        "scan_form": null, "shipments": [{"batch_status": "created", "batch_message":
+        null, "reference": null, "tracking_code": null, "id": "shp_387aa0f7dbaa41ae8162563b033d381f"}],
+        "status": {"created": 1, "queued_for_purchase": 0, "creation_failed": 0, "postage_purchased":
+        0, "postage_purchase_failed": 0}, "pickup": null, "label_url": null}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '512'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665ab07e9e799e55f001d73ad
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb32nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.026851'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

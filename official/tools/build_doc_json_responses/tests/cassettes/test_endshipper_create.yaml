@@ -1,0 +1,580 @@
+interactions:
+- request:
+    body: '{"address": {"name": "FOO BAR", "company": "BAZ", "null": null, "street1":
+      "164 TOWNSEND STREET UNIT 1", "street2": "UNIT 1", "city": "SAN FRANCISCO",
+      "state": "CA", "zip": "94107", "country": "US", "phone": "555 555-5555", "email":
+      "FOO@EXAMPLE.COM"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/end_shippers
+  response:
+    body:
+      string: '{"id": "es_4c83da873476490ba46e9347783e21fe", "object": "EndShipper",
+        "mode": "test", "created_at": "2024-01-19T21:40:44+00:00", "updated_at": "2024-01-19T21:40:44+00:00",
+        "name": "FOO BAR", "company": "BAZ", "street1": "164 TOWNSEND ST UNIT 1",
+        "street2": "", "city": "SAN FRANCISCO", "state": "CA", "zip": "94107-1990",
+        "country": "US", "phone": "555 555-5555", "email": "FOO@EXAMPLE.COM"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '362'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f365aaec5ce78b9b6b000cd169
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.051010'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"address": {"name": "FOO BAR", "company": "BAZ", "null": null, "street1":
+      "164 TOWNSEND STREET UNIT 1", "street2": "UNIT 1", "city": "SAN FRANCISCO",
+      "state": "CA", "zip": "94107", "country": "US", "phone": "555 555-5555", "email":
+      "FOO@EXAMPLE.COM"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/end_shippers
+  response:
+    body:
+      string: '{"id": "es_ee187d5e101e4336aa890444d48ff539", "object": "EndShipper",
+        "mode": "test", "created_at": "2024-01-19T21:43:13+00:00", "updated_at": "2024-01-19T21:43:13+00:00",
+        "name": "FOO BAR", "company": "BAZ", "street1": "164 TOWNSEND ST UNIT 1",
+        "street2": "", "city": "SAN FRANCISCO", "state": "CA", "zip": "94107-1990",
+        "country": "US", "phone": "555 555-5555", "email": "FOO@EXAMPLE.COM"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '362'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f665aaecf1e78ba3a6000d2f32
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb36nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.048605'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"address": {"name": "FOO BAR", "company": "BAZ", "null": null, "street1":
+      "164 TOWNSEND STREET UNIT 1", "street2": "UNIT 1", "city": "SAN FRANCISCO",
+      "state": "CA", "zip": "94107", "country": "US", "phone": "555 555-5555", "email":
+      "FOO@EXAMPLE.COM"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/end_shippers
+  response:
+    body:
+      string: '{"id": "es_08413b09a7eb403982333c64d3b808aa", "object": "EndShipper",
+        "mode": "test", "created_at": "2024-01-19T21:47:04+00:00", "updated_at": "2024-01-19T21:47:04+00:00",
+        "name": "FOO BAR", "company": "BAZ", "street1": "164 TOWNSEND ST UNIT 1",
+        "street2": "", "city": "SAN FRANCISCO", "state": "CA", "zip": "94107-1990",
+        "country": "US", "phone": "555 555-5555", "email": "FOO@EXAMPLE.COM"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '362'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdae65aaedd8e78bac4700112385
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.049529'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"address": {"name": "FOO BAR", "company": "BAZ", "null": null, "street1":
+      "164 TOWNSEND STREET UNIT 1", "street2": "UNIT 1", "city": "SAN FRANCISCO",
+      "state": "CA", "zip": "94107", "country": "US", "phone": "555 555-5555", "email":
+      "FOO@EXAMPLE.COM"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/end_shippers
+  response:
+    body:
+      string: '{"id": "es_fef26c21448a48faacc7d138626128e1", "object": "EndShipper",
+        "mode": "test", "created_at": "2024-01-19T21:48:56+00:00", "updated_at": "2024-01-19T21:48:56+00:00",
+        "name": "FOO BAR", "company": "BAZ", "street1": "164 TOWNSEND ST UNIT 1",
+        "street2": "", "city": "SAN FRANCISCO", "state": "CA", "zip": "94107-1990",
+        "country": "US", "phone": "555 555-5555", "email": "FOO@EXAMPLE.COM"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '362'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fda965aaee48e78bb46700116746
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb38nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.049506'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"address": {"name": "FOO BAR", "company": "BAZ", "null": null, "street1":
+      "164 TOWNSEND STREET UNIT 1", "street2": "UNIT 1", "city": "SAN FRANCISCO",
+      "state": "CA", "zip": "94107", "country": "US", "phone": "555 555-5555", "email":
+      "FOO@EXAMPLE.COM"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/end_shippers
+  response:
+    body:
+      string: '{"id": "es_298a62ff2a52443eabd4d70c06c230f4", "object": "EndShipper",
+        "mode": "test", "created_at": "2024-01-19T21:58:16+00:00", "updated_at": "2024-01-19T21:58:16+00:00",
+        "name": "FOO BAR", "company": "BAZ", "street1": "164 TOWNSEND ST UNIT 1",
+        "street2": "", "city": "SAN FRANCISCO", "state": "CA", "zip": "94107-1990",
+        "country": "US", "phone": "555 555-5555", "email": "FOO@EXAMPLE.COM"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '362'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f865aaf078e798bbfd000f6cbd
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.050430'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"address": {"name": "FOO BAR", "company": "BAZ", "null": null, "street1":
+      "164 TOWNSEND STREET UNIT 1", "street2": "UNIT 1", "city": "SAN FRANCISCO",
+      "state": "CA", "zip": "94107", "country": "US", "phone": "555 555-5555", "email":
+      "FOO@EXAMPLE.COM"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/end_shippers
+  response:
+    body:
+      string: '{"id": "es_5d2d8e27608141d28bbbd10fe194eadd", "object": "EndShipper",
+        "mode": "test", "created_at": "2024-01-19T22:01:11+00:00", "updated_at": "2024-01-19T22:01:11+00:00",
+        "name": "FOO BAR", "company": "BAZ", "street1": "164 TOWNSEND ST UNIT 1",
+        "street2": "", "city": "SAN FRANCISCO", "state": "CA", "zip": "94107-1990",
+        "country": "US", "phone": "555 555-5555", "email": "FOO@EXAMPLE.COM"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '362'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaf127e798c443000ff41c
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb40nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.044197'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"address": {"name": "FOO BAR", "company": "BAZ", "null": null, "street1":
+      "164 TOWNSEND STREET UNIT 1", "street2": "UNIT 1", "city": "SAN FRANCISCO",
+      "state": "CA", "zip": "94107", "country": "US", "phone": "555 555-5555", "email":
+      "FOO@EXAMPLE.COM"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/end_shippers
+  response:
+    body:
+      string: '{"id": "es_2c85422440cc4627bc9e781aab2f80fa", "object": "EndShipper",
+        "mode": "test", "created_at": "2024-01-19T22:04:57+00:00", "updated_at": "2024-01-19T22:04:57+00:00",
+        "name": "FOO BAR", "company": "BAZ", "street1": "164 TOWNSEND ST UNIT 1",
+        "street2": "", "city": "SAN FRANCISCO", "state": "CA", "zip": "94107-1990",
+        "country": "US", "phone": "555 555-5555", "email": "FOO@EXAMPLE.COM"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '362'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaf209e798cd270010a605
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb36nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.051331'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"address": {"name": "FOO BAR", "company": "BAZ", "null": null, "street1":
+      "164 TOWNSEND STREET UNIT 1", "street2": "UNIT 1", "city": "SAN FRANCISCO",
+      "state": "CA", "zip": "94107", "country": "US", "phone": "555 555-5555", "email":
+      "FOO@EXAMPLE.COM"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: POST
+    uri: https://api.easypost.com/v2/end_shippers
+  response:
+    body:
+      string: '{"id": "es_16ce1e75051845b69c448611a68cdbd9", "object": "EndShipper",
+        "mode": "test", "created_at": "2024-01-19T22:06:30+00:00", "updated_at": "2024-01-19T22:06:30+00:00",
+        "name": "FOO BAR", "company": "BAZ", "street1": "164 TOWNSEND ST UNIT 1",
+        "street2": "", "city": "SAN FRANCISCO", "state": "CA", "zip": "94107-1990",
+        "country": "US", "phone": "555 555-5555", "email": "FOO@EXAMPLE.COM"}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '362'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-canary:
+      - direct
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaf266e798d4e40010e53b
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb43nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.048399'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+version: 1

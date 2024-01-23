@@ -1,0 +1,1374 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/shipments?page_size=1
+  response:
+    body:
+      string: '{"shipments": [{"created_at": "2024-01-19T21:42:00Z", "is_return":
+        false, "messages": [], "mode": "test", "options": {"currency": "USD", "payment":
+        {"type": "SENDER"}, "date_advance": 0}, "reference": null, "status": "unknown",
+        "tracking_code": "9405500207552010707771", "updated_at": "2024-01-19T21:42:01Z",
+        "batch_id": "batch_20ed0a5f5e4f4e5c8cf2b4f966ceb924", "batch_status": "postage_purchased",
+        "batch_message": null, "customs_info": {"id": "cstinfo_b8df8ab18426437884d0bdbcc8cd7a38",
+        "object": "CustomsInfo", "created_at": "2024-01-19T21:42:00Z", "updated_at":
+        "2024-01-19T21:42:00Z", "contents_explanation": "", "contents_type": "merchandise",
+        "customs_certify": true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI
+        30.37(a)", "non_delivery_option": "return", "restriction_comments": null,
+        "restriction_type": "none", "mode": "test", "declaration": null, "customs_items":
+        [{"id": "cstitem_70b1522825c645659169b66fed6c5ff8", "object": "CustomsItem",
+        "created_at": "2024-01-19T21:42:00Z", "updated_at": "2024-01-19T21:42:00Z",
+        "description": "T-shirt", "hs_tariff_number": "123456", "origin_country":
+        "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code": "123", "mode":
+        "test", "manufacturer": null, "currency": null, "eccn": null, "printed_commodity_identifier":
+        null}]}, "from_address": {"id": "adr_939e948eb71311eeb35fac1f6bc539aa", "object":
+        "Address", "created_at": "2024-01-19T21:42:00+00:00", "updated_at": "2024-01-19T21:42:00+00:00",
+        "name": "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "insurance": null, "order_id": null, "parcel":
+        {"id": "prcl_3ae2306725f2419cb812702fab0e8879", "object": "Parcel", "created_at":
+        "2024-01-19T21:42:00Z", "updated_at": "2024-01-19T21:42:00Z", "length": 20.2,
+        "width": 10.9, "height": 5.0, "predefined_package": null, "weight": 65.9,
+        "mode": "test"}, "postage_label": {"object": "PostageLabel", "id": "pl_7123fce93f754da197413633321ea20f",
+        "created_at": "2024-01-19T21:42:01Z", "updated_at": "2024-01-19T21:42:01Z",
+        "date_advance": 0, "integrated_form": "none", "label_date": "2024-01-19T21:42:01Z",
+        "label_resolution": 300, "label_size": "4x6", "label_type": "default", "label_file_type":
+        "image/png", "label_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/postage_label/20240119/e8d34f289678574f3fa795bbf64a495e47.png",
+        "label_pdf_url": null, "label_zpl_url": null, "label_epl2_url": null, "label_file":
+        null}, "rates": [{"id": "rate_e2a94cdc60d2464aa89a69d29cf12f7a", "object":
+        "Rate", "created_at": "2024-01-19T21:42:00Z", "updated_at": "2024-01-19T21:42:00Z",
+        "mode": "test", "service": "Express", "carrier": "USPS", "rate": "46.85",
+        "currency": "USD", "retail_rate": "54.20", "retail_currency": "USD", "list_rate":
+        "46.85", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        null, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        null, "shipment_id": "shp_cf8e56cf20974b3da7c68ef7da9c1718", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_e68bd3f50b7d499a99ce5936e5376154",
+        "object": "Rate", "created_at": "2024-01-19T21:42:00Z", "updated_at": "2024-01-19T21:42:00Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_cf8e56cf20974b3da7c68ef7da9c1718", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_233e3d437e8c4c1a969f94b4c751d1f9",
+        "object": "Rate", "created_at": "2024-01-19T21:42:00Z", "updated_at": "2024-01-19T21:42:00Z",
+        "mode": "test", "service": "GroundAdvantage", "carrier": "USPS", "rate": "6.79",
+        "currency": "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate":
+        "8.92", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        3, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        3, "shipment_id": "shp_cf8e56cf20974b3da7c68ef7da9c1718", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_05ca078c91cb4f90a7544b18ece7c135",
+        "object": "Rate", "created_at": "2024-01-19T21:42:00Z", "updated_at": "2024-01-19T21:42:00Z",
+        "mode": "test", "service": "First", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_cf8e56cf20974b3da7c68ef7da9c1718", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_afc77f652bbb4f94a8b679a1afdf9547", "object": "Rate", "created_at":
+        "2024-01-19T21:42:00Z", "updated_at": "2024-01-19T21:42:00Z", "mode": "test",
+        "service": "ParcelSelect", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_cf8e56cf20974b3da7c68ef7da9c1718", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"}],
+        "refund_status": null, "scan_form": {"id": "sf_7da5cfcbb18448a1b8557d6f46dcfd63",
+        "object": "ScanForm", "created_at": "2024-01-19T21:42:01Z", "updated_at":
+        "2024-01-19T21:42:02Z", "tracking_codes": ["9405500207552010707771"], "address":
+        {"id": "adr_939e948eb71311eeb35fac1f6bc539aa", "object": "Address", "created_at":
+        "2024-01-19T21:42:00+00:00", "updated_at": "2024-01-19T21:42:00+00:00", "name":
+        "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "status": "created", "message": null, "form_url":
+        "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20240119/e88e3aaa0500a342a6ba20d2fe6c3cd189.pdf",
+        "form_file_type": null, "batch_id": "batch_20ed0a5f5e4f4e5c8cf2b4f966ceb924",
+        "confirmation": null}, "selected_rate": {"id": "rate_e68bd3f50b7d499a99ce5936e5376154",
+        "object": "Rate", "created_at": "2024-01-19T21:42:01Z", "updated_at": "2024-01-19T21:42:01Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_cf8e56cf20974b3da7c68ef7da9c1718", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, "tracker": {"id": "trk_73461d4218344b6198a1736e508a8cbf",
+        "object": "Tracker", "mode": "test", "tracking_code": "9405500207552010707771",
+        "status": "pre_transit", "status_detail": "status_update", "created_at": "2024-01-19T21:42:01Z",
+        "updated_at": "2024-01-19T21:42:01Z", "signed_by": null, "weight": null, "est_delivery_date":
+        "2024-01-19T21:42:01Z", "shipment_id": "shp_cf8e56cf20974b3da7c68ef7da9c1718",
+        "carrier": "USPS", "tracking_details": [{"object": "TrackingDetail", "message":
+        "Pre-Shipment Info Sent to USPS", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-19T21:42:01Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": null, "state": null, "country": null, "zip": null}}, {"object": "TrackingDetail",
+        "message": "Shipping Label Created", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-20T10:19:01Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": "HOUSTON", "state": "TX", "country": null, "zip": "77063"}}], "fees":
+        [], "carrier_detail": {"object": "CarrierDetail", "service": "First-Class
+        Package Service", "container_type": null, "est_delivery_date_local": null,
+        "est_delivery_time_local": null, "origin_location": "HOUSTON TX, 77001", "origin_tracking_location":
+        {"object": "TrackingLocation", "city": "HOUSTON", "state": "TX", "country":
+        null, "zip": "77063"}, "destination_location": "CHARLESTON SC, 29401", "destination_tracking_location":
+        null, "guaranteed_delivery_date": null, "alternate_identifier": null, "initial_delivery_attempt":
+        null}, "public_url": "https://track.easypost.com/djE6dHJrXzczNDYxZDQyMTgzNDRiNjE5OGExNzM2ZTUwOGE4Y2Jm"},
+        "to_address": {"id": "adr_939be8d4b71311eea487ac1f6bc539ae", "object": "Address",
+        "created_at": "2024-01-19T21:42:00+00:00", "updated_at": "2024-01-19T21:42:00+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "usps_zone": 4, "return_address": {"id": "adr_939e948eb71311eeb35fac1f6bc539aa",
+        "object": "Address", "created_at": "2024-01-19T21:42:00+00:00", "updated_at":
+        "2024-01-19T21:42:00+00:00", "name": "EasyPost", "company": null, "street1":
+        "417 Montgomery Street", "street2": "5th Floor", "city": "San Francisco",
+        "state": "CA", "zip": "94104", "country": "US", "phone": "4153334445", "email":
+        "support@easypost.com", "mode": "test", "carrier_facility": null, "residential":
+        null, "federal_tax_id": null, "state_tax_id": null, "verifications": {}},
+        "buyer_address": {"id": "adr_939be8d4b71311eea487ac1f6bc539ae", "object":
+        "Address", "created_at": "2024-01-19T21:42:00+00:00", "updated_at": "2024-01-19T21:42:00+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "forms": [], "fees": [{"object": "Fee", "type": "LabelFee", "amount": "0.00000",
+        "charged": true, "refunded": false}, {"object": "Fee", "type": "PostageFee",
+        "amount": "7.99000", "charged": true, "refunded": false}], "id": "shp_cf8e56cf20974b3da7c68ef7da9c1718",
+        "object": "Shipment"}], "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '10475'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f265aaecade78b9f67000d08d4
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.152838'
+      x-version-label:
+      - easypost-202401191855-c1565c253c-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/shipments?page_size=1
+  response:
+    body:
+      string: '{"shipments": [{"created_at": "2024-01-19T21:43:56Z", "is_return":
+        false, "messages": [], "mode": "test", "options": {"currency": "USD", "payment":
+        {"type": "SENDER"}, "date_advance": 0}, "reference": null, "status": "unknown",
+        "tracking_code": "9405500207552010708099", "updated_at": "2024-01-19T21:43:58Z",
+        "batch_id": "batch_b03a60bcbc3a4304b454870debb18a95", "batch_status": "postage_purchased",
+        "batch_message": null, "customs_info": {"id": "cstinfo_44de8cf3040d4c4681d4460cd76ad867",
+        "object": "CustomsInfo", "created_at": "2024-01-19T21:43:56Z", "updated_at":
+        "2024-01-19T21:43:56Z", "contents_explanation": "", "contents_type": "merchandise",
+        "customs_certify": true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI
+        30.37(a)", "non_delivery_option": "return", "restriction_comments": null,
+        "restriction_type": "none", "mode": "test", "declaration": null, "customs_items":
+        [{"id": "cstitem_b821210fd766418bb3fcff593d7f2d6e", "object": "CustomsItem",
+        "created_at": "2024-01-19T21:43:56Z", "updated_at": "2024-01-19T21:43:56Z",
+        "description": "T-shirt", "hs_tariff_number": "123456", "origin_country":
+        "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code": "123", "mode":
+        "test", "manufacturer": null, "currency": null, "eccn": null, "printed_commodity_identifier":
+        null}]}, "from_address": {"id": "adr_d8e39620b71311eebd5cac1f6bc539ae", "object":
+        "Address", "created_at": "2024-01-19T21:43:56+00:00", "updated_at": "2024-01-19T21:43:56+00:00",
+        "name": "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "insurance": null, "order_id": null, "parcel":
+        {"id": "prcl_79113baf47d44d568056e217b0fd5c82", "object": "Parcel", "created_at":
+        "2024-01-19T21:43:56Z", "updated_at": "2024-01-19T21:43:56Z", "length": 20.2,
+        "width": 10.9, "height": 5.0, "predefined_package": null, "weight": 65.9,
+        "mode": "test"}, "postage_label": {"object": "PostageLabel", "id": "pl_fc082d6a1c134fdcba446681503f5395",
+        "created_at": "2024-01-19T21:43:57Z", "updated_at": "2024-01-19T21:43:57Z",
+        "date_advance": 0, "integrated_form": "none", "label_date": "2024-01-19T21:43:57Z",
+        "label_resolution": 300, "label_size": "4x6", "label_type": "default", "label_file_type":
+        "image/png", "label_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/postage_label/20240119/e8b7046c350b564342b0f7190c7eb061e7.png",
+        "label_pdf_url": null, "label_zpl_url": null, "label_epl2_url": null, "label_file":
+        null}, "rates": [{"id": "rate_e23a64d44fd2445bb73a85632d30bb8a", "object":
+        "Rate", "created_at": "2024-01-19T21:43:56Z", "updated_at": "2024-01-19T21:43:56Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_6ffa3fa64a8243629566ceef79076b0e", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_ba6b68e5d5174ce1a99cced7b6a54501",
+        "object": "Rate", "created_at": "2024-01-19T21:43:56Z", "updated_at": "2024-01-19T21:43:56Z",
+        "mode": "test", "service": "GroundAdvantage", "carrier": "USPS", "rate": "6.79",
+        "currency": "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate":
+        "8.92", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        3, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        3, "shipment_id": "shp_6ffa3fa64a8243629566ceef79076b0e", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_2249968fac32416391f9e4e47dd41433",
+        "object": "Rate", "created_at": "2024-01-19T21:43:56Z", "updated_at": "2024-01-19T21:43:56Z",
+        "mode": "test", "service": "First", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_6ffa3fa64a8243629566ceef79076b0e", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_74903299d59b4eed9823e16668a51067", "object": "Rate", "created_at":
+        "2024-01-19T21:43:56Z", "updated_at": "2024-01-19T21:43:56Z", "mode": "test",
+        "service": "ParcelSelect", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_6ffa3fa64a8243629566ceef79076b0e", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_9f24327adb11459180bcbebff740fa25", "object": "Rate", "created_at":
+        "2024-01-19T21:43:56Z", "updated_at": "2024-01-19T21:43:56Z", "mode": "test",
+        "service": "Express", "carrier": "USPS", "rate": "46.85", "currency": "USD",
+        "retail_rate": "54.20", "retail_currency": "USD", "list_rate": "46.85", "list_currency":
+        "USD", "billing_type": "easypost", "delivery_days": null, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": null, "shipment_id":
+        "shp_6ffa3fa64a8243629566ceef79076b0e", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"}],
+        "refund_status": null, "scan_form": {"id": "sf_f25eda89a8074a699f6f76c8eaaa349e",
+        "object": "ScanForm", "created_at": "2024-01-19T21:43:58Z", "updated_at":
+        "2024-01-19T21:43:58Z", "tracking_codes": ["9405500207552010708099"], "address":
+        {"id": "adr_d8e39620b71311eebd5cac1f6bc539ae", "object": "Address", "created_at":
+        "2024-01-19T21:43:56+00:00", "updated_at": "2024-01-19T21:43:56+00:00", "name":
+        "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "status": "created", "message": null, "form_url":
+        "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20240119/e8ccdd7972f6884e22a024ae6835e7dd0d.pdf",
+        "form_file_type": null, "batch_id": "batch_b03a60bcbc3a4304b454870debb18a95",
+        "confirmation": null}, "selected_rate": {"id": "rate_e23a64d44fd2445bb73a85632d30bb8a",
+        "object": "Rate", "created_at": "2024-01-19T21:43:57Z", "updated_at": "2024-01-19T21:43:57Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_6ffa3fa64a8243629566ceef79076b0e", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, "tracker": {"id": "trk_19cda064a4c248dc91f9fcc2901c8cce",
+        "object": "Tracker", "mode": "test", "tracking_code": "9405500207552010708099",
+        "status": "pre_transit", "status_detail": "status_update", "created_at": "2024-01-19T21:43:57Z",
+        "updated_at": "2024-01-19T21:43:57Z", "signed_by": null, "weight": null, "est_delivery_date":
+        "2024-01-19T21:43:57Z", "shipment_id": "shp_6ffa3fa64a8243629566ceef79076b0e",
+        "carrier": "USPS", "tracking_details": [{"object": "TrackingDetail", "message":
+        "Pre-Shipment Info Sent to USPS", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-19T21:43:57Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": null, "state": null, "country": null, "zip": null}}, {"object": "TrackingDetail",
+        "message": "Shipping Label Created", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-20T10:20:57Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": "HOUSTON", "state": "TX", "country": null, "zip": "77063"}}], "fees":
+        [], "carrier_detail": {"object": "CarrierDetail", "service": "First-Class
+        Package Service", "container_type": null, "est_delivery_date_local": null,
+        "est_delivery_time_local": null, "origin_location": "HOUSTON TX, 77001", "origin_tracking_location":
+        {"object": "TrackingLocation", "city": "HOUSTON", "state": "TX", "country":
+        null, "zip": "77063"}, "destination_location": "CHARLESTON SC, 29401", "destination_tracking_location":
+        null, "guaranteed_delivery_date": null, "alternate_identifier": null, "initial_delivery_attempt":
+        null}, "public_url": "https://track.easypost.com/djE6dHJrXzE5Y2RhMDY0YTRjMjQ4ZGM5MWY5ZmNjMjkwMWM4Y2Nl"},
+        "to_address": {"id": "adr_d8e13c66b71311eebae73cecef1b359e", "object": "Address",
+        "created_at": "2024-01-19T21:43:56+00:00", "updated_at": "2024-01-19T21:43:56+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "usps_zone": 4, "return_address": {"id": "adr_d8e39620b71311eebd5cac1f6bc539ae",
+        "object": "Address", "created_at": "2024-01-19T21:43:56+00:00", "updated_at":
+        "2024-01-19T21:43:56+00:00", "name": "EasyPost", "company": null, "street1":
+        "417 Montgomery Street", "street2": "5th Floor", "city": "San Francisco",
+        "state": "CA", "zip": "94104", "country": "US", "phone": "4153334445", "email":
+        "support@easypost.com", "mode": "test", "carrier_facility": null, "residential":
+        null, "federal_tax_id": null, "state_tax_id": null, "verifications": {}},
+        "buyer_address": {"id": "adr_d8e13c66b71311eebae73cecef1b359e", "object":
+        "Address", "created_at": "2024-01-19T21:43:56+00:00", "updated_at": "2024-01-19T21:43:56+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "forms": [], "fees": [{"object": "Fee", "type": "LabelFee", "amount": "0.00000",
+        "charged": true, "refunded": false}, {"object": "Fee", "type": "PostageFee",
+        "amount": "7.99000", "charged": true, "refunded": false}], "id": "shp_6ffa3fa64a8243629566ceef79076b0e",
+        "object": "Shipment"}], "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '10475'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f365aaed22e78ba7a4000d4d23
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb40nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.180387'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/shipments?page_size=1
+  response:
+    body:
+      string: '{"shipments": [{"created_at": "2024-01-19T21:47:49Z", "is_return":
+        false, "messages": [], "mode": "test", "options": {"currency": "USD", "payment":
+        {"type": "SENDER"}, "date_advance": 0}, "reference": null, "status": "unknown",
+        "tracking_code": "9405500207552010708549", "updated_at": "2024-01-19T21:47:51Z",
+        "batch_id": "batch_b3eff1db86ca4e1fa0fe94dca8cfe387", "batch_status": "postage_purchased",
+        "batch_message": null, "customs_info": {"id": "cstinfo_c7479a268d604b0681baeea11f921e74",
+        "object": "CustomsInfo", "created_at": "2024-01-19T21:47:49Z", "updated_at":
+        "2024-01-19T21:47:49Z", "contents_explanation": "", "contents_type": "merchandise",
+        "customs_certify": true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI
+        30.37(a)", "non_delivery_option": "return", "restriction_comments": null,
+        "restriction_type": "none", "mode": "test", "declaration": null, "customs_items":
+        [{"id": "cstitem_3c687cce810c47e3b4b8599cce4b7341", "object": "CustomsItem",
+        "created_at": "2024-01-19T21:47:49Z", "updated_at": "2024-01-19T21:47:49Z",
+        "description": "T-shirt", "hs_tariff_number": "123456", "origin_country":
+        "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code": "123", "mode":
+        "test", "manufacturer": null, "currency": null, "eccn": null, "printed_commodity_identifier":
+        null}]}, "from_address": {"id": "adr_63b80d85b71411eeb872ac1f6bc539aa", "object":
+        "Address", "created_at": "2024-01-19T21:47:49+00:00", "updated_at": "2024-01-19T21:47:49+00:00",
+        "name": "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "insurance": null, "order_id": null, "parcel":
+        {"id": "prcl_8478aa9464a24675a1cf63b2184c59be", "object": "Parcel", "created_at":
+        "2024-01-19T21:47:49Z", "updated_at": "2024-01-19T21:47:49Z", "length": 20.2,
+        "width": 10.9, "height": 5.0, "predefined_package": null, "weight": 65.9,
+        "mode": "test"}, "postage_label": {"object": "PostageLabel", "id": "pl_5a6004eb623a4e63bd6d826905066980",
+        "created_at": "2024-01-19T21:47:50Z", "updated_at": "2024-01-19T21:47:50Z",
+        "date_advance": 0, "integrated_form": "none", "label_date": "2024-01-19T21:47:50Z",
+        "label_resolution": 300, "label_size": "4x6", "label_type": "default", "label_file_type":
+        "image/png", "label_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/postage_label/20240119/e8c162a623d0c94394a16cfec16ad00ce4.png",
+        "label_pdf_url": null, "label_zpl_url": null, "label_epl2_url": null, "label_file":
+        null}, "rates": [{"id": "rate_fa30f85afd164334bc378eb0b6bcae9a", "object":
+        "Rate", "created_at": "2024-01-19T21:47:49Z", "updated_at": "2024-01-19T21:47:49Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_3520e5b9d85d464389c46c01f34a943a", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_f5aafb9f1fe547ef878883d7fb4dd51b",
+        "object": "Rate", "created_at": "2024-01-19T21:47:49Z", "updated_at": "2024-01-19T21:47:49Z",
+        "mode": "test", "service": "GroundAdvantage", "carrier": "USPS", "rate": "6.79",
+        "currency": "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate":
+        "8.92", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        3, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        3, "shipment_id": "shp_3520e5b9d85d464389c46c01f34a943a", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_26f0a3d0877545649e010f7a8a268f13",
+        "object": "Rate", "created_at": "2024-01-19T21:47:49Z", "updated_at": "2024-01-19T21:47:49Z",
+        "mode": "test", "service": "First", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_3520e5b9d85d464389c46c01f34a943a", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_7a083ecc7b8c4d2bb7aa73e10dc31629", "object": "Rate", "created_at":
+        "2024-01-19T21:47:49Z", "updated_at": "2024-01-19T21:47:49Z", "mode": "test",
+        "service": "ParcelSelect", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_3520e5b9d85d464389c46c01f34a943a", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_c62cb64690504e2e95c1f197d40f4388", "object": "Rate", "created_at":
+        "2024-01-19T21:47:49Z", "updated_at": "2024-01-19T21:47:49Z", "mode": "test",
+        "service": "Express", "carrier": "USPS", "rate": "46.85", "currency": "USD",
+        "retail_rate": "54.20", "retail_currency": "USD", "list_rate": "46.85", "list_currency":
+        "USD", "billing_type": "easypost", "delivery_days": null, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": null, "shipment_id":
+        "shp_3520e5b9d85d464389c46c01f34a943a", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"}],
+        "refund_status": null, "scan_form": {"id": "sf_2c81f564c6354c7d830d919480c6df4c",
+        "object": "ScanForm", "created_at": "2024-01-19T21:47:50Z", "updated_at":
+        "2024-01-19T21:47:51Z", "tracking_codes": ["9405500207552010708549"], "address":
+        {"id": "adr_63b80d85b71411eeb872ac1f6bc539aa", "object": "Address", "created_at":
+        "2024-01-19T21:47:49+00:00", "updated_at": "2024-01-19T21:47:49+00:00", "name":
+        "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "status": "created", "message": null, "form_url":
+        "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20240119/e8497c81ee5e3344c5b5571076d5b115e0.pdf",
+        "form_file_type": null, "batch_id": "batch_b3eff1db86ca4e1fa0fe94dca8cfe387",
+        "confirmation": null}, "selected_rate": {"id": "rate_fa30f85afd164334bc378eb0b6bcae9a",
+        "object": "Rate", "created_at": "2024-01-19T21:47:50Z", "updated_at": "2024-01-19T21:47:50Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_3520e5b9d85d464389c46c01f34a943a", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, "tracker": {"id": "trk_3964cdba1dc94256b352d7333095e9ba",
+        "object": "Tracker", "mode": "test", "tracking_code": "9405500207552010708549",
+        "status": "pre_transit", "status_detail": "status_update", "created_at": "2024-01-19T21:47:50Z",
+        "updated_at": "2024-01-19T21:47:50Z", "signed_by": null, "weight": null, "est_delivery_date":
+        "2024-01-19T21:47:50Z", "shipment_id": "shp_3520e5b9d85d464389c46c01f34a943a",
+        "carrier": "USPS", "tracking_details": [{"object": "TrackingDetail", "message":
+        "Pre-Shipment Info Sent to USPS", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-19T21:47:50Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": null, "state": null, "country": null, "zip": null}}, {"object": "TrackingDetail",
+        "message": "Shipping Label Created", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-20T10:24:50Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": "HOUSTON", "state": "TX", "country": null, "zip": "77063"}}], "fees":
+        [], "carrier_detail": {"object": "CarrierDetail", "service": "First-Class
+        Package Service", "container_type": null, "est_delivery_date_local": null,
+        "est_delivery_time_local": null, "origin_location": "HOUSTON TX, 77001", "origin_tracking_location":
+        {"object": "TrackingLocation", "city": "HOUSTON", "state": "TX", "country":
+        null, "zip": "77063"}, "destination_location": "CHARLESTON SC, 29401", "destination_tracking_location":
+        null, "guaranteed_delivery_date": null, "alternate_identifier": null, "initial_delivery_attempt":
+        null}, "public_url": "https://track.easypost.com/djE6dHJrXzM5NjRjZGJhMWRjOTQyNTZiMzUyZDczMzMwOTVlOWJh"},
+        "to_address": {"id": "adr_63b62bc4b71411eeaa05ac1f6bc539ae", "object": "Address",
+        "created_at": "2024-01-19T21:47:49+00:00", "updated_at": "2024-01-19T21:47:49+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "usps_zone": 4, "return_address": {"id": "adr_63b80d85b71411eeb872ac1f6bc539aa",
+        "object": "Address", "created_at": "2024-01-19T21:47:49+00:00", "updated_at":
+        "2024-01-19T21:47:49+00:00", "name": "EasyPost", "company": null, "street1":
+        "417 Montgomery Street", "street2": "5th Floor", "city": "San Francisco",
+        "state": "CA", "zip": "94104", "country": "US", "phone": "4153334445", "email":
+        "support@easypost.com", "mode": "test", "carrier_facility": null, "residential":
+        null, "federal_tax_id": null, "state_tax_id": null, "verifications": {}},
+        "buyer_address": {"id": "adr_63b62bc4b71411eeaa05ac1f6bc539ae", "object":
+        "Address", "created_at": "2024-01-19T21:47:49+00:00", "updated_at": "2024-01-19T21:47:49+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "forms": [], "fees": [{"object": "Fee", "type": "LabelFee", "amount": "0.00000",
+        "charged": true, "refunded": false}, {"object": "Fee", "type": "PostageFee",
+        "amount": "7.99000", "charged": true, "refunded": false}], "id": "shp_3520e5b9d85d464389c46c01f34a943a",
+        "object": "Shipment"}], "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '10475'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdaa65aaee0ae78bb0270011444b
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb34nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.164411'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/shipments?page_size=1
+  response:
+    body:
+      string: '{"shipments": [{"created_at": "2024-01-19T21:49:44Z", "is_return":
+        false, "messages": [], "mode": "test", "options": {"currency": "USD", "payment":
+        {"type": "SENDER"}, "date_advance": 0}, "reference": null, "status": "unknown",
+        "tracking_code": "9405500207552010709102", "updated_at": "2024-01-19T21:49:46Z",
+        "batch_id": "batch_1f2b6f67ee9441d0a4665930a68332c4", "batch_status": "postage_purchased",
+        "batch_message": null, "customs_info": {"id": "cstinfo_e1d6f30a63c6407d856f3cd7958aaf0c",
+        "object": "CustomsInfo", "created_at": "2024-01-19T21:49:44Z", "updated_at":
+        "2024-01-19T21:49:44Z", "contents_explanation": "", "contents_type": "merchandise",
+        "customs_certify": true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI
+        30.37(a)", "non_delivery_option": "return", "restriction_comments": null,
+        "restriction_type": "none", "mode": "test", "declaration": null, "customs_items":
+        [{"id": "cstitem_68883a0ec33b443a97298131a5d54313", "object": "CustomsItem",
+        "created_at": "2024-01-19T21:49:44Z", "updated_at": "2024-01-19T21:49:44Z",
+        "description": "T-shirt", "hs_tariff_number": "123456", "origin_country":
+        "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code": "123", "mode":
+        "test", "manufacturer": null, "currency": null, "eccn": null, "printed_commodity_identifier":
+        null}]}, "from_address": {"id": "adr_a84db4e5b71411ee8db7ac1f6bc539aa", "object":
+        "Address", "created_at": "2024-01-19T21:49:44+00:00", "updated_at": "2024-01-19T21:49:44+00:00",
+        "name": "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "insurance": null, "order_id": null, "parcel":
+        {"id": "prcl_e6dbe4a18a214d1f887c55994ee38c7b", "object": "Parcel", "created_at":
+        "2024-01-19T21:49:44Z", "updated_at": "2024-01-19T21:49:44Z", "length": 20.2,
+        "width": 10.9, "height": 5.0, "predefined_package": null, "weight": 65.9,
+        "mode": "test"}, "postage_label": {"object": "PostageLabel", "id": "pl_e2a54083065c492c9c3cd738aee9a04b",
+        "created_at": "2024-01-19T21:49:45Z", "updated_at": "2024-01-19T21:49:45Z",
+        "date_advance": 0, "integrated_form": "none", "label_date": "2024-01-19T21:49:45Z",
+        "label_resolution": 300, "label_size": "4x6", "label_type": "default", "label_file_type":
+        "image/png", "label_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/postage_label/20240119/e853b9af8a67e84c67bcb2fb95a05d80f5.png",
+        "label_pdf_url": null, "label_zpl_url": null, "label_epl2_url": null, "label_file":
+        null}, "rates": [{"id": "rate_aee54f6a74e54df88ae8cf3d3c61b833", "object":
+        "Rate", "created_at": "2024-01-19T21:49:44Z", "updated_at": "2024-01-19T21:49:44Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_99377db897464f81afcd3812f4e92305", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_c50aebdd003e4f78908d1b4833c23a5c",
+        "object": "Rate", "created_at": "2024-01-19T21:49:44Z", "updated_at": "2024-01-19T21:49:44Z",
+        "mode": "test", "service": "GroundAdvantage", "carrier": "USPS", "rate": "6.79",
+        "currency": "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate":
+        "8.92", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        3, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        3, "shipment_id": "shp_99377db897464f81afcd3812f4e92305", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_6ae6b55d16d2412e88fbf81520bacc02",
+        "object": "Rate", "created_at": "2024-01-19T21:49:44Z", "updated_at": "2024-01-19T21:49:44Z",
+        "mode": "test", "service": "First", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_99377db897464f81afcd3812f4e92305", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_8a6974de4cff41e894da9ae6575f7adb", "object": "Rate", "created_at":
+        "2024-01-19T21:49:44Z", "updated_at": "2024-01-19T21:49:44Z", "mode": "test",
+        "service": "ParcelSelect", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_99377db897464f81afcd3812f4e92305", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_a7fdb87c747e45018fb27a1bf6a966f8", "object": "Rate", "created_at":
+        "2024-01-19T21:49:44Z", "updated_at": "2024-01-19T21:49:44Z", "mode": "test",
+        "service": "Express", "carrier": "USPS", "rate": "46.85", "currency": "USD",
+        "retail_rate": "54.20", "retail_currency": "USD", "list_rate": "46.85", "list_currency":
+        "USD", "billing_type": "easypost", "delivery_days": null, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": null, "shipment_id":
+        "shp_99377db897464f81afcd3812f4e92305", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"}],
+        "refund_status": null, "scan_form": {"id": "sf_1be115f4129540d9a9d554293979dcd2",
+        "object": "ScanForm", "created_at": "2024-01-19T21:49:46Z", "updated_at":
+        "2024-01-19T21:49:46Z", "tracking_codes": ["9405500207552010709102"], "address":
+        {"id": "adr_a84db4e5b71411ee8db7ac1f6bc539aa", "object": "Address", "created_at":
+        "2024-01-19T21:49:44+00:00", "updated_at": "2024-01-19T21:49:44+00:00", "name":
+        "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "status": "created", "message": null, "form_url":
+        "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20240119/e89fb1eea90766417a97ffcbd97f34758f.pdf",
+        "form_file_type": null, "batch_id": "batch_1f2b6f67ee9441d0a4665930a68332c4",
+        "confirmation": null}, "selected_rate": {"id": "rate_aee54f6a74e54df88ae8cf3d3c61b833",
+        "object": "Rate", "created_at": "2024-01-19T21:49:45Z", "updated_at": "2024-01-19T21:49:45Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_99377db897464f81afcd3812f4e92305", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, "tracker": {"id": "trk_19bc93fdfc0249059993518a6857cda9",
+        "object": "Tracker", "mode": "test", "tracking_code": "9405500207552010709102",
+        "status": "pre_transit", "status_detail": "status_update", "created_at": "2024-01-19T21:49:45Z",
+        "updated_at": "2024-01-19T21:49:45Z", "signed_by": null, "weight": null, "est_delivery_date":
+        "2024-01-19T21:49:45Z", "shipment_id": "shp_99377db897464f81afcd3812f4e92305",
+        "carrier": "USPS", "tracking_details": [{"object": "TrackingDetail", "message":
+        "Pre-Shipment Info Sent to USPS", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-19T21:49:45Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": null, "state": null, "country": null, "zip": null}}, {"object": "TrackingDetail",
+        "message": "Shipping Label Created", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-20T10:26:45Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": "HOUSTON", "state": "TX", "country": null, "zip": "77063"}}], "fees":
+        [], "carrier_detail": {"object": "CarrierDetail", "service": "First-Class
+        Package Service", "container_type": null, "est_delivery_date_local": null,
+        "est_delivery_time_local": null, "origin_location": "HOUSTON TX, 77001", "origin_tracking_location":
+        {"object": "TrackingLocation", "city": "HOUSTON", "state": "TX", "country":
+        null, "zip": "77063"}, "destination_location": "CHARLESTON SC, 29401", "destination_tracking_location":
+        null, "guaranteed_delivery_date": null, "alternate_identifier": null, "initial_delivery_attempt":
+        null}, "public_url": "https://track.easypost.com/djE6dHJrXzE5YmM5M2ZkZmMwMjQ5MDU5OTkzNTE4YTY4NTdjZGE5"},
+        "to_address": {"id": "adr_a84b213ab71411eebf67ac1f6bc539ae", "object": "Address",
+        "created_at": "2024-01-19T21:49:44+00:00", "updated_at": "2024-01-19T21:49:44+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "usps_zone": 4, "return_address": {"id": "adr_a84db4e5b71411ee8db7ac1f6bc539aa",
+        "object": "Address", "created_at": "2024-01-19T21:49:44+00:00", "updated_at":
+        "2024-01-19T21:49:44+00:00", "name": "EasyPost", "company": null, "street1":
+        "417 Montgomery Street", "street2": "5th Floor", "city": "San Francisco",
+        "state": "CA", "zip": "94104", "country": "US", "phone": "4153334445", "email":
+        "support@easypost.com", "mode": "test", "carrier_facility": null, "residential":
+        null, "federal_tax_id": null, "state_tax_id": null, "verifications": {}},
+        "buyer_address": {"id": "adr_a84b213ab71411eebf67ac1f6bc539ae", "object":
+        "Address", "created_at": "2024-01-19T21:49:44+00:00", "updated_at": "2024-01-19T21:49:44+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "forms": [], "fees": [{"object": "Fee", "type": "LabelFee", "amount": "0.00000",
+        "charged": true, "refunded": false}, {"object": "Fee", "type": "PostageFee",
+        "amount": "7.99000", "charged": true, "refunded": false}], "id": "shp_99377db897464f81afcd3812f4e92305",
+        "object": "Shipment"}], "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '10475'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - f627fdac65aaee7de78bb84a001185ff
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb1nuq 003ad9bca0
+      x-runtime:
+      - '0.180348'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/shipments?page_size=1
+  response:
+    body:
+      string: '{"shipments": [{"created_at": "2024-01-19T21:59:03Z", "is_return":
+        false, "messages": [], "mode": "test", "options": {"currency": "USD", "payment":
+        {"type": "SENDER"}, "date_advance": 0}, "reference": null, "status": "unknown",
+        "tracking_code": "9405500207552010711549", "updated_at": "2024-01-19T21:59:04Z",
+        "batch_id": "batch_cfd9e0a3dee34f68b8eead06b7c9b995", "batch_status": "postage_purchased",
+        "batch_message": null, "customs_info": {"id": "cstinfo_edb33bc33ba646b39a6f09c5ef74afe5",
+        "object": "CustomsInfo", "created_at": "2024-01-19T21:59:03Z", "updated_at":
+        "2024-01-19T21:59:03Z", "contents_explanation": "", "contents_type": "merchandise",
+        "customs_certify": true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI
+        30.37(a)", "non_delivery_option": "return", "restriction_comments": null,
+        "restriction_type": "none", "mode": "test", "declaration": null, "customs_items":
+        [{"id": "cstitem_2a8a3635e56a416fad735007e8b59ee3", "object": "CustomsItem",
+        "created_at": "2024-01-19T21:59:03Z", "updated_at": "2024-01-19T21:59:03Z",
+        "description": "T-shirt", "hs_tariff_number": "123456", "origin_country":
+        "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code": "123", "mode":
+        "test", "manufacturer": null, "currency": null, "eccn": null, "printed_commodity_identifier":
+        null}]}, "from_address": {"id": "adr_f56b9bb7b71511eebda6ac1f6bc539aa", "object":
+        "Address", "created_at": "2024-01-19T21:59:03+00:00", "updated_at": "2024-01-19T21:59:03+00:00",
+        "name": "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "insurance": null, "order_id": null, "parcel":
+        {"id": "prcl_b0a22aabbb0a4ef5b8a979a088220b21", "object": "Parcel", "created_at":
+        "2024-01-19T21:59:03Z", "updated_at": "2024-01-19T21:59:03Z", "length": 20.2,
+        "width": 10.9, "height": 5.0, "predefined_package": null, "weight": 65.9,
+        "mode": "test"}, "postage_label": {"object": "PostageLabel", "id": "pl_153bb314ead94a229ff73a6a64ea3bbe",
+        "created_at": "2024-01-19T21:59:04Z", "updated_at": "2024-01-19T21:59:04Z",
+        "date_advance": 0, "integrated_form": "none", "label_date": "2024-01-19T21:59:03Z",
+        "label_resolution": 300, "label_size": "4x6", "label_type": "default", "label_file_type":
+        "image/png", "label_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/postage_label/20240119/e83e591972733247aab1fdc372db75c01f.png",
+        "label_pdf_url": null, "label_zpl_url": null, "label_epl2_url": null, "label_file":
+        null}, "rates": [{"id": "rate_e869c02d5a5f4e228a601d61919e88b4", "object":
+        "Rate", "created_at": "2024-01-19T21:59:03Z", "updated_at": "2024-01-19T21:59:03Z",
+        "mode": "test", "service": "Express", "carrier": "USPS", "rate": "46.85",
+        "currency": "USD", "retail_rate": "54.20", "retail_currency": "USD", "list_rate":
+        "46.85", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        null, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        null, "shipment_id": "shp_fdeca7eea7f84d8d8f5bda25d6abcb04", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_cbe211d5078c4451a85ebb696674b94b",
+        "object": "Rate", "created_at": "2024-01-19T21:59:03Z", "updated_at": "2024-01-19T21:59:03Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_fdeca7eea7f84d8d8f5bda25d6abcb04", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_2c89473f7d424fcabd3a264063a34c4b",
+        "object": "Rate", "created_at": "2024-01-19T21:59:03Z", "updated_at": "2024-01-19T21:59:03Z",
+        "mode": "test", "service": "GroundAdvantage", "carrier": "USPS", "rate": "6.79",
+        "currency": "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate":
+        "8.92", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        3, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        3, "shipment_id": "shp_fdeca7eea7f84d8d8f5bda25d6abcb04", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_6187ea5b711046bcac88a001b236c3e7",
+        "object": "Rate", "created_at": "2024-01-19T21:59:03Z", "updated_at": "2024-01-19T21:59:03Z",
+        "mode": "test", "service": "First", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_fdeca7eea7f84d8d8f5bda25d6abcb04", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_95506bb3f7684eee97f534d6cc5e7020", "object": "Rate", "created_at":
+        "2024-01-19T21:59:03Z", "updated_at": "2024-01-19T21:59:03Z", "mode": "test",
+        "service": "ParcelSelect", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_fdeca7eea7f84d8d8f5bda25d6abcb04", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"}],
+        "refund_status": null, "scan_form": {"id": "sf_1eb4a2f980fc40feb3c821ce3e6ca278",
+        "object": "ScanForm", "created_at": "2024-01-19T21:59:04Z", "updated_at":
+        "2024-01-19T21:59:05Z", "tracking_codes": ["9405500207552010711549"], "address":
+        {"id": "adr_f56b9bb7b71511eebda6ac1f6bc539aa", "object": "Address", "created_at":
+        "2024-01-19T21:59:03+00:00", "updated_at": "2024-01-19T21:59:03+00:00", "name":
+        "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "status": "created", "message": null, "form_url":
+        "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20240119/e88f3d9ee4a5a6448ebf1455c89f5a640a.pdf",
+        "form_file_type": null, "batch_id": "batch_cfd9e0a3dee34f68b8eead06b7c9b995",
+        "confirmation": null}, "selected_rate": {"id": "rate_cbe211d5078c4451a85ebb696674b94b",
+        "object": "Rate", "created_at": "2024-01-19T21:59:04Z", "updated_at": "2024-01-19T21:59:04Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_fdeca7eea7f84d8d8f5bda25d6abcb04", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, "tracker": {"id": "trk_f7cda8c0f963458cb133b1ee1a7e94b6",
+        "object": "Tracker", "mode": "test", "tracking_code": "9405500207552010711549",
+        "status": "pre_transit", "status_detail": "status_update", "created_at": "2024-01-19T21:59:04Z",
+        "updated_at": "2024-01-19T21:59:04Z", "signed_by": null, "weight": null, "est_delivery_date":
+        "2024-01-19T21:59:04Z", "shipment_id": "shp_fdeca7eea7f84d8d8f5bda25d6abcb04",
+        "carrier": "USPS", "tracking_details": [{"object": "TrackingDetail", "message":
+        "Pre-Shipment Info Sent to USPS", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-19T21:59:04Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": null, "state": null, "country": null, "zip": null}}, {"object": "TrackingDetail",
+        "message": "Shipping Label Created", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-20T10:36:04Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": "HOUSTON", "state": "TX", "country": null, "zip": "77063"}}], "fees":
+        [], "carrier_detail": {"object": "CarrierDetail", "service": "First-Class
+        Package Service", "container_type": null, "est_delivery_date_local": null,
+        "est_delivery_time_local": null, "origin_location": "HOUSTON TX, 77001", "origin_tracking_location":
+        {"object": "TrackingLocation", "city": "HOUSTON", "state": "TX", "country":
+        null, "zip": "77063"}, "destination_location": "CHARLESTON SC, 29401", "destination_tracking_location":
+        null, "guaranteed_delivery_date": null, "alternate_identifier": null, "initial_delivery_attempt":
+        null}, "public_url": "https://track.easypost.com/djE6dHJrX2Y3Y2RhOGMwZjk2MzQ1OGNiMTMzYjFlZTFhN2U5NGI2"},
+        "to_address": {"id": "adr_f569824eb71511eebda5ac1f6bc539aa", "object": "Address",
+        "created_at": "2024-01-19T21:59:03+00:00", "updated_at": "2024-01-19T21:59:03+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "usps_zone": 4, "return_address": {"id": "adr_f56b9bb7b71511eebda6ac1f6bc539aa",
+        "object": "Address", "created_at": "2024-01-19T21:59:03+00:00", "updated_at":
+        "2024-01-19T21:59:03+00:00", "name": "EasyPost", "company": null, "street1":
+        "417 Montgomery Street", "street2": "5th Floor", "city": "San Francisco",
+        "state": "CA", "zip": "94104", "country": "US", "phone": "4153334445", "email":
+        "support@easypost.com", "mode": "test", "carrier_facility": null, "residential":
+        null, "federal_tax_id": null, "state_tax_id": null, "verifications": {}},
+        "buyer_address": {"id": "adr_f569824eb71511eebda5ac1f6bc539aa", "object":
+        "Address", "created_at": "2024-01-19T21:59:03+00:00", "updated_at": "2024-01-19T21:59:03+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "forms": [], "fees": [{"object": "Fee", "type": "LabelFee", "amount": "0.00000",
+        "charged": true, "refunded": false}, {"object": "Fee", "type": "PostageFee",
+        "amount": "7.99000", "charged": true, "refunded": false}], "id": "shp_fdeca7eea7f84d8d8f5bda25d6abcb04",
+        "object": "Shipment"}], "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '10475'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f765aaf0ace798bfe0000f894c
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb42nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.177002'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/shipments?page_size=1
+  response:
+    body:
+      string: '{"shipments": [{"created_at": "2024-01-19T22:01:58Z", "is_return":
+        false, "messages": [], "mode": "test", "options": {"currency": "USD", "payment":
+        {"type": "SENDER"}, "date_advance": 0}, "reference": null, "status": "unknown",
+        "tracking_code": "9405500207552010711969", "updated_at": "2024-01-19T22:02:00Z",
+        "batch_id": "batch_aebd0d167bf542e788a9eb1bb2a62fb2", "batch_status": "postage_purchased",
+        "batch_message": null, "customs_info": {"id": "cstinfo_9e5ef28a04a844d28af5baacf9dc08fd",
+        "object": "CustomsInfo", "created_at": "2024-01-19T22:01:58Z", "updated_at":
+        "2024-01-19T22:01:58Z", "contents_explanation": "", "contents_type": "merchandise",
+        "customs_certify": true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI
+        30.37(a)", "non_delivery_option": "return", "restriction_comments": null,
+        "restriction_type": "none", "mode": "test", "declaration": null, "customs_items":
+        [{"id": "cstitem_6717b88e200446abb07d9cac379acec6", "object": "CustomsItem",
+        "created_at": "2024-01-19T22:01:58Z", "updated_at": "2024-01-19T22:01:58Z",
+        "description": "T-shirt", "hs_tariff_number": "123456", "origin_country":
+        "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code": "123", "mode":
+        "test", "manufacturer": null, "currency": null, "eccn": null, "printed_commodity_identifier":
+        null}]}, "from_address": {"id": "adr_5dbc0d4eb71611ee8ef8ac1f6bc53342", "object":
+        "Address", "created_at": "2024-01-19T22:01:58+00:00", "updated_at": "2024-01-19T22:01:58+00:00",
+        "name": "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "insurance": null, "order_id": null, "parcel":
+        {"id": "prcl_105ab4b774d24746805156b18be89dc9", "object": "Parcel", "created_at":
+        "2024-01-19T22:01:58Z", "updated_at": "2024-01-19T22:01:58Z", "length": 20.2,
+        "width": 10.9, "height": 5.0, "predefined_package": null, "weight": 65.9,
+        "mode": "test"}, "postage_label": {"object": "PostageLabel", "id": "pl_c1cea9faa18647fb98aa271b7651f24d",
+        "created_at": "2024-01-19T22:01:59Z", "updated_at": "2024-01-19T22:01:59Z",
+        "date_advance": 0, "integrated_form": "none", "label_date": "2024-01-19T22:01:59Z",
+        "label_resolution": 300, "label_size": "4x6", "label_type": "default", "label_file_type":
+        "image/png", "label_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/postage_label/20240119/e83c10649120ff4bee945fafe3e3e104be.png",
+        "label_pdf_url": null, "label_zpl_url": null, "label_epl2_url": null, "label_file":
+        null}, "rates": [{"id": "rate_de2cd14d8e47436eb522c73ab77d6dee", "object":
+        "Rate", "created_at": "2024-01-19T22:01:58Z", "updated_at": "2024-01-19T22:01:58Z",
+        "mode": "test", "service": "Express", "carrier": "USPS", "rate": "46.85",
+        "currency": "USD", "retail_rate": "54.20", "retail_currency": "USD", "list_rate":
+        "46.85", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        null, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        null, "shipment_id": "shp_b232ba9a590a4434907f48617f8e11df", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_0ce9baa0f5cf44dd8e90e3f5b2449a7a",
+        "object": "Rate", "created_at": "2024-01-19T22:01:58Z", "updated_at": "2024-01-19T22:01:58Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_b232ba9a590a4434907f48617f8e11df", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_ecd9929e6ead423c80b601127966bb41",
+        "object": "Rate", "created_at": "2024-01-19T22:01:58Z", "updated_at": "2024-01-19T22:01:58Z",
+        "mode": "test", "service": "GroundAdvantage", "carrier": "USPS", "rate": "6.79",
+        "currency": "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate":
+        "8.92", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        3, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        3, "shipment_id": "shp_b232ba9a590a4434907f48617f8e11df", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_5bda53e985644456aa778be713015056",
+        "object": "Rate", "created_at": "2024-01-19T22:01:58Z", "updated_at": "2024-01-19T22:01:58Z",
+        "mode": "test", "service": "First", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_b232ba9a590a4434907f48617f8e11df", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_ba4737a1b24c40bfa4e38081d991b8a7", "object": "Rate", "created_at":
+        "2024-01-19T22:01:58Z", "updated_at": "2024-01-19T22:01:58Z", "mode": "test",
+        "service": "ParcelSelect", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_b232ba9a590a4434907f48617f8e11df", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"}],
+        "refund_status": null, "scan_form": {"id": "sf_aaa1967cefe54ba389850a28c61bb704",
+        "object": "ScanForm", "created_at": "2024-01-19T22:02:00Z", "updated_at":
+        "2024-01-19T22:02:00Z", "tracking_codes": ["9405500207552010711969"], "address":
+        {"id": "adr_5dbc0d4eb71611ee8ef8ac1f6bc53342", "object": "Address", "created_at":
+        "2024-01-19T22:01:58+00:00", "updated_at": "2024-01-19T22:01:58+00:00", "name":
+        "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "status": "created", "message": null, "form_url":
+        "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20240119/e86363cd2729314ce3a405dc645e3e2edf.pdf",
+        "form_file_type": null, "batch_id": "batch_aebd0d167bf542e788a9eb1bb2a62fb2",
+        "confirmation": null}, "selected_rate": {"id": "rate_0ce9baa0f5cf44dd8e90e3f5b2449a7a",
+        "object": "Rate", "created_at": "2024-01-19T22:01:59Z", "updated_at": "2024-01-19T22:01:59Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_b232ba9a590a4434907f48617f8e11df", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, "tracker": {"id": "trk_8fafbd1d874a44c78da223bbad799028",
+        "object": "Tracker", "mode": "test", "tracking_code": "9405500207552010711969",
+        "status": "pre_transit", "status_detail": "status_update", "created_at": "2024-01-19T22:01:59Z",
+        "updated_at": "2024-01-19T22:01:59Z", "signed_by": null, "weight": null, "est_delivery_date":
+        "2024-01-19T22:01:59Z", "shipment_id": "shp_b232ba9a590a4434907f48617f8e11df",
+        "carrier": "USPS", "tracking_details": [{"object": "TrackingDetail", "message":
+        "Pre-Shipment Info Sent to USPS", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-19T22:01:59Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": null, "state": null, "country": null, "zip": null}}, {"object": "TrackingDetail",
+        "message": "Shipping Label Created", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-20T10:38:59Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": "HOUSTON", "state": "TX", "country": null, "zip": "77063"}}], "fees":
+        [], "carrier_detail": {"object": "CarrierDetail", "service": "First-Class
+        Package Service", "container_type": null, "est_delivery_date_local": null,
+        "est_delivery_time_local": null, "origin_location": "HOUSTON TX, 77001", "origin_tracking_location":
+        {"object": "TrackingLocation", "city": "HOUSTON", "state": "TX", "country":
+        null, "zip": "77063"}, "destination_location": "CHARLESTON SC, 29401", "destination_tracking_location":
+        null, "guaranteed_delivery_date": null, "alternate_identifier": null, "initial_delivery_attempt":
+        null}, "public_url": "https://track.easypost.com/djE6dHJrXzhmYWZiZDFkODc0YTQ0Yzc4ZGEyMjNiYmFkNzk5MDI4"},
+        "to_address": {"id": "adr_5db97915b71611ee8ef7ac1f6bc53342", "object": "Address",
+        "created_at": "2024-01-19T22:01:58+00:00", "updated_at": "2024-01-19T22:01:58+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "usps_zone": 4, "return_address": {"id": "adr_5dbc0d4eb71611ee8ef8ac1f6bc53342",
+        "object": "Address", "created_at": "2024-01-19T22:01:58+00:00", "updated_at":
+        "2024-01-19T22:01:58+00:00", "name": "EasyPost", "company": null, "street1":
+        "417 Montgomery Street", "street2": "5th Floor", "city": "San Francisco",
+        "state": "CA", "zip": "94104", "country": "US", "phone": "4153334445", "email":
+        "support@easypost.com", "mode": "test", "carrier_facility": null, "residential":
+        null, "federal_tax_id": null, "state_tax_id": null, "verifications": {}},
+        "buyer_address": {"id": "adr_5db97915b71611ee8ef7ac1f6bc53342", "object":
+        "Address", "created_at": "2024-01-19T22:01:58+00:00", "updated_at": "2024-01-19T22:01:58+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "forms": [], "fees": [{"object": "Fee", "type": "LabelFee", "amount": "0.00000",
+        "charged": true, "refunded": false}, {"object": "Fee", "type": "PostageFee",
+        "amount": "7.99000", "charged": true, "refunded": false}], "id": "shp_b232ba9a590a4434907f48617f8e11df",
+        "object": "Shipment"}], "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '10475'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f465aaf15ce798c85d001025af
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb39nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb1nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.171904'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      authorization:
+      - <REDACTED>
+      user-agent:
+      - <REDACTED>
+    method: GET
+    uri: https://api.easypost.com/v2/shipments?page_size=1
+  response:
+    body:
+      string: '{"shipments": [{"created_at": "2024-01-19T22:05:46Z", "is_return":
+        false, "messages": [], "mode": "test", "options": {"currency": "USD", "payment":
+        {"type": "SENDER"}, "date_advance": 0}, "reference": null, "status": "unknown",
+        "tracking_code": "9405500207552010712812", "updated_at": "2024-01-19T22:05:48Z",
+        "batch_id": "batch_1159df9904bb4176918e6bb190604a18", "batch_status": "postage_purchased",
+        "batch_message": null, "customs_info": {"id": "cstinfo_42fb952bddd44ac0adee2fc6c90fed8d",
+        "object": "CustomsInfo", "created_at": "2024-01-19T22:05:46Z", "updated_at":
+        "2024-01-19T22:05:46Z", "contents_explanation": "", "contents_type": "merchandise",
+        "customs_certify": true, "customs_signer": "Steve Brule", "eel_pfc": "NOEEI
+        30.37(a)", "non_delivery_option": "return", "restriction_comments": null,
+        "restriction_type": "none", "mode": "test", "declaration": null, "customs_items":
+        [{"id": "cstitem_4aa49e3d13ed40d6ba2d8eb9671e61d4", "object": "CustomsItem",
+        "created_at": "2024-01-19T22:05:46Z", "updated_at": "2024-01-19T22:05:46Z",
+        "description": "T-shirt", "hs_tariff_number": "123456", "origin_country":
+        "US", "quantity": 1, "value": "10.0", "weight": 5.0, "code": "123", "mode":
+        "test", "manufacturer": null, "currency": null, "eccn": null, "printed_commodity_identifier":
+        null}]}, "from_address": {"id": "adr_e5cd9cfdb71611eebe4cac1f6bc539ae", "object":
+        "Address", "created_at": "2024-01-19T22:05:46+00:00", "updated_at": "2024-01-19T22:05:46+00:00",
+        "name": "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "insurance": null, "order_id": null, "parcel":
+        {"id": "prcl_1ca1395ad7d04851811a5a5902e2cb5e", "object": "Parcel", "created_at":
+        "2024-01-19T22:05:46Z", "updated_at": "2024-01-19T22:05:46Z", "length": 20.2,
+        "width": 10.9, "height": 5.0, "predefined_package": null, "weight": 65.9,
+        "mode": "test"}, "postage_label": {"object": "PostageLabel", "id": "pl_13157b637c3741c4b863c56ec3020f74",
+        "created_at": "2024-01-19T22:05:47Z", "updated_at": "2024-01-19T22:05:47Z",
+        "date_advance": 0, "integrated_form": "none", "label_date": "2024-01-19T22:05:47Z",
+        "label_resolution": 300, "label_size": "4x6", "label_type": "default", "label_file_type":
+        "image/png", "label_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/postage_label/20240119/e85fe820dcf47b479a93d7ebbde9cd43cf.png",
+        "label_pdf_url": null, "label_zpl_url": null, "label_epl2_url": null, "label_file":
+        null}, "rates": [{"id": "rate_c6289164d3eb4e2c9622c288ab7219f6", "object":
+        "Rate", "created_at": "2024-01-19T22:05:46Z", "updated_at": "2024-01-19T22:05:46Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_1c1dd75cbb95496cb251a93b0961704b", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_b598cb94ef5141c4a8d509d255dbfe6b",
+        "object": "Rate", "created_at": "2024-01-19T22:05:46Z", "updated_at": "2024-01-19T22:05:46Z",
+        "mode": "test", "service": "GroundAdvantage", "carrier": "USPS", "rate": "6.79",
+        "currency": "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate":
+        "8.92", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        3, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        3, "shipment_id": "shp_1c1dd75cbb95496cb251a93b0961704b", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, {"id": "rate_7d2d8ca65f3843b6a1f133268a4cef7a",
+        "object": "Rate", "created_at": "2024-01-19T22:05:46Z", "updated_at": "2024-01-19T22:05:46Z",
+        "mode": "test", "service": "First", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_1c1dd75cbb95496cb251a93b0961704b", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_86b6514da54140cea4f2116f7c550f34", "object": "Rate", "created_at":
+        "2024-01-19T22:05:46Z", "updated_at": "2024-01-19T22:05:46Z", "mode": "test",
+        "service": "ParcelSelect", "carrier": "USPS", "rate": "6.79", "currency":
+        "USD", "retail_rate": "12.45", "retail_currency": "USD", "list_rate": "8.92",
+        "list_currency": "USD", "billing_type": "easypost", "delivery_days": 3, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": 3, "shipment_id":
+        "shp_1c1dd75cbb95496cb251a93b0961704b", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"},
+        {"id": "rate_39c59a32bc0243df8e00ded1ffc6d03e", "object": "Rate", "created_at":
+        "2024-01-19T22:05:46Z", "updated_at": "2024-01-19T22:05:46Z", "mode": "test",
+        "service": "Express", "carrier": "USPS", "rate": "46.85", "currency": "USD",
+        "retail_rate": "54.20", "retail_currency": "USD", "list_rate": "46.85", "list_currency":
+        "USD", "billing_type": "easypost", "delivery_days": null, "delivery_date":
+        null, "delivery_date_guaranteed": false, "est_delivery_days": null, "shipment_id":
+        "shp_1c1dd75cbb95496cb251a93b0961704b", "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"}],
+        "refund_status": null, "scan_form": {"id": "sf_1de4ead0dce34c4387c7836727c39c33",
+        "object": "ScanForm", "created_at": "2024-01-19T22:05:48Z", "updated_at":
+        "2024-01-19T22:05:48Z", "tracking_codes": ["9405500207552010712812"], "address":
+        {"id": "adr_e5cd9cfdb71611eebe4cac1f6bc539ae", "object": "Address", "created_at":
+        "2024-01-19T22:05:46+00:00", "updated_at": "2024-01-19T22:05:46+00:00", "name":
+        "EasyPost", "company": null, "street1": "417 Montgomery Street", "street2":
+        "5th Floor", "city": "San Francisco", "state": "CA", "zip": "94104", "country":
+        "US", "phone": "4153334445", "email": "support@easypost.com", "mode": "test",
+        "carrier_facility": null, "residential": null, "federal_tax_id": null, "state_tax_id":
+        null, "verifications": {}}, "status": "created", "message": null, "form_url":
+        "https://easypost-files.s3.us-west-2.amazonaws.com/files/scan_form/20240119/e8c5d3ed3cc27e475da3b25c1da9d6fd3b.pdf",
+        "form_file_type": null, "batch_id": "batch_1159df9904bb4176918e6bb190604a18",
+        "confirmation": null}, "selected_rate": {"id": "rate_c6289164d3eb4e2c9622c288ab7219f6",
+        "object": "Rate", "created_at": "2024-01-19T22:05:47Z", "updated_at": "2024-01-19T22:05:47Z",
+        "mode": "test", "service": "Priority", "carrier": "USPS", "rate": "7.99",
+        "currency": "USD", "retail_rate": "14.05", "retail_currency": "USD", "list_rate":
+        "10.27", "list_currency": "USD", "billing_type": "easypost", "delivery_days":
+        2, "delivery_date": null, "delivery_date_guaranteed": false, "est_delivery_days":
+        2, "shipment_id": "shp_1c1dd75cbb95496cb251a93b0961704b", "carrier_account_id":
+        "ca_b25657e9896e4d63ac8151ac346ac41e"}, "tracker": {"id": "trk_abb72fbb486543ee8d61ce157dd38a81",
+        "object": "Tracker", "mode": "test", "tracking_code": "9405500207552010712812",
+        "status": "pre_transit", "status_detail": "status_update", "created_at": "2024-01-19T22:05:47Z",
+        "updated_at": "2024-01-19T22:05:47Z", "signed_by": null, "weight": null, "est_delivery_date":
+        "2024-01-19T22:05:47Z", "shipment_id": "shp_1c1dd75cbb95496cb251a93b0961704b",
+        "carrier": "USPS", "tracking_details": [{"object": "TrackingDetail", "message":
+        "Pre-Shipment Info Sent to USPS", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-19T22:05:47Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": null, "state": null, "country": null, "zip": null}}, {"object": "TrackingDetail",
+        "message": "Shipping Label Created", "description": "", "status": "pre_transit",
+        "status_detail": "status_update", "datetime": "2023-12-20T10:42:47Z", "source":
+        "USPS", "carrier_code": "", "tracking_location": {"object": "TrackingLocation",
+        "city": "HOUSTON", "state": "TX", "country": null, "zip": "77063"}}], "fees":
+        [], "carrier_detail": {"object": "CarrierDetail", "service": "First-Class
+        Package Service", "container_type": null, "est_delivery_date_local": null,
+        "est_delivery_time_local": null, "origin_location": "HOUSTON TX, 77001", "origin_tracking_location":
+        {"object": "TrackingLocation", "city": "HOUSTON", "state": "TX", "country":
+        null, "zip": "77063"}, "destination_location": "CHARLESTON SC, 29401", "destination_tracking_location":
+        null, "guaranteed_delivery_date": null, "alternate_identifier": null, "initial_delivery_attempt":
+        null}, "public_url": "https://track.easypost.com/djE6dHJrX2FiYjcyZmJiNDg2NTQzZWU4ZDYxY2UxNTdkZDM4YTgx"},
+        "to_address": {"id": "adr_e5c91903b71611eeb9af3cecef1b359e", "object": "Address",
+        "created_at": "2024-01-19T22:05:46+00:00", "updated_at": "2024-01-19T22:05:47+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "usps_zone": 4, "return_address": {"id": "adr_e5cd9cfdb71611eebe4cac1f6bc539ae",
+        "object": "Address", "created_at": "2024-01-19T22:05:46+00:00", "updated_at":
+        "2024-01-19T22:05:46+00:00", "name": "EasyPost", "company": null, "street1":
+        "417 Montgomery Street", "street2": "5th Floor", "city": "San Francisco",
+        "state": "CA", "zip": "94104", "country": "US", "phone": "4153334445", "email":
+        "support@easypost.com", "mode": "test", "carrier_facility": null, "residential":
+        null, "federal_tax_id": null, "state_tax_id": null, "verifications": {}},
+        "buyer_address": {"id": "adr_e5c91903b71611eeb9af3cecef1b359e", "object":
+        "Address", "created_at": "2024-01-19T22:05:46+00:00", "updated_at": "2024-01-19T22:05:47+00:00",
+        "name": "DR. STEVE BRULE", "company": null, "street1": "179 N HARBOR DR",
+        "street2": null, "city": "REDONDO BEACH", "state": "CA", "zip": "90277-2506",
+        "country": "US", "phone": "8573875756", "email": "DR_STEVE_BRULE@GMAIL.COM",
+        "mode": "test", "carrier_facility": null, "residential": false, "federal_tax_id":
+        null, "state_tax_id": null, "verifications": {"zip4": {"success": true, "errors":
+        [], "details": null}, "delivery": {"success": true, "errors": [], "details":
+        {"latitude": 33.8436, "longitude": -118.39177, "time_zone": "America/Los_Angeles"}}}},
+        "forms": [], "fees": [{"object": "Fee", "type": "LabelFee", "amount": "0.00000",
+        "charged": true, "refunded": false}, {"object": "Fee", "type": "PostageFee",
+        "amount": "7.99000", "charged": true, "refunded": false}], "id": "shp_1c1dd75cbb95496cb251a93b0961704b",
+        "object": "Shipment"}], "has_more": true}'
+    headers:
+      cache-control:
+      - private, no-cache, no-store
+      content-length:
+      - '10475'
+      content-type:
+      - application/json; charset=utf-8
+      expires:
+      - '0'
+      pragma:
+      - no-cache
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+      x-backend:
+      - easypost
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-ep-request-uuid:
+      - 479b01f165aaf240e798d1200010cc09
+      x-frame-options:
+      - SAMEORIGIN
+      x-node:
+      - bigweb40nuq
+      x-permitted-cross-domain-policies:
+      - none
+      x-proxied:
+      - intlb2nuq 1a7e326d32
+      - extlb2nuq 003ad9bca0
+      x-runtime:
+      - '0.330276'
+      x-version-label:
+      - easypost-202401192104-eb5201a879-master
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
