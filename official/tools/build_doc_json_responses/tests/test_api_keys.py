@@ -10,7 +10,7 @@ from builder.snippets import (
 @pytest.mark.vcr()
 def test_api_keys_retrieve(prod_client):
     user = prod_client.user.retrieve_me()
-    prod_client.user.api_keys(id=user.id)
+    prod_client.api_keys.retrieve_api_keys_for_user(id=user.id)
 
     build_response_snippet(interaction_index=1)
 

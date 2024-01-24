@@ -101,7 +101,7 @@ def read_fixture_data():
     """Reads fixture data from the fixtures JSON file."""
     with open(
             os.path.join(
-                "..", "examples", "official", "fixtures", "example-snippet-fixtures.json"
+                "..", "..", "fixtures", "example-snippet-fixtures.json"
             )
     ) as data:
         fixtures = json.load(data)

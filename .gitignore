@@ -27,3 +27,4 @@ venv
 /.eslintignore
 *.sw*
 /official/tools/build_doc_json_responses/responses/
+/official/tools/build_doc_json_responses/tests/cassettes/
