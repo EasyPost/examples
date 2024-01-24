@@ -1,15 +1,15 @@
 {
-  "id": "trk_acfcc5058c5445bda6c3c331125d52c9",
+  "id": "trk_a45db88bb5194557879246abd110606c",
   "object": "Tracker",
   "mode": "test",
   "tracking_code": "EZ1000000001",
   "status": "pre_transit",
   "status_detail": "status_update",
-  "created_at": "2023-11-30T20:36:36Z",
-  "updated_at": "2023-12-01T05:14:45Z",
+  "created_at": "2024-01-23T23:58:57Z",
+  "updated_at": "2024-01-23T23:58:57Z",
   "signed_by": null,
   "weight": null,
-  "est_delivery_date": "2023-12-01T05:14:45Z",
+  "est_delivery_date": "2024-01-23T23:58:57Z",
   "shipment_id": null,
   "carrier": "USPS",
   "tracking_details": [
@@ -19,7 +19,7 @@
       "description": "",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "datetime": "2023-11-01T05:14:45Z",
+      "datetime": "2023-12-23T23:58:57Z",
       "source": "USPS",
       "carrier_code": "",
       "tracking_location": {
@@ -36,7 +36,7 @@
       "description": "",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "datetime": "2023-11-01T17:51:45Z",
+      "datetime": "2023-12-24T12:35:57Z",
       "source": "USPS",
       "carrier_code": "",
       "tracking_location": {
@@ -70,5 +70,5 @@
   },
   "finalized": true,
   "is_return": false,
-  "public_url": "https://track.easypost.com/djE6dHJrX2FjZmNjNTA1OGM1NDQ1YmRhNmMzYzMzMTEyNWQ1MmM5"
+  "public_url": "https://track.easypost.com/djE6dHJrX2E0NWRiODhiYjUxOTQ1NTc4NzkyNDZhYmQxMTA2MDZj"
 }

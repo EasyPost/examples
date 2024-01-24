@@ -1,12 +1,12 @@
 {
-  "id": "batch_ab8e9b4b2f10414085045a1e281e5dc9",
+  "id": "batch_94b0f73e5d3344158b588f1cac2d083c",
   "object": "Batch",
   "mode": "test",
   "state": "creating",
   "num_shipments": 1,
   "reference": null,
-  "created_at": "2024-01-19T21:39:38Z",
-  "updated_at": "2024-01-19T21:39:38Z",
+  "created_at": "2024-01-24T00:03:49Z",
+  "updated_at": "2024-01-24T00:03:49Z",
   "scan_form": null,
   "shipments": [],
   "status": {

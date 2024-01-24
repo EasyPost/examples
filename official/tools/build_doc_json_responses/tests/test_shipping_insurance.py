@@ -1,4 +1,3 @@
-
 import pytest
 from builder.snippets import build_response_snippet
 

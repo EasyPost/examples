@@ -1,21 +1,21 @@
 {
   "end_shippers": [
     {
-      "id": "es_4c9d0f5f99374536908eb4949f909e1e",
+      "id": "es_4e6fc3267bb14aab926fda9e5a764b4b",
       "object": "EndShipper",
       "mode": "test",
-      "created_at": "2022-10-05T19:50:55+00:00",
-      "updated_at": "2022-10-05T19:50:55+00:00",
-      "name": "JACK SPARROW",
-      "company": null,
-      "street1": "388 TOWNSEND ST APT 20",
+      "created_at": "2022-10-17T17:16:53+00:00",
+      "updated_at": "2022-10-17T17:16:53+00:00",
+      "name": "FOO BAR",
+      "company": "BAZ",
+      "street1": "164 TOWNSEND ST UNIT 1",
       "street2": null,
       "city": "SAN FRANCISCO",
       "state": "CA",
-      "zip": "94107-1670",
+      "zip": "94107-1990",
       "country": "US",
-      "phone": "5555555555",
-      "email": "TEST@EXAMPLE.COM"
+      "phone": "555 555-5555",
+      "email": "FOO@EXAMPLE.COM"
     }
   ],
   "has_more": true

@@ -2,7 +2,6 @@ import inspect
 import os
 import time
 
-import easypost
 import pytest
 from builder.snippets import build_response_snippet
 

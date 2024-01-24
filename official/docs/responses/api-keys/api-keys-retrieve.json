@@ -1,71 +1,44 @@
 {
-  "id": "user_54356a6b96c940d8913961a3c7b909f2",
-  "object": "User",
-  "parent_id": null,
-  "name": "New Name",
-  "phone_number": "5555555555",
-  "verified": true,
-  "created_at": "2017-03-01T03:01:34Z",
-  "default_carbon_offset": false,
-  "has_elevate_access": false,
-  "balance": "0.00000",
-  "price_per_shipment": "0.00000",
-  "recharge_amount": "100.00",
-  "secondary_recharge_amount": "100.00",
-  "recharge_threshold": "0.00",
-  "has_billing_method": false,
-  "cc_fee_rate": "0.03",
-  "default_insurance_amount": null,
-  "insurance_fee_rate": "0.01",
-  "insurance_fee_minimum": "1.00",
-  "email": "dev+easypost-python@easypost.com",
+  "id": "user_060ab38db3c04ffaa60f262e5781a9be",
+  "keys": [
+    {
+      "object": "ApiKey",
+      "active": true,
+      "key": "<REDACTED>",
+      "mode": "test",
+      "created_at": "2022-10-14T17:23:58Z",
+      "id": "ak_eb495dfd453647749dc6471290b33685"
+    },
+    {
+      "object": "ApiKey",
+      "active": true,
+      "key": "<REDACTED>",
+      "mode": "production",
+      "created_at": "2022-10-14T17:23:58Z",
+      "id": "ak_6f4eae3909464f3f807b3af2a687c85b"
+    }
+  ],
   "children": [
     {
-      "id": "user_584be78af2f141e988b6c60dda9dd8fd",
-      "object": "User",
-      "parent_id": "user_54356a6b96c940d8913961a3c7b909f2",
-      "name": "Test User2",
-      "phone_number": "8005550100",
-      "verified": true,
-      "created_at": "2023-12-11T17:13:38Z",
-      "default_carbon_offset": false,
-      "has_elevate_access": false,
-      "children": []
-    },
-    {
-      "id": "user_437e724f37de412db6df8821968d8d3c",
-      "object": "User",
-      "parent_id": "user_54356a6b96c940d8913961a3c7b909f2",
-      "name": "Test User2",
-      "phone_number": "8005550100",
-      "verified": true,
-      "created_at": "2023-12-11T17:13:43Z",
-      "default_carbon_offset": false,
-      "has_elevate_access": false,
-      "children": []
-    },
-    {
-      "id": "user_2553102e90de43dea0b9fa7f8c8d7e33",
-      "object": "User",
-      "parent_id": "user_54356a6b96c940d8913961a3c7b909f2",
-      "name": "Child Account Name22",
-      "phone_number": "8005550100",
-      "verified": true,
-      "created_at": "2024-01-04T19:56:21Z",
-      "default_carbon_offset": false,
-      "has_elevate_access": false,
-      "children": []
-    },
-    {
-      "id": "user_31754439d4524fbb8867d138de537e12",
-      "object": "User",
-      "parent_id": "user_54356a6b96c940d8913961a3c7b909f2",
-      "name": "Test User",
-      "phone_number": "8005550100",
-      "verified": true,
-      "created_at": "2024-01-19T21:42:21Z",
-      "default_carbon_offset": false,
-      "has_elevate_access": false,
+      "id": "user_0ae8cb7000a1438c8598fa5786fdae84",
+      "keys": [
+        {
+          "object": "ApiKey",
+          "active": true,
+          "key": "<REDACTED>",
+          "mode": "test",
+          "created_at": "2022-10-17T17:28:30Z",
+          "id": "ak_3b56830ab851496f946c368cb001c3f4"
+        },
+        {
+          "object": "ApiKey",
+          "active": true,
+          "key": "<REDACTED>",
+          "mode": "production",
+          "created_at": "2022-10-17T17:28:30Z",
+          "id": "ak_e5020ebb06b84733891c0e0e5ce25b27"
+        }
+      ],
       "children": []
     }
   ]

@@ -1,4 +1,3 @@
-import easypost
 import pytest
 from builder.snippets import build_response_snippet
 
@@ -30,17 +29,19 @@ def test_endshipper_list(test_client, page_size):
 def test_endshipper_update(test_client, end_shipper_create):
     endshipper = test_client.end_shipper.create(**end_shipper_create)
 
-    test_client.end_shipper.update(id=endshipper.id,
-                                   name="NEW NAME",
-                                   company="BAZ",
-                                   street1="164 TOWNSEND STREET UNIT 1",
-                                   street2="UNIT 1",
-                                   city="SAN FRANCISCO",
-                                   state="CA",
-                                   zip="94107",
-                                   country="US",
-                                   phone="555-555-5555",
-                                   email="FOO@EXAMPLE.COM")
+    test_client.end_shipper.update(
+        id=endshipper.id,
+        name="NEW NAME",
+        company="BAZ",
+        street1="164 TOWNSEND STREET UNIT 1",
+        street2="UNIT 1",
+        city="SAN FRANCISCO",
+        state="CA",
+        zip="94107",
+        country="US",
+        phone="555-555-5555",
+        email="FOO@EXAMPLE.COM",
+    )
 
     build_response_snippet(interaction_index=1)
 

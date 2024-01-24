@@ -1,9 +1,9 @@
 {
   "address": {
-    "id": "adr_3d733da6b71311ee835b3cecef1b359e",
+    "id": "adr_0afc56d0ba4c11ee9036ac1f6bc539aa",
     "object": "Address",
-    "created_at": "2024-01-19T21:39:35+00:00",
-    "updated_at": "2024-01-19T21:39:35+00:00",
+    "created_at": "2024-01-24T00:03:45+00:00",
+    "updated_at": "2024-01-24T00:03:45+00:00",
     "name": null,
     "company": "EASYPOST",
     "street1": "417 MONTGOMERY ST FL 5",

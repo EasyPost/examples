@@ -1,9 +1,6 @@
 import os
 
-from builder.snippets import (
-    build_response_snippet,
-    save_raw_json,
-)
+from builder.snippets import save_raw_json
 
 
 def test_payloads_retrieve(test_client):
@@ -16,9 +13,9 @@ def test_payloads_retrieve(test_client):
         "request_headers": {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "User-Agent": "Go-http-client/1.1"
+            "User-Agent": "Go-http-client/1.1",
         },
-        "request_body": "{\"key\":\"value\"}",
+        "request_body": '{"key":"value"}',
         "response_code": 200,
         "response_headers": {
             "Content-Type": "application/json; charset=utf-8",
@@ -28,9 +25,9 @@ def test_payloads_retrieve(test_client):
             "X-Frame-Options": "SAMEORIGIN",
             "X-Request-Id": "a1b2c3d4e5f6g7h8i9j0",
             "X-Runtime": "0.001000",
-            "X-Xss-Protection": "1; mode=block"
+            "X-Xss-Protection": "1; mode=block",
         },
-        "total_time": 34
+        "total_time": 34,
     }
 
     test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]
@@ -49,9 +46,9 @@ def test_payloads_list(test_client):
                 "request_headers": {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
-                    "User-Agent": "Go-http-client/1.1"
+                    "User-Agent": "Go-http-client/1.1",
                 },
-                "request_body": "{\"key\":\"value\"}",
+                "request_body": '{"key":"value"}',
                 "response_code": 200,
                 "response_headers": {
                     "Content-Type": "application/json; charset=utf-8",
@@ -61,9 +58,9 @@ def test_payloads_list(test_client):
                     "X-Frame-Options": "SAMEORIGIN",
                     "X-Request-Id": "a1b2c3d4e5f6g7h8i9j0",
                     "X-Runtime": "0.001000",
-                    "X-Xss-Protection": "1; mode=block"
+                    "X-Xss-Protection": "1; mode=block",
                 },
-                "total_time": 34
+                "total_time": 34,
             },
             {
                 "id": "payload_734d47163d0711ecb29421da38a2f414",
@@ -74,9 +71,9 @@ def test_payloads_list(test_client):
                 "request_headers": {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
-                    "User-Agent": "Go-http-client/1.1"
+                    "User-Agent": "Go-http-client/1.1",
                 },
-                "request_body": "{\"key\":\"value\"}",
+                "request_body": '{"key":"value"}',
                 "response_code": 404,
                 "response_headers": {
                     "Content-Type": "application/json; charset=utf-8",
@@ -86,10 +83,10 @@ def test_payloads_list(test_client):
                     "X-Frame-Options": "SAMEORIGIN",
                     "X-Request-Id": "a1b2c3d4e5f6g7h8i9j0",
                     "X-Runtime": "0.001000",
-                    "X-Xss-Protection": "1; mode=block"
+                    "X-Xss-Protection": "1; mode=block",
                 },
-                "total_time": 122
-            }
+                "total_time": 122,
+            },
         ]
     }
     test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]

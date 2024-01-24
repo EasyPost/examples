@@ -1,16 +1,16 @@
 {
-  "id": "trk_783fdb3f049b43c9a1092ed41513055e",
+  "id": "trk_3898303eff624097a516ab324bb133f3",
   "object": "Tracker",
   "mode": "test",
-  "tracking_code": "9405500207552010707832",
+  "tracking_code": "9405500207552011812894",
   "status": "pre_transit",
   "status_detail": "status_update",
-  "created_at": "2024-01-19T21:42:16Z",
-  "updated_at": "2024-01-19T21:42:16Z",
+  "created_at": "2024-01-24T00:07:43Z",
+  "updated_at": "2024-01-24T00:07:43Z",
   "signed_by": null,
   "weight": null,
-  "est_delivery_date": "2024-01-19T21:42:16Z",
-  "shipment_id": "shp_1b88cbe26946440d8d1afca25750e9ac",
+  "est_delivery_date": "2024-01-24T00:07:43Z",
+  "shipment_id": "shp_82d5637d74404d1595eacdc7e5ca9273",
   "carrier": "USPS",
   "tracking_details": [
     {
@@ -19,7 +19,7 @@
       "description": "",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "datetime": "2023-12-19T21:42:16Z",
+      "datetime": "2023-12-24T00:07:43Z",
       "source": "USPS",
       "carrier_code": "",
       "tracking_location": {
@@ -36,7 +36,7 @@
       "description": "",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "datetime": "2023-12-20T10:19:16Z",
+      "datetime": "2023-12-24T12:44:43Z",
       "source": "USPS",
       "carrier_code": "",
       "tracking_location": {
@@ -69,5 +69,5 @@
     "alternate_identifier": null,
     "initial_delivery_attempt": null
   },
-  "public_url": "https://track.easypost.com/djE6dHJrXzc4M2ZkYjNmMDQ5YjQzYzlhMTA5MmVkNDE1MTMwNTVl"
+  "public_url": "https://track.easypost.com/djE6dHJrXzM4OTgzMDNlZmY2MjQwOTdhNTE2YWIzMjRiYjEzM2Yz"
 }

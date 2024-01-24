@@ -26,20 +26,38 @@
     {
       "object": "Rate",
       "mode": "test",
+      "service": "Priority",
+      "carrier": "USPS",
+      "rate": "7.33",
+      "currency": "USD",
+      "retail_rate": "15.20",
+      "retail_currency": "USD",
+      "list_rate": "10.89",
+      "list_currency": "USD",
+      "billing_type": "easypost",
+      "delivery_days": 2,
+      "delivery_date": null,
+      "delivery_date_guaranteed": false,
+      "est_delivery_days": 2,
+      "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
+    },
+    {
+      "object": "Rate",
+      "mode": "test",
       "service": "GroundAdvantage",
       "carrier": "USPS",
       "rate": "6.79",
       "currency": "USD",
-      "retail_rate": "12.45",
+      "retail_rate": "13.15",
       "retail_currency": "USD",
-      "list_rate": "8.92",
+      "list_rate": "9.41",
       "list_currency": "USD",
       "billing_type": "easypost",
       "delivery_days": 3,
       "delivery_date": null,
       "delivery_date_guaranteed": false,
       "est_delivery_days": 3,
-      "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"
+      "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
     },
     {
       "object": "Rate",
@@ -48,16 +66,16 @@
       "carrier": "USPS",
       "rate": "6.79",
       "currency": "USD",
-      "retail_rate": "12.45",
+      "retail_rate": "13.15",
       "retail_currency": "USD",
-      "list_rate": "8.92",
+      "list_rate": "9.41",
       "list_currency": "USD",
       "billing_type": "easypost",
       "delivery_days": 3,
       "delivery_date": null,
       "delivery_date_guaranteed": false,
       "est_delivery_days": 3,
-      "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"
+      "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
     },
     {
       "object": "Rate",
@@ -66,52 +84,34 @@
       "carrier": "USPS",
       "rate": "6.79",
       "currency": "USD",
-      "retail_rate": "12.45",
+      "retail_rate": "13.15",
       "retail_currency": "USD",
-      "list_rate": "8.92",
+      "list_rate": "9.41",
       "list_currency": "USD",
       "billing_type": "easypost",
       "delivery_days": 3,
       "delivery_date": null,
       "delivery_date_guaranteed": false,
       "est_delivery_days": 3,
-      "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"
+      "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
     },
     {
       "object": "Rate",
       "mode": "test",
       "service": "Express",
       "carrier": "USPS",
-      "rate": "46.85",
+      "rate": "49.60",
       "currency": "USD",
-      "retail_rate": "54.20",
+      "retail_rate": "57.40",
       "retail_currency": "USD",
-      "list_rate": "46.85",
+      "list_rate": "49.60",
       "list_currency": "USD",
       "billing_type": "easypost",
       "delivery_days": null,
       "delivery_date": null,
       "delivery_date_guaranteed": false,
       "est_delivery_days": null,
-      "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"
-    },
-    {
-      "object": "Rate",
-      "mode": "test",
-      "service": "Priority",
-      "carrier": "USPS",
-      "rate": "7.99",
-      "currency": "USD",
-      "retail_rate": "14.05",
-      "retail_currency": "USD",
-      "list_rate": "10.27",
-      "list_currency": "USD",
-      "billing_type": "easypost",
-      "delivery_days": 2,
-      "delivery_date": null,
-      "delivery_date_guaranteed": false,
-      "est_delivery_days": 2,
-      "carrier_account_id": "ca_b25657e9896e4d63ac8151ac346ac41e"
+      "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
     }
   ],
   "options": {
@@ -128,42 +128,5 @@
     "height": 5.0,
     "weight": 65.9
   },
-  "messages": [
-    {
-      "carrier": "DhlEcs",
-      "carrier_account_id": "ca_0d64fd488c1444cf9bc16f858703e28f",
-      "type": "rate_error",
-      "message": "Unauthorized. Please check credentials and try again"
-    },
-    {
-      "carrier": "DhlEcs",
-      "carrier_account_id": "ca_b1a0a1bc45844159812e0224d53948ea",
-      "type": "rate_error",
-      "message": "Unauthorized. Please check credentials and try again"
-    },
-    {
-      "carrier": "DhlEcs",
-      "carrier_account_id": "ca_c7b4cfaf671b4984b84023d77561394a",
-      "type": "rate_error",
-      "message": "Unauthorized. Please check credentials and try again"
-    },
-    {
-      "carrier": "DhlEcs",
-      "carrier_account_id": "ca_c3cbbd21bc97400bbbaed6d030909476",
-      "type": "rate_error",
-      "message": "Unauthorized. Please check credentials and try again"
-    },
-    {
-      "carrier": "DhlEcs",
-      "carrier_account_id": "ca_711d8c4f9be54801b984e5dc9f2b5a7c",
-      "type": "rate_error",
-      "message": "Unauthorized. Please check credentials and try again"
-    },
-    {
-      "carrier": "DhlEcs",
-      "carrier_account_id": "ca_99007e1aeb66421faf82676f1199481e",
-      "type": "rate_error",
-      "message": "Unauthorized. Please check credentials and try again"
-    }
-  ]
+  "messages": []
 }

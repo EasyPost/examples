@@ -1,8 +1,5 @@
 import pytest
-from builder.snippets import (
-    build_response_snippet,
-    save_raw_json,
-)
+from builder.snippets import build_response_snippet
 
 
 @pytest.mark.vcr()

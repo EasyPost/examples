@@ -1,11 +1,11 @@
 import os
-from unittest.mock import patch
 
 import pytest
 from builder.snippets import (
     build_response_snippet,
     save_raw_json,
 )
+
 
 REFERRAL_USER_PROD_API_KEY = os.getenv("REFERRAL_USER_PROD_API_KEY", "123")
 
@@ -33,7 +33,7 @@ def test_referral_customers_add_payment_method_with_bank_account(partner_user_pr
         "object": "BankAccount",
         "bank_name": "WELLS FARGO",
         "last4": "1234",
-        "country": "US"
+        "country": "US",
     }
 
     test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]

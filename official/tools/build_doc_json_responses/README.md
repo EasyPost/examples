@@ -32,6 +32,12 @@ Generate response snippets are stored in the `responses` directory. Copy this en
 
 **NOTE**: The `responses` directory structure is exactly as expected by the docs website and other downstream projects -- do not alter it.
 
+## Linting
+
+The `make lint` and `make lint-fix` commands in the Makefile will lint the Python code in this tool, but not the response snippets.
+
+After copying the response snippets to `official/docs/responses`, you can lint them with the `make format-node` command in the root Makefile, which will lint and format all JSON files, including the response snippets, in the `official/docs` directory.
+
 ## Troubleshooting
 
 ### A bunch of "F"s

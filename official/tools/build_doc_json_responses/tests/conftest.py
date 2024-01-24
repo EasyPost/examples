@@ -12,6 +12,7 @@ import easypost
 import pytest
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 EASYPOST_TEST_API_KEY = os.getenv("EASYPOST_TEST_API_KEY")
@@ -99,11 +100,7 @@ def scrub_response_bodies(scrubbers: List[Tuple[str, Any]]) -> Any:
 
 def read_fixture_data():
     """Reads fixture data from the fixtures JSON file."""
-    with open(
-            os.path.join(
-                "..", "..", "fixtures", "example-snippet-fixtures.json"
-            )
-    ) as data:
+    with open(os.path.join("..", "..", "fixtures", "example-snippet-fixtures.json")) as data:
         fixtures = json.load(data)
 
     return fixtures
@@ -147,10 +144,12 @@ def next_weekday():
         # Return tomorrow
         return tomorrow.strftime("%Y-%m-%d")
 
+
 @pytest.fixture
 def synchronous_sleep_seconds():
     """Use this fixture for sleeping between API calls where synchronous flows happen."""
     return 20
+
 
 @pytest.fixture
 def page_size():
@@ -234,8 +233,7 @@ def parcel_create():
 
 @pytest.fixture
 def pickup_create(next_weekday):
-    """This fixture will require you to add a `shipment` key with a Shipment object from a test.
-    """
+    """This fixture will require you to add a `shipment` key with a Shipment object from a test."""
     pickup_date = next_weekday
 
     pickup_data = read_fixture_data()["pickup"]["create"]
