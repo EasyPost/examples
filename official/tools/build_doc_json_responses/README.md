@@ -16,7 +16,7 @@ make install
 
 First, if you are regenerating response snippets, you will first need to delete the related cassette file(s) in `tests/cassettes`. If a cassette file already exists for a given snippet, it will not be overwritten and the generated response snippet will not be updated.
 
-Next, you will need to run the `make generate` command twice - it will fail the first time through. The first time will record the cassette, the second time it will save the snippet files. This is necessary because `vcrpy` doesn't save a cassette until the test function closes, though we call the standalone function inside the test function to capture the test name.
+Next, you will need to run the `make generate` command twice - it will fail the first time through; this is expected.
 
 ```bash
 # Run the following to save HTTP recordings
@@ -28,7 +28,7 @@ EASYPOST_TEST_API_KEY=putrealkeyhere EASYPOST_PROD_API_KEY=putrealkeyhere PARTNE
 
 **NOTE**: Some static data used by this tool, such as the USPS carrier account ID, is associated with the EasyPost Docs Tooling User. You must use that user's API keys to generate these snippets.
 
-Generate response snippets are stored in the `responses` directory. Copy this entire directory to `official/docs/responses` once complete.
+Generated response snippets are stored in the `responses` directory. Copy this entire directory to `official/docs/responses` once complete.
 
 **NOTE**: The `responses` directory structure is exactly as expected by the docs website and other downstream projects -- do not alter it.
 

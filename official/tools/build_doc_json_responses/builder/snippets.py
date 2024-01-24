@@ -76,7 +76,7 @@ def extract_response_from_cassette(cassette_filename: str, interaction_index: Op
     """Opens a single cassette file and extracts the response content."""
     cassette_file = os.path.join("tests", "cassettes", cassette_filename)
     if not os.path.exists(cassette_file):
-        raise FileNotFoundError(f"{cassette_filename} not found in time, run the tests again.")
+        raise FileNotFoundError(f"{cassette_filename} not found, run the tests again.")
 
     with open(cassette_file, "r") as cassette:
         try:

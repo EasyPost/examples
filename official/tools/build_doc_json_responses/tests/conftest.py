@@ -182,13 +182,8 @@ def address_create():
 
 
 @pytest.fixture
-def address_create_and_verify():
-    return read_fixture_data()["address"]["create_and_verify"]
-
-
-@pytest.fixture
-def address_create_strictly_verified():
-    return read_fixture_data()["address"]["create_strictly_verified"]
+def address_incorrect():
+    return read_fixture_data()["address"]["incorrect"]
 
 
 @pytest.fixture
