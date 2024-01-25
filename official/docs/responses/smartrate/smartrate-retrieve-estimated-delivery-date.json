@@ -3,37 +3,181 @@
     {
       "easypost_time_in_transit_data": {
         "days_in_transit": {
-          "percentile_50": 2,
-          "percentile_75": 2,
-          "percentile_85": 2,
-          "percentile_90": 2,
-          "percentile_95": 2,
-          "percentile_97": 3,
-          "percentile_99": 4
+          "percentile_50": 3,
+          "percentile_75": 3,
+          "percentile_85": 6,
+          "percentile_90": 6,
+          "percentile_95": 6,
+          "percentile_97": 6,
+          "percentile_99": 9
         },
-        "easypost_estimated_delivery_date": "2023-04-27",
-        "planned_ship_date": "2023-04-25"
+        "easypost_estimated_delivery_date": "2024-01-26",
+        "planned_ship_date": "2024-01-24"
       },
       "rate": {
         "carrier": "USPS",
-        "carrier_account_id": "ca_4fcd9a658b494a979793bb899a40c5b5",
-        "created_at": "2023-04-24T20:17:20Z",
+        "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac",
+        "created_at": "2024-01-24T00:07:45Z",
+        "currency": "USD",
+        "delivery_date": null,
+        "delivery_date_guaranteed": false,
+        "delivery_days": 3,
+        "est_delivery_days": 3,
+        "id": "rate_36a64db214ab4fafaeaaad6855ebf422",
+        "list_currency": "USD",
+        "list_rate": 9.41,
+        "mode": "test",
+        "object": "Rate",
+        "rate": 6.79,
+        "retail_currency": "USD",
+        "retail_rate": 13.15,
+        "service": "GroundAdvantage",
+        "shipment_id": "shp_e3ce96ba8b6745608fe1c419d76b8fb5",
+        "updated_at": "2024-01-24T00:07:45Z"
+      }
+    },
+    {
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 3,
+          "percentile_75": 3,
+          "percentile_85": 6,
+          "percentile_90": 6,
+          "percentile_95": 6,
+          "percentile_97": 6,
+          "percentile_99": 9
+        },
+        "easypost_estimated_delivery_date": "2024-01-26",
+        "planned_ship_date": "2024-01-24"
+      },
+      "rate": {
+        "carrier": "USPS",
+        "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac",
+        "created_at": "2024-01-24T00:07:45Z",
+        "currency": "USD",
+        "delivery_date": null,
+        "delivery_date_guaranteed": false,
+        "delivery_days": 3,
+        "est_delivery_days": 3,
+        "id": "rate_90170bc6328b46cda598d683828d6ac6",
+        "list_currency": "USD",
+        "list_rate": 9.41,
+        "mode": "test",
+        "object": "Rate",
+        "rate": 6.79,
+        "retail_currency": "USD",
+        "retail_rate": 13.15,
+        "service": "First",
+        "shipment_id": "shp_e3ce96ba8b6745608fe1c419d76b8fb5",
+        "updated_at": "2024-01-24T00:07:45Z"
+      }
+    },
+    {
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 3,
+          "percentile_75": 3,
+          "percentile_85": 6,
+          "percentile_90": 6,
+          "percentile_95": 6,
+          "percentile_97": 6,
+          "percentile_99": 9
+        },
+        "easypost_estimated_delivery_date": "2024-01-26",
+        "planned_ship_date": "2024-01-24"
+      },
+      "rate": {
+        "carrier": "USPS",
+        "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac",
+        "created_at": "2024-01-24T00:07:45Z",
+        "currency": "USD",
+        "delivery_date": null,
+        "delivery_date_guaranteed": false,
+        "delivery_days": 3,
+        "est_delivery_days": 3,
+        "id": "rate_ca519ed1f83d4a8ebc5c17a1dbe96553",
+        "list_currency": "USD",
+        "list_rate": 9.41,
+        "mode": "test",
+        "object": "Rate",
+        "rate": 6.79,
+        "retail_currency": "USD",
+        "retail_rate": 13.15,
+        "service": "ParcelSelect",
+        "shipment_id": "shp_e3ce96ba8b6745608fe1c419d76b8fb5",
+        "updated_at": "2024-01-24T00:07:45Z"
+      }
+    },
+    {
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 1,
+          "percentile_75": 2,
+          "percentile_85": 2,
+          "percentile_90": 3,
+          "percentile_95": 3,
+          "percentile_97": 6,
+          "percentile_99": 7
+        },
+        "easypost_estimated_delivery_date": "2024-01-25",
+        "planned_ship_date": "2024-01-24"
+      },
+      "rate": {
+        "carrier": "USPS",
+        "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac",
+        "created_at": "2024-01-24T00:07:45Z",
+        "currency": "USD",
+        "delivery_date": null,
+        "delivery_date_guaranteed": false,
+        "delivery_days": null,
+        "est_delivery_days": null,
+        "id": "rate_30c5c922506445a88b51212c52ac2db3",
+        "list_currency": "USD",
+        "list_rate": 49.6,
+        "mode": "test",
+        "object": "Rate",
+        "rate": 49.6,
+        "retail_currency": "USD",
+        "retail_rate": 57.4,
+        "service": "Express",
+        "shipment_id": "shp_e3ce96ba8b6745608fe1c419d76b8fb5",
+        "updated_at": "2024-01-24T00:07:45Z"
+      }
+    },
+    {
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 3,
+          "percentile_85": 3,
+          "percentile_90": 6,
+          "percentile_95": 6,
+          "percentile_97": 6,
+          "percentile_99": 8
+        },
+        "easypost_estimated_delivery_date": "2024-01-26",
+        "planned_ship_date": "2024-01-24"
+      },
+      "rate": {
+        "carrier": "USPS",
+        "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac",
+        "created_at": "2024-01-24T00:07:45Z",
         "currency": "USD",
         "delivery_date": null,
         "delivery_date_guaranteed": false,
         "delivery_days": 2,
         "est_delivery_days": 2,
-        "id": "rate_078538dd44654bc79c79163f4a5de5f4",
+        "id": "rate_4d9a5348efb44acbb25d162e1a692cb0",
         "list_currency": "USD",
-        "list_rate": 10.27,
+        "list_rate": 10.89,
         "mode": "test",
         "object": "Rate",
-        "rate": 9.15,
+        "rate": 7.33,
         "retail_currency": "USD",
-        "retail_rate": 14.05,
+        "retail_rate": 15.2,
         "service": "Priority",
-        "shipment_id": "shp_3f16e63fcb614f38b405c417c57203f4",
-        "updated_at": "2023-04-24T20:17:20Z"
+        "shipment_id": "shp_e3ce96ba8b6745608fe1c419d76b8fb5",
+        "updated_at": "2024-01-24T00:07:45Z"
       }
     }
   ]

@@ -13,14 +13,13 @@ func main() {
 
 	address, _ := client.CreateAddress(
 		&easypost.Address{
-			Street1: "417 MONTGOMERY ST",
-			Street2: "FLOOR 5",
-			City:    "SAN FRANCISCO",
-			State:   "CA",
-			Zip:     "94104",
+			Street1: "000 unknown street",
+			City:    "Not A City",
+			State:   "ZZ",
+			Zip:     "00001",
 			Country: "US",
-			Company: "EasyPost",
-			Phone:   "415-123-4567",
+			Email: "test@example.com",
+			Phone:   "5555555555",
 		},
 		&easypost.CreateAddressOptions{
 			VerifyStrict: []string{"true"},

@@ -1,12 +1,13 @@
 {
-  "id": "user_b60d02fc8b76445995690db5798a08bd",
+  "id": "user_50d792728c504bd4a34642ecdfd915b2",
   "object": "User",
   "parent_id": null,
   "name": "test test",
   "phone_number": "8888888888",
   "verified": true,
-  "created_at": "2022-10-17T17:17:25Z",
+  "created_at": "2024-01-24T00:07:18Z",
   "default_carbon_offset": false,
+  "has_elevate_access": false,
   "balance": "0.00000",
   "price_per_shipment": "0.00000",
   "recharge_amount": null,
@@ -17,24 +18,24 @@
   "default_insurance_amount": "50.00",
   "insurance_fee_rate": "0.005",
   "insurance_fee_minimum": "0.25",
-  "email": "referral_customer_820f2c4425b544a990eadc9855d8ad82@donotemail.easypost.com",
+  "email": "referral_customer_50f0324e81a94c4baa5bcc8644624e34@donotemail.easypost.com",
   "children": [],
   "api_keys": [
     {
       "object": "ApiKey",
       "key": "<REDACTED>",
       "mode": "test",
-      "created_at": "2022-10-17T17:17:26Z",
+      "created_at": "2024-01-24T00:07:19Z",
       "active": true,
-      "id": "ak_f8ca6076260c4b87932cd8dc6bf98454"
+      "id": "ak_b5aad6a37ee9493fb3af53e2e7dbbbd8"
     },
     {
       "object": "ApiKey",
       "key": "<REDACTED>",
       "mode": "production",
-      "created_at": "2022-10-17T17:17:26Z",
+      "created_at": "2024-01-24T00:07:19Z",
       "active": true,
-      "id": "ak_902aa3c89bc04daea3f8995754f78140"
+      "id": "ak_af20f85584744cf79933aae294ba59ba"
     }
   ]
 }

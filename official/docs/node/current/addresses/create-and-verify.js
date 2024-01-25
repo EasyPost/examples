@@ -4,14 +4,13 @@ const client = new EasyPostClient(process.env.EASYPOST_API_KEY);
 
 (async () => {
   const address = await client.Address.createAndVerify({
-    street1: '417 montgomery street',
-    street2: 'FL 5',
-    city: 'San Francisco',
-    state: 'CA',
-    zip: '94104',
+    street1: '000 unknown street',
+    city: 'Not A City',
+    state: 'ZZ',
+    zip: '00001',
     country: 'US',
-    company: 'EasyPost',
-    phone: '415-123-4567',
+    email: 'test@example.com',
+    phone: '5555555555',
   });
 
   console.log(address);

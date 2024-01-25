@@ -3,14 +3,13 @@ curl -X POST https://api.easypost.com/v2/addresses \
   -H 'Content-Type: application/json' \
   -d '{
     "address": {
-      "street1": "417 MONTGOMERY ST",
-      "street2": "FLOOR 5",
-      "city": "SAN FRANCISCO",
-      "state": "CA",
-      "zip": "94104",
+      "street1": "000 unknown street",
+      "city": "Not A City",
+      "state": "ZZ",
+      "zip": "00001",
       "country": "US",
-      "company": "EasyPost",
-      "phone": "415-123-4567"
+      "email": "test@example.com",
+      "phone": "5555555555"
     },
     "verify": true
   }'

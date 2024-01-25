@@ -1,29 +1,30 @@
 {
-  "id": "user_34bb39e579d14d6b9a39d6fa289ed468",
+  "id": "user_d2539e6862fe4f389f735c7c00aaa37a",
   "object": "User",
   "parent_id": "user_060ab38db3c04ffaa60f262e5781a9be",
   "name": "Test User",
   "phone_number": "8005550100",
   "verified": true,
-  "created_at": "2022-10-17T17:29:09Z",
+  "created_at": "2024-01-24T00:07:48Z",
   "default_carbon_offset": false,
+  "has_elevate_access": false,
   "children": [],
   "api_keys": [
     {
       "object": "ApiKey",
       "key": "<REDACTED>",
       "mode": "test",
-      "created_at": "2022-10-17T17:29:09Z",
+      "created_at": "2024-01-24T00:07:48Z",
       "active": true,
-      "id": "ak_b983d6ad6cad4377a6c187d9c4a06ffa"
+      "id": "ak_afdf54db97e24e4aa7354527c8aa3be0"
     },
     {
       "object": "ApiKey",
       "key": "<REDACTED>",
       "mode": "production",
-      "created_at": "2022-10-17T17:29:09Z",
+      "created_at": "2024-01-24T00:07:48Z",
       "active": true,
-      "id": "ak_d29ca57fdac04ebd816caab7b9e6ea48"
+      "id": "ak_da39a3c4afd946e1b77a578ec211e816"
     }
   ]
 }

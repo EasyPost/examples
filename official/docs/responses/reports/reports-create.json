@@ -1,8 +1,8 @@
 {
-  "id": "shprep_d581277a0438499fb468e26f296c3619",
+  "id": "shprep_4a6f6e7e1b8a4794b5395008c89625be",
   "object": "ShipmentReport",
-  "created_at": "2022-10-17T17:17:34Z",
-  "updated_at": "2022-10-17T17:17:34Z",
+  "created_at": "2024-01-24T00:07:24Z",
+  "updated_at": "2024-01-24T00:07:24Z",
   "start_date": "2022-10-01",
   "end_date": "2022-10-01",
   "mode": "test",
