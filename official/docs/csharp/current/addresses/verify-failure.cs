@@ -18,14 +18,13 @@ namespace EasyPostExamples
 
             Parameters.Address.Create parameters = new()
             {
-                Street1 = "UNDELIVERABLE ST",
-                Street2 = "FLOOR 5",
-                City = "SAN FRANCISCO",
-                State = "CA",
-                Zip = "94104",
+                Street1 = "000 unknown street",
+                City = "Not A City",
+                State = "ZZ",
+                Zip = "00001",
                 Country = "US",
-                Company = "EasyPost",
-                Phone = "415-123-4567",
+                Email = "test@example.com",
+                Phone = "5555555555",
             };
 
             Address address = await client.Address.Create(parameters);

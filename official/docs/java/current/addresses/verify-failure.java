@@ -12,13 +12,13 @@ public class VerifyFailure {
 
         HashMap<String, Object> params = new HashMap<String, Object>();
 
-        params.put("street1", "UNDELIVERABLE ST");
-        params.put("city", "SAN FRANCISCO");
-        params.put("state", "CA");
-        params.put("zip", "94104");
+        params.put("street1", "000 unknown street");
+        params.put("city", "Not A City");
+        params.put("state", "ZZ");
+        params.put("zip", "00001");
         params.put("country", "US");
-        params.put("company", "EasyPost");
-        params.put("phone", "415-123-4567");
+        params.put("email", "test@example.com");
+        params.put("phone", "5555555555");
 
         Address address = client.address.create(params);
 

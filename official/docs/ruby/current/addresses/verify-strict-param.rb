@@ -4,14 +4,13 @@ client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
 
 address = client.address.create(
   verify_strict: true,
-  street1: '417 MONTGOMERY ST',
-  street2: 'FLOOR 5',
-  city: 'SAN FRANCISCO',
-  state: 'CA',
-  zip: '94104',
+  street1: '000 unknown street',
+  city: 'Not A City',
+  state: 'ZZ',
+  zip: '00001',
   country: 'US',
-  company: 'EasyPost',
-  phone: '415-123-4567',
+  email: 'test@example.com',
+  phone: '5555555555',
 )
 
 puts address
