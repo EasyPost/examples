@@ -1,7 +1,6 @@
 import easypost
-import os
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+easypost.api_key = "EASYPOST_API_KEY"
 
 reports = easypost.Report.all(
     # Replace `payment_log` with any of the report types listed above

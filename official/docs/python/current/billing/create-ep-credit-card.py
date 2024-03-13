@@ -1,7 +1,6 @@
 import easypost
-import os
 
-client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
+client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
 referral_user_api_key = os.getenv("REFERRAL_USER_API_KEY")
 
