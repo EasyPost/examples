@@ -1,6 +1,6 @@
 <?php
 
-$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
+$client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
 $refunds = $client->refund->all([
     'page_size' => 5,

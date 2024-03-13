@@ -1,6 +1,6 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey($_ENV['EASYPOST_API_KEY']);
+\EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
 
 // Retrieve all API keys (authenticated user and child user keys)
 $apiKeys = \EasyPost\User::all_api_keys();

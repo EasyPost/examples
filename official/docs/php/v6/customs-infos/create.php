@@ -1,6 +1,6 @@
 <?php
 
-$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
+$client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
 $customsInfo = $client->customsInfo->create([
     'eel_pfc' => 'NOEEI 30.37(a)',
