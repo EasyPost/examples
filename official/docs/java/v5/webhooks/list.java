@@ -7,7 +7,7 @@ import com.easypost.model.WebhookCollection;
 
 public class All {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         WebhookCollection webhooks = Webhook.all();
 

@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class All {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         HashMap<String, Object> listParams = new HashMap<>();
         listParams.put("page_size", 5);

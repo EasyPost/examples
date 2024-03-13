@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class Update {
     public static void main(String[] args) {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         EndShipper endShipper = EndShipper.retrieve("es_...");
 

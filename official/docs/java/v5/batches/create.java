@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         List<HashMap<String, Object>> shipmentsList = new ArrayList<HashMap<String, Object>>();
         HashMap<String, Object> shipmentMap = new HashMap<String, Object>();

@@ -5,7 +5,7 @@ import com.easypost.service.EasyPostClient;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         String referralUserApiKey = System.getenv("REFERRAL_USER_API_KEY");
 

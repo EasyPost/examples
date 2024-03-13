@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         HashMap<String, Object> reportMap = new HashMap<String, Object>();
         reportMap.put("type", "payment_log");

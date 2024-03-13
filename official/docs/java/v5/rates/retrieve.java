@@ -6,7 +6,7 @@ import com.easypost.model.Rate;
 
 public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         Rate rate = Rate.retrieve("rate_...");
 

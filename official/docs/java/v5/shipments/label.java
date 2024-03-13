@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Label {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         Shipment shipment = Shipment.retrieve("shp_...");
 

@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class OneCallBuy {
     public static void main(String[] args) throws EasyPostException {
-        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         HashMap<String, Object> toAddressMap = new HashMap<String, Object>();
         toAddressMap.put("name", "Dr. Steve Brule");

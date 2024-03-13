@@ -10,7 +10,7 @@ import java.util.List;
 
 public class AddShipments {
     public static void main(String[] args) throws EasyPostException {
-        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         HashMap<String, Object> shipment1 = new HashMap<String, Object>();
         shipment1.put("id", "shp_...");

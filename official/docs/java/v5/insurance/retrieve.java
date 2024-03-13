@@ -6,7 +6,7 @@ import com.easypost.model.Insurance;
 
 public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         Insurance insurance = Insurance.retrieve("ins_...");
 

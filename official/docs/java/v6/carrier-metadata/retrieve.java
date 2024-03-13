@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
-        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         // Request all metadata for all carriers
         CarrierAccount carrierMetadata = client.carrierMetadata.retrieve();

@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Update {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("recharge_threshold", "50.00");
