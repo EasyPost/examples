@@ -1,5 +1,5 @@
 post '/shipment' do
-  from_address = EasyPost::Address.new(ENV['FROM_ADDRESS_ID'])
+  from_address = EasyPost::Address.new('FROM_ADDRESS_ID')
 
   # If creation fails, you will need to catch EasyPost::Error. See the GitHub
   # repository or the Errors guide for examples.

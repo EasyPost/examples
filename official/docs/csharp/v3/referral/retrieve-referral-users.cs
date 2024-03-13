@@ -10,7 +10,7 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            EasyPost.ClientManager.SetCurrent("<YOUR_TEST/PRODUCTION_API_KEY>");
+            EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
             ReferralCustomerCollection referralCustomerCollection = await Partner.All(
                 new Dictionary<string, object>

@@ -7,9 +7,9 @@ require 'dotenv'
 class App < Sinatra::Base
   configure do
     Dotenv.load
-    EasyPost.api_key = ENV['EASYPOST_API_KEY']
-    set :printnode_client, PrintNode::Client.new(PrintNode::Auth.new(ENV['PRINTNODE_API_KEY']))
-    set :printer_id, ENV['PRINTNODE_PRINTER_ID']
+    EasyPost.api_key = 'EASYPOST_API_KEY'
+    set :printnode_client, PrintNode::Client.new(PrintNode::Auth.new('PRINTNODE_API_KEY'))
+    set :printer_id, 'PRINTNODE_PRINTER_ID'
   end
 
   get '/' do
