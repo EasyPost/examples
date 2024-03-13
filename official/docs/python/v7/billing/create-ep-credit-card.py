@@ -1,6 +1,5 @@
 import easypost
 
-
 easypost.api_key = "EASYPOST_API_KEY"
 
 credit_card = easypost.Referral.add_credit_card(
