@@ -1,6 +1,6 @@
 require 'easypost'
 
-EasyPost.api_key = ENV['EASYPOST_API_KEY']
+EasyPost.api_key = 'EASYPOST_API_KEY'
 
 endshipper = EasyPost::EndShipper.create(
   name: 'FOO BAR',
