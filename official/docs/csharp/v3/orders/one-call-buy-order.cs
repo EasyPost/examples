@@ -10,9 +10,7 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
-
-            EasyPost.ClientManager.SetCurrent(apiKey);
+            EasyPost.ClientManager.SetCurrent("EASYPOST_API_KEY");
 
             Order order = await Order.Create(new Dictionary<string, object>()
             {
