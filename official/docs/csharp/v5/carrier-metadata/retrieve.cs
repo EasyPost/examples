@@ -12,9 +12,7 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
-
-            var client = new EasyPost.Client(apiKey);
+            var client = new EasyPost.Client("EASYPOST_API_KEY");
 
             // Request all metadata for all carriers
             List<Carrier> carrierMetadata = await client.CarrierMetadata.Retrieve();

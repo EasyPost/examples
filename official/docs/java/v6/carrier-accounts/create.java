@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         HashMap<String, Object> credentials = new HashMap<String, Object>();
         credentials.put("client_id", "123456");

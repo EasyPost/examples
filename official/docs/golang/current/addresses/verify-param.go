@@ -2,14 +2,12 @@ package example
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/EasyPost/easypost-go/v3"
 )
 
 func main() {
-	apiKey := os.Getenv("EASYPOST_API_KEY")
-	client := easypost.New(apiKey)
+	client := easypost.New("EASYPOST_API_KEY")
 
 	address, _ := client.CreateAddress(
 		&easypost.Address{
@@ -18,7 +16,7 @@ func main() {
 			State:   "ZZ",
 			Zip:     "00001",
 			Country: "US",
-			Email: "test@example.com",
+			Email:   "test@example.com",
 			Phone:   "5555555555",
 		},
 		&easypost.CreateAddressOptions{

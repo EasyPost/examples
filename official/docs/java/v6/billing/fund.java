@@ -6,7 +6,7 @@ import com.easypost.service.EasyPostClient;
 
 public class Fund {
     public static void main(String[] args) throws EasyPostException {
-        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         client.billing.fundWallet("2000", PaymentMethod.Priority.PRIMARY);
     }

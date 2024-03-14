@@ -2,15 +2,13 @@ package example
 
 import (
 	"fmt"
-	"os"
 	"time"
 
 	"github.com/EasyPost/easypost-go/v3"
 )
 
 func main() {
-	apiKey := os.Getenv("EASYPOST_API_KEY")
-	client := easypost.New(apiKey)
+	client := easypost.New("EASYPOST_API_KEY")
 
 	address, _ := client.GetAddress("adr_...")
 	shipment, _ := client.GetShipment("shp_...")

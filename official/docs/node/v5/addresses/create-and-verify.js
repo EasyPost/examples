@@ -1,6 +1,6 @@
 const Easypost = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const api = new Easypost('EASYPOST_API_KEY');
 
 api.Address.createAndVerify({
   street1: '417 montgomery street',

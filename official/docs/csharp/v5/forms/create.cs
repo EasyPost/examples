@@ -12,9 +12,7 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
-
-            var client = new EasyPost.Client(apiKey);
+            var client = new EasyPost.Client("EASYPOST_API_KEY");
 
             // Shipment has to be purchased before forms can be generated
             Shipment shipment = await client.Shipment.Retrieve("shp_...");

@@ -1,6 +1,6 @@
 const EasyPostBetaClient = require('@easypost/api');
 
-const client = new EasyPostBetaClient(process.env.EASYPOST_API_KEY);
+const client = new EasyPostBetaClient('EASYPOST_API_KEY');
 
 (async () => {
   // Request all metadata for all carriers

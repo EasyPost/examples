@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
-        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         HashMap<String, Object> customsItemMap = new HashMap<String, Object>();
         customsItemMap.put("description", "T-shirt");

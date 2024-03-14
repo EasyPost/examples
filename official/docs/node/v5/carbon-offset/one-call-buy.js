@@ -1,6 +1,6 @@
 const Easypost = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const api = new Easypost('EASYPOST_API_KEY');
 
 // Enable carbon offset by passing `true` to the `save()` function
 const shipment = new api.Shipment({

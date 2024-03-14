@@ -8,7 +8,7 @@ import java.util.List;
 
 public class RetrieveTimeInTransitStatistics {
     public static void main(String[] args) throws EasyPostException {
-        EasyPostClient client = new EasyPostClient(System.getenv("EASYPOST_API_KEY"));
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         List<SmartRate> smartrates = client.shipment.smartrates("shp_...");
 

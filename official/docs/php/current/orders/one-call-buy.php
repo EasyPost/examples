@@ -1,6 +1,6 @@
 <?php
 
-$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
+$client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
 $order = $client->order->create([
     'carrier_accounts' => 'ca_...',

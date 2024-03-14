@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Verify {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         HashMap<String, Object> addressParams = new HashMap<String, Object>();
 

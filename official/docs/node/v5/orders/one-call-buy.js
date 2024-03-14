@@ -1,6 +1,6 @@
 const Easypost = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const api = new Easypost('EASYPOST_API_KEY');
 
 const order = new api.Order({
   carrier_accounts: ['ca_...'],

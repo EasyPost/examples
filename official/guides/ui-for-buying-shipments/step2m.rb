@@ -1,5 +1,5 @@
 post '/shipment' do
-  from_address = EasyPost::Address.new(ENV['FROM_ADDRESS_ID'])
+  from_address = EasyPost::Address.new('FROM_ADDRESS_ID')
   to_address = if params[:verify] == 'true'
                  EasyPost::Address.create(
                    params[:address].merge(verify_strict: true),

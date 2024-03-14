@@ -1,6 +1,6 @@
 const Easypost = require('@easypost/api');
 
-const api = new Easypost(process.env.EASYPOST_API_KEY);
+const api = new Easypost('EASYPOST_API_KEY');
 
 // Retrieve all API keys including children
 api.ApiKey.all().then(console.log).catch(console.log);

@@ -6,7 +6,7 @@ import com.easypost.model.Pickup;
 
 public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPost.apiKey = "EASYPOST_API_KEY";
 
         Pickup pickup = Pickup.retrieve("pickup_...");
 

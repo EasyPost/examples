@@ -1,6 +1,6 @@
 require 'easypost'
 
-client = EasyPost::Client.new(api_key: ENV['EASYPOST_API_KEY'])
+client = EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
 
 # Get first page of results
 shipments = client.shipment.all(page_size: 5)

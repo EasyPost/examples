@@ -1,7 +1,6 @@
 import easypost
-import os
 
-easypost.api_key = os.getenv("EASYPOST_API_KEY")
+easypost.api_key = "EASYPOST_API_KEY"
 
 payment_method = easypost.beta.Referral.add_payment_method(
     stripe_customer_id="cus_...",

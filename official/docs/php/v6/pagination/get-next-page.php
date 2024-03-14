@@ -1,6 +1,6 @@
 <?php
 
-$client = new \EasyPost\EasyPostClient(getenv('EASYPOST_API_KEY'));
+$client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
 // Get first page of results
 $shipments = $client->shipment->all([

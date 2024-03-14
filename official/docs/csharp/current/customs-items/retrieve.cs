@@ -11,9 +11,7 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            string apiKey = Environment.GetEnvironmentVariable("EASYPOST_API_KEY")!;
-
-            var client = new EasyPost.Client(apiKey);
+            var client = new EasyPost.Client("EASYPOST_API_KEY");
 
             CustomsItem customsItem = await client.CustomsItem.Retrieve("cstitem_...");
 
