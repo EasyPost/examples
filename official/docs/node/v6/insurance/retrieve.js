@@ -5,5 +5,5 @@ const client = new EasyPostClient('EASYPOST_API_KEY');
 (async () => {
   const insurance = await client.Insurance.retrieve('ins_...');
 
-  console.logP(insurance);
+  console.log(insurance);
 })();
