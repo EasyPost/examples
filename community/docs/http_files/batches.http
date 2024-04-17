@@ -1,0 +1,89 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a Batch with existing Shipments
+POST https://api.easypost.com/v2/batches
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "batch": {
+    "shipments": [
+      {
+        "id": "shp_123"
+      },
+      {
+        "id": "shp_456"
+      }
+    ]
+  }
+}
+
+###
+
+# Add Shipments to a Batch
+POST https://api.easypost.com/v2/batches/{{BATCH_ID}}/add_shipments
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "shipments": [
+    {
+      "id": "shp_789"
+    }
+  ]
+}
+
+###
+
+# Remove Shipments from a Batch
+POST https://api.easypost.com/v2/batches/{{BATCH_ID}}/remove_shipments
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "shipments": [
+    {
+      "id": "shp_789"
+    }
+  ]
+}
+
+###
+
+# Purchase a Batch
+POST https://api.easypost.com/v2/batches/{{BATCH_ID}}/buy
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Generate a label for a Batch
+POST https://api.easypost.com/v2/batches/{{BATCH_ID}}/label
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "file_format": "PDF"
+}
+
+###
+
+# Generate a ScanForm for a Batch
+POST https://api.easypost.com/v2/batches/{{BATCH_ID}}/scan_form
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Retrieve a Batch
+GET https://api.easypost.com/v2/batches/{{BATCH_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all Batches
+GET https://api.easypost.com/v2/batches
+    ?page_size=5
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

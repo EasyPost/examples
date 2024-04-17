@@ -1,0 +1,31 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Retreive all metdata for all carriers
+GET https://api.easypost.com/v2/metadata/carriers
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Retreive all metdata for a specific carrier (UPS)
+GET https://api.easypost.com/v2/metadata/carriers
+    ?carriers=usps
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Retrieve specific metadata for all carriers (service levels and predefined packages)
+GET https://api.easypost.com/v2/metadata/carriers
+    ?type=service_levels,predefined_packages
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Retrieve specific metadata for a specific carrier (service levels and predefined packages for UPS)
+GET https://api.easypost.com/v2/metadata/carriers
+    ?carriers=usps
+    &type=service_levels,predefined_packages
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

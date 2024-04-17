@@ -1,0 +1,72 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create an EndShipper
+POST https://api.easypost.com/v2/end_shippers
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "address": {
+    "name": "FOO BAR",
+    "company": "BAZ",
+    "street1": "164 TOWNSEND STREET UNIT 1",
+    "street2": "UNIT 1",
+    "city": "SAN FRANCISCO",
+    "state": "CA",
+    "zip": "94107",
+    "country": "US",
+    "phone": "555-555-5555",
+    "email": "FOO@EXAMPLE.COM"
+  }
+}
+
+###
+
+# Retrieve an EndShipper
+GET https://api.easypost.com/v2/end_shippers/{{ENDSHIPPER_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all EndShippers
+GET https://api.easypost.com/v2/end_shippers
+    ?page_size=10
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Update an EndShipper
+PUT https://api.easypost.com/v2/end_shippers/{{ENDSHIPPER_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "address": {
+    "name": "NEW NAME",
+    "company": "BAZ",
+    "street1": "164 TOWNSEND STREET UNIT 1",
+    "street2": "UNIT 1",
+    "city": "SAN FRANCISCO",
+    "state": "CA",
+    "zip": "94107",
+    "country": "US",
+    "phone": "555-555-5555",
+    "email": "FOO@EXAMPLE.COM"
+  }
+}
+
+###
+
+# Buy a Shipment with an EndShipper
+POST https://api.easypost.com/v2/shipments/{{SHIPMENT_ID}}/buy
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "rate": {
+    "id": "rate_123"
+  },
+  "end_shipper_id": "{{ENDSHIPPER_ID}}"
+}

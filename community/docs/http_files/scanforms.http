@@ -1,0 +1,32 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a ScanForm with existing Shipments
+POST https://api.easypost.com/v2/scan_forms
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "shipments": [
+    {
+      "id": "shp_123"
+    },
+    {
+      "id": "shp_456"
+    }
+  ]
+}
+
+###
+
+# Retrieve a ScanForm
+GET https://api.easypost.com/v2/scan_forms/{{SCAN_FORM_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all ScanForms
+GET https://api.easypost.com/v2/scan_forms
+    ?page_size=10
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

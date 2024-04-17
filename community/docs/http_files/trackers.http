@@ -1,0 +1,29 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a Tracker
+POST https://api.easypost.com/v2/trackers
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "tracker": {
+    "tracking_code": "EZ1000000001",
+    "carrier": "USPS"
+  }
+}
+
+###
+
+# Retrieve a Tracker
+GET https://api.easypost.com/v2/trackers/{{TRACKER_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all Trackers
+GET https://api.easypost.com/v2/trackers
+    ?page_size=10
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+

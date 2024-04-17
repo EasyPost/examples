@@ -1,0 +1,100 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create an Address
+POST https://api.easypost.com/v2/addresses
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "address": {
+    "street1": "417 MONTGOMERY ST",
+    "street2": "FLOOR 5",
+    "city": "SAN FRANCISCO",
+    "state": "CA",
+    "zip": "94104",
+    "country": "US",
+    "company": "EasyPost",
+    "phone": "415-123-4567"
+  }
+}
+
+###
+
+# Create and verify an Address in one call (basic verification checks)
+POST https://api.easypost.com/v2/addresses/create_and_verify
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "address": {
+    "street1": "000 unknown street",
+    "city": "Not A City",
+    "state": "ZZ",
+    "zip": "00001",
+    "country": "US",
+    "email": "test@example.com",
+    "phone": "5555555555"
+  }
+}
+
+###
+
+# Create and verify an Address in one call (basic + delivery/zip validation)
+POST https://api.easypost.com/v2/addresses/create
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "address": {
+    "street1": "000 unknown street",
+    "city": "Not A City",
+    "state": "ZZ",
+    "zip": "00001",
+    "country": "US",
+    "email": "test@example.com",
+    "phone": "5555555555"
+  },
+  "verify": true
+}
+
+###
+
+# Create and verify an Address in one call (basic + strict delivery/zip validation)
+POST https://api.easypost.com/v2/addresses/create
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "address": {
+    "street1": "000 unknown street",
+    "city": "Not A City",
+    "state": "ZZ",
+    "zip": "00001",
+    "country": "US",
+    "email": "test@example.com",
+    "phone": "5555555555"
+  },
+  "verify_strict": true
+}
+
+###
+
+# Verify an existing Address (basic verification checks)
+GET https://api.easypost.com/v2/addresses/{{ADDRESS_ID}}/verify
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Retrieve an Address
+GET https://api.easypost.com/v2/addresses/{{ADDRESS_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all Addresses
+GET https://api.easypost.com/v2/addresses
+    ?page_size=10
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

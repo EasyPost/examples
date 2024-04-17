@@ -1,0 +1,88 @@
+@API_KEY = EASYPOST_API_KEY
+@REFERRAL_CUSTOMER_API_KEY = EASYPOST_REFERRAL_CUSTOMER_API_KEY
+
+# Create a referral customer
+POST https://api.easypost.com/v2/referral_customers
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "user": {
+    "name": "Firstname Lastname",
+    "email": "email@example.com",
+    "phone_number": "8888888888"
+  }
+}
+
+###
+
+# List all referral customers
+GET https://api.easypost.com/v2/referral_customers
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Update a referral customer
+PUT https://api.easypost.com/v2/referral_customers
+Authorization: Bearer {{REFERRAL_CUSTOMER_API_KEY}}
+Content-Type: application/json
+
+{
+  "user": {
+    "email": "new_email@example.com"
+  }
+}
+
+###
+
+# Add Stripe credit card to referral customer's account
+POST https://api.easypost.com/beta/referral_customers/payment_method
+Authorization: Bearer {{REFERRAL_CUSTOMER_API_KEY}}
+Content-Type: application/json
+
+{
+  "payment_method": {
+    "stripe_customer_id": "cus_123",
+    "payment_method_reference": "card_123",
+    "priority": "primary"
+  }
+}
+
+
+###
+
+# Add Stripe bank account to referral customer's account
+POST https://api.easypost.com/beta/referral_customers/payment_method
+Authorization: Bearer {{REFERRAL_CUSTOMER_API_KEY}}
+Content-Type: application/json
+
+{
+  "payment_method": {
+    "stripe_customer_id": "cus_123",
+    "payment_method_reference": "ba_123",
+    "priority": "primary"
+  }
+}
+
+###
+
+# Refund a referral customer's account by a specific amount ($20.00)
+POST https://api.easypost.com/v2/referral_customers/refund
+Authorization: Bearer {{REFERRAL_CUSTOMER_API_KEY}}
+Content-Type: application/json
+
+{
+  "refund_amount": 2000
+}
+
+###
+
+# Refund a referral customer's account by a payment log entry
+POST https://api.easypost.com/v2/referral_customers/refund
+Authorization: Bearer {{REFERRAL_CUSTOMER_API_KEY}}
+Content-Type: application/json
+
+{
+  "payment_log_id": "pl_123"
+}

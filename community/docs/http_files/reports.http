@@ -1,0 +1,26 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a payment log report
+POST https://api.easypost.com/v2/reports/payment_log
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "start_date": "2019-01-01",
+  "end_date": "2019-01-31"
+}
+
+###
+
+# Retrieve a report
+GET https://api.easypost.com/v2/reports/reports/{{REPORT_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all payment log reports
+GET https://api.easypost.com/v2/reports/payment_log
+    ?page_size=10
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

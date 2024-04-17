@@ -1,0 +1,6 @@
+@API_KEY = EASYPOST_API_KEY
+
+# List all carrier types
+GET https://api.easypost.com/v2/carrier_types
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

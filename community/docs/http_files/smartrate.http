@@ -1,0 +1,14 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Retrieve time in transit information for an existing Shipment
+GET https://api.easypost.com/v2/shipments/{{SHIPMENT_ID}}/smartrate
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Retrieve estimated delivery date for an existing Shipment
+GET https://api.easypost.com/v2/shipments/{{SHIPMENT_ID}}/smartrate/delivery_dates
+    ?planned_ship_date=2021-06-01
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

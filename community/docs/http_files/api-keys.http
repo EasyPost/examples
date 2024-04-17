@@ -1,0 +1,49 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a test API key
+POST https://api.easypost.com/v2/api_keys
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "mode": "test"
+}
+
+###
+
+# Create a production API key
+POST https://api.easypost.com/v2/api_keys
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "mode": "production"
+}
+
+###
+
+# Retrieve all API keys
+GET https://api.easypost.com/v2/api_keys
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Enable a disabled API key
+POST https://api.easypost.com/v2/api_keys/{{API_KEY_ID}}/enable
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Disable an enabled API key
+POST https://api.easypost.com/v2/api_keys/{{API_KEY_ID}}/disable
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Delete an API key
+DELETE https://api.easypost.com/v2/api_keys/{{API_KEY_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
