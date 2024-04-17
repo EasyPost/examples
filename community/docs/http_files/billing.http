@@ -1,17 +1,17 @@
-@partner_api_key = PARTNER_API_KEY
-@referral_customer_api_key = REFERRAL_CUSTOMER_API_KEY
+@PARTNER_API_KEY = PARTNER_API_KEY
+@REFERRAL_CUSTOMER_API_KEY = REFERRAL_CUSTOMER_API_KEY
 @API_KEY = EASYPOST_API_KEY
 
 # Get EasyPost public key for authenticating with Stripe
 GET https://api.easypost.com/v2/partners/stripe_public_key
-Authorization: Bearer {{partner_api_key}}
+Authorization: Bearer {{PARTNER_API_KEY}}
 Content-Type: application/json
 
 ###
 
 # Add a Stripe credit card to referral customer's account
 POST https://api.easypost.com/v2/credit_cards
-Authorization: Bearer {{referral_customer_api_key}}
+Authorization: Bearer {{REFERRAL_CUSTOMER_API_KEY}}
 Content-Type: application/json
 
 {
