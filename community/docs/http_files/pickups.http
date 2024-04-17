@@ -1,0 +1,53 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a Pickup
+POST https://api.easypost.com/v2/pickups
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "pickup": {
+    "reference": "my-first-pickup",
+    "min_datetime": "2022-10-01 10:30:00",
+    "max_datetime": "2022-10-02 10:30:00",
+    "shipment": "shp_123",
+    "address": "adr_123",
+    "is_account_address": "false",
+    "instructions": "Special pickup instructions"
+  }
+}
+
+###
+
+# Retrieve a Pickup
+GET https://api.easypost.com/v2/pickups/{{PICKUP_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all Pickups
+GET https://api.easypost.com/v2/pickups
+    ?page_size=10
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Buy a Pickup
+POST https://api.easypost.com/v2/pickups/{{PICKUP_ID}}/buy
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "carrier": "UPS",
+  "service": "Same-Day Pickup"
+}
+
+
+###
+
+# Cancel a Pickup
+POST https://api.easypost.com/v2/pickups/{{PICKUP_ID}}/cancel
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

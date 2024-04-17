@@ -1,0 +1,63 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a Carrier Account
+POST https://api.easypost.com/v2/carrier_accounts
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "carrier_account": {
+    "type": "DhlEcsAccount",
+    "description": "CA Location DHL eCommerce Solutions Account",
+    "reference": "my-reference",
+    "credentials": {
+      "client_id": "123456",
+      "client_secret": "123abc",
+      "distribution_center": "USLAX1",
+      "pickup_id": "123456"
+    },
+    "test_credentials": {
+      "client_id": "123456",
+      "client_secret": "123abc",
+      "distribution_center": "USLAX1",
+      "pickup_id": "123456"
+    }
+  }
+}
+
+###
+
+# Retrieve a Carrier Account
+GET https://api.easypost.com/v2/carrier_accounts/{{CARRIER_ACCOUNT_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all Carrier Accounts
+GET https://api.easypost.com/v2/carrier_accounts
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Update a Carrier Account
+PATCH https://api.easypost.com/v2/carrier_accounts/{{CARRIER_ACCOUNT_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "carrier_account": {
+    "description": "FL Location DHL eCommerce Solutions Account",
+    "credentials": {
+      "pickup_id": "abc123"
+    }
+  }
+}
+
+###
+
+# Delete a Carrier Account
+DELETE https://api.easypost.com/v2/carrier_accounts/{{CARRIER_ACCOUNT_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

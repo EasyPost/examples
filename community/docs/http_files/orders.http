@@ -1,0 +1,115 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create an Order with existing Shipments
+POST https://api.easypost.com/v2/orders
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "order": {
+    "to_address": {
+      "id": "adr_123"
+    },
+    "from_address": {
+      "id": "adr_456"
+    },
+    "shipments": [
+      {
+        "id": "shp_123"
+      },
+      {
+        "id": "shp_456"
+      }
+    ]
+  }
+}
+
+###
+
+# Create an Order with new Shipments
+POST https://api.easypost.com/v2/orders
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "order": {
+    "to_address": {
+      "id": "adr_123"
+    },
+    "from_address": {
+      "id": "adr_456"
+    },
+    "shipments": [
+      {
+        "parcel": {
+          "length": 8,
+          "width": 6,
+          "height": 5,
+          "weight": 10
+        }
+      },
+      {
+        "parcel": {
+          "length": 8,
+          "width": 6,
+          "height": 5,
+          "weight": 10
+        }
+      }
+    ]
+  }
+}
+
+###
+
+# One-call-buy an Order (create and buy in one API call)
+POST https://api.easypost.com/v2/orders
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "order": {
+    "to_address": {
+      "id": "adr_123"
+    },
+    "from_address": {
+      "id": "adr_456"
+    },
+    "shipments": [
+      {
+        "parcel": {
+          "weight": "10.2"
+        }
+      },
+      {
+        "parcel": {
+          "predefined_package": "FedExBox",
+          "weight": "17.5"
+        }
+      }
+    ],
+    "service": "NextDayAir",
+    "carrier_accounts": [
+      "ca_123"
+    ]
+  }
+}
+
+###
+
+# Buy an existing Order
+POST https://api.easypost.com/v2/orders/{{ORDER_ID}}/buy
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "carrier": "FedEx",
+  "service": "FEDEX_GROUND"
+}
+
+###
+
+# Retrieve an Order
+GET https://api.easypost.com/v2/orders/{{ORDER_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

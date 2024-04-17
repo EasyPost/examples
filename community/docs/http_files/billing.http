@@ -1,0 +1,61 @@
+@PARTNER_API_KEY = PARTNER_API_KEY
+@REFERRAL_CUSTOMER_API_KEY = REFERRAL_CUSTOMER_API_KEY
+@API_KEY = EASYPOST_API_KEY
+
+# Get EasyPost public key for authenticating with Stripe
+GET https://api.easypost.com/v2/partners/stripe_public_key
+Authorization: Bearer {{PARTNER_API_KEY}}
+Content-Type: application/json
+
+###
+
+# Add a Stripe credit card to referral customer's account
+POST https://api.easypost.com/v2/credit_cards
+Authorization: Bearer {{REFERRAL_CUSTOMER_API_KEY}}
+Content-Type: application/json
+
+{
+  "credit_card": {
+    "stripe_object_id": "tok_...",
+    "priority": "primary"
+  }
+}
+
+###
+
+# List account payment methods
+GET https://api.easypost.com/v2/payment_methods
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Fund account with on-file credit card ($10.00)
+POST https://api.easypost.com/v2/credit_cards/{{CREDIT_CARD_ID}}/charges
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "amount": 1000
+}
+
+###
+
+# Fund account with on-file bank account ($10.00)
+POST https://api.easypost.com/v2/bank_accounts/{{BANK_ACCOUNT_ID}}/charges
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Delete an on-file credit card from account
+DELETE https://api.easypost.com/v2/credit_cards/{{CREDIT_CARD_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Delete an on-file bank account from account
+DELETE https://api.easypost.com/v2/bank_accounts/{{BANK_ACCOUNT_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

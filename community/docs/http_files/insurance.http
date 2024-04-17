@@ -1,0 +1,42 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create insurance
+POST https://api.easypost.com/v2/insurances
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "insurance": {
+    "to_address": {
+      "id": "adr_123"
+    },
+    "from_address": {
+      "id": "adr_456"
+    },
+    "tracking_code": "9400110898825022579493",
+    "carrier": "USPS",
+    "reference": "insuranceRef1",
+    "amount": "100.00"
+  }
+}
+
+###
+
+# Retrieve an insurance entry
+GET https://api.easypost.com/v2/insurances/{{INSURANCE_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all insurance entries
+GET https://api.easypost.com/v2/insurances
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Refund an insurance entry
+POST https://api.easypost.com/v2/insurances/{{INSURANCE_ID}}/refund
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

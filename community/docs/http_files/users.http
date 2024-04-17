@@ -1,0 +1,67 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Retrieve the authenticated user
+GET https://api.easypost.com/v2/users
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Update the authenticated user
+PATCH https://api.easypost.com/v2/users
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "user": {
+    "recharge_threshold": "50.00"
+  }
+}
+
+###
+
+# Create a child user
+POST https://api.easypost.com/v2/users
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "user": {
+    "name": "Child User"
+  }
+}
+
+###
+
+# Retrieve a child user
+GET https://api.easypost.com/v2/users/{{CHILD_USER_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all child users
+GET https://api.easypost.com/v2/users/children
+    ?page_size=10
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Update a child user
+PATCH https://api.easypost.com/v2/users/{{CHILD_USER_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "user": {
+    "name": "New Name"
+  }
+}
+
+###
+
+# Delete a child user
+DELETE https://api.easypost.com/v2/users/{{CHILD_USER_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

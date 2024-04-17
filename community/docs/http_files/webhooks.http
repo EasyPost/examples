@@ -1,0 +1,69 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a webhook
+POST https://api.easypost.com/v2/webhooks
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "webhook": {
+    "url": "example.com"
+  }
+}
+
+###
+
+# Retrieve a webhook
+GET https://api.easypost.com/v2/webhooks/{{WEBHOOK_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all webhooks
+GET https://api.easypost.com/v2/webhooks
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Update a webhook (enable or disable)
+PATCH https://api.easypost.com/v2/webhooks/{{WEBHOOK_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Delete a webhook
+DELETE https://api.easypost.com/v2/webhooks/{{WEBHOOK_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Retrieve a webhook event
+GET https://api.easypost.com/v2/events/{{EVENT_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all webhook events
+GET https://api.easypost.com/v2/events
+    ?page_size=10
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# Retrieve the payload of a webhook event
+GET https://api.easypost.com/v2/events/{{EVENT_ID}}/payloads/{{PAYLOAD_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+###
+
+# List all payloads of a webhook event
+GET https://api.easypost.com/v2/events/{{EVENT_ID}}/payloads
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

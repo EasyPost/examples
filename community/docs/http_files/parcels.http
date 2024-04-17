@@ -1,0 +1,22 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Create a Parcel
+POST https://api.easypost.com/v2/parcels
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "parcel": {
+    "length": 10.2,
+    "width": 7.8,
+    "height": 4.3,
+    "weight": 21.2
+  }
+}
+
+###
+
+# Retrieve a Parcel
+GET https://api.easypost.com/v2/parcels/{{PARCEL_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json

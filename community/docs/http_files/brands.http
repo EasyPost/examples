@@ -1,0 +1,18 @@
+@API_KEY = EASYPOST_API_KEY
+
+# Update a user's brand
+PATCH https://api.easypost.com/v2/users/{{USER_ID}}/brand
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+{
+  "brand": {
+    "background_color": "#FFFFFF",
+    "color": "#303F9F",
+    "logo": "data:image/png;base64,iVBORw0K...",
+    "logo_href": "https://easypost.com",
+    "ad": "null",
+    "ad_href": "null",
+    "theme": "theme1"
+  }
+}
