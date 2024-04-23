@@ -18,7 +18,7 @@ namespace EasyPostExamples
 
             Parameters.Batch.Create parameters = new()
             {
-                Shipments = new List<Shipment>()
+                Shipments = new List<IShipmentParameter>()
                 {
                     shipment
                 }

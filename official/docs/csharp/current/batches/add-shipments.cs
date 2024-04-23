@@ -20,7 +20,7 @@ namespace EasyPostExamples
 
             Parameters.Batch.AddShipments parameters = new()
             {
-                Shipments = new List<Shipment> { shipment },
+                Shipments = new List<IShipmentParameter> { shipment },
             };
 
             batch = await client.Batch.AddShipments(batch.Id, parameters);

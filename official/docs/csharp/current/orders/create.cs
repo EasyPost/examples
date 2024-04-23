@@ -38,7 +38,7 @@ namespace EasyPostExamples
                     Country = "US",
                     Zip = "94104"
                 },
-                Shipments = new List<Shipment>() { shipment }
+                Shipments = new List<IShipmentParameter>() { shipment }
             };
 
             Order order = await client.Order.Create(parameters);

@@ -36,16 +36,16 @@ namespace EasyPostExamples
                     Country = "US",
                     Zip = "94104"
                 },
-                Shipments = new List<Parameters.Shipment.Create>
+                Shipments = new List<IShipmentParameter>
                 {
-                    new()
+                    new Parameters.Shipment.Create()
                     {
                         Parcel = new Parameters.Parcel.Create
                         {
                             Weight = 10.2
                         }
                     },
-                    new()
+                    new Parameters.Shipment.Create()
                     {
                         Parcel = new Parameters.Parcel.Create
                         {
