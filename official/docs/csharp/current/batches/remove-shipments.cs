@@ -20,7 +20,7 @@ namespace EasyPostExamples
 
             Parameters.Batch.RemoveShipments parameters = new()
             {
-                Shipments = new List<Shipment> { shipment },
+                Shipments = new List<IShipmentParameter> { shipment },
             };
 
             batch = await client.Batch.RemoveShipments(batch.Id, parameters);

@@ -18,7 +18,7 @@ namespace EasyPostExamples
 
             Parameters.ScanForm.Create parameters = new()
             {
-                Shipments = new List<Shipment>
+                Shipments = new List<IShipmentParameter>
                 {
                     shipment
                 }
