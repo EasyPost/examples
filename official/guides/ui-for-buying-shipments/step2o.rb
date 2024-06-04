@@ -1,4 +1,4 @@
 get '/shipment/:id' do
-  shipment = EasyPost::Shipment.retrieve(params[:id])
+  shipment = client.shipment.retrieve(params[:id])
   erb :shipment, locals: { shipment: shipment }
 end
