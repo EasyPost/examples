@@ -8,7 +8,7 @@ import (
 func main() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	shipment, err := client.CreateShipment(
+	shipment, _ := client.CreateShipment(
 		&easypost.Shipment{
 			FromAddress: &easypost.Address{
 				Company: "EasyPost",
@@ -54,5 +54,5 @@ func main() {
 		},
 	)
 
-	fmt.Println(address)
+	fmt.Println(shipment)
 }
