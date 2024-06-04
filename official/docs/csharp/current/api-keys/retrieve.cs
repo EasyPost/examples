@@ -11,7 +11,7 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            var client = new EasyPost.Client("EASYPOST_API_KEY");
+            var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
             // Retrieve all API keys including children
             List<ApiKey> apiKeys = await client.ApiKey.All();

@@ -12,7 +12,7 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            var client = new EasyPost.Client("EASYPOST_API_KEY");
+            var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
             Pickup pickup = await client.Pickup.Retrieve("pickup_...");
 

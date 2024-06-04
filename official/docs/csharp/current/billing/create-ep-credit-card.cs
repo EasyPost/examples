@@ -11,7 +11,7 @@ namespace EasyPostExamples
     {
         public static async Task Main()
         {
-            var client = new EasyPost.Client("EASYPOST_API_KEY");
+            var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
             PaymentMethod paymentMethod = await client.ReferralCustomer.AddCreditCardToUser("REFERRAL_USER_API_KEY", "0123456789101234", "01", "2025", "111", PaymentMethod.Priority.Primary);
 
