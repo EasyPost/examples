@@ -36,7 +36,7 @@ shipment = client.shipment.create(
         "restriction_type": "none",
         "customs_items": [
             {
-                "description": "Sweet shirts",
+                "description": "T-shirt",
                 "quantity": 2,
                 "weight": 11,
                 "value": 23,
