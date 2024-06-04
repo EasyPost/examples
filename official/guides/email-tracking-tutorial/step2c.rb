@@ -4,7 +4,7 @@ class App < Sinatra::Base
     Dotenv.load
   end
   configure do
-    EasyPost.api_key = 'EASYPOST_API_KEY'
+    client = EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
     set :sendgrid, SendGrid::API.new(api_key: 'SENDGRID_API_KEY')
   end
 
@@ -13,7 +13,7 @@ class App < Sinatra::Base
     parsed_request = JSON.parse(request_string)
 
     if parsed_request['object'] == 'Event' && parsed_request['description'] == 'tracker.updated'
-      event = EasyPost::Event.receive(request_string)
+      event = EasyPost::Util.receive_event(request_string)
       tracker = event.result
 
       message = 'Hey, this is FunCompany.'
