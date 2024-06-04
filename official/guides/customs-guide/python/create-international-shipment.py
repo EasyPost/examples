@@ -1,6 +1,5 @@
 import easypost
 
-
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
 shipment = client.shipment.create(

@@ -4,7 +4,7 @@ class App < Sinatra::Base
     Dotenv.load
   end
   configure do
-    client = EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
+    EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
     set :sendgrid, SendGrid::API.new(api_key: 'SENDGRID_API_KEY')
   end
 

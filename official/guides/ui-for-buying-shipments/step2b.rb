@@ -8,7 +8,7 @@ class App < Sinatra::Base
     Dotenv.load
   end
   configure do
-    client = EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
+    EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
   end
 
   get '/' do
