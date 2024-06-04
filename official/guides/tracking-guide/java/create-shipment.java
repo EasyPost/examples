@@ -7,7 +7,7 @@ import com.easypost.exception.EasyPostException;
 
 public class CreateShipment {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         HashMap<String, Object> fromAddressMap = new HashMap<String, Object>();
         fromAddressMap.put("company", "EasyPost");
@@ -37,8 +37,8 @@ public class CreateShipment {
         shipmentMap.put("from_address", fromAddressMap);
         shipmentMap.put("parcel", parcelMap);
 
-        Shipment shipment = Shipment.create(shipmentMap);
+        Shipment shipment = client.shipment.create(shipmentMap);
 
-        shipment.buy(shipment.lowestRate());
+        client.Shipment.buy(shipment.getId(), shipment.lowestRate());
     }
 }

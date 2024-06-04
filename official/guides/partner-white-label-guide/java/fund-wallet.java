@@ -5,8 +5,8 @@ import com.easypost.exception.EasyPostException;
 
 public class RetrieveReferralUsers {
     public static void main(String[] args) throws EasyPostException {
-        EasyPost.apiKey = System.getenv("EASYPOST_API_KEY");
+        EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
-        Billing.fundWallet("2000", PaymentMethod.Priority.PRIMARY);
+        client.billing.fundWallet("2000", PaymentMethod.Priority.PRIMARY);
     }
 }

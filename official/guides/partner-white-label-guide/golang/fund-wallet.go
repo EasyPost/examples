@@ -3,7 +3,7 @@ package example
 import (
 	"os"
 
-	"github.com/EasyPost/easypost-go/v2"
+	"github.com/EasyPost/easypost-go/v4"
 )
 
 func main() {
