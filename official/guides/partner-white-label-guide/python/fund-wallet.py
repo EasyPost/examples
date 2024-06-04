@@ -1,8 +1,8 @@
 import easypost
 
-easypost.api_key = "<YOUR_PRODUCTION_API_KEY>"
+client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-success = easypost.Billing.fund_wallet(
+client.billing.fund_wallet(
     amount="2000",
     primary_or_secondary="primary",
 )
