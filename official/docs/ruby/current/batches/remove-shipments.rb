@@ -5,7 +5,7 @@ client = EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
 retrieved_batch = client.batch.retrieve('batch_...')
 
 batch = client.batch.remove_shipments(
-  retrieved_batch,
+  retrieved_batch.id,
   shipments: [
     { id: 'shp_...' },
   ],
