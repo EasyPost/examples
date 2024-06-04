@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using EasyPost;
 using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -16,7 +11,8 @@ namespace EasyPostExamples
 
             Parameters.Webhook.Create parameters = new()
             {
-                Url = "example.com"
+                Url = "example.com",
+                Secret = "ABC123",
             };
 
             Webhook webhook = await client.Webhook.Create(parameters);

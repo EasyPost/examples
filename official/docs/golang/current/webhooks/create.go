@@ -12,6 +12,7 @@ func main() {
 	webhook, _ := client.CreateWebhookWithDetails(
 		&easypost.CreateUpdateWebhookOptions{
 			URL: "example.com",
+			WebhookSecret: "A1B2C3",
 		},
 	)
 
