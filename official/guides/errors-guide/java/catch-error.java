@@ -2,7 +2,7 @@ package errors;
 
 import java.util.HashMap;
 
-import com.easypost.EasyPost;
+import com.easypost.service.EasyPostClient;
 import com.easypost.exception.APIException;
 
 public class CatchError {

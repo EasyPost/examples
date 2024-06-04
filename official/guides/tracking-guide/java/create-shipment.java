@@ -2,7 +2,7 @@ package tracking_guide;
 
 import java.util.HashMap;
 
-import com.easypost.EasyPost;
+import com.easypost.service.EasyPostClient;
 import com.easypost.exception.EasyPostException;
 
 public class CreateShipment {

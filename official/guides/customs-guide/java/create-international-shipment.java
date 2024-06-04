@@ -2,7 +2,7 @@ package customs;
 
 import java.util.HashMap;
 
-import com.easypost.EasyPost;
+import com.easypost.service.EasyPostClient;
 import com.easypost.exception.EasyPostException;
 
 public class CreateInternationalShipment {

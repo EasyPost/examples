@@ -1,8 +1,6 @@
 package example
 
 import (
-    "os"
-
     "github.com/EasyPost/easypost-go/v4"
 )
 
