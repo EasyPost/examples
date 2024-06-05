@@ -3,7 +3,7 @@ def process_webhook():
     parsed_request = request.get_json()
 
     if parsed_request["object"] == "Event" and parsed_request["description"] == "tracker.updated":
-        event = easypost.Event.receive(request.data)
+        event = easypost.util.receive_event(request.data)
         tracker = event.result
 
         message = "Hey, this is FunCompany. "

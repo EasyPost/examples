@@ -1,4 +1,4 @@
 get '/shipments' do
-  shipments = ::EasyPost::Shipment.all({})
+  shipments = client.shipment.all
   erb :shipments, locals: { shipments: shipments }
 end

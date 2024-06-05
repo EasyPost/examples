@@ -3,7 +3,7 @@ package example
 import (
 	"fmt"
 
-	"github.com/EasyPost/easypost-go/v3"
+	"github.com/EasyPost/easypost-go/v4"
 )
 
 func main() {
@@ -12,6 +12,7 @@ func main() {
 	webhook, _ := client.CreateWebhookWithDetails(
 		&easypost.CreateUpdateWebhookOptions{
 			URL: "example.com",
+			WebhookSecret: "A1B2C3",
 		},
 	)
 

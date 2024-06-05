@@ -6,13 +6,13 @@ post '/easypost-webhook' do
 
   case result['object']
   when 'Batch'
-    batch = EasyPost::Batch.new(result)
+    batch = client.batch.create(result)
 
     case batch.state
     when 'purchase_failed'
       batch.shipments.each do |shipment|
         if shipment.batch_status == 'postage_purchase_failed'
-          batch.remove_shipments([shipment])
+          client.batch.remove_shipments(batch.id, shipments: [shipment])
         end
       end
     end

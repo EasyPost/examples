@@ -2,14 +2,11 @@ package example
 
 import (
     "fmt"
-    "os"
-
-    "github.com/EasyPost/easypost-go/v2"
+    "github.com/EasyPost/easypost-go/v4"
 )
 
 func main() {
-    apiKey := os.Getenv("<YOUR_TEST/PRODUCTION_API_KEY>")
-    client := easypost.New(apiKey)
+    client := easypost.New("EASYPOST_API_KEY")
 
     _, err := client.CreateAddress(
         &easypost.Address{

@@ -1,7 +1,9 @@
 import easypost
 
-easypost.api_key = "<YOUR_PRODUCTION_API_KEY>"
+client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-me = easypost.User.retrieve()
-me.recharge_threshold = "50.00"
-me.save()
+user = client.user.retrieve_me()
+
+updated_user = client.user.update(user.id, recharge_threshold="50.00")
+
+print(updated_user)

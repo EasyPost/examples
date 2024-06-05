@@ -1,6 +1,8 @@
 import easypost
 
+client = easypost.EasyPostClient("EASYPOST_API_KEY")
+
 try:
-    easypost.Address.create({"strict_verify": True})
+    client.address.create({"strict_verify": True})
 except easypost.errors.api.ApiError as error:
     print(error.code)

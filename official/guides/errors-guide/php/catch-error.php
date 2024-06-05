@@ -1,9 +1,9 @@
 <?php
 
+$client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
+
 try {
-    \EasyPost\Address::create([
-        "strict_verify" => true,
-    ]);
+    $client->address->create(["strict_verify" => true]);
 } catch (\EasyPost\Exception\Api\ApiException $error) {
     echo $error->code;
 }

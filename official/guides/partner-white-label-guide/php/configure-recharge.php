@@ -1,7 +1,12 @@
 <?php
 
-\EasyPost\EasyPost::setApiKey("<YOUR_PRODUCTION_API_KEY>");
+$client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$me = \EasyPost\User::retrieve_me();
-$me->recharge_threshold = "50.00";
-$me->save();
+$user = $client->user->retrieveMe();
+
+$updatedUser = $client->user->update(
+    $user->id,
+    ['recharge_threshold' => '50.00']
+);
+
+echo $updatedUser;

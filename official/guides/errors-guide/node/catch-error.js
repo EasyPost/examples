@@ -1,8 +1,11 @@
-const Easypost = require('@easypost/api');
-const api = new Easypost('{API_KEY}');
+const EasyPostClient = require('@easypost/api');
 
-api.Address.save({
-  strict_verify: true,
-}).catch((error) => {
-  console.error(error.code);
-});
+const client = new EasyPostClient('EASYPOST_API_KEY');
+
+(async () => {
+  try {
+    await client.Address.create({ strict_verify: true });
+  } catch (error) {
+    console.error(error.code);
+  }
+})();

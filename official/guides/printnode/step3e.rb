@@ -1,5 +1,5 @@
 get '/shipments/:shipment_id/zpl/print' do
-  shipment = ::EasyPost::Shipment.retrieve(params['shipment_id'])
+  shipment = client.shipment.retrieve(params['shipment_id'])
   printjob = PrintNode::PrintJob.new(
     settings.printer_id,
     shipment.id,
