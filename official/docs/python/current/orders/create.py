@@ -8,7 +8,6 @@ order = client.order.create(
     shipments=[
         {
             "parcel": {
-                "predefined_package": "FedExBox",
                 "weight": 10.2,
             }
         },
