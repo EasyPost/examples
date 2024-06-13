@@ -14,8 +14,6 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Shipment shipment = await client.Shipment.Retrieve("shp_...");
-
             Parameters.Order.Create parameters = new()
             {
                 ToAddress = new Parameters.Address.Create
@@ -38,7 +36,24 @@ namespace EasyPostExamples
                     Country = "US",
                     Zip = "94104"
                 },
-                Shipments = new List<IShipmentParameter>() { shipment }
+                Shipments = new List<IShipmentParameter>
+                {
+                    new Parameters.Shipment.Create()
+                    {
+                        Parcel = new Parameters.Parcel.Create
+                        {
+                            Weight = 10.2
+                        }
+                    },
+                    new Parameters.Shipment.Create()
+                    {
+                        Parcel = new Parameters.Parcel.Create
+                        {
+                            PredefinedPackage = "FedExBox",
+                            Weight = 17.5
+                        }
+                    }
+                },
             };
 
             Order order = await client.Order.Create(parameters);

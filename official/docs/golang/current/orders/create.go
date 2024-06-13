@@ -11,15 +11,26 @@ func main() {
 
 	toAddress, _ := client.GetAddress("adr_...")
 	fromAddress, _ := client.GetAddress("adr_...")
-	shipment, _ := client.GetShipment("shp_...")
+	firstShipment := &easypost.Shipment{
+		Parcel: &easypost.Parcel{
+			Weight:            10.2,
+		},
+	}
+	secondShipment := &easypost.Shipment{
+		Parcel: &easypost.Parcel{
+            PredefinedPackage: "FedExBox",
+			Weight:            17.5,
+		},
+	}
 
 	order, _ := client.CreateOrder(
 		&easypost.Order{
 			ToAddress:   toAddress,
 			FromAddress: fromAddress,
 			Shipments: []*easypost.Shipment{
-				shipment,
-			},
+				firstShipment,
+				secondShipment
+            },
 		},
 	)
 

@@ -11,7 +11,6 @@ const client = new EasyPostClient('EASYPOST_API_KEY');
     shipments: [
       {
         parcel: {
-          predefined_package: 'FedExBox',
           weight: 10.2,
         },
       },

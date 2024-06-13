@@ -11,14 +11,11 @@ func main() {
 
 	toAddress, _ := client.GetAddress("adr_...")
 	fromAddress, _ := client.GetAddress("adr_...")
-
 	firstShipment := &easypost.Shipment{
 		Parcel: &easypost.Parcel{
-			PredefinedPackage: "FedExBox",
-			Weight:            10.4,
+			Weight: 10.2,
 		},
 	}
-
 	secondShipment := &easypost.Shipment{
 		Parcel: &easypost.Parcel{
 			PredefinedPackage: "FedExBox",
