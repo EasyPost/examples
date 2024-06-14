@@ -163,7 +163,6 @@
         },
         {
           "parcel": {
-            "predefined_package": "FedExBox",
             "weight": 17.5
           }
         }
