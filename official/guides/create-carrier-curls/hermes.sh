@@ -6,10 +6,11 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   "description": "HermesAccount",
   "carrier_account": {
     "credentials": {
+      "api_key": "VALUE",
+      "auth_id": "VALUE",
+      "auth_secret": "VALUE",
       "client_id": "VALUE",
-      "client_licence": "VALUE",
       "client_name": "VALUE",
-      "group_id": "VALUE",
       "password": "VALUE",
       "username": "VALUE"
     }

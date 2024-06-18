@@ -9,6 +9,8 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
       "account_number": "VALUE",
       "customer_guid": "VALUE",
       "customer_id": "VALUE",
+      "oauth_status": "VALUE",
+      "partner_oauth_url": "VALUE",
       "password": "VALUE",
       "user_id": "VALUE"
     }

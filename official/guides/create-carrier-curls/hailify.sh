@@ -2,13 +2,14 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   -u "$EASYPOST_API_KEY": \
   -H 'Content-Type: application/json' \
   -d '{
-  "type": "UpsIparcelAccount",
-  "description": "UpsIparcelAccount",
+  "type": "HailifyAccount",
+  "description": "HailifyAccount",
   "carrier_account": {
     "credentials": {
-      "api_key": "VALUE",
-      "oauth_status": "VALUE",
-      "partner_oauth_url": "VALUE"
+      "partner_id": "VALUE"
+    },
+    "test_credentials": {
+      "partner_id": "VALUE"
     }
   }
 }'
