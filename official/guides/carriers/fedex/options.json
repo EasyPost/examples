@@ -1,0 +1,10 @@
+{
+  "options": {
+    "print_custom_1": "printCustom1",
+    "print_custom_2": "printCustom2",
+    "print_custom_2_code": "PO",
+    "print_custom_3": "printCustom3",
+    "print_custom_3_code": "RMA",
+    "invoice_number": "INVOICE12345"
+  }
+}

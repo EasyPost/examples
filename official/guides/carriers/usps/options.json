@@ -1,0 +1,10 @@
+{
+  "options": {
+    "print_custom_1": "printCustom1",
+    "print_custom_2": "printCustom2",
+    "print_custom_3": "printCustom3",
+    "invoice_number": "INVOICE12345",
+    "label_size": "4x6",
+    "label_format": "PNG"
+  }
+}
