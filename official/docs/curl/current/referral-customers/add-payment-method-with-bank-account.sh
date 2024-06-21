@@ -1,4 +1,4 @@
-curl -X POST "https://api.easypost.com/beta/referral_customers/payment_method" \
+curl -X POST https://api.easypost.com/beta/referral_customers/payment_method \
   -u "$REFERRAL_USER_API_KEY": \
   -H "Content-Type: application/json" \
   -d '{
