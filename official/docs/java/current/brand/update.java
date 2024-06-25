@@ -2,7 +2,6 @@ package brand;
 
 import com.easypost.exception.EasyPostException;
 import com.easypost.model.Brand;
-import com.easypost.model.User;
 import com.easypost.service.EasyPostClient;
 
 import java.util.HashMap;
