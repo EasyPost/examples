@@ -9,7 +9,24 @@ import (
 func main() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	batch, _ := client.BuyBatch("batch_...")
+	createdBatch, _ := client.CreateBatch(
+		&easypost.Shipment{
+			FromAddress: &easypost.Address{
+				ID: "adr_...",
+			},
+			ToAddress: &easypost.Address{
+				ID: "adr_...",
+			},
+			Parcel: &easypost.Parcel{
+				ID: "prcl_...",
+			},
+			Service:           "First",
+			Carrier:           "USPS",
+			CarrierAccountIDs: []string{"ca_..."},
+		},
+	)
+
+	batch, _ := client.BuyBatch(createdBatch.ID)
 
 	fmt.Println(batch)
 }
