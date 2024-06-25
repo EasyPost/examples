@@ -2,13 +2,10 @@ import easypost
 
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-
-pickup = client.pickup.retrieve("pickup_...")
-
-bought_pickup = client.pickup.buy(
-    pickup.id,
+pickup = client.pickup.buy(
+    "pickup_...",
     carrier="UPS",
     service="Same-day Pickup",
 )
 
-print(bought_pickup)
+print(pickup)
