@@ -2,8 +2,6 @@ import easypost
 
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-shipment = client.shipment.retrieve("shp_...")
+shipment = client.shipment.insure("shp_...", amount=100)
 
-insured_shipment = client.shipment.insure(shipment.id, amount=100)
-
-print(insured_shipment)
+print(shipment)

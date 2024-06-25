@@ -9,8 +9,7 @@ import (
 func main() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	shipment, _ := client.GetShipment("shp_...")
-	estimatedDeliveryDates, _ := client.GetShipmentEstimatedDeliveryDate(shipment.ID, "YYYY-MM-DD")
+	estimatedDeliveryDates, _ := client.GetShipmentEstimatedDeliveryDate("shp_...", "YYYY-MM-DD")
 
 	fmt.Println(estimatedDeliveryDates)
 }

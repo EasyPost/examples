@@ -2,10 +2,8 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$batch = $client->batch->retrieve('batch_...');
-
-$batchWithoutShipments = $client->batch->removeShipments(
-    $shipment->id,
+$batch = $client->batch->removeShipments(
+    'batch_...',
     [
         'shipments' => [
             ['id' => 'shp_...']
@@ -13,4 +11,4 @@ $batchWithoutShipments = $client->batch->removeShipments(
     ]
 );
 
-echo $batchWithoutShipments;
+echo $batch;

@@ -7,6 +7,6 @@ public class Update {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
-        client.referralCustomer.updateEmail("new_email@example.com", "user_...");
+        client.referralCustomer.updateEmail("user_...", "new_email@example.com");
     }
 }

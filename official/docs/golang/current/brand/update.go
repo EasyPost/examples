@@ -9,12 +9,11 @@ import (
 func main() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	user, _ := client.RetrieveMe()
 	brand, _ := client.UpdateBrand(
 		map[string]interface{}{
 			"color": "#303F9F",
 		},
-		user.ID,
+		"user_...",
 	)
 
 	fmt.Println(brand)

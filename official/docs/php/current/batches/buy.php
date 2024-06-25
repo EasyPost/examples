@@ -2,8 +2,17 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$batch = $client->batch->retrieve('batch_...');
+$createdBatch = $client->batch->create([
+    'shipments' => [
+        ['from_address' => ['id' => 'adr_...']],
+        ['to_address' => ['id' => 'adr_...']],
+        ['parcel' => ['id' => 'prcl_...']],
+        ['service' => 'First'],
+        ['carrier' => 'USPS'],
+        ['carrier_accounts' => ['ca_...']],
+    ]
+]);
 
-$boughtBatch = $client->batch->buy($batch->id);
+$batch = $client->batch->buy($createdBatch['id']);
 
-echo $boughtBatch;
+echo $batch;

@@ -14,8 +14,6 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            CarrierAccount carrierAccount = await client.CarrierAccount.Retrieve("ca_...");
-
             Parameters.CarrierAccount.Update parameters = new()
             {
                 Description = "FL Location DHL eCommerce Solutions Account",
@@ -25,7 +23,7 @@ namespace EasyPostExamples
                 },
             };
 
-            carrierAccount = await client.CarrierAccount.Update(carrierAccount.Id, parameters);
+            carrierAccount = await client.CarrierAccount.Update("ca_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(carrierAccount, Formatting.Indented));
         }

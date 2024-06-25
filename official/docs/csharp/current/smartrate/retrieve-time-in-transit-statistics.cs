@@ -13,9 +13,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Shipment shipment = await client.Shipment.Retrieve("shp_...");
-
-            List<SmartRate> smartRates = await client.Shipment.GetSmartRates(shipment.Id);
+            List<SmartRate> smartRates = await client.Shipment.GetSmartRates("shp_...");
 
             Console.WriteLine(JsonConvert.SerializeObject(smartRates, Formatting.Indented));
         }

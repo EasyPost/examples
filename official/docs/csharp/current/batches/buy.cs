@@ -13,7 +13,34 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Batch batch = await client.Batch.Retrieve("batch_...");
+            Parameters.Shipment.Create shipmentParameters = new()
+            {
+                ToAddress = new Parameters.Address.Create
+                {
+                    Id = "adr_..."
+                },
+                FromAddress = new Parameters.Address.Create
+                {
+                    Id = "adr_..."
+                },
+                Parcel = new Parameters.Parcel.Create
+                {
+                    Id = "prcl_..."
+                },
+                Service = "First",
+                Carrier = "USPS",
+                CarrierAccountIds = new List<string> { "ca_..." }
+            };
+
+            Parameters.Batch.Create parameters = new()
+            {
+                Shipments = new List<IShipmentParameter>()
+                {
+                    shipmentParameters
+                }
+            };
+
+            Batch batch = await client.Batch.Create(parameters);
 
             batch = await client.Batch.Buy(batch.Id);
 

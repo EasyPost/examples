@@ -2,10 +2,8 @@ import easypost
 
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-batch = client.batch.retrieve("batch_...")
-
-batch_without_shipments = batch.remove_shipments(
-    batch.id,
+batch = batch.remove_shipments(
+    "batch_...",
     shipments=[
         {
             "id": "shp_...",
@@ -13,4 +11,4 @@ batch_without_shipments = batch.remove_shipments(
     ],
 )
 
-print(batch_without_shipments)
+print(batch)

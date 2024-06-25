@@ -14,16 +14,16 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Shipment shipment = await client.Shipment.Retrieve("shp_...");
+            Shipment retrievedShipment = await client.Shipment.Retrieve("shp_...");
 
-            Rate rate = shipment.LowestRate();
+            Rate rate = retrievedShipment.LowestRate();
 
             Parameters.Shipment.Buy parameters = new(rate)
             {
                 EndShipperId = "es_...",
             };
 
-            shipment = await client.Shipment.Buy(shipment.Id, parameters);
+            shipment = await client.Shipment.Buy(retrievedShipment.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

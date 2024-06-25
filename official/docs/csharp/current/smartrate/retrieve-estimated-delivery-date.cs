@@ -14,14 +14,12 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Shipment shipment = await client.Shipment.Retrieve("shp_...");
-
             Parameters.Shipment.RetrieveEstimatedDeliveryDate parameters = new()
             {
                 PlannedShipDate = "2021-01-01",
             };
 
-            List<RateWithEstimatedDeliveryDate> rates = await client.Shipment.RetrieveEstimatedDeliveryDate(shipment.Id, parameters);
+            List<RateWithEstimatedDeliveryDate> rates = await client.Shipment.RetrieveEstimatedDeliveryDate("shp_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(rates, Formatting.Indented));
         }

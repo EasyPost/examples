@@ -14,11 +14,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Order order = await client.Order.Retrieve("order_...");
-
             Parameters.Order.Buy parameters = new("FedEx", "FEDEX_GROUND");
 
-            order = await client.Order.Buy(order.Id, parameters);
+            order = await client.Order.Buy("order_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
         }

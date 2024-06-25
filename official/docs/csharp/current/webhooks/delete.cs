@@ -13,8 +13,6 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Webhook webhook = await client.Webhook.Retrieve("hook_...");
-
-            await client.Webhook.Delete(webhook.Id);
+            await client.Webhook.Delete("hook_...");
         }
     }

@@ -14,8 +14,6 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            User user = await client.User.RetrieveMe();
-
             Parameters.User.UpdateBrand parameters = new()
             {
                 BackgroundColorHexCode = "#FFFFFF",
@@ -27,7 +25,7 @@ namespace EasyPostExamples
                 Theme = "theme1"
             };
 
-            Brand brand = await client.User.UpdateBrand(user.Id, parameters);
+            Brand brand = await client.User.UpdateBrand("user_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
         }

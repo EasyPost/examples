@@ -2,16 +2,16 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$shipment = $client->shipment->retrieve('shp_...');
+$retrievedShipment = $client->shipment->retrieve('shp_...');
 
-$boughtShipment = $client->shipment->buy(
-    $shipment->id,
+$shipment = $client->shipment->buy(
+    $retrievedShipment->id,
     [
-        'rate'      => $shipment->lowestRate(),
+        'rate'      => $retrievedShipment->lowestRate(),
         'insurance' => null,
         'with_carbon_offset' => false,
         'end_shipper_id' => 'es_...'
     ]
 );
 
-echo $boughtShipment;
+echo $shipment;

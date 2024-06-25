@@ -14,20 +14,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Webhook webhook = await client.Webhook.Retrieve("hook_...");
-
-            // Update the webhook's settings
-            Parameters.Webhook.Update parameters = new()
-            {
-                Url = "https://example.com/webhook",
-            };
-
-            webhook = await client.Webhook.Update(webhook.Id, parameters);
-
-            // Sending an empty parameter set will simply enable a disabled webhook
-            parameters = new();
-
-            webhook = await client.Webhook.Update(webhook.Id, parameters);
+            webhook = await client.Webhook.Update("hook_...");
 
             Console.WriteLine(JsonConvert.SerializeObject(webhook, Formatting.Indented));
         }

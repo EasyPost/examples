@@ -2,8 +2,6 @@ import easypost
 
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-shipment = client.shipment.retrieve("shp_...")
-
 form_type = "return_packing_slip"
 form_options = {
     "barcode": "RMA12345678900",
@@ -18,6 +16,6 @@ form_options = {
     ],
 }
 
-shipment_with_form = client.shipment.generate_form(shipment.id, form_type, form_options)
+shipment = client.shipment.generate_form("shp_...", form_type, form_options)
 
-print(shipment_with_form)
+print(shipment)

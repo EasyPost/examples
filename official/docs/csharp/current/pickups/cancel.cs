@@ -13,9 +13,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Pickup pickup = await client.Pickup.Retrieve("pickup_...");
-
-            pickup = await client.Pickup.Cancel(pickup.Id);
+            pickup = await client.Pickup.Cancel("pickup_...");
 
             Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));
         }

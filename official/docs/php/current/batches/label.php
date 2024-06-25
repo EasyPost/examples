@@ -2,10 +2,8 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$batch = $client->batch->retrieve('batch_...');
-
 $batchWithLabel = $client->batch->label(
-    $batch->id,
+    'batch_...',
     ['file_format' => 'PDF']
 );
 

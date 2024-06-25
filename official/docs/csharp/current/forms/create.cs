@@ -14,9 +14,6 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            // Shipment has to be purchased before forms can be generated
-            Shipment shipment = await client.Shipment.Retrieve("shp_...");
-
             Parameters.Shipment.GenerateForm parameters = new()
             {
                 Type = "return_packing_slip",
@@ -39,7 +36,7 @@ namespace EasyPostExamples
                 }
             };
 
-            shipment = await client.Shipment.GenerateForm(shipment.Id, parameters);
+            shipment = await client.Shipment.GenerateForm("shp_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

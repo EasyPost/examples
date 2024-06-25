@@ -3,9 +3,20 @@ const EasyPostClient = require('@easypost/api');
 const client = new EasyPostClient('EASYPOST_API_KEY');
 
 (async () => {
-  const batch = await client.Batch.retrieve('batch_...');
+  const createdBatch = await client.Batch.create({
+    shipments: [
+      {
+        from_address: { id: 'adr_...' },
+        to_address: { id: 'adr_...' },
+        parcel: { id: 'prcl_...' },
+        service: 'First',
+        carrier: 'USPS',
+        carrier_accounts: ['ca_...'],
+      },
+    ],
+  });
 
-  const boughtBatch = await client.Batch.buy(batch.id);
+  const batch = await client.Batch.buy(createdBatch.id);
 
-  console.log(boughtBatch);
+  console.log(batch);
 })();

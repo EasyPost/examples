@@ -2,12 +2,12 @@ import easypost
 
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-shipment = client.shipment.retrieve("shp_...")
+retrieved_shipment = client.shipment.retrieve("shp_...")
 
-bought_shipment = client.shipment.buy(
-    shipment.id,
-    rate=shipment.lowest_rate(),
+shipment = client.shipment.buy(
+    retrieved_shipment.id,
+    rate=retrieved_shipment.lowest_rate(),
     insurance=249.99,
 )
 
-print(bought_shipment)
+print(shipment)

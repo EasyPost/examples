@@ -16,14 +16,12 @@ namespace EasyPostExamples
 
             Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            Batch batch = await client.Batch.Retrieve("batch_...");
-
             Parameters.Batch.RemoveShipments parameters = new()
             {
                 Shipments = new List<IShipmentParameter> { shipment },
             };
 
-            batch = await client.Batch.RemoveShipments(batch.Id, parameters);
+            batch = await client.Batch.RemoveShipments("batch_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }

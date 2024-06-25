@@ -2,8 +2,6 @@ import easypost
 
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-shipment = client.shipment.retrieve("shp_...")
+shipment = client.shipment.label("shp_...", file_format="ZPL")
 
-shipment_with_label = client.shipment.label(shipment.id, file_format="ZPL")
-
-print(shipment_with_label)
+print(shipment)

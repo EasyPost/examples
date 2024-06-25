@@ -2,8 +2,6 @@ require 'easypost'
 
 client = EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
 
-retrieved_shipment = client.event.retrieve('shp_...')
-
 form_type = 'return_packing_slip'
 form_options = {
   type: 'return_packing_slip',
@@ -19,6 +17,6 @@ form_options = {
   ],
 }
 
-shipment = client.shipment.generate_form(retrieved_shipment.id, form_type, form_options)
+shipment = client.shipment.generate_form('shp_...', form_type, form_options)
 
 puts shipment

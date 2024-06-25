@@ -16,7 +16,6 @@ namespace EasyPostExamples
 
             // Request all metadata for all carriers
             List<Carrier> carrierMetadata = await client.CarrierMetadata.Retrieve();
-
             Console.WriteLine(JsonConvert.SerializeObject(carrierMetadata, Formatting.Indented));
 
             // Request specific metadata for specific carriers
@@ -27,7 +26,6 @@ namespace EasyPostExamples
             };
 
             List<Carrier> carrierMetadata = await client.CarrierMetadata.Retrieve(parameters);
-
             Console.WriteLine(JsonConvert.SerializeObject(carrierMetadata, Formatting.Indented));
         }
     }

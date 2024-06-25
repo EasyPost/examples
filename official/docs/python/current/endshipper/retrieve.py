@@ -2,6 +2,6 @@ import easypost
 
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-retrieved_endshipper = client.end_shipper.retrieve("es_...")
+end_shipper = client.end_shipper.retrieve("es_...")
 
-print(retrieved_endshipper)
+print(end_shipper)

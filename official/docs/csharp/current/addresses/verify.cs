@@ -14,21 +14,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Parameters.Address.Create parameters = new()
-            {
-                Street1 = "417 MONTGOMERY ST",
-                Street2 = "FLOOR 5",
-                City = "SAN FRANCISCO",
-                State = "CA",
-                Zip = "94104",
-                Country = "US",
-                Company = "EasyPost",
-                Phone = "415-123-4567",
-            };
-
-            Address address = await client.Address.Create(parameters);
-
-            address = await client.Address.Verify(address.Id)
+            address = await client.Address.Verify("adr_...")
 
             Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));
         }

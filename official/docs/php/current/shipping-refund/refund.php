@@ -2,8 +2,6 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$shipment = $client->shipment->retrieve('shp_...');
+$shipment = $client->shipment->refund('shp_...');
 
-$refundedShipment = $client->shipment->refund($shipment->id);
-
-echo $refundedShipment;
+echo $shipment;

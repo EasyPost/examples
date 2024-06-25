@@ -2,8 +2,6 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$batch = $client->batch->retrieve('batch_...');
+$batch = $client->batch->createScanForm('batch_...');
 
-$batchWithScanForm = $client->batch->createScanForm($batch->id);
-
-echo $batchWithScanForm;
+echo $batch;

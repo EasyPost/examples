@@ -2,11 +2,9 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$shipment = $client->shipment->retrieve('shp_...');
-
-$shipmentWithInsurance = $client->shipment->insure(
-    $shipment->id,
+$shipment = $client->shipment->insure(
+    'shp_...',
     ['amount' => 100]
 );
 
-echo $shipmentWithInsurance;
+echo $shipment;
