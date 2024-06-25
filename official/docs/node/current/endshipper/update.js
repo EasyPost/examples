@@ -2,9 +2,7 @@ const EasyPostClient = require('@easypost/api');
 const client = new EasyPostClient('EASYPOST_API_KEY');
 
 (async () => {
-  const endShipper = await client.EndShipper.retrieve('es_...');
-
-  const updatedEndShipper = await client.EndShipper.update(endShipper.id, {
+  const updatedEndShipper = await client.EndShipper.update('es_...', {
     name: 'NEW NAME',
     company: 'BAZ',
     street1: '164 TOWNSEND STREET UNIT 1',

@@ -3,9 +3,7 @@ const EasyPostClient = require('@easypost/api');
 const client = new EasyPostClient('EASYPOST_API_KEY');
 
 (async () => {
-  const shipment = await client.Shipment.retrieve('shp_...');
+  const shipment = await client.Shipment.convertLabelFormat('shp_...', 'ZPL');
 
-  const shipmentWithLabel = await client.Shipment.convertLabelFormat(shipment.id, 'ZPL');
-
-  console.log(shipmentWithLabel);
+  console.log(shipment);
 })();

@@ -3,15 +3,15 @@ const EasyPostClient = require('@easypost/api');
 const client = new EasyPostClient('EASYPOST_API_KEY');
 
 (async () => {
-  const shipment = await client.Shipment.retrieve('shp_...');
+  const retrievedShipment = await client.Shipment.retrieve('shp_...');
 
-  const shipmentWithEndShipperId = await client.Shipment.buy(
-    shipment.id,
-    shipment.lowestRate(),
+  const shipment = await client.Shipment.buy(
+    retrievedShipment.id,
+    retrievedShipment.lowestRate(),
     null,
     false,
     'es_...',
   );
 
-  console.log(shipmentWithEndShipperId);
+  console.log(shipment);
 })();
