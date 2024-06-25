@@ -13,8 +13,6 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            User user = await client.User.Retrieve("user_...");
-
-            await client.User.Delete(user.Id);
+            await client.User.Delete("user_...");
         }
     }

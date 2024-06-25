@@ -14,14 +14,12 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            User user = await client.User.RetrieveMe();
-
             Parameters.User.Update parameters = new()
             {
                 RechargeThreshold = "50.00"
             };
 
-            user = await client.User.Update(user.Id, parameters);
+            user = await client.User.Update("user_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(user, Formatting.Indented));
         }

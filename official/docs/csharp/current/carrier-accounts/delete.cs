@@ -13,8 +13,6 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            CarrierAccount carrierAccount = await client.CarrierAccount.Retrieve("ca_...");
-
-            await client.CarrierAccount.Delete(carrierAccount.Id);
+            await client.CarrierAccount.Delete("ca_...");
         }
     }

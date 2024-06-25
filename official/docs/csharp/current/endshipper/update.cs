@@ -14,8 +14,6 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            EndShipper endShipper = await client.EndShipper.Retrieve("es_...");
-
             // Updating an EndShipper requires all the original data to be sent back + the updated data
             Parameters.EndShipper.Update parameters = new()
             {
@@ -31,7 +29,7 @@ namespace EasyPostExamples
                 Email = "FOO@EXAMPLE.COM",
             };
 
-            endShipper = await client.EndShipper.Update(endShipper.Id, parameters);
+            endShipper = await client.EndShipper.Update("es_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(endShipper, Formatting.Indented));
         }

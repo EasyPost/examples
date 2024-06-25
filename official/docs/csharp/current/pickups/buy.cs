@@ -14,11 +14,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Pickup pickup = await client.Pickup.Retrieve("pickup_...");
-
             Parameters.Pickup.Buy parameters = new("UPS", "Same-Day Pickup");
 
-            pickup = await client.Pickup.Buy(pickup.Id, parameters);
+            pickup = await client.Pickup.Buy("pickup_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(pickup, Formatting.Indented));
         }

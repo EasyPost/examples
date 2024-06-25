@@ -13,9 +13,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Batch batch = await client.Batch.Retrieve("batch_...");
-
-            batch = await client.Batch.Buy(batch.Id);
+            batch = await client.Batch.Buy("batch_...");
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }

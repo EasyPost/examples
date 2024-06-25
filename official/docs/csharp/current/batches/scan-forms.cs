@@ -14,14 +14,12 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Batch batch = await client.Batch.Retrieve("batch_...");
-
             Parameters.Batch.GenerateScanForm parameters = new()
             {
                 FileFormat = "ZPL",
             }
 
-            batch = await client.Batch.GenerateScanForm(batch.Id, parameters);
+            batch = await client.Batch.GenerateScanForm("batch_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }
