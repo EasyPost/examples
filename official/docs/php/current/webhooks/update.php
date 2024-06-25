@@ -2,8 +2,6 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$webhook = $client->webhook->retrieve('hook_...');
+$webhook = $client->webhook->update('hook_...');
 
-$updatedWebhook = $client->webhook->update();
-
-echo $updatedWebhook;
+echo $webhook;

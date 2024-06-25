@@ -2,8 +2,6 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$pickup = $client->pickup->retrieve('pickup_...');
+$pickup = $client->pickup->cancel('pickup_...');
 
-$cancelledPickup = $client->pickup->cancel($pickup->id);
-
-echo $cancelledPickup;
+echo $pickup;

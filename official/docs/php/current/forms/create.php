@@ -2,8 +2,6 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$shipment = $client->shipment->retrieve('shp_...');
-
 $formType = 'return_packing_slip';
 $formOptions = [
     'barcode' => 'RMA12345678900',
@@ -18,6 +16,6 @@ $formOptions = [
     ],
 ];
 
-$shipmentWithForm = $client->shipment->generateForm($shipment->id, $formType, $formOptions);
+$shipmentWithForm = $client->shipment->generateForm('shp_...', $formType, $formOptions);
 
 echo $shipmentWithForm;

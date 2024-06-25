@@ -2,10 +2,8 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$endshipper = $client->endShipper->retrieve('es_...');
-
-$updatedEndShipper = $client->endShipper->update(
-    $endShipper->id,
+$endShipper = $client->endShipper->update(
+    'es_...',
     [
         'name' => 'NEW NAME',
         'company' => 'BAZ',
@@ -20,4 +18,4 @@ $updatedEndShipper = $client->endShipper->update(
     ]
 );
 
-echo $updatedEndShipper;
+echo $endShipper;

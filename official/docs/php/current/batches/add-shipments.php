@@ -2,10 +2,8 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$batch = $client->batch->retrieve('batch_...');
-
-$batchWithShipments = $client->batch->addShipments(
-    $batch->id,
+$batch = $client->batch->addShipments(
+    'batch_...',
     [
         'shipments' => [
             ['id' => 'shp_...'],
@@ -14,4 +12,4 @@ $batchWithShipments = $client->batch->addShipments(
     ]
 );
 
-echo $batchWithShipments;
+echo $batch;

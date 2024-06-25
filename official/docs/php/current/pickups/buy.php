@@ -2,10 +2,8 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$pickup = $client->pickup->retrieve('pickup_...');
-
-$boughtPickup = $client->pickup->buy(
-    $pickup->id,
+$pickup = $client->pickup->buy(
+    'pickup_...',
     [
         'carrier' => 'UPS',
         'service' => 'Same-day Pickup'

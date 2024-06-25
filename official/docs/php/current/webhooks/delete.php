@@ -2,6 +2,4 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$webhook = $client->webhook->retrieve('hook_...');
-
-$client->webhook->delete($webhook->id);
+$client->webhook->delete('hook_...');

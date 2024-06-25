@@ -2,10 +2,8 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$carrierAccount = $client->carrierAccount->retrieve('ca_...');
-
-$updatedCarrierAccount = $client->carrierAccount->update(
-    $carrierAccount->id,
+$carrierAccount = $client->carrierAccount->update(
+    'ca_...',
     [
         'description' => 'FL Location DHL eCommerce Solutions Account',
         'credentials' => [
@@ -14,4 +12,4 @@ $updatedCarrierAccount = $client->carrierAccount->update(
     ]
 );
 
-echo $updatedCarrierAccount;
+echo $carrierAccount;

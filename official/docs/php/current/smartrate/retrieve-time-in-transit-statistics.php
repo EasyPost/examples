@@ -2,8 +2,6 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$shipment = $client->shipment->retrieve('shp_...');
-
-$smartRates = $client->shipment->getSmartrates();
+$smartRates = $client->shipment->getSmartrates('shp_...');
 
 echo $smartRates;

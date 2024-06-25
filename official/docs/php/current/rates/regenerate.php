@@ -2,8 +2,6 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$shipment = $client->shipment->retrieve('shp_...');
+$shipment = $client->shipment->regenerateRates('shp_...');
 
-$shipmentWithRegeneratedrates = $client->shipment->regenerateRates($shipment->id);
-
-echo $shipmentWithRegeneratedrates;
+echo $shipment;

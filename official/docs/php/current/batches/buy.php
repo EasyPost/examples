@@ -2,8 +2,6 @@
 
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
-$batch = $client->batch->retrieve('batch_...');
+$batch = $client->batch->buy('batch_...');
 
-$boughtBatch = $client->batch->buy($batch->id);
-
-echo $boughtBatch;
+echo $batch;
