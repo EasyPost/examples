@@ -2,7 +2,7 @@ require 'easypost'
 
 client = EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
 
-retrieved_shipment = client.shipment.retrieve()
+retrieved_shipment = client.shipment.retrieve
 
 shipment = client.shipment.buy(
   retrieved_shipment.id,

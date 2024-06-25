@@ -11,7 +11,7 @@ func main() {
 
 	user, _ = client.UpdateUser(
 		&easypost.UserOptions{
-            ID: "user_..."
+			ID:             "user_...",
 			RechargeAmount: "50.00",
 		},
 	)
