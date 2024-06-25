@@ -9,12 +9,10 @@ import (
 func main() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	user, _ := client.RetrieveMe()
-	rechargeThreshold := "50.00"
-
 	user, _ = client.UpdateUser(
 		&easypost.UserOptions{
-			RechargeAmount: &rechargeThreshold,
+            ID: "user_..."
+			RechargeAmount: "50.00",
 		},
 	)
 

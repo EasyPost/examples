@@ -9,7 +9,7 @@ import (
 func main() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	shipment, _ := client.GetShipment("shp_...")
+	shipment, _ := client.GetShipment()
 
 	batch, _ := client.AddShipmentsToBatch("batch_...", shipment)
 

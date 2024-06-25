@@ -9,11 +9,9 @@ import (
 func main() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	carrierAccount, _ := client.GetCarrierAccount("ca_...")
-
 	carrierAccount, _ = client.UpdateCarrierAccount(
 		&easypost.CarrierAccount{
-			ID:          carrierAccount.ID,
+			ID:          "ca_...",
 			Description: "FL Location DHL eCommerce Solutions Account",
 			Credentials: map[string]string{
 				"pickup_id": "abc123",
