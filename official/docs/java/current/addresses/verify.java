@@ -10,21 +10,8 @@ public class Verify {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
-        HashMap<String, Object> params = new HashMap<String, Object>();
+        Address address = client.address.verify("adr_...");
 
-        params.put("street1", "417 Montgomery Street");
-        params.put("city", "SF");
-        params.put("state", "CA");
-        params.put("zip", "94104");
-        params.put("country", "US");
-        params.put("company", "EasyPost");
-        params.put("phone", "415-123-4567");
-        params.put("verify_strict", true);
-
-        Address address = client.address.create(params);
-
-        Address verifiedAddress = client.address.verify(address.getId());
-
-        System.out.println(verifiedAddress);
+        System.out.println(address);
     }
 }

@@ -11,9 +11,6 @@ public class Create {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
-        Shipment shipment = client.shipment.retrieve("shp_...");
-        Shipment boughtShipment = client.shipment.buy(shipment.getId(), shipment.lowestRate());
-
         HashMap<String, Object> titleMap = new HashMap<String, Object>();
         titleMap.put("title", "Square Reader");
 
@@ -29,7 +26,7 @@ public class Create {
         params.put("units", 8);
         params.put("line_items", lineItemsMap);
 
-        Shipment shipmentWithForm = client.shipment.generateForm(boughtShipment.getId(), "return_packing_slip",
+        Shipment shipment = client.shipment.generateForm("shp_...", "return_packing_slip",
                 params);
 
         System.out.println(shipment);
