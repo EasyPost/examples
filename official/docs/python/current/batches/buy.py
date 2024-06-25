@@ -15,6 +15,6 @@ createdBatch = client.batch.create(
     ],
 )
 
-batch = client.batch.buy(createdBatch["id"])
+batch = client.batch.buy(createdBatch.id)
 
 print(batch)
