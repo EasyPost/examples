@@ -19,5 +19,13 @@ func main() {
 		},
 	)
 
+	// For UPS account update, please use below method instead
+
+	updateParameters := &easypost.UpsCarrierAccountUpdateParameters{
+		AccountNumber: "987654321",
+	}
+
+	carrierAccount, err := client.UpdateUpsCarrierAccount(carrierAccount.ID, updateParameters)
+
 	fmt.Println(carrierAccount)
 }

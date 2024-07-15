@@ -28,5 +28,14 @@ func main() {
 		},
 	)
 
+	// For UPS account creation, please use below method instead
+
+	createUpsParameters := &easypost.UpsCarrierAccountCreationParameters{
+		AccountNumber: "123456789",
+		Type:          "UpsAccount",
+	}
+
+	carrierAccount, err := client.CreateUpsCarrierAccount(createUpsParameters)
+
 	fmt.Println(carrierAccount)
 }
