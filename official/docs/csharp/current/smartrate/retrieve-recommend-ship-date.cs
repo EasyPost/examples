@@ -19,7 +19,7 @@ namespace EasyPostExamples
                 DesiredDeliveryDate = "2024-07-18",
             };
 
-            List<RecommendShipDateForShipmentResult> rates = await client.Shipment.RetrieveEstimatedDeliveryDate("shp_...", parameters);
+            List<RecommendShipDateForShipmentResult> rates = await client.Shipment.RecommendShipDate("shp_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(rates, Formatting.Indented));
         }
