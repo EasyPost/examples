@@ -1,13 +1,11 @@
 package shipments;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.Shipment;
 import com.easypost.model.RecommendShipDateForZipPairResult;
 import com.easypost.service.EasyPostClient;
 
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class RetrieveRecommendShipDate {

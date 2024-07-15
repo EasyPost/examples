@@ -10,7 +10,7 @@ const params = {
   };
 
 (async () => {
-  const results = await this.client.SmartRate.estimateDeliveryDate(params);
+  const results = await client.SmartRate.estimateDeliveryDate(params);
 
   console.log(results);
 })();

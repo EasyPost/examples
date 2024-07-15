@@ -10,7 +10,7 @@ const params = {
   };
 
 (async () => {
-  const results = await this.client.SmartRate.recommendShipDate(params);
+  const results = await client.SmartRate.recommendShipDate(params);
 
   console.log(results);
 })();
