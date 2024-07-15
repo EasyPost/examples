@@ -1,89 +1,89 @@
 {
-  "carriers_without_tint_estimates":null,
-  "from_zip":"94107",
-  "planned_ship_date":"2024-07-16",
-  "results":[
-     {
-        "carrier":"USPS",
-        "easypost_time_in_transit_data":{
-           "days_in_transit":{
-              "percentile_50":1,
-              "percentile_75":2,
-              "percentile_85":2,
-              "percentile_90":3,
-              "percentile_95":3,
-              "percentile_97":4,
-              "percentile_99":6
-           },
-           "easypost_estimated_delivery_date":"2024-07-17"
+  "carriers_without_tint_estimates": null,
+  "from_zip": "94107",
+  "planned_ship_date": "2024-07-16",
+  "results": [
+    {
+      "carrier": "USPS",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 1,
+          "percentile_75": 2,
+          "percentile_85": 2,
+          "percentile_90": 3,
+          "percentile_95": 3,
+          "percentile_97": 4,
+          "percentile_99": 6
         },
-        "service":"express"
-     },
-     {
-        "carrier":"USPS",
-        "easypost_time_in_transit_data":{
-           "days_in_transit":{
-              "percentile_50":2,
-              "percentile_75":3,
-              "percentile_85":3,
-              "percentile_90":4,
-              "percentile_95":6,
-              "percentile_97":6,
-              "percentile_99":9
-           },
-           "easypost_estimated_delivery_date":"2024-07-18"
+        "easypost_estimated_delivery_date": "2024-07-17"
+      },
+      "service": "express"
+    },
+    {
+      "carrier": "USPS",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 3,
+          "percentile_85": 3,
+          "percentile_90": 4,
+          "percentile_95": 6,
+          "percentile_97": 6,
+          "percentile_99": 9
         },
-        "service":"groundadvantage"
-     },
-     {
-        "carrier":"USPS",
-        "easypost_time_in_transit_data":{
-           "days_in_transit":{
-              "percentile_50":3,
-              "percentile_75":3,
-              "percentile_85":3,
-              "percentile_90":6,
-              "percentile_95":6,
-              "percentile_97":6,
-              "percentile_99":9
-           },
-           "easypost_estimated_delivery_date":"2024-07-18"
+        "easypost_estimated_delivery_date": "2024-07-18"
+      },
+      "service": "groundadvantage"
+    },
+    {
+      "carrier": "USPS",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 3,
+          "percentile_75": 3,
+          "percentile_85": 3,
+          "percentile_90": 6,
+          "percentile_95": 6,
+          "percentile_97": 6,
+          "percentile_99": 9
         },
-        "service":"librarymail"
-     },
-     {
-        "carrier":"USPS",
-        "easypost_time_in_transit_data":{
-           "days_in_transit":{
-              "percentile_50":3,
-              "percentile_75":3,
-              "percentile_85":3,
-              "percentile_90":4,
-              "percentile_95":6,
-              "percentile_97":6,
-              "percentile_99":9
-           },
-           "easypost_estimated_delivery_date":"2024-07-18"
+        "easypost_estimated_delivery_date": "2024-07-18"
+      },
+      "service": "librarymail"
+    },
+    {
+      "carrier": "USPS",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 3,
+          "percentile_75": 3,
+          "percentile_85": 3,
+          "percentile_90": 4,
+          "percentile_95": 6,
+          "percentile_97": 6,
+          "percentile_99": 9
         },
-        "service":"mediamail"
-     },
-     {
-        "carrier":"USPS",
-        "easypost_time_in_transit_data":{
-           "days_in_transit":{
-              "percentile_50":2,
-              "percentile_75":3,
-              "percentile_85":3,
-              "percentile_90":3,
-              "percentile_95":4,
-              "percentile_97":6,
-              "percentile_99":7
-           },
-           "easypost_estimated_delivery_date":"2024-07-18"
+        "easypost_estimated_delivery_date": "2024-07-18"
+      },
+      "service": "mediamail"
+    },
+    {
+      "carrier": "USPS",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 3,
+          "percentile_85": 3,
+          "percentile_90": 3,
+          "percentile_95": 4,
+          "percentile_97": 6,
+          "percentile_99": 7
         },
-        "service":"priority"
-     }
+        "easypost_estimated_delivery_date": "2024-07-18"
+      },
+      "service": "priority"
+    }
   ],
-  "saturday_delivery":null,
-  "to_zip":"90277"
+  "saturday_delivery": null,
+  "to_zip": "90277"
 }
