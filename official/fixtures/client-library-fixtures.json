@@ -52,6 +52,16 @@
   "carrier_strings": {
     "usps": "USPS"
   },
+  "claims": {
+    "basic": {
+      "type": "damage",
+      "email_evidence_attachments": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="],
+      "invoice_attachments": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="],
+      "supporting_documentation_attachments": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="],
+      "description": "Test description",
+      "contact_email": "test@example.com"
+    }
+  },
   "credit_cards": {
     "test": {
       "number": "4536410136126170",
