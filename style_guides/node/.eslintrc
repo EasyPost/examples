@@ -1,28 +1,28 @@
 {
-    "extends": ["prettier", "eslint:recommended"],
-    "settings": {
-        "import/extensions": ["", ".js", ".ejs", ".json", ".yml", ".jsx"],
-        "import/ignore": [".ejs$", ".yml$", ".jsx", "node_modules"]
-    },
-    "rules": {
-        "no-console": "off",
-        "import/no-unresolved": "off",
-        "no-param-reassign": "off",
-        "filenames/match-regex": "off",
-        "lines-between-class-members": "off",
-        "global-require": "off"
-    },
-    "globals": {
-        "window": true,
-        "$": true
-    },
-    "parserOptions": {
-        "ecmaVersion": 13,
-        "requireConfigFile": false,
-        "sourceType": "module"
-    },
-    "env": {
-        "node": true,
-        "es6": true
-    }
+  "extends": ["prettier", "eslint:recommended"],
+  "settings": {
+    "import/extensions": ["", ".js", ".ejs", ".json", ".yml", ".jsx"],
+    "import/ignore": [".ejs$", ".yml$", ".jsx", "node_modules"]
+  },
+  "rules": {
+    "no-console": "off",
+    "import/no-unresolved": "off",
+    "no-param-reassign": "off",
+    "filenames/match-regex": "off",
+    "lines-between-class-members": "off",
+    "global-require": "off"
+  },
+  "globals": {
+    "window": true,
+    "$": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "requireConfigFile": false,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  }
 }
