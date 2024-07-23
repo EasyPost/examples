@@ -1,11 +1,6 @@
 {
     "extends": ["prettier", "eslint:recommended"],
     "settings": {
-        "import/resolver": {
-            "webpack": {
-                "config": "webpack.config.babel.js"
-            }
-        },
         "import/extensions": ["", ".js", ".ejs", ".json", ".yml", ".jsx"],
         "import/ignore": [".ejs$", ".yml$", ".jsx", "node_modules"]
     },
@@ -17,14 +12,14 @@
         "lines-between-class-members": "off",
         "global-require": "off"
     },
-    "parser": "@babel/eslint-parser",
     "globals": {
         "window": true,
         "$": true
     },
     "parserOptions": {
         "ecmaVersion": 13,
-        "requireConfigFile": false
+        "requireConfigFile": false,
+        "sourceType": "module"
     },
     "env": {
         "node": true,
