@@ -1,9 +1,6 @@
-.babelrc
-.eslintrc
 .golangci.yml
 .mypy_cache
 .nyc_output
-README.md
 cassettes
 composer.json
 composer.lock
@@ -13,7 +10,6 @@ dist/
 examples
 official/fixtures/
 package-lock.json
-package.json
 style_guides/
 vendor/
 venv/
