@@ -1,0 +1,40 @@
+{
+  "approved_amount":null,
+  "attachments":[
+     "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/533eff379afa47759cdc14f19e190fc7.png",
+     "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/4715d1ddc5e448ad924c029d8407b9e4.png",
+     "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/987f3e1a094044219e640163b1074ff7.png"
+  ],
+  "check_delivery_address":null,
+  "contact_email":"test@example.com",
+  "created_at":"2024-07-23T17:53:44",
+  "description":"Test description",
+  "history":[
+     {
+        "status":"cancelled",
+        "status_detail":"Claim cancellation was requested.",
+        "timestamp":"2024-07-23T17:53:45"
+     },
+     {
+        "status":"submitted",
+        "status_detail":"Claim was created.",
+        "timestamp":"2024-07-23T17:53:44"
+     }
+  ],
+  "id":"clm_097eda66d06e42ec84449bbd34671a7d",
+  "insurance_amount":"100.00",
+  "insurance_id":"ins_8d75d3dcf398461aaa330e48dbd4c19e",
+  "mode":"test",
+  "object":"Claim",
+  "payment_method":"easypost_wallet",
+  "recipient_name":null,
+  "requested_amount":"100.00",
+  "salvage_value":null,
+  "shipment_id":"shp_82fecc386f314823ad6b1a35365b7f4e",
+  "status":"cancelled",
+  "status_detail":"Claim cancellation was requested.",
+  "status_timestamp":"2024-07-23T17:53:45",
+  "tracking_code":"9400100110368066361872",
+  "type":"damage",
+  "updated_at":"2024-07-23T17:53:45"
+}
