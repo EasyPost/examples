@@ -1,35 +1,35 @@
 {
-  "approved_amount":null,
-  "attachments":[
-     "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/7b9b0171ae7b4e258f765822e7cddb71.png",
-     "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/2cd9fdd33a7d40fc84ac8f87c3da1f86.png",
-     "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/d3aebbc42e884769ad810c92c26ad8ad.png"
+  "approved_amount": null,
+  "attachments": [
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/7b9b0171ae7b4e258f765822e7cddb71.png",
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/2cd9fdd33a7d40fc84ac8f87c3da1f86.png",
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/d3aebbc42e884769ad810c92c26ad8ad.png"
   ],
-  "check_delivery_address":null,
-  "contact_email":"test@example.com",
-  "created_at":"2024-07-23T17:53:40",
-  "description":"Test description",
-  "history":[
-     {
-        "status":"submitted",
-        "status_detail":"Claim was created.",
-        "timestamp":"2024-07-23T17:53:40"
-     }
+  "check_delivery_address": null,
+  "contact_email": "test@example.com",
+  "created_at": "2024-07-23T17:53:40",
+  "description": "Test description",
+  "history": [
+    {
+      "status": "submitted",
+      "status_detail": "Claim was created.",
+      "timestamp": "2024-07-23T17:53:40"
+    }
   ],
-  "id":"clm_097e86d630e44e83b736c48c1271fed3",
-  "insurance_amount":"100.00",
-  "insurance_id":"ins_33a9255ab9f443c18a1c1876bc6e25a4",
-  "mode":"test",
-  "object":"Claim",
-  "payment_method":"easypost_wallet",
-  "recipient_name":null,
-  "requested_amount":"100.00",
-  "salvage_value":null,
-  "shipment_id":"shp_8ae4d3d1cf78409fbabd93c5b13c5f98",
-  "status":"submitted",
-  "status_detail":"Claim was created.",
-  "status_timestamp":"2024-07-23T17:53:40",
-  "tracking_code":"9400100110368066361841",
-  "type":"damage",
-  "updated_at":"2024-07-23T17:53:40"
+  "id": "clm_097e86d630e44e83b736c48c1271fed3",
+  "insurance_amount": "100.00",
+  "insurance_id": "ins_33a9255ab9f443c18a1c1876bc6e25a4",
+  "mode": "test",
+  "object": "Claim",
+  "payment_method": "easypost_wallet",
+  "recipient_name": null,
+  "requested_amount": "100.00",
+  "salvage_value": null,
+  "shipment_id": "shp_8ae4d3d1cf78409fbabd93c5b13c5f98",
+  "status": "submitted",
+  "status_detail": "Claim was created.",
+  "status_timestamp": "2024-07-23T17:53:40",
+  "tracking_code": "9400100110368066361841",
+  "type": "damage",
+  "updated_at": "2024-07-23T17:53:40"
 }

@@ -12,9 +12,12 @@ public class Create {
 
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("type", "damage");
-        params.put("email_evidence_attachments", new String[]{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="});
-        params.put("invoice_attachments", new String[]{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="});
-        params.put("supporting_documentation_attachments", new String[]{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="});
+        params.put("email_evidence_attachments",
+            new String[]{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="});
+        params.put("invoice_attachments",
+            new String[]{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="});
+        params.put("supporting_documentation_attachments",
+            new String[]{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="});
         params.put("description", "Test Description");
         params.put("contact_email", "test@example.com");
         params.put("tracking_code", "YOUR_TRACKING_CODE");

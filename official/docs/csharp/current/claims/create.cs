@@ -31,7 +31,7 @@ namespace EasyPostExamples
                 },
                 Description = "Test description",
                 ContactEmail = "test@example.com",
-                TrackingCode = "EZ1000000001",
+                TrackingCode = "YOUR_TRACKING_CODE",
             };
 
             Claim claim = await client.Claim.Create(parameters);
