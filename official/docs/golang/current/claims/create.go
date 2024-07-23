@@ -13,9 +13,9 @@ func main() {
 		&easypost.CreateClaimParameters{
 			Amount:                             "100",
 			TrackingCode:                       "EZ1000000001",
-			EmailEvidenceAttachments:           []string{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="},
-			InvoiceAttachments:                 []string{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="},
-			SupportingDocumentationAttachments: []string{"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="},
+			EmailEvidenceAttachments:           []string{"REPLACE_WITH_BASE64_STRING"},
+			InvoiceAttachments:                 []string{"REPLACE_WITH_BASE64_STRING"},
+			SupportingDocumentationAttachments: []string{"REPLACE_WITH_BASE64_STRING"},
 			Description:                        "Test Description",
 			ContactEmail:                       "test@example.com",
 		},

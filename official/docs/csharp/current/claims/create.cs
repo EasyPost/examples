@@ -19,15 +19,15 @@ namespace EasyPostExamples
                 Amount = 100.00,
                 EmailEvidenceAttachments = new string[]
                 {
-                    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="
+                    "REPLACE_WITH_BASE64_STRING"
                 },
                 InvoiceAttachments = new string[]
                 {
-                    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="
+                    "REPLACE_WITH_BASE64_STRING"
                 },
                 SupportingDocumentationAttachments = new string[]
                 {
-                    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="
+                    "REPLACE_WITH_BASE64_STRING"
                 },
                 Description = "Test description",
                 ContactEmail = "test@example.com",
