@@ -17,6 +17,7 @@ namespace EasyPostExamples
             Parameters.Claim.Create parameters = new()
             {
                 Amount = 100.00,
+                Type = ClaimType.Damage
                 EmailEvidenceAttachments = new string[]
                 {
                     "REPLACE_WITH_BASE64_STRING"

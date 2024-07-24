@@ -11,7 +11,7 @@ func main() {
 
 	claim, _ := client.CreateClaim(
 		&easypost.CreateClaimParameters{
-			Amount:                             "100",
+			Amount:                             100.00,
 			TrackingCode:                       "EZ1000000001",
 			EmailEvidenceAttachments:           []string{"REPLACE_WITH_BASE64_STRING"},
 			InvoiceAttachments:                 []string{"REPLACE_WITH_BASE64_STRING"},
