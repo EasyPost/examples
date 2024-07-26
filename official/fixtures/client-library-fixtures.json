@@ -218,7 +218,7 @@
   },
   "service_names": {
     "usps": {
-      "first_service": "First",
+      "first_service": "GroundAdvantage",
       "pickup_service": "NextDay"
     }
   },
