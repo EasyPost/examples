@@ -83,7 +83,7 @@ lint-csharp:
 
 ## lint-go - Lint Go files
 lint-go:
-	$(GO_BIN)/golangci-lint run --config .golangci.yml
+	$(GO_BIN)/golangci-lint run
 
 ## lint-java - lints Java files
 lint-java:
@@ -125,7 +125,7 @@ format-csharp:
 
 ## format-go - formats Go files
 format-go:
-	golangci-lint run --fix
+	$(GO_BIN)/golangci-lint run --fix
 
 ## format-java - formats Java files
 format-java:
