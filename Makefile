@@ -1,6 +1,7 @@
 PYTHON_BINARY := python3
 PYTHON_VIRTUAL_ENV := venv
 PYTHON_VIRTUAL_BIN := $(PYTHON_VIRTUAL_ENV)/bin
+GO_BIN := $(shell go env GOPATH)/bin
 
 ## help - Display help about make targets for this Makefile
 help:
@@ -42,6 +43,7 @@ install-csharp:
 ## install-go - Install and vendor Go dependencies
 install-go:
 	sh ./symlink_directory_files.sh style_guides/golang .
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(GO_BIN) v1.59.1
 	go mod vendor
 
 ## install-java - installs Java dependencies
@@ -81,7 +83,7 @@ lint-csharp:
 
 ## lint-go - Lint Go files
 lint-go:
-	golangci-lint run
+	$(GO_BIN)/golangci-lint run
 
 ## lint-java - lints Java files
 lint-java:
@@ -123,7 +125,7 @@ format-csharp:
 
 ## format-go - formats Go files
 format-go:
-	golangci-lint run --fix
+	$(GO_BIN)/golangci-lint run --fix
 
 ## format-java - formats Java files
 format-java:
