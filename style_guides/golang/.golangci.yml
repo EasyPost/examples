@@ -2,6 +2,7 @@ issues:
   exclude:
     - "other declaration of main"
     - "`main` redeclared in this block"
+    - "main redeclared in this block"
     - "`main` is unused"
     - "github.com/EasyPost/easypost-go"
     - "undeclared name: `easypost`"
