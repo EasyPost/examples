@@ -6,11 +6,9 @@ import easypost
 
 
 # Builds a file containing every create a Carrier Account cURL request via EasyPost
-# USAGE: EASYPOST_PROD_API_KEY=123... venv/bin/python build_curls.py > carrier_curl_requests.sh
-# You can use `INDIVIDUAL_FILES=true` to create individual files
+# USAGE: EASYPOST_PROD_API_KEY=123... venv/bin/python build_curls.py
 
 API_KEY = os.getenv("EASYPOST_PROD_API_KEY")
-INDIVIDUAL_FILES = bool(os.getenv("INDIVIDUAL_FILES", False))
 LINE_BREAK_CHARS = " \\\n"
 END_CHARS = "\n"
 CUSTOM_WORKFLOW_CHARS = "## REQUIRES CUSTOM WORKFLOW ##\n"
@@ -32,18 +30,15 @@ def main():
     carrier_types = get_carrier_types()
     for carrier in sorted(carrier_types, key=lambda x: x["type"]):
         curl_request = build_carrier_curl_request(carrier)
-        if INDIVIDUAL_FILES:
-            individual_file_path = os.path.join("src", "reference", "carrier_accounts", "create_curl")
-            if not os.path.exists(individual_file_path):
-                os.makedirs(individual_file_path)
+        output_destination = os.path.join("../", "../", "guides", "create-carrier-curls")
+        if not os.path.exists(output_destination):
+            os.makedirs(output_destination)
 
-            with open(
-                os.path.join(individual_file_path, f'{carrier["type"].lower().replace("account", "")}.sh'),
-                "w",
-            ) as carrier_curl_file:
-                carrier_curl_file.write(re.sub(r"^.*?\n", "", curl_request))
-        else:
-            print(curl_request)
+        with open(
+            os.path.join(output_destination, f'{carrier["type"].lower().replace("account", "")}.sh'),
+            "w",
+        ) as carrier_curl_file:
+            carrier_curl_file.write(re.sub(r"^.*?\n", "", curl_request))
 
 
 def get_carrier_types():

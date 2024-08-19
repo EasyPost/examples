@@ -6,12 +6,16 @@ EasyPost publishes these curl requests for convenience in this repo along with p
 
 ## Install
 
-1. Install a virtual env
-2. Install `easypost` via pip
-3. Setup `.env` file as needed or pass env vars to the script on the CLI
+```shell
+# Install virtual env
+python3 -m venv venv
+
+# Install EasyPost
+venv/bin/pip install easypost
+```
 
 ## Usage
 
 ```shell
-EASYPOST_PROD_API_KEY=123... venv/bin/python build_curls.py > carrier_curl_requests.sh
+EASYPOST_PROD_API_KEY=123... venv/bin/python build_curls.py
 ```
