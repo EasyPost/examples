@@ -1,0 +1,17 @@
+curl -X POST https://api.easypost.com/v2/carrier_accounts \
+  -u "$EASYPOST_API_KEY": \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "type": "BlueStreakAccount",
+  "description": "BlueStreakAccount",
+  "carrier_account": {
+    "credentials": {
+      "username": "VALUE",
+      "password": "VALUE"
+    },
+    "test_credentials": {
+      "username": "VALUE",
+      "password": "VALUE"
+    }
+  }
+}'
