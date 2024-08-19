@@ -7,23 +7,15 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   "carrier_account": {
     "credentials": {
       "account_number": "VALUE",
-      "cig_password": "VALUE",
-      "cig_username": "VALUE",
       "contract_id": "VALUE",
-      "retoure_password": "VALUE",
-      "retoure_username": "VALUE",
-      "tnt_password": "VALUE",
-      "tnt_username": "VALUE"
+      "gkp_password": "VALUE",
+      "gkp_username": "VALUE"
     },
     "test_credentials": {
       "account_number": "VALUE",
-      "cig_password": "VALUE",
-      "cig_username": "VALUE",
       "contract_id": "VALUE",
-      "retoure_password": "VALUE",
-      "retoure_username": "VALUE",
-      "tnt_password": "VALUE",
-      "tnt_username": "VALUE"
+      "gkp_password": "VALUE",
+      "gkp_username": "VALUE"
     }
   }
 }'

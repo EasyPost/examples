@@ -8,10 +8,6 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
     "credentials": {
       "customer_number": "VALUE",
       "hub_id": "VALUE"
-    },
-    "test_credentials": {
-      "customer_number": "VALUE",
-      "hub_id": "VALUE"
     }
   }
 }'
