@@ -1,0 +1,8 @@
+Reference,Tracking Code,Carrier String,Amount,To Address (optional),From Address (optional)
+ref_1,EZ1000000001,USPS,100.00,,
+ref_2,EZ2000000002,USPS,200.00,,
+ref_3,EZ3000000003,USPS,300.00,,
+ref_4,EZ4000000004,USPS,400.00,,
+ref_5,EZ5000000005,USPS,500.00,,
+ref_6,EZ6000000006,USPS,600.00,,
+ref_7,EZ7000000007,USPS,700.00,,
