@@ -1,4 +1,4 @@
-Reference,Tracking Code,Carrier String,Amount,To Address (optional),From Address (optional)
+Reference,Tracking Code,Carrier String,Amount,To Address ID (optional),From Address ID (optional)
 ref_1,EZ1000000001,USPS,100.00,,
 ref_2,EZ2000000002,USPS,200.00,,
 ref_3,EZ3000000003,USPS,300.00,,

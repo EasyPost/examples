@@ -13,18 +13,20 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-/*
-* Concurrently buy EasyPost Insurance via a CSV file
-*
-* Usage: EASYPOST_API_KEY=123... CSV=sample.csv go run concurrent_insurance_buy.go
- */
+// Concurrently buy EasyPost Insurance via a CSV file
+// Usage: EASYPOST_API_KEY=123... CSV=sample.csv go run concurrent_insurance_buy.go
 
 func main() {
 	scriptStart := time.Now()
 
 	records := getCsvRecords()
 
-	client := easypost.New(os.Getenv("EASYPOST_API_KEY"))
+	apiKeyParam := os.Getenv("EASYPOST_API_KEY")
+	if apiKeyParam == "" {
+		handleGoErr(errors.New("EASYPOST_API_KEY param not set"))
+	}
+
+	client := easypost.New(apiKeyParam)
 	numOfGoroutines := int(math.Min(float64(len(records)), 20))
 	semaphore := make(chan bool, numOfGoroutines)
 	lineMessageList := make([][]string, 0)
@@ -44,6 +46,7 @@ func main() {
 			to_address_id := currentLine[4]
 			from_address_id := currentLine[5]
 
+			fmt.Printf("Sending request for %s...\n", tracking_code)
 			success, message := createInsurance(client, reference, tracking_code, carrier_string, amount, to_address_id, from_address_id)
 
 			elapsedTime := time.Since(goroutineStartTime)
@@ -72,7 +75,12 @@ func main() {
 
 // getCsvRecords builds the set of data without including the header and validates it
 func getCsvRecords() [][]string {
-	file, err := os.Open(os.Getenv("CSV"))
+	csvParam := os.Getenv("CSV")
+	if csvParam == "" {
+		handleGoErr(errors.New("CSV parameter not set"))
+	}
+
+	file, err := os.Open(csvParam)
 	handleGoErr(err)
 	defer file.Close()
 	reader := csv.NewReader(file)
@@ -129,7 +137,6 @@ func createInsurance(client *easypost.Client, reference string, tracking_code st
 	}
 
 	if tracker.ShipmentID != "" {
-		// shipment.Tracker is just the amount and not the object
 		_, err := client.InsureShipment(tracker.ShipmentID, amount)
 		var eperr *easypost.APIError
 		if errors.As(err, &eperr) {

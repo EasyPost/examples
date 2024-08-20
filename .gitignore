@@ -25,6 +25,7 @@ __pycache__
 /pyproject.toml
 /style_suppressions.xml
 bin
+bulkins
 node_modules
 target
 vendor
