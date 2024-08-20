@@ -30,7 +30,7 @@ func main() {
 	numOfGoroutines := int(math.Min(float64(len(records)), 20))
 	semaphore := make(chan bool, numOfGoroutines)
 	lineMessageList := make([][]string, 0)
-	lineMessageList = append(lineMessageList, []string{"Reference", "Tracking Code", "Time Elapsed", "Success", "Message"})
+	lineMessageList = append(lineMessageList, []string{"Tracking Code", "Reference", "Time Elapsed", "Success", "Message"})
 
 	// Iterate over our set of data and create an Insurance record for each line in the CSV
 	for i, line := range records {
@@ -39,18 +39,18 @@ func main() {
 		go func(lineNumber int, currentLine []string) {
 			goroutineStartTime := time.Now()
 
-			reference := currentLine[0]
-			tracking_code := currentLine[1]
+			tracking_code := currentLine[0]
+			reference := currentLine[1]
 			carrier_string := currentLine[2]
 			amount := currentLine[3]
 			to_address_id := currentLine[4]
 			from_address_id := currentLine[5]
 
 			fmt.Printf("Sending request for %s...\n", tracking_code)
-			success, message := createInsurance(client, reference, tracking_code, carrier_string, amount, to_address_id, from_address_id)
+			success, message := createInsurance(client, tracking_code, reference, carrier_string, amount, to_address_id, from_address_id)
 
 			elapsedTime := time.Since(goroutineStartTime)
-			lineMessage := []string{reference, tracking_code, elapsedTime.String(), success, message}
+			lineMessage := []string{tracking_code, reference, elapsedTime.String(), success, message}
 			lineMessageList = append(lineMessageList, lineMessage)
 
 			<-semaphore
@@ -108,9 +108,7 @@ func getCsvRecords() [][]string {
 
 		// Ensure `Amount` column is a valid float
 		_, err = strconv.ParseFloat(record[3], 64)
-		if err != nil {
-			handleGoErr(err)
-		}
+		handleGoErr(err)
 
 		lineNumber++
 		records = append(records, record)
@@ -128,7 +126,7 @@ func handleGoErr(err error) {
 }
 
 // createInsurance creates an Insurance based on if the Tracker has a Shipment or not
-func createInsurance(client *easypost.Client, reference string, tracking_code string, carrier_string string, amount string, to_address_id string, from_address_id string) (string, string) {
+func createInsurance(client *easypost.Client, tracking_code string, reference string, carrier_string string, amount string, to_address_id string, from_address_id string) (string, string) {
 	// We first get the tracker to know if there is a Shipment or not so we know which Insurance endpoint to hit
 	tracker, err := client.GetTracker(tracking_code)
 	var eperr *easypost.APIError
