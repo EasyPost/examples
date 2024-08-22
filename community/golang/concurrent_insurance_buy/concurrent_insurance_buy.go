@@ -7,6 +7,7 @@ import (
 	"io"
 	"math"
 	"os"
+	"reflect"
 	"strconv"
 	"time"
 
@@ -36,7 +37,7 @@ func main() {
 	for i, line := range records {
 		semaphore <- true
 
-		go func(lineNumber int, currentLine []string) {
+		go func(rowNumber int, currentLine []string) {
 			goroutineStartTime := time.Now()
 
 			tracking_code := currentLine[0]
@@ -62,7 +63,7 @@ func main() {
 		semaphore <- true
 	}
 
-	file, err := os.Create("insurance_buy_results.csv")
+	file, err := os.Create("bulkins_results.csv")
 	handleGoErr(err)
 	defer file.Close()
 	writer := csv.NewWriter(file)
@@ -85,7 +86,7 @@ func getCsvRecords() [][]string {
 	defer file.Close()
 	reader := csv.NewReader(file)
 
-	lineNumber := 0
+	rowNumber := 1
 	records := make([][]string, 0)
 	for {
 		record, err := reader.Read()
@@ -101,16 +102,33 @@ func getCsvRecords() [][]string {
 		}
 
 		// Skip header
-		if lineNumber == 0 {
-			lineNumber++
+		if rowNumber == 1 {
+			if !reflect.DeepEqual(record, []string{"Tracking Code", "Reference (optional)", "Carrier String", "Amount", "To Address ID (optional)", "From Address ID (optional)"}) {
+				handleGoErr(errors.New("csv does not contain the proper header row"))
+			}
+			rowNumber++
 			continue
 		}
 
+		// Ensure all required data is present before sending requests
+		tracking_code := record[0]
+		carrier_string := record[2]
+		amount := record[3]
+		if tracking_code == "" {
+			handleGoErr(fmt.Errorf("tracking code column is missing data for row %v", rowNumber))
+		}
+		if carrier_string == "" {
+			handleGoErr(fmt.Errorf("carrier string column is missing data for row %v", rowNumber))
+		}
+		if amount == "" {
+			handleGoErr(fmt.Errorf("amount column is missing data for row %v", rowNumber))
+		}
+
 		// Ensure `Amount` column is a valid float
-		_, err = strconv.ParseFloat(record[3], 64)
+		_, err = strconv.ParseFloat(amount, 64)
 		handleGoErr(err)
 
-		lineNumber++
+		rowNumber++
 		records = append(records, record)
 	}
 
