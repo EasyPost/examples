@@ -6,16 +6,14 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func list() {
 	client := easypost.New("EASYPOST_API_KEY")
-
-	reportOptions := &easypost.ListReportsOptions{
-		PageSize: 5,
-	}
 
 	reports, _ := client.ListReports(
 		"payment_log",
-		reportOptions,
+		&easypost.ListOptions{
+			PageSize: 5,
+		},
 	)
 
 	fmt.Println(reports)

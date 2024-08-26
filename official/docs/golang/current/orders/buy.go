@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func buy() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	order, _ := client.BuyOrder("order_...", "FedEx", "FEDEX_GROUND")

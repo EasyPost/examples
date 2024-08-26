@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func delete() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	err := client.DeleteCarrierAccount("ca_...")

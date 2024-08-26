@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func oneCallBuy() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	toAddress, _ := client.GetAddress("adr_...")

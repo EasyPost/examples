@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func update() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	endShipper, _ := client.GetEndShipper("es_...")

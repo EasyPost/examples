@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func addPaymentMethodWithCreditCard() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	paymentMethod, _ := client.BetaAddPaymentMethod("cus_...", "card_...", easypost.PrimaryPaymentMethodPriority)

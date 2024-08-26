@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func retrieve() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	// Request all metadata for all carriers

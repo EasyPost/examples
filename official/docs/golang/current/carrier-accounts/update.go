@@ -6,10 +6,10 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func update() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	carrierAccount, _ = client.UpdateCarrierAccount(
+	carrierAccount, _ := client.UpdateCarrierAccount(
 		&easypost.CarrierAccount{
 			ID:          "ca_...",
 			Description: "FL Location DHL eCommerce Solutions Account",
@@ -25,7 +25,7 @@ func main() {
 		AccountNumber: "987654321",
 	}
 
-	carrierAccount, err := client.UpdateUpsCarrierAccount(carrierAccount.ID, updateParameters)
+	carrierAccount, _ = client.UpdateUpsCarrierAccount(carrierAccount.ID, updateParameters)
 
 	fmt.Println(carrierAccount)
 }

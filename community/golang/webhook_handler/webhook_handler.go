@@ -97,7 +97,7 @@ func (h *Handler) HandlePaymentEvent(event *easypost.Event) {
 	}
 	verb := strings.TrimPrefix(event.Description, "payment.")
 	log.Printf(
-		"payment %s %s with amount %s and status %d\n",
+		"payment %s %s with amount %s and status %v\n",
 		payment.ID, verb, payment.Amount, payment.Status,
 	)
 }

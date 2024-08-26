@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func getNextPage() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	// Get first page of results

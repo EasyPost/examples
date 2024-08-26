@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func retrieve() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	webhook, _ := client.GetWebhook("hook_...")

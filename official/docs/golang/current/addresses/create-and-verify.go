@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func createAndVerify() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	address, _ := client.CreateAndVerifyAddress(

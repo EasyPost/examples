@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func regenerate() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	shipment, _ := client.RerateShipment("shp_...")

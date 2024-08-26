@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func label() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	batch, _ := client.GetBatchLabels("batch_...", "PDF")

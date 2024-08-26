@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func refundByPaymentLog() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	refund, _ := client.BetaRefundByPaymentLog("paylog_...")
