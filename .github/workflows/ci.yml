@@ -10,8 +10,7 @@ jobs:
   shell:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Run sh-checker
         uses: luizm/action-sh-checker@master
         env:
@@ -20,8 +19,7 @@ jobs:
   csharp:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Install C# dependencies
         run: make install-csharp
       - name: Lint project
@@ -29,20 +27,17 @@ jobs:
   go:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version: 1.22
+          go-version: 1.23
       # install must occur in the same step as the linter to run properly on CI
       - name: Lint project
-        run: |
-          make install-go lint-go
+        run: make install-go lint-go
   java:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Install Java dependencies
         run: make install-java
       - name: Lint project
@@ -50,8 +45,7 @@ jobs:
   node:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Install dependencies
         run: make install-node
       - name: Lint project
@@ -61,8 +55,7 @@ jobs:
   php:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Install dependencies
         run: make install-php
       - name: Lint project
@@ -70,8 +63,7 @@ jobs:
   python:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Install Python dependencies
         run: make install-python
       - name: Lint project
@@ -81,10 +73,8 @@ jobs:
   ruby:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           rubygems: '3.0.0'
@@ -96,7 +86,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Check for current dirs in docs
         run: ./test/ensure-current-dirs-exist.sh

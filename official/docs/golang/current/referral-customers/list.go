@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func list() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	referralCustomerCollection, _ := client.ListReferralCustomers(

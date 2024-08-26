@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func removeShipments() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	shipment, _ := client.GetShipment("shp_...")

@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func createEpCreditCard() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	creditCard, _ := client.AddReferralCustomerCreditCard("REFERRAL_USER_API_KEY", &easypost.CreditCardOptions{

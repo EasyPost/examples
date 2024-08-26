@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func cancel() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	pickup, _ := client.CancelPickup("pickup_...")

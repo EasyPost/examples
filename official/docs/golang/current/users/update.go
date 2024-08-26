@@ -6,13 +6,15 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func update() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	user, _ = client.UpdateUser(
+	rechargeAmount := "50.00"
+
+	user, _ := client.UpdateUser(
 		&easypost.UserOptions{
 			ID:             "user_...",
-			RechargeAmount: "50.00",
+			RechargeAmount: &rechargeAmount,
 		},
 	)
 

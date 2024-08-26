@@ -4,7 +4,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func configureRecharge() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	_, _ = client.RetrieveMe()

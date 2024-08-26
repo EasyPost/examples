@@ -4,8 +4,8 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func fund() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	client.FundWallet("2000", easypost.PrimaryPaymentMethodPriority)
+	_ = client.FundWallet("2000", easypost.PrimaryPaymentMethodPriority)
 }

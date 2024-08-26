@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func insure() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	shipment, _ := client.InsureShipment("shp_...", "100.00")

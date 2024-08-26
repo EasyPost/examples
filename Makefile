@@ -43,7 +43,7 @@ install-csharp:
 ## install-go - Install and vendor Go dependencies
 install-go:
 	sh ./symlink_directory_files.sh style_guides/golang .
-	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(GO_BIN) v1.59.1
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(GO_BIN) v1.60.3
 	go mod vendor
 
 ## install-java - installs Java dependencies
@@ -83,7 +83,7 @@ lint-csharp:
 
 ## lint-go - Lint Go files
 lint-go:
-	$(GO_BIN)/golangci-lint run
+	$(GO_BIN)/golangci-lint run official/docs/golang/current/... community/... official/guides/...
 
 ## lint-java - lints Java files
 lint-java:

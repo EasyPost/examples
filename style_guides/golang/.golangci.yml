@@ -1,8 +1,6 @@
 issues:
   exclude:
-    - "other declaration of main"
-    - "redeclared in this block"
-    - "`main` is unused"
+    - "is unused"
     - "github.com/EasyPost/easypost-go"
     - "undeclared name: `easypost`"
     - "expected 'package'"

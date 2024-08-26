@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func create() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	carrierAccount, _ := client.CreateCarrierAccount(
@@ -28,6 +28,8 @@ func main() {
 		},
 	)
 
+	fmt.Println(carrierAccount)
+
 	// For UPS account creation, please use below method instead
 
 	createUpsParameters := &easypost.UpsCarrierAccountCreationParameters{
@@ -35,7 +37,7 @@ func main() {
 		Type:          "UpsAccount",
 	}
 
-	carrierAccount, err := client.CreateUpsCarrierAccount(createUpsParameters)
+	carrierAccount, _ = client.CreateUpsCarrierAccount(createUpsParameters)
 
 	fmt.Println(carrierAccount)
 }

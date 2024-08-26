@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func retrieveEstimatedDeliveryDate() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	estimatedDeliveryDates, _ := client.GetShipmentEstimatedDeliveryDate("shp_...", "YYYY-MM-DD")

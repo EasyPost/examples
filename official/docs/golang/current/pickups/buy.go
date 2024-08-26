@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func buy() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	rate := &easypost.PickupRate{Carrier: "UPS", Service: "Same-day Pickup"}

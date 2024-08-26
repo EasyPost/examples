@@ -6,7 +6,7 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func scanForms() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	batch, _ := client.CreateBatchScanForms("batch_...", "pdf")

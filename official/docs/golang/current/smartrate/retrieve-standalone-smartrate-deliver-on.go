@@ -6,14 +6,14 @@ import (
 	"github.com/EasyPost/easypost-go/v4"
 )
 
-func main() {
+func retrieveStandaloneSmartrateDeliverOn() {
 	client := easypost.New("EASYPOST_API_KEY")
 
 	params := &easypost.RecommendShipDateForZipPairParams{
-		OriginPostalCode:      "10001",
-		DestinationPostalCode: "10002",
-		Carriers:              []string{"UPS", "FedEx"},
-		DesiredDeliveryDate:   "2024-07-18",
+		FromZip:             "10001",
+		ToZip:               "10002",
+		Carriers:            []string{"UPS", "FedEx"},
+		DesiredDeliveryDate: "2024-07-18",
 	}
 
 	recommendations, _ := client.RecommendShipDateForZipPair(params)
