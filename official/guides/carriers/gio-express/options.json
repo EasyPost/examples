@@ -1,8 +1,8 @@
 {
   "options": {
-    "pickup_min_datetime":"2024-09-06T06:38:16+00:00",
-    "pickup_max_datetime":"2024-09-06T11:38:16+00:00",
-    "delivery_min_datetime":"2024-09-07T00:38:16+00:00",
-    "delivery_max_datetime":"2024-09-12T23:59:00+00:00"
+    "pickup_min_datetime": "2024-09-06T06:38:16+00:00",
+    "pickup_max_datetime": "2024-09-06T11:38:16+00:00",
+    "delivery_min_datetime": "2024-09-07T00:38:16+00:00",
+    "delivery_max_datetime": "2024-09-12T23:59:00+00:00"
   }
 }
