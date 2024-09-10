@@ -12,6 +12,7 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
       "injection_city": "VALUE",
       "injection_contact": "VALUE",
       "injection_country": "VALUE",
+      "injection_facility_code": "VALUE",
       "injection_instruction": "VALUE",
       "injection_phone": "VALUE",
       "injection_state": "VALUE",
