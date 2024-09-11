@@ -33,7 +33,14 @@ namespace EasyPostExamples
                 MinDatetime = "2022-10-01 10:30:00",
                 MaxDatetime = "2022-10-01 17:30:00",
                 Instructions = "Special pickup instructions",
-                IsAccountAddress = false
+                IsAccountAddress = false,
+                CarrierAccounts = new List<CarrierAccount>
+                {
+                    new CarrierAccount
+                    {
+                        Id = "ca_..."
+                    }
+                }
             };
 
             Pickup pickup = await client.Pickup.Create(parameters);

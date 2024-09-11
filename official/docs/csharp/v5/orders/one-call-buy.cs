@@ -55,9 +55,12 @@ namespace EasyPostExamples
                     }
                 },
                 Service = "NextDayAir",
-                CarrierAccountIds = new List<string>
+                CarrierAccounts = new List<CarrierAccount>
                 {
-                    "ca_..."
+                    new CarrierAccount
+                    {
+                        Id = "ca_..."
+                    }
                 }
             };
 
