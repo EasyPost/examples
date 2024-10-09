@@ -14,10 +14,7 @@
             "unit": "USD",
             "value": 20.0
           },
-          "serial_numbers": [
-            "000123",
-            "000456"
-          ]
+          "serial_numbers": ["000123", "000456"]
         }
       ]
     }
