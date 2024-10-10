@@ -1,0 +1,22 @@
+{
+  "fulfiller_order_items": [
+    {
+      "amazon_order_id": "order_123",
+      "items": [
+        {
+          "item_identifier": "item_123",
+          "quantity": 1,
+          "item_weight": {
+            "unit": "OUNCE",
+            "value": 4.0
+          },
+          "item_value": {
+            "unit": "USD",
+            "value": 20.0
+          },
+          "serial_numbers": ["000123", "000456"]
+        }
+      ]
+    }
+  ]
+}
