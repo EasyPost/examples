@@ -1,0 +1,10 @@
+{
+  "bank_name": "STRIPE TEST BANK",
+  "country": "US",
+  "disabled_at": null,
+  "id": "pm_...",
+  "last4": "6789",
+  "object": "BankAccount",
+  "requires_mandate_collection": false,
+  "verified": true
+}
