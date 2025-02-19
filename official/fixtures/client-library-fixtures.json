@@ -321,7 +321,10 @@
       "phone": "5555555555"
     }
   },
-  "webhook_hmac_signature": "hmac-sha256-hex=38f3f53c103713df81616a0a186d77141957323ec21d5fe9363db93840f527db",
-  "webhook_secret": "sécret",
-  "webhook_url": "http://example.com"
+  "webhooks": {
+    "url": "http://example.com",
+    "secret": "sécret",
+    "custom_headers": [{"name": "test", "value": "header"}],
+    "hmac_signature": "hmac-sha256-hex=38f3f53c103713df81616a0a186d77141957323ec21d5fe9363db93840f527db"
+  }
 }

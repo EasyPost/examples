@@ -3,6 +3,11 @@ curl -X POST https://api.easypost.com/v2/webhooks \
   -H 'Content-Type: application/json' \
   -d '{
     "webhook": {
-      "url": "example.com"
+      "url": "example.com",
+      "webhook_secret": "my_secret",
+      "custom_headers": [{
+        "name": "X-Header-Name",
+        "value": "header_value"
+      }],
     }
   }'
