@@ -9,53 +9,56 @@ GEM
   specs:
     ast (2.4.2)
     easypost (6.2.0)
-    json (2.7.2)
-    parallel (1.24.0)
-    parser (3.3.2.0)
+    json (2.10.1)
+    language_server-protocol (3.17.0.4)
+    lint_roller (1.1.0)
+    parallel (1.26.3)
+    parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
-    racc (1.8.0)
+    racc (1.8.1)
     rainbow (3.1.1)
-    regexp_parser (2.9.2)
-    rexml (3.2.8)
-      strscan (>= 3.0.9)
-    rubocop (1.49.0)
+    regexp_parser (2.10.0)
+    rubocop (1.72.0)
       json (~> 2.3)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
       parallel (~> 1.10)
-      parser (>= 3.2.0.0)
+      parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 1.8, < 3.0)
-      rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.28.0, < 2.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.38.0, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.31.3)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.38.0)
       parser (>= 3.3.1.0)
-    rubocop-capybara (2.20.0)
+    rubocop-capybara (2.21.0)
       rubocop (~> 1.41)
-    rubocop-factory_bot (2.25.1)
-      rubocop (~> 1.41)
-    rubocop-rspec (2.30.0)
+    rubocop-factory_bot (2.26.1)
+      rubocop (~> 1.61)
+    rubocop-rspec (2.31.0)
       rubocop (~> 1.40)
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
       rubocop-rspec_rails (~> 2.28)
-    rubocop-rspec_rails (2.28.3)
-      rubocop (~> 1.40)
+    rubocop-rspec_rails (2.29.1)
+      rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
-    strscan (3.1.0)
-    unicode-display_width (2.5.0)
+    unicode-display_width (3.1.4)
+      unicode-emoji (~> 4.0, >= 4.0.4)
+    unicode-emoji (4.0.4)
 
 PLATFORMS
   arm64-darwin-22
   arm64-darwin-23
+  arm64-darwin-24
   x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
   examples!
-  rubocop (= 1.49)
-  rubocop-rspec (~> 2.19)
+  rubocop (= 1.72)
+  rubocop-rspec (~> 2.31)
 
 BUNDLED WITH
    2.5.11
