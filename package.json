@@ -24,8 +24,6 @@
   },
   "homepage": "https://github.com/EasyPost/examples#readme",
   "devDependencies": {
-    "@babel/core": "^7.21.8",
-    "@babel/eslint-parser": "^7.21.8",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-webpack": "^0.13.2",

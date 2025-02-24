@@ -3,7 +3,7 @@
 Gem::Specification.new do |spec|
   spec.name                   = 'examples'
   spec.version                = '0.1.0'
-  spec.required_ruby_version  = '>= 2.6'
+  spec.required_ruby_version  = '>= 2.7'
   spec.summary                = 'Code examples for the EasyPost API'
   spec.description            = 'Code examples for the EasyPost API.'
   spec.authors                = ['EasyPost']
@@ -13,6 +13,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'easypost', '~> 6'
 
-  spec.add_development_dependency 'rubocop', '= 1.49'
-  spec.add_development_dependency 'rubocop-rspec', '~> 2.19'
+  spec.add_development_dependency 'rubocop', '= 1.72'
+  spec.add_development_dependency 'rubocop-rspec', '~> 2.31' # Can't upgrade to v3 until we drop Ruby 2.7
 end
