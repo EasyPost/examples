@@ -48,7 +48,6 @@
       }
     }
   ],
-  "fees": [],
   "carrier_detail": {
     "object": "CarrierDetail",
     "service": "First-Class Package Service",
