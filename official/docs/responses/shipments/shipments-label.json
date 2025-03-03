@@ -417,13 +417,6 @@
   "fees": [
     {
       "object": "Fee",
-      "type": "LabelFee",
-      "amount": "0.00000",
-      "charged": true,
-      "refunded": false
-    },
-    {
-      "object": "Fee",
       "type": "PostageFee",
       "amount": "6.79000",
       "charged": true,
