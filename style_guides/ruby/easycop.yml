@@ -176,5 +176,5 @@ Style/StringChars: # new in 1.12
   Enabled: true
 Style/SwapValues: # new in 1.1
   Enabled: true
-RSpec/Rails/AvoidSetupHook: # new in 2.4
+RSpecRails/AvoidSetupHook: # new in 2.4
   Enabled: true
