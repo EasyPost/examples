@@ -1,5 +1,12 @@
 inherit_from: easycop.yml
 
+AllCops:
+  SuggestExtensions: false
+  Exclude:
+    - docs/**/*
+    - examples/**/*
+    - vendor/**/*
+
 # We ignore frozen string literal comments to simplify the sample code snippets
 Style/FrozenStringLiteralComment:
   Enabled: false
@@ -12,13 +19,6 @@ Lint/UselessAssignment:
     - 'official/docs/ruby/**/api-keys/retrieve.rb'
 Naming/FileName:
   Enabled: false
-
-AllCops:
-  SuggestExtensions: false
-  Exclude:
-    - docs/**/*
-    - examples/**/*
-    - vendor/**/*
 # We are ignoring RSpec/FilePath because Simplecov doesn't play nice with nested spec files
 RSpec/FilePath:
   Enabled: false
@@ -26,3 +26,5 @@ RSpec/FilePath:
 Style/OptionalBooleanParameter:
   Exclude:
     - 'lib/easypost/services/*.rb'
+FactoryBot/CreateList:
+  Enabled: false
