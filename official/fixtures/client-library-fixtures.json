@@ -32,6 +32,16 @@
       "phone": "5555555555"
     }
   },
+  "billing": {
+    "payment_method_id": "pm_0Pn6bQDqT4huGUvd0CjpRerH",
+    "financial_connections_id": "fca_0QAc7sDqT4huGUvdf6BahYa9",
+    "mandate_data": {
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0",
+      "accepted_at": 1722510730
+    },
+    "priority": "primary"
+  },
   "carrier_accounts": {
     "basic": {
       "type": "DhlEcsAccount",
