@@ -2,9 +2,9 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   -u "$EASYPOST_API_KEY": \
   -H 'Content-Type: application/json' \
   -d '{
-  "type": "OntracV3Account",
-  "description": "OntracV3Account",
   "carrier_account": {
+    "type": "OntracV3Account",
+    "description": "OntracV3Account",
     "credentials": {
       "api_id": "VALUE",
       "api_key": "VALUE",
@@ -18,7 +18,8 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
       "injection_state": "VALUE",
       "injection_street1": "VALUE",
       "injection_street2": "VALUE",
-      "injection_zip": "VALUE"
+      "injection_zip": "VALUE",
+      "pickup_type": "VALUE"
     }
   }
 }'

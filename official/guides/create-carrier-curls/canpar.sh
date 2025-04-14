@@ -2,9 +2,9 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   -u "$EASYPOST_API_KEY": \
   -H 'Content-Type: application/json' \
   -d '{
-  "type": "CanparAccount",
-  "description": "CanparAccount",
   "carrier_account": {
+    "type": "CanparAccount",
+    "description": "CanparAccount",
     "credentials": {
       "account_number": "VALUE",
       "password": "VALUE",
