@@ -30,7 +30,7 @@ def main():
     carrier_types = get_carrier_types()
     for carrier in sorted(carrier_types, key=lambda x: x["type"]):
         curl_request = build_carrier_curl_request(carrier)
-        output_destination = os.path.join("../", "../", "guides", "create-carrier-curls")
+        output_destination = os.path.join("../", "../", "official", "guides", "create-carrier-curls")
         if not os.path.exists(output_destination):
             os.makedirs(output_destination)
 
@@ -80,17 +80,19 @@ def add_headers(carrier_output: str, carrier: dict[str, str]) -> str:
 def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> str:
     """Iterate over the carrier fields and print the credential structure."""
     carrier_account_json = {
-        "type": carrier["type"],
-        "description": carrier["type"],
+        "carrier_account": {
+            "type": carrier["type"],
+            "description": carrier["type"],
+        }
     }
 
     carrier_fields = carrier.get("fields").to_dict()
     # FedEx
     if carrier["type"] in FEDEX_CUSTOM_WORKFLOW_CARRIERS:
-        carrier_account_json["registration_data"] = {}
+        carrier_account_json["carrier_account"]["registration_data"] = {}
         for category in carrier_fields["creation_fields"]:
             for item in carrier_fields["creation_fields"][category]:
-                carrier_account_json["registration_data"][item] = "VALUE"
+                carrier_account_json["carrier_account"]["registration_data"][item] = "VALUE"
 
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
@@ -103,7 +105,6 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
     # Normal carriers
     else:
         end = END_CHARS
-        carrier_account_json["carrier_account"] = {}
         # top_level here means `credentials` or `test_credentials` or `custom_workflow`
         for top_level in carrier_fields:
             # TODO: If there is a custom_workflow such as 3rd party auth or a similar flow
