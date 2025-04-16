@@ -24,7 +24,9 @@ UPS_CUSTOM_WORKFLOW_CARRIERS = [
 CANADAPOST_CUSTOM_WORKFLOW_CARRIERS = [
     "CanadaPostAccount",
 ]
-
+AMAZON_CUSTOM_WORKFLOW_CARRIERS = [
+    "AmazonShippingAccount"
+]
 
 def main():
     carrier_types = get_carrier_types()
@@ -61,8 +63,10 @@ def build_carrier_curl_request(carrier):
 
 def add_curl_line(carrier_output: str, carrier: dict[str, str]) -> str:
     """Add curl command and registration url."""
-    if carrier["type"] in (FEDEX_CUSTOM_WORKFLOW_CARRIERS or UPS_CUSTOM_WORKFLOW_CARRIERS):
+    if carrier["type"] in (FEDEX_CUSTOM_WORKFLOW_CARRIERS + UPS_CUSTOM_WORKFLOW_CARRIERS):
         carrier_output += f"curl -X POST https://api.easypost.com/v2/carrier_accounts/register{LINE_BREAK_CHARS}"
+    elif carrier["type"] in AMAZON_CUSTOM_WORKFLOW_CARRIERS:
+        carrier_output += f"curl -X POST https://api.easypost.com/v2/carrier_accounts/register_oauth{LINE_BREAK_CHARS}"
     else:
         carrier_output += f"curl -X POST https://api.easypost.com/v2/carrier_accounts{LINE_BREAK_CHARS}"
 
@@ -102,6 +106,18 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         # TODO: Fix UPS carrier account
         # TODO: Fix CanadaPost carrier account
         pass
+    # Amazon Shipping
+    elif carrier["type"] in AMAZON_CUSTOM_WORKFLOW_CARRIERS:
+        carrier_account_json = {
+            "carrier_account_oauth_registrations": {
+                "type": carrier["type"],
+                "description": "My Amazon Shipping Account (optional)",
+                "reference": "Internal reference id (optional)"
+            }
+        }
+
+        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += END_CHARS
     # Normal carriers
     else:
         end = END_CHARS
