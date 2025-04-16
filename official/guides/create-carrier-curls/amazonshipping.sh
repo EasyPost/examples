@@ -4,7 +4,7 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts/register_oauth \
   -d '{
   "carrier_account_oauth_registrations": {
     "type": "AmazonShippingAccount",
-    "description": "My Amazon Shipping Account (optional)",
+    "description": "My Shipping Account (optional)",
     "reference": "Internal reference id (optional)"
   }
 }'
