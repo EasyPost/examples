@@ -6,7 +6,8 @@
       "mode": "test",
       "url": "http://example.com",
       "created_at": "2024-01-24T00:07:54Z",
-      "disabled_at": null
+      "disabled_at": null,
+      "custom_headers": []
     }
   ]
 }
