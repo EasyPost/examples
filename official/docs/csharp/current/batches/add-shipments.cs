@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,14 +12,14 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Shipment shipment = await client.Shipment.Retrieve("shp_...");
+            EasyPost.Models.API.Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            Parameters.Batch.AddShipments parameters = new()
+            EasyPost.Parameters.Batch.AddShipments parameters = new()
             {
-                Shipments = new List<IShipmentParameter> { shipment },
+                Shipments = new List<EasyPost.Paramaters.IShipmentParameter> { shipment },
             };
 
-            batch = await client.Batch.AddShipments("batch_...", parameters);
+            EasyPost.Models.API.Batch batch = await client.Batch.AddShipments("batch_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(batch, Formatting.Indented));
         }

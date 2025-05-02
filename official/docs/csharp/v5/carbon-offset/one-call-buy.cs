@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,9 +12,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parameters.Shipment.Create parameters = new()
+            EasyPost.Parameters.Shipment.Create parameters = new()
             {
-                ToAddress = new Parameters.Address.Create
+                ToAddress = new EasyPost.Parameters.Address.Create
                 {
                     Name = "Dr. Steve Brule",
                     Street1 = "417 Montgomery Street",
@@ -26,7 +24,7 @@ namespace EasyPostExamples
                     Country = "US",
                     Zip = "94104"
                 },
-                FromAddress = new Parameters.Address.Create
+                FromAddress = new EasyPost.Parameters.Address.Create
                 {
                     Company = "EasyPost",
                     Street1 = "417 Montgomery Street",
@@ -36,7 +34,7 @@ namespace EasyPostExamples
                     Country = "US",
                     Zip = "94104"
                 },
-                Parcel = new Parameters.Parcel.Create
+                Parcel = new EasyPost.Parameters.Parcel.Create
                 {
                     Length = 8,
                     Width = 6,
@@ -49,7 +47,7 @@ namespace EasyPostExamples
                 CarbonOffset = true,
             };
 
-            Shipment shipment = await client.Shipment.Create(parameters);
+            EasyPost.Models.API.Shipment shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,7 +12,13 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            webhook = await client.Webhook.Update("hook_...");
+            EasyPost.Parameters.Webhook.Create parameters = new()
+            {
+                Secret = "ABC123",
+                CustomHeaders = new EasyPost.Models.API.WebhookCustomHeader { Name = "X-Header-Name", Value = "header_value" }
+            };
+
+            EasyPost.Models.API.Webhook webhook = await client.Webhook.Update("hook_...", parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(webhook, Formatting.Indented));
         }

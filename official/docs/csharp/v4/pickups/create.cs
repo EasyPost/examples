@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -13,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Pickup pickup = await client.Pickup.Create(new Dictionary<string, object>()
+            EasyPost.Models.API.Pickup pickup = await client.Pickup.Create(new Dictionary<string, object>()
             {
                 { "reference", "my-first-pickup" },
                 { "min_datetime", "2022-10-01 10:30:00" },

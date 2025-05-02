@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,7 +13,7 @@ namespace EasyPostExamples
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
             // Retrieve the authenticated user
-            User user = await client.User.RetrieveMe();
+            EasyPost.Models.API.User user = await client.User.RetrieveMe();
 
             // Retrieve a child user
             User user = await client.User.Retrieve("user_...");

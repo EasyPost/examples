@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parameters.CustomsInfo.Create parameters = new()
+            EasyPost.Parameters.CustomsInfo.Create parameters = new()
             {
                 CustomsCertify = true,
                 CustomsSigner = "Steve Brule",
@@ -22,7 +20,7 @@ namespace EasyPostExamples
                 ContentsExplanation = "",
                 RestrictionType = "none",
                 EelPfc = "NOEEI 30.37(a)",
-                CustomsItems = new List<Parameters.CustomsItem.Create>()
+                CustomsItems = new List<EasyPost.Parameters.CustomsItem.Create>()
                 {
                     new()
                     {
@@ -36,7 +34,7 @@ namespace EasyPostExamples
                 }
             };
 
-            CustomsInfo customsInfo = await client.CustomsInfo.Create(parameters);
+            EasyPost.Models.API.CustomsInfo customsInfo = await client.CustomsInfo.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(customsInfo, Formatting.Indented));
         }

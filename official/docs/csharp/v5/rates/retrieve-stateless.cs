@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,9 +12,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parameters.Beta.Rate.Retrieve shipmentDetails = new()
+            EasyPost.Parameters.Beta.Rate.Retrieve shipmentDetails = new()
             {
-                ToAddress = new Parameters.Address.Create
+                ToAddress = new EasyPost.Parameters.Address.Create
                 {
                     Name = "Dr. Steve Brule",
                     Street1 = "179 N Harbor Dr",
@@ -27,7 +25,7 @@ namespace EasyPostExamples
                     Phone = "8573875756",
                     Email = "dr_steve_brule@gmail.com"
                 },
-                FromAddress = new Parameters.Address.Create
+                FromAddress = new EasyPost.Parameters.Address.Create
                 {
                     Name = "EasyPost",
                     Street1 = "417 Montgomery Street",
@@ -39,7 +37,7 @@ namespace EasyPostExamples
                     Phone = "4153334445",
                     Email = "support@easypost.com",
                 },
-                Parcel = new Parameters.Parcel.Create
+                Parcel = new EasyPost.Parameters.Parcel.Create
                 {
                     Length = 20.2,
                     Width = 10.9,
@@ -48,7 +46,7 @@ namespace EasyPostExamples
                 }
             };
 
-            List<StatelessRate> rates = await client.Beta.Rate.RetrieveStatelessRates(shipmentDetails);
+            List<EasyPost.Models.API.StatelessRate> rates = await client.Beta.Rate.RetrieveStatelessRates(shipmentDetails);
 
             Console.WriteLine(JsonConvert.SerializeObject(rates, Formatting.Indented));
         }

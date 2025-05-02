@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,9 +12,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Order order = await client.Order.Retrieve("order_...");
+            EasyPost.Models.API.Order order = await client.Order.Retrieve("order_...");
 
-            Parameters.Order.Buy parameters = new("FedEx", "FEDEX_GROUND");
+            EasyPost.Parameters.Order.Buy parameters = new("FedEx", "FEDEX_GROUND");
 
             order = await client.Order.Buy(order.Id, parameters);
 

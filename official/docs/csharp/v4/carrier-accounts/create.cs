@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
-using EasyPost.Models.API;
 using Newtonsoft.Json;
 
 namespace EasyPostExamples
@@ -13,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            CarrierAccount carrierAccount = await client.CarrierAccount.Create(new Dictionary<string, object>()
+            EasyPost.Models.API.CarrierAccount carrierAccount = await client.CarrierAccount.Create(new Dictionary<string, object>()
             {
                 { "type", "DhlEcsAccount" },
                 { "description", "CA Location DHL eCommerce Solutions Account" },

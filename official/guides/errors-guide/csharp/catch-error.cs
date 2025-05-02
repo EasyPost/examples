@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -15,11 +14,11 @@ namespace EasyPostExamples
 
             try
             {
-                Parameters.Address.Create parameters = new()
+                EasyPost.Parameters.Address.Create parameters = new()
                 {
                     VerifyStrict = true
                 };
-                Address address = await client.Address.Create(parameters);
+                EasyPost.Models.API.Address address = await client.Address.Create(parameters);
             }
             catch (EasyPost.Exceptions.API.ApiError error)
             {

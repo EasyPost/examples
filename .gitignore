@@ -27,6 +27,7 @@ __pycache__
 bin
 bulkins
 node_modules
+obj
 target
 vendor
 venv

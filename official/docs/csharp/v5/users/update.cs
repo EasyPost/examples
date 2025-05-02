@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -16,7 +14,7 @@ namespace EasyPostExamples
 
             User user = await client.User.RetrieveMe();
 
-            Parameters.User.Update parameters = new()
+            EasyPost.Parameters.User.Update parameters = new()
             {
                 RechargeThreshold = "50.00"
             };

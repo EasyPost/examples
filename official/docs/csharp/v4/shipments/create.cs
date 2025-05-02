@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -15,7 +14,7 @@ namespace EasyPostExamples
 
             // Create a shipment using all data in one API call
 
-            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
+            EasyPost.Models.API.Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
             {
                 {
                     "to_address", new Dictionary<string, object>()
@@ -65,7 +64,7 @@ namespace EasyPostExamples
 
             // Create a shipment using ids of existing data
 
-            Shipment shipmentWithIds = await client.Shipment.Create(new Dictionary<string, object>()
+            EasyPost.Models.API.Shipment shipmentWithIds = await client.Shipment.Create(new Dictionary<string, object>()
             {
                 {
                     "to_address", new Dictionary<string, object>()

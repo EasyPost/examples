@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parameters.Address.Create parameters = new()
+            EasyPost.Parameters.Address.Create parameters = new()
             {
                 Street1 = "417 MONTGOMERY ST",
                 Street2 = "FLOOR 5",
@@ -27,7 +25,7 @@ namespace EasyPostExamples
                 VerifyStrict = true
             };
 
-            Address address = await client.Address.Create(parameters);
+            EasyPost.Models.API.Address address = await client.Address.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(address, Formatting.Indented));
         }

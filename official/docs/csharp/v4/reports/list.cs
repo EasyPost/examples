@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -13,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            ReportCollection reportCollection = await client.Report.All("payment_log", new Dictionary<string, object>()
+            EasyPost.Models.API.ReportCollection reportCollection = await client.Report.All("payment_log", new Dictionary<string, object>()
             {
                 { "page_size", 5 },
                 { "start_date", "2022-10-01" }

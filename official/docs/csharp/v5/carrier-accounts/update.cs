@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,9 +12,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            CarrierAccount carrierAccount = await client.CarrierAccount.Retrieve("ca_...");
+            EasyPost.Models.API.CarrierAccount carrierAccount = await client.CarrierAccount.Retrieve("ca_...");
 
-            Parameters.CarrierAccount.Update parameters = new()
+            EasyPost.Parameters.CarrierAccount.Update parameters = new()
             {
                 Description = "FL Location DHL eCommerce Solutions Account",
                 Credentials = new()

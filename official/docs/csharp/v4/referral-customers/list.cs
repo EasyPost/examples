@@ -19,7 +19,7 @@ namespace EasyPostExamples
                 }
             );
 
-            List<ReferralCustomer> referralCustomers = referralCustomerCollection.ReferralCustomers;
+            List<EasyPost.Models.API.ReferralCustomer> referralCustomers = referralCustomerCollection.ReferralCustomers;
 
             Console.WriteLine(JsonConvert.SerializeObject(referralCustomers, Formatting.Indented));
         }
