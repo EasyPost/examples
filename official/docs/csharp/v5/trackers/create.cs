@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,13 +12,13 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parameters.Tracker.Create parameters = new()
+            EasyPost.Parameters.Tracker.Create parameters = new()
             {
                 TrackingCode = "EZ1000000001",
                 Carrier = "USPS"
             };
 
-            Tracker tracker = await client.Tracker.Create(parameters);
+            EasyPost.Models.API.Tracker tracker = await client.Tracker.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(tracker, Formatting.Indented));
         }

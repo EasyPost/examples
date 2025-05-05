@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,14 +12,14 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Shipment shipment = await client.Shipment.Retrieve("shp_...");
+            EasyPost.Models.API.Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
-            Parameters.Shipment.RetrieveEstimatedDeliveryDate parameters = new()
+            EasyPost.Parameters.Shipment.RetrieveEstimatedDeliveryDate parameters = new()
             {
                 PlannedShipDate = "2021-01-01",
             };
 
-            List<RateWithEstimatedDeliveryDate> rates = await client.Shipment.RetrieveEstimatedDeliveryDate(shipment.Id, parameters);
+            List<EasyPost.Models.API.RateWithEstimatedDeliveryDate> rates = await client.Shipment.RetrieveEstimatedDeliveryDate(shipment.Id, parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(rates, Formatting.Indented));
         }

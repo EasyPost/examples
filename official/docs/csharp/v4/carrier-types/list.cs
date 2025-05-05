@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -13,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            List<CarrierType> carrierTypes = await client.CarrierType.All();
+            List<EasyPost.Models.API.CarrierType> carrierTypes = await client.CarrierType.All();
 
             Console.WriteLine(JsonConvert.SerializeObject(carrierTypes, Formatting.Indented));
         }

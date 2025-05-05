@@ -1,4 +1,8 @@
-using EasyPost.Models.API;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using EasyPost;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -8,12 +12,12 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Parameters.User.Update parameters = new()
+            EasyPost.Parameters.User.Update parameters = new()
             {
                 RechargeThreshold = "50.00",
             };
 
-            User me = await client.User.RetrieveMe();
+            EasyPost.Models.API.User me = await client.User.RetrieveMe();
 
             me = await client.User.Update(me.Id!, parameters);
         }

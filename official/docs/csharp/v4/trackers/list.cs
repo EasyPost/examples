@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -18,7 +17,7 @@ namespace EasyPostExamples
                 { "page_size", 5 }
             };
 
-            TrackerCollection trackerCollection = await client.Tracker.All(listParams);
+            EasyPost.Models.API.TrackerCollection trackerCollection = await client.Tracker.All(listParams);
 
             Console.WriteLine(JsonConvert.SerializeObject(trackerCollection, Formatting.Indented));
         }

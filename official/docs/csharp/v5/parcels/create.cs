@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parameters.Parcel.Create parameters = new()
+            EasyPost.Parameters.Parcel.Create parameters = new()
             {
                 Length = 20.2,
                 Width = 10.9,
@@ -22,7 +20,7 @@ namespace EasyPostExamples
                 Weight = 65.9
             };
 
-            Parcel parcel = await client.Parcel.Create(parameters);
+            EasyPost.Models.API.Parcel parcel = await client.Parcel.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(parcel, Formatting.Indented));
         }

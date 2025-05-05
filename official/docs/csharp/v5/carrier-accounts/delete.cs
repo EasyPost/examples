@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -13,8 +12,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            CarrierAccount carrierAccount = await client.CarrierAccount.Retrieve("ca_...");
+            EasyPost.Models.API.CarrierAccount carrierAccount = await client.CarrierAccount.Retrieve("ca_...");
 
             await client.CarrierAccount.Delete(carrierAccount.Id);
         }
     }
+}

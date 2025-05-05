@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,9 +12,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Parameters.Order.Create parameters = new()
+            EasyPost.Parameters.Order.Create parameters = new()
             {
-                ToAddress = new Parameters.Address.Create
+                ToAddress = new EasyPost.Parameters.Address.Create
                 {
                     Name = "Dr. Steve Brule",
                     Street1 = "417 Montgomery Street",
@@ -26,7 +24,7 @@ namespace EasyPostExamples
                     Country = "US",
                     Zip = "94104"
                 },
-                FromAddress = new Parameters.Address.Create
+                FromAddress = new EasyPost.Parameters.Address.Create
                 {
                     Company = "EasyPost",
                     Street1 = "417 Montgomery Street",
@@ -36,18 +34,18 @@ namespace EasyPostExamples
                     Country = "US",
                     Zip = "94104"
                 },
-                Shipments = new List<IShipmentParameter>
+                Shipments = new List<EasyPostExamples.Parameters.IShipmentParameter>
                 {
-                    new Parameters.Shipment.Create()
+                    new EasyPost.Parameters.Shipment.Create()
                     {
-                        Parcel = new Parameters.Parcel.Create
+                        Parcel = new EasyPost.Parameters.Parcel.Create
                         {
                             Weight = 10.2
                         }
                     },
-                    new Parameters.Shipment.Create()
+                    new EasyPost.Parameters.Shipment.Create()
                     {
-                        Parcel = new Parameters.Parcel.Create
+                        Parcel = new EasyPost.Parameters.Parcel.Create
                         {
                             PredefinedPackage = "FedExBox",
                             Weight = 17.5
@@ -55,7 +53,7 @@ namespace EasyPostExamples
                     }
                 },
                 Service = "NextDayAir",
-                CarrierAccounts = new List<CarrierAccount>
+                CarrierAccounts = new List<EasyPost.Models.API.CarrierAccount>
                 {
                     new CarrierAccount
                     {
@@ -64,7 +62,7 @@ namespace EasyPostExamples
                 }
             };
 
-            Order order = await client.Order.Create(parameters);
+            EasyPost.Models.API.Order order = await client.Order.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(order, Formatting.Indented));
         }

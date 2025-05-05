@@ -1,4 +1,8 @@
-using EasyPost.Models.API;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using EasyPost;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {

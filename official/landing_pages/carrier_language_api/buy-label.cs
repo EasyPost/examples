@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
 using Newtonsoft.Json;
 
 namespace EasyPostExamples
@@ -14,16 +12,16 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parcel parcel = await client.Parcel.Create(
-              new Parameters.Parcel.Create
+            EasyPost.Models.API.Parcel parcel = await client.Parcel.Create(
+              new EasyPost.Parameters.Parcel.Create
               {
                   PredefinedPackage = "Parcel",
                   Weight = 28
               }
             );
 
-            Shipment shipment = await client.Shipment.Create(
-                new Parameters.Shipment.Create
+            EasyPost.Models.API.Shipment shipment = await client.Shipment.Create(
+                new EasyPost.Parameters.Shipment.Create
                 {
                     ToAddress = toAddress,
                     FromAddress = fromAddress,

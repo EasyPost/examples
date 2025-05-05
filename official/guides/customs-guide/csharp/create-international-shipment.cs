@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,9 +12,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            Parameters.Shipment.Create parameters = new()
+            EasyPost.Parameters.Shipment.Create parameters = new()
             {
-                ToAddress = new Parameters.Address.Create
+                ToAddress = new EasyPost.Parameters.Address.Create
                 {
                     Name = "Tim Canterbury",
                     Company = "Wernham Hogg",
@@ -25,7 +23,7 @@ namespace EasyPostExamples
                     Country = "GB",
                     Zip = "SL15BE"
                 },
-                FromAddress = new Parameters.Address.Create
+                FromAddress = new EasyPost.Parameters.Address.Create
                 {
                     Company = "EasyPost",
                     Street1 = "417 Montgomery Street",
@@ -35,14 +33,14 @@ namespace EasyPostExamples
                     Zip = "94104",
                     Phone = "415-528-7555"
                 },
-                Parcel = new Parameters.Parcel.Create
+                Parcel = new EasyPost.Parameters.Parcel.Create
                 {
                     Length = 9,
                     Width = 6,
                     Height = 3,
                     Weight = 20
                 },
-                CustomsInfo = new Parameters.CustomsInfo.Create
+                CustomsInfo = new EasyPost.Parameters.CustomsInfo.Create
                 {
                     EelPfc = "NOEEI 30.37(a)",
                     CustomsCertify = true,
@@ -52,7 +50,7 @@ namespace EasyPostExamples
                     RestrictionType = "none",
                     CustomsItems =
                     [
-                        new Parameters.CustomsItem.Create
+                        new EasyPost.Parameters.CustomsItem.Create
                         {
                             Description = "T-shirt",
                             Quantity = 2,
@@ -65,7 +63,7 @@ namespace EasyPostExamples
                 }
             };
 
-            Shipment shipment = await client.Shipment.Create(parameters);
+            EasyPost.Models.API.Shipment shipment = await client.Shipment.Create(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

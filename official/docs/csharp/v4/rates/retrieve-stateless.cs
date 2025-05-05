@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -13,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
+            EasyPost.Models.API.Shipment shipment = await client.Shipment.Create(new Dictionary<string, object>()
                 {
                     {
                         "to_address", new Dictionary<string, object>()
@@ -53,7 +52,7 @@ namespace EasyPostExamples
                     }
                 });
 
-            List<StatelessRate> rates = await client.Beta.Rate.RetrieveStatelessRates(shipment);
+            List<EasyPost.Models.API.StatelessRate> rates = await client.Beta.Rate.RetrieveStatelessRates(shipment);
 
             Console.WriteLine(JsonConvert.SerializeObject(rates, Formatting.Indented));
         }

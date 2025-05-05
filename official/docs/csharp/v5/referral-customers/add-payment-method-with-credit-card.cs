@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -13,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            PaymentMethod paymentMethod = await client.Beta.ReferralCustomer.AddPaymentMethod("cus_...", "card_...", PaymentMethod.Priority.Primary);
+            EasyPost.Models.API.PaymentMethod paymentMethod = await client.Beta.ReferralCustomer.AddPaymentMethod("cus_...", "card_...", PaymentMethod.Priority.Primary);
 
             Console.WriteLine(JsonConvert.SerializeObject(paymentMethod, Formatting.Indented));
         }

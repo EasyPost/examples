@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -50,7 +50,7 @@ namespace EasyPostExamples
                         { "weight", 65.9 }
                     }
                 },
-                { "service", "NextDayAir" }
+                { "service", "NextDayAir" },
                 {
                 "carrier_accounts",
                 new List<string>()

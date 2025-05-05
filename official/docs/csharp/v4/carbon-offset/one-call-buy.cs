@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
-using EasyPost.Models.API;
 using Newtonsoft.Json;
 
 namespace EasyPostExamples
@@ -33,7 +32,7 @@ namespace EasyPostExamples
                 { "zip", "94104" }
             };
 
-            Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
+            EasyPost.Models.API.Shipment shipment = await Shipment.Create(new Dictionary<string, object>() {
                 { "carrier_accounts", new Dictionary<string, string>() { { "id", "ca_..." } } },
                 { "service", "NextDayAir" },
                 { "parcel", new Dictionary<string, object>() {

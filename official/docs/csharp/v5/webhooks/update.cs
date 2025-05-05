@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,10 +12,10 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Webhook webhook = await client.Webhook.Retrieve("hook_...");
+            EasyPost.Models.API.Webhook webhook = await client.Webhook.Retrieve("hook_...");
 
             // Update the webhook's settings
-            Parameters.Webhook.Update parameters = new()
+            EasyPost.Parameters.Webhook.Update parameters = new()
             {
                 Url = "https://example.com/webhook",
             };

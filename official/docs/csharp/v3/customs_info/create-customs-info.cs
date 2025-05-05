@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -18,7 +18,7 @@ namespace EasyPostExamples
                 { "customs_signer", "Steve Brule" },
                 { "contents_type", "merchandise" },
                 { "contents_explanation", "" },
-                { "restriction_type", "none" }
+                { "restriction_type", "none" },
                 {
                 "eel_pfc",
                 "NOEEI 30.37(a)"

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
-using EasyPost.Models.API;
 using Newtonsoft.Json;
 namespace EasyPostExamples
 {
@@ -12,7 +11,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            EndShipperCollection endShipperCollection = await client.EndShipper.All(new Dictionary<string, object>
+            EasyPost.Models.API.EndShipperCollection endShipperCollection = await client.EndShipper.All(new Dictionary<string, object>
             {
                 {
                     "page_size", 5

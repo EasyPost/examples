@@ -14,7 +14,7 @@ namespace EasyPostExamples
 
             PaymentMethod paymentMethod = await Partner.AddCreditCardToUser("REFERRAL_USER_API_KEY", "0123456789101234", "01", "2025", "111", PaymentMethod.Priority.Primary);
 
-            Console.WriteLine(JsonConvert.SerializeObject(referralUser, Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(paymentMethod, Formatting.Indented));
         }
     }
 }

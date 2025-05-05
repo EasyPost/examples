@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -13,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Event @event = await client.Event.Retrieve("evt_...");
+            EasyPost.Models.API.Event @event = await client.Event.Retrieve("evt_...");
 
             Console.WriteLine(JsonConvert.SerializeObject(@event, Formatting.Indented));
         }

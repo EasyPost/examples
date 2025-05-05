@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -13,17 +12,30 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
+            // When the `errors` key is returned as an array of FieldError objects
             try
             {
-                Parameters.Address.Create parameters = new()
-                {
-                    VerifyStrict = true
-                };
-                Address address = await client.Address.Create(parameters);
+                // Simulate a request with missing parameters: PARAMETER.REQUIRED
+                await client.Shipment.Create(new Dictionary<string, object>());
             }
-            catch (EasyPost.Exceptions.API.ApiError error)
+            catch (InvalidRequestError exception)
             {
-                Console.Write(error.Code); // ADDRESS.VERIFY.FAILURE
+                FieldError fieldError = (FieldError)exception.Errors.First();
+                Console.Write(fieldError.Message);
+            }
+
+            // When the `errors` key is returned as an array of strings
+            try
+            {
+                var claimParameters = new EasyPost.Parameters.Claims.Create
+                {
+                    TrackingCode = "123" // Simulate a request with an invalid tracking code: NOT_FOUND
+                }
+                await Client.Claim.Create(claimParameters);
+            }
+            catch (NotFoundError exception)
+            {
+                Console.Write(exception.Errors.First());
             }
         }
     }

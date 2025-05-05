@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,12 +12,12 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parameters.Address.All parameters = new()
+            EasyPost.Parameters.Address.All parameters = new()
             {
                 PageSize = 5
             };
 
-            AddressCollection addressCollection = await client.Address.All(parameters);
+            EasyPost.Models.API.AddressCollection addressCollection = await client.Address.All(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(addressCollection, Formatting.Indented));
         }

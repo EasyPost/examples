@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
-using EasyPost.Models.API;
 using Newtonsoft.Json;
 
 namespace EasyPostExamples
@@ -13,7 +12,7 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            EndShipper endShipper = await client.EndShipper.Retrieve("es_...");
+            EasyPost.Models.API.EndShipper endShipper = await client.EndShipper.Retrieve("es_...");
 
             Dictionary<string, object> endShipperData = new Dictionary<string, object>() {
                 { "name", "NEW NAME" },

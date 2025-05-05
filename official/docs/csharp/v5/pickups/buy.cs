@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,9 +12,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Pickup pickup = await client.Pickup.Retrieve("pickup_...");
+            EasyPost.Models.API.Pickup pickup = await client.Pickup.Retrieve("pickup_...");
 
-            Parameters.Pickup.Buy parameters = new("UPS", "Same-Day Pickup");
+            EasyPost.Parameters.Pickup.Buy parameters = new("UPS", "Same-Day Pickup");
 
             pickup = await client.Pickup.Buy(pickup.Id, parameters);
 

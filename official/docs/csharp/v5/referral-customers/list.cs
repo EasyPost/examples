@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using EasyPost;
-using EasyPost.Models.API;
-using EasyPost.Parameters;
+using Newtonsoft.Json;
 
 namespace EasyPostExamples
 {
@@ -14,14 +12,14 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client("EASYPOST_API_KEY");
 
-            Parameters.ReferralCustomer.All parameters = new()
+            EasyPost.Parameters.ReferralCustomer.All parameters = new()
             {
                 PageSize = 5
             };
 
-            ReferralCustomerCollection referralCustomerCollection = await client.ReferralCustomer.All(parameters);
+            EasyPost.Models.API.ReferralCustomerCollection referralCustomerCollection = await client.ReferralCustomer.All(parameters);
 
-            List<ReferralCustomer> referralCustomers = referralCustomerCollection.ReferralCustomers;
+            List<EasyPost.Models.API.ReferralCustomer> referralCustomers = referralCustomerCollection.ReferralCustomers;
 
             Console.WriteLine(JsonConvert.SerializeObject(referralCustomers, Formatting.Indented));
         }
