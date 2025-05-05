@@ -3,7 +3,7 @@ package example
 import (
 	"fmt"
 
-	"github.com/EasyPost/easypost-go/v4"
+	"github.com/EasyPost/easypost-go/v5"
 )
 
 func verifyStrictParam() {
@@ -20,7 +20,7 @@ func verifyStrictParam() {
 			Phone:   "5555555555",
 		},
 		&easypost.CreateAddressOptions{
-			VerifyStrict: []string{"true"},
+			VerifyStrict: true,
 		},
 	)
 
