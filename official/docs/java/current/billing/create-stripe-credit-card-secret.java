@@ -1,7 +1,6 @@
 package billing;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.PaymentMethod;
 import com.easypost.service.EasyPostClient;
 
 public class CreateStripeCreditCardSecret {

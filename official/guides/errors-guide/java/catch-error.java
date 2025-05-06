@@ -5,7 +5,6 @@ import java.util.Map;
 
 import com.easypost.exception.APIException;
 import com.easypost.exception.General.EasyPostException;
-import com.easypost.model.Address;
 import com.easypost.model.Claim;
 import com.easypost.service.EasyPostClient;
 
