@@ -28,9 +28,9 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-import": "^2.27.5",
-    "prettier": "^2.8.8"
+    "prettier": "^3.5"
   },
   "dependencies": {
-    "@easypost/api": "^7.3.0"
+    "@easypost/api": "^8.0.0"
   }
 }

@@ -11,7 +11,7 @@ func addStripeCreditCard() {
 
 	creditCard, _ := client.AddReferralCustomerCreditCardFromStripe(
 		"REFERRAL_USER_API_KEY",
-		"seti_123",
+		"seti_...",
 		easypost.PrimaryPaymentMethodPriority,
 	)
 
