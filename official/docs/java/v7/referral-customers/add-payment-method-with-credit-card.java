@@ -1,17 +1,15 @@
-package shipments;
+package referral;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.SmartRate;
+import com.easypost.model.PaymentMethodObject;
 import com.easypost.service.EasyPostClient;
 
-import java.util.List;
-
-public class RetrieveTimeInTransitStatistics {
+public class Create {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
-        List<SmartRate> smartrates = client.shipment.smartRates("shp_...");
+        PaymentMethodObject paymentMethod = client.betaReferralCustomer.addPaymentMethod("cus_...", "card_...");
 
-        System.out.println(smartrates);
+        System.out.println(paymentMethod);
     }
 }

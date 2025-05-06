@@ -1,17 +1,15 @@
-package shipments;
+package addresses;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.SmartRate;
+import com.easypost.model.Address;
 import com.easypost.service.EasyPostClient;
 
-import java.util.List;
-
-public class RetrieveTimeInTransitStatistics {
+public class Retrieve {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
-        List<SmartRate> smartrates = client.shipment.smartRates("shp_...");
+        Address address = client.address.retrieve("adr_...");
 
-        System.out.println(smartrates);
+        System.out.println(address);
     }
 }
