@@ -3,7 +3,7 @@ package example
 import (
 	"fmt"
 
-	"github.com/EasyPost/easypost-go/v4"
+	"github.com/EasyPost/easypost-go/v5"
 )
 
 func update() {
@@ -11,7 +11,15 @@ func update() {
 
 	webhook, _ := client.UpdateWebhook(
 		"hook_...",
-		&easypost.CreateUpdateWebhookOptions{},
+		&easypost.CreateUpdateWebhookOptions{
+			WebhookSecret: "A1B2C3",
+			CustomHeaders: []easypost.WebhookCustomHeader{
+				{
+					Name:  "X-Header-Name",
+					Value: "header_value",
+				},
+			},
+		},
 	)
 
 	fmt.Println(webhook)
