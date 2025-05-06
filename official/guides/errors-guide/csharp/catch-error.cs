@@ -15,12 +15,12 @@ namespace EasyPostExamples
             // When the `errors` key is returned as an array of FieldError objects
             try
             {
-                // Simulate a request with missing parameters: PARAMETER.REQUIRED
+                // Simulate a request with missing parameters
                 await client.Shipment.Create(new Dictionary<string, object>());
             }
-            catch (InvalidRequestError exception)
+            catch (ApiError error)
             {
-                FieldError fieldError = (FieldError)exception.Errors.First();
+                FieldError fieldError = (FieldError)error.Errors.First();
                 Console.Write(fieldError.Message);
             }
 
@@ -29,13 +29,13 @@ namespace EasyPostExamples
             {
                 var claimParameters = new EasyPost.Parameters.Claims.Create
                 {
-                    TrackingCode = "123" // Simulate a request with an invalid tracking code: NOT_FOUND
+                    TrackingCode = "123" // Simulate a request with an invalid tracking code
                 }
                 await Client.Claim.Create(claimParameters);
             }
-            catch (NotFoundError exception)
+            catch (ApiError error)
             {
-                Console.Write(exception.Errors.First());
+                Console.Write(error.Errors.First());
             }
         }
     }

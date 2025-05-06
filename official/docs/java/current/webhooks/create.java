@@ -12,7 +12,12 @@ public class Create {
 
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("url", "example.com");
-        paramMap.put("webhook_secret", "A1B2C3");
+        params.put("webhook_secret", "A1B2C3");
+        params.put("custom_headers", new HashMap<String, String>() {
+            {
+                put("X-Header-Name", "header_value");
+            }
+        });
 
         Webhook webhook = client.webhook.create(params);
 

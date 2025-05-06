@@ -1,17 +1,14 @@
-package shipments;
+package billing;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.SmartRate;
 import com.easypost.service.EasyPostClient;
 
-import java.util.List;
-
-public class RetrieveTimeInTransitStatistics {
+public class CreateStripeCreditCardSecret {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
-        List<SmartRate> smartrates = client.shipment.smartRates("shp_...");
+        ClientSecret response = client.betaReferralCustomer.createCreditCardClientSecret();
 
-        System.out.println(smartrates);
+        System.out.println(response);
     }
 }

@@ -1,17 +1,13 @@
-package shipments;
+package billing;
 
 import com.easypost.exception.EasyPostException;
-import com.easypost.model.SmartRate;
+import com.easypost.model.PaymentMethod;
 import com.easypost.service.EasyPostClient;
 
-import java.util.List;
-
-public class RetrieveTimeInTransitStatistics {
+public class Fund {
     public static void main(String[] args) throws EasyPostException {
         EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
-        List<SmartRate> smartrates = client.shipment.smartRates("shp_...");
-
-        System.out.println(smartrates);
+        client.billing.fundWallet("2000", PaymentMethod.Priority.PRIMARY);
     }
 }
