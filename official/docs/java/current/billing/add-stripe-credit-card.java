@@ -10,7 +10,7 @@ public class CreateStripeCreditCardSecret {
 
         PaymentMethodObject paymentMethod = client.referralCustomer.addCreditCardFromStripe(
                 "REFERRAL_USER_API_KEY",
-                "seti_123",
+                "seti_...",
                 PaymentMethod.Priority.PRIMARY
         );
 

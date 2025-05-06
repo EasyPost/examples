@@ -14,7 +14,7 @@ namespace EasyPostExamples
 
             EasyPost.Models.API.PaymentMethod paymentMethod = await Client.ReferralCustomer.AddCreditCardFromStripe(
                 "REFERRAL_USER_API_KEY",
-                "seti_123",
+                "seti_...",
                 EasyPost.Models.API.PaymentMethod.Priority.Primary
             );
 

@@ -1,10 +1,10 @@
 {
   "fulfiller_order_items": [
     {
-      "amazon_order_id": "order_123",
+      "amazon_order_id": "order_...",
       "items": [
         {
-          "item_identifier": "item_123",
+          "item_identifier": "item_...",
           "quantity": 1,
           "item_weight": {
             "unit": "OUNCE",
