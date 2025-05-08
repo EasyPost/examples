@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.homepage               = 'https://github.com/easypost/examples'
   spec.license                = 'MIT'
 
-  spec.add_dependency 'easypost', '~> 6'
+  spec.add_dependency 'easypost', '~> 7'
 
   spec.add_development_dependency 'rubocop', '= 1.73'
   spec.add_development_dependency 'rubocop-rspec', '~> 2.31' # Can't upgrade to v3 until we drop Ruby 2.7
