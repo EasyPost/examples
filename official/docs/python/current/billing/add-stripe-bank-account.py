@@ -3,7 +3,7 @@ import easypost
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
 payment_method = client.referral_customer.add_bank_account_from_stripe(
-    referral_api_key="REFERRAL_CUSTOMER_PROD_API_KEY",
+    referral_api_key="REFERRAL_USER_API_KEY",
     financial_connections_id="fca_...",
     mandate_data={
         "ip_address": "127.0.0.1",
