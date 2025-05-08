@@ -9,7 +9,7 @@ webhook = client.webhook.update(
       {
         name: 'X-Header-Name',
         value: 'header_value',
-      }
+      },
     ],
   },
 )
