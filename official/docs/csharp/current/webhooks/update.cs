@@ -15,7 +15,10 @@ namespace EasyPostExamples
             EasyPost.Parameters.Webhook.Create parameters = new()
             {
                 Secret = "ABC123",
-                CustomHeaders = new EasyPost.Models.API.WebhookCustomHeader { Name = "X-Header-Name", Value = "header_value" }
+                CustomHeaders = new List<EasyPost.Models.API.WebhookCustomHeader>
+                {
+                    new EasyPost.Models.API.WebhookCustomHeader { Name = "X-Header-Name", Value = "header_value" }
+                }
             };
 
             EasyPost.Models.API.Webhook webhook = await client.Webhook.Update("hook_...", parameters);
