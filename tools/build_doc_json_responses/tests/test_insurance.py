@@ -22,3 +22,11 @@ def test_insurance_list(test_client, page_size):
     test_client.insurance.all(page_size=page_size)
 
     build_response_snippet()
+
+
+@pytest.mark.vcr()
+def test_insurance_refund(test_client, insurance_create):
+    insurance = test_client.insurance.create(**insurance_create)
+    test_client.insurance.refund(insurance.id)
+
+    build_response_snippet(interaction_index=1)

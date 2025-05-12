@@ -1,35 +1,35 @@
 {
   "approved_amount": null,
   "attachments": [
-    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/7b9b0171ae7b4e258f765822e7cddb71.png",
-    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/2cd9fdd33a7d40fc84ac8f87c3da1f86.png",
-    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/d3aebbc42e884769ad810c92c26ad8ad.png"
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20250512/2384384e13a14d2eb6513b6f4fa3e7db.png",
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20250512/695260b95d0743a284bf0bf1eea7421c.png",
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20250512/f369b8e2ce894e798c14850684fd16fe.png"
   ],
   "check_delivery_address": null,
   "contact_email": "test@example.com",
-  "created_at": "2024-07-23T17:53:40",
+  "created_at": "2025-05-12T19:08:07Z",
   "description": "Test description",
   "history": [
     {
       "status": "submitted",
       "status_detail": "Claim was created.",
-      "timestamp": "2024-07-23T17:53:40"
+      "timestamp": "2025-05-12T19:08:07Z"
     }
   ],
-  "id": "clm_097e86d630e44e83b736c48c1271fed3",
+  "id": "clm_09d891bf4d9045b48cb64e0319338f1c",
   "insurance_amount": "100.00",
-  "insurance_id": "ins_33a9255ab9f443c18a1c1876bc6e25a4",
+  "insurance_id": "ins_e5d632db2ede497e83de78e0c6cc5a60",
   "mode": "test",
   "object": "Claim",
   "payment_method": "easypost_wallet",
   "recipient_name": null,
   "requested_amount": "100.00",
   "salvage_value": null,
-  "shipment_id": "shp_8ae4d3d1cf78409fbabd93c5b13c5f98",
+  "shipment_id": "shp_1152edb694924af2a5ca3c5d4fba45d3",
   "status": "submitted",
   "status_detail": "Claim was created.",
-  "status_timestamp": "2024-07-23T17:53:40",
-  "tracking_code": "9400100110368066361841",
+  "status_timestamp": "2025-05-12T19:08:07Z",
+  "tracking_code": "9405500208303109888326",
   "type": "damage",
-  "updated_at": "2024-07-23T17:53:40"
+  "updated_at": "2025-05-12T19:08:07Z"
 }

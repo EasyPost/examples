@@ -38,9 +38,9 @@ def test_webhooks_list(test_client, webhook_create, page_size):
 
 
 @pytest.mark.vcr()
-def test_webhooks_update(test_client, webhook_create):
+def test_webhooks_update(test_client, webhook_create, webhook_update):
     webhook = test_client.webhook.create(**webhook_create)
-    test_client.webhook.update(id=webhook.id)
+    test_client.webhook.update(id=webhook.id, **webhook_update)
 
     test_client.webhook.delete(
         id=webhook.id

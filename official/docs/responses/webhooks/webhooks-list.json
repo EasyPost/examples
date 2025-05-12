@@ -1,13 +1,18 @@
 {
   "webhooks": [
     {
-      "id": "hook_9f1fa072ba4c11ee9b29733b326f964d",
+      "id": "hook_d393bda62d1511f09d140fc7cf06773a",
       "object": "Webhook",
       "mode": "test",
       "url": "http://example.com",
-      "created_at": "2024-01-24T00:07:54Z",
+      "created_at": "2025-05-09T20:40:22Z",
       "disabled_at": null,
-      "custom_headers": []
+      "custom_headers": [
+        {
+          "name": "X-Header-Name",
+          "value": "header_value"
+        }
+      ]
     }
   ]
 }

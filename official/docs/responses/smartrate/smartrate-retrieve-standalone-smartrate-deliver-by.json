@@ -1,0 +1,89 @@
+{
+  "carriers_without_tint_estimates": null,
+  "from_zip": "10001",
+  "planned_ship_date": "2025-05-19",
+  "results": [
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 1,
+          "percentile_75": 2,
+          "percentile_85": 2,
+          "percentile_90": 2,
+          "percentile_95": 3,
+          "percentile_97": 4,
+          "percentile_99": 5
+        },
+        "easypost_estimated_delivery_date": "2025-05-20"
+      },
+      "service": "express"
+    },
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 2,
+          "percentile_85": 2,
+          "percentile_90": 3,
+          "percentile_95": 3,
+          "percentile_97": 4,
+          "percentile_99": 8
+        },
+        "easypost_estimated_delivery_date": "2025-05-20"
+      },
+      "service": "groundadvantage"
+    },
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 1,
+          "percentile_75": 2,
+          "percentile_85": 2,
+          "percentile_90": 2,
+          "percentile_95": 3,
+          "percentile_97": 3,
+          "percentile_99": 5
+        },
+        "easypost_estimated_delivery_date": "2025-05-20"
+      },
+      "service": "librarymail"
+    },
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 2,
+          "percentile_85": 2,
+          "percentile_90": 3,
+          "percentile_95": 3,
+          "percentile_97": 4,
+          "percentile_99": 8
+        },
+        "easypost_estimated_delivery_date": "2025-05-20"
+      },
+      "service": "mediamail"
+    },
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 2,
+          "percentile_85": 2,
+          "percentile_90": 3,
+          "percentile_95": 3,
+          "percentile_97": 4,
+          "percentile_99": 5
+        },
+        "easypost_estimated_delivery_date": "2025-05-20"
+      },
+      "service": "priority"
+    }
+  ],
+  "saturday_delivery": false,
+  "to_zip": "10002"
+}

@@ -5,17 +5,17 @@ from setuptools import (
 
 
 REQUIREMENTS = [
-    "easypost==9.*",
+    "easypost==10.*",
     "python-dotenv",
 ]
 
 DEV_REQUIREMENTS = [
-    "black==22.*",
-    "flake8==5.*",
-    "isort==5.*",
+    "black==25.*",
+    "flake8==7.*",
+    "isort==6.*",
     "pytest-vcr==1.*",
-    "pytest==7.*",
-    "vcrpy==4.*",
+    "pytest==8.*",
+    "vcrpy==7.*",
 ]
 
 with open("README.md", encoding="utf-8") as f:
@@ -41,5 +41,5 @@ setup(
     test_suite="test",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    python_requires=">=3.6, <4",
+    python_requires=">=3.9, <4",
 )

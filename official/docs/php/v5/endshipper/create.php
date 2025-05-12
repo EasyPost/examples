@@ -2,7 +2,7 @@
 
 \EasyPost\EasyPost::setApiKey('EASYPOST_API_KEY');
 
-$params = [
+$endshipper = \EasyPost\EndShipper::create([
     'name' => 'FOO BAR',
     'company' => 'BAZ',
     'street1' => '164 TOWNSEND STREET UNIT 1',
@@ -13,8 +13,6 @@ $params = [
     'country' => 'US',
     'phone' => '555-555-5555',
     'email' => 'FOO@EXAMPLE.COM'
-];
-
-$endshipper = \EasyPost\EndShipper::create($params);
+]);
 
 echo $endshipper;

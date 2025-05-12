@@ -2,6 +2,6 @@ import easypost
 
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
-claim = client.claim.refund("clm_...")
+claim = client.claim.cancel("clm_...")
 
 print(claim)

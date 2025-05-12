@@ -1,12 +1,12 @@
 {
-  "id": "batch_956120999a5d4ec6b3016476029b1ffa",
+  "id": "batch_6cd0002c95ad4841af404b6fc8f1b7bf",
   "object": "Batch",
   "mode": "test",
   "state": "created",
   "num_shipments": 1,
   "reference": null,
-  "created_at": "2024-01-24T00:04:10Z",
-  "updated_at": "2024-01-24T00:04:11Z",
+  "created_at": "2025-05-09T20:51:07Z",
+  "updated_at": "2025-05-09T20:51:07Z",
   "scan_form": null,
   "shipments": [
     {
@@ -14,7 +14,7 @@
       "batch_message": null,
       "reference": null,
       "tracking_code": null,
-      "id": "shp_a8c6628dd39941a29093dabdea391766"
+      "id": "shp_94377a18fc63475c90e78959585b4a2c"
     }
   ],
   "status": {

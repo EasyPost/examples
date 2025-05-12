@@ -1,57 +1,57 @@
 {
-  "id": "ca_f64a75cee8ed4c83a7625c1d00cf8f0b",
+  "id": "ca_a2cb50e6c5c3451586b3a507db5f163a",
   "object": "CarrierAccount",
   "type": "DhlEcsAccount",
   "clone": false,
-  "created_at": "2024-01-24T00:05:37Z",
-  "updated_at": "2024-01-24T00:05:37Z",
+  "created_at": "2025-05-09T20:39:13Z",
+  "updated_at": "2025-05-09T20:39:13Z",
   "description": "CA Location DHL eCommerce Solutions Account",
   "reference": null,
   "billing_type": "carrier",
-  "readable": "DHL eCommerce Solutions",
+  "readable": "DHL eCommerce",
   "logo": null,
   "fields": {
     "credentials": {
       "client_id": {
         "visibility": "visible",
-        "label": "DHL eCommerce Solutions client ID",
+        "label": "DHL eCommerce client ID",
         "value": "123456"
       },
       "client_secret": {
         "visibility": "password",
-        "label": "DHL eCommerce Solutions client secret",
+        "label": "DHL eCommerce client secret",
         "value": "********"
       },
       "pickup_id": {
         "visibility": "visible",
-        "label": "DHL eCommerce Solutions pickup ID",
+        "label": "DHL eCommerce pickup ID",
         "value": "123456"
       },
       "distribution_center": {
         "visibility": "visible",
-        "label": "DHL eCommerce Solutions distribution center",
+        "label": "DHL eCommerce distribution center",
         "value": "USLAX1"
       }
     },
     "test_credentials": {
       "client_id": {
         "visibility": "visible",
-        "label": "Test DHL eCommerce Solutions client ID",
+        "label": "Test DHL eCommerce client ID",
         "value": "123456"
       },
       "client_secret": {
         "visibility": "password",
-        "label": "Test DHL eCommerce Solutions client secret",
+        "label": "Test DHL eCommerce client secret",
         "value": "********"
       },
       "pickup_id": {
         "visibility": "visible",
-        "label": "Test DHL eCommerce Solutions pickup ID",
+        "label": "Test DHL eCommerce pickup ID",
         "value": "123456"
       },
       "distribution_center": {
         "visibility": "visible",
-        "label": "Test DHL eCommerce Solutions distribution center",
+        "label": "Test DHL eCommerce distribution center",
         "value": "USLAX1"
       }
     }

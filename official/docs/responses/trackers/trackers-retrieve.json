@@ -1,15 +1,15 @@
 {
-  "id": "trk_232016f40be746a2b9015190a756043a",
+  "id": "trk_9135862729734d96ad2f9ed0f0565a27",
   "object": "Tracker",
   "mode": "test",
   "tracking_code": "EZ1000000001",
   "status": "pre_transit",
   "status_detail": "status_update",
-  "created_at": "2025-04-04T16:25:16Z",
-  "updated_at": "2025-04-04T16:25:16Z",
+  "created_at": "2025-05-09T20:40:17Z",
+  "updated_at": "2025-05-09T20:40:17Z",
   "signed_by": null,
   "weight": null,
-  "est_delivery_date": "2025-04-04T16:25:16Z",
+  "est_delivery_date": "2025-05-09T20:40:17Z",
   "shipment_id": null,
   "carrier": "USPS",
   "tracking_details": [
@@ -19,7 +19,7 @@
       "description": "",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "datetime": "2025-03-04T16:25:16Z",
+      "datetime": "2025-04-09T20:40:17Z",
       "source": "USPS",
       "carrier_code": "",
       "tracking_location": {
@@ -37,7 +37,7 @@
       "description": "",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "datetime": "2025-03-05T05:02:16Z",
+      "datetime": "2025-04-10T09:17:17Z",
       "source": "USPS",
       "carrier_code": "",
       "tracking_location": {
@@ -50,6 +50,7 @@
       "est_delivery_date": null
     }
   ],
+  "fees": [],
   "carrier_detail": {
     "object": "CarrierDetail",
     "service": "First-Class Package Service",
@@ -70,7 +71,5 @@
     "alternate_identifier": null,
     "initial_delivery_attempt": null
   },
-  "finalized": true,
-  "is_return": false,
-  "public_url": "https://track.easypost.com/djE6dHJrXzIzMjAxNmY0MGJlNzQ2YTJiOTAxNTE5MGE3NTYwNDNh"
+  "public_url": "https://track.easypost.com/djE6dHJrXzkxMzU4NjI3Mjk3MzRkOTZhZDJmOWVkMGYwNTY1YTI3"
 }

@@ -1,104 +1,100 @@
 [
   {
     "object": "CarrierType",
-    "type": "AmazonMwsAccount",
-    "readable": "Amazon MWS",
+    "type": "UpsAccount",
+    "readable": "UPS",
     "logo": null,
     "fields": {
       "credentials": {
-        "access_key_id": {
-          "visibility": "visible",
-          "label": "AWS Access Key ID"
+        "access_license_number": {
+          "visibility": "invisible",
+          "label": "UPS Access License Number"
         },
-        "secret_key": {
-          "visibility": "password",
-          "label": "Secret Key"
+        "account_number": {
+          "visibility": "readonly",
+          "label": "UPS Account Number"
         },
-        "merchant_id": {
-          "visibility": "visible",
-          "label": "Seller ID"
-        }
-      }
-    }
-  },
-  {
-    "object": "CarrierType",
-    "type": "ApcAccount",
-    "readable": "APC",
-    "logo": null,
-    "fields": {
-      "credentials": {
-        "shipper_id": {
-          "visibility": "visible",
-          "label": "APC Shipper ID"
+        "user_id": {
+          "visibility": "invisible",
+          "label": "UPS.com User ID"
         },
         "password": {
-          "visibility": "password",
-          "label": "APC Password"
+          "visibility": "invisible",
+          "label": "UPS.com Password"
         },
-        "facility": {
-          "visibility": "visible",
-          "label": "APC Facility (e.g., NJ, LA)"
+        "oauth_status": {
+          "visibility": "readonly",
+          "label": "OAuth Authorization Status"
+        },
+        "partner_oauth_url": {
+          "visibility": "readonly",
+          "label": "OAuth Portal URL"
         }
       }
     }
   },
   {
     "object": "CarrierType",
-    "type": "AsendiaUsaAccount",
-    "readable": "Asendia USA",
+    "type": "UpsMailInnovationsAccount",
+    "readable": "UPS Mail Innovations",
     "logo": null,
     "fields": {
       "credentials": {
         "account_number": {
           "visibility": "visible",
-          "label": "AsendiaUsa Account Number"
+          "label": "UPS Shipper Number"
         },
-        "sub_account_number": {
+        "user_id": {
           "visibility": "visible",
-          "label": "AsendiaUsa Sub Account Number"
-        },
-        "username": {
-          "visibility": "visible",
-          "label": "AsendiaUsa Username"
+          "label": "UPS.com User ID"
         },
         "password": {
           "visibility": "password",
-          "label": "AsendiaUsa Password"
+          "label": "UPS.com Password"
         },
-        "api_key": {
-          "visibility": "masked",
-          "label": "AsendiaUsa API key"
+        "customer_id": {
+          "visibility": "visible",
+          "label": "UPS customer id (optional)"
         },
-        "carrier_facility": {
-          "visibility": "select",
-          "label": "AsendiaUsa Carrier Facility / Processing Location (Optional)"
+        "customer_guid": {
+          "visibility": "visible",
+          "label": "UPS customer GUID (optional)"
+        },
+        "oauth_status": {
+          "visibility": "readonly",
+          "label": "OAuth Authorization Status"
+        },
+        "partner_oauth_url": {
+          "visibility": "readonly",
+          "label": "OAuth Portal URL"
+        }
+      }
+    }
+  },
+  {
+    "object": "CarrierType",
+    "type": "AccurateAccount",
+    "readable": "Accurate",
+    "logo": null,
+    "fields": {
+      "credentials": {
+        "username": {
+          "visibility": "visible",
+          "label": "Accurate username"
+        },
+        "password": {
+          "visibility": "password",
+          "label": "Accurate password"
         }
       },
       "test_credentials": {
-        "account_number": {
-          "visibility": "visible",
-          "label": "Test AsendiaUsa Account Number"
-        },
-        "sub_account_number": {
-          "visibility": "visible",
-          "label": "Test AsendiaUsa Sub Account Number"
-        },
         "username": {
           "visibility": "visible",
-          "label": "Test AsendiaUsa Username"
+          "label": "Accurate test username"
         },
         "password": {
           "visibility": "password",
-          "label": "Test AsendiaUsa Password"
-        },
-        "api_key": {
-          "visibility": "masked",
-          "label": "Test AsendiaUsa API key"
-        },
-        "carrier_facility": {
-          "visibility": "select",
-          "label": "Test AsendiaUsa Carrier Facility / Processing Location (Optional)"
+          "label": "Accurate test password"
         }
       }
     }
