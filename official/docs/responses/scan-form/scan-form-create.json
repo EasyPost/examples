@@ -3,9 +3,7 @@
   "object": "ScanForm",
   "created_at": "2025-05-09T20:40:04Z",
   "updated_at": "2025-05-09T20:40:04Z",
-  "tracking_codes": [
-    "9405500208303109884151"
-  ],
+  "tracking_codes": ["9405500208303109884151"],
   "address": {
     "id": "adr_c8c8ddad2d1511f0b56e3cecef1b359e",
     "object": "Address",

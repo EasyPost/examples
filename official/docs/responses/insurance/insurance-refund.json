@@ -167,9 +167,7 @@
     "charged": true,
     "refunded": false
   },
-  "messages": [
-    "Insurance was cancelled by the user."
-  ],
+  "messages": ["Insurance was cancelled by the user."],
   "created_at": "2025-05-12T19:40:17Z",
   "updated_at": "2025-05-12T19:40:18Z"
 }
