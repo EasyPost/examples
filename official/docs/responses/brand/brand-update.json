@@ -1,13 +1,13 @@
 {
-  "id": "brd_aa3f5a1043ca46cf8e2e9b879c9a5895",
+  "ad": null,
+  "ad_href": null,
+  "background_color": null,
   "color": "#123456",
+  "id": "brd_aa3f5a1043ca46cf8e2e9b879c9a5895",
   "logo": "https://assets.easypost.com/assets/images/branding/easypost-primary-logo.7324aa54b64b34d6cd70ca5ba4d1842d.svg",
   "logo_href": "https://www.easypost.com",
   "name": "EasyPost",
-  "ad": null,
-  "ad_href": null,
   "object": "Brand",
-  "user_id": "user_060ab38db3c04ffaa60f262e5781a9be",
-  "background_color": "#123456",
-  "theme": "theme1"
+  "theme": "theme1",
+  "user_id": "user_060ab38db3c04ffaa60f262e5781a9be"
 }

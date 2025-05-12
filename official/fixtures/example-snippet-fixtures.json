@@ -39,6 +39,16 @@
       }
     }
   },
+  "claim": {
+    "create": {
+      "type": "damage",
+      "email_evidence_attachments": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="],
+      "invoice_attachments": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="],
+      "supporting_documentation_attachments": ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAeUlEQVR42mP8//8/AwAI/AL+4Q7AIAAAAABJRU5ErkJggg=="],
+      "description": "Test description",
+      "contact_email": "test@example.com"
+    }
+  },
   "customs_info": {
     "create": {
       "customs_certify": "true",
@@ -124,7 +134,7 @@
         "phone": "4153334445",
         "email": "support@easypost.com"
       },
-      "tracking_code": "9400110898825022579493",
+      "tracking_code": "EZ1000000001",
       "carrier": "USPS",
       "amount": "100.00"
     }
@@ -160,7 +170,6 @@
         },
         {
           "parcel": {
-            "predefined_package": "FedExBox",
             "weight": 17.5
           }
         }
@@ -308,7 +317,23 @@
   },
   "webhook": {
     "create": {
-      "url": "http://example.com"
+      "url": "http://example.com",
+      "webhook_secret": "A1B2C3",
+      "custom_headers": [
+        {
+          "name": "X-Header-Name",
+          "value": "header_value"
+        }
+      ]
+    },
+    "update": {
+      "webhook_secret": "A1B2C3",
+      "custom_headers": [
+        {
+          "name": "X-Header-Name",
+          "value": "header_value"
+        }
+      ]
     }
   }
 }

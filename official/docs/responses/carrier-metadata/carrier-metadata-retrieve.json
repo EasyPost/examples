@@ -173,7 +173,7 @@
             "Cards, Letters and Flats only (no Parcels)",
             "See Predefined Packages (Card, Letter, Flat) for details"
           ],
-          "human_readable": null,
+          "human_readable": "First-Class Mail\u00ae",
           "max_weight": 13.0,
           "name": "First"
         },
@@ -181,7 +181,7 @@
           "carrier": "usps",
           "description": "1-3 business days",
           "dimensions": ["Combined Length and Girth < 108in"],
-          "human_readable": null,
+          "human_readable": "Priority Mail\u00ae",
           "max_weight": 1120.0,
           "name": "Priority"
         },
@@ -189,7 +189,7 @@
           "carrier": "usps",
           "description": "1-2 days",
           "dimensions": ["Combined Length and Girth < 108in"],
-          "human_readable": null,
+          "human_readable": "Priority Mail Express\u00ae",
           "max_weight": 1120.0,
           "name": "Express"
         },
@@ -197,7 +197,7 @@
           "carrier": "usps",
           "description": "2-5 days",
           "dimensions": ["Combined Length and Girth < 130in"],
-          "human_readable": null,
+          "human_readable": "USPS Ground Advantage\u00ae",
           "max_weight": 70.0,
           "name": "GroundAdvantage"
         },
@@ -205,7 +205,7 @@
           "carrier": "usps",
           "description": "2-8 business days",
           "dimensions": ["Combined Length and Girth < 108in"],
-          "human_readable": null,
+          "human_readable": "Library Mail\u00ae",
           "max_weight": 1120.0,
           "name": "LibraryMail"
         },
@@ -213,7 +213,7 @@
           "carrier": "usps",
           "description": "2-8 business days",
           "dimensions": ["Combined Length and Girth < 108in"],
-          "human_readable": null,
+          "human_readable": "Media Mail\u00ae",
           "max_weight": 1120.0,
           "name": "MediaMail"
         },
@@ -221,7 +221,7 @@
           "carrier": "usps",
           "description": null,
           "dimensions": ["Must be rectangular, otherwise an additional charge may apply."],
-          "human_readable": null,
+          "human_readable": "First-Class Mail International\u00ae",
           "max_weight": 15.994,
           "name": "FirstClassMailInternational"
         },
@@ -233,7 +233,7 @@
             "Rolls (Tubes): Length: min 4in; max 36 in. Length plus twice the diameter (combined): min 6.75 in; max 42in.",
             "Some countries have specific prohibitions and restrictions"
           ],
-          "human_readable": null,
+          "human_readable": "First-Class Package International Service\u00ae",
           "max_weight": 64.0,
           "name": "FirstClassPackageInternationalService"
         },
@@ -241,7 +241,7 @@
           "carrier": "usps",
           "description": "6-10 business days",
           "dimensions": ["Combined Length and Girth < 108in"],
-          "human_readable": null,
+          "human_readable": "Priority Mail International\u00ae",
           "max_weight": 1120.0,
           "name": "PriorityMailInternational"
         },
@@ -249,7 +249,7 @@
           "carrier": "usps",
           "description": "3-5 business days",
           "dimensions": ["Combined Length and Girth < 108in"],
-          "human_readable": null,
+          "human_readable": "Priority Mail Express International\u00ae",
           "max_weight": 1120.0,
           "name": "ExpressMailInternational"
         }

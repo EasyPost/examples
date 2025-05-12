@@ -16,7 +16,6 @@ ALL_RESOURCES = {
     "batches",
     "billing",
     "brand",
-    "carbon-offset",
     "carrier-accounts",
     "carrier-metadata",
     "carrier-types",
@@ -46,10 +45,12 @@ ALL_RESOURCES = {
     "webhooks",
 }
 
+RESPONSES_DIR = os.path.join("..", "..", "official", "docs", "responses")
+
 
 def build_response_snippet(interaction_index: Optional[int] = 0, objects_to_persist: Optional[int] = None):
     """Builds the response snippet from a recorded VCR interaction."""
-    create_dir("responses")
+    create_dir(os.path.join(RESPONSES_DIR))
 
     test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]
     cassette_filename = f"{test_name}.yaml"
@@ -62,7 +63,7 @@ def build_response_snippet(interaction_index: Optional[int] = 0, objects_to_pers
 
     # Assert the standalone snippet actually got saved, fail if not
     assert os.path.exists(
-        os.path.join("responses", response_snippet_folder, bare_snippet_name)
+        os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name)
     ), f"{bare_snippet_name} standalone snippet file missing!"
 
 
@@ -107,7 +108,7 @@ def _setup_saving_response_snippet(response_snippet_filename: str):
     response_snippet_folder = resource_name.replace("_", "-")
     bare_snippet_name = bare_snippet_name.replace("_", "-")
 
-    create_dir(os.path.join("responses", response_snippet_folder))
+    create_dir(os.path.join(RESPONSES_DIR, response_snippet_folder))
 
     return response_snippet_folder, bare_snippet_name
 
@@ -120,7 +121,7 @@ def save_response_snippet(
     """Saves the response content of a cassette to a standalone snippet file."""
     response_snippet_folder, bare_snippet_name = _setup_saving_response_snippet(response_snippet_filename)
 
-    with open(os.path.join("responses", response_snippet_folder, bare_snippet_name), "w") as response_snippet_file:
+    with open(os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name), "w") as response_snippet_file:
         if objects_to_persist:
             json.dump(
                 json.loads(response_snippet_content)[:objects_to_persist],
@@ -143,7 +144,7 @@ def save_raw_json(response_snippet_filename: str, response_dict: Dict[str, Any])
 
     bare_snippet_name = f"{bare_snippet_name}.json"
 
-    with open(os.path.join("responses", response_snippet_folder, bare_snippet_name), "w") as response_snippet_file:
+    with open(os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name), "w") as response_snippet_file:
         json.dump(response_dict, response_snippet_file, indent=2)
 
         response_snippet_file.write("\n")

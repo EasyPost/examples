@@ -1,0 +1,99 @@
+{
+  "carriers_without_tint_estimates": null,
+  "desired_delivery_date": "2025-05-19",
+  "from_zip": "10001",
+  "results": [
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 2,
+          "percentile_85": 3,
+          "percentile_90": 3,
+          "percentile_95": 4,
+          "percentile_97": 5,
+          "percentile_99": 8
+        },
+        "delivery_date_confidence": 0.68,
+        "estimated_transit_days": 2,
+        "ship_on_date": "2025-05-17"
+      },
+      "service": "express"
+    },
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 2,
+          "percentile_85": 3,
+          "percentile_90": 3,
+          "percentile_95": 4,
+          "percentile_97": 5,
+          "percentile_99": 7
+        },
+        "delivery_date_confidence": 0.76,
+        "estimated_transit_days": 2,
+        "ship_on_date": "2025-05-17"
+      },
+      "service": "groundadvantage"
+    },
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 2,
+          "percentile_85": 2,
+          "percentile_90": 3,
+          "percentile_95": 4,
+          "percentile_97": 4,
+          "percentile_99": 6
+        },
+        "delivery_date_confidence": 0.81,
+        "estimated_transit_days": 2,
+        "ship_on_date": "2025-05-17"
+      },
+      "service": "librarymail"
+    },
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 2,
+          "percentile_85": 3,
+          "percentile_90": 3,
+          "percentile_95": 4,
+          "percentile_97": 5,
+          "percentile_99": 6
+        },
+        "delivery_date_confidence": 0.79,
+        "estimated_transit_days": 2,
+        "ship_on_date": "2025-05-17"
+      },
+      "service": "mediamail"
+    },
+    {
+      "carrier": "usps",
+      "easypost_time_in_transit_data": {
+        "days_in_transit": {
+          "percentile_50": 2,
+          "percentile_75": 2,
+          "percentile_85": 3,
+          "percentile_90": 3,
+          "percentile_95": 4,
+          "percentile_97": 5,
+          "percentile_99": 6
+        },
+        "delivery_date_confidence": 0.76,
+        "estimated_transit_days": 2,
+        "ship_on_date": "2025-05-17"
+      },
+      "service": "priority"
+    }
+  ],
+  "saturday_delivery": false,
+  "to_zip": "10002"
+}

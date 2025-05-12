@@ -1,18 +1,18 @@
 {
   "trackers": [
     {
-      "id": "trk_3898303eff624097a516ab324bb133f3",
+      "id": "trk_9135862729734d96ad2f9ed0f0565a27",
       "object": "Tracker",
       "mode": "test",
-      "tracking_code": "9405500207552011812894",
+      "tracking_code": "EZ1000000001",
       "status": "pre_transit",
       "status_detail": "status_update",
-      "created_at": "2024-01-24T00:07:43Z",
-      "updated_at": "2024-01-24T00:07:43Z",
+      "created_at": "2025-05-09T20:40:17Z",
+      "updated_at": "2025-05-09T20:40:17Z",
       "signed_by": null,
       "weight": null,
-      "est_delivery_date": "2024-01-24T00:07:43Z",
-      "shipment_id": "shp_82d5637d74404d1595eacdc7e5ca9273",
+      "est_delivery_date": "2025-05-09T20:40:17Z",
+      "shipment_id": null,
       "carrier": "USPS",
       "tracking_details": [
         {
@@ -21,7 +21,7 @@
           "description": "",
           "status": "pre_transit",
           "status_detail": "status_update",
-          "datetime": "2023-12-24T00:07:43Z",
+          "datetime": "2025-04-09T20:40:17Z",
           "source": "USPS",
           "carrier_code": "",
           "tracking_location": {
@@ -30,7 +30,8 @@
             "state": null,
             "country": null,
             "zip": null
-          }
+          },
+          "est_delivery_date": null
         },
         {
           "object": "TrackingDetail",
@@ -38,7 +39,7 @@
           "description": "",
           "status": "pre_transit",
           "status_detail": "status_update",
-          "datetime": "2023-12-24T12:44:43Z",
+          "datetime": "2025-04-10T09:17:17Z",
           "source": "USPS",
           "carrier_code": "",
           "tracking_location": {
@@ -47,7 +48,8 @@
             "state": "TX",
             "country": null,
             "zip": "77063"
-          }
+          },
+          "est_delivery_date": null
         }
       ],
       "fees": [],
@@ -71,7 +73,7 @@
         "alternate_identifier": null,
         "initial_delivery_attempt": null
       },
-      "public_url": "https://track.easypost.com/djE6dHJrXzM4OTgzMDNlZmY2MjQwOTdhNTE2YWIzMjRiYjEzM2Yz"
+      "public_url": "https://track.easypost.com/djE6dHJrXzkxMzU4NjI3Mjk3MzRkOTZhZDJmOWVkMGYwNTY1YTI3"
     }
   ],
   "has_more": true

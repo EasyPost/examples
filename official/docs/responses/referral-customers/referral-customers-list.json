@@ -20,7 +20,7 @@
       "cc_fee_rate": "0.0325",
       "default_insurance_amount": "50.00",
       "insurance_fee_rate": "0.005",
-      "insurance_fee_minimum": "0.25",
+      "insurance_fee_minimum": "0.50",
       "email": "email@example.com",
       "children": []
     }

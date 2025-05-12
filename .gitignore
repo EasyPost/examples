@@ -19,8 +19,8 @@ __pycache__
 /easycop.yml
 /easypost_java_style.xml
 /layout_rules.xml
-/official/tools/build_doc_json_responses/responses/
-/official/tools/build_doc_json_responses/tests/cassettes/
+/tools/build_doc_json_responses/responses/
+/tools/build_doc_json_responses/tests/cassettes/
 /phpcs.xml
 /pyproject.toml
 /style_suppressions.xml

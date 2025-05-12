@@ -100,7 +100,7 @@ def scrub_response_bodies(scrubbers: List[Tuple[str, Any]]) -> Any:
 
 def read_fixture_data():
     """Reads fixture data from the fixtures JSON file."""
-    with open(os.path.join("..", "..", "fixtures", "example-snippet-fixtures.json")) as data:
+    with open(os.path.join("..", "..", "official", "fixtures", "example-snippet-fixtures.json")) as data:
         fixtures = json.load(data)
 
     return fixtures
@@ -145,10 +145,25 @@ def next_weekday():
         return tomorrow.strftime("%Y-%m-%d")
 
 
+@pytest.fixture()
+def next_week():
+    """Returns the day a week from now as a string in YYYY-MM-DD format."""
+    today = datetime.date.today()
+    if today.weekday() == 5:  # Tomorrow is Saturday
+        # Return next Monday
+        return (today + datetime.timedelta(days=9)).strftime("%Y-%m-%d")
+    elif today.weekday() == 6:  # Tomorrow is Sunday
+        # Return next Monday
+        return (today + datetime.timedelta(days=8)).strftime("%Y-%m-%d")
+    else:
+        # Return day next week
+        return (today + datetime.timedelta(days=7)).strftime("%Y-%m-%d")
+
+
 @pytest.fixture
 def synchronous_sleep_seconds():
     """Use this fixture for sleeping between API calls where synchronous flows happen."""
-    return 20
+    return 5
 
 
 @pytest.fixture
@@ -266,3 +281,13 @@ def tracker_create():
 @pytest.fixture
 def webhook_create():
     return read_fixture_data()["webhook"]["create"]
+
+
+@pytest.fixture
+def webhook_update():
+    return read_fixture_data()["webhook"]["update"]
+
+
+@pytest.fixture
+def claim_create():
+    return read_fixture_data()["claim"]["create"]

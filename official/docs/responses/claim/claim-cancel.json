@@ -1,40 +1,40 @@
 {
   "approved_amount": null,
   "attachments": [
-    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/533eff379afa47759cdc14f19e190fc7.png",
-    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/4715d1ddc5e448ad924c029d8407b9e4.png",
-    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20240723/987f3e1a094044219e640163b1074ff7.png"
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20250512/e85d5ec7bd2f44bcbfecaddd7b8fbdc9.png",
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20250512/dc795c3604cb40e7a6fe37762cbff8de.png",
+    "https://easypost-files.s3-us-west-2.amazonaws.com/insurance/20250512/01403d1550d44fd3a5dde2fc7e0c5314.png"
   ],
   "check_delivery_address": null,
   "contact_email": "test@example.com",
-  "created_at": "2024-07-23T17:53:44",
+  "created_at": "2025-05-12T19:08:10Z",
   "description": "Test description",
   "history": [
     {
       "status": "cancelled",
       "status_detail": "Claim cancellation was requested.",
-      "timestamp": "2024-07-23T17:53:45"
+      "timestamp": "2025-05-12T19:08:11Z"
     },
     {
       "status": "submitted",
       "status_detail": "Claim was created.",
-      "timestamp": "2024-07-23T17:53:44"
+      "timestamp": "2025-05-12T19:08:10Z"
     }
   ],
-  "id": "clm_097eda66d06e42ec84449bbd34671a7d",
+  "id": "clm_09d81405ad494f6ca8bcbf884f207bc4",
   "insurance_amount": "100.00",
-  "insurance_id": "ins_8d75d3dcf398461aaa330e48dbd4c19e",
+  "insurance_id": "ins_2f140b24c17d4e66a3223d621ef4beee",
   "mode": "test",
   "object": "Claim",
   "payment_method": "easypost_wallet",
   "recipient_name": null,
   "requested_amount": "100.00",
   "salvage_value": null,
-  "shipment_id": "shp_82fecc386f314823ad6b1a35365b7f4e",
+  "shipment_id": "shp_11f0e96492bd4e03918cb34021d49521",
   "status": "cancelled",
   "status_detail": "Claim cancellation was requested.",
-  "status_timestamp": "2024-07-23T17:53:45",
-  "tracking_code": "9400100110368066361872",
+  "status_timestamp": "2025-05-12T19:08:11Z",
+  "tracking_code": "9405500208303109888333",
   "type": "damage",
-  "updated_at": "2024-07-23T17:53:45"
+  "updated_at": "2025-05-12T19:08:11Z"
 }

@@ -23,7 +23,7 @@ def test_orders_buy(test_client, order_create):
     test_client.order.buy(
         id=order.id,
         carrier="USPS",
-        service="First",
+        service="GroundAdvantage",
     )
 
     build_response_snippet(interaction_index=1)
@@ -32,7 +32,7 @@ def test_orders_buy(test_client, order_create):
 @pytest.mark.vcr()
 def test_orders_one_call_buy(test_client, order_create, usps_carrier_account_id):
     order_create["carrier"] = "USPS"
-    order_create["service"] = "First"
+    order_create["service"] = "GroundAdvantage"
     order_create["carrier_accounts"] = [usps_carrier_account_id]
     test_client.order.create(**order_create)
 

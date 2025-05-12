@@ -1,8 +1,8 @@
 {
-  "id": "cstinfo_8ebad928c87d40aea1d0695d835d93de",
+  "id": "cstinfo_2457910bcbae490fac8fc1dad0c4e8fe",
   "object": "CustomsInfo",
-  "created_at": "2024-01-24T00:05:43Z",
-  "updated_at": "2024-01-24T00:05:43Z",
+  "created_at": "2025-05-09T20:39:15Z",
+  "updated_at": "2025-05-09T20:39:15Z",
   "contents_explanation": "",
   "contents_type": "merchandise",
   "customs_certify": true,
@@ -15,10 +15,10 @@
   "declaration": null,
   "customs_items": [
     {
-      "id": "cstitem_ffde56d2590d498198fba5f223cd3ba5",
+      "id": "cstitem_05af3803e8fe44bb81b08d55ab410075",
       "object": "CustomsItem",
-      "created_at": "2024-01-24T00:05:43Z",
-      "updated_at": "2024-01-24T00:05:43Z",
+      "created_at": "2025-05-09T20:39:15Z",
+      "updated_at": "2025-05-09T20:39:15Z",
       "description": "T-shirt",
       "hs_tariff_number": "123456",
       "origin_country": "US",
