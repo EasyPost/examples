@@ -25,6 +25,7 @@ ALL_RESOURCES = {
     "endshipper",
     "events",
     "insurance",
+    "luma",
     "options",
     "orders",
     "parcels",
