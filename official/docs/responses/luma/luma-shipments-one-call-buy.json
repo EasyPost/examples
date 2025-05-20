@@ -1,0 +1,229 @@
+{
+  "id": "shp_92521948d13a46c0a37acc02c7a8eebc",
+  "object": "Shipment",
+  "mode": "test",
+  "reference": null,
+  "to_address": {
+    "id": "adr_8a6c4e0a358f11f0aeeeac1f6bc539aa",
+    "object": "Address",
+    "created_at": "2025-05-20T15:31:46+00:00",
+    "updated_at": "2025-05-20T15:31:46+00:00",
+    "name": "Archmage Luma",
+    "company": null,
+    "street1": "1234 Adam Irwin Way",
+    "street2": null,
+    "city": "Campbell",
+    "state": "CA",
+    "zip": "95008",
+    "country": "US",
+    "phone": null,
+    "email": null,
+    "mode": "test",
+    "carrier_facility": null,
+    "residential": null,
+    "federal_tax_id": null,
+    "state_tax_id": null,
+    "verifications": {}
+  },
+  "from_address": {
+    "id": "adr_8a6edaed358f11f099333cecef1b359e",
+    "object": "Address",
+    "created_at": "2025-05-20T15:31:46+00:00",
+    "updated_at": "2025-05-20T15:31:46+00:00",
+    "name": "Golf Gear - East",
+    "company": null,
+    "street1": "4823 55th Ave",
+    "street2": null,
+    "city": "Flushing",
+    "state": "NY",
+    "zip": "11378",
+    "country": "US",
+    "phone": null,
+    "email": null,
+    "mode": "test",
+    "carrier_facility": null,
+    "residential": null,
+    "federal_tax_id": null,
+    "state_tax_id": null,
+    "verifications": {}
+  },
+  "parcel": {
+    "id": "prcl_fbcd37ff5d1b46a7bf7a97c8d737c3a6",
+    "object": "Parcel",
+    "created_at": "2025-05-20T15:31:46Z",
+    "updated_at": "2025-05-20T15:31:46Z",
+    "length": 20.2,
+    "width": 10.9,
+    "height": 10.0,
+    "predefined_package": null,
+    "weight": 32.0,
+    "mode": "test"
+  },
+  "customs_info": null,
+  "forms": [],
+  "insurance": "50.00",
+  "selected_rate": {
+    "id": "rate_19ac933b051549b0927635949d7207be",
+    "object": "Rate",
+    "created_at": "2025-05-20T15:31:49Z",
+    "updated_at": "2025-05-20T15:31:49Z",
+    "mode": "test",
+    "service": "3DaySelect",
+    "carrier": "UPSDAP",
+    "rate": "38.19",
+    "currency": "USD",
+    "retail_rate": "115.86",
+    "retail_currency": "USD",
+    "list_rate": "153.36",
+    "list_currency": "USD",
+    "billing_type": "easypost",
+    "delivery_days": 3,
+    "delivery_date": "2025-05-23T23:00:00Z",
+    "delivery_date_guaranteed": false,
+    "est_delivery_days": 3,
+    "shipment_id": "shp_92521948d13a46c0a37acc02c7a8eebc",
+    "carrier_account_id": "ca_1"
+  },
+  "luma_info": {
+    "ai_results": [
+      {
+        "carrier": "USPS",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-05-27",
+        "predicted_deliver_days": 7,
+        "rate_id": "rate_0114e549b7394ce59145fa70f456b504",
+        "rate_usd": "23.85",
+        "service": "GroundAdvantage"
+      },
+      {
+        "carrier": "USPS",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-05-23",
+        "predicted_deliver_days": 3,
+        "rate_id": "rate_a99eed3f08a44ad59feb6dfcd5dea2d5",
+        "rate_usd": "135.45",
+        "service": "Express"
+      },
+      {
+        "carrier": "USPS",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-05-24",
+        "predicted_deliver_days": 4,
+        "rate_id": "rate_cead4ccaacc146a0be768ba05d748898",
+        "rate_usd": "41.44",
+        "service": "Priority"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-05-21",
+        "predicted_deliver_days": 1,
+        "rate_id": "rate_7b87f5e086ee4ca18a6396c8c50ed218",
+        "rate_usd": "94.45",
+        "service": "NextDayAir"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-05-21",
+        "predicted_deliver_days": 1,
+        "rate_id": "rate_7b221d5778c3456baab18cc14898808e",
+        "rate_usd": "124.45",
+        "service": "NextDayAirEarlyAM"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-05-21",
+        "predicted_deliver_days": 1,
+        "rate_id": "rate_2dbcf54f5fc34b82aba06311371fb380",
+        "rate_usd": "87.91",
+        "service": "NextDayAirSaver"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-05-22",
+        "predicted_deliver_days": 2,
+        "rate_id": "rate_368af0549232430fb71305d441aad6f2",
+        "rate_usd": "52.98",
+        "service": "2ndDayAir"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-05-22",
+        "predicted_deliver_days": 2,
+        "rate_id": "rate_99d99ac69d6f4d5f99983572e6dd03af",
+        "rate_usd": "60.79",
+        "service": "2ndDayAirAM"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-05-23",
+        "predicted_deliver_days": 3,
+        "rate_id": "rate_a8b60fd7f1e14dd0afcb0fe894f5492d",
+        "rate_usd": "38.19",
+        "service": "3DaySelect"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-05-28",
+        "predicted_deliver_days": 8,
+        "rate_id": "rate_da501c08b53347f4824392bc5f7a2a34",
+        "rate_usd": "25.04",
+        "service": "Ground"
+      }
+    ],
+    "matching_rule_idx": 0,
+    "ruleset_description": "Buy the cheapest rate that satisfies all of the following:\nRule 0\n        - Deliver by user input day of deliver_by_date    - Transit day confidence >= 90\nOtherwise buy the cheapest rate"
+  },
+  "postage_label": {
+    "object": "PostageLabel",
+    "id": "pl_7b3094b609a24032ab5b84111fa2406f",
+    "created_at": "2025-05-20T15:31:49Z",
+    "updated_at": "2025-05-20T15:31:49Z",
+    "date_advance": 0,
+    "integrated_form": "none",
+    "label_date": "2025-05-20T15:31:49Z",
+    "label_resolution": 200,
+    "label_size": "4x7",
+    "label_type": "default",
+    "label_file_type": "image/png",
+    "label_url": "https://easypost-files.s3.us-west-2.amazonaws.com/files/postage_label/20250520/e8e53bfe41c21845f2995959adb9358ef6.png",
+    "label_pdf_url": null,
+    "label_zpl_url": null,
+    "label_epl2_url": null,
+    "label_file": null
+  },
+  "messages": [],
+  "tracking_code": "1ZXXXXXXXXXXXXXXXX",
+  "fees": [
+    {
+      "object": "Fee",
+      "type": "LabelFee",
+      "amount": "0.00000",
+      "charged": true,
+      "refunded": false
+    },
+    {
+      "object": "Fee",
+      "type": "PostageFee",
+      "amount": "38.19000",
+      "charged": true,
+      "refunded": false
+    },
+    {
+      "object": "Fee",
+      "type": "InsuranceFee",
+      "amount": "0.50000",
+      "charged": true,
+      "refunded": false
+    }
+  ],
+  "tax_identifiers": null,
+  "created_at": "2025-05-20T15:31:46Z",
+  "updated_at": "2025-05-20T15:31:49Z"
+}
