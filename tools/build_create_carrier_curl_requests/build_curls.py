@@ -101,11 +101,51 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
         carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
-    # UPS/CanadaPost
-    elif carrier["type"] in (UPS_CUSTOM_WORKFLOW_CARRIERS + CANADAPOST_CUSTOM_WORKFLOW_CARRIERS):
-        # TODO: Fix UPS carrier account
-        # TODO: Fix CanadaPost carrier account
-        pass
+    # CanadaPost
+    elif carrier["type"] in CANADAPOST_CUSTOM_WORKFLOW_CARRIERS:
+        # BYOA cURL
+        end = END_CHARS
+        for top_level in carrier_fields:
+            if top_level == "custom_workflow":
+                end += CUSTOM_WORKFLOW_CHARS
+            else:
+                top_level_carrier_fields = carrier_fields[top_level]
+                for item in top_level_carrier_fields:
+                    if carrier_account_json["carrier_account"].get(top_level) is None:
+                        carrier_account_json["carrier_account"][top_level] = {}
+                    carrier_account_json["carrier_account"][top_level][item] = "VALUE"
+
+        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += end
+        carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
+
+        # Default (aggregation) cURL 
+        default_output = f'# {carrier.get("type")} (EasyPost Aggregation)\n'
+        default_output = add_curl_line(default_output, carrier)
+        default_output = add_headers(default_output, carrier)
+
+        default_json = {
+            "carrier_account": {
+                "type": carrier["type"],
+                "payment_mode": "aggregation"
+            }
+        }
+
+        default_output += f"  -d '{json.dumps(default_json, indent=2)}'"
+        default_output += END_CHARS
+        default_output = default_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
+
+        output_destination = os.path.join("../", "../", "official", "guides", "create-carrier-curls")
+        if not os.path.exists(output_destination):
+            os.makedirs(output_destination)
+
+        with open(
+            os.path.join(output_destination, "canadapost-default.sh"),
+            "w",
+        ) as default_file:
+            default_file.write(re.sub(r"^.*?\n", "", default_output))
+
+        return carrier_output
     # Amazon Shipping
     elif carrier["type"] in OAUTH_CUSTOM_WORKFLOW_CARRIERS:
         carrier_account_json = {
@@ -140,7 +180,6 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
 
     return carrier_output
-
 
 if __name__ == "__main__":
     main()
