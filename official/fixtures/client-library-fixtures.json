@@ -152,6 +152,9 @@
       "amount": "100"
     }
   },
+  "luma": {
+    "ruleset_name": "cheapest_rate"
+  },
   "orders": {
     "basic": {
       "from_address": {
