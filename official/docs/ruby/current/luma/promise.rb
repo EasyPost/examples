@@ -11,7 +11,7 @@ shipment = EasyPost::Shipment.luma_promise(
     zip: '75070',
     country: 'US',
     phone: '8573875756',
-    email: 'dr_steve_brule@gmail.com'
+    email: 'dr_steve_brule@gmail.com',
   },
   from_address: {
     name: 'EasyPost',
@@ -22,7 +22,7 @@ shipment = EasyPost::Shipment.luma_promise(
     zip: '94104',
     country: 'US',
     phone: '4153334445',
-    email: 'support@easypost.com'
+    email: 'support@easypost.com',
   },
   parcel: {
     length: 20.2,
@@ -32,7 +32,7 @@ shipment = EasyPost::Shipment.luma_promise(
   },
   ruleset_name: 'test_ruleset_deliver_by_2',
   planned_ship_date: '2025-07-03',
-  deliver_by_date: '2025-07-06'
+  deliver_by_date: '2025-07-06',
 )
 
 puts shipment
