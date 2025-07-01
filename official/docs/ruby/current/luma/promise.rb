@@ -28,7 +28,7 @@ shipment = EasyPost::Shipment.luma_promise(
     length: 20.2,
     width: 10.9,
     height: 5,
-    weight: 65.9
+    weight: 65.9,
   },
   ruleset_name: 'test_ruleset_deliver_by_2',
   planned_ship_date: '2025-07-03',
