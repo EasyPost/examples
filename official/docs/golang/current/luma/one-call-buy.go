@@ -1,47 +1,51 @@
-package example
+package luma
 
 import (
 	"fmt"
 	"github.com/EasyPost/easypost-go/v5"
 )
 
-func create() {
+func OneCallBuy() {
 	client := easypost.New("EASYPOST_API_KEY")
-	shipment, _ := client.CreateLumaShipment(&easypost.Shipment{
-		ToAddress: &easypost.Address{
-			Name:    "Dr. Steve Brule",
-			Street1: "5744 Silverton Ave",
-			City:    "McKinney",
-			State:   "TX",
-			Zip:     "75070",
-			Country: "US",
-			Phone:   "8573875756",
-			Email:   "dr_steve_brule@gmail.com",
+	params := map[string]interface{}{
+		"to_address": map[string]interface{}{
+			"name":    "Dr. Steve Brule",
+			"street1": "179 N Harbor Dr",
+			"city":    "Redondo Beach",
+			"state":   "CA",
+			"zip":     "90277",
+			"country": "US",
+			"phone":   "4155559999",
+			"email":   "dr_steve_brule@gmail.com",
 		},
-		FromAddress: &easypost.Address{
-			Name:    "EasyPost",
-			Street1: "417 Montgomery Street",
-			Street2: "5th Floor",
-			City:    "San Francisco",
-			State:   "CA",
-			Zip:     "94104",
-			Country: "US",
-			Phone:   "4153334445",
-			Email:   "support@easypost.com",
+		"from_address": map[string]interface{}{
+			"name":    "EasyPost",
+			"street1": "417 Montgomery Street",
+			"street2": "5th Floor",
+			"city":    "San Francisco",
+			"state":   "CA",
+			"zip":     "94104",
+			"country": "US",
+			"phone":   "4155559999",
+			"email":   "support@easypost.com",
 		},
-		Parcel: &easypost.Parcel{
-			Length: 20.2,
-			Width:  10.9,
-			Height: 5,
-			Weight: 65.9,
+		"parcel": map[string]interface{}{
+			"length": 20.2,
+			"width":  10.9,
+			"height": 5,
+			"weight": 65.9,
 		},
-		CarrierAccounts:  []string{"ca_1", "ca_2"},
-		PersistLabel:     true,
-		RulesetName:      "required_deliver_by_date",
-		PlannedShipDate:  "2025-07-01",
-		DeliverByDate:    "2025-07-03",
-		Insurance:        "50.00",
-	})
+		"carrier_accounts":   []string{"ca_1", "ca_2"},
+		"persist_label":      true,
+		"ruleset_name":       "my_ruleset",
+		"planned_ship_date":  "2025-07-01",
+		"deliver_by_date":    "2025-07-06",
+		"insurance":          "50.00",
+	}
 	
-	fmt.Println(shipment)
+	response, err := client.Do("POST", "/v2/luma/one_call_buy", params)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(response)
 }

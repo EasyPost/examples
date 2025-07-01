@@ -1,18 +1,20 @@
-package example
+package luma
 
 import (
 	"fmt"
 	"github.com/EasyPost/easypost-go/v5"
 )
 
-func buy() {
+func Buy() {
 	client := easypost.New("EASYPOST_API_KEY")
-	
-	shipment, _ := client.BuyLumaShipment("shp_...", map[string]any{
-		"ruleset_name":       "ruleset_name",
-		"planned_ship_date":  "2025-07-01",
-		"deliver_by_date":    "2025-07-03",
-	})
+	params := map[string]interface{}{
+		"shipment_id": "shp_...",
+		"rate_id":     "rate_...",
+	}
+	response, err := client.Do("POST", "/v2/luma/buy", params)
+	if err != nil {
+		panic(err)
+	}
 
-	fmt.Println(shipment)
+	fmt.Println(response)
 }
