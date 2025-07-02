@@ -35,6 +35,5 @@ const api = new EasyPost("EASYPOST_API_KEY");
     service: "Priority",
     carrier: "USPS",
   });
-
   console.log(shipment);
 })();

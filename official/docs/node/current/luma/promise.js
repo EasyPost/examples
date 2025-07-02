@@ -35,6 +35,5 @@ const client = new EasyPostClient("EASYPOST_API_KEY");
     planned_ship_date: "2025-07-03",
     deliver_by_date: "2025-07-06",
   });
-
   console.log(promise);
 })();
