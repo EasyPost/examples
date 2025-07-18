@@ -11,6 +11,7 @@ namespace EasyPostExamples
         public static async Task Main()
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
+
             EasyPost.Parameters.Shipment.Create parameters = new()
             {
                 ToAddress = new EasyPost.Parameters.Address.Create
@@ -43,14 +44,15 @@ namespace EasyPostExamples
                     Height = 5,
                     Weight = 65.9
                 },
-                CarrierAccounts = new List<string> { "ca_1", "ca_2" },
+                CarrierAccounts = new List<string> { "ca_..." },
                 PersistLabel = true,
                 RulesetName = "required_deliver_by_date",
-                PlannedShipDate = "2025-05-14",
-                DeliverByDate = "2025-05-16",
+                PlannedShipDate = "2025-07-18",
+                DeliverByDate = "2025-07-20",
                 Insurance = "50.00"
             };
-            EasyPost.Models.API.Shipment shipment = await client.Shipment.Luma(parameters);
+            
+            EasyPost.Models.API.Shipment shipment = await client.Shipment.CreateAndBuyLuma(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }

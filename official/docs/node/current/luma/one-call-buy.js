@@ -1,9 +1,11 @@
 const EasyPost = require('@easypost/api');
 
-const api = new EasyPost('EASYPOST_API_KEY');
+const client = new EasyPost('EASYPOST_API_KEY');
 
 (async () => {
-  const shipment = await api.Shipment.create({
+  const shipment = await client.Luma.createAndBuyLuma({
+    carrier_accounts: ['ca_...'],
+    service: 'NextDayAir',
     to_address: {
       name: 'Dr. Steve Brule',
       street1: '5744 Silverton Ave',
@@ -31,9 +33,12 @@ const api = new EasyPost('EASYPOST_API_KEY');
       height: 5,
       weight: 65.9,
     },
-    carrier_accounts: ['ca_1', 'ca_2'],
-    service: 'Priority',
-    carrier: 'USPS',
+    ruleset_name: 'required_deliver_by_date',
+    planned_ship_date: '2025-07-24',
+    deliver_by_date: '2025-07-26',
+    persist_label: true,
+    insurance: '50.00',
   });
+
   console.log(shipment);
 })();

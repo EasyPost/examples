@@ -1,8 +1,8 @@
 require 'easypost'
 
-EasyPost.api_key = 'EASYPOST_API_KEY'
+client = EasyPost::Client.new(api_key: "EASYPOST_API_KEY")
 
-shipment = EasyPost::Shipment.luma(
+shipment = client.shipment.create_and_buy_luma(
   to_address: {
     name: 'Dr. Steve Brule',
     street1: '5744 Silverton Ave',
@@ -33,8 +33,8 @@ shipment = EasyPost::Shipment.luma(
   carrier_accounts: ['ca_...'],
   persist_label: true,
   ruleset_name: 'required_deliver_by_date',
-  planned_ship_date: '2025-05-14',
-  deliver_by_date: '2025-05-16',
+  planned_ship_date: '2025-07-16',
+  deliver_by_date: '2025-07-18',
   insurance: '50.00',
 )
 

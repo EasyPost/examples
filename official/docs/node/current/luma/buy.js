@@ -1,9 +1,15 @@
 const EasyPost = require('@easypost/api');
 
-const api = new EasyPost('EASYPOST_API_KEY');
+const client = new EasyPost('EASYPOST_API_KEY');
 
 (async () => {
-  const shipment = await api.Shipment.retrieve('shp_...');
-  await shipment.buy(shipment.lowestRate());
+  const params = {
+    ruleset_name: 'required_deliver_by_date',
+    planned_ship_date: '2025-07-18',
+    deliver_by_date: '2025-07-20',
+  };
+
+  const shipment = await client.Luma.buyLuma('shp_...', params);
+
   console.log(shipment);
 })();

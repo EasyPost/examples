@@ -2,23 +2,23 @@ package example
 
 import (
 	"fmt"
+
 	"github.com/EasyPost/easypost-go/v5"
 )
 
-func oneCallBuy() {
+func oneCallBuyLuma() {
 	client := easypost.New("EASYPOST_API_KEY")
-	shipment, _ := client.CreateShipment(
-		&easypost.Shipment{
-			Service:           "NextDayAir",
-			CarrierAccountIDs: []string{"ca_1", "ca_2"},
+	
+	shipment, _ := client.CreateAndBuyLumaShipment(&easypost.LumaRequest{
+		Shipment: easypost.Shipment{
 			ToAddress: &easypost.Address{
 				Name:    "Dr. Steve Brule",
-				Street1: "179 N Harbor Dr",
-				City:    "Redondo Beach",
-				State:   "CA",
-				Zip:     "90277",
+				Street1: "5744 Silverton Ave",
+				City:    "McKinney",
+				State:   "TX",
+				Zip:     "75070",
 				Country: "US",
-				Phone:   "4155559999",
+				Phone:   "8573875756",
 				Email:   "dr_steve_brule@gmail.com",
 			},
 			FromAddress: &easypost.Address{
@@ -29,7 +29,7 @@ func oneCallBuy() {
 				State:   "CA",
 				Zip:     "94104",
 				Country: "US",
-				Phone:   "4155559999",
+				Phone:   "4153334445",
 				Email:   "support@easypost.com",
 			},
 			Parcel: &easypost.Parcel{
@@ -38,9 +38,12 @@ func oneCallBuy() {
 				Height: 5,
 				Weight: 65.9,
 			},
-			Reference: "ShipmentRef",
+			CarrierAccountIDs: []string{"ca_..."},
 		},
-	)
+		RulesetName:     "required_deliver_by_date",
+		PlannedShipDate: "2025-07-18",
+		DeliverByDate:   "2025-07-20",
+	})
 
 	fmt.Println(shipment)
 }

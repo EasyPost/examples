@@ -1,13 +1,14 @@
 require 'easypost'
 
-EasyPost.api_key = 'EASYPOST_API_KEY'
+client = EasyPost::Client.new(api_key: "EASYPOST_API_KEY")
 
-shipment = EasyPost::Shipment.retrieve('shp_...')
+retrieved_shipment = client.shipment.retrieve('shp_...')
 
-shipment = shipment.luma(
-  ruleset_name: 'ruleset_name',
-  planned_ship_date: '2025-07-01',
-  deliver_by_date: '2025-07-03',
+shipment = client.shipment.buy_luma(
+  retrieved_shipment.id,
+  ruleset_name: 'required_deliver_by_date',
+  planned_ship_date: '2025-07-16',
+  deliver_by_date: '2025-07-18'
 )
 
 puts shipment
