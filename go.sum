@@ -4,8 +4,8 @@ github.com/EasyPost/easypost-go/v3 v3.2.0 h1:dNWmPG1AkpgYFJxhw/zGzCz1JOVXPpNIi8+
 github.com/EasyPost/easypost-go/v3 v3.2.0/go.mod h1:WDD0qkjwxedVKFXCcdJBz22rtRHpuxjGazgSVcTfdIw=
 github.com/EasyPost/easypost-go/v4 v4.6.0 h1:wxMK4wkGEG5vW/4Vdy3rwE9iqww1eQ1xS6oYWUZbhrc=
 github.com/EasyPost/easypost-go/v4 v4.6.0/go.mod h1:WGoS4tmjHquhooMNmY6RirP+KWeYV/akcf/Jg9Q6fsk=
-github.com/EasyPost/easypost-go/v5 v5.0.0 h1:w6Jp4wBD0Desgk4a1kbJpbEMexBYMz9VWPPrFeTdsak=
-github.com/EasyPost/easypost-go/v5 v5.0.0/go.mod h1:wUxStg92sBzWO3m2yoFAN7CbZTr25zQeFog48itvfnw=
+github.com/EasyPost/easypost-go/v5 v5.2.0 h1:UKv0AWKugaue3QGW1RvTBg6/V1Gy/QGCXVC458bcQYU=
+github.com/EasyPost/easypost-go/v5 v5.2.0/go.mod h1:wUxStg92sBzWO3m2yoFAN7CbZTr25zQeFog48itvfnw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dnaeon/go-vcr v1.2.0/go.mod h1:R4UdLID7HZT3taECzJs4YgbbH6PIGXB6W/sc5OLb6RQ=
