@@ -9,13 +9,15 @@ import (
 func buyLuma() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	params := map[string]interface{}{
-		"ruleset_name":      "required_deliver_by_date",
-		"planned_ship_date": "2025-07-21",
-		"deliver_by_date":   "2025-07-23",
-	}
-
-	shipment, _ := client.CreateAndBuyLumaShipment(params)
+	shipment, _ := client.GetShipment("shp_...")
+	shipment, _ = client.BuyLumaShipment(
+		shipment.ID,
+		&easypost.LumaShipmentOptions{
+			RulesetName:     "required_deliver_by_date",
+			PlannedShipDate: "2025-07-21",
+			DeliverByDate:   "2025-07-23",
+		},
+	)
 
 	fmt.Println(shipment)
 }

@@ -9,40 +9,41 @@ import (
 func lumaPromise() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	promise, _ := client.GetLumaPromise(map[string]interface{}{
-		"shipment": map[string]interface{}{
-			"to_address": map[string]interface{}{
-				"name":    "Dr. Steve Brule",
-				"street1": "5744 Silverton Ave",
-				"city":    "McKinney",
-				"state":   "TX",
-				"zip":     "75070",
-				"country": "US",
-				"phone":   "8573875756",
-				"email":   "dr_steve_brule@gmail.com",
+	promise, _ := client.GetLumaPromise(
+		&easypost.Shipment{
+			CarrierAccountIDs: []string{"ca_..."},
+			Parcel: &easypost.Parcel{
+				Length: 20.2,
+				Width:  10.9,
+				Height: 5,
+				Weight: 65.9,
 			},
-			"from_address": map[string]interface{}{
-				"name":    "EasyPost",
-				"street1": "417 Montgomery Street",
-				"street2": "5th Floor",
-				"city":    "San Francisco",
-				"state":   "CA",
-				"zip":     "94104",
-				"country": "US",
-				"phone":   "4153334445",
-				"email":   "support@easypost.com",
+			ToAddress: &easypost.Address{
+				Name:    "Dr. Steve Brule",
+				Street1: "179 N Harbor Dr",
+				City:    "Redondo Beach",
+				State:   "CA",
+				Zip:     "90277",
+				Country: "US",
+				Phone:   "4155559999",
+				Email:   "dr_steve_brule@gmail.com",
 			},
-			"parcel": map[string]interface{}{
-				"length": 20.2,
-				"width":  10.9,
-				"height": 5.0,
-				"weight": 65.9,
+			FromAddress: &easypost.Address{
+				Name:    "EasyPost",
+				Street1: "417 Montgomery Street",
+				Street2: "5th Floor",
+				City:    "San Francisco",
+				State:   "CA",
+				Zip:     "94104",
+				Country: "US",
+				Phone:   "4153334445",
+				Email:   "support@easypost.com",
 			},
+			RulesetName:     "required_deliver_by_date",
+			PlannedShipDate: "2025-07-21",
+			DeliverByDate:   "2025-07-23",
 		},
-		"ruleset_name":      "test_ruleset_deliver_by_2",
-		"planned_ship_date": "2025-07-18",
-		"deliver_by_date":   "2025-07-20",
-	})
+	)
 
 	fmt.Println(promise)
 }
