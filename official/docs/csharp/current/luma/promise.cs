@@ -11,7 +11,7 @@ namespace EasyPostExamples
         public static async Task Main()
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
-            
+
             EasyPost.Parameters.Luma.GetPromise parameters = new()
             {
                 ToAddress = new EasyPost.Parameters.Address.Create

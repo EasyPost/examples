@@ -1,21 +1,21 @@
 package example
 
 import (
-  "fmt"
+	"fmt"
 
-  "github.com/EasyPost/easypost-go/v5"
+	"github.com/EasyPost/easypost-go/v5"
 )
 
 func buyLuma() {
-  client := easypost.New("EASYPOST_API_KEY")
+	client := easypost.New("EASYPOST_API_KEY")
 
-  options := &easypost.LumaShipmentOptions{
-    RulesetName:     "required_deliver_by_date",
-    PlannedShipDate: "2025-05-14",
-    DeliverByDate:   "2025-05-16",
-  }
+	params := map[string]interface{}{
+		"ruleset_name":      "required_deliver_by_date",
+		"planned_ship_date": "2025-07-21",
+		"deliver_by_date":   "2025-07-23",
+	}
 
-  shipment, _ := client.Shipment.BuyLuma("shp_...", options)
-  
-  fmt.Println(shipment)
+	shipment, _ := client.CreateAndBuyLumaShipment(params)
+
+	fmt.Println(shipment)
 }

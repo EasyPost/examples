@@ -7,7 +7,8 @@ using Newtonsoft.Json;
 namespace EasyPostExamples
 {
     public class Examples
-    {        public static async Task Main()
+    {
+        public static async Task Main()
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
@@ -19,7 +20,7 @@ namespace EasyPostExamples
                 plannedShipDate: "2025-07-18",
                 deliverByDate: "2025-07-20"
             );
-            
+
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
         }
     }

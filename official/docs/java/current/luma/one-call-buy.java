@@ -47,9 +47,9 @@ public class CreateAndBuyLuma {
         params.put("planned_ship_date", "2025-07-18");
         params.put("deliver_by_date", "2025-07-20");
         params.put("insurance", "50.00");
-        
+
         Shipment shipment = client.shipment.createLuma(params);
-        
+
         System.out.println(shipment);
     }
 }

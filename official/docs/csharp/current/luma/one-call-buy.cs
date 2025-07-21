@@ -51,7 +51,7 @@ namespace EasyPostExamples
                 DeliverByDate = "2025-07-20",
                 Insurance = "50.00"
             };
-            
+
             EasyPost.Models.API.Shipment shipment = await client.Shipment.CreateAndBuyLuma(parameters);
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
