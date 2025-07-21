@@ -8,42 +8,45 @@ import (
 
 func oneCallBuyLuma() {
   client := easypost.New("EASYPOST_API_KEY")
-  
-  shipment, _ := client.CreateAndBuyLumaShipment(map[string]interface{}{
-    "shipment": map[string]interface{}{
-      "to_address": map[string]interface{}{
-        "name":    "Dr. Steve Brule",
-        "street1": "5744 Silverton Ave",
-        "city":    "McKinney",
-        "state":   "TX",
-        "zip":     "75070",
-        "country": "US",
-        "phone":   "8573875756",
-        "email":   "dr_steve_brule@gmail.com",
-      },
-      "from_address": map[string]interface{}{
-        "name":    "EasyPost",
-        "street1": "417 Montgomery Street",
-        "street2": "5th Floor",
-        "city":    "San Francisco",
-        "state":   "CA",
-        "zip":     "94104",
-        "country": "US",
-        "phone":   "4153334445",
-        "email":   "support@easypost.com",
-      },
-      "parcel": map[string]interface{}{
-        "length": 20.2,
-        "width":  10.9,
-        "height": 5.0,
-        "weight": 65.9,
-      },
-      "carrier_accounts": []string{"ca_..."},
-    },
-    "ruleset_name":      "required_deliver_by_date",
-    "planned_ship_date": "2025-07-18",
-    "deliver_by_date":   "2025-07-20",
-  })
 
-  fmt.Println(shipment)
+  shipment := &easypost.Shipment{
+    ToAddress: &easypost.Address{
+      Name:    "Dr. Steve Brule",
+      Street1: "5744 Silverton Ave",
+      City:    "McKinney",
+      State:   "TX",
+      Zip:     "75070",
+      Country: "US",
+      Phone:   "8573875756",
+      Email:   "dr_steve_brule@gmail.com",
+    },
+    FromAddress: &easypost.Address{
+      Name:    "EasyPost",
+      Street1: "417 Montgomery Street",
+      Street2: "5th Floor",
+      City:    "San Francisco",
+      State:   "CA",
+      Zip:     "94104",
+      Country: "US",
+      Phone:   "4153334445",
+      Email:   "support@easypost.com",
+    },
+    Parcel: &easypost.Parcel{
+      Length: 20.2,
+      Width:  10.9,
+      Height: 5.0,
+      Weight: 65.9,
+    },
+    CarrierAccountIDs: []string{"ca_..."},
+  }
+  
+  options := &easypost.LumaShipmentOptions{
+    RulesetName:     "required_deliver_by_date",
+    PlannedShipDate: "2025-07-18",
+    DeliverByDate:   "2025-07-20",
+  }
+
+  createdShipment, _ := client.Shipment.CreateAndBuyLuma(shipment, options)
+
+  fmt.Println(createdShipment)
 }
