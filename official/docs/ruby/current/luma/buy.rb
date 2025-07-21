@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'easypost'
 
-client = EasyPost::Client.new(api_key: "EASYPOST_API_KEY")
+client = EasyPost::Client.new(api_key: 'EASYPOST_API_KEY')
 
 retrieved_shipment = client.shipment.retrieve('shp_...')
 
