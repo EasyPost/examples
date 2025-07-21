@@ -9,9 +9,9 @@ import (
 func lumaPromise() {
   client := easypost.New("EASYPOST_API_KEY")
 
-  params := map[string]any{
-    "shipment": map[string]any{
-      "to_address": map[string]any{
+  params := map[string]interface{
+    "shipment": map[string]interface{
+      "to_address": map[string]interface{
         "name":    "Dr. Steve Brule",
         "street1": "5744 Silverton Ave",
         "city":    "McKinney",
@@ -21,7 +21,7 @@ func lumaPromise() {
         "phone":   "8573875756",
         "email":   "dr_steve_brule@gmail.com",
       },
-      "from_address": map[string]any{
+      "from_address": map[string]interface{
         "name":    "EasyPost",
         "street1": "417 Montgomery Street",
         "street2": "5th Floor",
@@ -32,7 +32,7 @@ func lumaPromise() {
         "phone":   "4153334445",
         "email":   "support@easypost.com",
       },
-      "parcel": map[string]any{
+      "parcel": map[string]interface{
         "length": 20.2,
         "width":  10.9,
         "height": 5.0,
