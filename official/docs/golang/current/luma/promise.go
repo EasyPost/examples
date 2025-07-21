@@ -1,48 +1,50 @@
 package example
 
 import (
-	"fmt"
+  "fmt"
 
-	"github.com/EasyPost/easypost-go/v5"
+  "github.com/EasyPost/easypost-go/v5"
 )
 
 func lumaPromise() {
-	client := easypost.New("EASYPOST_API_KEY")
-	
-	promise, _ := client.GetLumaPromise(&easypost.LumaRequest{
-		Shipment: &easypost.Shipment{
-			ToAddress: &easypost.Address{
-				Name:    "Dr. Steve Brule",
-				Street1: "5744 Silverton Ave",
-				City:    "McKinney",
-				State:   "TX",
-				Zip:     "75070",
-				Country: "US",
-				Phone:   "8573875756",
-				Email:   "dr_steve_brule@gmail.com",
-			},
-			FromAddress: &easypost.Address{
-				Name:    "EasyPost",
-				Street1: "417 Montgomery Street",
-				Street2: "5th Floor",
-				City:    "San Francisco",
-				State:   "CA",
-				Zip:     "94104",
-				Country: "US",
-				Phone:   "4153334445",
-				Email:   "support@easypost.com",
-			},
-			Parcel: &easypost.Parcel{
-				Length: 20.2,
-				Width:  10.9,
-				Height: 5.0,
-				Weight: 65.9,
-			},
-			RulesetName:     "test_ruleset_deliver_by_2",
-			PlannedShipDate: "2025-07-18",
-			DeliverByDate:   "2025-07-20",
-		},
-	})
+  client := easypost.New("EASYPOST_API_KEY")
 
-	fmt.Println(promise)
+  params := map[string]any{
+    "shipment": map[string]any{
+      "to_address": map[string]any{
+        "name":    "Dr. Steve Brule",
+        "street1": "5744 Silverton Ave",
+        "city":    "McKinney",
+        "state":   "TX",
+        "zip":     "75070",
+        "country": "US",
+        "phone":   "8573875756",
+        "email":   "dr_steve_brule@gmail.com",
+      },
+      "from_address": map[string]any{
+        "name":    "EasyPost",
+        "street1": "417 Montgomery Street",
+        "street2": "5th Floor",
+        "city":    "San Francisco",
+        "state":   "CA",
+        "zip":     "94104",
+        "country": "US",
+        "phone":   "4153334445",
+        "email":   "support@easypost.com",
+      },
+      "parcel": map[string]any{
+        "length": 20.2,
+        "width":  10.9,
+        "height": 5.0,
+        "weight": 65.9,
+      },
+      "ruleset_name":       "test_ruleset_deliver_by_2",
+      "planned_ship_date":  "2025-07-21",
+      "deliver_by_date":    "2025-07-23",
+    },
+  }
+
+  promise, _ := client.Shipment.GetLumaPromise(params)
+
+  fmt.Println(promise)
 }
