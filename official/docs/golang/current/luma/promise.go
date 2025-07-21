@@ -8,10 +8,10 @@ import (
 
 func lumaPromise() {
   client := easypost.New("EASYPOST_API_KEY")
-
-  params := map[string]interface{
-    "shipment": map[string]interface{
-      "to_address": map[string]interface{
+  
+  promise, _ := client.GetLumaPromise(map[string]interface{}{
+    "shipment": map[string]interface{}{
+      "to_address": map[string]interface{}{
         "name":    "Dr. Steve Brule",
         "street1": "5744 Silverton Ave",
         "city":    "McKinney",
@@ -21,7 +21,7 @@ func lumaPromise() {
         "phone":   "8573875756",
         "email":   "dr_steve_brule@gmail.com",
       },
-      "from_address": map[string]interface{
+      "from_address": map[string]interface{}{
         "name":    "EasyPost",
         "street1": "417 Montgomery Street",
         "street2": "5th Floor",
@@ -32,19 +32,17 @@ func lumaPromise() {
         "phone":   "4153334445",
         "email":   "support@easypost.com",
       },
-      "parcel": map[string]interface{
+      "parcel": map[string]interface{}{
         "length": 20.2,
         "width":  10.9,
         "height": 5.0,
         "weight": 65.9,
       },
-      "ruleset_name":       "test_ruleset_deliver_by_2",
-      "planned_ship_date":  "2025-07-21",
-      "deliver_by_date":    "2025-07-23",
     },
-  }
-
-  promise, _ := client.Shipment.GetLumaPromise(params)
+    "ruleset_name":      "test_ruleset_deliver_by_2",
+    "planned_ship_date": "2025-07-18",
+    "deliver_by_date":   "2025-07-20",
+  })
 
   fmt.Println(promise)
 }
