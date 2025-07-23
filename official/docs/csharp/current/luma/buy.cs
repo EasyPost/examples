@@ -15,7 +15,7 @@ namespace EasyPostExamples
             EasyPost.Models.API.Shipment shipment = await client.Shipment.Retrieve("shp_...");
 
             shipment = await client.Shipment.BuyLuma(
-                shipment.Id,
+                "shp_...",
                 rulesetName: "ruleset_name",
                 plannedShipDate: "2025-07-18",
                 deliverByDate: "2025-07-20"
