@@ -11,6 +11,7 @@ func oneCallBuy() {
 
 	lumaRequest := &easypost.LumaRequest{
 		Shipment: easypost.Shipment{
+			CarrierAccountIDs: []string{"ca_..."},
 			Parcel: &easypost.Parcel{
 				Length: 20.2,
 				Width:  10.9,
@@ -42,7 +43,6 @@ func oneCallBuy() {
 		RulesetName:     "ruleset_...",
 		PlannedShipDate: "2025-07-21",
 		DeliverByDate:   "2025-07-25",
-		PersistLabel:    false,
 	}
 
 	shipment, _ := client.CreateAndBuyLumaShipment(lumaRequest)

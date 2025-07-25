@@ -4,6 +4,7 @@ const client = new EasyPost('EASYPOST_API_KEY');
 
 (async () => {
   const shipment = await client.Luma.createAndBuyLuma({
+    carrier_accounts: ['ca_...'],
     to_address: {
       name: 'Dr. Steve Brule',
       street1: '5744 Silverton Ave',
@@ -31,10 +32,10 @@ const client = new EasyPost('EASYPOST_API_KEY');
       height: 5,
       weight: 65.9,
     },
+
     ruleset_name: 'ruleset_...',
     planned_ship_date: '2025-07-24',
     deliver_by_date: '2025-07-26',
-    persist_label: true,
   });
 
   console.log(shipment);

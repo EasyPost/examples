@@ -30,7 +30,7 @@ curl -X POST https://api.easypost.com/v2/shipments/luma \
         "height": "5",
         "weight": "65.9"
       },
-      "persist_label": true,
+      "carrier_accounts": ["ca_..."],
       "ruleset_name": "ruleset_...",
       "planned_ship_date": "2025-05-14",
       "deliver_by_date": "2025-05-16"

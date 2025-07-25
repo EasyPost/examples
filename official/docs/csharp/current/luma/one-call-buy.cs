@@ -44,7 +44,7 @@ namespace EasyPostExamples
                     Height = 5,
                     Weight = 65.9
                 },
-                PersistLabel = true,
+                CarrierAccountIds = new List<string> { "ca_..." },
                 RulesetName = "ruleset_...",
                 PlannedShipDate = "2025-07-18",
                 DeliverByDate = "2025-07-20"

@@ -3,6 +3,7 @@
 $client = new \EasyPost\EasyPostClient('EASYPOST_API_KEY');
 
 $shipment = $client->shipment->create([
+    'carrier_accounts' => ['ca_...'],
     'to_address' => [
         'name' => 'Dr. Steve Brule',
         'street1' => '5744 Silverton Ave',
@@ -30,7 +31,6 @@ $shipment = $client->shipment->create([
         'height' => 5,
         'weight' => 65.9
     ],
-    'persist_label' => true,
     'ruleset_name' => 'ruleset_...',
     'planned_ship_date' => '2025-07-18',
     'deliver_by_date' => '2025-07-20'

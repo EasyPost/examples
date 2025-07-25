@@ -3,6 +3,7 @@ import easypost
 client = easypost.EasyPostClient("EASYPOST_API_KEY")
 
 shipment = client.shipment.create_and_buy_luma(
+    carrier_accounts=["ca_..."],
     to_address={
         "name": "Dr. Steve Brule",
         "street1": "5744 Silverton Ave",
@@ -30,7 +31,6 @@ shipment = client.shipment.create_and_buy_luma(
         "height": 5,
         "weight": 65.9,
     },
-    persist_label=True,
     ruleset_name="ruleset_...",
     planned_ship_date="2025-07-24",
     deliver_by_date="2025-07-26",
