@@ -32,12 +32,10 @@ shipment = client.shipment.create_and_buy_luma(
     height: 5,
     weight: 65.9,
   },
-  carrier_accounts: ['ca_...'],
   persist_label: true,
-  ruleset_name: 'required_deliver_by_date',
+  ruleset_name: 'ruleset_...',
   planned_ship_date: '2025-07-16',
   deliver_by_date: '2025-07-18',
-  insurance: '50.00',
 )
 
 puts shipment

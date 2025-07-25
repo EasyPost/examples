@@ -30,7 +30,7 @@ shipment = client.luma.get_promise(
         "height": 5,
         "weight": 65.9,
     },
-    ruleset_name="required_deliver_by_date",
+    ruleset_name="ruleset_...",
     planned_ship_date="2025-07-24",
     deliver_by_date="2025-07-26",
 )

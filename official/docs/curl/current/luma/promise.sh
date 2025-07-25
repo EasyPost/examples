@@ -30,8 +30,8 @@ curl -X POST 'https://api.easypost.com/v2/luma/promise' \
         "height": "5",
         "weight": "65.9"
       },
-      "ruleset_name": "test_ruleset_deliver_by_2",
+      "ruleset_name": "ruleset_...",
       "planned_ship_date": "2025-07-03",
-      "deliver_by_date": "2025-07-06",
+      "deliver_by_date": "2025-07-06"
     }
   }'

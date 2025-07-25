@@ -11,7 +11,7 @@ public class BuyLuma {
         EasyPostClient client = new EasyPostClient("EASYPOST_API_KEY");
 
         HashMap<String, Object> params = new HashMap<String, Object>();
-        params.put("ruleset_name", "ruleset_name");
+        params.put("ruleset_name", "ruleset_...");
         params.put("planned_ship_date", "2025-07-18");
         params.put("deliver_by_date", "2025-07-20");
 

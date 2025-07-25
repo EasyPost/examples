@@ -41,12 +41,10 @@ public class CreateAndBuyLuma {
         params.put("to_address", toAddressMap);
         params.put("from_address", fromAddressMap);
         params.put("parcel", parcelMap);
-        params.put("carrier_accounts", new String[] {"ca_b96417366e094ef68a5207bb2dd4d518"});
         params.put("persist_label", true);
-        params.put("ruleset_name", "required_deliver_by_date");
+        params.put("ruleset_name", "ruleset_...");
         params.put("planned_ship_date", "2025-07-18");
         params.put("deliver_by_date", "2025-07-20");
-        params.put("insurance", "50.00");
 
         Shipment shipment = client.shipment.createLuma(params);
 

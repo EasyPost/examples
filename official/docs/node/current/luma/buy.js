@@ -4,7 +4,7 @@ const client = new EasyPost('EASYPOST_API_KEY');
 
 (async () => {
   const params = {
-    ruleset_name: 'required_deliver_by_date',
+    ruleset_name: 'ruleset_...',
     planned_ship_date: '2025-07-18',
     deliver_by_date: '2025-07-20',
   };

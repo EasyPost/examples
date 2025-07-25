@@ -34,7 +34,7 @@ const client = new EasyPost('EASYPOST_API_KEY');
     to_address: toAddress,
     from_address: fromAddress,
     parcel,
-    ruleset_name: 'test_ruleset_deliver_by_2',
+    ruleset_name: 'ruleset_...',
     planned_ship_date: '2025-07-18',
     deliver_by_date: '2025-07-20',
   };

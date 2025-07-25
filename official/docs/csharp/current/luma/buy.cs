@@ -16,7 +16,7 @@ namespace EasyPostExamples
 
             shipment = await client.Shipment.BuyLuma(
                 "shp_...",
-                rulesetName: "ruleset_name",
+                rulesetName: "ruleset_...",
                 plannedShipDate: "2025-07-18",
                 deliverByDate: "2025-07-20"
             );

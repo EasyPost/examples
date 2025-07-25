@@ -41,12 +41,12 @@ public class LumaPromiseRequest {
         shipment.put("to_address", toAddress);
         shipment.put("from_address", fromAddress);
         shipment.put("parcel", parcel);
-        shipment.put("ruleset_name", "test_ruleset_deliver_by_2");
+        shipment.put("ruleset_name", "ruleset_...");
         shipment.put("planned_ship_date", "2025-05-22");
         shipment.put("deliver_by_date", "2025-05-29");
 
         LumaInfo lumaInfo = client.luma.getPromise(shipment);
-        
+
         System.out.println(lumaInfo);
     }
 }

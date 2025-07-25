@@ -44,12 +44,10 @@ namespace EasyPostExamples
                     Height = 5,
                     Weight = 65.9
                 },
-                CarrierAccounts = new List<string> { "ca_..." },
                 PersistLabel = true,
-                RulesetName = "required_deliver_by_date",
+                RulesetName = "ruleset_...",
                 PlannedShipDate = "2025-07-18",
-                DeliverByDate = "2025-07-20",
-                Insurance = "50.00"
+                DeliverByDate = "2025-07-20"
             };
 
             EasyPost.Models.API.Shipment shipment = await client.Shipment.CreateAndBuyLuma(parameters);

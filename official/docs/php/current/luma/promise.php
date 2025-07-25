@@ -31,7 +31,7 @@ $lumaPromise = $client->shipment->lumaPromise([
             'height' => 5,
             'weight' => 65.9
         ],
-        'ruleset_name' => 'test_ruleset_deliver_by_2',
+        'ruleset_name' => 'ruleset_...',
         'planned_ship_date' => '2025-07-18',
         'deliver_by_date' => '2025-07-20'
     ]

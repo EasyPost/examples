@@ -44,7 +44,7 @@ namespace EasyPostExamples
                     Height = 5,
                     Weight = 65.9
                 },
-                RulesetName = "test_ruleset_deliver_by_2",
+                RulesetName = "ruleset_...",
                 PlannedShipDate = "2025-07-18",
                 DeliverByDate = "2025-07-20"
             };
