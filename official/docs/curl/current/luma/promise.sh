@@ -1,8 +1,8 @@
-curl -X POST https://api.easypost.com/v2/shipments/luma \
+curl -X POST 'https://api.easypost.com/v2/luma/promise' \
   -u "EASYPOST_API_KEY": \
   -H 'Content-Type: application/json' \
   -d '{
-    "shipment": {
+     "shipment": {
       "to_address": {
         "name": "Dr. Steve Brule",
         "street1": "5744 Silverton Ave",
@@ -30,9 +30,8 @@ curl -X POST https://api.easypost.com/v2/shipments/luma \
         "height": "5",
         "weight": "65.9"
       },
-      "carrier_accounts": ["ca_..."],
       "ruleset_name": "ruleset_...",
-      "planned_ship_date": "2025-05-14",
-      "deliver_by_date": "2025-05-16"
+      "planned_ship_date": "2025-07-03",
+      "deliver_by_date": "2025-07-06"
     }
   }'
