@@ -1,0 +1,7 @@
+default-src 'self';
+script-src 'self' https://embed.easypost.com 'unsafe-inline';
+frame-src https://embed.easypost.com;
+style-src 'self' https://assets.embed.easypost.com 'unsafe-inline' https:;
+font-src https://assets.embed.easypost.com data: https:;
+img-src https://assets.embed.easypost.com data:;
+connect-src 'self' https://assets.embed.easypost.com;
