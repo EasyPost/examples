@@ -2,9 +2,11 @@ from flask import Flask, jsonify
 import requests
 import os
 
+
 app = Flask(__name__)
 
 EASYPOST_API_KEY = os.environ.get("EASYPOST_API_KEY", "")
+
 
 @app.route("/api/easypost-embeddables/session", methods=["GET"])
 def create_embeddable_session():
@@ -23,6 +25,7 @@ def create_embeddable_session():
 
     response.raise_for_status()
     return jsonify(response.json())
+
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
