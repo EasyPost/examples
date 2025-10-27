@@ -17,7 +17,7 @@
       window.EasyPostEmbeddables.onLoad = () => {
         // Function that calls the integrator's backend to get a session ID
         const fetchSessionId = async () => {
-          const url = "/api/easypost-embeddables/session"; // your server endpoint
+          const url = '/api/easypost-embeddables/session'; // your server endpoint
           try {
             const response = await fetch(url);
 
@@ -28,7 +28,7 @@
             const data = await response.json();
             return data.session_id;
           } catch (error) {
-            console.error("[EasyPostEmbeddables] Failed to fetch session ID:", error);
+            console.error('[EasyPostEmbeddables] Failed to fetch session ID:', error);
             return null;
           }
         };
@@ -38,32 +38,32 @@
           fetchSessionId,
           fonts: [
             {
-              cssSrc: "https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap",
+              cssSrc: 'https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap',
             },
           ],
           appearance: {
             tokens: {
-              "font.family": "Zen Dots",
+              'font.family': 'Zen Dots',
             },
-            modalZIndex: "123456",
+            modalZIndex: '123456',
           },
         });
 
         // Example UI bindings
-        document.getElementById("button-billing").addEventListener("click", async () => {
-          await embeddables.open("manage-billing");
+        document.getElementById('button-billing').addEventListener('click', async () => {
+          await embeddables.open('manage-billing');
         });
 
-        document.getElementById("button-carriers").addEventListener("click", async () => {
-          await embeddables.open("manage-carriers");
+        document.getElementById('button-carriers').addEventListener('click', async () => {
+          await embeddables.open('manage-carriers');
         });
 
-        document.getElementById("button-payment-logs").addEventListener("click", async () => {
-          await embeddables.open("manage-payment-logs");
+        document.getElementById('button-payment-logs').addEventListener('click', async () => {
+          await embeddables.open('manage-payment-logs');
         });
 
-        document.getElementById("button-reports").addEventListener("click", async () => {
-          await embeddables.open("manage-reports");
+        document.getElementById('button-reports').addEventListener('click', async () => {
+          await embeddables.open('manage-reports');
         });
       };
     </script>
