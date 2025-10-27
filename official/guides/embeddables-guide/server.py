@@ -10,10 +10,7 @@ EASYPOST_API_KEY = os.environ.get("EASYPOST_API_KEY", "")
 
 @app.route("/api/easypost-embeddables/session", methods=["GET"])
 def create_embeddable_session():
-    payload = {
-        "user_id": "SUB_ACCOUNT_USER_ID",
-        "origin_host": "ORIGIN_HOST"
-    }
+    payload = {"user_id": "SUB_ACCOUNT_USER_ID", "origin_host": "ORIGIN_HOST"}
 
     response = requests.post(
         "https://api.easypost.com/v2/embeddables/session",
