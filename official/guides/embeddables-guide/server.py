@@ -1,6 +1,7 @@
 import os
 import requests
 from flask import Flask, jsonify
+
 app = Flask(__name__)
 EASYPOST_API_KEY = os.environ.get("EASYPOST_API_KEY", "")
 
