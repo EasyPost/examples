@@ -1,0 +1,71 @@
+<html>
+  <body>
+    <div>Integrator's Website</div>
+    <div id="container"></div>
+    <div>
+      <button id="button-billing">Manage Billing</button>
+      <button id="button-carriers">Manage Carriers</button>
+      <button id="button-payment-logs">Payment Logs</button>
+      <button id="button-reports">Reports</button>
+    </div>
+
+    <!-- Load EasyPost Embeddables -->
+    <script src="https://embed.easypost.com/embeddables/1.0/client.js" async></script>
+
+    <script>
+      window.EasyPostEmbeddables = window.EasyPostEmbeddables || {};
+      window.EasyPostEmbeddables.onLoad = () => {
+        // Function that calls the integrator's backend to get a session ID
+        const fetchSessionId = async () => {
+          const url = '/api/easypost-embeddables/session'; // your server endpoint
+          try {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+              throw new Error(`Fetch Session ID error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data.session_id;
+          } catch (error) {
+            console.error('[EasyPostEmbeddables] Failed to fetch session ID:', error);
+            return null;
+          }
+        };
+
+        // Initialize EasyPost Embeddables
+        const embeddables = window.EasyPostEmbeddables.init({
+          fetchSessionId,
+          fonts: [
+            {
+              cssSrc: 'https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap',
+            },
+          ],
+          appearance: {
+            tokens: {
+              'font.family': 'Zen Dots',
+            },
+            modalZIndex: '123456',
+          },
+        });
+
+        // Example UI bindings
+        document.getElementById('button-billing').addEventListener('click', async () => {
+          await embeddables.open('manage-billing');
+        });
+
+        document.getElementById('button-carriers').addEventListener('click', async () => {
+          await embeddables.open('manage-carriers');
+        });
+
+        document.getElementById('button-payment-logs').addEventListener('click', async () => {
+          await embeddables.open('manage-payment-logs');
+        });
+
+        document.getElementById('button-reports').addEventListener('click', async () => {
+          await embeddables.open('manage-reports');
+        });
+      };
+    </script>
+  </body>
+</html>
