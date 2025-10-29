@@ -8,11 +8,13 @@ on:
 
 jobs:
   shell:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run sh-checker
-        uses: luizm/action-sh-checker@master
+        uses: luizm/action-sh-checker@v0.9.0
         env:
           SHFMT_OPTS: -i 2 -d
           SHELLCHECK_OPTS: -e SC2148,SC2034
