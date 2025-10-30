@@ -18,7 +18,8 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
       "internal_location_id": "VALUE",
       "oba_access_code": "VALUE",
       "oba_email_address": "VALUE",
-      "posting_location_number": "VALUE"
+      "posting_location_number": "VALUE",
+      "registered_billing_postcode": "VALUE"
     }
   }
 }'
