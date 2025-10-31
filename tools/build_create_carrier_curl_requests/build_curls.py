@@ -25,7 +25,10 @@ CANADAPOST_CUSTOM_WORKFLOW_CARRIERS = [
     "CanadaPostAccount",
 ]
 OAUTH_CUSTOM_WORKFLOW_CARRIERS = [
-    "AmazonShippingAccount"
+    "AmazonShippingAccount",
+]
+MAERSK_CUSTOM_WORKFLOW_CARRIERS = [
+    "MaerskAccount"
 ]
 
 def main():
@@ -119,7 +122,7 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         carrier_output += end
         carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
 
-        # Default (aggregation) cURL 
+        # Default (aggregation) cURL
         default_output = f'# {carrier.get("type")} (EasyPost Aggregation)\n'
         default_output = add_curl_line(default_output, carrier)
         default_output = add_headers(default_output, carrier)
@@ -145,6 +148,42 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         ) as default_file:
             default_file.write(re.sub(r"^.*?\n", "", default_output))
 
+        return carrier_output
+    # Maersk Parcel — custom static credential structure
+    elif carrier["type"] in MAERSK_CUSTOM_WORKFLOW_CARRIERS:
+        carrier_account_json = {
+            "carrier_account": {
+                "type": "MaerskAccount",
+                "description": "Maersk Account",
+                "reference": None,
+                "credentials": {
+                    "first_name": "VALUE",
+                    "last_name": "VALUE",
+                    "company_name": "VALUE",
+                    "email": "VALUE",
+                    "phone": "VALUE",
+                    "daily_number_of_shipments": "VALUE",
+                    "channel": "VALUE",
+                    "accepted_terms": "true",
+                    "serial_number": "VALUE",
+                    "origin_address_line_1": "VALUE",
+                    "origin_address_line_2": "VALUE",
+                    "origin_postal_code": "VALUE",
+                    "origin_city": "VALUE",
+                    "origin_state": "VALUE",
+                    "billing_address_line_1": "VALUE",
+                    "billing_address_line_2": "VALUE",
+                    "billing_postal_code": "VALUE",
+                    "billing_city": "VALUE",
+                    "billing_state": "VALUE"
+                },
+                "test_credentials": {}
+            }
+        }
+
+        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += END_CHARS
+        carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
         return carrier_output
     # Amazon Shipping
     elif carrier["type"] in OAUTH_CUSTOM_WORKFLOW_CARRIERS:
