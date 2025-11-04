@@ -30,6 +30,9 @@ OAUTH_CUSTOM_WORKFLOW_CARRIERS = [
 MAERSK_CUSTOM_WORKFLOW_CARRIERS = [
     "MaerskAccount"
 ]
+DOORDASH_CUSTOM_WORKFLOW_CARRIERS = [
+    "DoorDashAccount"
+]
 
 def main():
     carrier_types = get_carrier_types()
@@ -197,6 +200,32 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
 
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
+    # DoorDash
+    elif carrier["type"] in DOORDASH_CUSTOM_WORKFLOW_CARRIERS:
+        carrier_account_json = {
+            "billToEasyPost": False,
+            "credentials": {
+                "developer_id": "VALUE",
+                "key_id": "VALUE",
+                "signing_secret": "VALUE",
+                "pickup_external_business_id": "VALUE"
+            },
+            "test_credentials": {},
+            "type": "DoorDashAccount"
+        }
+
+        carrier_output = (
+            "# DoorDashAccount\n"
+            "curl -XPOST "
+            "-H 'Content-Type: application/json' "
+            "-H 'X-EasyPost-User-Id: <user-id>' "
+            "https://api.easypost.com/v2/carrier_accounts "
+            "-d '"
+            + json.dumps(carrier_account_json, indent=2)
+            + "'"
+            + END_CHARS
+        )
+        return carrier_output
     # Normal carriers
     else:
         end = END_CHARS
