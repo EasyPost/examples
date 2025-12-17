@@ -1,28 +1,12 @@
-curl -X POST https://api.easypost.com/v2/carrier_accounts \
+curl -X POST https://api.easypost.com/v2/carrier_accounts/register_oauth \
   -u "$EASYPOST_API_KEY": \
   -H 'Content-Type: application/json' \
   -d '{
-  "carrier_account": {
+  "carrier_account_oauth_registrations": {
     "type": "UpsAccount",
-    "description": "UpsAccount",
-    "registration_data": {
-      "account_number": "VALUE",
-      "city": "VALUE",
-      "company": "VALUE",
-      "country": "VALUE",
-      "email": "VALUE",
-      "name": "VALUE",
-      "phone": "VALUE",
-      "postal_code": "VALUE",
-      "state": "VALUE",
-      "street1": "VALUE",
-      "title": "VALUE",
-      "website": "VALUE",
-      "invoice_amount": "VALUE",
-      "invoice_control_id": "VALUE",
-      "invoice_currency": "VALUE",
-      "invoice_date": "VALUE",
-      "invoice_number": "VALUEr"
-    }
+    "account_number": "CUSTOMER UPS ACCOUNT NUMBER",
+    "description": "CUSTOMER ACCOUNT DESCRIPTION (optional)",
+    "reference": "UNIQUE ACCOUNT REFERENCE (optional)",
+    "return_to_url": "https://example.com (optional)"
   }
 }'

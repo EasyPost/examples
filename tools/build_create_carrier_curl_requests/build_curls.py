@@ -18,7 +18,6 @@ FEDEX_CUSTOM_WORKFLOW_CARRIERS = [
     "FedexSmartpostAccount",
 ]
 UPS_CUSTOM_WORKFLOW_CARRIERS = [
-    "UpsAccount",
     "UpsDapAccount",
 ]
 CANADAPOST_CUSTOM_WORKFLOW_CARRIERS = [
@@ -26,6 +25,7 @@ CANADAPOST_CUSTOM_WORKFLOW_CARRIERS = [
 ]
 OAUTH_CUSTOM_WORKFLOW_CARRIERS = [
     "AmazonShippingAccount",
+    "UpsAccount"
 ]
 MAERSK_CUSTOM_WORKFLOW_CARRIERS = [
     "MaerskAccount"
@@ -188,13 +188,29 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         carrier_output += END_CHARS
         carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
         return carrier_output
+    # UPS OAuth
+    elif carrier["type"] == "UpsAccount":
+        carrier_account_json = {
+            "carrier_account_oauth_registrations": {
+                "type": "UpsAccount",
+                "account_number": "CUSTOMER UPS ACCOUNT NUMBER",
+                "description": "CUSTOMER ACCOUNT DESCRIPTION (optional)",
+                "reference": "UNIQUE ACCOUNT REFERENCE (optional)",
+                "return_to_url": "https://example.com (optional)"
+            }
+        }
+
+        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += END_CHARS
+        return carrier_output
     # Amazon Shipping
     elif carrier["type"] in OAUTH_CUSTOM_WORKFLOW_CARRIERS:
         carrier_account_json = {
             "carrier_account_oauth_registrations": {
                 "type": carrier["type"],
                 "description": "My Shipping Account (optional)",
-                "reference": "Internal reference id (optional)"
+                "reference": "Internal reference id (optional)",
+                "return_to_url": "https://example.com (optional)"
             }
         }
 
