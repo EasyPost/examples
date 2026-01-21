@@ -23,10 +23,10 @@ Most of the examples found here should run out of the box without any alteration
 
 ```bash
 # Install all language environments
-make install
+just install
 
 # Install a specific language environment
-make install-python
+just install-python
 ```
 
 Once installed, run an example like you would any other script or tool for that language.

@@ -12,7 +12,8 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: extractions/setup-just@v3
       - name: Run sh-checker
         uses: luizm/action-sh-checker@v0.9.0
         env:
@@ -21,73 +22,80 @@ jobs:
   csharp:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: extractions/setup-just@v3
       - name: Install C# dependencies
-        run: make install-csharp
+        run: just install-csharp
       - name: Lint project
-        run: make lint-csharp
+        run: just lint-csharp
   go:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: extractions/setup-just@v3
       - uses: actions/setup-go@v5
         with:
           go-version: 1.23
       # install must occur in the same step as the linter to run properly on CI
       - name: Lint project
-        run: make install-go lint-go
+        run: just install-go lint-go
   java:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: extractions/setup-just@v3
       - name: Install Java dependencies
-        run: make install-java
+        run: just install-java
       - name: Lint project
-        run: make lint-java
+        run: just lint-java
   node:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: extractions/setup-just@v3
       - name: Install dependencies
-        run: make install-node
+        run: just install-node
       - name: Lint project
-        run: make lint-node
+        run: just lint-node
       - name: Check formatting
-        run: make format-node-check
+        run: just format-node-check
   php:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: extractions/setup-just@v3
       - name: Install dependencies
-        run: make install-php
+        run: just install-php
       - name: Lint project
-        run: make lint-php
+        run: just lint-php
   python:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: extractions/setup-just@v3
       - name: Install Python dependencies
-        run: make install-python
+        run: just install-python
       - name: Lint project
-        run: make lint-python
+        run: just lint-python
       - name: Check formatting
-        run: make format-python-check
+        run: just format-python-check
   ruby:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - uses: extractions/setup-just@v3
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           rubygems: '3.0.0'
           bundler-cache: true
       - name: Install Ruby dependencies
-        run: make install-ruby
+        run: just install-ruby
       - name: Lint project
-        run: make lint-ruby
+        run: just lint-ruby
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Check for current dirs in docs
         run: ./test/ensure-current-dirs-exist.sh

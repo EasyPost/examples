@@ -16,7 +16,7 @@ namespace EasyPostExamples
 
             EasyPost.Parameters.Batch.AddShipments parameters = new()
             {
-                Shipments = new List<EasyPost.Paramaters.IShipmentParameter> { shipment },
+                Shipments = new List<Models.API.Shipment> { shipment },
             };
 
             EasyPost.Models.API.Batch batch = await client.Batch.AddShipments("batch_...", parameters);
