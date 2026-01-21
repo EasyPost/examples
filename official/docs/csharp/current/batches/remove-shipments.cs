@@ -16,7 +16,7 @@ namespace EasyPostExamples
 
             EasyPost.Parameters.Batch.RemoveShipments parameters = new()
             {
-                Shipments = new List<EasyPost.Parameters.IShipmentParameter> { shipment },
+                Shipments = new List<Models.API.Shipment> { shipment },
             };
 
             EasyPost.Models.API.Batch batch = await client.Batch.RemoveShipments("batch_...", parameters);
