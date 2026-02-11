@@ -1,5 +1,5 @@
 dist
-docs
+/docs
 examples
 node_modules
 types/demo
