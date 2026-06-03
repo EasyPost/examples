@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: EasyPost/ep-actions/.github/actions/setup/just@main
       - name: Run sh-checker
         uses: luizm/action-sh-checker@v0.9.0
         env:
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: EasyPost/ep-actions/.github/actions/setup/just@main
       - name: Install C# dependencies
         run: just install-csharp
       - name: Lint project
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: EasyPost/ep-actions/.github/actions/setup/just@main
       - uses: actions/setup-go@v5
         with:
           go-version: 1.23
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: EasyPost/ep-actions/.github/actions/setup/just@main
       - name: Install Java dependencies
         run: just install-java
       - name: Lint project
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: EasyPost/ep-actions/.github/actions/setup/just@main
       - name: Install dependencies
         run: just install-node
       - name: Lint project
@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: EasyPost/ep-actions/.github/actions/setup/just@main
       - name: Install dependencies
         run: just install-php
       - name: Lint project
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: EasyPost/ep-actions/.github/actions/setup/just@main
       - name: Install Python dependencies
         run: just install-python
       - name: Lint project
@@ -83,7 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: EasyPost/ep-actions/.github/actions/setup/just@main
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
