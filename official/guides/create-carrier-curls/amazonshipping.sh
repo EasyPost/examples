@@ -6,6 +6,10 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts/register_oauth \
     "type": "AmazonShippingAccount",
     "description": "My Shipping Account (optional)",
     "reference": "Internal reference id (optional)",
-    "return_to_url": "https://example.com (optional)"
+    "return_to_url": "https://example.com (optional)",
+    "credentials": {
+      "account_type": "shipper",
+      "account_country": "US"
+    }
   }
 }'
