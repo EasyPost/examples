@@ -207,13 +207,16 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
     elif carrier["type"] in OAUTH_CUSTOM_WORKFLOW_CARRIERS:
         carrier_account_json = {
             "carrier_account_oauth_registrations": {
-                "type": carrier["type"],
+                "type": "AmazonShippingAccount",
                 "description": "My Shipping Account (optional)",
                 "reference": "Internal reference id (optional)",
-                "return_to_url": "https://example.com (optional)"
+                "return_to_url": "https://example.com (optional)",
+                "credentials": {
+                    "account_type": "shipper",
+                    "account_country": "US"
+                }
             }
         }
-
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
     # DoorDash
