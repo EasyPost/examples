@@ -171,7 +171,7 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
                         carrier_account_json["carrier_account"][top_level] = {}
                     carrier_account_json["carrier_account"][top_level][item] = "VALUE"
 
-        carrier_output += f" -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += end
         carrier_output = carrier_output.replace(
             f"{LINE_BREAK_CHARS}{END_CHARS}",
@@ -190,7 +190,7 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
             }
         }
 
-        wallet_output += f" -d '{json.dumps(wallet_json, indent=2)}'"
+        wallet_output += f"  -d '{json.dumps(wallet_json, indent=2)}'"
         wallet_output += END_CHARS
         wallet_output = wallet_output.replace(
             f"{LINE_BREAK_CHARS}{END_CHARS}",
