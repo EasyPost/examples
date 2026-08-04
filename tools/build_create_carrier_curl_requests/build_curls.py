@@ -23,6 +23,9 @@ UPS_CUSTOM_WORKFLOW_CARRIERS = [
 CANADAPOST_CUSTOM_WORKFLOW_CARRIERS = [
     "CanadaPostAccount",
 ]
+DHLECOMMERCE_CUSTOM_WORKFLOW_CARRIERS = [
+    "DhlEcsAccount",
+]
 OAUTH_CUSTOM_WORKFLOW_CARRIERS = [
     "AmazonShippingAccount",
     "UpsAccount"
@@ -150,6 +153,65 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
             "w",
         ) as default_file:
             default_file.write(re.sub(r"^.*?\n", "", default_output))
+
+        return carrier_output
+    # DHL eCommerce
+    elif carrier["type"] in DHLECOMMERCE_CUSTOM_WORKFLOW_CARRIERS:
+        # BYOCA cURL
+        end = END_CHARS
+        for top_level in carrier_fields:
+            if top_level == "custom_workflow":
+                end += CUSTOM_WORKFLOW_CHARS
+            else:
+                top_level_carrier_fields = carrier_fields[top_level]
+                for item in top_level_carrier_fields:
+                    if item == "pickup_id":
+                        continue
+                    if carrier_account_json["carrier_account"].get(top_level) is None:
+                        carrier_account_json["carrier_account"][top_level] = {}
+                    carrier_account_json["carrier_account"][top_level][item] = "VALUE"
+
+        carrier_output += f" -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += end
+        carrier_output = carrier_output.replace(
+            f"{LINE_BREAK_CHARS}{END_CHARS}",
+            END_CHARS,
+        )
+
+        # Wallet cURL
+        wallet_output = f'# {carrier.get("type")} (EasyPost Aggregation)\n'
+        wallet_output = add_curl_line(wallet_output, carrier)
+        wallet_output = add_headers(wallet_output, carrier)
+
+        wallet_json = {
+            "carrier_account": {
+                "type": carrier["type"],
+                "payment_mode": "aggregation",
+            }
+        }
+
+        wallet_output += f" -d '{json.dumps(wallet_json, indent=2)}'"
+        wallet_output += END_CHARS
+        wallet_output = wallet_output.replace(
+            f"{LINE_BREAK_CHARS}{END_CHARS}",
+            END_CHARS,
+        )
+
+        output_destination = os.path.join(
+            "../",
+            "../",
+            "official",
+            "guides",
+            "create-carrier-curls",
+        )
+        if not os.path.exists(output_destination):
+            os.makedirs(output_destination)
+
+        with open(
+            os.path.join(output_destination, "dhlecs-wallet.sh"),
+            "w",
+        ) as wallet_file:
+            wallet_file.write(re.sub(r"^.*?\n", "", wallet_output))
 
         return carrier_output
     # Maersk Parcel — custom static credential structure
