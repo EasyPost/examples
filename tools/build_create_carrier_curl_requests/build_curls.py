@@ -252,23 +252,12 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
                 top_level_carrier_fields = carrier_fields[top_level]
 
                 for item in top_level_carrier_fields:
-                    if (
-                        carrier_account_json["carrier_account"].get(
-                            top_level
-                        )
-                        is None
-                    ):
-                        carrier_account_json["carrier_account"][
-                            top_level
-                        ] = {}
+                    if (carrier_account_json["carrier_account"].get(top_level)is None):
+                        carrier_account_json["carrier_account"][top_level] = {}
 
-                    carrier_account_json["carrier_account"][
-                        top_level
-                    ][item] = "VALUE"
+                    carrier_account_json["carrier_account"][top_level][item] = "VALUE"
 
-        carrier_output += (
-            f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
-        )
+        carrier_output += (f"  -d '{json.dumps(carrier_account_json, indent=2)}'")
         carrier_output += end
         carrier_output = carrier_output.replace(
             f"{LINE_BREAK_CHARS}{END_CHARS}",
