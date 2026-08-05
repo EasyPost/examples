@@ -99,7 +99,7 @@ def write_wallet_curl(carrier: dict[str, str], carrier_account_json: dict) -> No
     wallet_output = f'# {carrier.get("type")} (EasyPost Wallet)\n'
     wallet_output = add_curl_line(wallet_output, carrier)
     wallet_output = add_headers(wallet_output, carrier)
-    wallet_output += f" -d '{json.dumps(wallet_json, indent=2)}'"
+    wallet_output += f"  -d '{json.dumps(wallet_json, indent=2)}'"
     wallet_output += END_CHARS
     wallet_output = wallet_output.replace(
         f"{LINE_BREAK_CHARS}{END_CHARS}",
