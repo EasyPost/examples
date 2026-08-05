@@ -107,7 +107,7 @@ def write_wallet_curl(carrier: dict[str, str], carrier_account_json: dict) -> No
     )
     output_destination = os.path.join(
         "..",
-       "..",
+        "..",
         "official",
         "guides",
         "create-carrier-curls",
