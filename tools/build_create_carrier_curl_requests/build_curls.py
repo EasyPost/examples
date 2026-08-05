@@ -1,3 +1,4 @@
+import copy
 import json
 import os
 import re
@@ -20,9 +21,6 @@ FEDEX_CUSTOM_WORKFLOW_CARRIERS = [
 UPS_CUSTOM_WORKFLOW_CARRIERS = [
     "UpsDapAccount",
 ]
-CANADAPOST_CUSTOM_WORKFLOW_CARRIERS = [
-    "CanadaPostAccount",
-]
 OAUTH_CUSTOM_WORKFLOW_CARRIERS = [
     "AmazonShippingAccount",
     "UpsAccount"
@@ -32,6 +30,10 @@ MAERSK_CUSTOM_WORKFLOW_CARRIERS = [
 ]
 DOORDASH_CUSTOM_WORKFLOW_CARRIERS = [
     "DoorDashAccount"
+]
+WALLET_CARRIERS = [
+    "CanadaPostAccount",
+    "DhlEcsAccount",
 ]
 
 def main():
@@ -87,6 +89,39 @@ def add_headers(carrier_output: str, carrier: dict[str, str]) -> str:
     return carrier_output
 
 
+def write_wallet_curl(carrier: dict[str, str], carrier_account_json: dict) -> None:
+    """Create a Wallet cURL for carriers that support EasyPost aggregation."""
+    wallet_json = copy.deepcopy(carrier_account_json)
+    wallet_account = wallet_json["carrier_account"]
+    wallet_account.pop("credentials", None)
+    wallet_account.pop("test_credentials", None)
+    wallet_account["payment_mode"] = "aggregation"
+    wallet_output = f'# {carrier.get("type")} (EasyPost Wallet)\n'
+    wallet_output = add_curl_line(wallet_output, carrier)
+    wallet_output = add_headers(wallet_output, carrier)
+    wallet_output += f"  -d '{json.dumps(wallet_json, indent=2)}'"
+    wallet_output += END_CHARS
+    wallet_output = wallet_output.replace(
+        f"{LINE_BREAK_CHARS}{END_CHARS}",
+        END_CHARS,
+    )
+    output_destination = os.path.join(
+        "..",
+        "..",
+        "official",
+        "guides",
+        "create-carrier-curls",
+    )
+    if not os.path.exists(output_destination):
+        os.makedirs(output_destination)
+    carrier_filename = carrier["type"].lower().replace("account", "")
+    with open(
+        os.path.join(output_destination, f"{carrier_filename}-wallet.sh"),
+        "w",
+    ) as wallet_file:
+        wallet_file.write(re.sub(r"^.*?\n", "", wallet_output))
+
+
 def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> str:
     """Iterate over the carrier fields and print the credential structure."""
     carrier_account_json = {
@@ -107,51 +142,6 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
         carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
-    # CanadaPost
-    elif carrier["type"] in CANADAPOST_CUSTOM_WORKFLOW_CARRIERS:
-        # BYOA cURL
-        end = END_CHARS
-        for top_level in carrier_fields:
-            if top_level == "custom_workflow":
-                end += CUSTOM_WORKFLOW_CHARS
-            else:
-                top_level_carrier_fields = carrier_fields[top_level]
-                for item in top_level_carrier_fields:
-                    if carrier_account_json["carrier_account"].get(top_level) is None:
-                        carrier_account_json["carrier_account"][top_level] = {}
-                    carrier_account_json["carrier_account"][top_level][item] = "VALUE"
-
-        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
-        carrier_output += end
-        carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
-
-        # Default (aggregation) cURL
-        default_output = f'# {carrier.get("type")} (EasyPost Aggregation)\n'
-        default_output = add_curl_line(default_output, carrier)
-        default_output = add_headers(default_output, carrier)
-
-        default_json = {
-            "carrier_account": {
-                "type": carrier["type"],
-                "payment_mode": "aggregation"
-            }
-        }
-
-        default_output += f"  -d '{json.dumps(default_json, indent=2)}'"
-        default_output += END_CHARS
-        default_output = default_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
-
-        output_destination = os.path.join("../", "../", "official", "guides", "create-carrier-curls")
-        if not os.path.exists(output_destination):
-            os.makedirs(output_destination)
-
-        with open(
-            os.path.join(output_destination, "canadapost-default.sh"),
-            "w",
-        ) as default_file:
-            default_file.write(re.sub(r"^.*?\n", "", default_output))
-
-        return carrier_output
     # Maersk Parcel — custom static credential structure
     elif carrier["type"] in MAERSK_CUSTOM_WORKFLOW_CARRIERS:
         carrier_account_json = {
@@ -248,23 +238,34 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
     # Normal carriers
     else:
         end = END_CHARS
-        # top_level here means `credentials` or `test_credentials` or `custom_workflow`
+
+        # top_level here means `credentials`, `test_credentials`,
+        # or `custom_workflow`
         for top_level in carrier_fields:
-            # TODO: If there is a custom_workflow such as 3rd party auth or a similar flow
-            # we should warn about that here. The credential structure will differ from
-            # a normal carrier account and is currently not automated
+            # TODO: If there is a custom_workflow such as 3rd party auth
+            # or a similar flow, warn about that here. The credential
+            # structure will differ from a normal carrier account and is
+            # currently not automated.
             if top_level == "custom_workflow":
                 end += CUSTOM_WORKFLOW_CHARS
             else:
                 top_level_carrier_fields = carrier_fields[top_level]
+
                 for item in top_level_carrier_fields:
-                    if carrier_account_json["carrier_account"].get(top_level) is None:
+                    if (carrier_account_json["carrier_account"].get(top_level)is None):
                         carrier_account_json["carrier_account"][top_level] = {}
+
                     carrier_account_json["carrier_account"][top_level][item] = "VALUE"
 
-        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += (f"  -d '{json.dumps(carrier_account_json, indent=2)}'")
         carrier_output += end
-        carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
+        carrier_output = carrier_output.replace(
+            f"{LINE_BREAK_CHARS}{END_CHARS}",
+            END_CHARS,
+        )
+
+        if carrier["type"] in WALLET_CARRIERS:
+            write_wallet_curl(carrier, carrier_account_json)
 
     return carrier_output
 

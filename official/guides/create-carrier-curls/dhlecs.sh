@@ -8,14 +8,12 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
     "credentials": {
       "client_id": "VALUE",
       "client_secret": "VALUE",
-      "distribution_center": "VALUE",
-      "pickup_id": "VALUE"
+      "distribution_center": "VALUE"
     },
     "test_credentials": {
       "client_id": "VALUE",
       "client_secret": "VALUE",
-      "distribution_center": "VALUE",
-      "pickup_id": "VALUE"
+      "distribution_center": "VALUE"
     }
   }
 }'
