@@ -1,3 +1,4 @@
+# shellcheck disable=SC2016
 curl -X POST https://api.easypost.com/readydocs/packslip \
   -u "EASYPOST_API_KEY" \
   -H "Content-Type: application/json" \
