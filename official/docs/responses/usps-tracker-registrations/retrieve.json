@@ -1,0 +1,13 @@
+{
+  "id": "utr_0123456789abcdef0123456789abcdef",
+  "tracking_code": "9400111899223344556677",
+  "product_value": "25.50",
+  "shipment_date": "2026-01-15",
+  "status": "MONITORING",
+  "tracker_public_id": "trk_0123456789abcdef0123456789abcdef",
+  "claim_type": null,
+  "claims_usps_id": null,
+  "consent_accepted_at": "2026-01-15T12:00:00Z",
+  "created_at": "2026-01-15T12:00:00Z",
+  "updated_at": "2026-01-15T12:00:01Z"
+}
