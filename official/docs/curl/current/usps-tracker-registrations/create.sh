@@ -5,7 +5,11 @@ curl -X POST https://api.easypost.com/v2/carrier_claims/usps_tracker_registratio
   "tracker_registrations": [
     {
       "tracking_code": "9400111899223344556677",
-      "product_value": "25.50"
+      "product_value": "25.50",
+      "recipient": {
+        "first_name": "Jane",
+        "last_name": "Doe"
+      }
     }
   ]
 }'

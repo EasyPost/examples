@@ -8,6 +8,13 @@
       "id": "utr_0123456789abcdef0123456789abcdef",
       "tracking_code": "9400111899223344556677",
       "product_value": "25.50",
+      "mail_class_code": "PM",
+      "recipient": {
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "company": null
+      },
+      "product_description": "Other",
       "shipment_date": "2026-01-15",
       "status": "MONITORING",
       "tracker_public_id": "trk_0123456789abcdef0123456789abcdef",
