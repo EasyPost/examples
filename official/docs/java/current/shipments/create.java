@@ -4,7 +4,9 @@ import com.easypost.exception.EasyPostException;
 import com.easypost.model.Shipment;
 import com.easypost.service.EasyPostClient;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Create {
     public static void main(String[] args) throws EasyPostException {
@@ -40,11 +42,24 @@ public class Create {
         HashMap<String, Object> customsInfoMap = new HashMap<String, Object>();
         customsInfoMap.put("id", "cstinfo_...");
 
+        HashMap<String, Object> mugLineItem = new HashMap<String, Object>();
+        mugLineItem.put("total_line_value", "129.00");
+        mugLineItem.put("item_description", "Mugs");
+
+        HashMap<String, Object> shirtLineItem = new HashMap<String, Object>();
+        shirtLineItem.put("total_line_value", "45.50");
+        shirtLineItem.put("item_description", "T-shirts");
+
+        List<HashMap<String, Object>> lineItems = new ArrayList<HashMap<String, Object>>();
+        lineItems.add(mugLineItem);
+        lineItems.add(shirtLineItem);
+
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("to_address", toAddressMap);
         params.put("from_address", fromAddressMap);
         params.put("parcel", parcelMap);
         params.put("customs_info", customsInfoMap);
+        params.put("line_items", lineItems);
 
         Shipment shipment = client.shipment.create(params);
 

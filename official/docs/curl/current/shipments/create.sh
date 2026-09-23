@@ -32,6 +32,16 @@ curl -X POST https://api.easypost.com/v2/shipments \
       },
       "customs_info": {
         "id": "cstinfo_..."
-      }
+      },
+      "line_items": [
+        {
+          "total_line_value": "129.00",
+          "item_description": "Mugs"
+        },
+        {
+          "total_line_value": "45.50",
+          "item_description": "T-shirts"
+        }
+      ]
     }
   }'

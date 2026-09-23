@@ -46,6 +46,11 @@ namespace EasyPostExamples
                 CustomsInfo = new EasyPost.Parameters.CustomsInfo.Create
                 {
                     // ...
+                },
+                LineItems = new List<EasyPost.Parameters.ILineItemParameter>
+                {
+                    new EasyPost.Models.API.LineItem { TotalLineValue = "129.00", ItemDescription = "Mugs" },
+                    new EasyPost.Models.API.LineItem { TotalLineValue = "45.50", ItemDescription = "T-shirts" },
                 }
             };
 
@@ -65,7 +70,12 @@ namespace EasyPostExamples
                 ToAddress = toAddress,
                 FromAddress = fromAddress,
                 Parcel = parcel,
-                CustomsInfo = customsInfo
+                CustomsInfo = customsInfo,
+                LineItems = new List<EasyPost.Parameters.ILineItemParameter>
+                {
+                    new EasyPost.Models.API.LineItem { TotalLineValue = "129.00", ItemDescription = "Mugs" },
+                    new EasyPost.Models.API.LineItem { TotalLineValue = "45.50", ItemDescription = "T-shirts" },
+                }
             };
 
             shipment = await client.Shipment.Create(parameters);

@@ -31,6 +31,10 @@ shipment = client.shipment.create(
         "weight": 65.9,
     },
     customs_info={"id": "cstinfo_..."},
+    line_items=[
+        {"total_line_value": "129.00", "item_description": "Mugs"},
+        {"total_line_value": "45.50", "item_description": "T-shirts"},
+    ],
 )
 
 # or create by using IDs
@@ -40,6 +44,10 @@ shipment = client.shipment.create(
     from_address={"id": "adr_..."},
     parcel={"id": "prcl_..."},
     customs_info={"id": "cstinfo_..."},
+    line_items=[
+        {"total_line_value": "129.00", "item_description": "Mugs"},
+        {"total_line_value": "45.50", "item_description": "T-shirts"},
+    ],
 )
 
 print(shipment)

@@ -41,6 +41,16 @@ func create() {
 			CustomsInfo: &easypost.CustomsInfo{
 				ID: "cstinfo_...",
 			},
+			LineItems: []*easypost.LineItem{
+				{
+					TotalLineValue:  "129.00",
+					ItemDescription: "Mugs",
+				},
+				{
+					TotalLineValue:  "45.50",
+					ItemDescription: "T-shirts",
+				},
+			},
 		},
 	)
 
