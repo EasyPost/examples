@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using EasyPost;
 using Newtonsoft.Json;
@@ -12,7 +11,9 @@ namespace EasyPostExamples
         {
             var client = new EasyPost.Client(new EasyPost.ClientConfiguration("EASYPOST_API_KEY"));
 
-            await client.Billing.FundWallet("20.00", PaymentMethod.Priority.Primary);
+            var response = await client.Beta.ReferralCustomer.RetrieveEasypostStripeApiKey();
+
+            Console.WriteLine(JsonConvert.SerializeObject(response, Formatting.Indented));
         }
     }
 }

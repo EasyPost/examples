@@ -5,7 +5,6 @@ issues:
     - "undeclared name: `easypost`"
     - "expected 'package'"
 
-
 linters-settings:
   staticcheck:
     checks:
