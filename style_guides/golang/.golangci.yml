@@ -4,6 +4,12 @@ issues:
     - "github.com/EasyPost/easypost-go"
     - "undeclared name: `easypost`"
     - "expected 'package'"
+  # TODO: Remove this rule once next Go release goes out
+  exclude-rules:
+    - path: official/docs/golang/current/billing/retrieve-stripe-public-key.go
+      linters:
+        - typecheck
+      text: "RetrieveEasypostStripeApiKey undefined"
 
 
 linters-settings:
