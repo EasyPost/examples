@@ -43,9 +43,10 @@ namespace EasyPostExamples
                     Height = 5,
                     Weight = 10
                 },
-                CustomsInfo = new EasyPost.Parameters.CustomsInfo.Create
+                LineItems = new List<EasyPost.Parameters.ILineItemParameter>
                 {
-                    // ...
+                    new EasyPost.Models.API.LineItem { TotalLineValue = "129.00", ItemDescription = "Mugs" },
+                    new EasyPost.Models.API.LineItem { TotalLineValue = "45.50", ItemDescription = "T-shirts" },
                 }
             };
 
@@ -53,19 +54,22 @@ namespace EasyPostExamples
 
             Console.WriteLine(JsonConvert.SerializeObject(shipment, Formatting.Indented));
 
-            // Create a shipment using existing addresses, parcel, and customs info
+            // Create a shipment using existing addresses and parcel
 
             EasyPost.Models.API.Address toAddress = await client.Address.Retrieve("adr_...");
             EasyPost.Models.API.Address fromAddress = await client.Address.Retrieve("adr_...");
             EasyPost.Models.API.Parcel parcel = await client.Parcel.Retrieve("prcl_...");
-            EasyPost.Models.API.CustomsInfo customsInfo = await client.CustomsInfo.Retrieve("cstinfo_...");
 
             parameters = new()
             {
                 ToAddress = toAddress,
                 FromAddress = fromAddress,
                 Parcel = parcel,
-                CustomsInfo = customsInfo
+                LineItems = new List<EasyPost.Parameters.ILineItemParameter>
+                {
+                    new EasyPost.Models.API.LineItem { TotalLineValue = "129.00", ItemDescription = "Mugs" },
+                    new EasyPost.Models.API.LineItem { TotalLineValue = "45.50", ItemDescription = "T-shirts" },
+                }
             };
 
             shipment = await client.Shipment.Create(parameters);
