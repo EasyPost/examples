@@ -39,9 +39,6 @@ public class Create {
         parcelMap.put("height", 5);
         parcelMap.put("weight", 65.9);
 
-        HashMap<String, Object> customsInfoMap = new HashMap<String, Object>();
-        customsInfoMap.put("id", "cstinfo_...");
-
         HashMap<String, Object> mugLineItem = new HashMap<String, Object>();
         mugLineItem.put("total_line_value", "129.00");
         mugLineItem.put("item_description", "Mugs");
@@ -58,7 +55,6 @@ public class Create {
         params.put("to_address", toAddressMap);
         params.put("from_address", fromAddressMap);
         params.put("parcel", parcelMap);
-        params.put("customs_info", customsInfoMap);
         params.put("line_items", lineItems);
 
         Shipment shipment = client.shipment.create(params);
