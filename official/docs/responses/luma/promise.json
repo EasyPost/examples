@@ -1,0 +1,143 @@
+{
+  "luma_info": {
+    "ai_results": [
+      {
+        "carrier": "USPS",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-11",
+        "predicted_deliver_days": 5,
+        "rate_id": "rate_878246b64dfc4acdaae144632071ebbf",
+        "rate_usd": "135.45",
+        "service": "Express"
+      },
+      {
+        "carrier": "USPS",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-12",
+        "predicted_deliver_days": 6,
+        "rate_id": "rate_c5ea42853ee34db5a3b739a30c1d1e7d",
+        "rate_usd": "41.44",
+        "service": "Priority"
+      },
+      {
+        "carrier": "USPS",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-13",
+        "predicted_deliver_days": 7,
+        "rate_id": "rate_3041c849fcfb4eca8e7140ce8ac68ac2",
+        "rate_usd": "23.85",
+        "service": "GroundAdvantage"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-02-07",
+        "predicted_deliver_days": 1,
+        "rate_id": "rate_ecc1a08e97e349dc83645663e02e8ce6",
+        "rate_usd": "94.45",
+        "service": "NextDayAir"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-02-10",
+        "predicted_deliver_days": 4,
+        "rate_id": "rate_9de47a58578943f692779ba1ef649db0",
+        "rate_usd": "124.45",
+        "service": "NextDayAirEarlyAM"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-02-10",
+        "predicted_deliver_days": 4,
+        "rate_id": "rate_3a017a1f045a44088baba60cacaacae4",
+        "rate_usd": "87.91",
+        "service": "NextDayAirSaver"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-11",
+        "predicted_deliver_days": 5,
+        "rate_id": "rate_5c552ee17b764ebe8b3e040e23acc161",
+        "rate_usd": "52.98",
+        "service": "2ndDayAir"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-11",
+        "predicted_deliver_days": 5,
+        "rate_id": "rate_00697bb80a6a4690a4adc1fa821d0549",
+        "rate_usd": "60.79",
+        "service": "2ndDayAirAM"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-12",
+        "predicted_deliver_days": 6,
+        "rate_id": "rate_8d6d3b28b62d43e8bf137f7f63588807",
+        "rate_usd": "38.19",
+        "service": "3DaySelect"
+      },
+      {
+        "carrier": "UPSDAP",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-14",
+        "predicted_deliver_days": 8,
+        "rate_id": "rate_ec4000010aa74083bcf7af34d77cd69f",
+        "rate_usd": "24.02",
+        "service": "Ground"
+      },
+      {
+        "carrier": "FedExDefault",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-15",
+        "predicted_deliver_days": 9,
+        "rate_id": "rate_81be930fa6824faa9f75ce474db8c329",
+        "rate_usd": "47.99",
+        "service": "SMART_POST"
+      },
+      {
+        "carrier": "FedExDefault",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-02-10",
+        "predicted_deliver_days": 4,
+        "rate_id": "rate_8c590b2c9f9f42fa8986b19e0180d5bd",
+        "rate_usd": "289.00",
+        "service": "PRIORITY_OVERNIGHT"
+      },
+      {
+        "carrier": "FedExDefault",
+        "meets_ruleset_requirements": true,
+        "predicted_deliver_by_date": "2025-02-10",
+        "predicted_deliver_days": 4,
+        "rate_id": "rate_f6cba61f30714f7fb779b7b157c0c619",
+        "rate_usd": "264.87",
+        "service": "STANDARD_OVERNIGHT"
+      },
+      {
+        "carrier": "FedExDefault",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-11",
+        "predicted_deliver_days": 5,
+        "rate_id": "rate_9a64fd048d644d8daaece83c92b49ae8",
+        "rate_usd": "202.16",
+        "service": "FEDEX_2_DAY_AM"
+      },
+      {
+        "carrier": "FedExDefault",
+        "meets_ruleset_requirements": false,
+        "predicted_deliver_by_date": "2025-02-13",
+        "predicted_deliver_days": 7,
+        "rate_id": "rate_4fb6b986d5e242b39dcfd47bff29b74d",
+        "rate_usd": "36.75",
+        "service": "FEDEX_GROUND"
+      }
+    ],
+    "matching_rule_idx": 0,
+    "ruleset_description": "Buy the cheapest rate that satisfies all of the following:\nRule 0\n        - Deliver by user input day of deliver_by_date    - Transit day confidence >= 90\nOtherwise buy the cheapest rate"
+  }
+}
