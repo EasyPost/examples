@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/EasyPost/examples/workflows/CI/badge.svg)](https://github.com/EasyPost/examples/actions?query=workflow%3ACI)
 
-5,000+ code examples for using the EasyPost API across 7+ programming languages.
+3,000+ code examples for using the EasyPost API across 7+ programming languages.
 
 ## Project Structure
 
@@ -35,13 +35,13 @@ Once installed, run an example like you would any other script or tool for that 
 
 ### Conventions
 
-When creating new doc snippets, we follow a few conventions:
+When creating or updating examples, follow these baseline rules:
 
-1. The example should be minimally viable - only include what is absolutely necessary to run the example. This ensures our example are simple, straightforward, and focused. An example is importing the lib, creating a client, calling the function with the data, printing the object to console.
-2. With over 5,000 examples, it's paramount that our examples remain consistent. This is true across languages, versions (with the exception of syntax changes), and different functions. The examples have strong precedent, convention, and consistency - these should be maintained into the future.
-3. When trying to determine what data to use for examples, it's probably best to use the same or similar data that our client library fixtures used during implementation. All of our client libraries use the same fixture data in tests ensuring consistency there, the same can (and should) be done for examples.
-   1. You must use open source data (addresses, names, etc) - something that's not personally identifiable to a real person or business. Using EasyPost addresses or addresses of well-known public landmarks are good options
-4. Examples must run "as-is" with no alterations (except for placeholder IDs and API keys). This ensures each of our examples can be quickly copy and pasted by users to try functionality quickly while they onboard, ensuring a great user experience.
+1. Keep snippets minimally viable and focused: import the library, create a client, perform one clear API call, and print/log the result.
+2. Preserve cross-language and cross-version consistency. Use existing `official/docs/<language>/current` snippets as precedent and keep endpoint/action naming aligned with curl.
+3. Use fixture-aligned, open-source sample data only. Do not include real-person or real-business PII.
+4. Examples should run as-is with no edits other than replacing placeholder API keys and object IDs.
+5. For full standards (directory layout, naming, responses, placeholders, and versioning), see [`.agents/skills/ep-example-authoring/SKILL.md`](.agents/skills/ep-example-authoring/SKILL.md).
 
 ### New Major Versions
 
@@ -49,4 +49,4 @@ When the client libraries have a new major version released, we need to create a
 
 ### Importance of `current` Directory
 
-Our docs (and marketing) websites submodule this `examples` repo so we can pull in stable example docs at various milestones. We use the `current` language directory to pull the doc snippets during the build process (the versioned directories are then retained for reference). As such, it's imperative that the `current` directory remains the most up-to-date set of docs and present in each langauge directory we have. We have tests in this project to ensure as much.
+Our docs website submodule this `examples` repo so we can pull in stable example docs at various milestones. We use the `current` language directory to pull the doc snippets during the build process (the versioned directories are then retained for reference). As such, it's imperative that the `current` directory remains the most up-to-date set of docs and present in each langauge directory we have. We have tests in this project to ensure as much.
