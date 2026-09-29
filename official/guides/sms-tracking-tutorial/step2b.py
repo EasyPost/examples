@@ -15,10 +15,8 @@ def process_webhook():
 
         for tracking_detail in reversed(tracker.tracking_details):
             if tracking_detail.status == tracker.status:
-                message += "%s says: %s in %s." % (
-                    tracker.carrier,
-                    tracking_detail.message,
-                    tracking_detail.tracking_location.city,
+                message += (
+                    f"{tracker.carrier} says: {tracking_detail.message} in {tracking_detail.tracking_location.city}."
                 )
                 break
 

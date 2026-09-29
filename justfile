@@ -95,9 +95,10 @@ lint-php:
 
 # Lints Python files
 lint-python:
-	{{PYTHON_VIRTUAL_BIN}}/flake8 official/docs/python/
-	{{PYTHON_VIRTUAL_BIN}}/flake8 official/guides/
-	{{PYTHON_VIRTUAL_BIN}}/flake8 official/landing_pages/
+    {{PYTHON_VIRTUAL_BIN}}/ruff check official/docs/python/
+    {{PYTHON_VIRTUAL_BIN}}/ruff check official/guides/
+    {{PYTHON_VIRTUAL_BIN}}/ruff format --check official/docs/python/
+    {{PYTHON_VIRTUAL_BIN}}/ruff format --check official/guides/
 
 # Lints Ruby files
 lint-ruby:
@@ -136,12 +137,10 @@ format-php:
 
 # Formats Python files
 format-python:
-	{{PYTHON_VIRTUAL_BIN}}/black official/docs/python/
-	{{PYTHON_VIRTUAL_BIN}}/isort official/docs/python/ --lines-after-imports -1 --no-sections
-	{{PYTHON_VIRTUAL_BIN}}/black official/guides/
-	{{PYTHON_VIRTUAL_BIN}}/isort official/guides/ --lines-after-imports -1 --no-sections
-	{{PYTHON_VIRTUAL_BIN}}/black official/landing_pages/
-	{{PYTHON_VIRTUAL_BIN}}/isort official/landing_pages/ --lines-after-imports -1 --no-sections
+    {{PYTHON_VIRTUAL_BIN}}/ruff check --fix official/docs/python/
+    {{PYTHON_VIRTUAL_BIN}}/ruff check --fix official/guides/
+    {{PYTHON_VIRTUAL_BIN}}/ruff format official/docs/python/
+    {{PYTHON_VIRTUAL_BIN}}/ruff format official/guides/
 
 # Formats Ruby files
 format-ruby:
@@ -155,12 +154,3 @@ format-shell:
 # Checks that Node files conform to the correct format
 format-node-check:
 	npm run check
-
-# Checks that Python files conform to the correct format
-format-python-check:
-	{{PYTHON_VIRTUAL_BIN}}/black official/docs/python/ --check
-	{{PYTHON_VIRTUAL_BIN}}/isort official/docs/python/ --lines-after-imports -1 --no-sections --check-only
-	{{PYTHON_VIRTUAL_BIN}}/black official/guides/ --check
-	{{PYTHON_VIRTUAL_BIN}}/isort official/guides/ --lines-after-imports -1 --no-sections --check-only
-	{{PYTHON_VIRTUAL_BIN}}/black official/landing_pages/ --check
-	{{PYTHON_VIRTUAL_BIN}}/isort official/landing_pages/ --lines-after-imports -1 --no-sections --check-only

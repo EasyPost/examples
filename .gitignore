@@ -22,7 +22,6 @@ __pycache__
 /tools/build_doc_json_responses/responses/
 /tools/build_doc_json_responses/tests/cassettes/
 /phpcs.xml
-/pyproject.toml
 /style_suppressions.xml
 bin
 bulkins

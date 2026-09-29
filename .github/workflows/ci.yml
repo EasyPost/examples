@@ -77,8 +77,6 @@ jobs:
         run: just install-python
       - name: Lint project
         run: just lint-python
-      - name: Check formatting
-        run: just format-python-check
   ruby:
     runs-on: ubuntu-latest
     steps:

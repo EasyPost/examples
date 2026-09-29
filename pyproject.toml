@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "examples"
+version = "0.1.0"
+description = "This repository holds hundreds of code examples for using the EasyPost API across 7+ programming languages."
+readme = "README.md"
+requires-python = ">=3.6, <4"
+license = { file = "LICENSE" }
+authors = [{ name = "EasyPost" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["easypost"]
+optional-dependencies = { dev = ["ruff"] }
+
+[project.urls]
+Source = "https://github.com/EasyPost/examples"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.lint.per-file-ignores]
+"official/guides/sms-tracking-tutorial/**/*.py" = ["F821"]
