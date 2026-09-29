@@ -1,0 +1,25 @@
+{
+  "tracking_code": "EZ1000000001",
+  "status": "delivered",
+  "tracking_details": [
+    {
+      "object": "TrackingDetail",
+      "datetime": "2014-07-22T10:09:00Z",
+      "message": "Your item was delivered at 10:09",
+      "status": "delivered"
+    },
+    {
+      "object": "TrackingDetail",
+      "datetime": "2014-07-21T10:12:00Z",
+      "message": "Arrival at Post Office July 21",
+      "status": "in_transit"
+    },
+    {
+      "object": "TrackingDetail",
+      "datetime": "2014-07-19T03:12:00Z",
+      "message": "Electronic Shipping Info Received",
+      "status": "pre_transit"
+    }
+  ],
+  "shipment_id": "shp_..."
+}
