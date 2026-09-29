@@ -1,11 +1,12 @@
-import easypost
 import os
+
+import easypost
 
 client = easypost.EasyPostClient(os.getenv("EASYPOST_API_KEY"))
 
 shipment = client.shipment.create(
-    to_address=to_address,
-    from_address=from_address,
+    to_address={"id": "adr_..."},
+    from_address={"id": "adr_..."},
     parcel={
         "predefined_package": "Parcel",
         "weight": 28,
