@@ -59,7 +59,6 @@ install-php:
 
 # Installs Python dependencies
 install-python:
-	sh ./symlink_directory_files.sh style_guides/python .
 	{{PYTHON_BINARY}} -m venv venv
 	{{PYTHON_VIRTUAL_BIN}}/pip install -e ."[dev]"
 
