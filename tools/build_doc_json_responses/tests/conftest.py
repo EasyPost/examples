@@ -3,15 +3,11 @@ import json
 import os
 from typing import (
     Any,
-    Dict,
-    List,
-    Tuple,
 )
 
 import easypost
 import pytest
 from dotenv import load_dotenv
-
 
 load_dotenv()
 
@@ -20,11 +16,11 @@ EASYPOST_PROD_API_KEY = os.getenv("EASYPOST_PROD_API_KEY")
 PARTNER_USER_PROD_API_KEY = os.getenv("PARTNER_USER_PROD_API_KEY", "123")
 REFERRAL_CUSTOMER_PROD_API_KEY = os.getenv("REFERRAL_CUSTOMER_PROD_API_KEY", "123")
 
-OVERWRITE = "all" if os.getenv("OVERWRITE", False) else "once"
+OVERWRITE = "all" if os.getenv("OVERWRITE") else "once"
 
 SCRUBBED_STRING = "<REDACTED>"
-SCRUBBED_ARRAY: List = []
-SCRUBBED_DICT: Dict = {}
+SCRUBBED_ARRAY: list = []
+SCRUBBED_DICT: dict = {}
 
 
 @pytest.fixture(scope="session")
@@ -56,7 +52,7 @@ def vcr_config():
     }
 
 
-def scrub_response_bodies(scrubbers: List[Tuple[str, Any]]) -> Any:
+def scrub_response_bodies(scrubbers: list[tuple[str, Any]]) -> Any:
     """Scrub sensitive data from response bodies prior to recording the cassette."""
 
     def before_record_response(response: Any) -> Any:
@@ -70,7 +66,7 @@ def scrub_response_bodies(scrubbers: List[Tuple[str, Any]]) -> Any:
             response["body"]["string"] = json.dumps(response_body).encode()
         return response
 
-    def scrub_data(data: Any, scrubber: Tuple[str, Any]) -> Any:
+    def scrub_data(data: Any, scrubber: tuple[str, Any]) -> Any:
         """Scrub data from a cassette recursively."""
         key = scrubber[0]
         replacement = scrubber[1]
@@ -133,7 +129,7 @@ def referral_customer_prod_client():
 @pytest.fixture()
 def next_weekday():
     """Returns the next weekday as a string in YYYY-MM-DD format."""
-    tomorrow = datetime.date.today() + datetime.timedelta(days=1)
+    tomorrow = datetime.datetime.now(tz=datetime.timezone.utc).date() + datetime.timedelta(days=1)
     if tomorrow.weekday() == 5:  # Tomorrow is Saturday
         # Return next Monday
         return (tomorrow + datetime.timedelta(days=2)).strftime("%Y-%m-%d")
@@ -148,7 +144,7 @@ def next_weekday():
 @pytest.fixture()
 def next_week():
     """Returns the day a week from now as a string in YYYY-MM-DD format."""
-    today = datetime.date.today()
+    today = datetime.datetime.now(tz=datetime.timezone.utc).date()
     if today.weekday() == 5:  # Tomorrow is Saturday
         # Return next Monday
         return (today + datetime.timedelta(days=9)).strftime("%Y-%m-%d")

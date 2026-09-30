@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "easypost_responses"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10,<4"
+authors = [{ name = "EasyPost", email = "support@easypost.com" }]
+dependencies = ["easypost==10.*", "python-dotenv"]
+
+[project.urls]
+Homepage = "https://easypost.com/"
+
+[project.optional-dependencies]
+dev = ["ruff==0.16.*", "pytest-vcr==1.*", "pytest==8.*", "vcrpy==7.*"]
+
+[tool.setuptools.packages.find]
+exclude = ["examples", "tests"]

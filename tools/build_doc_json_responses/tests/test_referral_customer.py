@@ -6,7 +6,6 @@ from builder.snippets import (
     save_raw_json,
 )
 
-
 REFERRAL_USER_PROD_API_KEY = os.getenv("REFERRAL_USER_PROD_API_KEY", "123")
 
 
