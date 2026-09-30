@@ -2,13 +2,9 @@ import json
 import os
 from typing import (
     Any,
-    Dict,
-    Optional,
-    Tuple,
 )
 
 import yaml
-
 
 ALL_RESOURCES = {
     "addresses",
@@ -49,7 +45,7 @@ ALL_RESOURCES = {
 RESPONSES_DIR = os.path.join("..", "..", "official", "docs", "responses")
 
 
-def build_response_snippet(interaction_index: Optional[int] = 0, objects_to_persist: Optional[int] = None):
+def build_response_snippet(interaction_index: int | None = 0, objects_to_persist: int | None = None):
     """Builds the response snippet from a recorded VCR interaction."""
     create_dir(os.path.join(RESPONSES_DIR))
 
@@ -63,9 +59,9 @@ def build_response_snippet(interaction_index: Optional[int] = 0, objects_to_pers
     )
 
     # Assert the standalone snippet actually got saved, fail if not
-    assert os.path.exists(
-        os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name)
-    ), f"{bare_snippet_name} standalone snippet file missing!"
+    assert os.path.exists(os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name)), (
+        f"{bare_snippet_name} standalone snippet file missing!"
+    )
 
 
 def create_dir(dir_name: str):
@@ -74,21 +70,18 @@ def create_dir(dir_name: str):
         os.mkdir(dir_name)
 
 
-def extract_response_from_cassette(cassette_filename: str, interaction_index: Optional[int] = 0) -> Any:
+def extract_response_from_cassette(cassette_filename: str, interaction_index: int | None = 0) -> Any:
     """Opens a single cassette file and extracts the response content."""
     cassette_file = os.path.join("tests", "cassettes", cassette_filename)
     if not os.path.exists(cassette_file):
         raise FileNotFoundError(f"{cassette_filename} not found, run the tests again.")
 
     with open(cassette_file, "r") as cassette:
-        try:
-            cassette_data = yaml.safe_load(cassette)
-            for key, _ in cassette_data.items():
-                if key == "interactions":
-                    response_content = cassette_data[key][interaction_index]["response"]["body"]["string"]
-                    response = response_content if response_content else "{}"
-        except yaml.YAMLError:
-            raise
+        cassette_data = yaml.safe_load(cassette)
+        for key in cassette_data:
+            if key == "interactions":
+                response_content = cassette_data[key][interaction_index]["response"]["body"]["string"]
+                response = response_content if response_content else "{}"
 
     return response
 
@@ -96,18 +89,28 @@ def extract_response_from_cassette(cassette_filename: str, interaction_index: Op
 def _setup_saving_response_snippet(response_snippet_filename: str):
     """Reusable helper to setup the logic to save a standalone response snippet."""
 
-    bare_snippet_name = response_snippet_filename.replace("test_", "").replace(".yaml", ".json")
-    split_resource_name = bare_snippet_name.split("_")
-    first_resource_name = split_resource_name[0]
-    second_resource_name = split_resource_name[1]
-    first_and_second_resource_name = f"{first_resource_name}-{second_resource_name}"
-    resource_name = (
-        first_resource_name if first_and_second_resource_name not in ALL_RESOURCES else first_and_second_resource_name
-    )
+    normalized_name = response_snippet_filename.replace("test_", "").replace(".yaml", "")
+    split_name = normalized_name.split("_")
 
-    # Setup the names like the website wants it
+    first_resource_name = split_name[0]
+    second_resource_name = split_name[1] if len(split_name) > 1 else ""
+    first_and_second_resource_name = f"{first_resource_name}-{second_resource_name}"
+
+    # Some resources are two words and represented with hyphens in docs paths (eg: scan-form).
+    if first_and_second_resource_name in ALL_RESOURCES:
+        resource_name = first_and_second_resource_name
+        action_start_index = 2
+    else:
+        resource_name = first_resource_name
+        action_start_index = 1
+
+    action_name = "-".join(split_name[action_start_index:])
+    if not action_name:
+        raise ValueError(f"Could not parse action name from: {response_snippet_filename}")
+
+    # Response filenames should only contain the action name (no resource prefix).
     response_snippet_folder = resource_name.replace("_", "-")
-    bare_snippet_name = bare_snippet_name.replace("_", "-")
+    bare_snippet_name = f"{action_name.replace('_', '-')}.json"
 
     create_dir(os.path.join(RESPONSES_DIR, response_snippet_folder))
 
@@ -117,8 +120,8 @@ def _setup_saving_response_snippet(response_snippet_filename: str):
 def save_response_snippet(
     response_snippet_filename: str,
     response_snippet_content: Any,
-    objects_to_persist: Optional[int] = None,
-) -> Tuple[str, str]:
+    objects_to_persist: int | None = None,
+) -> tuple[str, str]:
     """Saves the response content of a cassette to a standalone snippet file."""
     response_snippet_folder, bare_snippet_name = _setup_saving_response_snippet(response_snippet_filename)
 
@@ -137,13 +140,11 @@ def save_response_snippet(
     return response_snippet_folder, bare_snippet_name
 
 
-def save_raw_json(response_snippet_filename: str, response_dict: Dict[str, Any]):
+def save_raw_json(response_snippet_filename: str, response_dict: dict[str, Any]):
     """Saves a raw response dictionary to a standalone snippet file (used for hard-coded responses
     that cannot easily be plugged into a test suite (eg: Billing functions).
     """
     response_snippet_folder, bare_snippet_name = _setup_saving_response_snippet(response_snippet_filename)
-
-    bare_snippet_name = f"{bare_snippet_name}.json"
 
     with open(os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name), "w") as response_snippet_file:
         json.dump(response_dict, response_snippet_file, indent=2)

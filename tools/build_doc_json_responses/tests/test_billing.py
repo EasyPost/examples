@@ -58,21 +58,6 @@ def test_billing_create_referral_token():
     save_raw_json(test_name, response_dict)
 
 
-def test_billing_create_ep_credit_card():
-    response_dict = {
-        "id": "card_...",
-        "object": "CreditCard",
-        "name": None,
-        "last4": "1234",
-        "exp_month": 1,
-        "exp_year": 2025,
-        "brand": "Visa",
-    }
-
-    test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]
-    save_raw_json(test_name, response_dict)
-
-
 @pytest.mark.vcr()
 def test_billing_create_stripe_bank_account_secret(prod_client):
     prod_client.beta_referral_customer.create_bank_account_client_secret()

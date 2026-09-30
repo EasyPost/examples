@@ -1,0 +1,32 @@
+PYTHON_BINARY := "python3"
+VIRTUAL_ENV := "venv"
+VIRTUAL_BIN := VIRTUAL_ENV / "bin"
+SOURCE_CODE_DIR := "builder"
+RESPONSES_DIR := "responses"
+TEST_DIR := "tests"
+
+# clean - Remove the virtual environment and clear out .pyc files
+clean:
+    rm -rf {{VIRTUAL_ENV}} dist/ build/ *.egg-info/ .pytest_cache .mypy_cache
+    find . -name '*.pyc' -delete
+
+# generate - Generate the JSON response bodies
+generate:
+    {{VIRTUAL_BIN}}/pytest
+
+# install - Install the project locally
+install:
+    {{PYTHON_BINARY}} -m venv {{VIRTUAL_ENV}}
+    {{VIRTUAL_BIN}}/pip install -e ."[dev]"
+    git submodule init
+    git submodule update
+
+# lint - Run the linter and formatter checks
+lint:
+    {{VIRTUAL_BIN}}/ruff check {{SOURCE_CODE_DIR}}/ {{TEST_DIR}}/
+    {{VIRTUAL_BIN}}/ruff format --check {{SOURCE_CODE_DIR}}/ {{TEST_DIR}}/
+
+# Fix lint issues
+lint-fix:
+    {{VIRTUAL_BIN}}/ruff check --fix {{SOURCE_CODE_DIR}}/ {{TEST_DIR}}/
+    {{VIRTUAL_BIN}}/ruff format {{SOURCE_CODE_DIR}}/ {{TEST_DIR}}/
