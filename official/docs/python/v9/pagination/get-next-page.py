@@ -8,6 +8,6 @@ shipments = client.shipment.all(
 )
 
 # Provide the previous results page to move onto the next page
-next_page = client.shipments.get_next_page(shipments)
+next_page = client.shipment.get_next_page(shipments)
 
 print(next_page)
