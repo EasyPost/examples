@@ -1,10 +1,5 @@
-import os
-
 import pytest
-from builder.snippets import (
-    build_response_snippet,
-    save_raw_json,
-)
+from builder.snippets import build_response_snippet
 
 
 @pytest.mark.vcr()
@@ -15,54 +10,42 @@ def test_api_keys_retrieve(prod_client):
     build_response_snippet(interaction_index=1)
 
 
-def test_api_keys_create(prod_client):
-    test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]
+@pytest.mark.vcr()
+def test_api_keys_create(referral_customer_prod_client):
+    api_key = referral_customer_prod_client.api_keys.create(mode="test")
 
-    response_dict = {
-        "object": "ApiKey",
-        "key": "<REDACTED>",
-        "mode": "test",
-        "created_at": "2022-01-29T00:02:36Z",
-        "active": True,
-        "id": "ak_...",
-    }
-
-    save_raw_json(test_name, response_dict)
+    try:
+        build_response_snippet()
+    finally:
+        referral_customer_prod_client.api_keys.delete(id=api_key.id)
 
 
-def test_api_keys_delete(prod_client):
-    test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]
+@pytest.mark.vcr()
+def test_api_keys_delete(referral_customer_prod_client):
+    api_key = referral_customer_prod_client.api_keys.create(mode="test")
+    referral_customer_prod_client.api_keys.delete(id=api_key.id)
 
-    response_dict = {}
-
-    save_raw_json(test_name, response_dict)
-
-
-def test_api_keys_enable(prod_client):
-    test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]
-
-    response_dict = {
-        "object": "ApiKey",
-        "key": "<REDACTED>",
-        "mode": "test",
-        "created_at": "2022-01-29T00:02:36Z",
-        "active": True,
-        "id": "ak_...",
-    }
-
-    save_raw_json(test_name, response_dict)
+    build_response_snippet(interaction_index=1)
 
 
-def test_api_keys_disable(prod_client):
-    test_name = os.environ.get("PYTEST_CURRENT_TEST").split(":")[-1].split(" ")[0]
+@pytest.mark.vcr()
+def test_api_keys_enable(referral_customer_prod_client):
+    api_key = referral_customer_prod_client.api_keys.create(mode="test")
+    referral_customer_prod_client.api_keys.disable(id=api_key.id)
+    referral_customer_prod_client.api_keys.enable(id=api_key.id)
 
-    response_dict = {
-        "object": "ApiKey",
-        "key": "<REDACTED>",
-        "mode": "test",
-        "created_at": "2022-01-29T00:02:36Z",
-        "active": False,
-        "id": "ak_...",
-    }
+    try:
+        build_response_snippet(interaction_index=2)
+    finally:
+        referral_customer_prod_client.api_keys.delete(id=api_key.id)
 
-    save_raw_json(test_name, response_dict)
+
+@pytest.mark.vcr()
+def test_api_keys_disable(referral_customer_prod_client):
+    api_key = referral_customer_prod_client.api_keys.create(mode="test")
+    referral_customer_prod_client.api_keys.disable(id=api_key.id)
+
+    try:
+        build_response_snippet(interaction_index=1)
+    finally:
+        referral_customer_prod_client.api_keys.delete(id=api_key.id)

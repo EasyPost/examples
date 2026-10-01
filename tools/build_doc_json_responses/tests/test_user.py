@@ -6,10 +6,11 @@ from builder.snippets import build_response_snippet
 def test_child_users_create(prod_client):
     user = prod_client.user.create(name="Test User")
 
-    # Delete the user so we don't clutter up the test environment
-    prod_client.user.delete(id=user.id)
-
-    build_response_snippet()
+    try:
+        build_response_snippet()
+    finally:
+        # Delete the user so we don't clutter up the test environment
+        prod_client.user.delete(id=user.id)
 
 
 @pytest.mark.vcr()
