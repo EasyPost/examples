@@ -30,3 +30,11 @@ def test_trackers_batch(test_client, tracker_create):
     test_client.tracker.retrieve_batch(tracking_codes=[tracker1.tracking_code])
 
     build_response_snippet(interaction_index=1)
+
+
+@pytest.mark.vcr()
+def test_trackers_delete(test_client, tracker_create):
+    tracker1 = test_client.tracker.create(**tracker_create)
+    test_client.tracker.delete(id=tracker1.id)
+
+    build_response_snippet(interaction_index=1)
