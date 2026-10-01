@@ -110,6 +110,28 @@ When a client library releases a new major version:
 2. Update only `current` for latest major syntax/usage changes.
 3. Keep endpoint/action coverage and naming consistent between versions unless API/library behavior requires divergence.
 
+## Response Generation (Required For New/Updated Examples)
+
+When authoring or changing docs examples, make sure the matching response JSON is generated and updated.
+
+Quick workflow:
+
+1. `cd tools/build_doc_json_responses`
+2. Remove related cassette file(s) in `tests/cassettes` for the response(s) you need to regenerate.
+3. Run `just generate` with required API keys (run it twice; first pass records, second pass writes responses):
+
+```bash
+# Source `.env` file or variables
+just generate
+```
+
+4. Copy generated files from `tools/build_doc_json_responses/responses` into `official/docs/responses`.
+5. Keep endpoint/action naming aligned between example snippets and response JSON paths.
+
+For complete setup, troubleshooting, and formatting details, see:
+
+- `tools/build_doc_json_responses/README.md`
+
 ## Consistency Checklist Before Commit
 
 1. Filename and folder parity against curl `current` action names.
@@ -118,6 +140,7 @@ When a client library releases a new major version:
 4. Placeholder IDs follow expected prefixes.
 5. New data is non-PII and fixture-aligned where possible.
 6. `current` directories remain present for all language docs.
+7. Matching response JSON was regenerated/updated when snippet behavior changed.
 
 ## Optional Verification Commands
 
@@ -132,7 +155,6 @@ find official/docs/responses -maxdepth 2 -type f | head
 
 ## Anti-Patterns
 
-- Endpoint-prefixed response filenames.
 - Adding extra helper frameworks or architecture in simple snippets.
 - Introducing language-specific style drift not already present in that language's `current` precedent.
 - Changing historical version directories when the change should be only in `current`.
