@@ -25,8 +25,9 @@ When conventions conflict, use this order:
 
 1. Existing `official/docs/curl/current` endpoint/action directory and filename layout.
 2. Existing `official/docs/<language>/current` precedent for that endpoint.
-3. `README.md` conventions in the Development section.
-4. Fixture-aligned values from `official/fixtures`.
+3. Service implementation/tests in official SDK repos under `easypost/easypost-*` on GitHub to verify per-language function names and call shapes.
+4. `README.md` conventions in the Development section.
+5. Fixture-aligned values from `official/fixtures`.
 
 ## Repository Structure Rules
 
@@ -73,6 +74,7 @@ Required shape:
 Keep snippets:
 
 - Small and focused.
+- Prefer inline single-use literal values in API call params instead of temporary variables when readability is still clear.
 - Free of unrelated setup, abstractions, or control flow.
 - Consistent with existing naming and call style in that language.
 
@@ -156,5 +158,6 @@ find official/docs/responses -maxdepth 2 -type f | head
 ## Anti-Patterns
 
 - Adding extra helper frameworks or architecture in simple snippets.
+- Introducing unnecessary temporary variables for one-off values in minimal examples.
 - Introducing language-specific style drift not already present in that language's `current` precedent.
 - Changing historical version directories when the change should be only in `current`.
