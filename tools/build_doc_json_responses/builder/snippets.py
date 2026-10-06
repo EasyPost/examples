@@ -16,6 +16,7 @@ ALL_RESOURCES = {
     "carrier-metadata",
     "carrier-types",
     "child-users",
+    "customer-portals",
     "customs-infos",
     "customs-items",
     "endshipper",
