@@ -19,6 +19,7 @@ ALL_RESOURCES = {
     "customer-portals",
     "customs-infos",
     "customs-items",
+    "embeddables",
     "endshipper",
     "events",
     "insurance",
