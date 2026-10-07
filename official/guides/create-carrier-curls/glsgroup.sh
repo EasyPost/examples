@@ -3,19 +3,17 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   -H 'Content-Type: application/json' \
   -d '{
   "carrier_account": {
-    "type": "DhlEcsAccount",
-    "description": "DhlEcsAccount",
+    "type": "GlsGroupAccount",
+    "description": "GlsGroupAccount",
     "credentials": {
       "client_id": "VALUE",
       "client_secret": "VALUE",
-      "distribution_center": "VALUE",
-      "pickup_id": "VALUE"
+      "contact_id": "VALUE"
     },
     "test_credentials": {
       "client_id": "VALUE",
       "client_secret": "VALUE",
-      "distribution_center": "VALUE",
-      "pickup_id": "VALUE"
+      "contact_id": "VALUE"
     }
   }
 }'

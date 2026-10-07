@@ -7,13 +7,19 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
     "description": "DeutschePostUKAccount",
     "credentials": {
       "account_number": "VALUE",
+      "api_key": "VALUE",
       "client_id": "VALUE",
-      "client_secret": "VALUE"
+      "client_secret": "VALUE",
+      "customer_identification": "VALUE",
+      "customer_pricing_reference": "VALUE"
     },
     "test_credentials": {
       "account_number": "VALUE",
+      "api_key": "VALUE",
       "client_id": "VALUE",
-      "client_secret": "VALUE"
+      "client_secret": "VALUE",
+      "customer_identification": "VALUE",
+      "customer_pricing_reference": "VALUE"
     }
   }
 }'
