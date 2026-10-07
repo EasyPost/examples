@@ -10,14 +10,18 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
       "api_username": "VALUE",
       "client_id": "VALUE",
       "password": "VALUE",
-      "shipper_account_number": "VALUE"
+      "shipper_account_number": "VALUE",
+      "track_client_id": "VALUE",
+      "track_client_secret": "VALUE"
     },
     "test_credentials": {
       "api_key": "VALUE",
       "api_username": "VALUE",
       "client_id": "VALUE",
       "password": "VALUE",
-      "shipper_account_number": "VALUE"
+      "shipper_account_number": "VALUE",
+      "track_client_id": "VALUE",
+      "track_client_secret": "VALUE"
     }
   }
 }'
