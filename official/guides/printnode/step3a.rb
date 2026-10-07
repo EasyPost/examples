@@ -1,5 +1,0 @@
-source 'https://rubygems.org'
-gem 'easypost'
-gem 'printnode'
-gem 'sinatra'
-gem 'dotenv'

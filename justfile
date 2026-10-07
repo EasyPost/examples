@@ -96,10 +96,8 @@ lint-php:
 lint-python:
     {{PYTHON_VIRTUAL_BIN}}/ruff check official/docs/python/
     {{PYTHON_VIRTUAL_BIN}}/ruff check official/guides/
-    {{PYTHON_VIRTUAL_BIN}}/ruff check official/landing_pages/
     {{PYTHON_VIRTUAL_BIN}}/ruff format --check official/docs/python/
     {{PYTHON_VIRTUAL_BIN}}/ruff format --check official/guides/
-    {{PYTHON_VIRTUAL_BIN}}/ruff format --check official/landing_pages/
 
 # Lints Ruby files
 lint-ruby:
@@ -140,10 +138,8 @@ format-php:
 format-python:
     {{PYTHON_VIRTUAL_BIN}}/ruff check --fix official/docs/python/
     {{PYTHON_VIRTUAL_BIN}}/ruff check --fix official/guides/
-    {{PYTHON_VIRTUAL_BIN}}/ruff check --fix official/landing_pages/
     {{PYTHON_VIRTUAL_BIN}}/ruff format official/docs/python/
     {{PYTHON_VIRTUAL_BIN}}/ruff format official/guides/
-    {{PYTHON_VIRTUAL_BIN}}/ruff format official/landing_pages/
 
 # Formats Ruby files
 format-ruby:
