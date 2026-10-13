@@ -12,8 +12,8 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - name: Run sh-checker
         uses: luizm/action-sh-checker@v0.9.0
         env:
@@ -22,8 +22,8 @@ jobs:
   csharp:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - name: Install C# dependencies
         run: just install-csharp
       - name: Lint project
@@ -31,8 +31,8 @@ jobs:
   go:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - uses: actions/setup-go@v5
         with:
           go-version: 1.23
@@ -42,8 +42,8 @@ jobs:
   java:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - name: Install Java dependencies
         run: just install-java
       - name: Lint project
@@ -51,8 +51,8 @@ jobs:
   node:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - name: Install dependencies
         run: just install-node
       - name: Lint project
@@ -62,8 +62,8 @@ jobs:
   php:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - name: Install dependencies
         run: just install-php
       - name: Lint project
@@ -71,8 +71,8 @@ jobs:
   python:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - name: Install Python dependencies
         run: just install-python
       - name: Lint project
@@ -80,8 +80,8 @@ jobs:
   ruby:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: extractions/setup-just@v3
+      - uses: actions/checkout@v7
+      - uses: extractions/setup-just@v4
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
@@ -94,6 +94,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Check for current dirs in docs
         run: ./test/ensure-current-dirs-exist.sh
