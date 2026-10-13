@@ -1,7 +1,7 @@
 curl -X POST https://api.easypost.com/alpha/readydocs/packslip \
-    -u "EASYPOST_API_KEY": \
-    -H 'Content-Type: application/json' \
-    --data-binary @- <<'JSON'
+  -u "EASYPOST_API_KEY": \
+  -H 'Content-Type: application/json' \
+  --data-binary @- <<'JSON'
 {
   "pack_slip_data": {
     "pack_slip": {
