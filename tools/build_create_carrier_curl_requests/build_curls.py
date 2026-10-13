@@ -2,6 +2,7 @@ import copy
 import json
 import os
 import re
+import shutil
 
 import carrier_builder_data
 import carrier_builder_payloads
@@ -14,18 +15,24 @@ API_KEY = os.getenv("EASYPOST_PROD_API_KEY")
 LINE_BREAK_CHARS = " \\\n"
 END_CHARS = "\n"
 CUSTOM_WORKFLOW_CHARS = "## REQUIRES CUSTOM WORKFLOW ##\n"
+OUTPUT_DESTINATION = os.path.join("..", "..", "official", "guides", "create-carrier-curls")
+
+
+def reset_output_directory() -> None:
+    """Delete and recreate the output directory so every run is fully regenerated."""
+    if os.path.exists(OUTPUT_DESTINATION):
+        shutil.rmtree(OUTPUT_DESTINATION)
+
+    os.makedirs(OUTPUT_DESTINATION)
 
 
 def main():
+    reset_output_directory()
     carrier_types = get_carrier_types()
     for carrier in sorted(carrier_types, key=lambda x: x["type"]):
         curl_request = build_carrier_curl_request(carrier)
-        output_destination = os.path.join("../", "../", "official", "guides", "create-carrier-curls")
-        if not os.path.exists(output_destination):
-            os.makedirs(output_destination)
-
         with open(
-            os.path.join(output_destination, f"{carrier['type'].lower().replace('account', '')}.sh"),
+            os.path.join(OUTPUT_DESTINATION, f"{carrier['type'].lower().replace('account', '')}.sh"),
             "w",
         ) as carrier_curl_file:
             carrier_curl_file.write(re.sub(r"^.*?\n", "", curl_request))
@@ -90,18 +97,9 @@ def write_wallet_curl(carrier: dict[str, str], carrier_account_json: dict) -> No
         f"{LINE_BREAK_CHARS}{END_CHARS}",
         END_CHARS,
     )
-    output_destination = os.path.join(
-        "..",
-        "..",
-        "official",
-        "guides",
-        "create-carrier-curls",
-    )
-    if not os.path.exists(output_destination):
-        os.makedirs(output_destination)
     carrier_filename = carrier["type"].lower().replace("account", "")
     with open(
-        os.path.join(output_destination, f"{carrier_filename}-wallet.sh"),
+        os.path.join(OUTPUT_DESTINATION, f"{carrier_filename}wallet.sh"),
         "w",
     ) as wallet_file:
         wallet_file.write(re.sub(r"^.*?\n", "", wallet_output))
