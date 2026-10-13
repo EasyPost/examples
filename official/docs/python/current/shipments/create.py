@@ -31,8 +31,14 @@ shipment = client.shipment.create(
         "weight": 65.9,
     },
     line_items=[
-        {"total_line_value": "129.00", "item_description": "Mugs"},
-        {"total_line_value": "45.50", "item_description": "T-shirts"},
+        {
+            "total_line_value": "129.00",
+            "item_description": "Mugs",
+        },
+        {
+            "total_line_value": "45.50",
+            "item_description": "T-shirts",
+        },
     ],
 )
 
@@ -43,8 +49,14 @@ shipment = client.shipment.create(
     from_address={"id": "adr_..."},
     parcel={"id": "prcl_..."},
     line_items=[
-        {"total_line_value": "129.00", "item_description": "Mugs"},
-        {"total_line_value": "45.50", "item_description": "T-shirts"},
+        {
+            "total_line_value": "129.00",
+            "item_description": "Mugs",
+        },
+        {
+            "total_line_value": "45.50",
+            "item_description": "T-shirts",
+        },
     ],
 )
 

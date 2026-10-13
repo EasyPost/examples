@@ -161,3 +161,4 @@ find official/docs/responses -maxdepth 2 -type f | head
 - Introducing unnecessary temporary variables for one-off values in minimal examples.
 - Introducing language-specific style drift not already present in that language's `current` precedent.
 - Changing historical version directories when the change should be only in `current`.
+- Adding tooling comments such as `# shellcheck disable=SC2016` in snippet files.
