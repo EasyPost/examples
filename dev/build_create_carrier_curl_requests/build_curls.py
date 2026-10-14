@@ -15,7 +15,7 @@ API_KEY = os.getenv("EASYPOST_PROD_API_KEY")
 LINE_BREAK_CHARS = " \\\n"
 END_CHARS = "\n"
 CUSTOM_WORKFLOW_CHARS = "## REQUIRES CUSTOM WORKFLOW ##\n"
-OUTPUT_DESTINATION = os.path.join("..", "..", "official", "guides", "create-carrier-curls")
+OUTPUT_DESTINATION = os.path.join("..", "..", "guides", "create-carrier-curls")
 
 
 def reset_output_directory() -> None:

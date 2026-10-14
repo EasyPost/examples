@@ -6,7 +6,7 @@
     <version>0.1.0</version>
 
     <build>
-        <sourceDirectory>official/docs/java</sourceDirectory>
+        <sourceDirectory>docs/java</sourceDirectory>
     </build>
 
     <properties>

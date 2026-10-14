@@ -28,7 +28,7 @@ EASYPOST_TEST_API_KEY=putrealkeyhere EASYPOST_PROD_API_KEY=putrealkeyhere PARTNE
 
 **NOTE**: Some static data used by this tool, such as the USPS carrier account ID, is associated with the EasyPost Docs Tooling User. You must use that user's API keys to generate these snippets.
 
-Generated response snippets are stored in the `responses` directory. Copy this entire directory to `official/docs/responses` once complete.
+Generated response snippets are stored in the `responses` directory. Copy this entire directory to `docs/responses` once complete.
 
 **NOTE**: The `responses` directory structure is exactly as expected by the docs website and other downstream projects -- do not alter it.
 
@@ -36,7 +36,7 @@ Generated response snippets are stored in the `responses` directory. Copy this e
 
 The `make lint` and `make lint-fix` commands in the Makefile will lint the Python code in this tool, but not the response snippets.
 
-After copying the response snippets to `official/docs/responses`, you can lint them with the `make format-node` command in the root Makefile, which will lint and format all JSON files, including the response snippets, in the `official/docs` directory.
+After copying the response snippets to `docs/responses`, you can lint them with the `make format-node` command in the root Makefile, which will lint and format all JSON files, including the response snippets, in the `docs` directory.
 
 ## Troubleshooting
 

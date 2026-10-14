@@ -6,14 +6,13 @@
 
 ## Project Structure
 
-- `community` code snippets contributed from the community. These may include custom workflows, how to integrate EasyPost with other software, etc. These are **unofficial and not supported or maintained by EasyPost**.
-- `official` code snippets and examples that are used on EasyPost websites or provided for our user's benefit
-  - `docs` code snippets that are shown on our [API docs](https://docs.easypost.com). Each language will have its own subdirectory. Within each language directory are versioned directories for that language's client library
-  - `fixtures` mock data used as fixtures for our client library test suites, tooling, etc
-  - `guides` code snippets that are used on our [guides page](https://docs.easypost.com/guides/getting-started). Each language will have its own subdirectory
+- `dev` contain utilities to help facilitate the code in this repo such as the response and curl snippet generation suites
+- `docs` code snippets that are shown on our [API docs](https://docs.easypost.com). Each language will have its own subdirectory. Within each language directory are versioned directories for that language's client library
   - `responses` responses for each supported endpoint of our API. These responses coincide with the example snippets found in the `docs` directory. Each will give you a good idea of what to expect back from the EasyPost API
+- `fixtures` mock data used as fixtures for our client library test suites, tooling, etc
+- `guides` code snippets that are used on our [guides page](https://docs.easypost.com/guides/getting-started). Each language will have its own subdirectory
 - `style_guides` contain the style guides and configs for tooling we use in each public language we support
-- `tools` contain utilities to help facilitate the code in this repo such as the response snippet generation suite
+- `tools` contain example tools to use while interacting with the EasyPost API
 
 > NOTE: filenames may not match language convention - this is intentional. Our documentation website uses these example snippets and expects folder/filenames to follow a certain templated naming convention.
 
@@ -38,7 +37,7 @@ Once installed, run an example like you would any other script or tool for that 
 When creating or updating examples, follow these baseline rules:
 
 1. Keep snippets minimally viable and focused: import the library, create a client, perform one clear API call, and print/log the result.
-2. Preserve cross-language and cross-version consistency. Use existing `official/docs/<language>/current` snippets as precedent and keep endpoint/action naming aligned with curl.
+2. Preserve cross-language and cross-version consistency. Use existing `docs/<language>/current` snippets as precedent and keep endpoint/action naming aligned with curl.
 3. Use fixture-aligned, open-source sample data only. Do not include real-person or real-business PII.
 4. Examples should run as-is with no edits other than replacing placeholder API keys and object IDs.
 5. For full standards (directory layout, naming, responses, placeholders, and versioning), see [`.agents/skills/ep-example-authoring/SKILL.md`](.agents/skills/ep-example-authoring/SKILL.md).

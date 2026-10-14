@@ -96,7 +96,7 @@ def scrub_response_bodies(scrubbers: list[tuple[str, Any]]) -> Any:
 
 def read_fixture_data():
     """Reads fixture data from the fixtures JSON file."""
-    with open(os.path.join("..", "..", "official", "fixtures", "example-snippet-fixtures.json")) as data:
+    with open(os.path.join("..", "..", "fixtures", "example-snippet-fixtures.json")) as data:
         fixtures = json.load(data)
 
     return fixtures

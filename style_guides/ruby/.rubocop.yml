@@ -12,11 +12,11 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Naming/VariableNumber:
   Exclude:
-    - 'official/docs/ruby/**/options/create-with-options.rb'
+    - 'docs/ruby/**/options/create-with-options.rb'
 Lint/UselessAssignment:
   Exclude:
-    - 'official/docs/ruby/**/users/retrieve.rb'
-    - 'official/docs/ruby/**/api-keys/retrieve.rb'
+    - 'docs/ruby/**/users/retrieve.rb'
+    - 'docs/ruby/**/api-keys/retrieve.rb'
 Naming/FileName:
   Enabled: false
 # We are ignoring RSpec/FilePath because Simplecov doesn't play nice with nested spec files

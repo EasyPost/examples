@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <!-- Replace the below with whatever file you want to run individually -->
-    <Compile Include="official/docs/csharp/current/addresses/create.cs" />
+    <Compile Include="docs/csharp/current/addresses/create.cs" />
   </ItemGroup>
 
   <ItemGroup>

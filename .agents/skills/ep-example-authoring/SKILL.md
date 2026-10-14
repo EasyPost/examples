@@ -15,50 +15,50 @@ Keep examples consistent across languages and versions while preserving the repo
 
 This skill applies to:
 
-- `official/docs/*`
-- `official/guides/*`
-- `official/docs/responses/*`
+- `docs/*`
+- `guides/*`
+- `docs/responses/*`
 
 ## Source Of Truth Priority
 
 When conventions conflict, use this order:
 
-1. Existing `official/docs/curl/current` endpoint/action directory and filename layout.
-2. Existing `official/docs/<language>/current` precedent for that endpoint.
+1. Existing `docs/curl/current` endpoint/action directory and filename layout.
+2. Existing `docs/<language>/current` precedent for that endpoint.
 3. Service implementation/tests in official SDK repos under `easypost/easypost-*` on GitHub to verify per-language function names and call shapes.
 4. `README.md` conventions in the Development section.
-5. Fixture-aligned values from `official/fixtures`.
+5. Fixture-aligned values from `fixtures`.
 
 ## Repository Structure Rules
 
-- `official/docs/<language>/current` is the authoritative, latest snippet set used by downstream sites.
-- `official/docs/<language>/vN` directories preserve old major-version examples.
-- `official/docs/responses` is not versioned and does not have a `current` directory.
-- `official/guides` contains guide-specific examples and payload assets.
+- `docs/<language>/current` is the authoritative, latest snippet set used by downstream sites.
+- `docs/<language>/vN` directories preserve old major-version examples.
+- `docs/responses` is not versioned and does not have a `current` directory.
+- `guides` contains guide-specific examples and payload assets.
 
 ## Endpoint Directory And Filename Rules
 
 ### Docs snippets
 
-- Place snippets under `official/docs/<language>/current/<endpoint>/<action>.<ext>`.
+- Place snippets under `docs/<language>/current/<endpoint>/<action>.<ext>`.
 - Endpoint directories use kebab-case path names, matching curl endpoint folder names.
 - Action filenames use kebab-case and should match curl script stem.
 
 Examples:
 
-- `official/docs/curl/current/addresses/create-and-verify.sh`
-- `official/docs/node/current/addresses/create-and-verify.js`
-- `official/docs/python/current/scan-form/list.py`
+- `docs/curl/current/addresses/create-and-verify.sh`
+- `docs/node/current/addresses/create-and-verify.js`
+- `docs/python/current/scan-form/list.py`
 
 ### Response snippets
 
-- Place responses under `official/docs/responses/<endpoint>/<action>.json`.
+- Place responses under `docs/responses/<endpoint>/<action>.json`.
 - Keep response endpoint/action naming aligned with curl endpoint/action naming.
 
 Examples:
 
-- `official/docs/responses/addresses/create.json`
-- `official/docs/responses/rates/retrieve-stateless.json`
+- `docs/responses/addresses/create.json`
+- `docs/responses/rates/retrieve-stateless.json`
 
 ## Snippet Content Rules
 
@@ -108,7 +108,7 @@ Java package caution:
 
 When a client library releases a new major version:
 
-1. Copy `official/docs/<language>/current` to `official/docs/<language>/v<previous_major>`.
+1. Copy `docs/<language>/current` to `docs/<language>/v<previous_major>`.
 2. Update only `current` for latest major syntax/usage changes.
 3. Keep endpoint/action coverage and naming consistent between versions unless API/library behavior requires divergence.
 
@@ -118,7 +118,7 @@ When authoring or changing docs examples, make sure the matching response JSON i
 
 Quick workflow:
 
-1. `cd tools/build_doc_json_responses`
+1. `cd dev/build_doc_json_responses`
 2. Remove related cassette file(s) in `tests/cassettes` for the response(s) you need to regenerate.
 3. Run `just generate` with required API keys (run it twice; first pass records, second pass writes responses):
 
@@ -127,12 +127,12 @@ Quick workflow:
 just generate
 ```
 
-4. Copy generated files from `tools/build_doc_json_responses/responses` into `official/docs/responses`.
+4. Copy generated files from `dev/build_doc_json_responses/responses` into `docs/responses`.
 5. Keep endpoint/action naming aligned between example snippets and response JSON paths.
 
 For complete setup, troubleshooting, and formatting details, see:
 
-- `tools/build_doc_json_responses/README.md`
+- `dev/build_doc_json_responses/README.md`
 
 ## Consistency Checklist Before Commit
 
@@ -151,8 +151,8 @@ For complete setup, troubleshooting, and formatting details, see:
 bash test/ensure-current-dirs-exist.sh
 
 # Spot-check endpoint/action parity shape
-find official/docs/curl/current -maxdepth 2 -type f | head
-find official/docs/responses -maxdepth 2 -type f | head
+find docs/curl/current -maxdepth 2 -type f | head
+find docs/responses -maxdepth 2 -type f | head
 ```
 
 ## Anti-Patterns
