@@ -6,6 +6,14 @@ EasyPost publishes these curl requests for convenience in this repo and uses the
 
 The output is intentionally fully automated. Whatever carrier types are available from `/carrier_types` at run time is the source of truth for what should be checked in.
 
+## Carrier Availability Feature Flags
+
+Some carriers are behind feature flags and will not be returned by `/carrier_types` unless the API user has the associated `available_for_presentation` flag enabled for that carrier.
+
+It is recommended to run this tool with the `Docs Tooling` EasyPost user, since that user is already configured with the needed carrier feature flags and should return the full list.
+
+If the Docs Tooling user is not available, the user running this tool must be enabled on the backend for all `available_for_presentation` feature flags.
+
 ## Install
 
 ```shell
