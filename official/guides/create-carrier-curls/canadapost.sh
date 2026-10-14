@@ -10,14 +10,18 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
       "contract_id": "VALUE",
       "customer_number": "VALUE",
       "has_credit_card": "VALUE",
-      "not_platform": "VALUE"
+      "not_platform": "VALUE",
+      "zonos_api_key": "VALUE",
+      "zonos_enabled": "VALUE"
     },
     "test_credentials": {
       "api_key": "VALUE",
       "contract_id": "VALUE",
       "customer_number": "VALUE",
       "has_credit_card": "VALUE",
-      "not_platform": "VALUE"
+      "not_platform": "VALUE",
+      "zonos_api_key": "VALUE",
+      "zonos_enabled": "VALUE"
     }
   }
 }'

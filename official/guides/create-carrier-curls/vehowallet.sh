@@ -3,9 +3,10 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts/open \
   -H 'Content-Type: application/json' \
   -d '{
   "carrier_account": {
-    "type": "GofoWalletAccount",
-    "reference": "GOFO Wallet Account",
-    "description": "GOFO Wallet Account",
-    "origin_hub": "VALUE"
+    "type": "VehoWalletAccount",
+    "description": "VehoWalletAccount",
+    "credentials": {
+      "agreed_to_terms_at": "VALUE"
+    }
   }
 }'

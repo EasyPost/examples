@@ -2,13 +2,13 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   -u "$EASYPOST_API_KEY": \
   -H 'Content-Type: application/json' \
   -d '{
-  "type": "UpsIparcelAccount",
-  "description": "UpsIparcelAccount",
   "carrier_account": {
+    "type": "TipsaAccount",
+    "description": "TipsaAccount",
     "credentials": {
-      "api_key": "VALUE",
-      "oauth_status": "VALUE",
-      "partner_oauth_url": "VALUE"
+      "agency_code": "VALUE",
+      "customer_code": "VALUE",
+      "password": "VALUE"
     }
   }
 }'

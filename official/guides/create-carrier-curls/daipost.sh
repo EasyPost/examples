@@ -7,6 +7,7 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
     "description": "DaiPostAccount",
     "credentials": {
       "account_code": "VALUE",
+      "api_key": "VALUE",
       "origin_terminal": "VALUE",
       "password": "VALUE",
       "username": "VALUE"

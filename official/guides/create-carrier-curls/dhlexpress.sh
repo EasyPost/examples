@@ -10,7 +10,9 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
       "country": "VALUE",
       "is_reseller": "VALUE",
       "password": "VALUE",
-      "site_id": "VALUE"
+      "site_id": "VALUE",
+      "zonos_api_key": "VALUE",
+      "zonos_enabled": "VALUE"
     }
   }
 }'
