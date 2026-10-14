@@ -43,6 +43,11 @@ def get_carrier_types():
     client = easypost.EasyPostClient(API_KEY)
     carrier_accounts = client.carrier_account.types()
 
+    existing_types = {carrier["type"] for carrier in carrier_accounts}
+    for static_carrier_type in carrier_builder_data.STATIC_CARRIER_TYPES:
+        if static_carrier_type not in existing_types:
+            carrier_accounts.append({"type": static_carrier_type})
+
     return carrier_accounts
 
 
@@ -82,12 +87,15 @@ def add_headers(carrier_output: str, carrier: dict[str, str]) -> str:
 
 
 def write_wallet_curl(carrier: dict[str, str], carrier_account_json: dict) -> None:
-    """Create a Wallet cURL for carriers that support EasyPost aggregation."""
+    """Create a Wallet cURL for carriers that support EasyPost BYOCA and Wallet."""
     wallet_json = copy.deepcopy(carrier_account_json)
     wallet_account = wallet_json["carrier_account"]
     wallet_account.pop("credentials", None)
     wallet_account.pop("test_credentials", None)
-    wallet_account["payment_mode"] = "aggregation"
+    # TODO: It is too difficult to properly assess the need for payment_mode as it
+    # is a case-by-base basis and we should not make assumptions for either the carrier
+    # or the user here; however, this could use some better documentation and distinction.
+    # wallet_account["payment_mode"] = "aggregation"
     wallet_output = f"# {carrier.get('type')} (EasyPost Wallet)\n"
     wallet_output = add_curl_line(wallet_output, carrier)
     wallet_output = add_headers(wallet_output, carrier)
@@ -107,6 +115,18 @@ def write_wallet_curl(carrier: dict[str, str], carrier_account_json: dict) -> No
 
 def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> str:
     """Iterate over the carrier fields and print the credential structure."""
+    if carrier["type"] == "UpsDapAccount":
+        carrier_account_json = carrier_builder_payloads.ups_dap_account_payload()
+        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += END_CHARS
+        return carrier_output
+
+    if carrier["type"] == "FedexDefaultAccount":
+        carrier_account_json = carrier_builder_payloads.fedex_default_account_payload()
+        carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
+        carrier_output += END_CHARS
+        return carrier_output
+
     carrier_account_json = {
         "carrier_account": {
             "type": carrier["type"],
@@ -126,7 +146,6 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         carrier_output += END_CHARS
         carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
     # Maersk Parcel — custom static credential structure
-    # TODO: Why is this static? It should be exposed via carrier types endpoint
     elif carrier["type"] in carrier_builder_data.MAERSK_CUSTOM_WORKFLOW_CARRIERS:
         carrier_account_json = carrier_builder_payloads.maersk_account_payload()
 
@@ -166,10 +185,9 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         # top_level here means `credentials`, `test_credentials`,
         # or `custom_workflow`
         for top_level in carrier_fields:
-            # TODO: If there is a custom_workflow such as 3rd party auth
+            # If there is a custom_workflow such as 3rd party auth
             # or a similar flow, warn about that here. The credential
-            # structure will differ from a normal carrier account and is
-            # currently not automated.
+            # structure will differ from a normal carrier account and is not automated.
             if top_level == "custom_workflow":
                 end += CUSTOM_WORKFLOW_CHARS
             else:
@@ -188,7 +206,7 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
             END_CHARS,
         )
 
-        if carrier["type"] in carrier_builder_data.WALLET_CARRIERS:
+        if carrier["type"] in carrier_builder_data.BYOCA_AND_WALLET_CARRIER_TYPES:
             write_wallet_curl(carrier, carrier_account_json)
 
     return carrier_output

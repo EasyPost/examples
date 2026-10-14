@@ -14,6 +14,8 @@ It is recommended to run this tool with the `Docs Tooling` EasyPost user, since 
 
 If the Docs Tooling user is not available, the user running this tool must be enabled on the backend for all `available_for_presentation` feature flags.
 
+The tool also includes static fallbacks for carriers under `STATIC_CARRIER_TYPES`, which are currently known to be omitted from `/carrier_types` due to not being marked for presentation.
+
 ## Install
 
 ```shell

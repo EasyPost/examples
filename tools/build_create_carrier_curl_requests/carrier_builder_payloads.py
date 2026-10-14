@@ -69,3 +69,40 @@ def doordash_account_payload() -> dict:
         "test_credentials": {},
         "type": "DoorDashAccount",
     }
+
+
+def ups_dap_account_payload() -> dict:
+    return {
+        "carrier_account": {
+            "type": "UpsDapAccount",
+            "description": "VALUE",
+            "name": "VALUE",
+            "title": "VALUE",
+            "company": "VALUE",
+            "street1": "VALUE",
+            "street2": "VALUE",
+            "city": "VALUE",
+            "state": "VALUE",
+            "postal_code": "VALUE",
+            "country": "VALUE",
+            "website": "VALUE",
+            "email": "VALUE",
+            "phone": "VALUE",
+        }
+    }
+
+
+def fedex_default_account_payload() -> dict:
+    return {
+        "carrier_account": {
+            "type": "FedexDefaultAccount",
+            "name": "VALUE",
+            "street1": "VALUE",
+            "city": "VALUE",
+            "state": "VALUE",
+            "postal_code": "VALUE",
+            "country": "VALUE",
+            "phone": "VALUE",
+            "email": "VALUE",
+        }
+    }
