@@ -72,17 +72,17 @@ lint: lint-csharp lint-go lint-java lint-node lint-php lint-python lint-ruby lin
 
 # Lints C# files
 lint-csharp:
-	dotnet format whitespace --include official/docs/csharp/ --folder --verify-no-changes
-	dotnet format whitespace --include official/guides/ --folder --verify-no-changes
+	dotnet format whitespace --include docs/csharp/ --folder --verify-no-changes
+	dotnet format whitespace --include guides/ --folder --verify-no-changes
 
 # Lints Go files
 lint-go:
-	"$(go env GOPATH)/bin/golangci-lint" run official/docs/golang/current/... community/... official/guides/...
+	"$(go env GOPATH)/bin/golangci-lint" run docs/golang/current/... tools/... guides/...
 
 # Lints Java files
 lint-java:
-	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/docs/java/*
-	java -jar checkstyle.jar src -c easypost_java_style.xml -d official/guides/*
+	java -jar checkstyle.jar src -c easypost_java_style.xml -d docs/java/*
+	java -jar checkstyle.jar src -c easypost_java_style.xml -d guides/*
 
 # Lints Node files
 lint-node:
@@ -94,10 +94,10 @@ lint-php:
 
 # Lints Python files
 lint-python:
-    {{PYTHON_VIRTUAL_BIN}}/ruff check official/docs/python/
-    {{PYTHON_VIRTUAL_BIN}}/ruff check official/guides/
-    {{PYTHON_VIRTUAL_BIN}}/ruff format --check official/docs/python/
-    {{PYTHON_VIRTUAL_BIN}}/ruff format --check official/guides/
+    {{PYTHON_VIRTUAL_BIN}}/ruff check docs/python/
+    {{PYTHON_VIRTUAL_BIN}}/ruff check guides/
+    {{PYTHON_VIRTUAL_BIN}}/ruff format --check docs/python/
+    {{PYTHON_VIRTUAL_BIN}}/ruff format --check guides/
 
 # Lints Ruby files
 lint-ruby:
@@ -105,18 +105,18 @@ lint-ruby:
 
 # Lints shell files
 lint-shell:
-	shellcheck official/docs/curl/current/**/*.sh -e SC2148,SC2034
-	shfmt -i 2 -d official/docs/curl
-	shellcheck official/guides/**/curl/*.sh -e SC2148,SC2034
-	shfmt -i 2 -d official/guides/**/curl
+	shellcheck docs/curl/current/**/*.sh -e SC2148,SC2034
+	shfmt -i 2 -d docs/curl
+	shellcheck guides/**/curl/*.sh -e SC2148,SC2034
+	shfmt -i 2 -d guides/**/curl
 
 # Formats the entire project
 format: format-csharp format-go format-java format-node format-php format-python format-ruby format-shell
 
 # Formats C# files
 format-csharp:
-	dotnet format whitespace --include official/docs/csharp/ --folder
-	dotnet format whitespace --include official/guides/ --folder
+	dotnet format whitespace --include docs/csharp/ --folder
+	dotnet format whitespace --include guides/ --folder
 
 # Formats Go files
 format-go:
@@ -136,10 +136,10 @@ format-php:
 
 # Formats Python files
 format-python:
-    {{PYTHON_VIRTUAL_BIN}}/ruff check --fix official/docs/python/
-    {{PYTHON_VIRTUAL_BIN}}/ruff check --fix official/guides/
-    {{PYTHON_VIRTUAL_BIN}}/ruff format official/docs/python/
-    {{PYTHON_VIRTUAL_BIN}}/ruff format official/guides/
+    {{PYTHON_VIRTUAL_BIN}}/ruff check --fix docs/python/
+    {{PYTHON_VIRTUAL_BIN}}/ruff check --fix guides/
+    {{PYTHON_VIRTUAL_BIN}}/ruff format docs/python/
+    {{PYTHON_VIRTUAL_BIN}}/ruff format guides/
 
 # Formats Ruby files
 format-ruby:
@@ -147,8 +147,8 @@ format-ruby:
 
 # Formats shell files
 format-shell:
-	shfmt -i 2 -w official/docs/curl/*
-	shfmt -i 2 -w official/guides/**/curl/*
+	shfmt -i 2 -w docs/curl/*
+	shfmt -i 2 -w guides/**/curl/*
 
 # Checks that Node files conform to the correct format
 format-node-check:

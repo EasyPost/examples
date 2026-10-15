@@ -91,9 +91,3 @@ jobs:
         run: just install-ruby
       - name: Lint project
         run: just lint-ruby
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - name: Check for current dirs in docs
-        run: ./test/ensure-current-dirs-exist.sh

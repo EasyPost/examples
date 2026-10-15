@@ -25,11 +25,11 @@
 
     <!-- Examples -->
     <!-- Don't enforce specific rules on example files -->
-    <suppress checks="MagicNumber" files="official[\\/]" />
-    <suppress checks="MissingJavadocMethod" files="official[\\/]" />
-    <suppress checks="HideUtilityClassConstructor" files="official[\\/]" />
-    <suppress checks="JavadocPackage" files="official[\\/]" />
-    <suppress checks="PackageNameCheck" files="official[\\/]" />
+    <suppress checks="MagicNumber" files="(docs|guides)[\\/]" />
+    <suppress checks="MissingJavadocMethod" files="(docs|guides)[\\/]" />
+    <suppress checks="HideUtilityClassConstructor" files="(docs|guides)[\\/]" />
+    <suppress checks="JavadocPackage" files="(docs|guides)[\\/]" />
+    <suppress checks="PackageNameCheck" files="(docs|guides)[\\/]" />
 
     <!-- General -->
     <!-- Don't do any CheckStyle checks on any non-Java files. -->

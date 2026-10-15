@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "check": "prettier --check .",
-    "fix": "eslint official/docs/node --ext .js,.ts --fix",
+    "fix": "eslint docs/node --ext .js,.ts --no-ignore --fix",
     "format": "prettier --write .",
-    "lint": "eslint official/docs/node --ext .js,.ts"
+    "lint": "eslint docs/node --ext .js,.ts --no-ignore"
   },
   "repository": {
     "type": "git",

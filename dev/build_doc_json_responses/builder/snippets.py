@@ -44,7 +44,7 @@ ALL_RESOURCES = {
     "webhooks",
 }
 
-RESPONSES_DIR = os.path.join("..", "..", "official", "docs", "responses")
+RESPONSES_DIR = os.path.join("..", "..", "docs", "responses")
 
 
 def build_response_snippet(interaction_index: int | None = 0, objects_to_persist: int | None = None):
