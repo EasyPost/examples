@@ -6,11 +6,12 @@
 
 ## Project Structure
 
+- `carriers` code snippets that are used on our [Carriers](https://docs.easypost.com/carriers) guide pages.
 - `dev` contain utilities to help facilitate the code in this repo such as the response and curl snippet generation suites
-- `docs` code snippets that are shown on our [API docs](https://docs.easypost.com). Each language will have its own subdirectory. Within each language directory are versioned directories for that language's client library
+- `docs` code snippets that are shown on our [API Docs](https://docs.easypost.com). Each language will have its own subdirectory. Within each language directory are versioned directories for that language's client library
   - `responses` responses for each supported endpoint of our API. These responses coincide with the example snippets found in the `docs` directory. Each will give you a good idea of what to expect back from the EasyPost API
 - `fixtures` mock data used as fixtures for our client library test suites, tooling, etc
-- `guides` code snippets that are used on our [guides page](https://docs.easypost.com/guides/getting-started). Each language will have its own subdirectory
+- `guides` code snippets that are used on our [Guides](https://docs.easypost.com/guides/getting-started) pages. Each language will have its own subdirectory
 - `style_guides` contain the style guides and configs for tooling we use in each public language we support
 - `tools` contain example tools to use while interacting with the EasyPost API
 
