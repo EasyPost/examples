@@ -4,6 +4,7 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
   -d '{
   "carrier_account": {
     "type": "DhlEcsAccount",
-    "description": "DhlEcsAccount"
+    "description": "DhlEcsAccount",
+    "payment_mode": "aggregation"
   }
 }'

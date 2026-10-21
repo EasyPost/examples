@@ -86,18 +86,31 @@ def add_headers(carrier_output: str, carrier: dict[str, str]) -> str:
     return carrier_output
 
 
-def write_wallet_curl(carrier: dict[str, str], carrier_account_json: dict) -> None:
+def is_wallet_carrier_type(carrier_type: str) -> bool:
+    """Wallet-only carriers are defined explicitly in carrier builder data."""
+    return carrier_type in carrier_builder_data.WALLET_ONLY_CARRIER_TYPES
+
+
+def write_wallet_curl(
+    carrier: dict[str, str],
+    carrier_account_json: dict,
+    endpoint: str | None = None,
+) -> None:
     """Create a Wallet cURL for carriers that support EasyPost BYOCA and Wallet."""
     wallet_json = copy.deepcopy(carrier_account_json)
-    wallet_account = wallet_json["carrier_account"]
+    wallet_payload_key = "carrier_account"
+    if wallet_payload_key not in wallet_json:
+        wallet_payload_key = "carrier_account_oauth_registrations"
+
+    wallet_account = wallet_json[wallet_payload_key]
     wallet_account.pop("credentials", None)
     wallet_account.pop("test_credentials", None)
-    # TODO: It is too difficult to properly assess the need for payment_mode as it
-    # is a case-by-base basis and we should not make assumptions for either the carrier
-    # or the user here; however, this could use some better documentation and distinction.
-    # wallet_account["payment_mode"] = "aggregation"
+    # One key BYOCA vs wallet difference is billing: wallet carriers are
+    # billed via EasyPost, so set payment_mode to aggregation.
+    wallet_account["payment_mode"] = "aggregation"
     wallet_output = f"# {carrier.get('type')} (EasyPost Wallet)\n"
-    wallet_output = add_curl_line(wallet_output, carrier)
+    wallet_endpoint = endpoint or get_create_endpoint(carrier["type"])
+    wallet_output += f"curl -X POST https://api.easypost.com/{wallet_endpoint}{LINE_BREAK_CHARS}"
     wallet_output = add_headers(wallet_output, carrier)
     wallet_output += f"  -d '{json.dumps(wallet_json, indent=2)}'"
     wallet_output += END_CHARS
@@ -115,6 +128,9 @@ def write_wallet_curl(carrier: dict[str, str], carrier_account_json: dict) -> No
 
 def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> str:
     """Iterate over the carrier fields and print the credential structure."""
+    wallet_variant_payload: dict | None = None
+    wallet_variant_endpoint: str | None = None
+
     if carrier["type"] == "UpsDapAccount":
         carrier_account_json = carrier_builder_payloads.ups_dap_account_payload()
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
@@ -123,6 +139,8 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
 
     if carrier["type"] == "FedexDefaultAccount":
         carrier_account_json = carrier_builder_payloads.fedex_default_account_payload()
+        if is_wallet_carrier_type(carrier["type"]):
+            carrier_account_json["carrier_account"]["payment_mode"] = "aggregation"
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
         return carrier_output
@@ -141,14 +159,12 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         for category in carrier_fields["creation_fields"]:
             for item in carrier_fields["creation_fields"][category]:
                 carrier_account_json["carrier_account"]["registration_data"][item] = "VALUE"
-
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
         carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
     # Maersk Parcel — custom static credential structure
     elif carrier["type"] in carrier_builder_data.MAERSK_CUSTOM_WORKFLOW_CARRIERS:
         carrier_account_json = carrier_builder_payloads.maersk_account_payload()
-
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
         carrier_output = carrier_output.replace(f"{LINE_BREAK_CHARS}{END_CHARS}", f"{END_CHARS}")
@@ -156,10 +172,13 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
     # UPS OAuth
     elif carrier["type"] == "UpsAccount":
         carrier_account_json = carrier_builder_payloads.ups_oauth_registration_payload()
-
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += END_CHARS
-        return carrier_output
+
+        # UPS wallet follows the same OAuth registration payload and endpoint
+        # pattern as BYOCA, with payment_mode set for wallet billing.
+        wallet_variant_payload = carrier_account_json
+        wallet_variant_endpoint = get_create_endpoint(carrier["type"])
     # Amazon Shipping
     elif carrier["type"] in carrier_builder_data.OAUTH_CUSTOM_WORKFLOW_CARRIERS:
         carrier_account_json = carrier_builder_payloads.amazon_shipping_oauth_registration_payload()
@@ -168,7 +187,6 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
     # DoorDash
     elif carrier["type"] in carrier_builder_data.DOORDASH_CUSTOM_WORKFLOW_CARRIERS:
         carrier_account_json = carrier_builder_payloads.doordash_account_payload()
-
         carrier_output = (
             "# DoorDashAccount\n"
             "curl -XPOST "
@@ -199,6 +217,10 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
 
                     carrier_account_json["carrier_account"][top_level][item] = "VALUE"
 
+        # Wallet-only carrier types should always explicitly use aggregation.
+        if is_wallet_carrier_type(carrier["type"]):
+            carrier_account_json["carrier_account"]["payment_mode"] = "aggregation"
+
         carrier_output += f"  -d '{json.dumps(carrier_account_json, indent=2)}'"
         carrier_output += end
         carrier_output = carrier_output.replace(
@@ -207,7 +229,14 @@ def add_credential_structure(carrier_output: str, carrier: dict[str, str]) -> st
         )
 
         if carrier["type"] in carrier_builder_data.BYOCA_AND_WALLET_CARRIER_TYPES:
-            write_wallet_curl(carrier, carrier_account_json)
+            wallet_variant_payload = carrier_account_json
+
+    if wallet_variant_payload is not None:
+        write_wallet_curl(
+            carrier,
+            wallet_variant_payload,
+            endpoint=wallet_variant_endpoint,
+        )
 
     return carrier_output
 

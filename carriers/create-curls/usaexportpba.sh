@@ -16,6 +16,7 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts \
       "email": "VALUE",
       "name": "VALUE",
       "phone": "VALUE"
-    }
+    },
+    "payment_mode": "aggregation"
   }
 }'
