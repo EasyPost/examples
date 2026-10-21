@@ -7,6 +7,7 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts/open \
     "description": "VehoWalletAccount",
     "credentials": {
       "agreed_to_terms_at": "VALUE"
-    }
+    },
+    "payment_mode": "aggregation"
   }
 }'

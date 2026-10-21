@@ -11,6 +11,7 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts/open \
     "postal_code": "VALUE",
     "country": "VALUE",
     "phone": "VALUE",
-    "email": "VALUE"
+    "email": "VALUE",
+    "payment_mode": "aggregation"
   }
 }'

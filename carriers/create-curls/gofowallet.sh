@@ -7,6 +7,7 @@ curl -X POST https://api.easypost.com/v2/carrier_accounts/open \
     "description": "GofoWalletAccount",
     "credentials": {
       "origin_hub": "VALUE"
-    }
+    },
+    "payment_mode": "aggregation"
   }
 }'

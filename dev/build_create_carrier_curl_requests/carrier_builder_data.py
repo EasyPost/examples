@@ -51,11 +51,21 @@ DOORDASH_CUSTOM_WORKFLOW_CARRIERS = [
     "DoorDashAccount",
 ]
 
+# Wallet carrier account types that do not also have a BYOCA account by the same name
+WALLET_ONLY_CARRIER_TYPES = [
+    "FedexDefaultAccount",
+    "GofoWalletAccount",
+    "UniUniWalletAccount",
+    "UsaExportPbaAccount",
+    "VehoWalletAccount",
+]
+
 # The following are both a BYOCA (Bring Your Own Carrier Account) and
-# wallet carrier type depending on what `payment_type` is set to.
+# wallet carrier type depending on whether `payment_mode` is set to `aggregation`.
 BYOCA_AND_WALLET_CARRIER_TYPES = [
     "CanadaPostAccount",
     "DhlEcsAccount",
     "DhlExpressAccount",
+    "UpsAccount",
     "UspsAccount",
 ]
