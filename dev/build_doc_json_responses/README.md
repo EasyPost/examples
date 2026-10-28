@@ -9,21 +9,21 @@ NOTE: The test names are VERY important and must match up with the expected plur
 ## Installation
 
 ```bash
-make install
+just install
 ```
 
 ## Usage
 
 First, if you are regenerating response snippets, you will first need to delete the related cassette file(s) in `tests/cassettes`. If a cassette file already exists for a given snippet, it will not be overwritten and the generated response snippet will not be updated.
 
-Next, you will need to run the `make generate` command twice - it will fail the first time through; this is expected.
+Next, you will need to run the `just generate` command twice - it will fail the first time through; this is expected.
 
 ```bash
 # Run the following to save HTTP recordings
-EASYPOST_TEST_API_KEY=putrealkeyhere EASYPOST_PROD_API_KEY=putrealkeyhere PARTNER_USER_PROD_API_KEY=putrealkeyhere REFERRAL_CUSTOMER_PROD_API_KEY=putrealkeyhere make generate
+EASYPOST_TEST_API_KEY=putrealkeyhere EASYPOST_PROD_API_KEY=putrealkeyhere PARTNER_USER_PROD_API_KEY=putrealkeyhere REFERRAL_CUSTOMER_PROD_API_KEY=putrealkeyhere just generate
 
 # Run the same command again to save the response snippets
-EASYPOST_TEST_API_KEY=putrealkeyhere EASYPOST_PROD_API_KEY=putrealkeyhere PARTNER_USER_PROD_API_KEY=putrealkeyhere REFERRAL_CUSTOMER_PROD_API_KEY=putrealkeyhere make generate
+EASYPOST_TEST_API_KEY=putrealkeyhere EASYPOST_PROD_API_KEY=putrealkeyhere PARTNER_USER_PROD_API_KEY=putrealkeyhere REFERRAL_CUSTOMER_PROD_API_KEY=putrealkeyhere just generate
 ```
 
 **NOTE**: Some static data used by this tool, such as the USPS carrier account ID, is associated with the EasyPost Docs Tooling User. You must use that user's API keys to generate these snippets.
@@ -34,9 +34,9 @@ Generated response snippets are stored in the `responses` directory. Copy this e
 
 ## Linting
 
-The `make lint` and `make lint-fix` commands in the Makefile will lint the Python code in this tool, but not the response snippets.
+The `just lint` and `just lint-fix` commands in the Makefile will lint the Python code in this tool, but not the response snippets.
 
-After copying the response snippets to `docs/responses`, you can lint them with the `make format-node` command in the root Makefile, which will lint and format all JSON files, including the response snippets, in the `docs` directory.
+After copying the response snippets to `docs/responses`, you can lint them with the `just format-node` command in the root Makefile, which will lint and format all JSON files, including the response snippets, in the `docs` directory.
 
 ## Troubleshooting
 

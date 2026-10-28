@@ -1,7 +1,7 @@
 {
   "carriers": [
     {
-      "human_readable": "USPS",
+      "human_readable": "USPS BYOCA",
       "name": "usps",
       "predefined_packages": [
         {
@@ -236,7 +236,7 @@
             "Combined Length and Girth < 130in"
           ],
           "human_readable": "USPS Ground Advantage\u00ae",
-          "max_weight": 70.0,
+          "max_weight": 1120.0,
           "name": "GroundAdvantage"
         },
         {
@@ -301,7 +301,8 @@
           "max_weight": 1120.0,
           "name": "ExpressMailInternational"
         }
-      ]
+      ],
+      "type": "UspsAccount"
     }
   ]
 }
