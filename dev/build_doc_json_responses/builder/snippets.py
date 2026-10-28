@@ -127,15 +127,25 @@ def save_response_snippet(
     """Saves the response content of a cassette to a standalone snippet file."""
     response_snippet_folder, bare_snippet_name = _setup_saving_response_snippet(response_snippet_filename)
 
-    with open(os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name), "w") as response_snippet_file:
+    with open(
+        os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name),
+        "w",
+        encoding="utf-8",
+    ) as response_snippet_file:
         if objects_to_persist:
             json.dump(
                 json.loads(response_snippet_content)[:objects_to_persist],
                 response_snippet_file,
                 indent=2,
+                ensure_ascii=False,  # It's possible we have non-ASCII characters in the response that we want preserved
             )
         else:
-            json.dump(json.loads(response_snippet_content), response_snippet_file, indent=2)
+            json.dump(
+                json.loads(response_snippet_content),
+                response_snippet_file,
+                indent=2,
+                ensure_ascii=False,  # It's possible we have non-ASCII characters in the response that we want preserved
+            )
 
         response_snippet_file.write("\n")
 
@@ -148,7 +158,16 @@ def save_raw_json(response_snippet_filename: str, response_dict: dict[str, Any])
     """
     response_snippet_folder, bare_snippet_name = _setup_saving_response_snippet(response_snippet_filename)
 
-    with open(os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name), "w") as response_snippet_file:
-        json.dump(response_dict, response_snippet_file, indent=2)
+    with open(
+        os.path.join(RESPONSES_DIR, response_snippet_folder, bare_snippet_name),
+        "w",
+        encoding="utf-8",
+    ) as response_snippet_file:
+        json.dump(
+            response_dict,
+            response_snippet_file,
+            indent=2,
+            ensure_ascii=False,  # It's possible we have non-ASCII characters in the response that we want preserved
+        )
 
         response_snippet_file.write("\n")

@@ -1,7 +1,7 @@
 {
   "carriers": [
     {
-      "human_readable": "USPS",
+      "human_readable": "USPS BYOCA",
       "name": "usps",
       "predefined_packages": [
         {
@@ -205,7 +205,7 @@
             "Cards, Letters and Flats only (no Parcels)",
             "See Predefined Packages (Card, Letter, Flat) for details"
           ],
-          "human_readable": "First-Class Mail\u00ae",
+          "human_readable": "First-Class Mail®",
           "max_weight": 13.0,
           "name": "First"
         },
@@ -215,7 +215,7 @@
           "dimensions": [
             "Combined Length and Girth < 108in"
           ],
-          "human_readable": "Priority Mail\u00ae",
+          "human_readable": "Priority Mail®",
           "max_weight": 1120.0,
           "name": "Priority"
         },
@@ -225,7 +225,7 @@
           "dimensions": [
             "Combined Length and Girth < 108in"
           ],
-          "human_readable": "Priority Mail Express\u00ae",
+          "human_readable": "Priority Mail Express®",
           "max_weight": 1120.0,
           "name": "Express"
         },
@@ -235,8 +235,8 @@
           "dimensions": [
             "Combined Length and Girth < 130in"
           ],
-          "human_readable": "USPS Ground Advantage\u00ae",
-          "max_weight": 70.0,
+          "human_readable": "USPS Ground Advantage®",
+          "max_weight": 1120.0,
           "name": "GroundAdvantage"
         },
         {
@@ -245,7 +245,7 @@
           "dimensions": [
             "Combined Length and Girth < 108in"
           ],
-          "human_readable": "Library Mail\u00ae",
+          "human_readable": "Library Mail®",
           "max_weight": 1120.0,
           "name": "LibraryMail"
         },
@@ -255,7 +255,7 @@
           "dimensions": [
             "Combined Length and Girth < 108in"
           ],
-          "human_readable": "Media Mail\u00ae",
+          "human_readable": "Media Mail®",
           "max_weight": 1120.0,
           "name": "MediaMail"
         },
@@ -265,7 +265,7 @@
           "dimensions": [
             "Must be rectangular, otherwise an additional charge may apply."
           ],
-          "human_readable": "First-Class Mail International\u00ae",
+          "human_readable": "First-Class Mail International®",
           "max_weight": 15.994,
           "name": "FirstClassMailInternational"
         },
@@ -277,7 +277,7 @@
             "Rolls (Tubes): Length: min 4in; max 36 in. Length plus twice the diameter (combined): min 6.75 in; max 42in.",
             "Some countries have specific prohibitions and restrictions"
           ],
-          "human_readable": "First-Class Package International Service\u00ae",
+          "human_readable": "First-Class Package International Service®",
           "max_weight": 64.0,
           "name": "FirstClassPackageInternationalService"
         },
@@ -287,7 +287,7 @@
           "dimensions": [
             "Combined Length and Girth < 108in"
           ],
-          "human_readable": "Priority Mail International\u00ae",
+          "human_readable": "Priority Mail International®",
           "max_weight": 1120.0,
           "name": "PriorityMailInternational"
         },
@@ -297,11 +297,12 @@
           "dimensions": [
             "Combined Length and Girth < 108in"
           ],
-          "human_readable": "Priority Mail Express International\u00ae",
+          "human_readable": "Priority Mail Express International®",
           "max_weight": 1120.0,
           "name": "ExpressMailInternational"
         }
-      ]
+      ],
+      "type": "UspsAccount"
     }
   ]
 }
