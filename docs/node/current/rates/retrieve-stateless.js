@@ -32,7 +32,7 @@ const client = new EasyPostClient('EASYPOST_API_KEY');
     },
   };
 
-  const rates = await client.BetaRate.retrieveStatelessRates(shipmentDetails);
+  const { rates } = await client.BetaRate.retrieveStatelessRates(shipmentDetails);
 
   console.log(rates);
 })();

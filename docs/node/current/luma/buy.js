@@ -9,7 +9,7 @@ const client = new EasyPost('EASYPOST_API_KEY');
     deliver_by_date: '2025-07-20',
   };
 
-  const shipment = await client.Luma.buyLuma('shp_...', params);
+  const shipment = await client.Shipment.buyLuma('shp_...', params);
 
   console.log(shipment);
 })();

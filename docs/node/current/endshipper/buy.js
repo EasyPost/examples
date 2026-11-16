@@ -9,7 +9,6 @@ const client = new EasyPostClient('EASYPOST_API_KEY');
     retrievedShipment.id,
     retrievedShipment.lowestRate(),
     null,
-    false,
     'es_...',
   );
 

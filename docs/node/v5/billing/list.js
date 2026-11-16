@@ -2,4 +2,4 @@ const Easypost = require('@easypost/api');
 
 const api = new Easypost('EASYPOST_API_KEY');
 
-api.Billing.all().then(console.log);
+api.Billing.retrievePaymentMethods().then(console.log);

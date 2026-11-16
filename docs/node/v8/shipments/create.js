@@ -1,0 +1,66 @@
+const EasyPostClient = require('@easypost/api');
+
+const client = new EasyPostClient('EASYPOST_API_KEY');
+
+(async () => {
+  let shipment;
+
+  shipment = await client.Shipment.create({
+    to_address: {
+      name: 'Dr. Steve Brule',
+      street1: '179 N Harbor Dr',
+      city: 'Redondo Beach',
+      state: 'CA',
+      zip: '90277',
+      country: 'US',
+      email: 'dr_steve_brule@gmail.com',
+      phone: '4155559999',
+    },
+    from_address: {
+      street1: '417 montgomery street',
+      street2: 'FL 5',
+      city: 'San Francisco',
+      state: 'CA',
+      zip: '94104',
+      country: 'US',
+      company: 'EasyPost',
+      phone: '415-123-4567',
+    },
+    parcel: {
+      length: 20.2,
+      width: 10.9,
+      height: 5,
+      weight: 65.9,
+    },
+    line_items: [
+      {
+        total_line_value: '129.00',
+        item_description: 'Mugs',
+      },
+      {
+        total_line_value: '45.50',
+        item_description: 'T-shirts',
+      },
+    ],
+  });
+
+  // or create by using IDs
+
+  shipment = await client.Shipment.create({
+    to_address: { id: 'adr_...' },
+    from_address: { id: 'adr_...' },
+    parcel: { id: 'prcl_...' },
+    line_items: [
+      {
+        total_line_value: '129.00',
+        item_description: 'Mugs',
+      },
+      {
+        total_line_value: '45.50',
+        item_description: 'T-shirts',
+      },
+    ],
+  });
+
+  console.log(shipment);
+})();
