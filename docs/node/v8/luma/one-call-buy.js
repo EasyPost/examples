@@ -3,7 +3,7 @@ const EasyPost = require('@easypost/api');
 const client = new EasyPost('EASYPOST_API_KEY');
 
 (async () => {
-  const shipment = await client.Luma.createAndBuyLuma({
+  const shipment = await client.Shipment.createAndBuyLuma({
     carrier_accounts: ['ca_...'],
     to_address: {
       name: 'Dr. Steve Brule',
