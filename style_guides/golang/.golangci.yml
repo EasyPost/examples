@@ -1,12 +1,34 @@
-issues:
-  exclude:
-    - "is unused"
-    - "github.com/EasyPost/easypost-go"
-    - "undeclared name: `easypost`"
-    - "expected 'package'"
-
-linters-settings:
-  staticcheck:
-    checks:
-      - all
-      - '-SA1019'
+version: "2"
+linters:
+  settings:
+    staticcheck:
+      checks:
+        - all
+        - -SA1019
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - path: (.+)\.go$
+        text: is unused
+      - path: (.+)\.go$
+        text: github.com/EasyPost/easypost-go
+      - path: (.+)\.go$
+        text: 'undeclared name: `easypost`'
+      - path: (.+)\.go$
+        text: expected 'package'
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
