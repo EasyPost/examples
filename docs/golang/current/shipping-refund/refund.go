@@ -1,4 +1,4 @@
-package shipping_refund
+package example
 
 import (
 	"fmt"

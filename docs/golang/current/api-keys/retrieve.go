@@ -15,7 +15,7 @@ func retrieve() {
 	fmt.Println(apiKeys)
 
 	// Retrieve API keys for a specific child user
-	childApiKeys, _ := client.GetAPIKeysForUser("user_...")
+	childAPIKeys, _ := client.GetAPIKeysForUser("user_...")
 
-	fmt.Println(childApiKeys)
+	fmt.Println(childAPIKeys)
 }

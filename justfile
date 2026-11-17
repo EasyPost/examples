@@ -38,7 +38,7 @@ install-csharp:
 # Installs Go dependencies
 install-go:
 	sh ./symlink_directory_files.sh style_guides/golang .
-	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$(go env GOPATH)/bin" v1.60.3
+	curl -sSfL https://golangci-lint.run/install.sh | sh -s -- -b "$(go env GOPATH)/bin" v2.15.0
 	go mod vendor
 
 # Installs Java dependencies

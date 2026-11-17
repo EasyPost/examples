@@ -10,8 +10,8 @@ import (
 func create() {
 	client := easypost.New("EASYPOST_API_KEY")
 
-	var minDatetime easypost.DateTime = easypost.DateTime(time.Now())
-	var maxDatetime easypost.DateTime = easypost.DateTime(time.Now().Add(time.Hour * 24 * 7))
+	var minDatetime = easypost.DateTime(time.Now())
+	var maxDatetime = easypost.DateTime(time.Now().Add(time.Hour * 24 * 7))
 
 	pickup, _ := client.CreatePickup(
 		&easypost.Pickup{
