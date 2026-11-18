@@ -3,7 +3,7 @@ package example
 import (
 	"fmt"
 
-	"github.com/EasyPost/easypost-go/v5"
+	"github.com/EasyPost/easypost-go/v6"
 )
 
 func addStripeBankAccount() {
@@ -13,7 +13,7 @@ func addStripeBankAccount() {
 		"REFERRAL_USER_API_KEY",
 		"fca_...",
 		&easypost.MandateData{
-			IpAddress:  "127.0.0.1",
+			IPAddress:  "127.0.0.1",
 			UserAgent:  "Mozilla/5.0",
 			AcceptedAt: 1722510730,
 		},

@@ -3,7 +3,7 @@ package example
 import (
 	"fmt"
 
-	"github.com/EasyPost/easypost-go/v5"
+	"github.com/EasyPost/easypost-go/v6"
 )
 
 func create() {
@@ -12,9 +12,9 @@ func create() {
 	accountLink, _ := client.CreateCustomerPortalAccountLink(
 		&easypost.CustomerPortalAccountLinkParameters{
 			SessionType: "account_management",
-			UserId:      "user_...",
-			RefreshUrl:  "https://example.com/refresh",
-			ReturnUrl:   "https://example.com/return",
+			UserID:      "user_...",
+			RefreshURL:  "https://example.com/refresh",
+			ReturnURL:   "https://example.com/return",
 			Metadata: map[string]interface{}{
 				"target": "wallet",
 			},

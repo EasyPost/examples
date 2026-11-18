@@ -3,7 +3,7 @@ package example
 import (
     "fmt"
 
-    "github.com/EasyPost/easypost-go/v5"
+    "github.com/EasyPost/easypost-go/v6"
 )
 
 func session() {
@@ -12,7 +12,7 @@ func session() {
     session, _ := client.CreateEmbeddablesSession(
         &easypost.EmbeddablesSessionParameters{
             OriginHost: "https://example.com",
-            UserId:     "user_...",
+            UserID:     "user_...",
         },
     )
 

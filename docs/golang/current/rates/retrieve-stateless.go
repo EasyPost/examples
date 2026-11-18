@@ -3,7 +3,7 @@ package example
 import (
 	"fmt"
 
-	"github.com/EasyPost/easypost-go/v5"
+	"github.com/EasyPost/easypost-go/v6"
 )
 
 func retrieveStateless() {
@@ -39,7 +39,7 @@ func retrieveStateless() {
 		},
 	}
 
-	rates, _ := client.BetaGetStatelessRates(shipmentDetails)
+	response, _ := client.BetaGetStatelessRates(shipmentDetails)
 
-	fmt.Println(rates)
+	fmt.Println(response.Rates)
 }

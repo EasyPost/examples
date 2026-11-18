@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/EasyPost/easypost-go/v5"
+	"github.com/EasyPost/easypost-go/v6"
 )
 
 func create() {

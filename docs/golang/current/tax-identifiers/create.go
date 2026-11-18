@@ -3,7 +3,7 @@ package example
 import (
 	"fmt"
 
-	"github.com/EasyPost/easypost-go/v5"
+	"github.com/EasyPost/easypost-go/v6"
 )
 
 func create() {
@@ -21,9 +21,9 @@ func create() {
 			TaxIdentifiers: []*easypost.TaxIdentifier{
 				&easypost.TaxIdentifier{
 					Entity:         "SENDER",
-					TaxId:          "GB123456789",
+					TaxID:          "GB123456789",
 					IssuingCountry: "GB",
-					TaxIdType:      "EORI",
+					TaxIDType:      "EORI",
 				},
 			},
 		},
